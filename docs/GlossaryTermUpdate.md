@@ -1,0 +1,23 @@
+# Phrase::GlossaryTermUpdate
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**term** | **String** | Glossary term | [optional] 
+**description** | **String** | Description of term | [optional] 
+**translatable** | **String** | Indicates whether the term should be used for all languages or can be translated | [optional] 
+**case_sensitive** | **String** | Indicates whether the term is case sensitive | [optional] 
+
+## Code Sample
+
+```ruby
+require 'Phrase'
+
+instance = Phrase::GlossaryTermUpdate.new(term: MyCompany,
+                                 description: Use this when refering to our company,
+                                 translatable: true,
+                                 case_sensitive: true)
+```
+
+

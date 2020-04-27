@@ -1,0 +1,17 @@
+# Phrase::SpaceCreate
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**name** | **String** | Name of the space | [optional] 
+
+## Code Sample
+
+```ruby
+require 'Phrase'
+
+instance = Phrase::SpaceCreate.new(name: My Android Projects)
+```
+
+
