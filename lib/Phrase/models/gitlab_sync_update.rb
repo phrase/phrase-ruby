@@ -29,7 +29,7 @@ module Phrase
       {
         :'account_id' => :'String',
         :'phrase_project_code' => :'String',
-        :'gitlab_project_id' => :'String',
+        :'gitlab_project_id' => :'Integer',
         :'gitlab_branch_name' => :'String'
       }
     end

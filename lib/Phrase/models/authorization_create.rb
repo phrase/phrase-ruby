@@ -24,8 +24,8 @@ module Phrase
     def self.openapi_types
       {
         :'note' => :'String',
-        :'scopes' => :'String',
-        :'expires_at' => :'String'
+        :'scopes' => :'Array<String>',
+        :'expires_at' => :'DateTime'
       }
     end
 
@@ -55,7 +55,9 @@ module Phrase
       end
 
       if attributes.key?(:'scopes')
-        self.scopes = attributes[:'scopes']
+        if (value = attributes[:'scopes']).is_a?(Array)
+          self.scopes = value
+        end
       end
 
       if attributes.key?(:'expires_at')

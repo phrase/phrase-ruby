@@ -25,7 +25,7 @@ module Phrase
       {
         :'branch' => :'String',
         :'locale_id' => :'String',
-        :'user_ids' => :'String'
+        :'user_ids' => :'Array<String>'
       }
     end
 
@@ -59,7 +59,9 @@ module Phrase
       end
 
       if attributes.key?(:'user_ids')
-        self.user_ids = attributes[:'user_ids']
+        if (value = attributes[:'user_ids']).is_a?(Array)
+          self.user_ids = value
+        end
       end
     end
 

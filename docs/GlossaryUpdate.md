@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | Name of the glossary | [optional] 
 **project_ids** | **String** | List of project ids the glossary should be assigned to. | [optional] 
-**space_ids** | **String** | List of space ids the glossary should be assigned to. | [optional] 
+**space_ids** | **Array&lt;String&gt;** | List of space ids the glossary should be assigned to. | [optional] 
 
 ## Code Sample
 

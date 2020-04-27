@@ -25,7 +25,7 @@ module Phrase
       {
         :'name' => :'String',
         :'project_ids' => :'String',
-        :'space_ids' => :'String'
+        :'space_ids' => :'Array<String>'
       }
     end
 
@@ -59,7 +59,9 @@ module Phrase
       end
 
       if attributes.key?(:'space_ids')
-        self.space_ids = attributes[:'space_ids']
+        if (value = attributes[:'space_ids']).is_a?(Array)
+          self.space_ids = value
+        end
       end
     end
 

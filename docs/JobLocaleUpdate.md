@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branch** | **String** | specify the branch to use | [optional] 
 **locale_id** | **String** | locale id | [optional] 
-**user_ids** | **String** | Array of user ids to be assigned to the job locale | [optional] 
+**user_ids** | **Array&lt;String&gt;** | Array of user ids to be assigned to the job locale | [optional] 
 
 ## Code Sample
 

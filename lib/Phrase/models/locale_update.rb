@@ -54,13 +54,13 @@ module Phrase
         :'branch' => :'String',
         :'name' => :'String',
         :'code' => :'String',
-        :'default' => :'String',
-        :'main' => :'String',
-        :'rtl' => :'String',
+        :'default' => :'Boolean',
+        :'main' => :'Boolean',
+        :'rtl' => :'Boolean',
         :'source_locale_id' => :'String',
-        :'unverify_new_translations' => :'String',
-        :'unverify_updated_translations' => :'String',
-        :'autotranslate' => :'String'
+        :'unverify_new_translations' => :'Boolean',
+        :'unverify_updated_translations' => :'Boolean',
+        :'autotranslate' => :'Boolean'
       }
     end
 

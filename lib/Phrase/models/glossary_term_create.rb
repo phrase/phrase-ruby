@@ -29,8 +29,8 @@ module Phrase
       {
         :'term' => :'String',
         :'description' => :'String',
-        :'translatable' => :'String',
-        :'case_sensitive' => :'String'
+        :'translatable' => :'Boolean',
+        :'case_sensitive' => :'Boolean'
       }
     end
 

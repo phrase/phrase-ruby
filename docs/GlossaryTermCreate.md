@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **term** | **String** | Glossary term | [optional] 
 **description** | **String** | Description of term | [optional] 
-**translatable** | **String** | Indicates whether the term should be used for all languages or can be translated | [optional] 
-**case_sensitive** | **String** | Indicates whether the term is case sensitive | [optional] 
+**translatable** | **Boolean** | Indicates whether the term should be used for all languages or can be translated | [optional] 
+**case_sensitive** | **Boolean** | Indicates whether the term is case sensitive | [optional] 
 
 ## Code Sample
 

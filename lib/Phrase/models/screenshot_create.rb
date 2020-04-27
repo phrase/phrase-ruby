@@ -25,7 +25,7 @@ module Phrase
       {
         :'name' => :'String',
         :'description' => :'String',
-        :'filename' => :'String'
+        :'filename' => :'File'
       }
     end
 

@@ -71,15 +71,15 @@ module Phrase
         :'file_format' => :'String',
         :'tags' => :'String',
         :'tag' => :'String',
-        :'include_empty_translations' => :'String',
-        :'include_translated_keys' => :'String',
-        :'keep_notranslate_tags' => :'String',
-        :'convert_emoji' => :'String',
-        :'format_options' => :'String',
+        :'include_empty_translations' => :'Boolean',
+        :'include_translated_keys' => :'Boolean',
+        :'keep_notranslate_tags' => :'Boolean',
+        :'convert_emoji' => :'Boolean',
+        :'format_options' => :'Object',
         :'encoding' => :'String',
-        :'skip_unverified_translations' => :'String',
-        :'include_unverified_translations' => :'String',
-        :'use_last_reviewed_version' => :'String',
+        :'skip_unverified_translations' => :'Boolean',
+        :'include_unverified_translations' => :'Boolean',
+        :'use_last_reviewed_version' => :'Boolean',
         :'fallback_locale_id' => :'String'
       }
     end

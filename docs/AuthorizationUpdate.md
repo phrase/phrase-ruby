@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **note** | **String** | A note to help you remember what the access is used for. | [optional] 
-**scopes** | **String** | A list of scopes that the access can be used for. | [optional] 
-**expires_at** | **String** | Expiration date for the authorization token. Null means no expiration date (default). | [optional] 
+**scopes** | **Array&lt;String&gt;** | A list of scopes that the access can be used for. | [optional] 
+**expires_at** | **DateTime** | Expiration date for the authorization token. Null means no expiration date (default). | [optional] 
 
 ## Code Sample
 

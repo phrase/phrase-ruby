@@ -20,7 +20,7 @@ module Phrase
     def self.openapi_types
       {
         :'branch' => :'String',
-        :'translation_key_ids' => :'String'
+        :'translation_key_ids' => :'Array<String>'
       }
     end
 
@@ -50,7 +50,9 @@ module Phrase
       end
 
       if attributes.key?(:'translation_key_ids')
-        self.translation_key_ids = attributes[:'translation_key_ids']
+        if (value = attributes[:'translation_key_ids']).is_a?(Array)
+          self.translation_key_ids = value
+        end
       end
     end
 

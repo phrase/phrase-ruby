@@ -48,9 +48,9 @@ module Phrase
         :'key_id' => :'String',
         :'content' => :'String',
         :'plural_suffix' => :'String',
-        :'unverified' => :'String',
-        :'excluded' => :'String',
-        :'autotranslate' => :'String'
+        :'unverified' => :'Boolean',
+        :'excluded' => :'Boolean',
+        :'autotranslate' => :'Boolean'
       }
     end
 

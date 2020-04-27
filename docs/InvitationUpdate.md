@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **role** | **String** | Invitiation role, can be any of Manager, Developer, Translator | [optional] 
 **project_ids** | **String** | List of project ids the invited user has access to | [optional] 
 **locale_ids** | **String** | List of locale ids the invited user has access to | [optional] 
-**permissions** | **String** | Additional permissions depending on invitation role. | [optional] 
+**permissions** | [**Object**](.md) | Additional permissions depending on invitation role. | [optional] 
 
 ## Code Sample
 

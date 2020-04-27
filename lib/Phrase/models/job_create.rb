@@ -38,9 +38,9 @@ module Phrase
         :'branch' => :'String',
         :'name' => :'String',
         :'briefing' => :'String',
-        :'due_date' => :'String',
-        :'tags' => :'String',
-        :'translation_key_ids' => :'String'
+        :'due_date' => :'DateTime',
+        :'tags' => :'Array<String>',
+        :'translation_key_ids' => :'Array<String>'
       }
     end
 
@@ -82,11 +82,15 @@ module Phrase
       end
 
       if attributes.key?(:'tags')
-        self.tags = attributes[:'tags']
+        if (value = attributes[:'tags']).is_a?(Array)
+          self.tags = value
+        end
       end
 
       if attributes.key?(:'translation_key_ids')
-        self.translation_key_ids = attributes[:'translation_key_ids']
+        if (value = attributes[:'translation_key_ids']).is_a?(Array)
+          self.translation_key_ids = value
+        end
       end
     end
 

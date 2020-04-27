@@ -30,7 +30,7 @@ module Phrase
         :'branch' => :'String',
         :'name' => :'String',
         :'briefing' => :'String',
-        :'due_date' => :'String'
+        :'due_date' => :'DateTime'
       }
     end
 

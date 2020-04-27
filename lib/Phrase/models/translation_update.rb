@@ -38,9 +38,9 @@ module Phrase
         :'branch' => :'String',
         :'content' => :'String',
         :'plural_suffix' => :'String',
-        :'unverified' => :'String',
-        :'excluded' => :'String',
-        :'autotranslate' => :'String'
+        :'unverified' => :'Boolean',
+        :'excluded' => :'Boolean',
+        :'autotranslate' => :'Boolean'
       }
     end
 

@@ -30,7 +30,7 @@ module Phrase
         :'role' => :'String',
         :'project_ids' => :'String',
         :'locale_ids' => :'String',
-        :'permissions' => :'String'
+        :'permissions' => :'Object'
       }
     end
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **String** | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
 **phrase_project_code** | **String** | Code of the related Phrase Project. | [optional] 
-**gitlab_project_id** | **String** | ID of the related GitLab Project. | [optional] 
+**gitlab_project_id** | **Integer** | ID of the related GitLab Project. | [optional] 
 **gitlab_branch_name** | **String** | Name of the GitLab Branch. | [optional] 
 
 ## Code Sample

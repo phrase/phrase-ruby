@@ -70,17 +70,17 @@ module Phrase
         :'branch' => :'String',
         :'lsp' => :'String',
         :'source_locale_id' => :'String',
-        :'target_locale_ids' => :'String',
+        :'target_locale_ids' => :'Array<String>',
         :'translation_type' => :'String',
         :'tag' => :'String',
         :'message' => :'String',
         :'styleguide_id' => :'String',
-        :'unverify_translations_upon_delivery' => :'String',
-        :'include_untranslated_keys' => :'String',
-        :'include_unverified_translations' => :'String',
+        :'unverify_translations_upon_delivery' => :'Boolean',
+        :'include_untranslated_keys' => :'Boolean',
+        :'include_unverified_translations' => :'Boolean',
         :'category' => :'String',
-        :'quality' => :'String',
-        :'priority' => :'String'
+        :'quality' => :'Boolean',
+        :'priority' => :'Boolean'
       }
     end
 
@@ -118,7 +118,9 @@ module Phrase
       end
 
       if attributes.key?(:'target_locale_ids')
-        self.target_locale_ids = attributes[:'target_locale_ids']
+        if (value = attributes[:'target_locale_ids']).is_a?(Array)
+          self.target_locale_ids = value
+        end
       end
 
       if attributes.key?(:'translation_type')

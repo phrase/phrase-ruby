@@ -37,9 +37,9 @@ module Phrase
       {
         :'name' => :'String',
         :'main_format' => :'String',
-        :'shares_translation_memory' => :'String',
-        :'project_image' => :'String',
-        :'remove_project_image' => :'String',
+        :'shares_translation_memory' => :'Boolean',
+        :'project_image' => :'File',
+        :'remove_project_image' => :'Boolean',
         :'account_id' => :'String'
       }
     end

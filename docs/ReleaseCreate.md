@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **String** | Description of the release | [optional] 
-**platforms** | **String** | List of platforms the release should support. | [optional] 
+**platforms** | **Array&lt;String&gt;** | List of platforms the release should support. | [optional] 
 **branch** | **String** | Branch used for release | [optional] 
 
 ## Code Sample

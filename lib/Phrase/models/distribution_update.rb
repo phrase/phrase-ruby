@@ -41,11 +41,11 @@ module Phrase
       {
         :'name' => :'String',
         :'project_id' => :'String',
-        :'platforms' => :'String',
-        :'format_options' => :'String',
-        :'fallback_to_non_regional_locale' => :'String',
-        :'fallback_to_default_locale' => :'String',
-        :'use_last_reviewed_version' => :'String'
+        :'platforms' => :'Array<String>',
+        :'format_options' => :'Object',
+        :'fallback_to_non_regional_locale' => :'Boolean',
+        :'fallback_to_default_locale' => :'Boolean',
+        :'use_last_reviewed_version' => :'Boolean'
       }
     end
 
@@ -79,7 +79,9 @@ module Phrase
       end
 
       if attributes.key?(:'platforms')
-        self.platforms = attributes[:'platforms']
+        if (value = attributes[:'platforms']).is_a?(Array)
+          self.platforms = value
+        end
       end
 
       if attributes.key?(:'format_options')

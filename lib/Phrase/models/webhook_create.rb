@@ -30,7 +30,7 @@ module Phrase
         :'callback_url' => :'String',
         :'description' => :'String',
         :'events' => :'String',
-        :'active' => :'String'
+        :'active' => :'Boolean'
       }
     end
 

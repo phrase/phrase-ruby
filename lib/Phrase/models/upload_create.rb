@@ -72,20 +72,20 @@ module Phrase
     def self.openapi_types
       {
         :'branch' => :'String',
-        :'file' => :'String',
+        :'file' => :'File',
         :'file_format' => :'String',
         :'locale_id' => :'String',
         :'tags' => :'String',
-        :'update_translations' => :'String',
-        :'update_descriptions' => :'String',
-        :'convert_emoji' => :'String',
-        :'skip_upload_tags' => :'String',
-        :'skip_unverification' => :'String',
+        :'update_translations' => :'Boolean',
+        :'update_descriptions' => :'Boolean',
+        :'convert_emoji' => :'Boolean',
+        :'skip_upload_tags' => :'Boolean',
+        :'skip_unverification' => :'Boolean',
         :'file_encoding' => :'String',
-        :'locale_mapping' => :'String',
-        :'format_options' => :'String',
-        :'autotranslate' => :'String',
-        :'mark_reviewed' => :'String'
+        :'locale_mapping' => :'Object',
+        :'format_options' => :'Object',
+        :'autotranslate' => :'Boolean',
+        :'mark_reviewed' => :'Boolean'
       }
     end
 

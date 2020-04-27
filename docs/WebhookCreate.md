@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **callback_url** | **String** | Callback URL to send requests to | [optional] 
 **description** | **String** | Webhook description | [optional] 
 **events** | **String** | List of event names to trigger the webhook (separated by comma) | [optional] 
-**active** | **String** | Whether webhook is active or inactive | [optional] 
+**active** | **Boolean** | Whether webhook is active or inactive | [optional] 
 
 ## Code Sample
 

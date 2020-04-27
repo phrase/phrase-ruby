@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | Name of the screenshot | [optional] 
 **description** | **String** | Description of the screenshot | [optional] 
-**filename** | **String** | Screenshot file | [optional] 
+**filename** | **File** | Screenshot file | [optional] 
 
 ## Code Sample
 
@@ -15,7 +15,7 @@ require 'Phrase'
 
 instance = Phrase::ScreenshotCreate.new(name: A screenshot name,
                                  description: A screenshot description,
-                                 filename: /path/to/my/screenshot.png)
+                                 filename: null)
 ```
 
 

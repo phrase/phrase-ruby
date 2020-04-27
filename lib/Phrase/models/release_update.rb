@@ -24,7 +24,7 @@ module Phrase
     def self.openapi_types
       {
         :'description' => :'String',
-        :'platforms' => :'String',
+        :'platforms' => :'Array<String>',
         :'branch' => :'String'
       }
     end
@@ -55,7 +55,9 @@ module Phrase
       end
 
       if attributes.key?(:'platforms')
-        self.platforms = attributes[:'platforms']
+        if (value = attributes[:'platforms']).is_a?(Array)
+          self.platforms = value
+        end
       end
 
       if attributes.key?(:'branch')
