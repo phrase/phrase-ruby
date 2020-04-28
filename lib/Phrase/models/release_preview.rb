@@ -52,7 +52,7 @@ module Phrase
         :'platforms' => :'Array<String>',
         :'environments' => :'Array<String>',
         :'locale_codes' => :'Array<String>',
-        :'project' => :'Object',
+        :'project' => :'ProjectShort',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }

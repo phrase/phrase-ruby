@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**project** | **Object** |  | [optional] 
+**project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 **platforms** | **Array&lt;String&gt;** |  | [optional] 
 **release_count** | **Integer** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 

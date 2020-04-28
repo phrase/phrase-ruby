@@ -141,7 +141,7 @@ Response<([**Upload**](Upload.md))>
 
 ## uploads_list
 
-> Array&lt;Object&gt; uploads_list(project_id, uploads_list_parameters, opts)
+> Array&lt;Upload&gt; uploads_list(project_id, uploads_list_parameters, opts)
 
 List uploads
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Upload&gt;**](Upload.md))>
 
 ### Authorization
 

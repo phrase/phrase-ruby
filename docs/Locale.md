@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **main** | **Boolean** |  | [optional] 
 **rtl** | **Boolean** |  | [optional] 
 **plural_forms** | **Array&lt;String&gt;** |  | [optional] 
-**source_locale** | **Object** |  | [optional] 
+**source_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 

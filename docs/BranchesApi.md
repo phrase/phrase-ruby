@@ -336,7 +336,7 @@ Response<([**Branch**](Branch.md))>
 
 ## branch_update
 
-> Object branch_update(project_id, name, branch_update_parameters, opts)
+> Branch branch_update(project_id, name, branch_update_parameters, opts)
 
 Update a branch
 
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Branch**](Branch.md))>
 
 ### Authorization
 
@@ -402,7 +402,7 @@ Response<(**Object**)>
 
 ## branches_list
 
-> Array&lt;Object&gt; branches_list(project_id, opts)
+> Array&lt;Branch&gt; branches_list(project_id, opts)
 
 List branches
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Branch&gt;**](Branch.md))>
 
 ### Authorization
 

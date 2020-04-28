@@ -418,7 +418,7 @@ Response<([**Comment**](Comment.md))>
 
 ## comment_update
 
-> Object comment_update(project_id, key_id, id, comment_update_parameters, opts)
+> Comment comment_update(project_id, key_id, id, comment_update_parameters, opts)
 
 Update a comment
 
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Comment**](Comment.md))>
 
 ### Authorization
 
@@ -486,7 +486,7 @@ Response<(**Object**)>
 
 ## comments_list
 
-> Array&lt;Object&gt; comments_list(project_id, key_id, comments_list_parameters, opts)
+> Array&lt;Comment&gt; comments_list(project_id, key_id, comments_list_parameters, opts)
 
 List comments
 
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Comment&gt;**](Comment.md))>
 
 ### Authorization
 

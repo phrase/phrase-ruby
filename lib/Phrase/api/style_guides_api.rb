@@ -155,7 +155,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [StyleguideDetails]
     def styleguide_show(project_id, id, opts = {})
       data, _status_code, _headers = styleguide_show_with_http_info(project_id, id, opts)
       data
@@ -167,7 +167,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(StyleguideDetails)>, Integer, Hash)>] Response<(StyleguideDetails)> data, response status code and response headers
     def styleguide_show_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StyleGuidesApi.styleguide_show ...'
@@ -199,7 +199,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'StyleguideDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -228,7 +228,7 @@ module Phrase
     # @param styleguide_update_parameters [StyleguideUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [StyleguideDetails]
     def styleguide_update(project_id, id, styleguide_update_parameters, opts = {})
       data, _status_code, _headers = styleguide_update_with_http_info(project_id, id, styleguide_update_parameters, opts)
       data
@@ -241,7 +241,7 @@ module Phrase
     # @param styleguide_update_parameters [StyleguideUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(StyleguideDetails)>, Integer, Hash)>] Response<(StyleguideDetails)> data, response status code and response headers
     def styleguide_update_with_http_info(project_id, id, styleguide_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StyleGuidesApi.styleguide_update ...'
@@ -279,7 +279,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(styleguide_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'StyleguideDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

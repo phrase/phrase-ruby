@@ -228,7 +228,7 @@ module Phrase
     # @param blacklisted_key_update_parameters [BlacklistedKeyUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [BlacklistedKey]
     def blacklisted_key_update(project_id, id, blacklisted_key_update_parameters, opts = {})
       data, _status_code, _headers = blacklisted_key_update_with_http_info(project_id, id, blacklisted_key_update_parameters, opts)
       data
@@ -241,7 +241,7 @@ module Phrase
     # @param blacklisted_key_update_parameters [BlacklistedKeyUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(BlacklistedKey)>, Integer, Hash)>] Response<(BlacklistedKey)> data, response status code and response headers
     def blacklisted_key_update_with_http_info(project_id, id, blacklisted_key_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BlacklistedKeysApi.blacklisted_key_update ...'
@@ -279,7 +279,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(blacklisted_key_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'BlacklistedKey' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -308,7 +308,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<BlacklistedKey>]
     def blacklisted_keys_list(project_id, opts = {})
       data, _status_code, _headers = blacklisted_keys_list_with_http_info(project_id, opts)
       data
@@ -321,7 +321,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<BlacklistedKey>)>, Integer, Hash)>] Response<(Array<BlacklistedKey>)> data, response status code and response headers
     def blacklisted_keys_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BlacklistedKeysApi.blacklisted_keys_list ...'
@@ -351,7 +351,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<BlacklistedKey>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

@@ -142,7 +142,7 @@ Response<(nil (empty response body))>
 
 ## screenshot_marker_show
 
-> Object screenshot_marker_show(project_id, screenshot_id, id, opts)
+> ScreenshotMarker screenshot_marker_show(project_id, screenshot_id, id, opts)
 
 Get a single screenshot marker
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**ScreenshotMarker**](ScreenshotMarker.md))>
 
 ### Authorization
 
@@ -274,7 +274,7 @@ Response<([**ScreenshotMarker**](ScreenshotMarker.md))>
 
 ## screenshot_markers_list
 
-> Array&lt;Object&gt; screenshot_markers_list(project_id, id, opts)
+> Array&lt;ScreenshotMarker&gt; screenshot_markers_list(project_id, id, opts)
 
 List screenshot markers
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;ScreenshotMarker&gt;**](ScreenshotMarker.md))>
 
 ### Authorization
 

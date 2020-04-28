@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## order_confirm
 
-> Object order_confirm(project_id, id, order_confirm_parameters, opts)
+> TranslationOrder order_confirm(project_id, id, order_confirm_parameters, opts)
 
 Confirm an order
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TranslationOrder**](TranslationOrder.md))>
 
 ### Authorization
 
@@ -274,7 +274,7 @@ Response<([**TranslationOrder**](TranslationOrder.md))>
 
 ## orders_list
 
-> Array&lt;Object&gt; orders_list(project_id, orders_list_parameters, opts)
+> Array&lt;TranslationOrder&gt; orders_list(project_id, orders_list_parameters, opts)
 
 List orders
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;TranslationOrder&gt;**](TranslationOrder.md))>
 
 ### Authorization
 

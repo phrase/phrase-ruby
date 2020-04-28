@@ -140,7 +140,7 @@ Response<(nil (empty response body))>
 
 ## styleguide_show
 
-> Object styleguide_show(project_id, id, opts)
+> StyleguideDetails styleguide_show(project_id, id, opts)
 
 Get a single style guide
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**StyleguideDetails**](StyleguideDetails.md))>
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Response<(**Object**)>
 
 ## styleguide_update
 
-> Object styleguide_update(project_id, id, styleguide_update_parameters, opts)
+> StyleguideDetails styleguide_update(project_id, id, styleguide_update_parameters, opts)
 
 Update a style guide
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**StyleguideDetails**](StyleguideDetails.md))>
 
 ### Authorization
 

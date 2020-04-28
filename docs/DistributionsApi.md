@@ -204,7 +204,7 @@ Response<([**Distribution**](Distribution.md))>
 
 ## distribution_update
 
-> Object distribution_update(account_id, id, distribution_update_parameters, opts)
+> Distribution distribution_update(account_id, id, distribution_update_parameters, opts)
 
 Update a distribution
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Distribution**](Distribution.md))>
 
 ### Authorization
 

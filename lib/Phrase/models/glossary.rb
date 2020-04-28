@@ -28,7 +28,7 @@ module Phrase
       {
         :'id' => :'String',
         :'name' => :'String',
-        :'projects' => :'Array<Object>',
+        :'projects' => :'Array<ProjectShort>',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }

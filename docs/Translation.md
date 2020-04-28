@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **excluded** | **Boolean** |  | [optional] 
 **plural_suffix** | **String** |  | [optional] 
 **key** | [**KeyPreview**](KeyPreview.md) |  | [optional] 
-**locale** | **Object** |  | [optional] 
+**locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **placeholders** | **Array&lt;String&gt;** |  | [optional] 
 **state** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 

@@ -14,7 +14,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<Glossary>]
     def glossaries_list(account_id, opts = {})
       data, _status_code, _headers = glossaries_list_with_http_info(account_id, opts)
       data
@@ -27,7 +27,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Glossary>)>, Integer, Hash)>] Response<(Array<Glossary>)> data, response status code and response headers
     def glossaries_list_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: GlossaryApi.glossaries_list ...'
@@ -57,7 +57,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Glossary>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -300,7 +300,7 @@ module Phrase
     # @param glossary_update_parameters [GlossaryUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [Glossary]
     def glossary_update(account_id, id, glossary_update_parameters, opts = {})
       data, _status_code, _headers = glossary_update_with_http_info(account_id, id, glossary_update_parameters, opts)
       data
@@ -313,7 +313,7 @@ module Phrase
     # @param glossary_update_parameters [GlossaryUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(Glossary)>, Integer, Hash)>] Response<(Glossary)> data, response status code and response headers
     def glossary_update_with_http_info(account_id, id, glossary_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: GlossaryApi.glossary_update ...'
@@ -351,7 +351,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(glossary_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'Glossary' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

@@ -12,7 +12,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Account]
+    # @return [AccountDetails]
     def account_show(id, opts = {})
       data, _status_code, _headers = account_show_with_http_info(id, opts)
       data
@@ -23,7 +23,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Account)>, Integer, Hash)>] Response<(Account)> data, response status code and response headers
+    # @return [Array<(Response<(AccountDetails)>, Integer, Hash)>] Response<(AccountDetails)> data, response status code and response headers
     def account_show_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AccountsApi.account_show ...'
@@ -51,7 +51,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Account' 
+      return_type = opts[:return_type] || 'AccountDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

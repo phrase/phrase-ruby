@@ -40,7 +40,7 @@ module Phrase
         :'description' => :'String',
         :'translatable' => :'Boolean',
         :'case_sensitive' => :'Boolean',
-        :'translations' => :'Array<Object>',
+        :'translations' => :'Array<GlossaryTermTranslation>',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }

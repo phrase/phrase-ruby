@@ -50,7 +50,7 @@ module Phrase
         :'excluded' => :'Boolean',
         :'plural_suffix' => :'String',
         :'key' => :'KeyPreview',
-        :'locale' => :'Object',
+        :'locale' => :'LocalePreview',
         :'placeholders' => :'Array<String>',
         :'state' => :'String',
         :'created_at' => :'DateTime',

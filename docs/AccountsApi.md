@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## account_show
 
-> Account account_show(id, opts)
+> AccountDetails account_show(id, opts)
 
 Get a single account
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<([**Account**](Account.md))>
+Response<([**AccountDetails**](AccountDetails.md))>
 
 ### Authorization
 

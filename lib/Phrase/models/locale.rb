@@ -48,7 +48,7 @@ module Phrase
         :'main' => :'Boolean',
         :'rtl' => :'Boolean',
         :'plural_forms' => :'Array<String>',
-        :'source_locale' => :'Object',
+        :'source_locale' => :'LocalePreview',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }

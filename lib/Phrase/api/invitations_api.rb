@@ -155,7 +155,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [Invitation]
     def invitation_resend(account_id, id, opts = {})
       data, _status_code, _headers = invitation_resend_with_http_info(account_id, id, opts)
       data
@@ -167,7 +167,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(Invitation)>, Integer, Hash)>] Response<(Invitation)> data, response status code and response headers
     def invitation_resend_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InvitationsApi.invitation_resend ...'
@@ -199,7 +199,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'Invitation' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -300,7 +300,7 @@ module Phrase
     # @param invitation_update_parameters [InvitationUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [Invitation]
     def invitation_update(account_id, id, invitation_update_parameters, opts = {})
       data, _status_code, _headers = invitation_update_with_http_info(account_id, id, invitation_update_parameters, opts)
       data
@@ -313,7 +313,7 @@ module Phrase
     # @param invitation_update_parameters [InvitationUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(Invitation)>, Integer, Hash)>] Response<(Invitation)> data, response status code and response headers
     def invitation_update_with_http_info(account_id, id, invitation_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InvitationsApi.invitation_update ...'
@@ -351,7 +351,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(invitation_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'Invitation' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -380,7 +380,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<Invitation>]
     def invitations_list(account_id, opts = {})
       data, _status_code, _headers = invitations_list_with_http_info(account_id, opts)
       data
@@ -393,7 +393,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Invitation>)>, Integer, Hash)>] Response<(Array<Invitation>)> data, response status code and response headers
     def invitations_list_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InvitationsApi.invitations_list ...'
@@ -423,7 +423,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Invitation>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

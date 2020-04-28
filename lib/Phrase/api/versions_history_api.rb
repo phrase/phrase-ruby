@@ -15,7 +15,7 @@ module Phrase
     # @param version_show_parameters [VersionShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [TranslationVersionWithUser]
     def version_show(project_id, translation_id, id, version_show_parameters, opts = {})
       data, _status_code, _headers = version_show_with_http_info(project_id, translation_id, id, version_show_parameters, opts)
       data
@@ -29,7 +29,7 @@ module Phrase
     # @param version_show_parameters [VersionShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(TranslationVersionWithUser)>, Integer, Hash)>] Response<(TranslationVersionWithUser)> data, response status code and response headers
     def version_show_with_http_info(project_id, translation_id, id, version_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VersionsHistoryApi.version_show ...'
@@ -71,7 +71,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(version_show_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'TranslationVersionWithUser' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

@@ -55,7 +55,7 @@ describe 'StyleGuidesApi' do
   # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [StyleguideDetails]
   describe 'styleguide_show test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -70,7 +70,7 @@ describe 'StyleGuidesApi' do
   # @param styleguide_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [StyleguideDetails]
   describe 'styleguide_update test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -42,7 +42,7 @@ describe 'TranslationsApi' do
   # @param translation_exclude_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [TranslationDetails]
   describe 'translation_exclude test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -57,7 +57,7 @@ describe 'TranslationsApi' do
   # @param translation_include_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [TranslationDetails]
   describe 'translation_include test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -72,7 +72,7 @@ describe 'TranslationsApi' do
   # @param translation_review_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [TranslationDetails]
   describe 'translation_review test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -87,7 +87,7 @@ describe 'TranslationsApi' do
   # @param translation_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [TranslationDetails]
   describe 'translation_show test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -102,7 +102,7 @@ describe 'TranslationsApi' do
   # @param translation_unverify_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [TranslationDetails]
   describe 'translation_unverify test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -117,7 +117,7 @@ describe 'TranslationsApi' do
   # @param translation_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [TranslationDetails]
   describe 'translation_update test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -132,7 +132,7 @@ describe 'TranslationsApi' do
   # @param translation_verify_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [TranslationDetails]
   describe 'translation_verify test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -149,7 +149,7 @@ describe 'TranslationsApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-  # @return [Array<Object>]
+  # @return [Array<Translation>]
   describe 'translations_by_key test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -166,7 +166,7 @@ describe 'TranslationsApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-  # @return [Array<Object>]
+  # @return [Array<Translation>]
   describe 'translations_by_locale test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -180,7 +180,7 @@ describe 'TranslationsApi' do
   # @param translations_exclude_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [AffectedCount]
   describe 'translations_exclude test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -194,7 +194,7 @@ describe 'TranslationsApi' do
   # @param translations_include_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [AffectedCount]
   describe 'translations_include test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -224,7 +224,7 @@ describe 'TranslationsApi' do
   # @param translations_review_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [AffectedCount]
   describe 'translations_review test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -240,7 +240,7 @@ describe 'TranslationsApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-  # @return [Array<Object>]
+  # @return [Array<Translation>]
   describe 'translations_search test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -254,7 +254,7 @@ describe 'TranslationsApi' do
   # @param translations_unverify_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [AffectedCount]
   describe 'translations_unverify test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

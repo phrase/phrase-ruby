@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## glossaries_list
 
-> Array&lt;Object&gt; glossaries_list(account_id, opts)
+> Array&lt;Glossary&gt; glossaries_list(account_id, opts)
 
 List glossaries
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Glossary&gt;**](Glossary.md))>
 
 ### Authorization
 
@@ -270,7 +270,7 @@ Response<([**Glossary**](Glossary.md))>
 
 ## glossary_update
 
-> Object glossary_update(account_id, id, glossary_update_parameters, opts)
+> Glossary glossary_update(account_id, id, glossary_update_parameters, opts)
 
 Update a glossary
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Glossary**](Glossary.md))>
 
 ### Authorization
 

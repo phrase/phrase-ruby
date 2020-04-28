@@ -146,7 +146,7 @@ Response<(nil (empty response body))>
 
 ## key_show
 
-> Object key_show(project_id, id, key_show_parameters, opts)
+> TranslationKeyDetails key_show(project_id, id, key_show_parameters, opts)
 
 Get a single key
 
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TranslationKeyDetails**](TranslationKeyDetails.md))>
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Response<(**Object**)>
 
 ## key_update
 
-> Object key_update(project_id, id, key_update_parameters, opts)
+> TranslationKeyDetails key_update(project_id, id, key_update_parameters, opts)
 
 Update a key
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TranslationKeyDetails**](TranslationKeyDetails.md))>
 
 ### Authorization
 
@@ -410,7 +410,7 @@ Response<([**Array&lt;TranslationKey&gt;**](TranslationKey.md))>
 
 ## keys_search
 
-> Array&lt;Object&gt; keys_search(project_id, keys_search_parameters, opts)
+> Array&lt;TranslationKey&gt; keys_search(project_id, keys_search_parameters, opts)
 
 Search keys
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;TranslationKey&gt;**](TranslationKey.md))>
 
 ### Authorization
 
@@ -478,7 +478,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## keys_tag
 
-> Object keys_tag(project_id, keys_tag_parameters, opts)
+> AffectedResources keys_tag(project_id, keys_tag_parameters, opts)
 
 Add tags to collection of keys
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**AffectedResources**](AffectedResources.md))>
 
 ### Authorization
 
@@ -542,7 +542,7 @@ Response<(**Object**)>
 
 ## keys_untag
 
-> Object keys_untag(project_id, keys_untag_parameters, opts)
+> AffectedResources keys_untag(project_id, keys_untag_parameters, opts)
 
 Remove tags from collection of keys
 
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**AffectedResources**](AffectedResources.md))>
 
 ### Authorization
 

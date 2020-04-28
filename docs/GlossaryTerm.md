@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **translatable** | **Boolean** |  | [optional] 
 **case_sensitive** | **Boolean** |  | [optional] 
-**translations** | **Array&lt;Object&gt;** |  | [optional] 
+**translations** | [**Array&lt;GlossaryTermTranslation&gt;**](GlossaryTermTranslation.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 

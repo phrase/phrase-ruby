@@ -239,7 +239,7 @@ module Phrase
     # @param gitlab_sync_import_parameters [GitlabSyncImportParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<Object>]
+    # @return [Array<Upload>]
     def gitlab_sync_import(gitlab_sync_id, gitlab_sync_import_parameters, opts = {})
       data, _status_code, _headers = gitlab_sync_import_with_http_info(gitlab_sync_id, gitlab_sync_import_parameters, opts)
       data
@@ -251,7 +251,7 @@ module Phrase
     # @param gitlab_sync_import_parameters [GitlabSyncImportParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Upload>)>, Integer, Hash)>] Response<(Array<Upload>)> data, response status code and response headers
     def gitlab_sync_import_with_http_info(gitlab_sync_id, gitlab_sync_import_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: GitLabSyncApi.gitlab_sync_import ...'
@@ -285,7 +285,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(gitlab_sync_import_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Upload>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -312,7 +312,7 @@ module Phrase
     # @param gitlab_sync_list_parameters [GitlabSyncListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<Object>]
+    # @return [Array<GitlabSync>]
     def gitlab_sync_list(gitlab_sync_list_parameters, opts = {})
       data, _status_code, _headers = gitlab_sync_list_with_http_info(gitlab_sync_list_parameters, opts)
       data
@@ -323,7 +323,7 @@ module Phrase
     # @param gitlab_sync_list_parameters [GitlabSyncListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<GitlabSync>)>, Integer, Hash)>] Response<(Array<GitlabSync>)> data, response status code and response headers
     def gitlab_sync_list_with_http_info(gitlab_sync_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: GitLabSyncApi.gitlab_sync_list ...'
@@ -353,7 +353,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(gitlab_sync_list_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<GitlabSync>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -455,7 +455,7 @@ module Phrase
     # @param gitlab_sync_update_parameters [GitlabSyncUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [GitlabSync]
     def gitlab_sync_update(id, gitlab_sync_update_parameters, opts = {})
       data, _status_code, _headers = gitlab_sync_update_with_http_info(id, gitlab_sync_update_parameters, opts)
       data
@@ -467,7 +467,7 @@ module Phrase
     # @param gitlab_sync_update_parameters [GitlabSyncUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(GitlabSync)>, Integer, Hash)>] Response<(GitlabSync)> data, response status code and response headers
     def gitlab_sync_update_with_http_info(id, gitlab_sync_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: GitLabSyncApi.gitlab_sync_update ...'
@@ -501,7 +501,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(gitlab_sync_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GitlabSync' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

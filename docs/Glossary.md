@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**projects** | **Array&lt;Object&gt;** |  | [optional] 
+**projects** | [**Array&lt;ProjectShort&gt;**](ProjectShort.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 

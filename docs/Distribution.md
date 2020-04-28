@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 **platforms** | **Array&lt;String&gt;** |  | [optional] 
-**releases** | **Array&lt;Object&gt;** |  | [optional] 
+**releases** | [**Array&lt;ReleasePreview&gt;**](ReleasePreview.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **deleted_at** | **DateTime** |  | [optional] 
 

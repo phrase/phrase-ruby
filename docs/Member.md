@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **email** | **String** |  | [optional] 
 **username** | **String** |  | [optional] 
 **role** | **String** |  | [optional] 
-**projects** | **Array&lt;Object&gt;** |  | [optional] 
+**projects** | [**Array&lt;ProjectLocales&gt;**](ProjectLocales.md) |  | [optional] 
 
 ## Code Sample
 

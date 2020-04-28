@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **updated_at** | **DateTime** |  | [optional] 
 **merged_at** | **DateTime** |  | [optional] 
 **merged_by** | [**UserPreview**](UserPreview.md) |  | [optional] 
-**created_by** | **Object** |  | [optional] 
+**created_by** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **state** | **String** |  | [optional] 
 
 ## Code Sample

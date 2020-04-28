@@ -211,7 +211,7 @@ Response<([**Array&lt;GitlabSyncHistory&gt;**](GitlabSyncHistory.md))>
 
 ## gitlab_sync_import
 
-> Array&lt;Object&gt; gitlab_sync_import(gitlab_sync_id, gitlab_sync_import_parameters, opts)
+> Array&lt;Upload&gt; gitlab_sync_import(gitlab_sync_id, gitlab_sync_import_parameters, opts)
 
 Import from GitLab to Phrase
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Upload&gt;**](Upload.md))>
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## gitlab_sync_list
 
-> Array&lt;Object&gt; gitlab_sync_list(gitlab_sync_list_parameters, opts)
+> Array&lt;GitlabSync&gt; gitlab_sync_list(gitlab_sync_list_parameters, opts)
 
 List GitLab syncs
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;GitlabSync&gt;**](GitlabSync.md))>
 
 ### Authorization
 
@@ -401,7 +401,7 @@ Response<([**GitlabSync**](GitlabSync.md))>
 
 ## gitlab_sync_update
 
-> Object gitlab_sync_update(id, gitlab_sync_update_parameters, opts)
+> GitlabSync gitlab_sync_update(id, gitlab_sync_update_parameters, opts)
 
 Update single Sync Setting
 
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**GitlabSync**](GitlabSync.md))>
 
 ### Authorization
 

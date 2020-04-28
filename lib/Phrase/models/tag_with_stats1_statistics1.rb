@@ -1,28 +1,24 @@
 require 'date'
 
 module Phrase
-  class ErrorsErrors
-    attr_accessor :resource
+  class TagWithStats1Statistics1
+    attr_accessor :locale
 
-    attr_accessor :field
-
-    attr_accessor :message
+    attr_accessor :statistics
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'resource' => :'resource',
-        :'field' => :'field',
-        :'message' => :'message'
+        :'locale' => :'locale',
+        :'statistics' => :'statistics'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'resource' => :'String',
-        :'field' => :'String',
-        :'message' => :'String'
+        :'locale' => :'LocalePreview',
+        :'statistics' => :'TagWithStats1Statistics'
       }
     end
 
@@ -36,27 +32,23 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::ErrorsErrors` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::TagWithStats1Statistics1` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::ErrorsErrors`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::TagWithStats1Statistics1`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'resource')
-        self.resource = attributes[:'resource']
+      if attributes.key?(:'locale')
+        self.locale = attributes[:'locale']
       end
 
-      if attributes.key?(:'field')
-        self.field = attributes[:'field']
-      end
-
-      if attributes.key?(:'message')
-        self.message = attributes[:'message']
+      if attributes.key?(:'statistics')
+        self.statistics = attributes[:'statistics']
       end
     end
 
@@ -78,9 +70,8 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          resource == o.resource &&
-          field == o.field &&
-          message == o.message
+          locale == o.locale &&
+          statistics == o.statistics
     end
 
     # @see the `==` method
@@ -92,7 +83,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [resource, field, message].hash
+      [locale, statistics].hash
     end
 
     # Builds the object from hash

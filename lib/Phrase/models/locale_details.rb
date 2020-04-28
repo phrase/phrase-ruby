@@ -1,24 +1,60 @@
 require 'date'
 
 module Phrase
-  class Errors
-    attr_accessor :message
+  class LocaleDetails
+    attr_accessor :id
 
-    attr_accessor :errors
+    attr_accessor :name
+
+    attr_accessor :code
+
+    attr_accessor :default
+
+    attr_accessor :main
+
+    attr_accessor :rtl
+
+    attr_accessor :plural_forms
+
+    attr_accessor :source_locale
+
+    attr_accessor :created_at
+
+    attr_accessor :updated_at
+
+    attr_accessor :statistics
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'message' => :'message',
-        :'errors' => :'errors'
+        :'id' => :'id',
+        :'name' => :'name',
+        :'code' => :'code',
+        :'default' => :'default',
+        :'main' => :'main',
+        :'rtl' => :'rtl',
+        :'plural_forms' => :'plural_forms',
+        :'source_locale' => :'source_locale',
+        :'created_at' => :'created_at',
+        :'updated_at' => :'updated_at',
+        :'statistics' => :'statistics'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'message' => :'String',
-        :'errors' => :'Array<ErrorsErrors>'
+        :'id' => :'String',
+        :'name' => :'String',
+        :'code' => :'String',
+        :'default' => :'Boolean',
+        :'main' => :'Boolean',
+        :'rtl' => :'Boolean',
+        :'plural_forms' => :'Array<String>',
+        :'source_locale' => :'LocalePreview',
+        :'created_at' => :'DateTime',
+        :'updated_at' => :'DateTime',
+        :'statistics' => :'LocaleStatistics'
       }
     end
 
@@ -28,29 +64,73 @@ module Phrase
       ])
     end
 
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'Locale',
+      :'LocaleDetails1'
+      ]
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::Errors` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::LocaleDetails` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::Errors`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::LocaleDetails`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'message')
-        self.message = attributes[:'message']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'errors')
-        if (value = attributes[:'errors']).is_a?(Array)
-          self.errors = value
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
+      end
+
+      if attributes.key?(:'default')
+        self.default = attributes[:'default']
+      end
+
+      if attributes.key?(:'main')
+        self.main = attributes[:'main']
+      end
+
+      if attributes.key?(:'rtl')
+        self.rtl = attributes[:'rtl']
+      end
+
+      if attributes.key?(:'plural_forms')
+        if (value = attributes[:'plural_forms']).is_a?(Array)
+          self.plural_forms = value
         end
+      end
+
+      if attributes.key?(:'source_locale')
+        self.source_locale = attributes[:'source_locale']
+      end
+
+      if attributes.key?(:'created_at')
+        self.created_at = attributes[:'created_at']
+      end
+
+      if attributes.key?(:'updated_at')
+        self.updated_at = attributes[:'updated_at']
+      end
+
+      if attributes.key?(:'statistics')
+        self.statistics = attributes[:'statistics']
       end
     end
 
@@ -72,8 +152,17 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          message == o.message &&
-          errors == o.errors
+          id == o.id &&
+          name == o.name &&
+          code == o.code &&
+          default == o.default &&
+          main == o.main &&
+          rtl == o.rtl &&
+          plural_forms == o.plural_forms &&
+          source_locale == o.source_locale &&
+          created_at == o.created_at &&
+          updated_at == o.updated_at &&
+          statistics == o.statistics
     end
 
     # @see the `==` method
@@ -85,7 +174,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [message, errors].hash
+      [id, name, code, default, main, rtl, plural_forms, source_locale, created_at, updated_at, statistics].hash
     end
 
     # Builds the object from hash

@@ -268,7 +268,7 @@ Response<(nil (empty response body))>
 
 ## webhook_update
 
-> Object webhook_update(project_id, id, webhook_update_parameters, opts)
+> Webhook webhook_update(project_id, id, webhook_update_parameters, opts)
 
 Update a webhook
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Webhook**](Webhook.md))>
 
 ### Authorization
 
@@ -334,7 +334,7 @@ Response<(**Object**)>
 
 ## webhooks_list
 
-> Array&lt;Object&gt; webhooks_list(project_id, opts)
+> Array&lt;Webhook&gt; webhooks_list(project_id, opts)
 
 List webhooks
 
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Webhook&gt;**](Webhook.md))>
 
 ### Authorization
 

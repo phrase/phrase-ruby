@@ -142,7 +142,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Project]
+    # @return [ProjectDetails]
     def project_show(id, opts = {})
       data, _status_code, _headers = project_show_with_http_info(id, opts)
       data
@@ -153,7 +153,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Project)>, Integer, Hash)>] Response<(Project)> data, response status code and response headers
+    # @return [Array<(Response<(ProjectDetails)>, Integer, Hash)>] Response<(ProjectDetails)> data, response status code and response headers
     def project_show_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProjectsApi.project_show ...'
@@ -181,7 +181,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Project' 
+      return_type = opts[:return_type] || 'ProjectDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -209,7 +209,7 @@ module Phrase
     # @param project_update_parameters [ProjectUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [ProjectDetails]
     def project_update(id, project_update_parameters, opts = {})
       data, _status_code, _headers = project_update_with_http_info(id, project_update_parameters, opts)
       data
@@ -221,7 +221,7 @@ module Phrase
     # @param project_update_parameters [ProjectUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(ProjectDetails)>, Integer, Hash)>] Response<(ProjectDetails)> data, response status code and response headers
     def project_update_with_http_info(id, project_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProjectsApi.project_update ...'
@@ -255,7 +255,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(project_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'ProjectDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

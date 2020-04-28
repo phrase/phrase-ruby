@@ -38,8 +38,8 @@ module Phrase
         :'id' => :'String',
         :'content' => :'String',
         :'plural_suffix' => :'String',
-        :'key' => :'Object',
-        :'locale' => :'Object',
+        :'key' => :'KeyPreview',
+        :'locale' => :'LocalePreview',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
         :'changed_at' => :'DateTime'

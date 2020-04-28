@@ -242,7 +242,7 @@ module Phrase
     # @param locale_show_parameters [LocaleShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [LocaleDetails]
     def locale_show(project_id, id, locale_show_parameters, opts = {})
       data, _status_code, _headers = locale_show_with_http_info(project_id, id, locale_show_parameters, opts)
       data
@@ -255,7 +255,7 @@ module Phrase
     # @param locale_show_parameters [LocaleShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(LocaleDetails)>, Integer, Hash)>] Response<(LocaleDetails)> data, response status code and response headers
     def locale_show_with_http_info(project_id, id, locale_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalesApi.locale_show ...'
@@ -293,7 +293,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(locale_show_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'LocaleDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -322,7 +322,7 @@ module Phrase
     # @param locale_update_parameters [LocaleUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [LocaleDetails]
     def locale_update(project_id, id, locale_update_parameters, opts = {})
       data, _status_code, _headers = locale_update_with_http_info(project_id, id, locale_update_parameters, opts)
       data
@@ -335,7 +335,7 @@ module Phrase
     # @param locale_update_parameters [LocaleUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(LocaleDetails)>, Integer, Hash)>] Response<(LocaleDetails)> data, response status code and response headers
     def locale_update_with_http_info(project_id, id, locale_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalesApi.locale_update ...'
@@ -373,7 +373,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(locale_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'LocaleDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

@@ -14,7 +14,7 @@ module Phrase
     # @param job_complete_parameters [JobCompleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [JobDetails]
     def job_complete(project_id, id, job_complete_parameters, opts = {})
       data, _status_code, _headers = job_complete_with_http_info(project_id, id, job_complete_parameters, opts)
       data
@@ -27,7 +27,7 @@ module Phrase
     # @param job_complete_parameters [JobCompleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobDetails)>, Integer, Hash)>] Response<(JobDetails)> data, response status code and response headers
     def job_complete_with_http_info(project_id, id, job_complete_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_complete ...'
@@ -65,7 +65,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_complete_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -244,7 +244,7 @@ module Phrase
     # @param job_keys_create_parameters [JobKeysCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [JobDetails]
     def job_keys_create(project_id, id, job_keys_create_parameters, opts = {})
       data, _status_code, _headers = job_keys_create_with_http_info(project_id, id, job_keys_create_parameters, opts)
       data
@@ -257,7 +257,7 @@ module Phrase
     # @param job_keys_create_parameters [JobKeysCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobDetails)>, Integer, Hash)>] Response<(JobDetails)> data, response status code and response headers
     def job_keys_create_with_http_info(project_id, id, job_keys_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_keys_create ...'
@@ -295,7 +295,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_keys_create_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -402,7 +402,7 @@ module Phrase
     # @param job_reopen_parameters [JobReopenParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [JobDetails]
     def job_reopen(project_id, id, job_reopen_parameters, opts = {})
       data, _status_code, _headers = job_reopen_with_http_info(project_id, id, job_reopen_parameters, opts)
       data
@@ -415,7 +415,7 @@ module Phrase
     # @param job_reopen_parameters [JobReopenParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobDetails)>, Integer, Hash)>] Response<(JobDetails)> data, response status code and response headers
     def job_reopen_with_http_info(project_id, id, job_reopen_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_reopen ...'
@@ -453,7 +453,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_reopen_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -482,7 +482,7 @@ module Phrase
     # @param job_show_parameters [JobShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [JobDetails]
     def job_show(project_id, id, job_show_parameters, opts = {})
       data, _status_code, _headers = job_show_with_http_info(project_id, id, job_show_parameters, opts)
       data
@@ -495,7 +495,7 @@ module Phrase
     # @param job_show_parameters [JobShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobDetails)>, Integer, Hash)>] Response<(JobDetails)> data, response status code and response headers
     def job_show_with_http_info(project_id, id, job_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_show ...'
@@ -533,7 +533,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_show_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -562,7 +562,7 @@ module Phrase
     # @param job_start_parameters [JobStartParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [JobDetails]
     def job_start(project_id, id, job_start_parameters, opts = {})
       data, _status_code, _headers = job_start_with_http_info(project_id, id, job_start_parameters, opts)
       data
@@ -575,7 +575,7 @@ module Phrase
     # @param job_start_parameters [JobStartParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobDetails)>, Integer, Hash)>] Response<(JobDetails)> data, response status code and response headers
     def job_start_with_http_info(project_id, id, job_start_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_start ...'
@@ -613,7 +613,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_start_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -642,7 +642,7 @@ module Phrase
     # @param job_update_parameters [JobUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [JobDetails]
     def job_update(project_id, id, job_update_parameters, opts = {})
       data, _status_code, _headers = job_update_with_http_info(project_id, id, job_update_parameters, opts)
       data
@@ -655,7 +655,7 @@ module Phrase
     # @param job_update_parameters [JobUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobDetails)>, Integer, Hash)>] Response<(JobDetails)> data, response status code and response headers
     def job_update_with_http_info(project_id, id, job_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_update ...'
@@ -693,7 +693,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

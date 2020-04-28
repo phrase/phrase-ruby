@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **platforms** | **Array&lt;String&gt;** |  | [optional] 
 **environments** | **Array&lt;String&gt;** |  | [optional] 
 **locale_codes** | **Array&lt;String&gt;** |  | [optional] 
-**project** | **Object** |  | [optional] 
+**project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 

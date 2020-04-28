@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## job_locale_complete
 
-> Object job_locale_complete(project_id, job_id, id, job_locale_complete_parameters, opts)
+> JobLocale job_locale_complete(project_id, job_id, id, job_locale_complete_parameters, opts)
 
 Complete a job locale
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobLocale**](JobLocale.md))>
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Response<(nil (empty response body))>
 
 ## job_locale_reopen
 
-> Object job_locale_reopen(project_id, job_id, id, job_locale_reopen_parameters, opts)
+> JobLocale job_locale_reopen(project_id, job_id, id, job_locale_reopen_parameters, opts)
 
 Reopen a job locale
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobLocale**](JobLocale.md))>
 
 ### Authorization
 
@@ -287,7 +287,7 @@ Response<([**JobLocale**](JobLocale.md))>
 
 ## job_locale_update
 
-> Object job_locale_update(project_id, job_id, id, job_locale_update_parameters, opts)
+> JobLocale job_locale_update(project_id, job_id, id, job_locale_update_parameters, opts)
 
 Update a job locale
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobLocale**](JobLocale.md))>
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Response<(nil (empty response body))>
 
 ## job_locales_list
 
-> Array&lt;Object&gt; job_locales_list(project_id, job_id, job_locales_list_parameters, opts)
+> Array&lt;JobLocale&gt; job_locales_list(project_id, job_id, job_locales_list_parameters, opts)
 
 List job locales
 
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;JobLocale&gt;**](JobLocale.md))>
 
 ### Authorization
 

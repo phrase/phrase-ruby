@@ -141,7 +141,7 @@ Response<(nil (empty response body))>
 
 ## tag_show
 
-> Object tag_show(project_id, name, tag_show_parameters, opts)
+> TagWithStats tag_show(project_id, name, tag_show_parameters, opts)
 
 Get a single tag
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TagWithStats**](TagWithStats.md))>
 
 ### Authorization
 

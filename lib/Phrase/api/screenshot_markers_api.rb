@@ -162,7 +162,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [ScreenshotMarker]
     def screenshot_marker_show(project_id, screenshot_id, id, opts = {})
       data, _status_code, _headers = screenshot_marker_show_with_http_info(project_id, screenshot_id, id, opts)
       data
@@ -175,7 +175,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(ScreenshotMarker)>, Integer, Hash)>] Response<(ScreenshotMarker)> data, response status code and response headers
     def screenshot_marker_show_with_http_info(project_id, screenshot_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ScreenshotMarkersApi.screenshot_marker_show ...'
@@ -211,7 +211,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'ScreenshotMarker' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -321,7 +321,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<ScreenshotMarker>]
     def screenshot_markers_list(project_id, id, opts = {})
       data, _status_code, _headers = screenshot_markers_list_with_http_info(project_id, id, opts)
       data
@@ -335,7 +335,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<ScreenshotMarker>)>, Integer, Hash)>] Response<(Array<ScreenshotMarker>)> data, response status code and response headers
     def screenshot_markers_list_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ScreenshotMarkersApi.screenshot_markers_list ...'
@@ -369,7 +369,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<ScreenshotMarker>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

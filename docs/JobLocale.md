@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **job** | [**JobPreview**](JobPreview.md) |  | [optional] 
-**locale** | **Object** |  | [optional] 
-**users** | **Array&lt;Object&gt;** |  | [optional] 
+**locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
+**users** | [**Array&lt;UserPreview&gt;**](UserPreview.md) |  | [optional] 
 
 ## Code Sample
 

@@ -168,7 +168,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [Release]
     def release_publish(account_id, distribution_id, id, opts = {})
       data, _status_code, _headers = release_publish_with_http_info(account_id, distribution_id, id, opts)
       data
@@ -181,7 +181,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(Release)>, Integer, Hash)>] Response<(Release)> data, response status code and response headers
     def release_publish_with_http_info(account_id, distribution_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ReleasesApi.release_publish ...'
@@ -217,7 +217,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'Release' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -325,7 +325,7 @@ module Phrase
     # @param release_update_parameters [ReleaseUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [Release]
     def release_update(account_id, distribution_id, id, release_update_parameters, opts = {})
       data, _status_code, _headers = release_update_with_http_info(account_id, distribution_id, id, release_update_parameters, opts)
       data
@@ -339,7 +339,7 @@ module Phrase
     # @param release_update_parameters [ReleaseUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(Release)>, Integer, Hash)>] Response<(Release)> data, response status code and response headers
     def release_update_with_http_info(account_id, distribution_id, id, release_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ReleasesApi.release_update ...'
@@ -381,7 +381,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(release_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'Release' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

@@ -71,7 +71,7 @@ module Phrase
         :'translation_type' => :'String',
         :'progress_percent' => :'Integer',
         :'source_locale' => :'LocalePreview',
-        :'target_locales' => :'Array<Object>',
+        :'target_locales' => :'Array<LocalePreview>',
         :'tag' => :'String',
         :'styleguide' => :'StyleguidePreview',
         :'unverify_translations_upon_delivery' => :'Boolean',

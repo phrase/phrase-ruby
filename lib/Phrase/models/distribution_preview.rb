@@ -34,7 +34,7 @@ module Phrase
       {
         :'id' => :'String',
         :'name' => :'String',
-        :'project' => :'Object',
+        :'project' => :'ProjectShort',
         :'platforms' => :'Array<String>',
         :'release_count' => :'Integer',
         :'created_at' => :'DateTime',

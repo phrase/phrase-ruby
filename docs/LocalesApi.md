@@ -208,7 +208,7 @@ Response<(nil (empty response body))>
 
 ## locale_show
 
-> Object locale_show(project_id, id, locale_show_parameters, opts)
+> LocaleDetails locale_show(project_id, id, locale_show_parameters, opts)
 
 Get a single locale
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**LocaleDetails**](LocaleDetails.md))>
 
 ### Authorization
 
@@ -274,7 +274,7 @@ Response<(**Object**)>
 
 ## locale_update
 
-> Object locale_update(project_id, id, locale_update_parameters, opts)
+> LocaleDetails locale_update(project_id, id, locale_update_parameters, opts)
 
 Update a locale
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**LocaleDetails**](LocaleDetails.md))>
 
 ### Authorization
 

@@ -141,7 +141,7 @@ Response<(nil (empty response body))>
 
 ## invitation_resend
 
-> Object invitation_resend(account_id, id, opts)
+> Invitation invitation_resend(account_id, id, opts)
 
 Resend an invitation
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Invitation**](Invitation.md))>
 
 ### Authorization
 
@@ -269,7 +269,7 @@ Response<([**Invitation**](Invitation.md))>
 
 ## invitation_update
 
-> Object invitation_update(account_id, id, invitation_update_parameters, opts)
+> Invitation invitation_update(account_id, id, invitation_update_parameters, opts)
 
 Update an invitation
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Invitation**](Invitation.md))>
 
 ### Authorization
 
@@ -335,7 +335,7 @@ Response<(**Object**)>
 
 ## invitations_list
 
-> Array&lt;Object&gt; invitations_list(account_id, opts)
+> Array&lt;Invitation&gt; invitations_list(account_id, opts)
 
 List invitations
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Invitation&gt;**](Invitation.md))>
 
 ### Authorization
 

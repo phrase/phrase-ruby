@@ -136,7 +136,7 @@ Response<(nil (empty response body))>
 
 ## project_show
 
-> Project project_show(id, opts)
+> ProjectDetails project_show(id, opts)
 
 Get a single project
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<([**Project**](Project.md))>
+Response<([**ProjectDetails**](ProjectDetails.md))>
 
 ### Authorization
 
@@ -198,7 +198,7 @@ Response<([**Project**](Project.md))>
 
 ## project_update
 
-> Object project_update(id, project_update_parameters, opts)
+> ProjectDetails project_update(id, project_update_parameters, opts)
 
 Update a project
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**ProjectDetails**](ProjectDetails.md))>
 
 ### Authorization
 

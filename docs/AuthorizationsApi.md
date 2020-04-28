@@ -198,7 +198,7 @@ Response<([**Authorization**](Authorization.md))>
 
 ## authorization_update
 
-> Object authorization_update(id, authorization_update_parameters, opts)
+> Authorization authorization_update(id, authorization_update_parameters, opts)
 
 Update an authorization
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Authorization**](Authorization.md))>
 
 ### Authorization
 
@@ -262,7 +262,7 @@ Response<(**Object**)>
 
 ## authorizations_list
 
-> Array&lt;Object&gt; authorizations_list(opts)
+> Array&lt;Authorization&gt; authorizations_list(opts)
 
 List authorizations
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Authorization&gt;**](Authorization.md))>
 
 ### Authorization
 

@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **platforms** | **Array&lt;String&gt;** |  | [optional] 
 **environments** | **Array&lt;String&gt;** |  | [optional] 
-**locales** | **Array&lt;Object&gt;** |  | [optional] 
-**project** | **Object** |  | [optional] 
+**locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
+**project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 

@@ -164,7 +164,7 @@ module Phrase
     # @param key_show_parameters [KeyShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [TranslationKeyDetails]
     def key_show(project_id, id, key_show_parameters, opts = {})
       data, _status_code, _headers = key_show_with_http_info(project_id, id, key_show_parameters, opts)
       data
@@ -177,7 +177,7 @@ module Phrase
     # @param key_show_parameters [KeyShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(TranslationKeyDetails)>, Integer, Hash)>] Response<(TranslationKeyDetails)> data, response status code and response headers
     def key_show_with_http_info(project_id, id, key_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.key_show ...'
@@ -215,7 +215,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(key_show_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'TranslationKeyDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -244,7 +244,7 @@ module Phrase
     # @param key_update_parameters [KeyUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [TranslationKeyDetails]
     def key_update(project_id, id, key_update_parameters, opts = {})
       data, _status_code, _headers = key_update_with_http_info(project_id, id, key_update_parameters, opts)
       data
@@ -257,7 +257,7 @@ module Phrase
     # @param key_update_parameters [KeyUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(TranslationKeyDetails)>, Integer, Hash)>] Response<(TranslationKeyDetails)> data, response status code and response headers
     def key_update_with_http_info(project_id, id, key_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.key_update ...'
@@ -295,7 +295,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(key_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'TranslationKeyDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -479,7 +479,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<TranslationKey>]
     def keys_search(project_id, keys_search_parameters, opts = {})
       data, _status_code, _headers = keys_search_with_http_info(project_id, keys_search_parameters, opts)
       data
@@ -493,7 +493,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<TranslationKey>)>, Integer, Hash)>] Response<(Array<TranslationKey>)> data, response status code and response headers
     def keys_search_with_http_info(project_id, keys_search_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.keys_search ...'
@@ -529,7 +529,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(keys_search_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<TranslationKey>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -557,7 +557,7 @@ module Phrase
     # @param keys_tag_parameters [KeysTagParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [AffectedResources]
     def keys_tag(project_id, keys_tag_parameters, opts = {})
       data, _status_code, _headers = keys_tag_with_http_info(project_id, keys_tag_parameters, opts)
       data
@@ -569,7 +569,7 @@ module Phrase
     # @param keys_tag_parameters [KeysTagParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(AffectedResources)>, Integer, Hash)>] Response<(AffectedResources)> data, response status code and response headers
     def keys_tag_with_http_info(project_id, keys_tag_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.keys_tag ...'
@@ -603,7 +603,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(keys_tag_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'AffectedResources' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -631,7 +631,7 @@ module Phrase
     # @param keys_untag_parameters [KeysUntagParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [AffectedResources]
     def keys_untag(project_id, keys_untag_parameters, opts = {})
       data, _status_code, _headers = keys_untag_with_http_info(project_id, keys_untag_parameters, opts)
       data
@@ -643,7 +643,7 @@ module Phrase
     # @param keys_untag_parameters [KeysUntagParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(AffectedResources)>, Integer, Hash)>] Response<(AffectedResources)> data, response status code and response headers
     def keys_untag_with_http_info(project_id, keys_untag_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.keys_untag ...'
@@ -677,7 +677,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(keys_untag_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'AffectedResources' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

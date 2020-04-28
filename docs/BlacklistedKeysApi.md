@@ -204,7 +204,7 @@ Response<([**BlacklistedKey**](BlacklistedKey.md))>
 
 ## blacklisted_key_update
 
-> Object blacklisted_key_update(project_id, id, blacklisted_key_update_parameters, opts)
+> BlacklistedKey blacklisted_key_update(project_id, id, blacklisted_key_update_parameters, opts)
 
 Update a blacklisted key
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**BlacklistedKey**](BlacklistedKey.md))>
 
 ### Authorization
 
@@ -270,7 +270,7 @@ Response<(**Object**)>
 
 ## blacklisted_keys_list
 
-> Array&lt;Object&gt; blacklisted_keys_list(project_id, opts)
+> Array&lt;BlacklistedKey&gt; blacklisted_keys_list(project_id, opts)
 
 List blacklisted keys
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;BlacklistedKey&gt;**](BlacklistedKey.md))>
 
 ### Authorization
 

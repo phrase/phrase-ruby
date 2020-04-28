@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **last_export_to_bitbucket_at** | **DateTime** |  | [optional] 
 **last_import_from_bitbucket_at** | **DateTime** |  | [optional] 
 **valid_phraseapp_yaml** | **Boolean** |  | [optional] 
-**phraseapp_projects** | **Array&lt;Object&gt;** |  | [optional] 
+**phraseapp_projects** | [**Array&lt;ProjectShort&gt;**](ProjectShort.md) |  | [optional] 
 
 ## Code Sample
 

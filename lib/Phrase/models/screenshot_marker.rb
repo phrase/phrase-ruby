@@ -34,7 +34,7 @@ module Phrase
         :'presentation_type' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
-        :'translation_key' => :'Object'
+        :'translation_key' => :'TranslationKey'
       }
     end
 

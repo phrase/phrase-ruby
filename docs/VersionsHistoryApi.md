@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## version_show
 
-> Object version_show(project_id, translation_id, id, version_show_parameters, opts)
+> TranslationVersionWithUser version_show(project_id, translation_id, id, version_show_parameters, opts)
 
 Get a single version
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TranslationVersionWithUser**](TranslationVersionWithUser.md))>
 
 ### Authorization
 

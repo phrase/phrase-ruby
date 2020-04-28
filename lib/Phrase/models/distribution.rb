@@ -36,7 +36,7 @@ module Phrase
         :'name' => :'String',
         :'project' => :'ProjectShort',
         :'platforms' => :'Array<String>',
-        :'releases' => :'Array<Object>',
+        :'releases' => :'Array<ReleasePreview>',
         :'created_at' => :'DateTime',
         :'deleted_at' => :'DateTime'
       }

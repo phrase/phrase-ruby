@@ -204,7 +204,7 @@ Response<([**Screenshot**](Screenshot.md))>
 
 ## screenshot_update
 
-> Object screenshot_update(project_id, id, screenshot_update_parameters, opts)
+> Screenshot screenshot_update(project_id, id, screenshot_update_parameters, opts)
 
 Update a screenshot
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Screenshot**](Screenshot.md))>
 
 ### Authorization
 
@@ -270,7 +270,7 @@ Response<(**Object**)>
 
 ## screenshots_list
 
-> Array&lt;Object&gt; screenshots_list(project_id, opts)
+> Array&lt;Screenshot&gt; screenshots_list(project_id, opts)
 
 List screenshots
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Screenshot&gt;**](Screenshot.md))>
 
 ### Authorization
 

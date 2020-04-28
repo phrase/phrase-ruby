@@ -140,7 +140,7 @@ Response<([**Member**](Member.md))>
 
 ## member_update
 
-> Object member_update(account_id, id, member_update_parameters, opts)
+> Member member_update(account_id, id, member_update_parameters, opts)
 
 Update a member
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Member**](Member.md))>
 
 ### Authorization
 
@@ -206,7 +206,7 @@ Response<(**Object**)>
 
 ## members_list
 
-> Array&lt;Object&gt; members_list(account_id, opts)
+> Array&lt;Member&gt; members_list(account_id, opts)
 
 List members
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Member&gt;**](Member.md))>
 
 ### Authorization
 

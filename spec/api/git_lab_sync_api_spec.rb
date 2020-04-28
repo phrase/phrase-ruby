@@ -71,7 +71,7 @@ describe 'GitLabSyncApi' do
   # @param gitlab_sync_import_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Array<Object>]
+  # @return [Array<Upload>]
   describe 'gitlab_sync_import test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -84,7 +84,7 @@ describe 'GitLabSyncApi' do
   # @param gitlab_sync_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Array<Object>]
+  # @return [Array<GitlabSync>]
   describe 'gitlab_sync_list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -112,7 +112,7 @@ describe 'GitLabSyncApi' do
   # @param gitlab_sync_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [GitlabSync]
   describe 'gitlab_sync_update test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -86,7 +86,7 @@ module Phrase
     # @param translation_exclude_parameters [TranslationExcludeParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [TranslationDetails]
     def translation_exclude(project_id, id, translation_exclude_parameters, opts = {})
       data, _status_code, _headers = translation_exclude_with_http_info(project_id, id, translation_exclude_parameters, opts)
       data
@@ -99,7 +99,7 @@ module Phrase
     # @param translation_exclude_parameters [TranslationExcludeParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(TranslationDetails)>, Integer, Hash)>] Response<(TranslationDetails)> data, response status code and response headers
     def translation_exclude_with_http_info(project_id, id, translation_exclude_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translation_exclude ...'
@@ -137,7 +137,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translation_exclude_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'TranslationDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -166,7 +166,7 @@ module Phrase
     # @param translation_include_parameters [TranslationIncludeParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [TranslationDetails]
     def translation_include(project_id, id, translation_include_parameters, opts = {})
       data, _status_code, _headers = translation_include_with_http_info(project_id, id, translation_include_parameters, opts)
       data
@@ -179,7 +179,7 @@ module Phrase
     # @param translation_include_parameters [TranslationIncludeParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(TranslationDetails)>, Integer, Hash)>] Response<(TranslationDetails)> data, response status code and response headers
     def translation_include_with_http_info(project_id, id, translation_include_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translation_include ...'
@@ -217,7 +217,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translation_include_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'TranslationDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -246,7 +246,7 @@ module Phrase
     # @param translation_review_parameters [TranslationReviewParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [TranslationDetails]
     def translation_review(project_id, id, translation_review_parameters, opts = {})
       data, _status_code, _headers = translation_review_with_http_info(project_id, id, translation_review_parameters, opts)
       data
@@ -259,7 +259,7 @@ module Phrase
     # @param translation_review_parameters [TranslationReviewParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(TranslationDetails)>, Integer, Hash)>] Response<(TranslationDetails)> data, response status code and response headers
     def translation_review_with_http_info(project_id, id, translation_review_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translation_review ...'
@@ -297,7 +297,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translation_review_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'TranslationDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -326,7 +326,7 @@ module Phrase
     # @param translation_show_parameters [TranslationShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [TranslationDetails]
     def translation_show(project_id, id, translation_show_parameters, opts = {})
       data, _status_code, _headers = translation_show_with_http_info(project_id, id, translation_show_parameters, opts)
       data
@@ -339,7 +339,7 @@ module Phrase
     # @param translation_show_parameters [TranslationShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(TranslationDetails)>, Integer, Hash)>] Response<(TranslationDetails)> data, response status code and response headers
     def translation_show_with_http_info(project_id, id, translation_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translation_show ...'
@@ -377,7 +377,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translation_show_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'TranslationDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -406,7 +406,7 @@ module Phrase
     # @param translation_unverify_parameters [TranslationUnverifyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [TranslationDetails]
     def translation_unverify(project_id, id, translation_unverify_parameters, opts = {})
       data, _status_code, _headers = translation_unverify_with_http_info(project_id, id, translation_unverify_parameters, opts)
       data
@@ -419,7 +419,7 @@ module Phrase
     # @param translation_unverify_parameters [TranslationUnverifyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(TranslationDetails)>, Integer, Hash)>] Response<(TranslationDetails)> data, response status code and response headers
     def translation_unverify_with_http_info(project_id, id, translation_unverify_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translation_unverify ...'
@@ -457,7 +457,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translation_unverify_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'TranslationDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -486,7 +486,7 @@ module Phrase
     # @param translation_update_parameters [TranslationUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [TranslationDetails]
     def translation_update(project_id, id, translation_update_parameters, opts = {})
       data, _status_code, _headers = translation_update_with_http_info(project_id, id, translation_update_parameters, opts)
       data
@@ -499,7 +499,7 @@ module Phrase
     # @param translation_update_parameters [TranslationUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(TranslationDetails)>, Integer, Hash)>] Response<(TranslationDetails)> data, response status code and response headers
     def translation_update_with_http_info(project_id, id, translation_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translation_update ...'
@@ -537,7 +537,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translation_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'TranslationDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -566,7 +566,7 @@ module Phrase
     # @param translation_verify_parameters [TranslationVerifyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [TranslationDetails]
     def translation_verify(project_id, id, translation_verify_parameters, opts = {})
       data, _status_code, _headers = translation_verify_with_http_info(project_id, id, translation_verify_parameters, opts)
       data
@@ -579,7 +579,7 @@ module Phrase
     # @param translation_verify_parameters [TranslationVerifyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(TranslationDetails)>, Integer, Hash)>] Response<(TranslationDetails)> data, response status code and response headers
     def translation_verify_with_http_info(project_id, id, translation_verify_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translation_verify ...'
@@ -617,7 +617,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translation_verify_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'TranslationDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -648,7 +648,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<Translation>]
     def translations_by_key(project_id, key_id, translations_by_key_parameters, opts = {})
       data, _status_code, _headers = translations_by_key_with_http_info(project_id, key_id, translations_by_key_parameters, opts)
       data
@@ -663,7 +663,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Translation>)>, Integer, Hash)>] Response<(Array<Translation>)> data, response status code and response headers
     def translations_by_key_with_http_info(project_id, key_id, translations_by_key_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_by_key ...'
@@ -703,7 +703,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translations_by_key_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Translation>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -734,7 +734,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<Translation>]
     def translations_by_locale(project_id, locale_id, translations_by_locale_parameters, opts = {})
       data, _status_code, _headers = translations_by_locale_with_http_info(project_id, locale_id, translations_by_locale_parameters, opts)
       data
@@ -749,7 +749,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Translation>)>, Integer, Hash)>] Response<(Array<Translation>)> data, response status code and response headers
     def translations_by_locale_with_http_info(project_id, locale_id, translations_by_locale_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_by_locale ...'
@@ -789,7 +789,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translations_by_locale_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Translation>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -817,7 +817,7 @@ module Phrase
     # @param translations_exclude_parameters [TranslationsExcludeParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [AffectedCount]
     def translations_exclude(project_id, translations_exclude_parameters, opts = {})
       data, _status_code, _headers = translations_exclude_with_http_info(project_id, translations_exclude_parameters, opts)
       data
@@ -829,7 +829,7 @@ module Phrase
     # @param translations_exclude_parameters [TranslationsExcludeParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(AffectedCount)>, Integer, Hash)>] Response<(AffectedCount)> data, response status code and response headers
     def translations_exclude_with_http_info(project_id, translations_exclude_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_exclude ...'
@@ -863,7 +863,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translations_exclude_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'AffectedCount' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -891,7 +891,7 @@ module Phrase
     # @param translations_include_parameters [TranslationsIncludeParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [AffectedCount]
     def translations_include(project_id, translations_include_parameters, opts = {})
       data, _status_code, _headers = translations_include_with_http_info(project_id, translations_include_parameters, opts)
       data
@@ -903,7 +903,7 @@ module Phrase
     # @param translations_include_parameters [TranslationsIncludeParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(AffectedCount)>, Integer, Hash)>] Response<(AffectedCount)> data, response status code and response headers
     def translations_include_with_http_info(project_id, translations_include_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_include ...'
@@ -937,7 +937,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translations_include_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'AffectedCount' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -1045,7 +1045,7 @@ module Phrase
     # @param translations_review_parameters [TranslationsReviewParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [AffectedCount]
     def translations_review(project_id, translations_review_parameters, opts = {})
       data, _status_code, _headers = translations_review_with_http_info(project_id, translations_review_parameters, opts)
       data
@@ -1057,7 +1057,7 @@ module Phrase
     # @param translations_review_parameters [TranslationsReviewParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(AffectedCount)>, Integer, Hash)>] Response<(AffectedCount)> data, response status code and response headers
     def translations_review_with_http_info(project_id, translations_review_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_review ...'
@@ -1091,7 +1091,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translations_review_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'AffectedCount' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -1121,7 +1121,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<Translation>]
     def translations_search(project_id, translations_search_parameters, opts = {})
       data, _status_code, _headers = translations_search_with_http_info(project_id, translations_search_parameters, opts)
       data
@@ -1135,7 +1135,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Translation>)>, Integer, Hash)>] Response<(Array<Translation>)> data, response status code and response headers
     def translations_search_with_http_info(project_id, translations_search_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_search ...'
@@ -1171,7 +1171,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translations_search_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Translation>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -1199,7 +1199,7 @@ module Phrase
     # @param translations_unverify_parameters [TranslationsUnverifyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [AffectedCount]
     def translations_unverify(project_id, translations_unverify_parameters, opts = {})
       data, _status_code, _headers = translations_unverify_with_http_info(project_id, translations_unverify_parameters, opts)
       data
@@ -1211,7 +1211,7 @@ module Phrase
     # @param translations_unverify_parameters [TranslationsUnverifyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(AffectedCount)>, Integer, Hash)>] Response<(AffectedCount)> data, response status code and response headers
     def translations_unverify_with_http_info(project_id, translations_unverify_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_unverify ...'
@@ -1245,7 +1245,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(translations_unverify_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'AffectedCount' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

@@ -210,7 +210,7 @@ Response<([**GlossaryTerm**](GlossaryTerm.md))>
 
 ## glossary_term_update
 
-> Object glossary_term_update(account_id, glossary_id, id, glossary_term_update_parameters, opts)
+> GlossaryTerm glossary_term_update(account_id, glossary_id, id, glossary_term_update_parameters, opts)
 
 Update a glossary term
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**GlossaryTerm**](GlossaryTerm.md))>
 
 ### Authorization
 
@@ -278,7 +278,7 @@ Response<(**Object**)>
 
 ## glossary_terms_list
 
-> Array&lt;Object&gt; glossary_terms_list(account_id, glossary_id, opts)
+> Array&lt;GlossaryTerm&gt; glossary_terms_list(account_id, glossary_id, opts)
 
 List glossary terms
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;GlossaryTerm&gt;**](GlossaryTerm.md))>
 
 ### Authorization
 

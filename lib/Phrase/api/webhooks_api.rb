@@ -298,7 +298,7 @@ module Phrase
     # @param webhook_update_parameters [WebhookUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [Webhook]
     def webhook_update(project_id, id, webhook_update_parameters, opts = {})
       data, _status_code, _headers = webhook_update_with_http_info(project_id, id, webhook_update_parameters, opts)
       data
@@ -311,7 +311,7 @@ module Phrase
     # @param webhook_update_parameters [WebhookUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(Webhook)>, Integer, Hash)>] Response<(Webhook)> data, response status code and response headers
     def webhook_update_with_http_info(project_id, id, webhook_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WebhooksApi.webhook_update ...'
@@ -349,7 +349,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(webhook_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'Webhook' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -378,7 +378,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<Webhook>]
     def webhooks_list(project_id, opts = {})
       data, _status_code, _headers = webhooks_list_with_http_info(project_id, opts)
       data
@@ -391,7 +391,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Webhook>)>, Integer, Hash)>] Response<(Array<Webhook>)> data, response status code and response headers
     def webhooks_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WebhooksApi.webhooks_list ...'
@@ -421,7 +421,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Webhook>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

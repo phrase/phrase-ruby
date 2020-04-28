@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## job_complete
 
-> Object job_complete(project_id, id, job_complete_parameters, opts)
+> JobDetails job_complete(project_id, id, job_complete_parameters, opts)
 
 Complete a job
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobDetails**](JobDetails.md))>
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Response<(nil (empty response body))>
 
 ## job_keys_create
 
-> Object job_keys_create(project_id, id, job_keys_create_parameters, opts)
+> JobDetails job_keys_create(project_id, id, job_keys_create_parameters, opts)
 
 Add keys to job
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobDetails**](JobDetails.md))>
 
 ### Authorization
 
@@ -344,7 +344,7 @@ Response<(nil (empty response body))>
 
 ## job_reopen
 
-> Object job_reopen(project_id, id, job_reopen_parameters, opts)
+> JobDetails job_reopen(project_id, id, job_reopen_parameters, opts)
 
 Reopen a job
 
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobDetails**](JobDetails.md))>
 
 ### Authorization
 
@@ -410,7 +410,7 @@ Response<(**Object**)>
 
 ## job_show
 
-> Object job_show(project_id, id, job_show_parameters, opts)
+> JobDetails job_show(project_id, id, job_show_parameters, opts)
 
 Get a single job
 
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobDetails**](JobDetails.md))>
 
 ### Authorization
 
@@ -476,7 +476,7 @@ Response<(**Object**)>
 
 ## job_start
 
-> Object job_start(project_id, id, job_start_parameters, opts)
+> JobDetails job_start(project_id, id, job_start_parameters, opts)
 
 Start a job
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobDetails**](JobDetails.md))>
 
 ### Authorization
 
@@ -542,7 +542,7 @@ Response<(**Object**)>
 
 ## job_update
 
-> Object job_update(project_id, id, job_update_parameters, opts)
+> JobDetails job_update(project_id, id, job_update_parameters, opts)
 
 Update a job
 
@@ -594,7 +594,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobDetails**](JobDetails.md))>
 
 ### Authorization
 

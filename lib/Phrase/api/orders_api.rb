@@ -14,7 +14,7 @@ module Phrase
     # @param order_confirm_parameters [OrderConfirmParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [TranslationOrder]
     def order_confirm(project_id, id, order_confirm_parameters, opts = {})
       data, _status_code, _headers = order_confirm_with_http_info(project_id, id, order_confirm_parameters, opts)
       data
@@ -27,7 +27,7 @@ module Phrase
     # @param order_confirm_parameters [OrderConfirmParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(TranslationOrder)>, Integer, Hash)>] Response<(TranslationOrder)> data, response status code and response headers
     def order_confirm_with_http_info(project_id, id, order_confirm_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.order_confirm ...'
@@ -65,7 +65,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(order_confirm_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'TranslationOrder' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -325,7 +325,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<TranslationOrder>]
     def orders_list(project_id, orders_list_parameters, opts = {})
       data, _status_code, _headers = orders_list_with_http_info(project_id, orders_list_parameters, opts)
       data
@@ -339,7 +339,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<TranslationOrder>)>, Integer, Hash)>] Response<(Array<TranslationOrder>)> data, response status code and response headers
     def orders_list_with_http_info(project_id, orders_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.orders_list ...'
@@ -375,7 +375,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(orders_list_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<TranslationOrder>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

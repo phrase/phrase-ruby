@@ -30,7 +30,7 @@ module Phrase
         :'email' => :'String',
         :'username' => :'String',
         :'role' => :'String',
-        :'projects' => :'Array<Object>'
+        :'projects' => :'Array<ProjectLocales>'
       }
     end
 

@@ -28,7 +28,7 @@ module Phrase
       {
         :'id' => :'String',
         :'message' => :'String',
-        :'user' => :'Object',
+        :'user' => :'UserPreview',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }

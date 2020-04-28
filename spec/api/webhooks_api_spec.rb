@@ -84,7 +84,7 @@ describe 'WebhooksApi' do
   # @param webhook_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [Webhook]
   describe 'webhook_update test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -99,7 +99,7 @@ describe 'WebhooksApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-  # @return [Array<Object>]
+  # @return [Array<Webhook>]
   describe 'webhooks_list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

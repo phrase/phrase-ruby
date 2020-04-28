@@ -156,7 +156,7 @@ module Phrase
     # @param member_update_parameters [MemberUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [Member]
     def member_update(account_id, id, member_update_parameters, opts = {})
       data, _status_code, _headers = member_update_with_http_info(account_id, id, member_update_parameters, opts)
       data
@@ -169,7 +169,7 @@ module Phrase
     # @param member_update_parameters [MemberUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(Member)>, Integer, Hash)>] Response<(Member)> data, response status code and response headers
     def member_update_with_http_info(account_id, id, member_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MembersApi.member_update ...'
@@ -207,7 +207,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(member_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'Member' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -236,7 +236,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<Member>]
     def members_list(account_id, opts = {})
       data, _status_code, _headers = members_list_with_http_info(account_id, opts)
       data
@@ -249,7 +249,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Member>)>, Integer, Hash)>] Response<(Array<Member>)> data, response status code and response headers
     def members_list_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MembersApi.members_list ...'
@@ -279,7 +279,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Member>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

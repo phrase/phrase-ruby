@@ -89,7 +89,7 @@ Response<(nil (empty response body))>
 
 ## translation_exclude
 
-> Object translation_exclude(project_id, id, translation_exclude_parameters, opts)
+> TranslationDetails translation_exclude(project_id, id, translation_exclude_parameters, opts)
 
 Exclude a translation from export
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TranslationDetails**](TranslationDetails.md))>
 
 ### Authorization
 
@@ -155,7 +155,7 @@ Response<(**Object**)>
 
 ## translation_include
 
-> Object translation_include(project_id, id, translation_include_parameters, opts)
+> TranslationDetails translation_include(project_id, id, translation_include_parameters, opts)
 
 Revoke exclusion of a translation in export
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TranslationDetails**](TranslationDetails.md))>
 
 ### Authorization
 
@@ -221,7 +221,7 @@ Response<(**Object**)>
 
 ## translation_review
 
-> Object translation_review(project_id, id, translation_review_parameters, opts)
+> TranslationDetails translation_review(project_id, id, translation_review_parameters, opts)
 
 Review a translation
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TranslationDetails**](TranslationDetails.md))>
 
 ### Authorization
 
@@ -287,7 +287,7 @@ Response<(**Object**)>
 
 ## translation_show
 
-> Object translation_show(project_id, id, translation_show_parameters, opts)
+> TranslationDetails translation_show(project_id, id, translation_show_parameters, opts)
 
 Get a single translation
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TranslationDetails**](TranslationDetails.md))>
 
 ### Authorization
 
@@ -353,7 +353,7 @@ Response<(**Object**)>
 
 ## translation_unverify
 
-> Object translation_unverify(project_id, id, translation_unverify_parameters, opts)
+> TranslationDetails translation_unverify(project_id, id, translation_unverify_parameters, opts)
 
 Mark a translation as unverified
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TranslationDetails**](TranslationDetails.md))>
 
 ### Authorization
 
@@ -419,7 +419,7 @@ Response<(**Object**)>
 
 ## translation_update
 
-> Object translation_update(project_id, id, translation_update_parameters, opts)
+> TranslationDetails translation_update(project_id, id, translation_update_parameters, opts)
 
 Update a translation
 
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TranslationDetails**](TranslationDetails.md))>
 
 ### Authorization
 
@@ -485,7 +485,7 @@ Response<(**Object**)>
 
 ## translation_verify
 
-> Object translation_verify(project_id, id, translation_verify_parameters, opts)
+> TranslationDetails translation_verify(project_id, id, translation_verify_parameters, opts)
 
 Verify a translation
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**TranslationDetails**](TranslationDetails.md))>
 
 ### Authorization
 
@@ -551,7 +551,7 @@ Response<(**Object**)>
 
 ## translations_by_key
 
-> Array&lt;Object&gt; translations_by_key(project_id, key_id, translations_by_key_parameters, opts)
+> Array&lt;Translation&gt; translations_by_key(project_id, key_id, translations_by_key_parameters, opts)
 
 List translations by key
 
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Translation&gt;**](Translation.md))>
 
 ### Authorization
 
@@ -621,7 +621,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## translations_by_locale
 
-> Array&lt;Object&gt; translations_by_locale(project_id, locale_id, translations_by_locale_parameters, opts)
+> Array&lt;Translation&gt; translations_by_locale(project_id, locale_id, translations_by_locale_parameters, opts)
 
 List translations by locale
 
@@ -677,7 +677,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Translation&gt;**](Translation.md))>
 
 ### Authorization
 
@@ -691,7 +691,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## translations_exclude
 
-> Object translations_exclude(project_id, translations_exclude_parameters, opts)
+> AffectedCount translations_exclude(project_id, translations_exclude_parameters, opts)
 
 Set exclude from export flag on translations selected by query
 
@@ -741,7 +741,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**AffectedCount**](AffectedCount.md))>
 
 ### Authorization
 
@@ -755,7 +755,7 @@ Response<(**Object**)>
 
 ## translations_include
 
-> Object translations_include(project_id, translations_include_parameters, opts)
+> AffectedCount translations_include(project_id, translations_include_parameters, opts)
 
 Remove exlude from import flag from translations selected by query
 
@@ -805,7 +805,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**AffectedCount**](AffectedCount.md))>
 
 ### Authorization
 
@@ -887,7 +887,7 @@ Response<([**Array&lt;Translation&gt;**](Translation.md))>
 
 ## translations_review
 
-> Object translations_review(project_id, translations_review_parameters, opts)
+> AffectedCount translations_review(project_id, translations_review_parameters, opts)
 
 Review translations selected by query
 
@@ -937,7 +937,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**AffectedCount**](AffectedCount.md))>
 
 ### Authorization
 
@@ -951,7 +951,7 @@ Response<(**Object**)>
 
 ## translations_search
 
-> Array&lt;Object&gt; translations_search(project_id, translations_search_parameters, opts)
+> Array&lt;Translation&gt; translations_search(project_id, translations_search_parameters, opts)
 
 Search translations
 
@@ -1005,7 +1005,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Translation&gt;**](Translation.md))>
 
 ### Authorization
 
@@ -1019,7 +1019,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## translations_unverify
 
-> Object translations_unverify(project_id, translations_unverify_parameters, opts)
+> AffectedCount translations_unverify(project_id, translations_unverify_parameters, opts)
 
 Mark translations selected by query as unverified
 
@@ -1069,7 +1069,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**AffectedCount**](AffectedCount.md))>
 
 ### Authorization
 

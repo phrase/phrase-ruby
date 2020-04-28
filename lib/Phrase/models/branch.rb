@@ -37,7 +37,7 @@ module Phrase
         :'updated_at' => :'DateTime',
         :'merged_at' => :'DateTime',
         :'merged_by' => :'UserPreview',
-        :'created_by' => :'Object',
+        :'created_by' => :'UserPreview',
         :'state' => :'String'
       }
     end

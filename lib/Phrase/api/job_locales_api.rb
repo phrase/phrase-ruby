@@ -15,7 +15,7 @@ module Phrase
     # @param job_locale_complete_parameters [JobLocaleCompleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [JobLocale]
     def job_locale_complete(project_id, job_id, id, job_locale_complete_parameters, opts = {})
       data, _status_code, _headers = job_locale_complete_with_http_info(project_id, job_id, id, job_locale_complete_parameters, opts)
       data
@@ -29,7 +29,7 @@ module Phrase
     # @param job_locale_complete_parameters [JobLocaleCompleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobLocale)>, Integer, Hash)>] Response<(JobLocale)> data, response status code and response headers
     def job_locale_complete_with_http_info(project_id, job_id, id, job_locale_complete_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locale_complete ...'
@@ -71,7 +71,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_locale_complete_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobLocale' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -185,7 +185,7 @@ module Phrase
     # @param job_locale_reopen_parameters [JobLocaleReopenParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [JobLocale]
     def job_locale_reopen(project_id, job_id, id, job_locale_reopen_parameters, opts = {})
       data, _status_code, _headers = job_locale_reopen_with_http_info(project_id, job_id, id, job_locale_reopen_parameters, opts)
       data
@@ -199,7 +199,7 @@ module Phrase
     # @param job_locale_reopen_parameters [JobLocaleReopenParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobLocale)>, Integer, Hash)>] Response<(JobLocale)> data, response status code and response headers
     def job_locale_reopen_with_http_info(project_id, job_id, id, job_locale_reopen_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locale_reopen ...'
@@ -241,7 +241,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_locale_reopen_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobLocale' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -357,7 +357,7 @@ module Phrase
     # @param job_locale_update_parameters [JobLocaleUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [JobLocale]
     def job_locale_update(project_id, job_id, id, job_locale_update_parameters, opts = {})
       data, _status_code, _headers = job_locale_update_with_http_info(project_id, job_id, id, job_locale_update_parameters, opts)
       data
@@ -371,7 +371,7 @@ module Phrase
     # @param job_locale_update_parameters [JobLocaleUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobLocale)>, Integer, Hash)>] Response<(JobLocale)> data, response status code and response headers
     def job_locale_update_with_http_info(project_id, job_id, id, job_locale_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locale_update ...'
@@ -413,7 +413,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_locale_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobLocale' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -522,7 +522,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<JobLocale>]
     def job_locales_list(project_id, job_id, job_locales_list_parameters, opts = {})
       data, _status_code, _headers = job_locales_list_with_http_info(project_id, job_id, job_locales_list_parameters, opts)
       data
@@ -537,7 +537,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<JobLocale>)>, Integer, Hash)>] Response<(Array<JobLocale>)> data, response status code and response headers
     def job_locales_list_with_http_info(project_id, job_id, job_locales_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locales_list ...'
@@ -577,7 +577,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_locales_list_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<JobLocale>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

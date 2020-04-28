@@ -34,7 +34,7 @@ module Phrase
         :'last_export_to_bitbucket_at' => :'DateTime',
         :'last_import_from_bitbucket_at' => :'DateTime',
         :'valid_phraseapp_yaml' => :'Boolean',
-        :'phraseapp_projects' => :'Array<Object>'
+        :'phraseapp_projects' => :'Array<ProjectShort>'
       }
     end
 

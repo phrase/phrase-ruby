@@ -145,7 +145,7 @@ Response<(nil (empty response body))>
 
 ## release_publish
 
-> Object release_publish(account_id, distribution_id, id, opts)
+> Release release_publish(account_id, distribution_id, id, opts)
 
 Publish a release
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Release**](Release.md))>
 
 ### Authorization
 
@@ -277,7 +277,7 @@ Response<([**Release**](Release.md))>
 
 ## release_update
 
-> Object release_update(account_id, distribution_id, id, release_update_parameters, opts)
+> Release release_update(account_id, distribution_id, id, release_update_parameters, opts)
 
 Update a release
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Release**](Release.md))>
 
 ### Authorization
 

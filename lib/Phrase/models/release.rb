@@ -51,8 +51,8 @@ module Phrase
         :'description' => :'String',
         :'platforms' => :'Array<String>',
         :'environments' => :'Array<String>',
-        :'locales' => :'Array<Object>',
-        :'project' => :'Object',
+        :'locales' => :'Array<LocalePreview>',
+        :'project' => :'ProjectShort',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **presentation_type** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
-**translation_key** | **Object** |  | [optional] 
+**translation_key** | [**TranslationKey**](TranslationKey.md) |  | [optional] 
 
 ## Code Sample
 

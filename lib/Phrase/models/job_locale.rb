@@ -25,8 +25,8 @@ module Phrase
       {
         :'id' => :'String',
         :'job' => :'JobPreview',
-        :'locale' => :'Object',
-        :'users' => :'Array<Object>'
+        :'locale' => :'LocalePreview',
+        :'users' => :'Array<UserPreview>'
       }
     end
 
