@@ -25,7 +25,7 @@ describe 'ReleasesApi' do
   # Create a new release.
   # @param account_id Account ID
   # @param distribution_id Distribution ID
-  # @param release_create 
+  # @param release_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -86,7 +86,7 @@ describe 'ReleasesApi' do
   # @param account_id Account ID
   # @param distribution_id Distribution ID
   # @param id ID
-  # @param release_update 
+  # @param release_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]

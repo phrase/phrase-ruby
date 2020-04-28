@@ -140,7 +140,7 @@ Response<([**Member**](Member.md))>
 
 ## member_update
 
-> Object member_update(account_id, id, member_update, opts)
+> Object member_update(account_id, id, member_update_parameters, opts)
 
 Update a member
 
@@ -166,14 +166,14 @@ end
 api_instance = Phrase::MembersApi.new
 account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
-member_update = Phrase::MemberUpdate.new # MemberUpdate | 
+member_update_parameters = Phrase::MemberUpdateParameters.new # MemberUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a member
-  result = api_instance.member_update(account_id, id, member_update, opts)
+  result = api_instance.member_update(account_id, id, member_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling MembersApi->member_update: #{e}"
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
  **id** | **String**| ID | 
- **member_update** | [**MemberUpdate**](MemberUpdate.md)|  | 
+ **member_update_parameters** | [**MemberUpdateParameters**](MemberUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

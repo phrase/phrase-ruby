@@ -24,7 +24,7 @@ describe 'BlacklistedKeysApi' do
   # Create a blacklisted key
   # Create a new rule for blacklisting keys.
   # @param project_id Project ID
-  # @param blacklisted_key_create 
+  # @param blacklisted_key_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -67,7 +67,7 @@ describe 'BlacklistedKeysApi' do
   # Update an existing rule for blacklisting keys.
   # @param project_id Project ID
   # @param id ID
-  # @param blacklisted_key_update 
+  # @param blacklisted_key_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]

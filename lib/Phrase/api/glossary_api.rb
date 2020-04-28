@@ -82,23 +82,23 @@ module Phrase
     # Create a glossary
     # Create a new glossary.
     # @param account_id [String] Account ID
-    # @param glossary_create [GlossaryCreate] 
+    # @param glossary_create_parameters [GlossaryCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def glossary_create(account_id, glossary_create, opts = {})
-      glossary_create_with_http_info(account_id, glossary_create, opts)
+    def glossary_create(account_id, glossary_create_parameters, opts = {})
+      glossary_create_with_http_info(account_id, glossary_create_parameters, opts)
       nil
     end
 
     # Create a glossary
     # Create a new glossary.
     # @param account_id [String] Account ID
-    # @param glossary_create [GlossaryCreate] 
+    # @param glossary_create_parameters [GlossaryCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def glossary_create_with_http_info(account_id, glossary_create, opts = {})
+    def glossary_create_with_http_info(account_id, glossary_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: GlossaryApi.glossary_create ...'
       end
@@ -106,9 +106,9 @@ module Phrase
       if @api_client.config.client_side_validation && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossaryApi.glossary_create"
       end
-      # verify the required parameter 'glossary_create' is set
-      if @api_client.config.client_side_validation && glossary_create.nil?
-        fail ArgumentError, "Missing the required parameter 'glossary_create' when calling GlossaryApi.glossary_create"
+      # verify the required parameter 'glossary_create_parameters' is set
+      if @api_client.config.client_side_validation && glossary_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'glossary_create_parameters' when calling GlossaryApi.glossary_create"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s))
@@ -126,7 +126,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(glossary_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(glossary_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -297,12 +297,12 @@ module Phrase
     # Update an existing glossary.
     # @param account_id [String] Account ID
     # @param id [String] ID
-    # @param glossary_update [GlossaryUpdate] 
+    # @param glossary_update_parameters [GlossaryUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def glossary_update(account_id, id, glossary_update, opts = {})
-      data, _status_code, _headers = glossary_update_with_http_info(account_id, id, glossary_update, opts)
+    def glossary_update(account_id, id, glossary_update_parameters, opts = {})
+      data, _status_code, _headers = glossary_update_with_http_info(account_id, id, glossary_update_parameters, opts)
       data
     end
 
@@ -310,11 +310,11 @@ module Phrase
     # Update an existing glossary.
     # @param account_id [String] Account ID
     # @param id [String] ID
-    # @param glossary_update [GlossaryUpdate] 
+    # @param glossary_update_parameters [GlossaryUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def glossary_update_with_http_info(account_id, id, glossary_update, opts = {})
+    def glossary_update_with_http_info(account_id, id, glossary_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: GlossaryApi.glossary_update ...'
       end
@@ -326,9 +326,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling GlossaryApi.glossary_update"
       end
-      # verify the required parameter 'glossary_update' is set
-      if @api_client.config.client_side_validation && glossary_update.nil?
-        fail ArgumentError, "Missing the required parameter 'glossary_update' when calling GlossaryApi.glossary_update"
+      # verify the required parameter 'glossary_update_parameters' is set
+      if @api_client.config.client_side_validation && glossary_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'glossary_update_parameters' when calling GlossaryApi.glossary_update"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -348,7 +348,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(glossary_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(glossary_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

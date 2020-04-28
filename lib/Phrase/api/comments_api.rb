@@ -11,12 +11,12 @@ module Phrase
     # Create a new comment for a key.
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
-    # @param comment_create [CommentCreate] 
+    # @param comment_create_parameters [CommentCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def comment_create(project_id, key_id, comment_create, opts = {})
-      comment_create_with_http_info(project_id, key_id, comment_create, opts)
+    def comment_create(project_id, key_id, comment_create_parameters, opts = {})
+      comment_create_with_http_info(project_id, key_id, comment_create_parameters, opts)
       nil
     end
 
@@ -24,11 +24,11 @@ module Phrase
     # Create a new comment for a key.
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
-    # @param comment_create [CommentCreate] 
+    # @param comment_create_parameters [CommentCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def comment_create_with_http_info(project_id, key_id, comment_create, opts = {})
+    def comment_create_with_http_info(project_id, key_id, comment_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comment_create ...'
       end
@@ -40,9 +40,9 @@ module Phrase
       if @api_client.config.client_side_validation && key_id.nil?
         fail ArgumentError, "Missing the required parameter 'key_id' when calling CommentsApi.comment_create"
       end
-      # verify the required parameter 'comment_create' is set
-      if @api_client.config.client_side_validation && comment_create.nil?
-        fail ArgumentError, "Missing the required parameter 'comment_create' when calling CommentsApi.comment_create"
+      # verify the required parameter 'comment_create_parameters' is set
+      if @api_client.config.client_side_validation && comment_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_create_parameters' when calling CommentsApi.comment_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s))
@@ -60,7 +60,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(comment_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(comment_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -90,12 +90,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_delete [CommentDelete] 
+    # @param comment_delete_parameters [CommentDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def comment_delete(project_id, key_id, id, comment_delete, opts = {})
-      comment_delete_with_http_info(project_id, key_id, id, comment_delete, opts)
+    def comment_delete(project_id, key_id, id, comment_delete_parameters, opts = {})
+      comment_delete_with_http_info(project_id, key_id, id, comment_delete_parameters, opts)
       nil
     end
 
@@ -104,11 +104,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_delete [CommentDelete] 
+    # @param comment_delete_parameters [CommentDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def comment_delete_with_http_info(project_id, key_id, id, comment_delete, opts = {})
+    def comment_delete_with_http_info(project_id, key_id, id, comment_delete_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comment_delete ...'
       end
@@ -124,9 +124,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling CommentsApi.comment_delete"
       end
-      # verify the required parameter 'comment_delete' is set
-      if @api_client.config.client_side_validation && comment_delete.nil?
-        fail ArgumentError, "Missing the required parameter 'comment_delete' when calling CommentsApi.comment_delete"
+      # verify the required parameter 'comment_delete_parameters' is set
+      if @api_client.config.client_side_validation && comment_delete_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_delete_parameters' when calling CommentsApi.comment_delete"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -144,7 +144,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(comment_delete) 
+      post_body = opts[:body] || @api_client.object_to_http_body(comment_delete_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -174,12 +174,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_mark_check [CommentMarkCheck] 
+    # @param comment_mark_check_parameters [CommentMarkCheckParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def comment_mark_check(project_id, key_id, id, comment_mark_check, opts = {})
-      comment_mark_check_with_http_info(project_id, key_id, id, comment_mark_check, opts)
+    def comment_mark_check(project_id, key_id, id, comment_mark_check_parameters, opts = {})
+      comment_mark_check_with_http_info(project_id, key_id, id, comment_mark_check_parameters, opts)
       nil
     end
 
@@ -188,11 +188,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_mark_check [CommentMarkCheck] 
+    # @param comment_mark_check_parameters [CommentMarkCheckParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def comment_mark_check_with_http_info(project_id, key_id, id, comment_mark_check, opts = {})
+    def comment_mark_check_with_http_info(project_id, key_id, id, comment_mark_check_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comment_mark_check ...'
       end
@@ -208,9 +208,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling CommentsApi.comment_mark_check"
       end
-      # verify the required parameter 'comment_mark_check' is set
-      if @api_client.config.client_side_validation && comment_mark_check.nil?
-        fail ArgumentError, "Missing the required parameter 'comment_mark_check' when calling CommentsApi.comment_mark_check"
+      # verify the required parameter 'comment_mark_check_parameters' is set
+      if @api_client.config.client_side_validation && comment_mark_check_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_mark_check_parameters' when calling CommentsApi.comment_mark_check"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments/{id}/read'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -228,7 +228,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(comment_mark_check) 
+      post_body = opts[:body] || @api_client.object_to_http_body(comment_mark_check_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -258,12 +258,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_mark_read [CommentMarkRead] 
+    # @param comment_mark_read_parameters [CommentMarkReadParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def comment_mark_read(project_id, key_id, id, comment_mark_read, opts = {})
-      comment_mark_read_with_http_info(project_id, key_id, id, comment_mark_read, opts)
+    def comment_mark_read(project_id, key_id, id, comment_mark_read_parameters, opts = {})
+      comment_mark_read_with_http_info(project_id, key_id, id, comment_mark_read_parameters, opts)
       nil
     end
 
@@ -272,11 +272,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_mark_read [CommentMarkRead] 
+    # @param comment_mark_read_parameters [CommentMarkReadParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def comment_mark_read_with_http_info(project_id, key_id, id, comment_mark_read, opts = {})
+    def comment_mark_read_with_http_info(project_id, key_id, id, comment_mark_read_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comment_mark_read ...'
       end
@@ -292,9 +292,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling CommentsApi.comment_mark_read"
       end
-      # verify the required parameter 'comment_mark_read' is set
-      if @api_client.config.client_side_validation && comment_mark_read.nil?
-        fail ArgumentError, "Missing the required parameter 'comment_mark_read' when calling CommentsApi.comment_mark_read"
+      # verify the required parameter 'comment_mark_read_parameters' is set
+      if @api_client.config.client_side_validation && comment_mark_read_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_mark_read_parameters' when calling CommentsApi.comment_mark_read"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments/{id}/read'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -312,7 +312,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(comment_mark_read) 
+      post_body = opts[:body] || @api_client.object_to_http_body(comment_mark_read_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -342,12 +342,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_mark_unread [CommentMarkUnread] 
+    # @param comment_mark_unread_parameters [CommentMarkUnreadParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def comment_mark_unread(project_id, key_id, id, comment_mark_unread, opts = {})
-      comment_mark_unread_with_http_info(project_id, key_id, id, comment_mark_unread, opts)
+    def comment_mark_unread(project_id, key_id, id, comment_mark_unread_parameters, opts = {})
+      comment_mark_unread_with_http_info(project_id, key_id, id, comment_mark_unread_parameters, opts)
       nil
     end
 
@@ -356,11 +356,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_mark_unread [CommentMarkUnread] 
+    # @param comment_mark_unread_parameters [CommentMarkUnreadParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def comment_mark_unread_with_http_info(project_id, key_id, id, comment_mark_unread, opts = {})
+    def comment_mark_unread_with_http_info(project_id, key_id, id, comment_mark_unread_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comment_mark_unread ...'
       end
@@ -376,9 +376,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling CommentsApi.comment_mark_unread"
       end
-      # verify the required parameter 'comment_mark_unread' is set
-      if @api_client.config.client_side_validation && comment_mark_unread.nil?
-        fail ArgumentError, "Missing the required parameter 'comment_mark_unread' when calling CommentsApi.comment_mark_unread"
+      # verify the required parameter 'comment_mark_unread_parameters' is set
+      if @api_client.config.client_side_validation && comment_mark_unread_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_mark_unread_parameters' when calling CommentsApi.comment_mark_unread"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments/{id}/read'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -396,7 +396,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(comment_mark_unread) 
+      post_body = opts[:body] || @api_client.object_to_http_body(comment_mark_unread_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -426,12 +426,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_show [CommentShow] 
+    # @param comment_show_parameters [CommentShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Comment]
-    def comment_show(project_id, key_id, id, comment_show, opts = {})
-      data, _status_code, _headers = comment_show_with_http_info(project_id, key_id, id, comment_show, opts)
+    def comment_show(project_id, key_id, id, comment_show_parameters, opts = {})
+      data, _status_code, _headers = comment_show_with_http_info(project_id, key_id, id, comment_show_parameters, opts)
       data
     end
 
@@ -440,11 +440,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_show [CommentShow] 
+    # @param comment_show_parameters [CommentShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Comment)>, Integer, Hash)>] Response<(Comment)> data, response status code and response headers
-    def comment_show_with_http_info(project_id, key_id, id, comment_show, opts = {})
+    def comment_show_with_http_info(project_id, key_id, id, comment_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comment_show ...'
       end
@@ -460,9 +460,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling CommentsApi.comment_show"
       end
-      # verify the required parameter 'comment_show' is set
-      if @api_client.config.client_side_validation && comment_show.nil?
-        fail ArgumentError, "Missing the required parameter 'comment_show' when calling CommentsApi.comment_show"
+      # verify the required parameter 'comment_show_parameters' is set
+      if @api_client.config.client_side_validation && comment_show_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_show_parameters' when calling CommentsApi.comment_show"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -482,7 +482,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(comment_show) 
+      post_body = opts[:body] || @api_client.object_to_http_body(comment_show_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Comment' 
@@ -512,12 +512,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_update [CommentUpdate] 
+    # @param comment_update_parameters [CommentUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def comment_update(project_id, key_id, id, comment_update, opts = {})
-      data, _status_code, _headers = comment_update_with_http_info(project_id, key_id, id, comment_update, opts)
+    def comment_update(project_id, key_id, id, comment_update_parameters, opts = {})
+      data, _status_code, _headers = comment_update_with_http_info(project_id, key_id, id, comment_update_parameters, opts)
       data
     end
 
@@ -526,11 +526,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param id [String] ID
-    # @param comment_update [CommentUpdate] 
+    # @param comment_update_parameters [CommentUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def comment_update_with_http_info(project_id, key_id, id, comment_update, opts = {})
+    def comment_update_with_http_info(project_id, key_id, id, comment_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comment_update ...'
       end
@@ -546,9 +546,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling CommentsApi.comment_update"
       end
-      # verify the required parameter 'comment_update' is set
-      if @api_client.config.client_side_validation && comment_update.nil?
-        fail ArgumentError, "Missing the required parameter 'comment_update' when calling CommentsApi.comment_update"
+      # verify the required parameter 'comment_update_parameters' is set
+      if @api_client.config.client_side_validation && comment_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_update_parameters' when calling CommentsApi.comment_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -568,7 +568,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(comment_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(comment_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 
@@ -597,14 +597,14 @@ module Phrase
     # List all comments for a key.
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
-    # @param comments_list [CommentsList] 
+    # @param comments_list_parameters [CommentsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<Object>]
-    def comments_list(project_id, key_id, comments_list, opts = {})
-      data, _status_code, _headers = comments_list_with_http_info(project_id, key_id, comments_list, opts)
+    def comments_list(project_id, key_id, comments_list_parameters, opts = {})
+      data, _status_code, _headers = comments_list_with_http_info(project_id, key_id, comments_list_parameters, opts)
       data
     end
 
@@ -612,13 +612,13 @@ module Phrase
     # List all comments for a key.
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
-    # @param comments_list [CommentsList] 
+    # @param comments_list_parameters [CommentsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
-    def comments_list_with_http_info(project_id, key_id, comments_list, opts = {})
+    def comments_list_with_http_info(project_id, key_id, comments_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comments_list ...'
       end
@@ -630,9 +630,9 @@ module Phrase
       if @api_client.config.client_side_validation && key_id.nil?
         fail ArgumentError, "Missing the required parameter 'key_id' when calling CommentsApi.comments_list"
       end
-      # verify the required parameter 'comments_list' is set
-      if @api_client.config.client_side_validation && comments_list.nil?
-        fail ArgumentError, "Missing the required parameter 'comments_list' when calling CommentsApi.comments_list"
+      # verify the required parameter 'comments_list_parameters' is set
+      if @api_client.config.client_side_validation && comments_list_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'comments_list_parameters' when calling CommentsApi.comments_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s))
@@ -654,7 +654,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(comments_list) 
+      post_body = opts[:body] || @api_client.object_to_http_body(comments_list_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Object>' 

@@ -11,12 +11,12 @@ module Phrase
     # Confirm an existing order and send it to the provider for translation. Same constraints as for create.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param order_confirm [OrderConfirm] 
+    # @param order_confirm_parameters [OrderConfirmParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def order_confirm(project_id, id, order_confirm, opts = {})
-      data, _status_code, _headers = order_confirm_with_http_info(project_id, id, order_confirm, opts)
+    def order_confirm(project_id, id, order_confirm_parameters, opts = {})
+      data, _status_code, _headers = order_confirm_with_http_info(project_id, id, order_confirm_parameters, opts)
       data
     end
 
@@ -24,11 +24,11 @@ module Phrase
     # Confirm an existing order and send it to the provider for translation. Same constraints as for create.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param order_confirm [OrderConfirm] 
+    # @param order_confirm_parameters [OrderConfirmParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def order_confirm_with_http_info(project_id, id, order_confirm, opts = {})
+    def order_confirm_with_http_info(project_id, id, order_confirm_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.order_confirm ...'
       end
@@ -40,9 +40,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling OrdersApi.order_confirm"
       end
-      # verify the required parameter 'order_confirm' is set
-      if @api_client.config.client_side_validation && order_confirm.nil?
-        fail ArgumentError, "Missing the required parameter 'order_confirm' when calling OrdersApi.order_confirm"
+      # verify the required parameter 'order_confirm_parameters' is set
+      if @api_client.config.client_side_validation && order_confirm_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'order_confirm_parameters' when calling OrdersApi.order_confirm"
       end
       # resource path
       local_var_path = '/projects/{project_id}/orders/{id}/confirm'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -62,7 +62,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(order_confirm) 
+      post_body = opts[:body] || @api_client.object_to_http_body(order_confirm_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 
@@ -90,23 +90,23 @@ module Phrase
     # Create a new order
     # Create a new order. Access token scope must include <code>orders.create</code>.
     # @param project_id [String] Project ID
-    # @param order_create [OrderCreate] 
+    # @param order_create_parameters [OrderCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def order_create(project_id, order_create, opts = {})
-      order_create_with_http_info(project_id, order_create, opts)
+    def order_create(project_id, order_create_parameters, opts = {})
+      order_create_with_http_info(project_id, order_create_parameters, opts)
       nil
     end
 
     # Create a new order
     # Create a new order. Access token scope must include &lt;code&gt;orders.create&lt;/code&gt;.
     # @param project_id [String] Project ID
-    # @param order_create [OrderCreate] 
+    # @param order_create_parameters [OrderCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def order_create_with_http_info(project_id, order_create, opts = {})
+    def order_create_with_http_info(project_id, order_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.order_create ...'
       end
@@ -114,9 +114,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling OrdersApi.order_create"
       end
-      # verify the required parameter 'order_create' is set
-      if @api_client.config.client_side_validation && order_create.nil?
-        fail ArgumentError, "Missing the required parameter 'order_create' when calling OrdersApi.order_create"
+      # verify the required parameter 'order_create_parameters' is set
+      if @api_client.config.client_side_validation && order_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'order_create_parameters' when calling OrdersApi.order_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/orders'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -134,7 +134,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(order_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(order_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -163,12 +163,12 @@ module Phrase
     # Cancel an existing order. Must not yet be confirmed.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param order_delete [OrderDelete] 
+    # @param order_delete_parameters [OrderDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def order_delete(project_id, id, order_delete, opts = {})
-      order_delete_with_http_info(project_id, id, order_delete, opts)
+    def order_delete(project_id, id, order_delete_parameters, opts = {})
+      order_delete_with_http_info(project_id, id, order_delete_parameters, opts)
       nil
     end
 
@@ -176,11 +176,11 @@ module Phrase
     # Cancel an existing order. Must not yet be confirmed.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param order_delete [OrderDelete] 
+    # @param order_delete_parameters [OrderDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def order_delete_with_http_info(project_id, id, order_delete, opts = {})
+    def order_delete_with_http_info(project_id, id, order_delete_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.order_delete ...'
       end
@@ -192,9 +192,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling OrdersApi.order_delete"
       end
-      # verify the required parameter 'order_delete' is set
-      if @api_client.config.client_side_validation && order_delete.nil?
-        fail ArgumentError, "Missing the required parameter 'order_delete' when calling OrdersApi.order_delete"
+      # verify the required parameter 'order_delete_parameters' is set
+      if @api_client.config.client_side_validation && order_delete_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'order_delete_parameters' when calling OrdersApi.order_delete"
       end
       # resource path
       local_var_path = '/projects/{project_id}/orders/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -212,7 +212,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(order_delete) 
+      post_body = opts[:body] || @api_client.object_to_http_body(order_delete_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -241,12 +241,12 @@ module Phrase
     # Get details on a single order.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param order_show [OrderShow] 
+    # @param order_show_parameters [OrderShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [TranslationOrder]
-    def order_show(project_id, id, order_show, opts = {})
-      data, _status_code, _headers = order_show_with_http_info(project_id, id, order_show, opts)
+    def order_show(project_id, id, order_show_parameters, opts = {})
+      data, _status_code, _headers = order_show_with_http_info(project_id, id, order_show_parameters, opts)
       data
     end
 
@@ -254,11 +254,11 @@ module Phrase
     # Get details on a single order.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param order_show [OrderShow] 
+    # @param order_show_parameters [OrderShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(TranslationOrder)>, Integer, Hash)>] Response<(TranslationOrder)> data, response status code and response headers
-    def order_show_with_http_info(project_id, id, order_show, opts = {})
+    def order_show_with_http_info(project_id, id, order_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.order_show ...'
       end
@@ -270,9 +270,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling OrdersApi.order_show"
       end
-      # verify the required parameter 'order_show' is set
-      if @api_client.config.client_side_validation && order_show.nil?
-        fail ArgumentError, "Missing the required parameter 'order_show' when calling OrdersApi.order_show"
+      # verify the required parameter 'order_show_parameters' is set
+      if @api_client.config.client_side_validation && order_show_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'order_show_parameters' when calling OrdersApi.order_show"
       end
       # resource path
       local_var_path = '/projects/{project_id}/orders/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -292,7 +292,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(order_show) 
+      post_body = opts[:body] || @api_client.object_to_http_body(order_show_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'TranslationOrder' 
@@ -320,27 +320,27 @@ module Phrase
     # List orders
     # List all orders for the given project.
     # @param project_id [String] Project ID
-    # @param orders_list [OrdersList] 
+    # @param orders_list_parameters [OrdersListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<Object>]
-    def orders_list(project_id, orders_list, opts = {})
-      data, _status_code, _headers = orders_list_with_http_info(project_id, orders_list, opts)
+    def orders_list(project_id, orders_list_parameters, opts = {})
+      data, _status_code, _headers = orders_list_with_http_info(project_id, orders_list_parameters, opts)
       data
     end
 
     # List orders
     # List all orders for the given project.
     # @param project_id [String] Project ID
-    # @param orders_list [OrdersList] 
+    # @param orders_list_parameters [OrdersListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
-    def orders_list_with_http_info(project_id, orders_list, opts = {})
+    def orders_list_with_http_info(project_id, orders_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.orders_list ...'
       end
@@ -348,9 +348,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling OrdersApi.orders_list"
       end
-      # verify the required parameter 'orders_list' is set
-      if @api_client.config.client_side_validation && orders_list.nil?
-        fail ArgumentError, "Missing the required parameter 'orders_list' when calling OrdersApi.orders_list"
+      # verify the required parameter 'orders_list_parameters' is set
+      if @api_client.config.client_side_validation && orders_list_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'orders_list_parameters' when calling OrdersApi.orders_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/orders'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -372,7 +372,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(orders_list) 
+      post_body = opts[:body] || @api_client.object_to_http_body(orders_list_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Object>' 

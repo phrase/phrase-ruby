@@ -10,23 +10,23 @@ module Phrase
     # Create a key
     # Create a new key.
     # @param project_id [String] Project ID
-    # @param key_create [KeyCreate] 
+    # @param key_create_parameters [KeyCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def key_create(project_id, key_create, opts = {})
-      key_create_with_http_info(project_id, key_create, opts)
+    def key_create(project_id, key_create_parameters, opts = {})
+      key_create_with_http_info(project_id, key_create_parameters, opts)
       nil
     end
 
     # Create a key
     # Create a new key.
     # @param project_id [String] Project ID
-    # @param key_create [KeyCreate] 
+    # @param key_create_parameters [KeyCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def key_create_with_http_info(project_id, key_create, opts = {})
+    def key_create_with_http_info(project_id, key_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.key_create ...'
       end
@@ -34,9 +34,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.key_create"
       end
-      # verify the required parameter 'key_create' is set
-      if @api_client.config.client_side_validation && key_create.nil?
-        fail ArgumentError, "Missing the required parameter 'key_create' when calling KeysApi.key_create"
+      # verify the required parameter 'key_create_parameters' is set
+      if @api_client.config.client_side_validation && key_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'key_create_parameters' when calling KeysApi.key_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -54,7 +54,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(key_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(key_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -83,12 +83,12 @@ module Phrase
     # Delete an existing key.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param key_delete [KeyDelete] 
+    # @param key_delete_parameters [KeyDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def key_delete(project_id, id, key_delete, opts = {})
-      key_delete_with_http_info(project_id, id, key_delete, opts)
+    def key_delete(project_id, id, key_delete_parameters, opts = {})
+      key_delete_with_http_info(project_id, id, key_delete_parameters, opts)
       nil
     end
 
@@ -96,11 +96,11 @@ module Phrase
     # Delete an existing key.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param key_delete [KeyDelete] 
+    # @param key_delete_parameters [KeyDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def key_delete_with_http_info(project_id, id, key_delete, opts = {})
+    def key_delete_with_http_info(project_id, id, key_delete_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.key_delete ...'
       end
@@ -112,9 +112,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling KeysApi.key_delete"
       end
-      # verify the required parameter 'key_delete' is set
-      if @api_client.config.client_side_validation && key_delete.nil?
-        fail ArgumentError, "Missing the required parameter 'key_delete' when calling KeysApi.key_delete"
+      # verify the required parameter 'key_delete_parameters' is set
+      if @api_client.config.client_side_validation && key_delete_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'key_delete_parameters' when calling KeysApi.key_delete"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -132,7 +132,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(key_delete) 
+      post_body = opts[:body] || @api_client.object_to_http_body(key_delete_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -161,12 +161,12 @@ module Phrase
     # Get details on a single key for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param key_show [KeyShow] 
+    # @param key_show_parameters [KeyShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def key_show(project_id, id, key_show, opts = {})
-      data, _status_code, _headers = key_show_with_http_info(project_id, id, key_show, opts)
+    def key_show(project_id, id, key_show_parameters, opts = {})
+      data, _status_code, _headers = key_show_with_http_info(project_id, id, key_show_parameters, opts)
       data
     end
 
@@ -174,11 +174,11 @@ module Phrase
     # Get details on a single key for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param key_show [KeyShow] 
+    # @param key_show_parameters [KeyShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def key_show_with_http_info(project_id, id, key_show, opts = {})
+    def key_show_with_http_info(project_id, id, key_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.key_show ...'
       end
@@ -190,9 +190,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling KeysApi.key_show"
       end
-      # verify the required parameter 'key_show' is set
-      if @api_client.config.client_side_validation && key_show.nil?
-        fail ArgumentError, "Missing the required parameter 'key_show' when calling KeysApi.key_show"
+      # verify the required parameter 'key_show_parameters' is set
+      if @api_client.config.client_side_validation && key_show_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'key_show_parameters' when calling KeysApi.key_show"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -212,7 +212,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(key_show) 
+      post_body = opts[:body] || @api_client.object_to_http_body(key_show_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 
@@ -241,12 +241,12 @@ module Phrase
     # Update an existing key.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param key_update [KeyUpdate] 
+    # @param key_update_parameters [KeyUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def key_update(project_id, id, key_update, opts = {})
-      data, _status_code, _headers = key_update_with_http_info(project_id, id, key_update, opts)
+    def key_update(project_id, id, key_update_parameters, opts = {})
+      data, _status_code, _headers = key_update_with_http_info(project_id, id, key_update_parameters, opts)
       data
     end
 
@@ -254,11 +254,11 @@ module Phrase
     # Update an existing key.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param key_update [KeyUpdate] 
+    # @param key_update_parameters [KeyUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def key_update_with_http_info(project_id, id, key_update, opts = {})
+    def key_update_with_http_info(project_id, id, key_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.key_update ...'
       end
@@ -270,9 +270,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling KeysApi.key_update"
       end
-      # verify the required parameter 'key_update' is set
-      if @api_client.config.client_side_validation && key_update.nil?
-        fail ArgumentError, "Missing the required parameter 'key_update' when calling KeysApi.key_update"
+      # verify the required parameter 'key_update_parameters' is set
+      if @api_client.config.client_side_validation && key_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'key_update_parameters' when calling KeysApi.key_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -292,7 +292,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(key_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(key_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 
@@ -320,23 +320,23 @@ module Phrase
     # Delete collection of keys
     # Delete all keys matching query. Same constraints as list. Please limit the number of affected keys to about 1,000 as you might experience timeouts otherwise.
     # @param project_id [String] Project ID
-    # @param keys_delete [KeysDelete] 
+    # @param keys_delete_parameters [KeysDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [AffectedResources]
-    def keys_delete(project_id, keys_delete, opts = {})
-      data, _status_code, _headers = keys_delete_with_http_info(project_id, keys_delete, opts)
+    def keys_delete(project_id, keys_delete_parameters, opts = {})
+      data, _status_code, _headers = keys_delete_with_http_info(project_id, keys_delete_parameters, opts)
       data
     end
 
     # Delete collection of keys
     # Delete all keys matching query. Same constraints as list. Please limit the number of affected keys to about 1,000 as you might experience timeouts otherwise.
     # @param project_id [String] Project ID
-    # @param keys_delete [KeysDelete] 
+    # @param keys_delete_parameters [KeysDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(AffectedResources)>, Integer, Hash)>] Response<(AffectedResources)> data, response status code and response headers
-    def keys_delete_with_http_info(project_id, keys_delete, opts = {})
+    def keys_delete_with_http_info(project_id, keys_delete_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.keys_delete ...'
       end
@@ -344,9 +344,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.keys_delete"
       end
-      # verify the required parameter 'keys_delete' is set
-      if @api_client.config.client_side_validation && keys_delete.nil?
-        fail ArgumentError, "Missing the required parameter 'keys_delete' when calling KeysApi.keys_delete"
+      # verify the required parameter 'keys_delete_parameters' is set
+      if @api_client.config.client_side_validation && keys_delete_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'keys_delete_parameters' when calling KeysApi.keys_delete"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -366,7 +366,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(keys_delete) 
+      post_body = opts[:body] || @api_client.object_to_http_body(keys_delete_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'AffectedResources' 
@@ -394,27 +394,27 @@ module Phrase
     # List keys
     # List all keys for the given project. Alternatively you can POST requests to /search.
     # @param project_id [String] Project ID
-    # @param keys_list [KeysList] 
+    # @param keys_list_parameters [KeysListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<TranslationKey>]
-    def keys_list(project_id, keys_list, opts = {})
-      data, _status_code, _headers = keys_list_with_http_info(project_id, keys_list, opts)
+    def keys_list(project_id, keys_list_parameters, opts = {})
+      data, _status_code, _headers = keys_list_with_http_info(project_id, keys_list_parameters, opts)
       data
     end
 
     # List keys
     # List all keys for the given project. Alternatively you can POST requests to /search.
     # @param project_id [String] Project ID
-    # @param keys_list [KeysList] 
+    # @param keys_list_parameters [KeysListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<(Response<(Array<TranslationKey>)>, Integer, Hash)>] Response<(Array<TranslationKey>)> data, response status code and response headers
-    def keys_list_with_http_info(project_id, keys_list, opts = {})
+    def keys_list_with_http_info(project_id, keys_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.keys_list ...'
       end
@@ -422,9 +422,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.keys_list"
       end
-      # verify the required parameter 'keys_list' is set
-      if @api_client.config.client_side_validation && keys_list.nil?
-        fail ArgumentError, "Missing the required parameter 'keys_list' when calling KeysApi.keys_list"
+      # verify the required parameter 'keys_list_parameters' is set
+      if @api_client.config.client_side_validation && keys_list_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'keys_list_parameters' when calling KeysApi.keys_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -446,7 +446,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(keys_list) 
+      post_body = opts[:body] || @api_client.object_to_http_body(keys_list_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<TranslationKey>' 
@@ -474,27 +474,27 @@ module Phrase
     # Search keys
     # Search keys for the given project matching query.
     # @param project_id [String] Project ID
-    # @param keys_search [KeysSearch] 
+    # @param keys_search_parameters [KeysSearchParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<Object>]
-    def keys_search(project_id, keys_search, opts = {})
-      data, _status_code, _headers = keys_search_with_http_info(project_id, keys_search, opts)
+    def keys_search(project_id, keys_search_parameters, opts = {})
+      data, _status_code, _headers = keys_search_with_http_info(project_id, keys_search_parameters, opts)
       data
     end
 
     # Search keys
     # Search keys for the given project matching query.
     # @param project_id [String] Project ID
-    # @param keys_search [KeysSearch] 
+    # @param keys_search_parameters [KeysSearchParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
-    def keys_search_with_http_info(project_id, keys_search, opts = {})
+    def keys_search_with_http_info(project_id, keys_search_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.keys_search ...'
       end
@@ -502,9 +502,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.keys_search"
       end
-      # verify the required parameter 'keys_search' is set
-      if @api_client.config.client_side_validation && keys_search.nil?
-        fail ArgumentError, "Missing the required parameter 'keys_search' when calling KeysApi.keys_search"
+      # verify the required parameter 'keys_search_parameters' is set
+      if @api_client.config.client_side_validation && keys_search_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'keys_search_parameters' when calling KeysApi.keys_search"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/search'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -526,7 +526,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(keys_search) 
+      post_body = opts[:body] || @api_client.object_to_http_body(keys_search_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Object>' 
@@ -554,23 +554,23 @@ module Phrase
     # Add tags to collection of keys
     # Tags all keys matching query. Same constraints as list.
     # @param project_id [String] Project ID
-    # @param keys_tag [KeysTag] 
+    # @param keys_tag_parameters [KeysTagParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def keys_tag(project_id, keys_tag, opts = {})
-      data, _status_code, _headers = keys_tag_with_http_info(project_id, keys_tag, opts)
+    def keys_tag(project_id, keys_tag_parameters, opts = {})
+      data, _status_code, _headers = keys_tag_with_http_info(project_id, keys_tag_parameters, opts)
       data
     end
 
     # Add tags to collection of keys
     # Tags all keys matching query. Same constraints as list.
     # @param project_id [String] Project ID
-    # @param keys_tag [KeysTag] 
+    # @param keys_tag_parameters [KeysTagParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def keys_tag_with_http_info(project_id, keys_tag, opts = {})
+    def keys_tag_with_http_info(project_id, keys_tag_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.keys_tag ...'
       end
@@ -578,9 +578,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.keys_tag"
       end
-      # verify the required parameter 'keys_tag' is set
-      if @api_client.config.client_side_validation && keys_tag.nil?
-        fail ArgumentError, "Missing the required parameter 'keys_tag' when calling KeysApi.keys_tag"
+      # verify the required parameter 'keys_tag_parameters' is set
+      if @api_client.config.client_side_validation && keys_tag_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'keys_tag_parameters' when calling KeysApi.keys_tag"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/tag'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -600,7 +600,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(keys_tag) 
+      post_body = opts[:body] || @api_client.object_to_http_body(keys_tag_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 
@@ -628,23 +628,23 @@ module Phrase
     # Remove tags from collection of keys
     # Removes specified tags from keys matching query.
     # @param project_id [String] Project ID
-    # @param keys_untag [KeysUntag] 
+    # @param keys_untag_parameters [KeysUntagParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def keys_untag(project_id, keys_untag, opts = {})
-      data, _status_code, _headers = keys_untag_with_http_info(project_id, keys_untag, opts)
+    def keys_untag(project_id, keys_untag_parameters, opts = {})
+      data, _status_code, _headers = keys_untag_with_http_info(project_id, keys_untag_parameters, opts)
       data
     end
 
     # Remove tags from collection of keys
     # Removes specified tags from keys matching query.
     # @param project_id [String] Project ID
-    # @param keys_untag [KeysUntag] 
+    # @param keys_untag_parameters [KeysUntagParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def keys_untag_with_http_info(project_id, keys_untag, opts = {})
+    def keys_untag_with_http_info(project_id, keys_untag_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.keys_untag ...'
       end
@@ -652,9 +652,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.keys_untag"
       end
-      # verify the required parameter 'keys_untag' is set
-      if @api_client.config.client_side_validation && keys_untag.nil?
-        fail ArgumentError, "Missing the required parameter 'keys_untag' when calling KeysApi.keys_untag"
+      # verify the required parameter 'keys_untag_parameters' is set
+      if @api_client.config.client_side_validation && keys_untag_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'keys_untag_parameters' when calling KeysApi.keys_untag"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/untag'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -674,7 +674,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(keys_untag) 
+      post_body = opts[:body] || @api_client.object_to_http_body(keys_untag_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

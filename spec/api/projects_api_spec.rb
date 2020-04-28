@@ -23,7 +23,7 @@ describe 'ProjectsApi' do
   # unit tests for project_create
   # Create a project
   # Create a new project.
-  # @param project_create 
+  # @param project_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -63,7 +63,7 @@ describe 'ProjectsApi' do
   # Update a project
   # Update an existing project.
   # @param id ID
-  # @param project_update 
+  # @param project_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]

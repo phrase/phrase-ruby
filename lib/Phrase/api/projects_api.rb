@@ -9,28 +9,28 @@ module Phrase
     end
     # Create a project
     # Create a new project.
-    # @param project_create [ProjectCreate] 
+    # @param project_create_parameters [ProjectCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def project_create(project_create, opts = {})
-      project_create_with_http_info(project_create, opts)
+    def project_create(project_create_parameters, opts = {})
+      project_create_with_http_info(project_create_parameters, opts)
       nil
     end
 
     # Create a project
     # Create a new project.
-    # @param project_create [ProjectCreate] 
+    # @param project_create_parameters [ProjectCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def project_create_with_http_info(project_create, opts = {})
+    def project_create_with_http_info(project_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProjectsApi.project_create ...'
       end
-      # verify the required parameter 'project_create' is set
-      if @api_client.config.client_side_validation && project_create.nil?
-        fail ArgumentError, "Missing the required parameter 'project_create' when calling ProjectsApi.project_create"
+      # verify the required parameter 'project_create_parameters' is set
+      if @api_client.config.client_side_validation && project_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'project_create_parameters' when calling ProjectsApi.project_create"
       end
       # resource path
       local_var_path = '/projects'
@@ -48,7 +48,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(project_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(project_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -206,23 +206,23 @@ module Phrase
     # Update a project
     # Update an existing project.
     # @param id [String] ID
-    # @param project_update [ProjectUpdate] 
+    # @param project_update_parameters [ProjectUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def project_update(id, project_update, opts = {})
-      data, _status_code, _headers = project_update_with_http_info(id, project_update, opts)
+    def project_update(id, project_update_parameters, opts = {})
+      data, _status_code, _headers = project_update_with_http_info(id, project_update_parameters, opts)
       data
     end
 
     # Update a project
     # Update an existing project.
     # @param id [String] ID
-    # @param project_update [ProjectUpdate] 
+    # @param project_update_parameters [ProjectUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def project_update_with_http_info(id, project_update, opts = {})
+    def project_update_with_http_info(id, project_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProjectsApi.project_update ...'
       end
@@ -230,9 +230,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling ProjectsApi.project_update"
       end
-      # verify the required parameter 'project_update' is set
-      if @api_client.config.client_side_validation && project_update.nil?
-        fail ArgumentError, "Missing the required parameter 'project_update' when calling ProjectsApi.project_update"
+      # verify the required parameter 'project_update_parameters' is set
+      if @api_client.config.client_side_validation && project_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'project_update_parameters' when calling ProjectsApi.project_update"
       end
       # resource path
       local_var_path = '/projects/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -252,7 +252,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(project_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(project_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

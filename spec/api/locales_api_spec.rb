@@ -24,7 +24,7 @@ describe 'LocalesApi' do
   # Create a locale
   # Create a new locale.
   # @param project_id Project ID
-  # @param locale_create 
+  # @param locale_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -39,7 +39,7 @@ describe 'LocalesApi' do
   # Delete an existing locale.
   # @param project_id Project ID
   # @param id ID
-  # @param locale_delete 
+  # @param locale_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -54,7 +54,7 @@ describe 'LocalesApi' do
   # Download a locale in a specific file format.
   # @param project_id Project ID
   # @param id ID
-  # @param locale_download 
+  # @param locale_download_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -69,7 +69,7 @@ describe 'LocalesApi' do
   # Get details on a single locale for a given project.
   # @param project_id Project ID
   # @param id ID
-  # @param locale_show 
+  # @param locale_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -84,7 +84,7 @@ describe 'LocalesApi' do
   # Update an existing locale.
   # @param project_id Project ID
   # @param id ID
-  # @param locale_update 
+  # @param locale_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -98,7 +98,7 @@ describe 'LocalesApi' do
   # List locales
   # List all locales for the given project.
   # @param project_id Project ID
-  # @param locales_list 
+  # @param locales_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number

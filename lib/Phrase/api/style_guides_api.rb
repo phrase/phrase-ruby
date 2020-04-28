@@ -10,23 +10,23 @@ module Phrase
     # Create a style guide
     # Create a new style guide.
     # @param project_id [String] Project ID
-    # @param styleguide_create [StyleguideCreate] 
+    # @param styleguide_create_parameters [StyleguideCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def styleguide_create(project_id, styleguide_create, opts = {})
-      styleguide_create_with_http_info(project_id, styleguide_create, opts)
+    def styleguide_create(project_id, styleguide_create_parameters, opts = {})
+      styleguide_create_with_http_info(project_id, styleguide_create_parameters, opts)
       nil
     end
 
     # Create a style guide
     # Create a new style guide.
     # @param project_id [String] Project ID
-    # @param styleguide_create [StyleguideCreate] 
+    # @param styleguide_create_parameters [StyleguideCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def styleguide_create_with_http_info(project_id, styleguide_create, opts = {})
+    def styleguide_create_with_http_info(project_id, styleguide_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StyleGuidesApi.styleguide_create ...'
       end
@@ -34,9 +34,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling StyleGuidesApi.styleguide_create"
       end
-      # verify the required parameter 'styleguide_create' is set
-      if @api_client.config.client_side_validation && styleguide_create.nil?
-        fail ArgumentError, "Missing the required parameter 'styleguide_create' when calling StyleGuidesApi.styleguide_create"
+      # verify the required parameter 'styleguide_create_parameters' is set
+      if @api_client.config.client_side_validation && styleguide_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'styleguide_create_parameters' when calling StyleGuidesApi.styleguide_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/styleguides'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -54,7 +54,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(styleguide_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(styleguide_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -225,12 +225,12 @@ module Phrase
     # Update an existing style guide.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param styleguide_update [StyleguideUpdate] 
+    # @param styleguide_update_parameters [StyleguideUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def styleguide_update(project_id, id, styleguide_update, opts = {})
-      data, _status_code, _headers = styleguide_update_with_http_info(project_id, id, styleguide_update, opts)
+    def styleguide_update(project_id, id, styleguide_update_parameters, opts = {})
+      data, _status_code, _headers = styleguide_update_with_http_info(project_id, id, styleguide_update_parameters, opts)
       data
     end
 
@@ -238,11 +238,11 @@ module Phrase
     # Update an existing style guide.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param styleguide_update [StyleguideUpdate] 
+    # @param styleguide_update_parameters [StyleguideUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def styleguide_update_with_http_info(project_id, id, styleguide_update, opts = {})
+    def styleguide_update_with_http_info(project_id, id, styleguide_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StyleGuidesApi.styleguide_update ...'
       end
@@ -254,9 +254,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling StyleGuidesApi.styleguide_update"
       end
-      # verify the required parameter 'styleguide_update' is set
-      if @api_client.config.client_side_validation && styleguide_update.nil?
-        fail ArgumentError, "Missing the required parameter 'styleguide_update' when calling StyleGuidesApi.styleguide_update"
+      # verify the required parameter 'styleguide_update_parameters' is set
+      if @api_client.config.client_side_validation && styleguide_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'styleguide_update_parameters' when calling StyleGuidesApi.styleguide_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/styleguides/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -276,7 +276,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(styleguide_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(styleguide_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

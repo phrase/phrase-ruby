@@ -25,7 +25,7 @@ describe 'JobsApi' do
   # Mark a job as completed.
   # @param project_id Project ID
   # @param id ID
-  # @param job_complete 
+  # @param job_complete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -39,7 +39,7 @@ describe 'JobsApi' do
   # Create a job
   # Create a new job.
   # @param project_id Project ID
-  # @param job_create 
+  # @param job_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -54,7 +54,7 @@ describe 'JobsApi' do
   # Delete an existing job.
   # @param project_id Project ID
   # @param id ID
-  # @param job_delete 
+  # @param job_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -69,7 +69,7 @@ describe 'JobsApi' do
   # Add multiple keys to a existing job.
   # @param project_id Project ID
   # @param id ID
-  # @param job_keys_create 
+  # @param job_keys_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -84,7 +84,7 @@ describe 'JobsApi' do
   # Remove multiple keys from existing job.
   # @param project_id Project ID
   # @param id ID
-  # @param job_keys_delete 
+  # @param job_keys_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -99,7 +99,7 @@ describe 'JobsApi' do
   # Mark a job as uncompleted.
   # @param project_id Project ID
   # @param id ID
-  # @param job_reopen 
+  # @param job_reopen_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -114,7 +114,7 @@ describe 'JobsApi' do
   # Get details on a single job for a given project.
   # @param project_id Project ID
   # @param id ID
-  # @param job_show 
+  # @param job_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -129,7 +129,7 @@ describe 'JobsApi' do
   # Starts an existing job in state draft.
   # @param project_id Project ID
   # @param id ID
-  # @param job_start 
+  # @param job_start_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -144,7 +144,7 @@ describe 'JobsApi' do
   # Update an existing job.
   # @param project_id Project ID
   # @param id ID
-  # @param job_update 
+  # @param job_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -158,7 +158,7 @@ describe 'JobsApi' do
   # List jobs
   # List all jobs for the given project.
   # @param project_id Project ID
-  # @param jobs_list 
+  # @param jobs_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number

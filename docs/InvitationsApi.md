@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## invitation_create
 
-> invitation_create(account_id, invitation_create, opts)
+> invitation_create(account_id, invitation_create_parameters, opts)
 
 Create a new invitation
 
@@ -40,14 +40,14 @@ end
 
 api_instance = Phrase::InvitationsApi.new
 account_id = 'account_id_example' # String | Account ID
-invitation_create = Phrase::InvitationCreate.new # InvitationCreate | 
+invitation_create_parameters = Phrase::InvitationCreateParameters.new # InvitationCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a new invitation
-  api_instance.invitation_create(account_id, invitation_create, opts)
+  api_instance.invitation_create(account_id, invitation_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling InvitationsApi->invitation_create: #{e}"
 end
@@ -59,7 +59,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **invitation_create** | [**InvitationCreate**](InvitationCreate.md)|  | 
+ **invitation_create_parameters** | [**InvitationCreateParameters**](InvitationCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -269,7 +269,7 @@ Response<([**Invitation**](Invitation.md))>
 
 ## invitation_update
 
-> Object invitation_update(account_id, id, invitation_update, opts)
+> Object invitation_update(account_id, id, invitation_update_parameters, opts)
 
 Update an invitation
 
@@ -295,14 +295,14 @@ end
 api_instance = Phrase::InvitationsApi.new
 account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
-invitation_update = Phrase::InvitationUpdate.new # InvitationUpdate | 
+invitation_update_parameters = Phrase::InvitationUpdateParameters.new # InvitationUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update an invitation
-  result = api_instance.invitation_update(account_id, id, invitation_update, opts)
+  result = api_instance.invitation_update(account_id, id, invitation_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling InvitationsApi->invitation_update: #{e}"
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
  **id** | **String**| ID | 
- **invitation_update** | [**InvitationUpdate**](InvitationUpdate.md)|  | 
+ **invitation_update_parameters** | [**InvitationUpdateParameters**](InvitationUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

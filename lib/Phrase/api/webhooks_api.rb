@@ -10,23 +10,23 @@ module Phrase
     # Create a webhook
     # Create a new webhook.
     # @param project_id [String] Project ID
-    # @param webhook_create [WebhookCreate] 
+    # @param webhook_create_parameters [WebhookCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def webhook_create(project_id, webhook_create, opts = {})
-      webhook_create_with_http_info(project_id, webhook_create, opts)
+    def webhook_create(project_id, webhook_create_parameters, opts = {})
+      webhook_create_with_http_info(project_id, webhook_create_parameters, opts)
       nil
     end
 
     # Create a webhook
     # Create a new webhook.
     # @param project_id [String] Project ID
-    # @param webhook_create [WebhookCreate] 
+    # @param webhook_create_parameters [WebhookCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def webhook_create_with_http_info(project_id, webhook_create, opts = {})
+    def webhook_create_with_http_info(project_id, webhook_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WebhooksApi.webhook_create ...'
       end
@@ -34,9 +34,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling WebhooksApi.webhook_create"
       end
-      # verify the required parameter 'webhook_create' is set
-      if @api_client.config.client_side_validation && webhook_create.nil?
-        fail ArgumentError, "Missing the required parameter 'webhook_create' when calling WebhooksApi.webhook_create"
+      # verify the required parameter 'webhook_create_parameters' is set
+      if @api_client.config.client_side_validation && webhook_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'webhook_create_parameters' when calling WebhooksApi.webhook_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/webhooks'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -54,7 +54,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(webhook_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(webhook_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -295,12 +295,12 @@ module Phrase
     # Update an existing webhook.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param webhook_update [WebhookUpdate] 
+    # @param webhook_update_parameters [WebhookUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def webhook_update(project_id, id, webhook_update, opts = {})
-      data, _status_code, _headers = webhook_update_with_http_info(project_id, id, webhook_update, opts)
+    def webhook_update(project_id, id, webhook_update_parameters, opts = {})
+      data, _status_code, _headers = webhook_update_with_http_info(project_id, id, webhook_update_parameters, opts)
       data
     end
 
@@ -308,11 +308,11 @@ module Phrase
     # Update an existing webhook.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param webhook_update [WebhookUpdate] 
+    # @param webhook_update_parameters [WebhookUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def webhook_update_with_http_info(project_id, id, webhook_update, opts = {})
+    def webhook_update_with_http_info(project_id, id, webhook_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WebhooksApi.webhook_update ...'
       end
@@ -324,9 +324,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling WebhooksApi.webhook_update"
       end
-      # verify the required parameter 'webhook_update' is set
-      if @api_client.config.client_side_validation && webhook_update.nil?
-        fail ArgumentError, "Missing the required parameter 'webhook_update' when calling WebhooksApi.webhook_update"
+      # verify the required parameter 'webhook_update_parameters' is set
+      if @api_client.config.client_side_validation && webhook_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'webhook_update_parameters' when calling WebhooksApi.webhook_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/webhooks/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -346,7 +346,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(webhook_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(webhook_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

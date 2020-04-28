@@ -25,7 +25,7 @@ describe 'OrdersApi' do
   # Confirm an existing order and send it to the provider for translation. Same constraints as for create.
   # @param project_id Project ID
   # @param id ID
-  # @param order_confirm 
+  # @param order_confirm_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -39,7 +39,7 @@ describe 'OrdersApi' do
   # Create a new order
   # Create a new order. Access token scope must include &lt;code&gt;orders.create&lt;/code&gt;.
   # @param project_id Project ID
-  # @param order_create 
+  # @param order_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -54,7 +54,7 @@ describe 'OrdersApi' do
   # Cancel an existing order. Must not yet be confirmed.
   # @param project_id Project ID
   # @param id ID
-  # @param order_delete 
+  # @param order_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -69,7 +69,7 @@ describe 'OrdersApi' do
   # Get details on a single order.
   # @param project_id Project ID
   # @param id ID
-  # @param order_show 
+  # @param order_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [TranslationOrder]
@@ -83,7 +83,7 @@ describe 'OrdersApi' do
   # List orders
   # List all orders for the given project.
   # @param project_id Project ID
-  # @param orders_list 
+  # @param orders_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number

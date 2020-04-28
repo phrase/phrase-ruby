@@ -24,7 +24,7 @@ describe 'SpacesApi' do
   # Create a Space
   # Create a new Space.
   # @param account_id Account ID
-  # @param space_create 
+  # @param space_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -67,7 +67,7 @@ describe 'SpacesApi' do
   # Update the specified Space.
   # @param account_id Account ID
   # @param id ID
-  # @param space_update 
+  # @param space_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Space]
@@ -97,7 +97,7 @@ describe 'SpacesApi' do
   # Adds an existing project to the space.
   # @param account_id Account ID
   # @param space_id Space ID
-  # @param spaces_projects_create 
+  # @param spaces_projects_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]

@@ -4,14 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **String** | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
+**status** | **Integer** |  | [optional] 
+**action** | **String** |  | [optional] 
+**errors** | **Array&lt;String&gt;** |  | [optional] 
+**date** | **DateTime** |  | [optional] 
+**details** | [**Object**](.md) |  | [optional] 
 
 ## Code Sample
 
 ```ruby
 require 'Phrase'
 
-instance = Phrase::GitlabSyncHistory.new(account_id: abcd1234)
+instance = Phrase::GitlabSyncHistory.new(status: null,
+                                 action: null,
+                                 errors: null,
+                                 date: null,
+                                 details: null)
 ```
 
 

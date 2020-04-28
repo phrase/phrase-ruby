@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## order_confirm
 
-> Object order_confirm(project_id, id, order_confirm, opts)
+> Object order_confirm(project_id, id, order_confirm_parameters, opts)
 
 Confirm an order
 
@@ -40,14 +40,14 @@ end
 api_instance = Phrase::OrdersApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-order_confirm = Phrase::OrderConfirm.new # OrderConfirm | 
+order_confirm_parameters = Phrase::OrderConfirmParameters.new # OrderConfirmParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Confirm an order
-  result = api_instance.order_confirm(project_id, id, order_confirm, opts)
+  result = api_instance.order_confirm(project_id, id, order_confirm_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling OrdersApi->order_confirm: #{e}"
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **order_confirm** | [**OrderConfirm**](OrderConfirm.md)|  | 
+ **order_confirm_parameters** | [**OrderConfirmParameters**](OrderConfirmParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -80,7 +80,7 @@ Response<(**Object**)>
 
 ## order_create
 
-> order_create(project_id, order_create, opts)
+> order_create(project_id, order_create_parameters, opts)
 
 Create a new order
 
@@ -105,14 +105,14 @@ end
 
 api_instance = Phrase::OrdersApi.new
 project_id = 'project_id_example' # String | Project ID
-order_create = Phrase::OrderCreate.new # OrderCreate | 
+order_create_parameters = Phrase::OrderCreateParameters.new # OrderCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a new order
-  api_instance.order_create(project_id, order_create, opts)
+  api_instance.order_create(project_id, order_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling OrdersApi->order_create: #{e}"
 end
@@ -124,7 +124,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **order_create** | [**OrderCreate**](OrderCreate.md)|  | 
+ **order_create_parameters** | [**OrderCreateParameters**](OrderCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -143,7 +143,7 @@ Response<(nil (empty response body))>
 
 ## order_delete
 
-> order_delete(project_id, id, order_delete, opts)
+> order_delete(project_id, id, order_delete_parameters, opts)
 
 Cancel an order
 
@@ -169,14 +169,14 @@ end
 api_instance = Phrase::OrdersApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-order_delete = Phrase::OrderDelete.new # OrderDelete | 
+order_delete_parameters = Phrase::OrderDeleteParameters.new # OrderDeleteParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Cancel an order
-  api_instance.order_delete(project_id, id, order_delete, opts)
+  api_instance.order_delete(project_id, id, order_delete_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling OrdersApi->order_delete: #{e}"
 end
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **order_delete** | [**OrderDelete**](OrderDelete.md)|  | 
+ **order_delete_parameters** | [**OrderDeleteParameters**](OrderDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -208,7 +208,7 @@ Response<(nil (empty response body))>
 
 ## order_show
 
-> TranslationOrder order_show(project_id, id, order_show, opts)
+> TranslationOrder order_show(project_id, id, order_show_parameters, opts)
 
 Get a single order
 
@@ -234,14 +234,14 @@ end
 api_instance = Phrase::OrdersApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-order_show = Phrase::OrderShow.new # OrderShow | 
+order_show_parameters = Phrase::OrderShowParameters.new # OrderShowParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Get a single order
-  result = api_instance.order_show(project_id, id, order_show, opts)
+  result = api_instance.order_show(project_id, id, order_show_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling OrdersApi->order_show: #{e}"
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **order_show** | [**OrderShow**](OrderShow.md)|  | 
+ **order_show_parameters** | [**OrderShowParameters**](OrderShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -274,7 +274,7 @@ Response<([**TranslationOrder**](TranslationOrder.md))>
 
 ## orders_list
 
-> Array&lt;Object&gt; orders_list(project_id, orders_list, opts)
+> Array&lt;Object&gt; orders_list(project_id, orders_list_parameters, opts)
 
 List orders
 
@@ -299,7 +299,7 @@ end
 
 api_instance = Phrase::OrdersApi.new
 project_id = 'project_id_example' # String | Project ID
-orders_list = Phrase::OrdersList.new # OrdersList | 
+orders_list_parameters = Phrase::OrdersListParameters.new # OrdersListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -308,7 +308,7 @@ opts = {
 
 begin
   #List orders
-  result = api_instance.orders_list(project_id, orders_list, opts)
+  result = api_instance.orders_list(project_id, orders_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling OrdersApi->orders_list: #{e}"
@@ -321,7 +321,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **orders_list** | [**OrdersList**](OrdersList.md)|  | 
+ **orders_list_parameters** | [**OrdersListParameters**](OrdersListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 

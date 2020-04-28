@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## distribution_create
 
-> distribution_create(account_id, distribution_create, opts)
+> distribution_create(account_id, distribution_create_parameters, opts)
 
 Create a distribution
 
@@ -39,14 +39,14 @@ end
 
 api_instance = Phrase::DistributionsApi.new
 account_id = 'account_id_example' # String | Account ID
-distribution_create = Phrase::DistributionCreate.new # DistributionCreate | 
+distribution_create_parameters = Phrase::DistributionCreateParameters.new # DistributionCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a distribution
-  api_instance.distribution_create(account_id, distribution_create, opts)
+  api_instance.distribution_create(account_id, distribution_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling DistributionsApi->distribution_create: #{e}"
 end
@@ -58,7 +58,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **distribution_create** | [**DistributionCreate**](DistributionCreate.md)|  | 
+ **distribution_create_parameters** | [**DistributionCreateParameters**](DistributionCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -204,7 +204,7 @@ Response<([**Distribution**](Distribution.md))>
 
 ## distribution_update
 
-> Object distribution_update(account_id, id, distribution_update, opts)
+> Object distribution_update(account_id, id, distribution_update_parameters, opts)
 
 Update a distribution
 
@@ -230,14 +230,14 @@ end
 api_instance = Phrase::DistributionsApi.new
 account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
-distribution_update = Phrase::DistributionUpdate.new # DistributionUpdate | 
+distribution_update_parameters = Phrase::DistributionUpdateParameters.new # DistributionUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a distribution
-  result = api_instance.distribution_update(account_id, id, distribution_update, opts)
+  result = api_instance.distribution_update(account_id, id, distribution_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling DistributionsApi->distribution_update: #{e}"
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
  **id** | **String**| ID | 
- **distribution_update** | [**DistributionUpdate**](DistributionUpdate.md)|  | 
+ **distribution_update_parameters** | [**DistributionUpdateParameters**](DistributionUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

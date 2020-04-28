@@ -2,20 +2,35 @@ require 'date'
 
 module Phrase
   class GitlabSyncHistory
-    # Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
-    attr_accessor :account_id
+    attr_accessor :status
+
+    attr_accessor :action
+
+    attr_accessor :errors
+
+    attr_accessor :date
+
+    attr_accessor :details
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'account_id' => :'account_id'
+        :'status' => :'status',
+        :'action' => :'action',
+        :'errors' => :'errors',
+        :'date' => :'date',
+        :'details' => :'details'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'account_id' => :'String'
+        :'status' => :'Integer',
+        :'action' => :'String',
+        :'errors' => :'Array<String>',
+        :'date' => :'DateTime',
+        :'details' => :'Object'
       }
     end
 
@@ -40,8 +55,26 @@ module Phrase
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'account_id')
-        self.account_id = attributes[:'account_id']
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
+      end
+
+      if attributes.key?(:'action')
+        self.action = attributes[:'action']
+      end
+
+      if attributes.key?(:'errors')
+        if (value = attributes[:'errors']).is_a?(Array)
+          self.errors = value
+        end
+      end
+
+      if attributes.key?(:'date')
+        self.date = attributes[:'date']
+      end
+
+      if attributes.key?(:'details')
+        self.details = attributes[:'details']
       end
     end
 
@@ -63,7 +96,11 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          account_id == o.account_id
+          status == o.status &&
+          action == o.action &&
+          errors == o.errors &&
+          date == o.date &&
+          details == o.details
     end
 
     # @see the `==` method
@@ -75,7 +112,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id].hash
+      [status, action, errors, date, details].hash
     end
 
     # Builds the object from hash

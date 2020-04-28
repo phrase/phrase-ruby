@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## glossary_term_translation_create
 
-> glossary_term_translation_create(account_id, glossary_id, term_id, glossary_term_translation_create, opts)
+> glossary_term_translation_create(account_id, glossary_id, term_id, glossary_term_translation_create_parameters, opts)
 
 Create a glossary term translation
 
@@ -39,14 +39,14 @@ api_instance = Phrase::GlossaryTermTranslationsApi.new
 account_id = 'account_id_example' # String | Account ID
 glossary_id = 'glossary_id_example' # String | Glossary ID
 term_id = 'term_id_example' # String | Term ID
-glossary_term_translation_create = Phrase::GlossaryTermTranslationCreate.new # GlossaryTermTranslationCreate | 
+glossary_term_translation_create_parameters = Phrase::GlossaryTermTranslationCreateParameters.new # GlossaryTermTranslationCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a glossary term translation
-  api_instance.glossary_term_translation_create(account_id, glossary_id, term_id, glossary_term_translation_create, opts)
+  api_instance.glossary_term_translation_create(account_id, glossary_id, term_id, glossary_term_translation_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling GlossaryTermTranslationsApi->glossary_term_translation_create: #{e}"
 end
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**| Account ID | 
  **glossary_id** | **String**| Glossary ID | 
  **term_id** | **String**| Term ID | 
- **glossary_term_translation_create** | [**GlossaryTermTranslationCreate**](GlossaryTermTranslationCreate.md)|  | 
+ **glossary_term_translation_create_parameters** | [**GlossaryTermTranslationCreateParameters**](GlossaryTermTranslationCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -146,7 +146,7 @@ Response<(nil (empty response body))>
 
 ## glossary_term_translation_update
 
-> GlossaryTermTranslation glossary_term_translation_update(account_id, glossary_id, term_id, id, glossary_term_translation_update, opts)
+> GlossaryTermTranslation glossary_term_translation_update(account_id, glossary_id, term_id, id, glossary_term_translation_update_parameters, opts)
 
 Update a glossary term translation
 
@@ -174,14 +174,14 @@ account_id = 'account_id_example' # String | Account ID
 glossary_id = 'glossary_id_example' # String | Glossary ID
 term_id = 'term_id_example' # String | Term ID
 id = 'id_example' # String | ID
-glossary_term_translation_update = Phrase::GlossaryTermTranslationUpdate.new # GlossaryTermTranslationUpdate | 
+glossary_term_translation_update_parameters = Phrase::GlossaryTermTranslationUpdateParameters.new # GlossaryTermTranslationUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a glossary term translation
-  result = api_instance.glossary_term_translation_update(account_id, glossary_id, term_id, id, glossary_term_translation_update, opts)
+  result = api_instance.glossary_term_translation_update(account_id, glossary_id, term_id, id, glossary_term_translation_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GlossaryTermTranslationsApi->glossary_term_translation_update: #{e}"
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
  **glossary_id** | **String**| Glossary ID | 
  **term_id** | **String**| Term ID | 
  **id** | **String**| ID | 
- **glossary_term_translation_update** | [**GlossaryTermTranslationUpdate**](GlossaryTermTranslationUpdate.md)|  | 
+ **glossary_term_translation_update_parameters** | [**GlossaryTermTranslationUpdateParameters**](GlossaryTermTranslationUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

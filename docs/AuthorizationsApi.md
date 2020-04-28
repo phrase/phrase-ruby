@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## authorization_create
 
-> authorization_create(authorization_create, opts)
+> authorization_create(authorization_create_parameters, opts)
 
 Create an authorization
 
@@ -38,14 +38,14 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::AuthorizationsApi.new
-authorization_create = Phrase::AuthorizationCreate.new # AuthorizationCreate | 
+authorization_create_parameters = Phrase::AuthorizationCreateParameters.new # AuthorizationCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create an authorization
-  api_instance.authorization_create(authorization_create, opts)
+  api_instance.authorization_create(authorization_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling AuthorizationsApi->authorization_create: #{e}"
 end
@@ -56,7 +56,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization_create** | [**AuthorizationCreate**](AuthorizationCreate.md)|  | 
+ **authorization_create_parameters** | [**AuthorizationCreateParameters**](AuthorizationCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -198,7 +198,7 @@ Response<([**Authorization**](Authorization.md))>
 
 ## authorization_update
 
-> Object authorization_update(id, authorization_update, opts)
+> Object authorization_update(id, authorization_update_parameters, opts)
 
 Update an authorization
 
@@ -223,14 +223,14 @@ end
 
 api_instance = Phrase::AuthorizationsApi.new
 id = 'id_example' # String | ID
-authorization_update = Phrase::AuthorizationUpdate.new # AuthorizationUpdate | 
+authorization_update_parameters = Phrase::AuthorizationUpdateParameters.new # AuthorizationUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update an authorization
-  result = api_instance.authorization_update(id, authorization_update, opts)
+  result = api_instance.authorization_update(id, authorization_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling AuthorizationsApi->authorization_update: #{e}"
@@ -243,7 +243,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID | 
- **authorization_update** | [**AuthorizationUpdate**](AuthorizationUpdate.md)|  | 
+ **authorization_update_parameters** | [**AuthorizationUpdateParameters**](AuthorizationUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

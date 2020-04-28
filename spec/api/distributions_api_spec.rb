@@ -24,7 +24,7 @@ describe 'DistributionsApi' do
   # Create a distribution
   # Create a new distribution.
   # @param account_id Account ID
-  # @param distribution_create 
+  # @param distribution_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -67,7 +67,7 @@ describe 'DistributionsApi' do
   # Update an existing distribution.
   # @param account_id Account ID
   # @param id ID
-  # @param distribution_update 
+  # @param distribution_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]

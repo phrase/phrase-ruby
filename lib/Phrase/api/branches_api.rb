@@ -11,12 +11,12 @@ module Phrase
     # Compare branch with main branch.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_compare [BranchCompare] 
+    # @param branch_compare_parameters [BranchCompareParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def branch_compare(project_id, name, branch_compare, opts = {})
-      branch_compare_with_http_info(project_id, name, branch_compare, opts)
+    def branch_compare(project_id, name, branch_compare_parameters, opts = {})
+      branch_compare_with_http_info(project_id, name, branch_compare_parameters, opts)
       nil
     end
 
@@ -24,11 +24,11 @@ module Phrase
     # Compare branch with main branch.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_compare [BranchCompare] 
+    # @param branch_compare_parameters [BranchCompareParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def branch_compare_with_http_info(project_id, name, branch_compare, opts = {})
+    def branch_compare_with_http_info(project_id, name, branch_compare_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BranchesApi.branch_compare ...'
       end
@@ -40,9 +40,9 @@ module Phrase
       if @api_client.config.client_side_validation && name.nil?
         fail ArgumentError, "Missing the required parameter 'name' when calling BranchesApi.branch_compare"
       end
-      # verify the required parameter 'branch_compare' is set
-      if @api_client.config.client_side_validation && branch_compare.nil?
-        fail ArgumentError, "Missing the required parameter 'branch_compare' when calling BranchesApi.branch_compare"
+      # verify the required parameter 'branch_compare_parameters' is set
+      if @api_client.config.client_side_validation && branch_compare_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'branch_compare_parameters' when calling BranchesApi.branch_compare"
       end
       # resource path
       local_var_path = '/projects/{project_id}/branches/{name}/compare'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'name' + '}', CGI.escape(name.to_s))
@@ -60,7 +60,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(branch_compare) 
+      post_body = opts[:body] || @api_client.object_to_http_body(branch_compare_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -88,23 +88,23 @@ module Phrase
     # Create a branch
     # Create a new branch.
     # @param project_id [String] Project ID
-    # @param branch_create [BranchCreate] 
+    # @param branch_create_parameters [BranchCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def branch_create(project_id, branch_create, opts = {})
-      branch_create_with_http_info(project_id, branch_create, opts)
+    def branch_create(project_id, branch_create_parameters, opts = {})
+      branch_create_with_http_info(project_id, branch_create_parameters, opts)
       nil
     end
 
     # Create a branch
     # Create a new branch.
     # @param project_id [String] Project ID
-    # @param branch_create [BranchCreate] 
+    # @param branch_create_parameters [BranchCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def branch_create_with_http_info(project_id, branch_create, opts = {})
+    def branch_create_with_http_info(project_id, branch_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BranchesApi.branch_create ...'
       end
@@ -112,9 +112,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling BranchesApi.branch_create"
       end
-      # verify the required parameter 'branch_create' is set
-      if @api_client.config.client_side_validation && branch_create.nil?
-        fail ArgumentError, "Missing the required parameter 'branch_create' when calling BranchesApi.branch_create"
+      # verify the required parameter 'branch_create_parameters' is set
+      if @api_client.config.client_side_validation && branch_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'branch_create_parameters' when calling BranchesApi.branch_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/branches'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -132,7 +132,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(branch_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(branch_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -231,12 +231,12 @@ module Phrase
     # Merge an existing branch.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_merge [BranchMerge] 
+    # @param branch_merge_parameters [BranchMergeParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def branch_merge(project_id, name, branch_merge, opts = {})
-      branch_merge_with_http_info(project_id, name, branch_merge, opts)
+    def branch_merge(project_id, name, branch_merge_parameters, opts = {})
+      branch_merge_with_http_info(project_id, name, branch_merge_parameters, opts)
       nil
     end
 
@@ -244,11 +244,11 @@ module Phrase
     # Merge an existing branch.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_merge [BranchMerge] 
+    # @param branch_merge_parameters [BranchMergeParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def branch_merge_with_http_info(project_id, name, branch_merge, opts = {})
+    def branch_merge_with_http_info(project_id, name, branch_merge_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BranchesApi.branch_merge ...'
       end
@@ -260,9 +260,9 @@ module Phrase
       if @api_client.config.client_side_validation && name.nil?
         fail ArgumentError, "Missing the required parameter 'name' when calling BranchesApi.branch_merge"
       end
-      # verify the required parameter 'branch_merge' is set
-      if @api_client.config.client_side_validation && branch_merge.nil?
-        fail ArgumentError, "Missing the required parameter 'branch_merge' when calling BranchesApi.branch_merge"
+      # verify the required parameter 'branch_merge_parameters' is set
+      if @api_client.config.client_side_validation && branch_merge_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'branch_merge_parameters' when calling BranchesApi.branch_merge"
       end
       # resource path
       local_var_path = '/projects/{project_id}/branches/{name}/merge'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'name' + '}', CGI.escape(name.to_s))
@@ -280,7 +280,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(branch_merge) 
+      post_body = opts[:body] || @api_client.object_to_http_body(branch_merge_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -381,12 +381,12 @@ module Phrase
     # Update an existing branch.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_update [BranchUpdate] 
+    # @param branch_update_parameters [BranchUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def branch_update(project_id, name, branch_update, opts = {})
-      data, _status_code, _headers = branch_update_with_http_info(project_id, name, branch_update, opts)
+    def branch_update(project_id, name, branch_update_parameters, opts = {})
+      data, _status_code, _headers = branch_update_with_http_info(project_id, name, branch_update_parameters, opts)
       data
     end
 
@@ -394,11 +394,11 @@ module Phrase
     # Update an existing branch.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_update [BranchUpdate] 
+    # @param branch_update_parameters [BranchUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def branch_update_with_http_info(project_id, name, branch_update, opts = {})
+    def branch_update_with_http_info(project_id, name, branch_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BranchesApi.branch_update ...'
       end
@@ -410,9 +410,9 @@ module Phrase
       if @api_client.config.client_side_validation && name.nil?
         fail ArgumentError, "Missing the required parameter 'name' when calling BranchesApi.branch_update"
       end
-      # verify the required parameter 'branch_update' is set
-      if @api_client.config.client_side_validation && branch_update.nil?
-        fail ArgumentError, "Missing the required parameter 'branch_update' when calling BranchesApi.branch_update"
+      # verify the required parameter 'branch_update_parameters' is set
+      if @api_client.config.client_side_validation && branch_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'branch_update_parameters' when calling BranchesApi.branch_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/branches/{name}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'name' + '}', CGI.escape(name.to_s))
@@ -432,7 +432,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(branch_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(branch_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

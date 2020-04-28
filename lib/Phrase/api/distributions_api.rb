@@ -10,23 +10,23 @@ module Phrase
     # Create a distribution
     # Create a new distribution.
     # @param account_id [String] Account ID
-    # @param distribution_create [DistributionCreate] 
+    # @param distribution_create_parameters [DistributionCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def distribution_create(account_id, distribution_create, opts = {})
-      distribution_create_with_http_info(account_id, distribution_create, opts)
+    def distribution_create(account_id, distribution_create_parameters, opts = {})
+      distribution_create_with_http_info(account_id, distribution_create_parameters, opts)
       nil
     end
 
     # Create a distribution
     # Create a new distribution.
     # @param account_id [String] Account ID
-    # @param distribution_create [DistributionCreate] 
+    # @param distribution_create_parameters [DistributionCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def distribution_create_with_http_info(account_id, distribution_create, opts = {})
+    def distribution_create_with_http_info(account_id, distribution_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DistributionsApi.distribution_create ...'
       end
@@ -34,9 +34,9 @@ module Phrase
       if @api_client.config.client_side_validation && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling DistributionsApi.distribution_create"
       end
-      # verify the required parameter 'distribution_create' is set
-      if @api_client.config.client_side_validation && distribution_create.nil?
-        fail ArgumentError, "Missing the required parameter 'distribution_create' when calling DistributionsApi.distribution_create"
+      # verify the required parameter 'distribution_create_parameters' is set
+      if @api_client.config.client_side_validation && distribution_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'distribution_create_parameters' when calling DistributionsApi.distribution_create"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/distributions'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s))
@@ -54,7 +54,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(distribution_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(distribution_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -225,12 +225,12 @@ module Phrase
     # Update an existing distribution.
     # @param account_id [String] Account ID
     # @param id [String] ID
-    # @param distribution_update [DistributionUpdate] 
+    # @param distribution_update_parameters [DistributionUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def distribution_update(account_id, id, distribution_update, opts = {})
-      data, _status_code, _headers = distribution_update_with_http_info(account_id, id, distribution_update, opts)
+    def distribution_update(account_id, id, distribution_update_parameters, opts = {})
+      data, _status_code, _headers = distribution_update_with_http_info(account_id, id, distribution_update_parameters, opts)
       data
     end
 
@@ -238,11 +238,11 @@ module Phrase
     # Update an existing distribution.
     # @param account_id [String] Account ID
     # @param id [String] ID
-    # @param distribution_update [DistributionUpdate] 
+    # @param distribution_update_parameters [DistributionUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def distribution_update_with_http_info(account_id, id, distribution_update, opts = {})
+    def distribution_update_with_http_info(account_id, id, distribution_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DistributionsApi.distribution_update ...'
       end
@@ -254,9 +254,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling DistributionsApi.distribution_update"
       end
-      # verify the required parameter 'distribution_update' is set
-      if @api_client.config.client_side_validation && distribution_update.nil?
-        fail ArgumentError, "Missing the required parameter 'distribution_update' when calling DistributionsApi.distribution_update"
+      # verify the required parameter 'distribution_update_parameters' is set
+      if @api_client.config.client_side_validation && distribution_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'distribution_update_parameters' when calling DistributionsApi.distribution_update"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/distributions/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -276,7 +276,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(distribution_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(distribution_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

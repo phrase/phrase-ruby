@@ -12,12 +12,12 @@ module Phrase
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
-    # @param glossary_term_translation_create [GlossaryTermTranslationCreate] 
+    # @param glossary_term_translation_create_parameters [GlossaryTermTranslationCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def glossary_term_translation_create(account_id, glossary_id, term_id, glossary_term_translation_create, opts = {})
-      glossary_term_translation_create_with_http_info(account_id, glossary_id, term_id, glossary_term_translation_create, opts)
+    def glossary_term_translation_create(account_id, glossary_id, term_id, glossary_term_translation_create_parameters, opts = {})
+      glossary_term_translation_create_with_http_info(account_id, glossary_id, term_id, glossary_term_translation_create_parameters, opts)
       nil
     end
 
@@ -26,11 +26,11 @@ module Phrase
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
-    # @param glossary_term_translation_create [GlossaryTermTranslationCreate] 
+    # @param glossary_term_translation_create_parameters [GlossaryTermTranslationCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def glossary_term_translation_create_with_http_info(account_id, glossary_id, term_id, glossary_term_translation_create, opts = {})
+    def glossary_term_translation_create_with_http_info(account_id, glossary_id, term_id, glossary_term_translation_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: GlossaryTermTranslationsApi.glossary_term_translation_create ...'
       end
@@ -46,9 +46,9 @@ module Phrase
       if @api_client.config.client_side_validation && term_id.nil?
         fail ArgumentError, "Missing the required parameter 'term_id' when calling GlossaryTermTranslationsApi.glossary_term_translation_create"
       end
-      # verify the required parameter 'glossary_term_translation_create' is set
-      if @api_client.config.client_side_validation && glossary_term_translation_create.nil?
-        fail ArgumentError, "Missing the required parameter 'glossary_term_translation_create' when calling GlossaryTermTranslationsApi.glossary_term_translation_create"
+      # verify the required parameter 'glossary_term_translation_create_parameters' is set
+      if @api_client.config.client_side_validation && glossary_term_translation_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'glossary_term_translation_create_parameters' when calling GlossaryTermTranslationsApi.glossary_term_translation_create"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'glossary_id' + '}', CGI.escape(glossary_id.to_s)).sub('{' + 'term_id' + '}', CGI.escape(term_id.to_s))
@@ -66,7 +66,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(glossary_term_translation_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(glossary_term_translation_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -179,12 +179,12 @@ module Phrase
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
     # @param id [String] ID
-    # @param glossary_term_translation_update [GlossaryTermTranslationUpdate] 
+    # @param glossary_term_translation_update_parameters [GlossaryTermTranslationUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [GlossaryTermTranslation]
-    def glossary_term_translation_update(account_id, glossary_id, term_id, id, glossary_term_translation_update, opts = {})
-      data, _status_code, _headers = glossary_term_translation_update_with_http_info(account_id, glossary_id, term_id, id, glossary_term_translation_update, opts)
+    def glossary_term_translation_update(account_id, glossary_id, term_id, id, glossary_term_translation_update_parameters, opts = {})
+      data, _status_code, _headers = glossary_term_translation_update_with_http_info(account_id, glossary_id, term_id, id, glossary_term_translation_update_parameters, opts)
       data
     end
 
@@ -194,11 +194,11 @@ module Phrase
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
     # @param id [String] ID
-    # @param glossary_term_translation_update [GlossaryTermTranslationUpdate] 
+    # @param glossary_term_translation_update_parameters [GlossaryTermTranslationUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(GlossaryTermTranslation)>, Integer, Hash)>] Response<(GlossaryTermTranslation)> data, response status code and response headers
-    def glossary_term_translation_update_with_http_info(account_id, glossary_id, term_id, id, glossary_term_translation_update, opts = {})
+    def glossary_term_translation_update_with_http_info(account_id, glossary_id, term_id, id, glossary_term_translation_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: GlossaryTermTranslationsApi.glossary_term_translation_update ...'
       end
@@ -218,9 +218,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling GlossaryTermTranslationsApi.glossary_term_translation_update"
       end
-      # verify the required parameter 'glossary_term_translation_update' is set
-      if @api_client.config.client_side_validation && glossary_term_translation_update.nil?
-        fail ArgumentError, "Missing the required parameter 'glossary_term_translation_update' when calling GlossaryTermTranslationsApi.glossary_term_translation_update"
+      # verify the required parameter 'glossary_term_translation_update_parameters' is set
+      if @api_client.config.client_side_validation && glossary_term_translation_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'glossary_term_translation_update_parameters' when calling GlossaryTermTranslationsApi.glossary_term_translation_update"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'glossary_id' + '}', CGI.escape(glossary_id.to_s)).sub('{' + 'term_id' + '}', CGI.escape(term_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -240,7 +240,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(glossary_term_translation_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(glossary_term_translation_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'GlossaryTermTranslation' 

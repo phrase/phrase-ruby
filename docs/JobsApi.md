@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## job_complete
 
-> Object job_complete(project_id, id, job_complete, opts)
+> Object job_complete(project_id, id, job_complete_parameters, opts)
 
 Complete a job
 
@@ -45,14 +45,14 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_complete = Phrase::JobComplete.new # JobComplete | 
+job_complete_parameters = Phrase::JobCompleteParameters.new # JobCompleteParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Complete a job
-  result = api_instance.job_complete(project_id, id, job_complete, opts)
+  result = api_instance.job_complete(project_id, id, job_complete_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_complete: #{e}"
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **job_complete** | [**JobComplete**](JobComplete.md)|  | 
+ **job_complete_parameters** | [**JobCompleteParameters**](JobCompleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -85,7 +85,7 @@ Response<(**Object**)>
 
 ## job_create
 
-> job_create(project_id, job_create, opts)
+> job_create(project_id, job_create_parameters, opts)
 
 Create a job
 
@@ -110,14 +110,14 @@ end
 
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
-job_create = Phrase::JobCreate.new # JobCreate | 
+job_create_parameters = Phrase::JobCreateParameters.new # JobCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a job
-  api_instance.job_create(project_id, job_create, opts)
+  api_instance.job_create(project_id, job_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_create: #{e}"
 end
@@ -129,7 +129,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **job_create** | [**JobCreate**](JobCreate.md)|  | 
+ **job_create_parameters** | [**JobCreateParameters**](JobCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -148,7 +148,7 @@ Response<(nil (empty response body))>
 
 ## job_delete
 
-> job_delete(project_id, id, job_delete, opts)
+> job_delete(project_id, id, job_delete_parameters, opts)
 
 Delete a job
 
@@ -174,14 +174,14 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_delete = Phrase::JobDelete.new # JobDelete | 
+job_delete_parameters = Phrase::JobDeleteParameters.new # JobDeleteParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Delete a job
-  api_instance.job_delete(project_id, id, job_delete, opts)
+  api_instance.job_delete(project_id, id, job_delete_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_delete: #{e}"
 end
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **job_delete** | [**JobDelete**](JobDelete.md)|  | 
+ **job_delete_parameters** | [**JobDeleteParameters**](JobDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -213,7 +213,7 @@ Response<(nil (empty response body))>
 
 ## job_keys_create
 
-> Object job_keys_create(project_id, id, job_keys_create, opts)
+> Object job_keys_create(project_id, id, job_keys_create_parameters, opts)
 
 Add keys to job
 
@@ -239,14 +239,14 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_keys_create = Phrase::JobKeysCreate.new # JobKeysCreate | 
+job_keys_create_parameters = Phrase::JobKeysCreateParameters.new # JobKeysCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Add keys to job
-  result = api_instance.job_keys_create(project_id, id, job_keys_create, opts)
+  result = api_instance.job_keys_create(project_id, id, job_keys_create_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_keys_create: #{e}"
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **job_keys_create** | [**JobKeysCreate**](JobKeysCreate.md)|  | 
+ **job_keys_create_parameters** | [**JobKeysCreateParameters**](JobKeysCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -279,7 +279,7 @@ Response<(**Object**)>
 
 ## job_keys_delete
 
-> job_keys_delete(project_id, id, job_keys_delete, opts)
+> job_keys_delete(project_id, id, job_keys_delete_parameters, opts)
 
 Remove keys from job
 
@@ -305,14 +305,14 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_keys_delete = Phrase::JobKeysDelete.new # JobKeysDelete | 
+job_keys_delete_parameters = Phrase::JobKeysDeleteParameters.new # JobKeysDeleteParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Remove keys from job
-  api_instance.job_keys_delete(project_id, id, job_keys_delete, opts)
+  api_instance.job_keys_delete(project_id, id, job_keys_delete_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_keys_delete: #{e}"
 end
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **job_keys_delete** | [**JobKeysDelete**](JobKeysDelete.md)|  | 
+ **job_keys_delete_parameters** | [**JobKeysDeleteParameters**](JobKeysDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -344,7 +344,7 @@ Response<(nil (empty response body))>
 
 ## job_reopen
 
-> Object job_reopen(project_id, id, job_reopen, opts)
+> Object job_reopen(project_id, id, job_reopen_parameters, opts)
 
 Reopen a job
 
@@ -370,14 +370,14 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_reopen = Phrase::JobReopen.new # JobReopen | 
+job_reopen_parameters = Phrase::JobReopenParameters.new # JobReopenParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Reopen a job
-  result = api_instance.job_reopen(project_id, id, job_reopen, opts)
+  result = api_instance.job_reopen(project_id, id, job_reopen_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_reopen: #{e}"
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **job_reopen** | [**JobReopen**](JobReopen.md)|  | 
+ **job_reopen_parameters** | [**JobReopenParameters**](JobReopenParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -410,7 +410,7 @@ Response<(**Object**)>
 
 ## job_show
 
-> Object job_show(project_id, id, job_show, opts)
+> Object job_show(project_id, id, job_show_parameters, opts)
 
 Get a single job
 
@@ -436,14 +436,14 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_show = Phrase::JobShow.new # JobShow | 
+job_show_parameters = Phrase::JobShowParameters.new # JobShowParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Get a single job
-  result = api_instance.job_show(project_id, id, job_show, opts)
+  result = api_instance.job_show(project_id, id, job_show_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_show: #{e}"
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **job_show** | [**JobShow**](JobShow.md)|  | 
+ **job_show_parameters** | [**JobShowParameters**](JobShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -476,7 +476,7 @@ Response<(**Object**)>
 
 ## job_start
 
-> Object job_start(project_id, id, job_start, opts)
+> Object job_start(project_id, id, job_start_parameters, opts)
 
 Start a job
 
@@ -502,14 +502,14 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_start = Phrase::JobStart.new # JobStart | 
+job_start_parameters = Phrase::JobStartParameters.new # JobStartParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Start a job
-  result = api_instance.job_start(project_id, id, job_start, opts)
+  result = api_instance.job_start(project_id, id, job_start_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_start: #{e}"
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **job_start** | [**JobStart**](JobStart.md)|  | 
+ **job_start_parameters** | [**JobStartParameters**](JobStartParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -542,7 +542,7 @@ Response<(**Object**)>
 
 ## job_update
 
-> Object job_update(project_id, id, job_update, opts)
+> Object job_update(project_id, id, job_update_parameters, opts)
 
 Update a job
 
@@ -568,14 +568,14 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_update = Phrase::JobUpdate.new # JobUpdate | 
+job_update_parameters = Phrase::JobUpdateParameters.new # JobUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a job
-  result = api_instance.job_update(project_id, id, job_update, opts)
+  result = api_instance.job_update(project_id, id, job_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_update: #{e}"
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **job_update** | [**JobUpdate**](JobUpdate.md)|  | 
+ **job_update_parameters** | [**JobUpdateParameters**](JobUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -608,7 +608,7 @@ Response<(**Object**)>
 
 ## jobs_list
 
-> Array&lt;Job&gt; jobs_list(project_id, jobs_list, opts)
+> Array&lt;Job&gt; jobs_list(project_id, jobs_list_parameters, opts)
 
 List jobs
 
@@ -633,7 +633,7 @@ end
 
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
-jobs_list = Phrase::JobsList.new # JobsList | 
+jobs_list_parameters = Phrase::JobsListParameters.new # JobsListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -642,7 +642,7 @@ opts = {
 
 begin
   #List jobs
-  result = api_instance.jobs_list(project_id, jobs_list, opts)
+  result = api_instance.jobs_list(project_id, jobs_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->jobs_list: #{e}"
@@ -655,7 +655,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **jobs_list** | [**JobsList**](JobsList.md)|  | 
+ **jobs_list_parameters** | [**JobsListParameters**](JobsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 

@@ -12,12 +12,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_complete [JobLocaleComplete] 
+    # @param job_locale_complete_parameters [JobLocaleCompleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def job_locale_complete(project_id, job_id, id, job_locale_complete, opts = {})
-      data, _status_code, _headers = job_locale_complete_with_http_info(project_id, job_id, id, job_locale_complete, opts)
+    def job_locale_complete(project_id, job_id, id, job_locale_complete_parameters, opts = {})
+      data, _status_code, _headers = job_locale_complete_with_http_info(project_id, job_id, id, job_locale_complete_parameters, opts)
       data
     end
 
@@ -26,11 +26,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_complete [JobLocaleComplete] 
+    # @param job_locale_complete_parameters [JobLocaleCompleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def job_locale_complete_with_http_info(project_id, job_id, id, job_locale_complete, opts = {})
+    def job_locale_complete_with_http_info(project_id, job_id, id, job_locale_complete_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locale_complete ...'
       end
@@ -46,9 +46,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling JobLocalesApi.job_locale_complete"
       end
-      # verify the required parameter 'job_locale_complete' is set
-      if @api_client.config.client_side_validation && job_locale_complete.nil?
-        fail ArgumentError, "Missing the required parameter 'job_locale_complete' when calling JobLocalesApi.job_locale_complete"
+      # verify the required parameter 'job_locale_complete_parameters' is set
+      if @api_client.config.client_side_validation && job_locale_complete_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'job_locale_complete_parameters' when calling JobLocalesApi.job_locale_complete"
       end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{job_id}/locales/{id}/complete'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -68,7 +68,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_complete) 
+      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_complete_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 
@@ -98,12 +98,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_delete [JobLocaleDelete] 
+    # @param job_locale_delete_parameters [JobLocaleDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def job_locale_delete(project_id, job_id, id, job_locale_delete, opts = {})
-      job_locale_delete_with_http_info(project_id, job_id, id, job_locale_delete, opts)
+    def job_locale_delete(project_id, job_id, id, job_locale_delete_parameters, opts = {})
+      job_locale_delete_with_http_info(project_id, job_id, id, job_locale_delete_parameters, opts)
       nil
     end
 
@@ -112,11 +112,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_delete [JobLocaleDelete] 
+    # @param job_locale_delete_parameters [JobLocaleDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def job_locale_delete_with_http_info(project_id, job_id, id, job_locale_delete, opts = {})
+    def job_locale_delete_with_http_info(project_id, job_id, id, job_locale_delete_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locale_delete ...'
       end
@@ -132,9 +132,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling JobLocalesApi.job_locale_delete"
       end
-      # verify the required parameter 'job_locale_delete' is set
-      if @api_client.config.client_side_validation && job_locale_delete.nil?
-        fail ArgumentError, "Missing the required parameter 'job_locale_delete' when calling JobLocalesApi.job_locale_delete"
+      # verify the required parameter 'job_locale_delete_parameters' is set
+      if @api_client.config.client_side_validation && job_locale_delete_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'job_locale_delete_parameters' when calling JobLocalesApi.job_locale_delete"
       end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{job_id}/locales/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -152,7 +152,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_delete) 
+      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_delete_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -182,12 +182,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_reopen [JobLocaleReopen] 
+    # @param job_locale_reopen_parameters [JobLocaleReopenParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def job_locale_reopen(project_id, job_id, id, job_locale_reopen, opts = {})
-      data, _status_code, _headers = job_locale_reopen_with_http_info(project_id, job_id, id, job_locale_reopen, opts)
+    def job_locale_reopen(project_id, job_id, id, job_locale_reopen_parameters, opts = {})
+      data, _status_code, _headers = job_locale_reopen_with_http_info(project_id, job_id, id, job_locale_reopen_parameters, opts)
       data
     end
 
@@ -196,11 +196,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_reopen [JobLocaleReopen] 
+    # @param job_locale_reopen_parameters [JobLocaleReopenParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def job_locale_reopen_with_http_info(project_id, job_id, id, job_locale_reopen, opts = {})
+    def job_locale_reopen_with_http_info(project_id, job_id, id, job_locale_reopen_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locale_reopen ...'
       end
@@ -216,9 +216,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling JobLocalesApi.job_locale_reopen"
       end
-      # verify the required parameter 'job_locale_reopen' is set
-      if @api_client.config.client_side_validation && job_locale_reopen.nil?
-        fail ArgumentError, "Missing the required parameter 'job_locale_reopen' when calling JobLocalesApi.job_locale_reopen"
+      # verify the required parameter 'job_locale_reopen_parameters' is set
+      if @api_client.config.client_side_validation && job_locale_reopen_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'job_locale_reopen_parameters' when calling JobLocalesApi.job_locale_reopen"
       end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{job_id}/locales/{id}/reopen'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -238,7 +238,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_reopen) 
+      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_reopen_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 
@@ -268,12 +268,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_show [JobLocaleShow] 
+    # @param job_locale_show_parameters [JobLocaleShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [JobLocale]
-    def job_locale_show(project_id, job_id, id, job_locale_show, opts = {})
-      data, _status_code, _headers = job_locale_show_with_http_info(project_id, job_id, id, job_locale_show, opts)
+    def job_locale_show(project_id, job_id, id, job_locale_show_parameters, opts = {})
+      data, _status_code, _headers = job_locale_show_with_http_info(project_id, job_id, id, job_locale_show_parameters, opts)
       data
     end
 
@@ -282,11 +282,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_show [JobLocaleShow] 
+    # @param job_locale_show_parameters [JobLocaleShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(JobLocale)>, Integer, Hash)>] Response<(JobLocale)> data, response status code and response headers
-    def job_locale_show_with_http_info(project_id, job_id, id, job_locale_show, opts = {})
+    def job_locale_show_with_http_info(project_id, job_id, id, job_locale_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locale_show ...'
       end
@@ -302,9 +302,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling JobLocalesApi.job_locale_show"
       end
-      # verify the required parameter 'job_locale_show' is set
-      if @api_client.config.client_side_validation && job_locale_show.nil?
-        fail ArgumentError, "Missing the required parameter 'job_locale_show' when calling JobLocalesApi.job_locale_show"
+      # verify the required parameter 'job_locale_show_parameters' is set
+      if @api_client.config.client_side_validation && job_locale_show_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'job_locale_show_parameters' when calling JobLocalesApi.job_locale_show"
       end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{job_id}/locale/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -324,7 +324,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_show) 
+      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_show_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'JobLocale' 
@@ -354,12 +354,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_update [JobLocaleUpdate] 
+    # @param job_locale_update_parameters [JobLocaleUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def job_locale_update(project_id, job_id, id, job_locale_update, opts = {})
-      data, _status_code, _headers = job_locale_update_with_http_info(project_id, job_id, id, job_locale_update, opts)
+    def job_locale_update(project_id, job_id, id, job_locale_update_parameters, opts = {})
+      data, _status_code, _headers = job_locale_update_with_http_info(project_id, job_id, id, job_locale_update_parameters, opts)
       data
     end
 
@@ -368,11 +368,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_update [JobLocaleUpdate] 
+    # @param job_locale_update_parameters [JobLocaleUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def job_locale_update_with_http_info(project_id, job_id, id, job_locale_update, opts = {})
+    def job_locale_update_with_http_info(project_id, job_id, id, job_locale_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locale_update ...'
       end
@@ -388,9 +388,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling JobLocalesApi.job_locale_update"
       end
-      # verify the required parameter 'job_locale_update' is set
-      if @api_client.config.client_side_validation && job_locale_update.nil?
-        fail ArgumentError, "Missing the required parameter 'job_locale_update' when calling JobLocalesApi.job_locale_update"
+      # verify the required parameter 'job_locale_update_parameters' is set
+      if @api_client.config.client_side_validation && job_locale_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'job_locale_update_parameters' when calling JobLocalesApi.job_locale_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{job_id}/locales/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -410,7 +410,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 
@@ -439,12 +439,12 @@ module Phrase
     # Create a new job locale.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
-    # @param job_locales_create [JobLocalesCreate] 
+    # @param job_locales_create_parameters [JobLocalesCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def job_locales_create(project_id, job_id, job_locales_create, opts = {})
-      job_locales_create_with_http_info(project_id, job_id, job_locales_create, opts)
+    def job_locales_create(project_id, job_id, job_locales_create_parameters, opts = {})
+      job_locales_create_with_http_info(project_id, job_id, job_locales_create_parameters, opts)
       nil
     end
 
@@ -452,11 +452,11 @@ module Phrase
     # Create a new job locale.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
-    # @param job_locales_create [JobLocalesCreate] 
+    # @param job_locales_create_parameters [JobLocalesCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def job_locales_create_with_http_info(project_id, job_id, job_locales_create, opts = {})
+    def job_locales_create_with_http_info(project_id, job_id, job_locales_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locales_create ...'
       end
@@ -468,9 +468,9 @@ module Phrase
       if @api_client.config.client_side_validation && job_id.nil?
         fail ArgumentError, "Missing the required parameter 'job_id' when calling JobLocalesApi.job_locales_create"
       end
-      # verify the required parameter 'job_locales_create' is set
-      if @api_client.config.client_side_validation && job_locales_create.nil?
-        fail ArgumentError, "Missing the required parameter 'job_locales_create' when calling JobLocalesApi.job_locales_create"
+      # verify the required parameter 'job_locales_create_parameters' is set
+      if @api_client.config.client_side_validation && job_locales_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'job_locales_create_parameters' when calling JobLocalesApi.job_locales_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{job_id}/locales'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s))
@@ -488,7 +488,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_locales_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(job_locales_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -517,14 +517,14 @@ module Phrase
     # List all job locales for a given job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
-    # @param job_locales_list [JobLocalesList] 
+    # @param job_locales_list_parameters [JobLocalesListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<Object>]
-    def job_locales_list(project_id, job_id, job_locales_list, opts = {})
-      data, _status_code, _headers = job_locales_list_with_http_info(project_id, job_id, job_locales_list, opts)
+    def job_locales_list(project_id, job_id, job_locales_list_parameters, opts = {})
+      data, _status_code, _headers = job_locales_list_with_http_info(project_id, job_id, job_locales_list_parameters, opts)
       data
     end
 
@@ -532,13 +532,13 @@ module Phrase
     # List all job locales for a given job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
-    # @param job_locales_list [JobLocalesList] 
+    # @param job_locales_list_parameters [JobLocalesListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
-    def job_locales_list_with_http_info(project_id, job_id, job_locales_list, opts = {})
+    def job_locales_list_with_http_info(project_id, job_id, job_locales_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locales_list ...'
       end
@@ -550,9 +550,9 @@ module Phrase
       if @api_client.config.client_side_validation && job_id.nil?
         fail ArgumentError, "Missing the required parameter 'job_id' when calling JobLocalesApi.job_locales_list"
       end
-      # verify the required parameter 'job_locales_list' is set
-      if @api_client.config.client_side_validation && job_locales_list.nil?
-        fail ArgumentError, "Missing the required parameter 'job_locales_list' when calling JobLocalesApi.job_locales_list"
+      # verify the required parameter 'job_locales_list_parameters' is set
+      if @api_client.config.client_side_validation && job_locales_list_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'job_locales_list_parameters' when calling JobLocalesApi.job_locales_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{job_id}/locales'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s))
@@ -574,7 +574,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_locales_list) 
+      post_body = opts[:body] || @api_client.object_to_http_body(job_locales_list_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Object>' 

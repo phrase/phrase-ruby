@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## screenshot_marker_create
 
-> screenshot_marker_create(project_id, screenshot_id, screenshot_marker_create, opts)
+> screenshot_marker_create(project_id, screenshot_id, screenshot_marker_create_parameters, opts)
 
 Create a screenshot marker
 
@@ -40,14 +40,14 @@ end
 api_instance = Phrase::ScreenshotMarkersApi.new
 project_id = 'project_id_example' # String | Project ID
 screenshot_id = 'screenshot_id_example' # String | Screenshot ID
-screenshot_marker_create = Phrase::ScreenshotMarkerCreate.new # ScreenshotMarkerCreate | 
+screenshot_marker_create_parameters = Phrase::ScreenshotMarkerCreateParameters.new # ScreenshotMarkerCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a screenshot marker
-  api_instance.screenshot_marker_create(project_id, screenshot_id, screenshot_marker_create, opts)
+  api_instance.screenshot_marker_create(project_id, screenshot_id, screenshot_marker_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling ScreenshotMarkersApi->screenshot_marker_create: #{e}"
 end
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **screenshot_id** | **String**| Screenshot ID | 
- **screenshot_marker_create** | [**ScreenshotMarkerCreate**](ScreenshotMarkerCreate.md)|  | 
+ **screenshot_marker_create_parameters** | [**ScreenshotMarkerCreateParameters**](ScreenshotMarkerCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -208,7 +208,7 @@ Response<(**Object**)>
 
 ## screenshot_marker_update
 
-> ScreenshotMarker screenshot_marker_update(project_id, screenshot_id, screenshot_marker_update, opts)
+> ScreenshotMarker screenshot_marker_update(project_id, screenshot_id, screenshot_marker_update_parameters, opts)
 
 Update a screenshot marker
 
@@ -234,14 +234,14 @@ end
 api_instance = Phrase::ScreenshotMarkersApi.new
 project_id = 'project_id_example' # String | Project ID
 screenshot_id = 'screenshot_id_example' # String | Screenshot ID
-screenshot_marker_update = Phrase::ScreenshotMarkerUpdate.new # ScreenshotMarkerUpdate | 
+screenshot_marker_update_parameters = Phrase::ScreenshotMarkerUpdateParameters.new # ScreenshotMarkerUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a screenshot marker
-  result = api_instance.screenshot_marker_update(project_id, screenshot_id, screenshot_marker_update, opts)
+  result = api_instance.screenshot_marker_update(project_id, screenshot_id, screenshot_marker_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling ScreenshotMarkersApi->screenshot_marker_update: #{e}"
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **screenshot_id** | **String**| Screenshot ID | 
- **screenshot_marker_update** | [**ScreenshotMarkerUpdate**](ScreenshotMarkerUpdate.md)|  | 
+ **screenshot_marker_update_parameters** | [**ScreenshotMarkerUpdateParameters**](ScreenshotMarkerUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

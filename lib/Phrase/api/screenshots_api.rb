@@ -10,23 +10,23 @@ module Phrase
     # Create a screenshot
     # Create a new screenshot.
     # @param project_id [String] Project ID
-    # @param screenshot_create [ScreenshotCreate] 
+    # @param screenshot_create_parameters [ScreenshotCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def screenshot_create(project_id, screenshot_create, opts = {})
-      screenshot_create_with_http_info(project_id, screenshot_create, opts)
+    def screenshot_create(project_id, screenshot_create_parameters, opts = {})
+      screenshot_create_with_http_info(project_id, screenshot_create_parameters, opts)
       nil
     end
 
     # Create a screenshot
     # Create a new screenshot.
     # @param project_id [String] Project ID
-    # @param screenshot_create [ScreenshotCreate] 
+    # @param screenshot_create_parameters [ScreenshotCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def screenshot_create_with_http_info(project_id, screenshot_create, opts = {})
+    def screenshot_create_with_http_info(project_id, screenshot_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ScreenshotsApi.screenshot_create ...'
       end
@@ -34,9 +34,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling ScreenshotsApi.screenshot_create"
       end
-      # verify the required parameter 'screenshot_create' is set
-      if @api_client.config.client_side_validation && screenshot_create.nil?
-        fail ArgumentError, "Missing the required parameter 'screenshot_create' when calling ScreenshotsApi.screenshot_create"
+      # verify the required parameter 'screenshot_create_parameters' is set
+      if @api_client.config.client_side_validation && screenshot_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'screenshot_create_parameters' when calling ScreenshotsApi.screenshot_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/screenshots'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -54,7 +54,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(screenshot_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(screenshot_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -225,12 +225,12 @@ module Phrase
     # Update an existing screenshot.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param screenshot_update [ScreenshotUpdate] 
+    # @param screenshot_update_parameters [ScreenshotUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def screenshot_update(project_id, id, screenshot_update, opts = {})
-      data, _status_code, _headers = screenshot_update_with_http_info(project_id, id, screenshot_update, opts)
+    def screenshot_update(project_id, id, screenshot_update_parameters, opts = {})
+      data, _status_code, _headers = screenshot_update_with_http_info(project_id, id, screenshot_update_parameters, opts)
       data
     end
 
@@ -238,11 +238,11 @@ module Phrase
     # Update an existing screenshot.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param screenshot_update [ScreenshotUpdate] 
+    # @param screenshot_update_parameters [ScreenshotUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def screenshot_update_with_http_info(project_id, id, screenshot_update, opts = {})
+    def screenshot_update_with_http_info(project_id, id, screenshot_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ScreenshotsApi.screenshot_update ...'
       end
@@ -254,9 +254,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling ScreenshotsApi.screenshot_update"
       end
-      # verify the required parameter 'screenshot_update' is set
-      if @api_client.config.client_side_validation && screenshot_update.nil?
-        fail ArgumentError, "Missing the required parameter 'screenshot_update' when calling ScreenshotsApi.screenshot_update"
+      # verify the required parameter 'screenshot_update_parameters' is set
+      if @api_client.config.client_side_validation && screenshot_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'screenshot_update_parameters' when calling ScreenshotsApi.screenshot_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/screenshots/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -276,7 +276,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(screenshot_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(screenshot_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

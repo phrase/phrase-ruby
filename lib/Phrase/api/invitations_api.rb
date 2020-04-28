@@ -10,23 +10,23 @@ module Phrase
     # Create a new invitation
     # Invite a person to an account. Developers and translators need <code>project_ids</code> and <code>locale_ids</code> assigned to access them. Access token scope must include <code>team.manage</code>.
     # @param account_id [String] Account ID
-    # @param invitation_create [InvitationCreate] 
+    # @param invitation_create_parameters [InvitationCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def invitation_create(account_id, invitation_create, opts = {})
-      invitation_create_with_http_info(account_id, invitation_create, opts)
+    def invitation_create(account_id, invitation_create_parameters, opts = {})
+      invitation_create_with_http_info(account_id, invitation_create_parameters, opts)
       nil
     end
 
     # Create a new invitation
     # Invite a person to an account. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
     # @param account_id [String] Account ID
-    # @param invitation_create [InvitationCreate] 
+    # @param invitation_create_parameters [InvitationCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def invitation_create_with_http_info(account_id, invitation_create, opts = {})
+    def invitation_create_with_http_info(account_id, invitation_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InvitationsApi.invitation_create ...'
       end
@@ -34,9 +34,9 @@ module Phrase
       if @api_client.config.client_side_validation && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling InvitationsApi.invitation_create"
       end
-      # verify the required parameter 'invitation_create' is set
-      if @api_client.config.client_side_validation && invitation_create.nil?
-        fail ArgumentError, "Missing the required parameter 'invitation_create' when calling InvitationsApi.invitation_create"
+      # verify the required parameter 'invitation_create_parameters' is set
+      if @api_client.config.client_side_validation && invitation_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'invitation_create_parameters' when calling InvitationsApi.invitation_create"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/invitations'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s))
@@ -54,7 +54,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(invitation_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(invitation_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -297,12 +297,12 @@ module Phrase
     # Update an existing invitation (must not be accepted yet). The <code>email</code> cannot be updated. Developers and translators need <code>project_ids</code> and <code>locale_ids</code> assigned to access them. Access token scope must include <code>team.manage</code>.
     # @param account_id [String] Account ID
     # @param id [String] ID
-    # @param invitation_update [InvitationUpdate] 
+    # @param invitation_update_parameters [InvitationUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def invitation_update(account_id, id, invitation_update, opts = {})
-      data, _status_code, _headers = invitation_update_with_http_info(account_id, id, invitation_update, opts)
+    def invitation_update(account_id, id, invitation_update_parameters, opts = {})
+      data, _status_code, _headers = invitation_update_with_http_info(account_id, id, invitation_update_parameters, opts)
       data
     end
 
@@ -310,11 +310,11 @@ module Phrase
     # Update an existing invitation (must not be accepted yet). The &lt;code&gt;email&lt;/code&gt; cannot be updated. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
     # @param account_id [String] Account ID
     # @param id [String] ID
-    # @param invitation_update [InvitationUpdate] 
+    # @param invitation_update_parameters [InvitationUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def invitation_update_with_http_info(account_id, id, invitation_update, opts = {})
+    def invitation_update_with_http_info(account_id, id, invitation_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InvitationsApi.invitation_update ...'
       end
@@ -326,9 +326,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling InvitationsApi.invitation_update"
       end
-      # verify the required parameter 'invitation_update' is set
-      if @api_client.config.client_side_validation && invitation_update.nil?
-        fail ArgumentError, "Missing the required parameter 'invitation_update' when calling InvitationsApi.invitation_update"
+      # verify the required parameter 'invitation_update_parameters' is set
+      if @api_client.config.client_side_validation && invitation_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'invitation_update_parameters' when calling InvitationsApi.invitation_update"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/invitations/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -348,7 +348,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(invitation_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(invitation_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

@@ -25,7 +25,7 @@ describe 'BranchesApi' do
   # Compare branch with main branch.
   # @param project_id Project ID
   # @param name name
-  # @param branch_compare 
+  # @param branch_compare_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -39,7 +39,7 @@ describe 'BranchesApi' do
   # Create a branch
   # Create a new branch.
   # @param project_id Project ID
-  # @param branch_create 
+  # @param branch_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -68,7 +68,7 @@ describe 'BranchesApi' do
   # Merge an existing branch.
   # @param project_id Project ID
   # @param name name
-  # @param branch_merge 
+  # @param branch_merge_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -97,7 +97,7 @@ describe 'BranchesApi' do
   # Update an existing branch.
   # @param project_id Project ID
   # @param name name
-  # @param branch_update 
+  # @param branch_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]

@@ -25,7 +25,7 @@ describe 'CommentsApi' do
   # Create a new comment for a key.
   # @param project_id Project ID
   # @param key_id Translation Key ID
-  # @param comment_create 
+  # @param comment_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -41,7 +41,7 @@ describe 'CommentsApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param id ID
-  # @param comment_delete 
+  # @param comment_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -57,7 +57,7 @@ describe 'CommentsApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param id ID
-  # @param comment_mark_check 
+  # @param comment_mark_check_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -73,7 +73,7 @@ describe 'CommentsApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param id ID
-  # @param comment_mark_read 
+  # @param comment_mark_read_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -89,7 +89,7 @@ describe 'CommentsApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param id ID
-  # @param comment_mark_unread 
+  # @param comment_mark_unread_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -105,7 +105,7 @@ describe 'CommentsApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param id ID
-  # @param comment_show 
+  # @param comment_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Comment]
@@ -121,7 +121,7 @@ describe 'CommentsApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param id ID
-  # @param comment_update 
+  # @param comment_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -136,7 +136,7 @@ describe 'CommentsApi' do
   # List all comments for a key.
   # @param project_id Project ID
   # @param key_id Translation Key ID
-  # @param comments_list 
+  # @param comments_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number

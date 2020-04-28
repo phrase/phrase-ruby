@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## screenshot_create
 
-> screenshot_create(project_id, screenshot_create, opts)
+> screenshot_create(project_id, screenshot_create_parameters, opts)
 
 Create a screenshot
 
@@ -39,14 +39,14 @@ end
 
 api_instance = Phrase::ScreenshotsApi.new
 project_id = 'project_id_example' # String | Project ID
-screenshot_create = Phrase::ScreenshotCreate.new # ScreenshotCreate | 
+screenshot_create_parameters = Phrase::ScreenshotCreateParameters.new # ScreenshotCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a screenshot
-  api_instance.screenshot_create(project_id, screenshot_create, opts)
+  api_instance.screenshot_create(project_id, screenshot_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling ScreenshotsApi->screenshot_create: #{e}"
 end
@@ -58,7 +58,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **screenshot_create** | [**ScreenshotCreate**](ScreenshotCreate.md)|  | 
+ **screenshot_create_parameters** | [**ScreenshotCreateParameters**](ScreenshotCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -204,7 +204,7 @@ Response<([**Screenshot**](Screenshot.md))>
 
 ## screenshot_update
 
-> Object screenshot_update(project_id, id, screenshot_update, opts)
+> Object screenshot_update(project_id, id, screenshot_update_parameters, opts)
 
 Update a screenshot
 
@@ -230,14 +230,14 @@ end
 api_instance = Phrase::ScreenshotsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-screenshot_update = Phrase::ScreenshotUpdate.new # ScreenshotUpdate | 
+screenshot_update_parameters = Phrase::ScreenshotUpdateParameters.new # ScreenshotUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a screenshot
-  result = api_instance.screenshot_update(project_id, id, screenshot_update, opts)
+  result = api_instance.screenshot_update(project_id, id, screenshot_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling ScreenshotsApi->screenshot_update: #{e}"
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **screenshot_update** | [**ScreenshotUpdate**](ScreenshotUpdate.md)|  | 
+ **screenshot_update_parameters** | [**ScreenshotUpdateParameters**](ScreenshotUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

@@ -10,23 +10,23 @@ module Phrase
     # Upload a new file
     # Upload a new language file. Creates necessary resources in your project.
     # @param project_id [String] Project ID
-    # @param upload_create [UploadCreate] 
+    # @param upload_create_parameters [UploadCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def upload_create(project_id, upload_create, opts = {})
-      upload_create_with_http_info(project_id, upload_create, opts)
+    def upload_create(project_id, upload_create_parameters, opts = {})
+      upload_create_with_http_info(project_id, upload_create_parameters, opts)
       nil
     end
 
     # Upload a new file
     # Upload a new language file. Creates necessary resources in your project.
     # @param project_id [String] Project ID
-    # @param upload_create [UploadCreate] 
+    # @param upload_create_parameters [UploadCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def upload_create_with_http_info(project_id, upload_create, opts = {})
+    def upload_create_with_http_info(project_id, upload_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UploadsApi.upload_create ...'
       end
@@ -34,9 +34,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling UploadsApi.upload_create"
       end
-      # verify the required parameter 'upload_create' is set
-      if @api_client.config.client_side_validation && upload_create.nil?
-        fail ArgumentError, "Missing the required parameter 'upload_create' when calling UploadsApi.upload_create"
+      # verify the required parameter 'upload_create_parameters' is set
+      if @api_client.config.client_side_validation && upload_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'upload_create_parameters' when calling UploadsApi.upload_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/uploads'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -54,7 +54,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(upload_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(upload_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -83,12 +83,12 @@ module Phrase
     # View details and summary for a single upload.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param upload_show [UploadShow] 
+    # @param upload_show_parameters [UploadShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Upload]
-    def upload_show(project_id, id, upload_show, opts = {})
-      data, _status_code, _headers = upload_show_with_http_info(project_id, id, upload_show, opts)
+    def upload_show(project_id, id, upload_show_parameters, opts = {})
+      data, _status_code, _headers = upload_show_with_http_info(project_id, id, upload_show_parameters, opts)
       data
     end
 
@@ -96,11 +96,11 @@ module Phrase
     # View details and summary for a single upload.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param upload_show [UploadShow] 
+    # @param upload_show_parameters [UploadShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Upload)>, Integer, Hash)>] Response<(Upload)> data, response status code and response headers
-    def upload_show_with_http_info(project_id, id, upload_show, opts = {})
+    def upload_show_with_http_info(project_id, id, upload_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UploadsApi.upload_show ...'
       end
@@ -112,9 +112,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling UploadsApi.upload_show"
       end
-      # verify the required parameter 'upload_show' is set
-      if @api_client.config.client_side_validation && upload_show.nil?
-        fail ArgumentError, "Missing the required parameter 'upload_show' when calling UploadsApi.upload_show"
+      # verify the required parameter 'upload_show_parameters' is set
+      if @api_client.config.client_side_validation && upload_show_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'upload_show_parameters' when calling UploadsApi.upload_show"
       end
       # resource path
       local_var_path = '/projects/{project_id}/uploads/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -134,7 +134,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(upload_show) 
+      post_body = opts[:body] || @api_client.object_to_http_body(upload_show_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Upload' 
@@ -162,27 +162,27 @@ module Phrase
     # List uploads
     # List all uploads for the given project.
     # @param project_id [String] Project ID
-    # @param uploads_list [UploadsList] 
+    # @param uploads_list_parameters [UploadsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<Object>]
-    def uploads_list(project_id, uploads_list, opts = {})
-      data, _status_code, _headers = uploads_list_with_http_info(project_id, uploads_list, opts)
+    def uploads_list(project_id, uploads_list_parameters, opts = {})
+      data, _status_code, _headers = uploads_list_with_http_info(project_id, uploads_list_parameters, opts)
       data
     end
 
     # List uploads
     # List all uploads for the given project.
     # @param project_id [String] Project ID
-    # @param uploads_list [UploadsList] 
+    # @param uploads_list_parameters [UploadsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
-    def uploads_list_with_http_info(project_id, uploads_list, opts = {})
+    def uploads_list_with_http_info(project_id, uploads_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UploadsApi.uploads_list ...'
       end
@@ -190,9 +190,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling UploadsApi.uploads_list"
       end
-      # verify the required parameter 'uploads_list' is set
-      if @api_client.config.client_side_validation && uploads_list.nil?
-        fail ArgumentError, "Missing the required parameter 'uploads_list' when calling UploadsApi.uploads_list"
+      # verify the required parameter 'uploads_list_parameters' is set
+      if @api_client.config.client_side_validation && uploads_list_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'uploads_list_parameters' when calling UploadsApi.uploads_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/uploads'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -214,7 +214,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(uploads_list) 
+      post_body = opts[:body] || @api_client.object_to_http_body(uploads_list_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Object>' 

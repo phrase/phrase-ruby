@@ -25,7 +25,7 @@ describe 'GlossaryTermsApi' do
   # Create a new glossary term.
   # @param account_id Account ID
   # @param glossary_id Glossary ID
-  # @param glossary_term_create 
+  # @param glossary_term_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -71,7 +71,7 @@ describe 'GlossaryTermsApi' do
   # @param account_id Account ID
   # @param glossary_id Glossary ID
   # @param id ID
-  # @param glossary_term_update 
+  # @param glossary_term_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]

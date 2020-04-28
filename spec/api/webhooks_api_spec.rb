@@ -24,7 +24,7 @@ describe 'WebhooksApi' do
   # Create a webhook
   # Create a new webhook.
   # @param project_id Project ID
-  # @param webhook_create 
+  # @param webhook_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -81,7 +81,7 @@ describe 'WebhooksApi' do
   # Update an existing webhook.
   # @param project_id Project ID
   # @param id ID
-  # @param webhook_update 
+  # @param webhook_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]

@@ -10,23 +10,23 @@ module Phrase
     # Create a Space
     # Create a new Space.
     # @param account_id [String] Account ID
-    # @param space_create [SpaceCreate] 
+    # @param space_create_parameters [SpaceCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def space_create(account_id, space_create, opts = {})
-      space_create_with_http_info(account_id, space_create, opts)
+    def space_create(account_id, space_create_parameters, opts = {})
+      space_create_with_http_info(account_id, space_create_parameters, opts)
       nil
     end
 
     # Create a Space
     # Create a new Space.
     # @param account_id [String] Account ID
-    # @param space_create [SpaceCreate] 
+    # @param space_create_parameters [SpaceCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def space_create_with_http_info(account_id, space_create, opts = {})
+    def space_create_with_http_info(account_id, space_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SpacesApi.space_create ...'
       end
@@ -34,9 +34,9 @@ module Phrase
       if @api_client.config.client_side_validation && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling SpacesApi.space_create"
       end
-      # verify the required parameter 'space_create' is set
-      if @api_client.config.client_side_validation && space_create.nil?
-        fail ArgumentError, "Missing the required parameter 'space_create' when calling SpacesApi.space_create"
+      # verify the required parameter 'space_create_parameters' is set
+      if @api_client.config.client_side_validation && space_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'space_create_parameters' when calling SpacesApi.space_create"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/spaces'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s))
@@ -54,7 +54,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(space_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(space_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -225,12 +225,12 @@ module Phrase
     # Update the specified Space.
     # @param account_id [String] Account ID
     # @param id [String] ID
-    # @param space_update [SpaceUpdate] 
+    # @param space_update_parameters [SpaceUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Space]
-    def space_update(account_id, id, space_update, opts = {})
-      data, _status_code, _headers = space_update_with_http_info(account_id, id, space_update, opts)
+    def space_update(account_id, id, space_update_parameters, opts = {})
+      data, _status_code, _headers = space_update_with_http_info(account_id, id, space_update_parameters, opts)
       data
     end
 
@@ -238,11 +238,11 @@ module Phrase
     # Update the specified Space.
     # @param account_id [String] Account ID
     # @param id [String] ID
-    # @param space_update [SpaceUpdate] 
+    # @param space_update_parameters [SpaceUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Space)>, Integer, Hash)>] Response<(Space)> data, response status code and response headers
-    def space_update_with_http_info(account_id, id, space_update, opts = {})
+    def space_update_with_http_info(account_id, id, space_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SpacesApi.space_update ...'
       end
@@ -254,9 +254,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling SpacesApi.space_update"
       end
-      # verify the required parameter 'space_update' is set
-      if @api_client.config.client_side_validation && space_update.nil?
-        fail ArgumentError, "Missing the required parameter 'space_update' when calling SpacesApi.space_update"
+      # verify the required parameter 'space_update_parameters' is set
+      if @api_client.config.client_side_validation && space_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'space_update_parameters' when calling SpacesApi.space_update"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/spaces/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -276,7 +276,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(space_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(space_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Space' 
@@ -377,12 +377,12 @@ module Phrase
     # Adds an existing project to the space.
     # @param account_id [String] Account ID
     # @param space_id [String] Space ID
-    # @param spaces_projects_create [SpacesProjectsCreate] 
+    # @param spaces_projects_create_parameters [SpacesProjectsCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def spaces_projects_create(account_id, space_id, spaces_projects_create, opts = {})
-      spaces_projects_create_with_http_info(account_id, space_id, spaces_projects_create, opts)
+    def spaces_projects_create(account_id, space_id, spaces_projects_create_parameters, opts = {})
+      spaces_projects_create_with_http_info(account_id, space_id, spaces_projects_create_parameters, opts)
       nil
     end
 
@@ -390,11 +390,11 @@ module Phrase
     # Adds an existing project to the space.
     # @param account_id [String] Account ID
     # @param space_id [String] Space ID
-    # @param spaces_projects_create [SpacesProjectsCreate] 
+    # @param spaces_projects_create_parameters [SpacesProjectsCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def spaces_projects_create_with_http_info(account_id, space_id, spaces_projects_create, opts = {})
+    def spaces_projects_create_with_http_info(account_id, space_id, spaces_projects_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SpacesApi.spaces_projects_create ...'
       end
@@ -406,9 +406,9 @@ module Phrase
       if @api_client.config.client_side_validation && space_id.nil?
         fail ArgumentError, "Missing the required parameter 'space_id' when calling SpacesApi.spaces_projects_create"
       end
-      # verify the required parameter 'spaces_projects_create' is set
-      if @api_client.config.client_side_validation && spaces_projects_create.nil?
-        fail ArgumentError, "Missing the required parameter 'spaces_projects_create' when calling SpacesApi.spaces_projects_create"
+      # verify the required parameter 'spaces_projects_create_parameters' is set
+      if @api_client.config.client_side_validation && spaces_projects_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'spaces_projects_create_parameters' when calling SpacesApi.spaces_projects_create"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/spaces/{space_id}/projects'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'space_id' + '}', CGI.escape(space_id.to_s))
@@ -426,7 +426,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(spaces_projects_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(spaces_projects_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 

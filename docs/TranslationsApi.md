@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 ## translation_create
 
-> translation_create(project_id, translation_create, opts)
+> translation_create(project_id, translation_create_parameters, opts)
 
 Create a translation
 
@@ -51,14 +51,14 @@ end
 
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
-translation_create = Phrase::TranslationCreate.new # TranslationCreate | 
+translation_create_parameters = Phrase::TranslationCreateParameters.new # TranslationCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a translation
-  api_instance.translation_create(project_id, translation_create, opts)
+  api_instance.translation_create(project_id, translation_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translation_create: #{e}"
 end
@@ -70,7 +70,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **translation_create** | [**TranslationCreate**](TranslationCreate.md)|  | 
+ **translation_create_parameters** | [**TranslationCreateParameters**](TranslationCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -89,7 +89,7 @@ Response<(nil (empty response body))>
 
 ## translation_exclude
 
-> Object translation_exclude(project_id, id, translation_exclude, opts)
+> Object translation_exclude(project_id, id, translation_exclude_parameters, opts)
 
 Exclude a translation from export
 
@@ -115,14 +115,14 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-translation_exclude = Phrase::TranslationExclude.new # TranslationExclude | 
+translation_exclude_parameters = Phrase::TranslationExcludeParameters.new # TranslationExcludeParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Exclude a translation from export
-  result = api_instance.translation_exclude(project_id, id, translation_exclude, opts)
+  result = api_instance.translation_exclude(project_id, id, translation_exclude_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translation_exclude: #{e}"
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **translation_exclude** | [**TranslationExclude**](TranslationExclude.md)|  | 
+ **translation_exclude_parameters** | [**TranslationExcludeParameters**](TranslationExcludeParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -155,7 +155,7 @@ Response<(**Object**)>
 
 ## translation_include
 
-> Object translation_include(project_id, id, translation_include, opts)
+> Object translation_include(project_id, id, translation_include_parameters, opts)
 
 Revoke exclusion of a translation in export
 
@@ -181,14 +181,14 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-translation_include = Phrase::TranslationInclude.new # TranslationInclude | 
+translation_include_parameters = Phrase::TranslationIncludeParameters.new # TranslationIncludeParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Revoke exclusion of a translation in export
-  result = api_instance.translation_include(project_id, id, translation_include, opts)
+  result = api_instance.translation_include(project_id, id, translation_include_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translation_include: #{e}"
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **translation_include** | [**TranslationInclude**](TranslationInclude.md)|  | 
+ **translation_include_parameters** | [**TranslationIncludeParameters**](TranslationIncludeParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -221,7 +221,7 @@ Response<(**Object**)>
 
 ## translation_review
 
-> Object translation_review(project_id, id, translation_review, opts)
+> Object translation_review(project_id, id, translation_review_parameters, opts)
 
 Review a translation
 
@@ -247,14 +247,14 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-translation_review = Phrase::TranslationReview.new # TranslationReview | 
+translation_review_parameters = Phrase::TranslationReviewParameters.new # TranslationReviewParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Review a translation
-  result = api_instance.translation_review(project_id, id, translation_review, opts)
+  result = api_instance.translation_review(project_id, id, translation_review_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translation_review: #{e}"
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **translation_review** | [**TranslationReview**](TranslationReview.md)|  | 
+ **translation_review_parameters** | [**TranslationReviewParameters**](TranslationReviewParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -287,7 +287,7 @@ Response<(**Object**)>
 
 ## translation_show
 
-> Object translation_show(project_id, id, translation_show, opts)
+> Object translation_show(project_id, id, translation_show_parameters, opts)
 
 Get a single translation
 
@@ -313,14 +313,14 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-translation_show = Phrase::TranslationShow.new # TranslationShow | 
+translation_show_parameters = Phrase::TranslationShowParameters.new # TranslationShowParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Get a single translation
-  result = api_instance.translation_show(project_id, id, translation_show, opts)
+  result = api_instance.translation_show(project_id, id, translation_show_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translation_show: #{e}"
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **translation_show** | [**TranslationShow**](TranslationShow.md)|  | 
+ **translation_show_parameters** | [**TranslationShowParameters**](TranslationShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -353,7 +353,7 @@ Response<(**Object**)>
 
 ## translation_unverify
 
-> Object translation_unverify(project_id, id, translation_unverify, opts)
+> Object translation_unverify(project_id, id, translation_unverify_parameters, opts)
 
 Mark a translation as unverified
 
@@ -379,14 +379,14 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-translation_unverify = Phrase::TranslationUnverify.new # TranslationUnverify | 
+translation_unverify_parameters = Phrase::TranslationUnverifyParameters.new # TranslationUnverifyParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Mark a translation as unverified
-  result = api_instance.translation_unverify(project_id, id, translation_unverify, opts)
+  result = api_instance.translation_unverify(project_id, id, translation_unverify_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translation_unverify: #{e}"
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **translation_unverify** | [**TranslationUnverify**](TranslationUnverify.md)|  | 
+ **translation_unverify_parameters** | [**TranslationUnverifyParameters**](TranslationUnverifyParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -419,7 +419,7 @@ Response<(**Object**)>
 
 ## translation_update
 
-> Object translation_update(project_id, id, translation_update, opts)
+> Object translation_update(project_id, id, translation_update_parameters, opts)
 
 Update a translation
 
@@ -445,14 +445,14 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-translation_update = Phrase::TranslationUpdate.new # TranslationUpdate | 
+translation_update_parameters = Phrase::TranslationUpdateParameters.new # TranslationUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a translation
-  result = api_instance.translation_update(project_id, id, translation_update, opts)
+  result = api_instance.translation_update(project_id, id, translation_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translation_update: #{e}"
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **translation_update** | [**TranslationUpdate**](TranslationUpdate.md)|  | 
+ **translation_update_parameters** | [**TranslationUpdateParameters**](TranslationUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -485,7 +485,7 @@ Response<(**Object**)>
 
 ## translation_verify
 
-> Object translation_verify(project_id, id, translation_verify, opts)
+> Object translation_verify(project_id, id, translation_verify_parameters, opts)
 
 Verify a translation
 
@@ -511,14 +511,14 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-translation_verify = Phrase::TranslationVerify.new # TranslationVerify | 
+translation_verify_parameters = Phrase::TranslationVerifyParameters.new # TranslationVerifyParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Verify a translation
-  result = api_instance.translation_verify(project_id, id, translation_verify, opts)
+  result = api_instance.translation_verify(project_id, id, translation_verify_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translation_verify: #{e}"
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **translation_verify** | [**TranslationVerify**](TranslationVerify.md)|  | 
+ **translation_verify_parameters** | [**TranslationVerifyParameters**](TranslationVerifyParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -551,7 +551,7 @@ Response<(**Object**)>
 
 ## translations_by_key
 
-> Array&lt;Object&gt; translations_by_key(project_id, key_id, translations_by_key, opts)
+> Array&lt;Object&gt; translations_by_key(project_id, key_id, translations_by_key_parameters, opts)
 
 List translations by key
 
@@ -577,7 +577,7 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 key_id = 'key_id_example' # String | Translation Key ID
-translations_by_key = Phrase::TranslationsByKey.new # TranslationsByKey | 
+translations_by_key_parameters = Phrase::TranslationsByKeyParameters.new # TranslationsByKeyParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -586,7 +586,7 @@ opts = {
 
 begin
   #List translations by key
-  result = api_instance.translations_by_key(project_id, key_id, translations_by_key, opts)
+  result = api_instance.translations_by_key(project_id, key_id, translations_by_key_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_by_key: #{e}"
@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **key_id** | **String**| Translation Key ID | 
- **translations_by_key** | [**TranslationsByKey**](TranslationsByKey.md)|  | 
+ **translations_by_key_parameters** | [**TranslationsByKeyParameters**](TranslationsByKeyParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
@@ -621,7 +621,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## translations_by_locale
 
-> Array&lt;Object&gt; translations_by_locale(project_id, locale_id, translations_by_locale, opts)
+> Array&lt;Object&gt; translations_by_locale(project_id, locale_id, translations_by_locale_parameters, opts)
 
 List translations by locale
 
@@ -647,7 +647,7 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 locale_id = 'locale_id_example' # String | Locale ID
-translations_by_locale = Phrase::TranslationsByLocale.new # TranslationsByLocale | 
+translations_by_locale_parameters = Phrase::TranslationsByLocaleParameters.new # TranslationsByLocaleParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -656,7 +656,7 @@ opts = {
 
 begin
   #List translations by locale
-  result = api_instance.translations_by_locale(project_id, locale_id, translations_by_locale, opts)
+  result = api_instance.translations_by_locale(project_id, locale_id, translations_by_locale_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_by_locale: #{e}"
@@ -670,7 +670,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **locale_id** | **String**| Locale ID | 
- **translations_by_locale** | [**TranslationsByLocale**](TranslationsByLocale.md)|  | 
+ **translations_by_locale_parameters** | [**TranslationsByLocaleParameters**](TranslationsByLocaleParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
@@ -691,7 +691,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## translations_exclude
 
-> Object translations_exclude(project_id, translations_exclude, opts)
+> Object translations_exclude(project_id, translations_exclude_parameters, opts)
 
 Set exclude from export flag on translations selected by query
 
@@ -716,14 +716,14 @@ end
 
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
-translations_exclude = Phrase::TranslationsExclude.new # TranslationsExclude | 
+translations_exclude_parameters = Phrase::TranslationsExcludeParameters.new # TranslationsExcludeParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Set exclude from export flag on translations selected by query
-  result = api_instance.translations_exclude(project_id, translations_exclude, opts)
+  result = api_instance.translations_exclude(project_id, translations_exclude_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_exclude: #{e}"
@@ -736,7 +736,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **translations_exclude** | [**TranslationsExclude**](TranslationsExclude.md)|  | 
+ **translations_exclude_parameters** | [**TranslationsExcludeParameters**](TranslationsExcludeParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -755,7 +755,7 @@ Response<(**Object**)>
 
 ## translations_include
 
-> Object translations_include(project_id, translations_include, opts)
+> Object translations_include(project_id, translations_include_parameters, opts)
 
 Remove exlude from import flag from translations selected by query
 
@@ -780,14 +780,14 @@ end
 
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
-translations_include = Phrase::TranslationsInclude.new # TranslationsInclude | 
+translations_include_parameters = Phrase::TranslationsIncludeParameters.new # TranslationsIncludeParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Remove exlude from import flag from translations selected by query
-  result = api_instance.translations_include(project_id, translations_include, opts)
+  result = api_instance.translations_include(project_id, translations_include_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_include: #{e}"
@@ -800,7 +800,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **translations_include** | [**TranslationsInclude**](TranslationsInclude.md)|  | 
+ **translations_include_parameters** | [**TranslationsIncludeParameters**](TranslationsIncludeParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -819,7 +819,7 @@ Response<(**Object**)>
 
 ## translations_list
 
-> Array&lt;Translation&gt; translations_list(project_id, translations_list, opts)
+> Array&lt;Translation&gt; translations_list(project_id, translations_list_parameters, opts)
 
 List all translations
 
@@ -844,7 +844,7 @@ end
 
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
-translations_list = Phrase::TranslationsList.new # TranslationsList | 
+translations_list_parameters = Phrase::TranslationsListParameters.new # TranslationsListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -853,7 +853,7 @@ opts = {
 
 begin
   #List all translations
-  result = api_instance.translations_list(project_id, translations_list, opts)
+  result = api_instance.translations_list(project_id, translations_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_list: #{e}"
@@ -866,7 +866,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **translations_list** | [**TranslationsList**](TranslationsList.md)|  | 
+ **translations_list_parameters** | [**TranslationsListParameters**](TranslationsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
@@ -887,7 +887,7 @@ Response<([**Array&lt;Translation&gt;**](Translation.md))>
 
 ## translations_review
 
-> Object translations_review(project_id, translations_review, opts)
+> Object translations_review(project_id, translations_review_parameters, opts)
 
 Review translations selected by query
 
@@ -912,14 +912,14 @@ end
 
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
-translations_review = Phrase::TranslationsReview.new # TranslationsReview | 
+translations_review_parameters = Phrase::TranslationsReviewParameters.new # TranslationsReviewParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Review translations selected by query
-  result = api_instance.translations_review(project_id, translations_review, opts)
+  result = api_instance.translations_review(project_id, translations_review_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_review: #{e}"
@@ -932,7 +932,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **translations_review** | [**TranslationsReview**](TranslationsReview.md)|  | 
+ **translations_review_parameters** | [**TranslationsReviewParameters**](TranslationsReviewParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -951,7 +951,7 @@ Response<(**Object**)>
 
 ## translations_search
 
-> Array&lt;Object&gt; translations_search(project_id, translations_search, opts)
+> Array&lt;Object&gt; translations_search(project_id, translations_search_parameters, opts)
 
 Search translations
 
@@ -976,7 +976,7 @@ end
 
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
-translations_search = Phrase::TranslationsSearch.new # TranslationsSearch | 
+translations_search_parameters = Phrase::TranslationsSearchParameters.new # TranslationsSearchParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -985,7 +985,7 @@ opts = {
 
 begin
   #Search translations
-  result = api_instance.translations_search(project_id, translations_search, opts)
+  result = api_instance.translations_search(project_id, translations_search_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_search: #{e}"
@@ -998,7 +998,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **translations_search** | [**TranslationsSearch**](TranslationsSearch.md)|  | 
+ **translations_search_parameters** | [**TranslationsSearchParameters**](TranslationsSearchParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
@@ -1019,7 +1019,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## translations_unverify
 
-> Object translations_unverify(project_id, translations_unverify, opts)
+> Object translations_unverify(project_id, translations_unverify_parameters, opts)
 
 Mark translations selected by query as unverified
 
@@ -1044,14 +1044,14 @@ end
 
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
-translations_unverify = Phrase::TranslationsUnverify.new # TranslationsUnverify | 
+translations_unverify_parameters = Phrase::TranslationsUnverifyParameters.new # TranslationsUnverifyParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Mark translations selected by query as unverified
-  result = api_instance.translations_unverify(project_id, translations_unverify, opts)
+  result = api_instance.translations_unverify(project_id, translations_unverify_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_unverify: #{e}"
@@ -1064,7 +1064,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **translations_unverify** | [**TranslationsUnverify**](TranslationsUnverify.md)|  | 
+ **translations_unverify_parameters** | [**TranslationsUnverifyParameters**](TranslationsUnverifyParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -1083,7 +1083,7 @@ Response<(**Object**)>
 
 ## translations_verify
 
-> AffectedCount translations_verify(project_id, translations_verify, opts)
+> AffectedCount translations_verify(project_id, translations_verify_parameters, opts)
 
 Verify translations selected by query
 
@@ -1108,14 +1108,14 @@ end
 
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
-translations_verify = Phrase::TranslationsVerify.new # TranslationsVerify | 
+translations_verify_parameters = Phrase::TranslationsVerifyParameters.new # TranslationsVerifyParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Verify translations selected by query
-  result = api_instance.translations_verify(project_id, translations_verify, opts)
+  result = api_instance.translations_verify(project_id, translations_verify_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_verify: #{e}"
@@ -1128,7 +1128,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **translations_verify** | [**TranslationsVerify**](TranslationsVerify.md)|  | 
+ **translations_verify_parameters** | [**TranslationsVerifyParameters**](TranslationsVerifyParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

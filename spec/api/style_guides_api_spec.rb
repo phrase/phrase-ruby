@@ -24,7 +24,7 @@ describe 'StyleGuidesApi' do
   # Create a style guide
   # Create a new style guide.
   # @param project_id Project ID
-  # @param styleguide_create 
+  # @param styleguide_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -67,7 +67,7 @@ describe 'StyleGuidesApi' do
   # Update an existing style guide.
   # @param project_id Project ID
   # @param id ID
-  # @param styleguide_update 
+  # @param styleguide_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## webhook_create
 
-> webhook_create(project_id, webhook_create, opts)
+> webhook_create(project_id, webhook_create_parameters, opts)
 
 Create a webhook
 
@@ -40,14 +40,14 @@ end
 
 api_instance = Phrase::WebhooksApi.new
 project_id = 'project_id_example' # String | Project ID
-webhook_create = Phrase::WebhookCreate.new # WebhookCreate | 
+webhook_create_parameters = Phrase::WebhookCreateParameters.new # WebhookCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a webhook
-  api_instance.webhook_create(project_id, webhook_create, opts)
+  api_instance.webhook_create(project_id, webhook_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling WebhooksApi->webhook_create: #{e}"
 end
@@ -59,7 +59,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **webhook_create** | [**WebhookCreate**](WebhookCreate.md)|  | 
+ **webhook_create_parameters** | [**WebhookCreateParameters**](WebhookCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -268,7 +268,7 @@ Response<(nil (empty response body))>
 
 ## webhook_update
 
-> Object webhook_update(project_id, id, webhook_update, opts)
+> Object webhook_update(project_id, id, webhook_update_parameters, opts)
 
 Update a webhook
 
@@ -294,14 +294,14 @@ end
 api_instance = Phrase::WebhooksApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-webhook_update = Phrase::WebhookUpdate.new # WebhookUpdate | 
+webhook_update_parameters = Phrase::WebhookUpdateParameters.new # WebhookUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a webhook
-  result = api_instance.webhook_update(project_id, id, webhook_update, opts)
+  result = api_instance.webhook_update(project_id, id, webhook_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling WebhooksApi->webhook_update: #{e}"
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **webhook_update** | [**WebhookUpdate**](WebhookUpdate.md)|  | 
+ **webhook_update_parameters** | [**WebhookUpdateParameters**](WebhookUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

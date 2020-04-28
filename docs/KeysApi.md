@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## key_create
 
-> key_create(project_id, key_create, opts)
+> key_create(project_id, key_create_parameters, opts)
 
 Create a key
 
@@ -43,14 +43,14 @@ end
 
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
-key_create = Phrase::KeyCreate.new # KeyCreate | 
+key_create_parameters = Phrase::KeyCreateParameters.new # KeyCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a key
-  api_instance.key_create(project_id, key_create, opts)
+  api_instance.key_create(project_id, key_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->key_create: #{e}"
 end
@@ -62,7 +62,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **key_create** | [**KeyCreate**](KeyCreate.md)|  | 
+ **key_create_parameters** | [**KeyCreateParameters**](KeyCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -81,7 +81,7 @@ Response<(nil (empty response body))>
 
 ## key_delete
 
-> key_delete(project_id, id, key_delete, opts)
+> key_delete(project_id, id, key_delete_parameters, opts)
 
 Delete a key
 
@@ -107,14 +107,14 @@ end
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-key_delete = Phrase::KeyDelete.new # KeyDelete | 
+key_delete_parameters = Phrase::KeyDeleteParameters.new # KeyDeleteParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Delete a key
-  api_instance.key_delete(project_id, id, key_delete, opts)
+  api_instance.key_delete(project_id, id, key_delete_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->key_delete: #{e}"
 end
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **key_delete** | [**KeyDelete**](KeyDelete.md)|  | 
+ **key_delete_parameters** | [**KeyDeleteParameters**](KeyDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -146,7 +146,7 @@ Response<(nil (empty response body))>
 
 ## key_show
 
-> Object key_show(project_id, id, key_show, opts)
+> Object key_show(project_id, id, key_show_parameters, opts)
 
 Get a single key
 
@@ -172,14 +172,14 @@ end
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-key_show = Phrase::KeyShow.new # KeyShow | 
+key_show_parameters = Phrase::KeyShowParameters.new # KeyShowParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Get a single key
-  result = api_instance.key_show(project_id, id, key_show, opts)
+  result = api_instance.key_show(project_id, id, key_show_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->key_show: #{e}"
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **key_show** | [**KeyShow**](KeyShow.md)|  | 
+ **key_show_parameters** | [**KeyShowParameters**](KeyShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -212,7 +212,7 @@ Response<(**Object**)>
 
 ## key_update
 
-> Object key_update(project_id, id, key_update, opts)
+> Object key_update(project_id, id, key_update_parameters, opts)
 
 Update a key
 
@@ -238,14 +238,14 @@ end
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-key_update = Phrase::KeyUpdate.new # KeyUpdate | 
+key_update_parameters = Phrase::KeyUpdateParameters.new # KeyUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a key
-  result = api_instance.key_update(project_id, id, key_update, opts)
+  result = api_instance.key_update(project_id, id, key_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->key_update: #{e}"
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **key_update** | [**KeyUpdate**](KeyUpdate.md)|  | 
+ **key_update_parameters** | [**KeyUpdateParameters**](KeyUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -278,7 +278,7 @@ Response<(**Object**)>
 
 ## keys_delete
 
-> AffectedResources keys_delete(project_id, keys_delete, opts)
+> AffectedResources keys_delete(project_id, keys_delete_parameters, opts)
 
 Delete collection of keys
 
@@ -303,14 +303,14 @@ end
 
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
-keys_delete = Phrase::KeysDelete.new # KeysDelete | 
+keys_delete_parameters = Phrase::KeysDeleteParameters.new # KeysDeleteParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Delete collection of keys
-  result = api_instance.keys_delete(project_id, keys_delete, opts)
+  result = api_instance.keys_delete(project_id, keys_delete_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->keys_delete: #{e}"
@@ -323,7 +323,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **keys_delete** | [**KeysDelete**](KeysDelete.md)|  | 
+ **keys_delete_parameters** | [**KeysDeleteParameters**](KeysDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -342,7 +342,7 @@ Response<([**AffectedResources**](AffectedResources.md))>
 
 ## keys_list
 
-> Array&lt;TranslationKey&gt; keys_list(project_id, keys_list, opts)
+> Array&lt;TranslationKey&gt; keys_list(project_id, keys_list_parameters, opts)
 
 List keys
 
@@ -367,7 +367,7 @@ end
 
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
-keys_list = Phrase::KeysList.new # KeysList | 
+keys_list_parameters = Phrase::KeysListParameters.new # KeysListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -376,7 +376,7 @@ opts = {
 
 begin
   #List keys
-  result = api_instance.keys_list(project_id, keys_list, opts)
+  result = api_instance.keys_list(project_id, keys_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->keys_list: #{e}"
@@ -389,7 +389,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **keys_list** | [**KeysList**](KeysList.md)|  | 
+ **keys_list_parameters** | [**KeysListParameters**](KeysListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
@@ -410,7 +410,7 @@ Response<([**Array&lt;TranslationKey&gt;**](TranslationKey.md))>
 
 ## keys_search
 
-> Array&lt;Object&gt; keys_search(project_id, keys_search, opts)
+> Array&lt;Object&gt; keys_search(project_id, keys_search_parameters, opts)
 
 Search keys
 
@@ -435,7 +435,7 @@ end
 
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
-keys_search = Phrase::KeysSearch.new # KeysSearch | 
+keys_search_parameters = Phrase::KeysSearchParameters.new # KeysSearchParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -444,7 +444,7 @@ opts = {
 
 begin
   #Search keys
-  result = api_instance.keys_search(project_id, keys_search, opts)
+  result = api_instance.keys_search(project_id, keys_search_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->keys_search: #{e}"
@@ -457,7 +457,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **keys_search** | [**KeysSearch**](KeysSearch.md)|  | 
+ **keys_search_parameters** | [**KeysSearchParameters**](KeysSearchParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
@@ -478,7 +478,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## keys_tag
 
-> Object keys_tag(project_id, keys_tag, opts)
+> Object keys_tag(project_id, keys_tag_parameters, opts)
 
 Add tags to collection of keys
 
@@ -503,14 +503,14 @@ end
 
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
-keys_tag = Phrase::KeysTag.new # KeysTag | 
+keys_tag_parameters = Phrase::KeysTagParameters.new # KeysTagParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Add tags to collection of keys
-  result = api_instance.keys_tag(project_id, keys_tag, opts)
+  result = api_instance.keys_tag(project_id, keys_tag_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->keys_tag: #{e}"
@@ -523,7 +523,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **keys_tag** | [**KeysTag**](KeysTag.md)|  | 
+ **keys_tag_parameters** | [**KeysTagParameters**](KeysTagParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -542,7 +542,7 @@ Response<(**Object**)>
 
 ## keys_untag
 
-> Object keys_untag(project_id, keys_untag, opts)
+> Object keys_untag(project_id, keys_untag_parameters, opts)
 
 Remove tags from collection of keys
 
@@ -567,14 +567,14 @@ end
 
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
-keys_untag = Phrase::KeysUntag.new # KeysUntag | 
+keys_untag_parameters = Phrase::KeysUntagParameters.new # KeysUntagParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Remove tags from collection of keys
-  result = api_instance.keys_untag(project_id, keys_untag, opts)
+  result = api_instance.keys_untag(project_id, keys_untag_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->keys_untag: #{e}"
@@ -587,7 +587,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **keys_untag** | [**KeysUntag**](KeysUntag.md)|  | 
+ **keys_untag_parameters** | [**KeysUntagParameters**](KeysUntagParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

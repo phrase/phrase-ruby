@@ -24,7 +24,7 @@ describe 'GitLabSyncApi' do
   # Delete single Sync Setting
   # Deletes a single GitLab Sync Setting.
   # @param id ID
-  # @param gitlab_sync_delete 
+  # @param gitlab_sync_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -38,10 +38,10 @@ describe 'GitLabSyncApi' do
   # Export from Phrase to GitLab
   # Export translations from Phrase to GitLab according to the .phraseapp.yml file within the GitLab repository.
   # @param gitlab_sync_id Gitlab Sync ID
-  # @param gitlab_sync_export 
+  # @param gitlab_sync_export_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [GitlabSyncExport1]
+  # @return [GitlabSyncExport]
   describe 'gitlab_sync_export test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -52,12 +52,12 @@ describe 'GitLabSyncApi' do
   # History of single Sync Setting
   # List history for a single Sync Setting.
   # @param gitlab_sync_id Gitlab Sync ID
-  # @param gitlab_sync_history 
+  # @param gitlab_sync_history_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-  # @return [Array<GitlabSyncHistory1>]
+  # @return [Array<GitlabSyncHistory>]
   describe 'gitlab_sync_history test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -68,7 +68,7 @@ describe 'GitLabSyncApi' do
   # Import from GitLab to Phrase
   # Import translations from GitLab to Phrase according to the .phraseapp.yml file within the GitLab repository.
   # @param gitlab_sync_id Gitlab Sync ID
-  # @param gitlab_sync_import 
+  # @param gitlab_sync_import_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Array<Object>]
@@ -81,7 +81,7 @@ describe 'GitLabSyncApi' do
   # unit tests for gitlab_sync_list
   # List GitLab syncs
   # List all GitLab Sync Settings for which synchronisation with Phrase and GitLab is activated.
-  # @param gitlab_sync_list 
+  # @param gitlab_sync_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Array<Object>]
@@ -95,7 +95,7 @@ describe 'GitLabSyncApi' do
   # Get single Sync Setting
   # Shows a single GitLab Sync Setting.
   # @param id ID
-  # @param gitlab_sync_show 
+  # @param gitlab_sync_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [GitlabSync]
@@ -109,7 +109,7 @@ describe 'GitLabSyncApi' do
   # Update single Sync Setting
   # Updates a single GitLab Sync Setting.
   # @param id ID
-  # @param gitlab_sync_update 
+  # @param gitlab_sync_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]

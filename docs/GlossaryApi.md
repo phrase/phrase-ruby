@@ -80,7 +80,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## glossary_create
 
-> glossary_create(account_id, glossary_create, opts)
+> glossary_create(account_id, glossary_create_parameters, opts)
 
 Create a glossary
 
@@ -105,14 +105,14 @@ end
 
 api_instance = Phrase::GlossaryApi.new
 account_id = 'account_id_example' # String | Account ID
-glossary_create = Phrase::GlossaryCreate.new # GlossaryCreate | 
+glossary_create_parameters = Phrase::GlossaryCreateParameters.new # GlossaryCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a glossary
-  api_instance.glossary_create(account_id, glossary_create, opts)
+  api_instance.glossary_create(account_id, glossary_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling GlossaryApi->glossary_create: #{e}"
 end
@@ -124,7 +124,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **glossary_create** | [**GlossaryCreate**](GlossaryCreate.md)|  | 
+ **glossary_create_parameters** | [**GlossaryCreateParameters**](GlossaryCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -270,7 +270,7 @@ Response<([**Glossary**](Glossary.md))>
 
 ## glossary_update
 
-> Object glossary_update(account_id, id, glossary_update, opts)
+> Object glossary_update(account_id, id, glossary_update_parameters, opts)
 
 Update a glossary
 
@@ -296,14 +296,14 @@ end
 api_instance = Phrase::GlossaryApi.new
 account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
-glossary_update = Phrase::GlossaryUpdate.new # GlossaryUpdate | 
+glossary_update_parameters = Phrase::GlossaryUpdateParameters.new # GlossaryUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a glossary
-  result = api_instance.glossary_update(account_id, id, glossary_update, opts)
+  result = api_instance.glossary_update(account_id, id, glossary_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GlossaryApi->glossary_update: #{e}"
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
  **id** | **String**| ID | 
- **glossary_update** | [**GlossaryUpdate**](GlossaryUpdate.md)|  | 
+ **glossary_update_parameters** | [**GlossaryUpdateParameters**](GlossaryUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

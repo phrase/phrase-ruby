@@ -26,7 +26,7 @@ describe 'JobLocalesApi' do
   # @param project_id Project ID
   # @param job_id Job ID
   # @param id ID
-  # @param job_locale_complete 
+  # @param job_locale_complete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -42,7 +42,7 @@ describe 'JobLocalesApi' do
   # @param project_id Project ID
   # @param job_id Job ID
   # @param id ID
-  # @param job_locale_delete 
+  # @param job_locale_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -58,7 +58,7 @@ describe 'JobLocalesApi' do
   # @param project_id Project ID
   # @param job_id Job ID
   # @param id ID
-  # @param job_locale_reopen 
+  # @param job_locale_reopen_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -74,7 +74,7 @@ describe 'JobLocalesApi' do
   # @param project_id Project ID
   # @param job_id Job ID
   # @param id ID
-  # @param job_locale_show 
+  # @param job_locale_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [JobLocale]
@@ -90,7 +90,7 @@ describe 'JobLocalesApi' do
   # @param project_id Project ID
   # @param job_id Job ID
   # @param id ID
-  # @param job_locale_update 
+  # @param job_locale_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -105,7 +105,7 @@ describe 'JobLocalesApi' do
   # Create a new job locale.
   # @param project_id Project ID
   # @param job_id Job ID
-  # @param job_locales_create 
+  # @param job_locales_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -120,7 +120,7 @@ describe 'JobLocalesApi' do
   # List all job locales for a given job.
   # @param project_id Project ID
   # @param job_id Job ID
-  # @param job_locales_list 
+  # @param job_locales_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number

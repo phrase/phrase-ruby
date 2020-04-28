@@ -26,7 +26,7 @@ describe 'GlossaryTermTranslationsApi' do
   # @param account_id Account ID
   # @param glossary_id Glossary ID
   # @param term_id Term ID
-  # @param glossary_term_translation_create 
+  # @param glossary_term_translation_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -59,7 +59,7 @@ describe 'GlossaryTermTranslationsApi' do
   # @param glossary_id Glossary ID
   # @param term_id Term ID
   # @param id ID
-  # @param glossary_term_translation_update 
+  # @param glossary_term_translation_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [GlossaryTermTranslation]

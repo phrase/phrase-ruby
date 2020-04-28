@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## styleguide_create
 
-> styleguide_create(project_id, styleguide_create, opts)
+> styleguide_create(project_id, styleguide_create_parameters, opts)
 
 Create a style guide
 
@@ -39,14 +39,14 @@ end
 
 api_instance = Phrase::StyleGuidesApi.new
 project_id = 'project_id_example' # String | Project ID
-styleguide_create = Phrase::StyleguideCreate.new # StyleguideCreate | 
+styleguide_create_parameters = Phrase::StyleguideCreateParameters.new # StyleguideCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a style guide
-  api_instance.styleguide_create(project_id, styleguide_create, opts)
+  api_instance.styleguide_create(project_id, styleguide_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling StyleGuidesApi->styleguide_create: #{e}"
 end
@@ -58,7 +58,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **styleguide_create** | [**StyleguideCreate**](StyleguideCreate.md)|  | 
+ **styleguide_create_parameters** | [**StyleguideCreateParameters**](StyleguideCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -204,7 +204,7 @@ Response<(**Object**)>
 
 ## styleguide_update
 
-> Object styleguide_update(project_id, id, styleguide_update, opts)
+> Object styleguide_update(project_id, id, styleguide_update_parameters, opts)
 
 Update a style guide
 
@@ -230,14 +230,14 @@ end
 api_instance = Phrase::StyleGuidesApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-styleguide_update = Phrase::StyleguideUpdate.new # StyleguideUpdate | 
+styleguide_update_parameters = Phrase::StyleguideUpdateParameters.new # StyleguideUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a style guide
-  result = api_instance.styleguide_update(project_id, id, styleguide_update, opts)
+  result = api_instance.styleguide_update(project_id, id, styleguide_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling StyleGuidesApi->styleguide_update: #{e}"
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **styleguide_update** | [**StyleguideUpdate**](StyleguideUpdate.md)|  | 
+ **styleguide_update_parameters** | [**StyleguideUpdateParameters**](StyleguideUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

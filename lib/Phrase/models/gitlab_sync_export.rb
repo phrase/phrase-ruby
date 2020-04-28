@@ -2,20 +2,23 @@ require 'date'
 
 module Phrase
   class GitlabSyncExport
-    # Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
-    attr_accessor :account_id
+    attr_accessor :merge_request_id
+
+    attr_accessor :merge_request_web_url
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'account_id' => :'account_id'
+        :'merge_request_id' => :'merge_request_id',
+        :'merge_request_web_url' => :'merge_request_web_url'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'account_id' => :'String'
+        :'merge_request_id' => :'Integer',
+        :'merge_request_web_url' => :'String'
       }
     end
 
@@ -40,8 +43,12 @@ module Phrase
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'account_id')
-        self.account_id = attributes[:'account_id']
+      if attributes.key?(:'merge_request_id')
+        self.merge_request_id = attributes[:'merge_request_id']
+      end
+
+      if attributes.key?(:'merge_request_web_url')
+        self.merge_request_web_url = attributes[:'merge_request_web_url']
       end
     end
 
@@ -63,7 +70,8 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          account_id == o.account_id
+          merge_request_id == o.merge_request_id &&
+          merge_request_web_url == o.merge_request_web_url
     end
 
     # @see the `==` method
@@ -75,7 +83,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id].hash
+      [merge_request_id, merge_request_web_url].hash
     end
 
     # Builds the object from hash

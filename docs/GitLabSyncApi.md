@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## gitlab_sync_delete
 
-> gitlab_sync_delete(id, gitlab_sync_delete, opts)
+> gitlab_sync_delete(id, gitlab_sync_delete_parameters, opts)
 
 Delete single Sync Setting
 
@@ -41,14 +41,14 @@ end
 
 api_instance = Phrase::GitLabSyncApi.new
 id = 'id_example' # String | ID
-gitlab_sync_delete = Phrase::GitlabSyncDelete.new # GitlabSyncDelete | 
+gitlab_sync_delete_parameters = Phrase::GitlabSyncDeleteParameters.new # GitlabSyncDeleteParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Delete single Sync Setting
-  api_instance.gitlab_sync_delete(id, gitlab_sync_delete, opts)
+  api_instance.gitlab_sync_delete(id, gitlab_sync_delete_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_delete: #{e}"
 end
@@ -60,7 +60,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID | 
- **gitlab_sync_delete** | [**GitlabSyncDelete**](GitlabSyncDelete.md)|  | 
+ **gitlab_sync_delete_parameters** | [**GitlabSyncDeleteParameters**](GitlabSyncDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -79,7 +79,7 @@ Response<(nil (empty response body))>
 
 ## gitlab_sync_export
 
-> GitlabSyncExport1 gitlab_sync_export(gitlab_sync_id, gitlab_sync_export, opts)
+> GitlabSyncExport gitlab_sync_export(gitlab_sync_id, gitlab_sync_export_parameters, opts)
 
 Export from Phrase to GitLab
 
@@ -104,14 +104,14 @@ end
 
 api_instance = Phrase::GitLabSyncApi.new
 gitlab_sync_id = 'gitlab_sync_id_example' # String | Gitlab Sync ID
-gitlab_sync_export = Phrase::GitlabSyncExport.new # GitlabSyncExport | 
+gitlab_sync_export_parameters = Phrase::GitlabSyncExportParameters.new # GitlabSyncExportParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Export from Phrase to GitLab
-  result = api_instance.gitlab_sync_export(gitlab_sync_id, gitlab_sync_export, opts)
+  result = api_instance.gitlab_sync_export(gitlab_sync_id, gitlab_sync_export_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_export: #{e}"
@@ -124,12 +124,12 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gitlab_sync_id** | **String**| Gitlab Sync ID | 
- **gitlab_sync_export** | [**GitlabSyncExport**](GitlabSyncExport.md)|  | 
+ **gitlab_sync_export_parameters** | [**GitlabSyncExportParameters**](GitlabSyncExportParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
 
-Response<([**GitlabSyncExport1**](GitlabSyncExport1.md))>
+Response<([**GitlabSyncExport**](GitlabSyncExport.md))>
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Response<([**GitlabSyncExport1**](GitlabSyncExport1.md))>
 
 ## gitlab_sync_history
 
-> Array&lt;GitlabSyncHistory1&gt; gitlab_sync_history(gitlab_sync_id, gitlab_sync_history, opts)
+> Array&lt;GitlabSyncHistory&gt; gitlab_sync_history(gitlab_sync_id, gitlab_sync_history_parameters, opts)
 
 History of single Sync Setting
 
@@ -168,7 +168,7 @@ end
 
 api_instance = Phrase::GitLabSyncApi.new
 gitlab_sync_id = 'gitlab_sync_id_example' # String | Gitlab Sync ID
-gitlab_sync_history = Phrase::GitlabSyncHistory.new # GitlabSyncHistory | 
+gitlab_sync_history_parameters = Phrase::GitlabSyncHistoryParameters.new # GitlabSyncHistoryParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -177,7 +177,7 @@ opts = {
 
 begin
   #History of single Sync Setting
-  result = api_instance.gitlab_sync_history(gitlab_sync_id, gitlab_sync_history, opts)
+  result = api_instance.gitlab_sync_history(gitlab_sync_id, gitlab_sync_history_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_history: #{e}"
@@ -190,14 +190,14 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gitlab_sync_id** | **String**| Gitlab Sync ID | 
- **gitlab_sync_history** | [**GitlabSyncHistory**](GitlabSyncHistory.md)|  | 
+ **gitlab_sync_history_parameters** | [**GitlabSyncHistoryParameters**](GitlabSyncHistoryParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
 
 ### Return type
 
-Response<([**Array&lt;GitlabSyncHistory1&gt;**](GitlabSyncHistory1.md))>
+Response<([**Array&lt;GitlabSyncHistory&gt;**](GitlabSyncHistory.md))>
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Response<([**Array&lt;GitlabSyncHistory1&gt;**](GitlabSyncHistory1.md))>
 
 ## gitlab_sync_import
 
-> Array&lt;Object&gt; gitlab_sync_import(gitlab_sync_id, gitlab_sync_import, opts)
+> Array&lt;Object&gt; gitlab_sync_import(gitlab_sync_id, gitlab_sync_import_parameters, opts)
 
 Import from GitLab to Phrase
 
@@ -236,14 +236,14 @@ end
 
 api_instance = Phrase::GitLabSyncApi.new
 gitlab_sync_id = 'gitlab_sync_id_example' # String | Gitlab Sync ID
-gitlab_sync_import = Phrase::GitlabSyncImport.new # GitlabSyncImport | 
+gitlab_sync_import_parameters = Phrase::GitlabSyncImportParameters.new # GitlabSyncImportParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Import from GitLab to Phrase
-  result = api_instance.gitlab_sync_import(gitlab_sync_id, gitlab_sync_import, opts)
+  result = api_instance.gitlab_sync_import(gitlab_sync_id, gitlab_sync_import_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_import: #{e}"
@@ -256,7 +256,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gitlab_sync_id** | **String**| Gitlab Sync ID | 
- **gitlab_sync_import** | [**GitlabSyncImport**](GitlabSyncImport.md)|  | 
+ **gitlab_sync_import_parameters** | [**GitlabSyncImportParameters**](GitlabSyncImportParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -275,7 +275,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## gitlab_sync_list
 
-> Array&lt;Object&gt; gitlab_sync_list(gitlab_sync_list, opts)
+> Array&lt;Object&gt; gitlab_sync_list(gitlab_sync_list_parameters, opts)
 
 List GitLab syncs
 
@@ -299,14 +299,14 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::GitLabSyncApi.new
-gitlab_sync_list = Phrase::GitlabSyncList.new # GitlabSyncList | 
+gitlab_sync_list_parameters = Phrase::GitlabSyncListParameters.new # GitlabSyncListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #List GitLab syncs
-  result = api_instance.gitlab_sync_list(gitlab_sync_list, opts)
+  result = api_instance.gitlab_sync_list(gitlab_sync_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_list: #{e}"
@@ -318,7 +318,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gitlab_sync_list** | [**GitlabSyncList**](GitlabSyncList.md)|  | 
+ **gitlab_sync_list_parameters** | [**GitlabSyncListParameters**](GitlabSyncListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -337,7 +337,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## gitlab_sync_show
 
-> GitlabSync gitlab_sync_show(id, gitlab_sync_show, opts)
+> GitlabSync gitlab_sync_show(id, gitlab_sync_show_parameters, opts)
 
 Get single Sync Setting
 
@@ -362,14 +362,14 @@ end
 
 api_instance = Phrase::GitLabSyncApi.new
 id = 'id_example' # String | ID
-gitlab_sync_show = Phrase::GitlabSyncShow.new # GitlabSyncShow | 
+gitlab_sync_show_parameters = Phrase::GitlabSyncShowParameters.new # GitlabSyncShowParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Get single Sync Setting
-  result = api_instance.gitlab_sync_show(id, gitlab_sync_show, opts)
+  result = api_instance.gitlab_sync_show(id, gitlab_sync_show_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_show: #{e}"
@@ -382,7 +382,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID | 
- **gitlab_sync_show** | [**GitlabSyncShow**](GitlabSyncShow.md)|  | 
+ **gitlab_sync_show_parameters** | [**GitlabSyncShowParameters**](GitlabSyncShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -401,7 +401,7 @@ Response<([**GitlabSync**](GitlabSync.md))>
 
 ## gitlab_sync_update
 
-> Object gitlab_sync_update(id, gitlab_sync_update, opts)
+> Object gitlab_sync_update(id, gitlab_sync_update_parameters, opts)
 
 Update single Sync Setting
 
@@ -426,14 +426,14 @@ end
 
 api_instance = Phrase::GitLabSyncApi.new
 id = 'id_example' # String | ID
-gitlab_sync_update = Phrase::GitlabSyncUpdate.new # GitlabSyncUpdate | 
+gitlab_sync_update_parameters = Phrase::GitlabSyncUpdateParameters.new # GitlabSyncUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update single Sync Setting
-  result = api_instance.gitlab_sync_update(id, gitlab_sync_update, opts)
+  result = api_instance.gitlab_sync_update(id, gitlab_sync_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_update: #{e}"
@@ -446,7 +446,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID | 
- **gitlab_sync_update** | [**GitlabSyncUpdate**](GitlabSyncUpdate.md)|  | 
+ **gitlab_sync_update_parameters** | [**GitlabSyncUpdateParameters**](GitlabSyncUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

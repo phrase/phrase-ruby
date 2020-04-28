@@ -24,7 +24,7 @@ describe 'KeysApi' do
   # Create a key
   # Create a new key.
   # @param project_id Project ID
-  # @param key_create 
+  # @param key_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -39,7 +39,7 @@ describe 'KeysApi' do
   # Delete an existing key.
   # @param project_id Project ID
   # @param id ID
-  # @param key_delete 
+  # @param key_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -54,7 +54,7 @@ describe 'KeysApi' do
   # Get details on a single key for a given project.
   # @param project_id Project ID
   # @param id ID
-  # @param key_show 
+  # @param key_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -69,7 +69,7 @@ describe 'KeysApi' do
   # Update an existing key.
   # @param project_id Project ID
   # @param id ID
-  # @param key_update 
+  # @param key_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -83,7 +83,7 @@ describe 'KeysApi' do
   # Delete collection of keys
   # Delete all keys matching query. Same constraints as list. Please limit the number of affected keys to about 1,000 as you might experience timeouts otherwise.
   # @param project_id Project ID
-  # @param keys_delete 
+  # @param keys_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [AffectedResources]
@@ -97,7 +97,7 @@ describe 'KeysApi' do
   # List keys
   # List all keys for the given project. Alternatively you can POST requests to /search.
   # @param project_id Project ID
-  # @param keys_list 
+  # @param keys_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
@@ -113,7 +113,7 @@ describe 'KeysApi' do
   # Search keys
   # Search keys for the given project matching query.
   # @param project_id Project ID
-  # @param keys_search 
+  # @param keys_search_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
@@ -129,7 +129,7 @@ describe 'KeysApi' do
   # Add tags to collection of keys
   # Tags all keys matching query. Same constraints as list.
   # @param project_id Project ID
-  # @param keys_tag 
+  # @param keys_tag_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -143,7 +143,7 @@ describe 'KeysApi' do
   # Remove tags from collection of keys
   # Removes specified tags from keys matching query.
   # @param project_id Project ID
-  # @param keys_untag 
+  # @param keys_untag_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]

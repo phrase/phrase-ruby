@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## blacklisted_key_create
 
-> blacklisted_key_create(project_id, blacklisted_key_create, opts)
+> blacklisted_key_create(project_id, blacklisted_key_create_parameters, opts)
 
 Create a blacklisted key
 
@@ -39,14 +39,14 @@ end
 
 api_instance = Phrase::BlacklistedKeysApi.new
 project_id = 'project_id_example' # String | Project ID
-blacklisted_key_create = Phrase::BlacklistedKeyCreate.new # BlacklistedKeyCreate | 
+blacklisted_key_create_parameters = Phrase::BlacklistedKeyCreateParameters.new # BlacklistedKeyCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a blacklisted key
-  api_instance.blacklisted_key_create(project_id, blacklisted_key_create, opts)
+  api_instance.blacklisted_key_create(project_id, blacklisted_key_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling BlacklistedKeysApi->blacklisted_key_create: #{e}"
 end
@@ -58,7 +58,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **blacklisted_key_create** | [**BlacklistedKeyCreate**](BlacklistedKeyCreate.md)|  | 
+ **blacklisted_key_create_parameters** | [**BlacklistedKeyCreateParameters**](BlacklistedKeyCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -204,7 +204,7 @@ Response<([**BlacklistedKey**](BlacklistedKey.md))>
 
 ## blacklisted_key_update
 
-> Object blacklisted_key_update(project_id, id, blacklisted_key_update, opts)
+> Object blacklisted_key_update(project_id, id, blacklisted_key_update_parameters, opts)
 
 Update a blacklisted key
 
@@ -230,14 +230,14 @@ end
 api_instance = Phrase::BlacklistedKeysApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-blacklisted_key_update = Phrase::BlacklistedKeyUpdate.new # BlacklistedKeyUpdate | 
+blacklisted_key_update_parameters = Phrase::BlacklistedKeyUpdateParameters.new # BlacklistedKeyUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a blacklisted key
-  result = api_instance.blacklisted_key_update(project_id, id, blacklisted_key_update, opts)
+  result = api_instance.blacklisted_key_update(project_id, id, blacklisted_key_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling BlacklistedKeysApi->blacklisted_key_update: #{e}"
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **blacklisted_key_update** | [**BlacklistedKeyUpdate**](BlacklistedKeyUpdate.md)|  | 
+ **blacklisted_key_update_parameters** | [**BlacklistedKeyUpdateParameters**](BlacklistedKeyUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

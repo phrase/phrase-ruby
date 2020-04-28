@@ -11,12 +11,12 @@ module Phrase
     # Create a new screenshot marker.
     # @param project_id [String] Project ID
     # @param screenshot_id [String] Screenshot ID
-    # @param screenshot_marker_create [ScreenshotMarkerCreate] 
+    # @param screenshot_marker_create_parameters [ScreenshotMarkerCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def screenshot_marker_create(project_id, screenshot_id, screenshot_marker_create, opts = {})
-      screenshot_marker_create_with_http_info(project_id, screenshot_id, screenshot_marker_create, opts)
+    def screenshot_marker_create(project_id, screenshot_id, screenshot_marker_create_parameters, opts = {})
+      screenshot_marker_create_with_http_info(project_id, screenshot_id, screenshot_marker_create_parameters, opts)
       nil
     end
 
@@ -24,11 +24,11 @@ module Phrase
     # Create a new screenshot marker.
     # @param project_id [String] Project ID
     # @param screenshot_id [String] Screenshot ID
-    # @param screenshot_marker_create [ScreenshotMarkerCreate] 
+    # @param screenshot_marker_create_parameters [ScreenshotMarkerCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def screenshot_marker_create_with_http_info(project_id, screenshot_id, screenshot_marker_create, opts = {})
+    def screenshot_marker_create_with_http_info(project_id, screenshot_id, screenshot_marker_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ScreenshotMarkersApi.screenshot_marker_create ...'
       end
@@ -40,9 +40,9 @@ module Phrase
       if @api_client.config.client_side_validation && screenshot_id.nil?
         fail ArgumentError, "Missing the required parameter 'screenshot_id' when calling ScreenshotMarkersApi.screenshot_marker_create"
       end
-      # verify the required parameter 'screenshot_marker_create' is set
-      if @api_client.config.client_side_validation && screenshot_marker_create.nil?
-        fail ArgumentError, "Missing the required parameter 'screenshot_marker_create' when calling ScreenshotMarkersApi.screenshot_marker_create"
+      # verify the required parameter 'screenshot_marker_create_parameters' is set
+      if @api_client.config.client_side_validation && screenshot_marker_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'screenshot_marker_create_parameters' when calling ScreenshotMarkersApi.screenshot_marker_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/screenshots/{screenshot_id}/markers'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'screenshot_id' + '}', CGI.escape(screenshot_id.to_s))
@@ -60,7 +60,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(screenshot_marker_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(screenshot_marker_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -237,12 +237,12 @@ module Phrase
     # Update an existing screenshot marker.
     # @param project_id [String] Project ID
     # @param screenshot_id [String] Screenshot ID
-    # @param screenshot_marker_update [ScreenshotMarkerUpdate] 
+    # @param screenshot_marker_update_parameters [ScreenshotMarkerUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [ScreenshotMarker]
-    def screenshot_marker_update(project_id, screenshot_id, screenshot_marker_update, opts = {})
-      data, _status_code, _headers = screenshot_marker_update_with_http_info(project_id, screenshot_id, screenshot_marker_update, opts)
+    def screenshot_marker_update(project_id, screenshot_id, screenshot_marker_update_parameters, opts = {})
+      data, _status_code, _headers = screenshot_marker_update_with_http_info(project_id, screenshot_id, screenshot_marker_update_parameters, opts)
       data
     end
 
@@ -250,11 +250,11 @@ module Phrase
     # Update an existing screenshot marker.
     # @param project_id [String] Project ID
     # @param screenshot_id [String] Screenshot ID
-    # @param screenshot_marker_update [ScreenshotMarkerUpdate] 
+    # @param screenshot_marker_update_parameters [ScreenshotMarkerUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(ScreenshotMarker)>, Integer, Hash)>] Response<(ScreenshotMarker)> data, response status code and response headers
-    def screenshot_marker_update_with_http_info(project_id, screenshot_id, screenshot_marker_update, opts = {})
+    def screenshot_marker_update_with_http_info(project_id, screenshot_id, screenshot_marker_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ScreenshotMarkersApi.screenshot_marker_update ...'
       end
@@ -266,9 +266,9 @@ module Phrase
       if @api_client.config.client_side_validation && screenshot_id.nil?
         fail ArgumentError, "Missing the required parameter 'screenshot_id' when calling ScreenshotMarkersApi.screenshot_marker_update"
       end
-      # verify the required parameter 'screenshot_marker_update' is set
-      if @api_client.config.client_side_validation && screenshot_marker_update.nil?
-        fail ArgumentError, "Missing the required parameter 'screenshot_marker_update' when calling ScreenshotMarkersApi.screenshot_marker_update"
+      # verify the required parameter 'screenshot_marker_update_parameters' is set
+      if @api_client.config.client_side_validation && screenshot_marker_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'screenshot_marker_update_parameters' when calling ScreenshotMarkersApi.screenshot_marker_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/screenshots/{screenshot_id}/markers'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'screenshot_id' + '}', CGI.escape(screenshot_id.to_s))
@@ -288,7 +288,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(screenshot_marker_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(screenshot_marker_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'ScreenshotMarker' 

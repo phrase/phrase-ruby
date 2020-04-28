@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## upload_create
 
-> upload_create(project_id, upload_create, opts)
+> upload_create(project_id, upload_create_parameters, opts)
 
 Upload a new file
 
@@ -37,14 +37,14 @@ end
 
 api_instance = Phrase::UploadsApi.new
 project_id = 'project_id_example' # String | Project ID
-upload_create = Phrase::UploadCreate.new # UploadCreate | 
+upload_create_parameters = Phrase::UploadCreateParameters.new # UploadCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Upload a new file
-  api_instance.upload_create(project_id, upload_create, opts)
+  api_instance.upload_create(project_id, upload_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling UploadsApi->upload_create: #{e}"
 end
@@ -56,7 +56,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **upload_create** | [**UploadCreate**](UploadCreate.md)|  | 
+ **upload_create_parameters** | [**UploadCreateParameters**](UploadCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -75,7 +75,7 @@ Response<(nil (empty response body))>
 
 ## upload_show
 
-> Upload upload_show(project_id, id, upload_show, opts)
+> Upload upload_show(project_id, id, upload_show_parameters, opts)
 
 View upload details
 
@@ -101,14 +101,14 @@ end
 api_instance = Phrase::UploadsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-upload_show = Phrase::UploadShow.new # UploadShow | 
+upload_show_parameters = Phrase::UploadShowParameters.new # UploadShowParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #View upload details
-  result = api_instance.upload_show(project_id, id, upload_show, opts)
+  result = api_instance.upload_show(project_id, id, upload_show_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling UploadsApi->upload_show: #{e}"
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **upload_show** | [**UploadShow**](UploadShow.md)|  | 
+ **upload_show_parameters** | [**UploadShowParameters**](UploadShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -141,7 +141,7 @@ Response<([**Upload**](Upload.md))>
 
 ## uploads_list
 
-> Array&lt;Object&gt; uploads_list(project_id, uploads_list, opts)
+> Array&lt;Object&gt; uploads_list(project_id, uploads_list_parameters, opts)
 
 List uploads
 
@@ -166,7 +166,7 @@ end
 
 api_instance = Phrase::UploadsApi.new
 project_id = 'project_id_example' # String | Project ID
-uploads_list = Phrase::UploadsList.new # UploadsList | 
+uploads_list_parameters = Phrase::UploadsListParameters.new # UploadsListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -175,7 +175,7 @@ opts = {
 
 begin
   #List uploads
-  result = api_instance.uploads_list(project_id, uploads_list, opts)
+  result = api_instance.uploads_list(project_id, uploads_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling UploadsApi->uploads_list: #{e}"
@@ -188,7 +188,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **uploads_list** | [**UploadsList**](UploadsList.md)|  | 
+ **uploads_list_parameters** | [**UploadsListParameters**](UploadsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 

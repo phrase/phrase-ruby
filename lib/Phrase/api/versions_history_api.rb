@@ -12,12 +12,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param translation_id [String] Translation ID
     # @param id [String] ID
-    # @param version_show [VersionShow] 
+    # @param version_show_parameters [VersionShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def version_show(project_id, translation_id, id, version_show, opts = {})
-      data, _status_code, _headers = version_show_with_http_info(project_id, translation_id, id, version_show, opts)
+    def version_show(project_id, translation_id, id, version_show_parameters, opts = {})
+      data, _status_code, _headers = version_show_with_http_info(project_id, translation_id, id, version_show_parameters, opts)
       data
     end
 
@@ -26,11 +26,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param translation_id [String] Translation ID
     # @param id [String] ID
-    # @param version_show [VersionShow] 
+    # @param version_show_parameters [VersionShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def version_show_with_http_info(project_id, translation_id, id, version_show, opts = {})
+    def version_show_with_http_info(project_id, translation_id, id, version_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VersionsHistoryApi.version_show ...'
       end
@@ -46,9 +46,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling VersionsHistoryApi.version_show"
       end
-      # verify the required parameter 'version_show' is set
-      if @api_client.config.client_side_validation && version_show.nil?
-        fail ArgumentError, "Missing the required parameter 'version_show' when calling VersionsHistoryApi.version_show"
+      # verify the required parameter 'version_show_parameters' is set
+      if @api_client.config.client_side_validation && version_show_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'version_show_parameters' when calling VersionsHistoryApi.version_show"
       end
       # resource path
       local_var_path = '/projects/{project_id}/translations/{translation_id}/versions/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'translation_id' + '}', CGI.escape(translation_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -68,7 +68,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(version_show) 
+      post_body = opts[:body] || @api_client.object_to_http_body(version_show_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 
@@ -97,14 +97,14 @@ module Phrase
     # List all versions for the given translation.
     # @param project_id [String] Project ID
     # @param translation_id [String] Translation ID
-    # @param versions_list [VersionsList] 
+    # @param versions_list_parameters [VersionsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<TranslationVersion>]
-    def versions_list(project_id, translation_id, versions_list, opts = {})
-      data, _status_code, _headers = versions_list_with_http_info(project_id, translation_id, versions_list, opts)
+    def versions_list(project_id, translation_id, versions_list_parameters, opts = {})
+      data, _status_code, _headers = versions_list_with_http_info(project_id, translation_id, versions_list_parameters, opts)
       data
     end
 
@@ -112,13 +112,13 @@ module Phrase
     # List all versions for the given translation.
     # @param project_id [String] Project ID
     # @param translation_id [String] Translation ID
-    # @param versions_list [VersionsList] 
+    # @param versions_list_parameters [VersionsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<(Response<(Array<TranslationVersion>)>, Integer, Hash)>] Response<(Array<TranslationVersion>)> data, response status code and response headers
-    def versions_list_with_http_info(project_id, translation_id, versions_list, opts = {})
+    def versions_list_with_http_info(project_id, translation_id, versions_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VersionsHistoryApi.versions_list ...'
       end
@@ -130,9 +130,9 @@ module Phrase
       if @api_client.config.client_side_validation && translation_id.nil?
         fail ArgumentError, "Missing the required parameter 'translation_id' when calling VersionsHistoryApi.versions_list"
       end
-      # verify the required parameter 'versions_list' is set
-      if @api_client.config.client_side_validation && versions_list.nil?
-        fail ArgumentError, "Missing the required parameter 'versions_list' when calling VersionsHistoryApi.versions_list"
+      # verify the required parameter 'versions_list_parameters' is set
+      if @api_client.config.client_side_validation && versions_list_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'versions_list_parameters' when calling VersionsHistoryApi.versions_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/translations/{translation_id}/versions'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'translation_id' + '}', CGI.escape(translation_id.to_s))
@@ -154,7 +154,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(versions_list) 
+      post_body = opts[:body] || @api_client.object_to_http_body(versions_list_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<TranslationVersion>' 

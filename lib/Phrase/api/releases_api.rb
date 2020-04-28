@@ -11,12 +11,12 @@ module Phrase
     # Create a new release.
     # @param account_id [String] Account ID
     # @param distribution_id [String] Distribution ID
-    # @param release_create [ReleaseCreate] 
+    # @param release_create_parameters [ReleaseCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def release_create(account_id, distribution_id, release_create, opts = {})
-      release_create_with_http_info(account_id, distribution_id, release_create, opts)
+    def release_create(account_id, distribution_id, release_create_parameters, opts = {})
+      release_create_with_http_info(account_id, distribution_id, release_create_parameters, opts)
       nil
     end
 
@@ -24,11 +24,11 @@ module Phrase
     # Create a new release.
     # @param account_id [String] Account ID
     # @param distribution_id [String] Distribution ID
-    # @param release_create [ReleaseCreate] 
+    # @param release_create_parameters [ReleaseCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def release_create_with_http_info(account_id, distribution_id, release_create, opts = {})
+    def release_create_with_http_info(account_id, distribution_id, release_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ReleasesApi.release_create ...'
       end
@@ -40,9 +40,9 @@ module Phrase
       if @api_client.config.client_side_validation && distribution_id.nil?
         fail ArgumentError, "Missing the required parameter 'distribution_id' when calling ReleasesApi.release_create"
       end
-      # verify the required parameter 'release_create' is set
-      if @api_client.config.client_side_validation && release_create.nil?
-        fail ArgumentError, "Missing the required parameter 'release_create' when calling ReleasesApi.release_create"
+      # verify the required parameter 'release_create_parameters' is set
+      if @api_client.config.client_side_validation && release_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'release_create_parameters' when calling ReleasesApi.release_create"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/distributions/{distribution_id}/releases'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'distribution_id' + '}', CGI.escape(distribution_id.to_s))
@@ -60,7 +60,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(release_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(release_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -322,12 +322,12 @@ module Phrase
     # @param account_id [String] Account ID
     # @param distribution_id [String] Distribution ID
     # @param id [String] ID
-    # @param release_update [ReleaseUpdate] 
+    # @param release_update_parameters [ReleaseUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def release_update(account_id, distribution_id, id, release_update, opts = {})
-      data, _status_code, _headers = release_update_with_http_info(account_id, distribution_id, id, release_update, opts)
+    def release_update(account_id, distribution_id, id, release_update_parameters, opts = {})
+      data, _status_code, _headers = release_update_with_http_info(account_id, distribution_id, id, release_update_parameters, opts)
       data
     end
 
@@ -336,11 +336,11 @@ module Phrase
     # @param account_id [String] Account ID
     # @param distribution_id [String] Distribution ID
     # @param id [String] ID
-    # @param release_update [ReleaseUpdate] 
+    # @param release_update_parameters [ReleaseUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def release_update_with_http_info(account_id, distribution_id, id, release_update, opts = {})
+    def release_update_with_http_info(account_id, distribution_id, id, release_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ReleasesApi.release_update ...'
       end
@@ -356,9 +356,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling ReleasesApi.release_update"
       end
-      # verify the required parameter 'release_update' is set
-      if @api_client.config.client_side_validation && release_update.nil?
-        fail ArgumentError, "Missing the required parameter 'release_update' when calling ReleasesApi.release_update"
+      # verify the required parameter 'release_update_parameters' is set
+      if @api_client.config.client_side_validation && release_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'release_update_parameters' when calling ReleasesApi.release_update"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/distributions/{distribution_id}/releases/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'distribution_id' + '}', CGI.escape(distribution_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -378,7 +378,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(release_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(release_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

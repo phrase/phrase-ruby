@@ -24,7 +24,7 @@ describe 'TagsApi' do
   # Create a tag
   # Create a new tag.
   # @param project_id Project ID
-  # @param tag_create 
+  # @param tag_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -39,7 +39,7 @@ describe 'TagsApi' do
   # Delete an existing tag.
   # @param project_id Project ID
   # @param name name
-  # @param tag_delete 
+  # @param tag_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -54,7 +54,7 @@ describe 'TagsApi' do
   # Get details and progress information on a single tag for a given project.
   # @param project_id Project ID
   # @param name name
-  # @param tag_show 
+  # @param tag_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -68,7 +68,7 @@ describe 'TagsApi' do
   # List tags
   # List all tags for the given project.
   # @param project_id Project ID
-  # @param tags_list 
+  # @param tags_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number

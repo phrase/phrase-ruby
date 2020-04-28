@@ -23,7 +23,7 @@ describe 'AuthorizationsApi' do
   # unit tests for authorization_create
   # Create an authorization
   # Create a new authorization.
-  # @param authorization_create 
+  # @param authorization_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -63,7 +63,7 @@ describe 'AuthorizationsApi' do
   # Update an authorization
   # Update an existing authorization.
   # @param id ID
-  # @param authorization_update 
+  # @param authorization_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]

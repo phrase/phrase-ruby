@@ -153,12 +153,12 @@ module Phrase
     # Update user permissions in the account. Developers and translators need <code>project_ids</code> and <code>locale_ids</code> assigned to access them. Access token scope must include <code>team.manage</code>.
     # @param account_id [String] Account ID
     # @param id [String] ID
-    # @param member_update [MemberUpdate] 
+    # @param member_update_parameters [MemberUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def member_update(account_id, id, member_update, opts = {})
-      data, _status_code, _headers = member_update_with_http_info(account_id, id, member_update, opts)
+    def member_update(account_id, id, member_update_parameters, opts = {})
+      data, _status_code, _headers = member_update_with_http_info(account_id, id, member_update_parameters, opts)
       data
     end
 
@@ -166,11 +166,11 @@ module Phrase
     # Update user permissions in the account. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
     # @param account_id [String] Account ID
     # @param id [String] ID
-    # @param member_update [MemberUpdate] 
+    # @param member_update_parameters [MemberUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def member_update_with_http_info(account_id, id, member_update, opts = {})
+    def member_update_with_http_info(account_id, id, member_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MembersApi.member_update ...'
       end
@@ -182,9 +182,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling MembersApi.member_update"
       end
-      # verify the required parameter 'member_update' is set
-      if @api_client.config.client_side_validation && member_update.nil?
-        fail ArgumentError, "Missing the required parameter 'member_update' when calling MembersApi.member_update"
+      # verify the required parameter 'member_update_parameters' is set
+      if @api_client.config.client_side_validation && member_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'member_update_parameters' when calling MembersApi.member_update"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/members/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -204,7 +204,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(member_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(member_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

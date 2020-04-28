@@ -10,23 +10,23 @@ module Phrase
     # Create a tag
     # Create a new tag.
     # @param project_id [String] Project ID
-    # @param tag_create [TagCreate] 
+    # @param tag_create_parameters [TagCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def tag_create(project_id, tag_create, opts = {})
-      tag_create_with_http_info(project_id, tag_create, opts)
+    def tag_create(project_id, tag_create_parameters, opts = {})
+      tag_create_with_http_info(project_id, tag_create_parameters, opts)
       nil
     end
 
     # Create a tag
     # Create a new tag.
     # @param project_id [String] Project ID
-    # @param tag_create [TagCreate] 
+    # @param tag_create_parameters [TagCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def tag_create_with_http_info(project_id, tag_create, opts = {})
+    def tag_create_with_http_info(project_id, tag_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TagsApi.tag_create ...'
       end
@@ -34,9 +34,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling TagsApi.tag_create"
       end
-      # verify the required parameter 'tag_create' is set
-      if @api_client.config.client_side_validation && tag_create.nil?
-        fail ArgumentError, "Missing the required parameter 'tag_create' when calling TagsApi.tag_create"
+      # verify the required parameter 'tag_create_parameters' is set
+      if @api_client.config.client_side_validation && tag_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'tag_create_parameters' when calling TagsApi.tag_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/tags'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -54,7 +54,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(tag_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(tag_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -83,12 +83,12 @@ module Phrase
     # Delete an existing tag.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param tag_delete [TagDelete] 
+    # @param tag_delete_parameters [TagDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def tag_delete(project_id, name, tag_delete, opts = {})
-      tag_delete_with_http_info(project_id, name, tag_delete, opts)
+    def tag_delete(project_id, name, tag_delete_parameters, opts = {})
+      tag_delete_with_http_info(project_id, name, tag_delete_parameters, opts)
       nil
     end
 
@@ -96,11 +96,11 @@ module Phrase
     # Delete an existing tag.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param tag_delete [TagDelete] 
+    # @param tag_delete_parameters [TagDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def tag_delete_with_http_info(project_id, name, tag_delete, opts = {})
+    def tag_delete_with_http_info(project_id, name, tag_delete_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TagsApi.tag_delete ...'
       end
@@ -112,9 +112,9 @@ module Phrase
       if @api_client.config.client_side_validation && name.nil?
         fail ArgumentError, "Missing the required parameter 'name' when calling TagsApi.tag_delete"
       end
-      # verify the required parameter 'tag_delete' is set
-      if @api_client.config.client_side_validation && tag_delete.nil?
-        fail ArgumentError, "Missing the required parameter 'tag_delete' when calling TagsApi.tag_delete"
+      # verify the required parameter 'tag_delete_parameters' is set
+      if @api_client.config.client_side_validation && tag_delete_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'tag_delete_parameters' when calling TagsApi.tag_delete"
       end
       # resource path
       local_var_path = '/projects/{project_id}/tags/{name}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'name' + '}', CGI.escape(name.to_s))
@@ -132,7 +132,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(tag_delete) 
+      post_body = opts[:body] || @api_client.object_to_http_body(tag_delete_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -161,12 +161,12 @@ module Phrase
     # Get details and progress information on a single tag for a given project.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param tag_show [TagShow] 
+    # @param tag_show_parameters [TagShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def tag_show(project_id, name, tag_show, opts = {})
-      data, _status_code, _headers = tag_show_with_http_info(project_id, name, tag_show, opts)
+    def tag_show(project_id, name, tag_show_parameters, opts = {})
+      data, _status_code, _headers = tag_show_with_http_info(project_id, name, tag_show_parameters, opts)
       data
     end
 
@@ -174,11 +174,11 @@ module Phrase
     # Get details and progress information on a single tag for a given project.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param tag_show [TagShow] 
+    # @param tag_show_parameters [TagShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def tag_show_with_http_info(project_id, name, tag_show, opts = {})
+    def tag_show_with_http_info(project_id, name, tag_show_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TagsApi.tag_show ...'
       end
@@ -190,9 +190,9 @@ module Phrase
       if @api_client.config.client_side_validation && name.nil?
         fail ArgumentError, "Missing the required parameter 'name' when calling TagsApi.tag_show"
       end
-      # verify the required parameter 'tag_show' is set
-      if @api_client.config.client_side_validation && tag_show.nil?
-        fail ArgumentError, "Missing the required parameter 'tag_show' when calling TagsApi.tag_show"
+      # verify the required parameter 'tag_show_parameters' is set
+      if @api_client.config.client_side_validation && tag_show_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'tag_show_parameters' when calling TagsApi.tag_show"
       end
       # resource path
       local_var_path = '/projects/{project_id}/tags/{name}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'name' + '}', CGI.escape(name.to_s))
@@ -212,7 +212,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(tag_show) 
+      post_body = opts[:body] || @api_client.object_to_http_body(tag_show_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 
@@ -240,27 +240,27 @@ module Phrase
     # List tags
     # List all tags for the given project.
     # @param project_id [String] Project ID
-    # @param tags_list [TagsList] 
+    # @param tags_list_parameters [TagsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<Tag>]
-    def tags_list(project_id, tags_list, opts = {})
-      data, _status_code, _headers = tags_list_with_http_info(project_id, tags_list, opts)
+    def tags_list(project_id, tags_list_parameters, opts = {})
+      data, _status_code, _headers = tags_list_with_http_info(project_id, tags_list_parameters, opts)
       data
     end
 
     # List tags
     # List all tags for the given project.
     # @param project_id [String] Project ID
-    # @param tags_list [TagsList] 
+    # @param tags_list_parameters [TagsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
     # @return [Array<(Response<(Array<Tag>)>, Integer, Hash)>] Response<(Array<Tag>)> data, response status code and response headers
-    def tags_list_with_http_info(project_id, tags_list, opts = {})
+    def tags_list_with_http_info(project_id, tags_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TagsApi.tags_list ...'
       end
@@ -268,9 +268,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling TagsApi.tags_list"
       end
-      # verify the required parameter 'tags_list' is set
-      if @api_client.config.client_side_validation && tags_list.nil?
-        fail ArgumentError, "Missing the required parameter 'tags_list' when calling TagsApi.tags_list"
+      # verify the required parameter 'tags_list_parameters' is set
+      if @api_client.config.client_side_validation && tags_list_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'tags_list_parameters' when calling TagsApi.tags_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/tags'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -292,7 +292,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(tags_list) 
+      post_body = opts[:body] || @api_client.object_to_http_body(tags_list_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Tag>' 

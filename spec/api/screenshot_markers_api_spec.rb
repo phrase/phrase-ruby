@@ -25,7 +25,7 @@ describe 'ScreenshotMarkersApi' do
   # Create a new screenshot marker.
   # @param project_id Project ID
   # @param screenshot_id Screenshot ID
-  # @param screenshot_marker_create 
+  # @param screenshot_marker_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -69,7 +69,7 @@ describe 'ScreenshotMarkersApi' do
   # Update an existing screenshot marker.
   # @param project_id Project ID
   # @param screenshot_id Screenshot ID
-  # @param screenshot_marker_update 
+  # @param screenshot_marker_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [ScreenshotMarker]

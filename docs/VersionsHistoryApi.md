@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## version_show
 
-> Object version_show(project_id, translation_id, id, version_show, opts)
+> Object version_show(project_id, translation_id, id, version_show_parameters, opts)
 
 Get a single version
 
@@ -38,14 +38,14 @@ api_instance = Phrase::VersionsHistoryApi.new
 project_id = 'project_id_example' # String | Project ID
 translation_id = 'translation_id_example' # String | Translation ID
 id = 'id_example' # String | ID
-version_show = Phrase::VersionShow.new # VersionShow | 
+version_show_parameters = Phrase::VersionShowParameters.new # VersionShowParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Get a single version
-  result = api_instance.version_show(project_id, translation_id, id, version_show, opts)
+  result = api_instance.version_show(project_id, translation_id, id, version_show_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling VersionsHistoryApi->version_show: #{e}"
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **translation_id** | **String**| Translation ID | 
  **id** | **String**| ID | 
- **version_show** | [**VersionShow**](VersionShow.md)|  | 
+ **version_show_parameters** | [**VersionShowParameters**](VersionShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -79,7 +79,7 @@ Response<(**Object**)>
 
 ## versions_list
 
-> Array&lt;TranslationVersion&gt; versions_list(project_id, translation_id, versions_list, opts)
+> Array&lt;TranslationVersion&gt; versions_list(project_id, translation_id, versions_list_parameters, opts)
 
 List all versions
 
@@ -105,7 +105,7 @@ end
 api_instance = Phrase::VersionsHistoryApi.new
 project_id = 'project_id_example' # String | Project ID
 translation_id = 'translation_id_example' # String | Translation ID
-versions_list = Phrase::VersionsList.new # VersionsList | 
+versions_list_parameters = Phrase::VersionsListParameters.new # VersionsListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -114,7 +114,7 @@ opts = {
 
 begin
   #List all versions
-  result = api_instance.versions_list(project_id, translation_id, versions_list, opts)
+  result = api_instance.versions_list(project_id, translation_id, versions_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling VersionsHistoryApi->versions_list: #{e}"
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **translation_id** | **String**| Translation ID | 
- **versions_list** | [**VersionsList**](VersionsList.md)|  | 
+ **versions_list_parameters** | [**VersionsListParameters**](VersionsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 

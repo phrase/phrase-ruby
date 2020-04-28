@@ -10,23 +10,23 @@ module Phrase
     # Create a blacklisted key
     # Create a new rule for blacklisting keys.
     # @param project_id [String] Project ID
-    # @param blacklisted_key_create [BlacklistedKeyCreate] 
+    # @param blacklisted_key_create_parameters [BlacklistedKeyCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def blacklisted_key_create(project_id, blacklisted_key_create, opts = {})
-      blacklisted_key_create_with_http_info(project_id, blacklisted_key_create, opts)
+    def blacklisted_key_create(project_id, blacklisted_key_create_parameters, opts = {})
+      blacklisted_key_create_with_http_info(project_id, blacklisted_key_create_parameters, opts)
       nil
     end
 
     # Create a blacklisted key
     # Create a new rule for blacklisting keys.
     # @param project_id [String] Project ID
-    # @param blacklisted_key_create [BlacklistedKeyCreate] 
+    # @param blacklisted_key_create_parameters [BlacklistedKeyCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def blacklisted_key_create_with_http_info(project_id, blacklisted_key_create, opts = {})
+    def blacklisted_key_create_with_http_info(project_id, blacklisted_key_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BlacklistedKeysApi.blacklisted_key_create ...'
       end
@@ -34,9 +34,9 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling BlacklistedKeysApi.blacklisted_key_create"
       end
-      # verify the required parameter 'blacklisted_key_create' is set
-      if @api_client.config.client_side_validation && blacklisted_key_create.nil?
-        fail ArgumentError, "Missing the required parameter 'blacklisted_key_create' when calling BlacklistedKeysApi.blacklisted_key_create"
+      # verify the required parameter 'blacklisted_key_create_parameters' is set
+      if @api_client.config.client_side_validation && blacklisted_key_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'blacklisted_key_create_parameters' when calling BlacklistedKeysApi.blacklisted_key_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/blacklisted_keys'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -54,7 +54,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(blacklisted_key_create) 
+      post_body = opts[:body] || @api_client.object_to_http_body(blacklisted_key_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] 
@@ -225,12 +225,12 @@ module Phrase
     # Update an existing rule for blacklisting keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param blacklisted_key_update [BlacklistedKeyUpdate] 
+    # @param blacklisted_key_update_parameters [BlacklistedKeyUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Object]
-    def blacklisted_key_update(project_id, id, blacklisted_key_update, opts = {})
-      data, _status_code, _headers = blacklisted_key_update_with_http_info(project_id, id, blacklisted_key_update, opts)
+    def blacklisted_key_update(project_id, id, blacklisted_key_update_parameters, opts = {})
+      data, _status_code, _headers = blacklisted_key_update_with_http_info(project_id, id, blacklisted_key_update_parameters, opts)
       data
     end
 
@@ -238,11 +238,11 @@ module Phrase
     # Update an existing rule for blacklisting keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param blacklisted_key_update [BlacklistedKeyUpdate] 
+    # @param blacklisted_key_update_parameters [BlacklistedKeyUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def blacklisted_key_update_with_http_info(project_id, id, blacklisted_key_update, opts = {})
+    def blacklisted_key_update_with_http_info(project_id, id, blacklisted_key_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BlacklistedKeysApi.blacklisted_key_update ...'
       end
@@ -254,9 +254,9 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling BlacklistedKeysApi.blacklisted_key_update"
       end
-      # verify the required parameter 'blacklisted_key_update' is set
-      if @api_client.config.client_side_validation && blacklisted_key_update.nil?
-        fail ArgumentError, "Missing the required parameter 'blacklisted_key_update' when calling BlacklistedKeysApi.blacklisted_key_update"
+      # verify the required parameter 'blacklisted_key_update_parameters' is set
+      if @api_client.config.client_side_validation && blacklisted_key_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'blacklisted_key_update_parameters' when calling BlacklistedKeysApi.blacklisted_key_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/blacklisted_keys/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -276,7 +276,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(blacklisted_key_update) 
+      post_body = opts[:body] || @api_client.object_to_http_body(blacklisted_key_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Object' 

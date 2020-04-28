@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## job_locale_complete
 
-> Object job_locale_complete(project_id, job_id, id, job_locale_complete, opts)
+> Object job_locale_complete(project_id, job_id, id, job_locale_complete_parameters, opts)
 
 Complete a job locale
 
@@ -43,14 +43,14 @@ api_instance = Phrase::JobLocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 job_id = 'job_id_example' # String | Job ID
 id = 'id_example' # String | ID
-job_locale_complete = Phrase::JobLocaleComplete.new # JobLocaleComplete | 
+job_locale_complete_parameters = Phrase::JobLocaleCompleteParameters.new # JobLocaleCompleteParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Complete a job locale
-  result = api_instance.job_locale_complete(project_id, job_id, id, job_locale_complete, opts)
+  result = api_instance.job_locale_complete(project_id, job_id, id, job_locale_complete_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobLocalesApi->job_locale_complete: #{e}"
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **job_id** | **String**| Job ID | 
  **id** | **String**| ID | 
- **job_locale_complete** | [**JobLocaleComplete**](JobLocaleComplete.md)|  | 
+ **job_locale_complete_parameters** | [**JobLocaleCompleteParameters**](JobLocaleCompleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -84,7 +84,7 @@ Response<(**Object**)>
 
 ## job_locale_delete
 
-> job_locale_delete(project_id, job_id, id, job_locale_delete, opts)
+> job_locale_delete(project_id, job_id, id, job_locale_delete_parameters, opts)
 
 Delete a job locale
 
@@ -111,14 +111,14 @@ api_instance = Phrase::JobLocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 job_id = 'job_id_example' # String | Job ID
 id = 'id_example' # String | ID
-job_locale_delete = Phrase::JobLocaleDelete.new # JobLocaleDelete | 
+job_locale_delete_parameters = Phrase::JobLocaleDeleteParameters.new # JobLocaleDeleteParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Delete a job locale
-  api_instance.job_locale_delete(project_id, job_id, id, job_locale_delete, opts)
+  api_instance.job_locale_delete(project_id, job_id, id, job_locale_delete_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling JobLocalesApi->job_locale_delete: #{e}"
 end
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **job_id** | **String**| Job ID | 
  **id** | **String**| ID | 
- **job_locale_delete** | [**JobLocaleDelete**](JobLocaleDelete.md)|  | 
+ **job_locale_delete_parameters** | [**JobLocaleDeleteParameters**](JobLocaleDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -151,7 +151,7 @@ Response<(nil (empty response body))>
 
 ## job_locale_reopen
 
-> Object job_locale_reopen(project_id, job_id, id, job_locale_reopen, opts)
+> Object job_locale_reopen(project_id, job_id, id, job_locale_reopen_parameters, opts)
 
 Reopen a job locale
 
@@ -178,14 +178,14 @@ api_instance = Phrase::JobLocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 job_id = 'job_id_example' # String | Job ID
 id = 'id_example' # String | ID
-job_locale_reopen = Phrase::JobLocaleReopen.new # JobLocaleReopen | 
+job_locale_reopen_parameters = Phrase::JobLocaleReopenParameters.new # JobLocaleReopenParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Reopen a job locale
-  result = api_instance.job_locale_reopen(project_id, job_id, id, job_locale_reopen, opts)
+  result = api_instance.job_locale_reopen(project_id, job_id, id, job_locale_reopen_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobLocalesApi->job_locale_reopen: #{e}"
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **job_id** | **String**| Job ID | 
  **id** | **String**| ID | 
- **job_locale_reopen** | [**JobLocaleReopen**](JobLocaleReopen.md)|  | 
+ **job_locale_reopen_parameters** | [**JobLocaleReopenParameters**](JobLocaleReopenParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -219,7 +219,7 @@ Response<(**Object**)>
 
 ## job_locale_show
 
-> JobLocale job_locale_show(project_id, job_id, id, job_locale_show, opts)
+> JobLocale job_locale_show(project_id, job_id, id, job_locale_show_parameters, opts)
 
 Get a single job locale
 
@@ -246,14 +246,14 @@ api_instance = Phrase::JobLocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 job_id = 'job_id_example' # String | Job ID
 id = 'id_example' # String | ID
-job_locale_show = Phrase::JobLocaleShow.new # JobLocaleShow | 
+job_locale_show_parameters = Phrase::JobLocaleShowParameters.new # JobLocaleShowParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Get a single job locale
-  result = api_instance.job_locale_show(project_id, job_id, id, job_locale_show, opts)
+  result = api_instance.job_locale_show(project_id, job_id, id, job_locale_show_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobLocalesApi->job_locale_show: #{e}"
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **job_id** | **String**| Job ID | 
  **id** | **String**| ID | 
- **job_locale_show** | [**JobLocaleShow**](JobLocaleShow.md)|  | 
+ **job_locale_show_parameters** | [**JobLocaleShowParameters**](JobLocaleShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -287,7 +287,7 @@ Response<([**JobLocale**](JobLocale.md))>
 
 ## job_locale_update
 
-> Object job_locale_update(project_id, job_id, id, job_locale_update, opts)
+> Object job_locale_update(project_id, job_id, id, job_locale_update_parameters, opts)
 
 Update a job locale
 
@@ -314,14 +314,14 @@ api_instance = Phrase::JobLocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 job_id = 'job_id_example' # String | Job ID
 id = 'id_example' # String | ID
-job_locale_update = Phrase::JobLocaleUpdate.new # JobLocaleUpdate | 
+job_locale_update_parameters = Phrase::JobLocaleUpdateParameters.new # JobLocaleUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a job locale
-  result = api_instance.job_locale_update(project_id, job_id, id, job_locale_update, opts)
+  result = api_instance.job_locale_update(project_id, job_id, id, job_locale_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobLocalesApi->job_locale_update: #{e}"
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **job_id** | **String**| Job ID | 
  **id** | **String**| ID | 
- **job_locale_update** | [**JobLocaleUpdate**](JobLocaleUpdate.md)|  | 
+ **job_locale_update_parameters** | [**JobLocaleUpdateParameters**](JobLocaleUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -355,7 +355,7 @@ Response<(**Object**)>
 
 ## job_locales_create
 
-> job_locales_create(project_id, job_id, job_locales_create, opts)
+> job_locales_create(project_id, job_id, job_locales_create_parameters, opts)
 
 Create a job locale
 
@@ -381,14 +381,14 @@ end
 api_instance = Phrase::JobLocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 job_id = 'job_id_example' # String | Job ID
-job_locales_create = Phrase::JobLocalesCreate.new # JobLocalesCreate | 
+job_locales_create_parameters = Phrase::JobLocalesCreateParameters.new # JobLocalesCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a job locale
-  api_instance.job_locales_create(project_id, job_id, job_locales_create, opts)
+  api_instance.job_locales_create(project_id, job_id, job_locales_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling JobLocalesApi->job_locales_create: #{e}"
 end
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **job_id** | **String**| Job ID | 
- **job_locales_create** | [**JobLocalesCreate**](JobLocalesCreate.md)|  | 
+ **job_locales_create_parameters** | [**JobLocalesCreateParameters**](JobLocalesCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -420,7 +420,7 @@ Response<(nil (empty response body))>
 
 ## job_locales_list
 
-> Array&lt;Object&gt; job_locales_list(project_id, job_id, job_locales_list, opts)
+> Array&lt;Object&gt; job_locales_list(project_id, job_id, job_locales_list_parameters, opts)
 
 List job locales
 
@@ -446,7 +446,7 @@ end
 api_instance = Phrase::JobLocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 job_id = 'job_id_example' # String | Job ID
-job_locales_list = Phrase::JobLocalesList.new # JobLocalesList | 
+job_locales_list_parameters = Phrase::JobLocalesListParameters.new # JobLocalesListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -455,7 +455,7 @@ opts = {
 
 begin
   #List job locales
-  result = api_instance.job_locales_list(project_id, job_id, job_locales_list, opts)
+  result = api_instance.job_locales_list(project_id, job_id, job_locales_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobLocalesApi->job_locales_list: #{e}"
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **job_id** | **String**| Job ID | 
- **job_locales_list** | [**JobLocalesList**](JobLocalesList.md)|  | 
+ **job_locales_list_parameters** | [**JobLocalesListParameters**](JobLocalesListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 

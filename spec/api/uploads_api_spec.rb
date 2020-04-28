@@ -24,7 +24,7 @@ describe 'UploadsApi' do
   # Upload a new file
   # Upload a new language file. Creates necessary resources in your project.
   # @param project_id Project ID
-  # @param upload_create 
+  # @param upload_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -39,7 +39,7 @@ describe 'UploadsApi' do
   # View details and summary for a single upload.
   # @param project_id Project ID
   # @param id ID
-  # @param upload_show 
+  # @param upload_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Upload]
@@ -53,7 +53,7 @@ describe 'UploadsApi' do
   # List uploads
   # List all uploads for the given project.
   # @param project_id Project ID
-  # @param uploads_list 
+  # @param uploads_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number

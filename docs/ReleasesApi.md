@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## release_create
 
-> release_create(account_id, distribution_id, release_create, opts)
+> release_create(account_id, distribution_id, release_create_parameters, opts)
 
 Create a release
 
@@ -41,14 +41,14 @@ end
 api_instance = Phrase::ReleasesApi.new
 account_id = 'account_id_example' # String | Account ID
 distribution_id = 'distribution_id_example' # String | Distribution ID
-release_create = Phrase::ReleaseCreate.new # ReleaseCreate | 
+release_create_parameters = Phrase::ReleaseCreateParameters.new # ReleaseCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a release
-  api_instance.release_create(account_id, distribution_id, release_create, opts)
+  api_instance.release_create(account_id, distribution_id, release_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling ReleasesApi->release_create: #{e}"
 end
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
  **distribution_id** | **String**| Distribution ID | 
- **release_create** | [**ReleaseCreate**](ReleaseCreate.md)|  | 
+ **release_create_parameters** | [**ReleaseCreateParameters**](ReleaseCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -277,7 +277,7 @@ Response<([**Release**](Release.md))>
 
 ## release_update
 
-> Object release_update(account_id, distribution_id, id, release_update, opts)
+> Object release_update(account_id, distribution_id, id, release_update_parameters, opts)
 
 Update a release
 
@@ -304,14 +304,14 @@ api_instance = Phrase::ReleasesApi.new
 account_id = 'account_id_example' # String | Account ID
 distribution_id = 'distribution_id_example' # String | Distribution ID
 id = 'id_example' # String | ID
-release_update = Phrase::ReleaseUpdate.new # ReleaseUpdate | 
+release_update_parameters = Phrase::ReleaseUpdateParameters.new # ReleaseUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a release
-  result = api_instance.release_update(account_id, distribution_id, id, release_update, opts)
+  result = api_instance.release_update(account_id, distribution_id, id, release_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling ReleasesApi->release_update: #{e}"
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**| Account ID | 
  **distribution_id** | **String**| Distribution ID | 
  **id** | **String**| ID | 
- **release_update** | [**ReleaseUpdate**](ReleaseUpdate.md)|  | 
+ **release_update_parameters** | [**ReleaseUpdateParameters**](ReleaseUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

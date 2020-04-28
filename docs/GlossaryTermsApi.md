@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## glossary_term_create
 
-> glossary_term_create(account_id, glossary_id, glossary_term_create, opts)
+> glossary_term_create(account_id, glossary_id, glossary_term_create_parameters, opts)
 
 Create a glossary term
 
@@ -40,14 +40,14 @@ end
 api_instance = Phrase::GlossaryTermsApi.new
 account_id = 'account_id_example' # String | Account ID
 glossary_id = 'glossary_id_example' # String | Glossary ID
-glossary_term_create = Phrase::GlossaryTermCreate.new # GlossaryTermCreate | 
+glossary_term_create_parameters = Phrase::GlossaryTermCreateParameters.new # GlossaryTermCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a glossary term
-  api_instance.glossary_term_create(account_id, glossary_id, glossary_term_create, opts)
+  api_instance.glossary_term_create(account_id, glossary_id, glossary_term_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling GlossaryTermsApi->glossary_term_create: #{e}"
 end
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
  **glossary_id** | **String**| Glossary ID | 
- **glossary_term_create** | [**GlossaryTermCreate**](GlossaryTermCreate.md)|  | 
+ **glossary_term_create_parameters** | [**GlossaryTermCreateParameters**](GlossaryTermCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -210,7 +210,7 @@ Response<([**GlossaryTerm**](GlossaryTerm.md))>
 
 ## glossary_term_update
 
-> Object glossary_term_update(account_id, glossary_id, id, glossary_term_update, opts)
+> Object glossary_term_update(account_id, glossary_id, id, glossary_term_update_parameters, opts)
 
 Update a glossary term
 
@@ -237,14 +237,14 @@ api_instance = Phrase::GlossaryTermsApi.new
 account_id = 'account_id_example' # String | Account ID
 glossary_id = 'glossary_id_example' # String | Glossary ID
 id = 'id_example' # String | ID
-glossary_term_update = Phrase::GlossaryTermUpdate.new # GlossaryTermUpdate | 
+glossary_term_update_parameters = Phrase::GlossaryTermUpdateParameters.new # GlossaryTermUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a glossary term
-  result = api_instance.glossary_term_update(account_id, glossary_id, id, glossary_term_update, opts)
+  result = api_instance.glossary_term_update(account_id, glossary_id, id, glossary_term_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GlossaryTermsApi->glossary_term_update: #{e}"
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**| Account ID | 
  **glossary_id** | **String**| Glossary ID | 
  **id** | **String**| ID | 
- **glossary_term_update** | [**GlossaryTermUpdate**](GlossaryTermUpdate.md)|  | 
+ **glossary_term_update_parameters** | [**GlossaryTermUpdateParameters**](GlossaryTermUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

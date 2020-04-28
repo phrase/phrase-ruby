@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## locale_create
 
-> locale_create(project_id, locale_create, opts)
+> locale_create(project_id, locale_create_parameters, opts)
 
 Create a locale
 
@@ -40,14 +40,14 @@ end
 
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
-locale_create = Phrase::LocaleCreate.new # LocaleCreate | 
+locale_create_parameters = Phrase::LocaleCreateParameters.new # LocaleCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a locale
-  api_instance.locale_create(project_id, locale_create, opts)
+  api_instance.locale_create(project_id, locale_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locale_create: #{e}"
 end
@@ -59,7 +59,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **locale_create** | [**LocaleCreate**](LocaleCreate.md)|  | 
+ **locale_create_parameters** | [**LocaleCreateParameters**](LocaleCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -78,7 +78,7 @@ Response<(nil (empty response body))>
 
 ## locale_delete
 
-> locale_delete(project_id, id, locale_delete, opts)
+> locale_delete(project_id, id, locale_delete_parameters, opts)
 
 Delete a locale
 
@@ -104,14 +104,14 @@ end
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-locale_delete = Phrase::LocaleDelete.new # LocaleDelete | 
+locale_delete_parameters = Phrase::LocaleDeleteParameters.new # LocaleDeleteParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Delete a locale
-  api_instance.locale_delete(project_id, id, locale_delete, opts)
+  api_instance.locale_delete(project_id, id, locale_delete_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locale_delete: #{e}"
 end
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **locale_delete** | [**LocaleDelete**](LocaleDelete.md)|  | 
+ **locale_delete_parameters** | [**LocaleDeleteParameters**](LocaleDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -143,7 +143,7 @@ Response<(nil (empty response body))>
 
 ## locale_download
 
-> locale_download(project_id, id, locale_download, opts)
+> locale_download(project_id, id, locale_download_parameters, opts)
 
 Download a locale
 
@@ -169,14 +169,14 @@ end
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-locale_download = Phrase::LocaleDownload.new # LocaleDownload | 
+locale_download_parameters = Phrase::LocaleDownloadParameters.new # LocaleDownloadParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Download a locale
-  api_instance.locale_download(project_id, id, locale_download, opts)
+  api_instance.locale_download(project_id, id, locale_download_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locale_download: #{e}"
 end
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **locale_download** | [**LocaleDownload**](LocaleDownload.md)|  | 
+ **locale_download_parameters** | [**LocaleDownloadParameters**](LocaleDownloadParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -208,7 +208,7 @@ Response<(nil (empty response body))>
 
 ## locale_show
 
-> Object locale_show(project_id, id, locale_show, opts)
+> Object locale_show(project_id, id, locale_show_parameters, opts)
 
 Get a single locale
 
@@ -234,14 +234,14 @@ end
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-locale_show = Phrase::LocaleShow.new # LocaleShow | 
+locale_show_parameters = Phrase::LocaleShowParameters.new # LocaleShowParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Get a single locale
-  result = api_instance.locale_show(project_id, id, locale_show, opts)
+  result = api_instance.locale_show(project_id, id, locale_show_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locale_show: #{e}"
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **locale_show** | [**LocaleShow**](LocaleShow.md)|  | 
+ **locale_show_parameters** | [**LocaleShowParameters**](LocaleShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -274,7 +274,7 @@ Response<(**Object**)>
 
 ## locale_update
 
-> Object locale_update(project_id, id, locale_update, opts)
+> Object locale_update(project_id, id, locale_update_parameters, opts)
 
 Update a locale
 
@@ -300,14 +300,14 @@ end
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-locale_update = Phrase::LocaleUpdate.new # LocaleUpdate | 
+locale_update_parameters = Phrase::LocaleUpdateParameters.new # LocaleUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a locale
-  result = api_instance.locale_update(project_id, id, locale_update, opts)
+  result = api_instance.locale_update(project_id, id, locale_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locale_update: #{e}"
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **locale_update** | [**LocaleUpdate**](LocaleUpdate.md)|  | 
+ **locale_update_parameters** | [**LocaleUpdateParameters**](LocaleUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -340,7 +340,7 @@ Response<(**Object**)>
 
 ## locales_list
 
-> Array&lt;Locale&gt; locales_list(project_id, locales_list, opts)
+> Array&lt;Locale&gt; locales_list(project_id, locales_list_parameters, opts)
 
 List locales
 
@@ -365,7 +365,7 @@ end
 
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
-locales_list = Phrase::LocalesList.new # LocalesList | 
+locales_list_parameters = Phrase::LocalesListParameters.new # LocalesListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -374,7 +374,7 @@ opts = {
 
 begin
   #List locales
-  result = api_instance.locales_list(project_id, locales_list, opts)
+  result = api_instance.locales_list(project_id, locales_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locales_list: #{e}"
@@ -387,7 +387,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **locales_list** | [**LocalesList**](LocalesList.md)|  | 
+ **locales_list_parameters** | [**LocalesListParameters**](LocalesListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 

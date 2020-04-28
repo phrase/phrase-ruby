@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## bitbucket_sync_export
 
-> BitbucketSyncExportResponse bitbucket_sync_export(id, bitbucket_sync_export, opts)
+> BitbucketSyncExportResponse bitbucket_sync_export(id, bitbucket_sync_export_parameters, opts)
 
 Export from Phrase to Bitbucket
 
@@ -37,14 +37,14 @@ end
 
 api_instance = Phrase::BitbucketSyncApi.new
 id = 'id_example' # String | ID
-bitbucket_sync_export = Phrase::BitbucketSyncExport.new # BitbucketSyncExport | 
+bitbucket_sync_export_parameters = Phrase::BitbucketSyncExportParameters.new # BitbucketSyncExportParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Export from Phrase to Bitbucket
-  result = api_instance.bitbucket_sync_export(id, bitbucket_sync_export, opts)
+  result = api_instance.bitbucket_sync_export(id, bitbucket_sync_export_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling BitbucketSyncApi->bitbucket_sync_export: #{e}"
@@ -57,7 +57,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID | 
- **bitbucket_sync_export** | [**BitbucketSyncExport**](BitbucketSyncExport.md)|  | 
+ **bitbucket_sync_export_parameters** | [**BitbucketSyncExportParameters**](BitbucketSyncExportParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -76,7 +76,7 @@ Response<([**BitbucketSyncExportResponse**](BitbucketSyncExportResponse.md))>
 
 ## bitbucket_sync_import
 
-> bitbucket_sync_import(id, bitbucket_sync_import, opts)
+> bitbucket_sync_import(id, bitbucket_sync_import_parameters, opts)
 
 Import to Phrase from Bitbucket
 
@@ -101,14 +101,14 @@ end
 
 api_instance = Phrase::BitbucketSyncApi.new
 id = 'id_example' # String | ID
-bitbucket_sync_import = Phrase::BitbucketSyncImport.new # BitbucketSyncImport | 
+bitbucket_sync_import_parameters = Phrase::BitbucketSyncImportParameters.new # BitbucketSyncImportParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Import to Phrase from Bitbucket
-  api_instance.bitbucket_sync_import(id, bitbucket_sync_import, opts)
+  api_instance.bitbucket_sync_import(id, bitbucket_sync_import_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling BitbucketSyncApi->bitbucket_sync_import: #{e}"
 end
@@ -120,7 +120,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID | 
- **bitbucket_sync_import** | [**BitbucketSyncImport**](BitbucketSyncImport.md)|  | 
+ **bitbucket_sync_import_parameters** | [**BitbucketSyncImportParameters**](BitbucketSyncImportParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -139,7 +139,7 @@ Response<(nil (empty response body))>
 
 ## bitbucket_syncs_list
 
-> Array&lt;BitbucketSync&gt; bitbucket_syncs_list(bitbucket_syncs_list, opts)
+> Array&lt;BitbucketSync&gt; bitbucket_syncs_list(bitbucket_syncs_list_parameters, opts)
 
 List Bitbucket syncs
 
@@ -163,14 +163,14 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::BitbucketSyncApi.new
-bitbucket_syncs_list = Phrase::BitbucketSyncsList.new # BitbucketSyncsList | 
+bitbucket_syncs_list_parameters = Phrase::BitbucketSyncsListParameters.new # BitbucketSyncsListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #List Bitbucket syncs
-  result = api_instance.bitbucket_syncs_list(bitbucket_syncs_list, opts)
+  result = api_instance.bitbucket_syncs_list(bitbucket_syncs_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling BitbucketSyncApi->bitbucket_syncs_list: #{e}"
@@ -182,7 +182,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bitbucket_syncs_list** | [**BitbucketSyncsList**](BitbucketSyncsList.md)|  | 
+ **bitbucket_syncs_list_parameters** | [**BitbucketSyncsListParameters**](BitbucketSyncsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

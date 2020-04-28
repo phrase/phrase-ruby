@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## project_create
 
-> project_create(project_create, opts)
+> project_create(project_create_parameters, opts)
 
 Create a project
 
@@ -38,14 +38,14 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::ProjectsApi.new
-project_create = Phrase::ProjectCreate.new # ProjectCreate | 
+project_create_parameters = Phrase::ProjectCreateParameters.new # ProjectCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a project
-  api_instance.project_create(project_create, opts)
+  api_instance.project_create(project_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling ProjectsApi->project_create: #{e}"
 end
@@ -56,7 +56,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_create** | [**ProjectCreate**](ProjectCreate.md)|  | 
+ **project_create_parameters** | [**ProjectCreateParameters**](ProjectCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -198,7 +198,7 @@ Response<([**Project**](Project.md))>
 
 ## project_update
 
-> Object project_update(id, project_update, opts)
+> Object project_update(id, project_update_parameters, opts)
 
 Update a project
 
@@ -223,14 +223,14 @@ end
 
 api_instance = Phrase::ProjectsApi.new
 id = 'id_example' # String | ID
-project_update = Phrase::ProjectUpdate.new # ProjectUpdate | 
+project_update_parameters = Phrase::ProjectUpdateParameters.new # ProjectUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a project
-  result = api_instance.project_update(id, project_update, opts)
+  result = api_instance.project_update(id, project_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling ProjectsApi->project_update: #{e}"
@@ -243,7 +243,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID | 
- **project_update** | [**ProjectUpdate**](ProjectUpdate.md)|  | 
+ **project_update_parameters** | [**ProjectUpdateParameters**](ProjectUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

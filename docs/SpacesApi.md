@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## space_create
 
-> space_create(account_id, space_create, opts)
+> space_create(account_id, space_create_parameters, opts)
 
 Create a Space
 
@@ -42,14 +42,14 @@ end
 
 api_instance = Phrase::SpacesApi.new
 account_id = 'account_id_example' # String | Account ID
-space_create = Phrase::SpaceCreate.new # SpaceCreate | 
+space_create_parameters = Phrase::SpaceCreateParameters.new # SpaceCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a Space
-  api_instance.space_create(account_id, space_create, opts)
+  api_instance.space_create(account_id, space_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling SpacesApi->space_create: #{e}"
 end
@@ -61,7 +61,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **space_create** | [**SpaceCreate**](SpaceCreate.md)|  | 
+ **space_create_parameters** | [**SpaceCreateParameters**](SpaceCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -207,7 +207,7 @@ Response<([**Space**](Space.md))>
 
 ## space_update
 
-> Space space_update(account_id, id, space_update, opts)
+> Space space_update(account_id, id, space_update_parameters, opts)
 
 Update Space
 
@@ -233,14 +233,14 @@ end
 api_instance = Phrase::SpacesApi.new
 account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
-space_update = Phrase::SpaceUpdate.new # SpaceUpdate | 
+space_update_parameters = Phrase::SpaceUpdateParameters.new # SpaceUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update Space
-  result = api_instance.space_update(account_id, id, space_update, opts)
+  result = api_instance.space_update(account_id, id, space_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling SpacesApi->space_update: #{e}"
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
  **id** | **String**| ID | 
- **space_update** | [**SpaceUpdate**](SpaceUpdate.md)|  | 
+ **space_update_parameters** | [**SpaceUpdateParameters**](SpaceUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -339,7 +339,7 @@ Response<([**Array&lt;Space&gt;**](Space.md))>
 
 ## spaces_projects_create
 
-> spaces_projects_create(account_id, space_id, spaces_projects_create, opts)
+> spaces_projects_create(account_id, space_id, spaces_projects_create_parameters, opts)
 
 Add Project
 
@@ -365,14 +365,14 @@ end
 api_instance = Phrase::SpacesApi.new
 account_id = 'account_id_example' # String | Account ID
 space_id = 'space_id_example' # String | Space ID
-spaces_projects_create = Phrase::SpacesProjectsCreate.new # SpacesProjectsCreate | 
+spaces_projects_create_parameters = Phrase::SpacesProjectsCreateParameters.new # SpacesProjectsCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Add Project
-  api_instance.spaces_projects_create(account_id, space_id, spaces_projects_create, opts)
+  api_instance.spaces_projects_create(account_id, space_id, spaces_projects_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling SpacesApi->spaces_projects_create: #{e}"
 end
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
  **space_id** | **String**| Space ID | 
- **spaces_projects_create** | [**SpacesProjectsCreate**](SpacesProjectsCreate.md)|  | 
+ **spaces_projects_create_parameters** | [**SpacesProjectsCreateParameters**](SpacesProjectsCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

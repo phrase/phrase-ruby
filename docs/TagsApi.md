@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## tag_create
 
-> tag_create(project_id, tag_create, opts)
+> tag_create(project_id, tag_create_parameters, opts)
 
 Create a tag
 
@@ -38,14 +38,14 @@ end
 
 api_instance = Phrase::TagsApi.new
 project_id = 'project_id_example' # String | Project ID
-tag_create = Phrase::TagCreate.new # TagCreate | 
+tag_create_parameters = Phrase::TagCreateParameters.new # TagCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a tag
-  api_instance.tag_create(project_id, tag_create, opts)
+  api_instance.tag_create(project_id, tag_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling TagsApi->tag_create: #{e}"
 end
@@ -57,7 +57,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **tag_create** | [**TagCreate**](TagCreate.md)|  | 
+ **tag_create_parameters** | [**TagCreateParameters**](TagCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -76,7 +76,7 @@ Response<(nil (empty response body))>
 
 ## tag_delete
 
-> tag_delete(project_id, name, tag_delete, opts)
+> tag_delete(project_id, name, tag_delete_parameters, opts)
 
 Delete a tag
 
@@ -102,14 +102,14 @@ end
 api_instance = Phrase::TagsApi.new
 project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
-tag_delete = Phrase::TagDelete.new # TagDelete | 
+tag_delete_parameters = Phrase::TagDeleteParameters.new # TagDeleteParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Delete a tag
-  api_instance.tag_delete(project_id, name, tag_delete, opts)
+  api_instance.tag_delete(project_id, name, tag_delete_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling TagsApi->tag_delete: #{e}"
 end
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
- **tag_delete** | [**TagDelete**](TagDelete.md)|  | 
+ **tag_delete_parameters** | [**TagDeleteParameters**](TagDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -141,7 +141,7 @@ Response<(nil (empty response body))>
 
 ## tag_show
 
-> Object tag_show(project_id, name, tag_show, opts)
+> Object tag_show(project_id, name, tag_show_parameters, opts)
 
 Get a single tag
 
@@ -167,14 +167,14 @@ end
 api_instance = Phrase::TagsApi.new
 project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
-tag_show = Phrase::TagShow.new # TagShow | 
+tag_show_parameters = Phrase::TagShowParameters.new # TagShowParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Get a single tag
-  result = api_instance.tag_show(project_id, name, tag_show, opts)
+  result = api_instance.tag_show(project_id, name, tag_show_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TagsApi->tag_show: #{e}"
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
- **tag_show** | [**TagShow**](TagShow.md)|  | 
+ **tag_show_parameters** | [**TagShowParameters**](TagShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -207,7 +207,7 @@ Response<(**Object**)>
 
 ## tags_list
 
-> Array&lt;Tag&gt; tags_list(project_id, tags_list, opts)
+> Array&lt;Tag&gt; tags_list(project_id, tags_list_parameters, opts)
 
 List tags
 
@@ -232,7 +232,7 @@ end
 
 api_instance = Phrase::TagsApi.new
 project_id = 'project_id_example' # String | Project ID
-tags_list = Phrase::TagsList.new # TagsList | 
+tags_list_parameters = Phrase::TagsListParameters.new # TagsListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
@@ -241,7 +241,7 @@ opts = {
 
 begin
   #List tags
-  result = api_instance.tags_list(project_id, tags_list, opts)
+  result = api_instance.tags_list(project_id, tags_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TagsApi->tags_list: #{e}"
@@ -254,7 +254,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **tags_list** | [**TagsList**](TagsList.md)|  | 
+ **tags_list_parameters** | [**TagsListParameters**](TagsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 

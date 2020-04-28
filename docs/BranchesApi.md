@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## branch_compare
 
-> branch_compare(project_id, name, branch_compare, opts)
+> branch_compare(project_id, name, branch_compare_parameters, opts)
 
 Compare branches
 
@@ -42,14 +42,14 @@ end
 api_instance = Phrase::BranchesApi.new
 project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
-branch_compare = Phrase::BranchCompare.new # BranchCompare | 
+branch_compare_parameters = Phrase::BranchCompareParameters.new # BranchCompareParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Compare branches
-  api_instance.branch_compare(project_id, name, branch_compare, opts)
+  api_instance.branch_compare(project_id, name, branch_compare_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling BranchesApi->branch_compare: #{e}"
 end
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
- **branch_compare** | [**BranchCompare**](BranchCompare.md)|  | 
+ **branch_compare_parameters** | [**BranchCompareParameters**](BranchCompareParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -81,7 +81,7 @@ Response<(nil (empty response body))>
 
 ## branch_create
 
-> branch_create(project_id, branch_create, opts)
+> branch_create(project_id, branch_create_parameters, opts)
 
 Create a branch
 
@@ -106,14 +106,14 @@ end
 
 api_instance = Phrase::BranchesApi.new
 project_id = 'project_id_example' # String | Project ID
-branch_create = Phrase::BranchCreate.new # BranchCreate | 
+branch_create_parameters = Phrase::BranchCreateParameters.new # BranchCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a branch
-  api_instance.branch_create(project_id, branch_create, opts)
+  api_instance.branch_create(project_id, branch_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling BranchesApi->branch_create: #{e}"
 end
@@ -125,7 +125,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **branch_create** | [**BranchCreate**](BranchCreate.md)|  | 
+ **branch_create_parameters** | [**BranchCreateParameters**](BranchCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -207,7 +207,7 @@ Response<(nil (empty response body))>
 
 ## branch_merge
 
-> branch_merge(project_id, name, branch_merge, opts)
+> branch_merge(project_id, name, branch_merge_parameters, opts)
 
 Merge a branch
 
@@ -233,14 +233,14 @@ end
 api_instance = Phrase::BranchesApi.new
 project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
-branch_merge = Phrase::BranchMerge.new # BranchMerge | 
+branch_merge_parameters = Phrase::BranchMergeParameters.new # BranchMergeParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Merge a branch
-  api_instance.branch_merge(project_id, name, branch_merge, opts)
+  api_instance.branch_merge(project_id, name, branch_merge_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling BranchesApi->branch_merge: #{e}"
 end
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
- **branch_merge** | [**BranchMerge**](BranchMerge.md)|  | 
+ **branch_merge_parameters** | [**BranchMergeParameters**](BranchMergeParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -336,7 +336,7 @@ Response<([**Branch**](Branch.md))>
 
 ## branch_update
 
-> Object branch_update(project_id, name, branch_update, opts)
+> Object branch_update(project_id, name, branch_update_parameters, opts)
 
 Update a branch
 
@@ -362,14 +362,14 @@ end
 api_instance = Phrase::BranchesApi.new
 project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
-branch_update = Phrase::BranchUpdate.new # BranchUpdate | 
+branch_update_parameters = Phrase::BranchUpdateParameters.new # BranchUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a branch
-  result = api_instance.branch_update(project_id, name, branch_update, opts)
+  result = api_instance.branch_update(project_id, name, branch_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling BranchesApi->branch_update: #{e}"
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
- **branch_update** | [**BranchUpdate**](BranchUpdate.md)|  | 
+ **branch_update_parameters** | [**BranchUpdateParameters**](BranchUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

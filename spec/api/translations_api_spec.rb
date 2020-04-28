@@ -24,7 +24,7 @@ describe 'TranslationsApi' do
   # Create a translation
   # Create a translation.
   # @param project_id Project ID
-  # @param translation_create 
+  # @param translation_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
@@ -39,7 +39,7 @@ describe 'TranslationsApi' do
   # Set exclude from export flag on an existing translation.
   # @param project_id Project ID
   # @param id ID
-  # @param translation_exclude 
+  # @param translation_exclude_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -54,7 +54,7 @@ describe 'TranslationsApi' do
   # Remove exclude from export flag from an existing translation.
   # @param project_id Project ID
   # @param id ID
-  # @param translation_include 
+  # @param translation_include_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -69,7 +69,7 @@ describe 'TranslationsApi' do
   # Mark an existing translation as reviewed.
   # @param project_id Project ID
   # @param id ID
-  # @param translation_review 
+  # @param translation_review_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -84,7 +84,7 @@ describe 'TranslationsApi' do
   # Get details on a single translation.
   # @param project_id Project ID
   # @param id ID
-  # @param translation_show 
+  # @param translation_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -99,7 +99,7 @@ describe 'TranslationsApi' do
   # Mark an existing translation as unverified.
   # @param project_id Project ID
   # @param id ID
-  # @param translation_unverify 
+  # @param translation_unverify_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -114,7 +114,7 @@ describe 'TranslationsApi' do
   # Update an existing translation.
   # @param project_id Project ID
   # @param id ID
-  # @param translation_update 
+  # @param translation_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -129,7 +129,7 @@ describe 'TranslationsApi' do
   # Verify an existing translation.
   # @param project_id Project ID
   # @param id ID
-  # @param translation_verify 
+  # @param translation_verify_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -144,7 +144,7 @@ describe 'TranslationsApi' do
   # List translations for a specific key.
   # @param project_id Project ID
   # @param key_id Translation Key ID
-  # @param translations_by_key 
+  # @param translations_by_key_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
@@ -161,7 +161,7 @@ describe 'TranslationsApi' do
   # List translations for a specific locale. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
   # @param project_id Project ID
   # @param locale_id Locale ID
-  # @param translations_by_locale 
+  # @param translations_by_locale_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
@@ -177,7 +177,7 @@ describe 'TranslationsApi' do
   # Set exclude from export flag on translations selected by query
   # Exclude translations matching query from locale export.
   # @param project_id Project ID
-  # @param translations_exclude 
+  # @param translations_exclude_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -191,7 +191,7 @@ describe 'TranslationsApi' do
   # Remove exlude from import flag from translations selected by query
   # Include translations matching query in locale export.
   # @param project_id Project ID
-  # @param translations_include 
+  # @param translations_include_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -205,7 +205,7 @@ describe 'TranslationsApi' do
   # List all translations
   # List translations for the given project. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
   # @param project_id Project ID
-  # @param translations_list 
+  # @param translations_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
@@ -221,7 +221,7 @@ describe 'TranslationsApi' do
   # Review translations selected by query
   # Review translations matching query.
   # @param project_id Project ID
-  # @param translations_review 
+  # @param translations_review_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -235,7 +235,7 @@ describe 'TranslationsApi' do
   # Search translations
   # Search translations for the given project. Provides the same search interface as &lt;code&gt;translations#index&lt;/code&gt; but allows POST requests to avoid limitations imposed by GET requests. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
   # @param project_id Project ID
-  # @param translations_search 
+  # @param translations_search_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
@@ -251,7 +251,7 @@ describe 'TranslationsApi' do
   # Mark translations selected by query as unverified
   # Mark translations matching query as unverified.
   # @param project_id Project ID
-  # @param translations_unverify 
+  # @param translations_unverify_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Object]
@@ -265,7 +265,7 @@ describe 'TranslationsApi' do
   # Verify translations selected by query
   # Verify translations matching query.
   # @param project_id Project ID
-  # @param translations_verify 
+  # @param translations_verify_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [AffectedCount]
