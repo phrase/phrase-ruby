@@ -167,7 +167,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<Object>]
+    # @return [Array<Upload>]
     def uploads_list(project_id, uploads_list_parameters, opts = {})
       data, _status_code, _headers = uploads_list_with_http_info(project_id, uploads_list_parameters, opts)
       data
@@ -181,7 +181,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Upload>)>, Integer, Hash)>] Response<(Array<Upload>)> data, response status code and response headers
     def uploads_list_with_http_info(project_id, uploads_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UploadsApi.uploads_list ...'
@@ -217,7 +217,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(uploads_list_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Upload>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
