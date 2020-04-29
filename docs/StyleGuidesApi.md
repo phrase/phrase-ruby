@@ -24,7 +24,7 @@ Create a new style guide.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -87,7 +87,7 @@ Delete an existing style guide.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -150,7 +150,7 @@ Get details on a single style guide.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -214,7 +214,7 @@ Update an existing style guide.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -280,7 +280,7 @@ List all styleguides for the given project.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic

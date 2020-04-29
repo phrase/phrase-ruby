@@ -26,7 +26,7 @@ Compare branch with main branch.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -91,7 +91,7 @@ Create a new branch.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -154,7 +154,7 @@ Delete an existing branch.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -217,7 +217,7 @@ Merge an existing branch.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -282,7 +282,7 @@ Get details on a single branch for a given project.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -346,7 +346,7 @@ Update an existing branch.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -412,7 +412,7 @@ List all branches the of the current project.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic

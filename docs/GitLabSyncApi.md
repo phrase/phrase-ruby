@@ -26,7 +26,7 @@ Deletes a single GitLab Sync Setting.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -89,7 +89,7 @@ Export translations from Phrase to GitLab according to the .phraseapp.yml file w
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -153,7 +153,7 @@ List history for a single Sync Setting.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -221,7 +221,7 @@ Import translations from GitLab to Phrase according to the .phraseapp.yml file w
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -285,7 +285,7 @@ List all GitLab Sync Settings for which synchronisation with Phrase and GitLab i
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -347,7 +347,7 @@ Shows a single GitLab Sync Setting.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -411,7 +411,7 @@ Updates a single GitLab Sync Setting.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic

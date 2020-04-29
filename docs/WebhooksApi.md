@@ -25,7 +25,7 @@ Create a new webhook.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -88,7 +88,7 @@ Delete an existing webhook.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -151,7 +151,7 @@ Get details on a single webhook.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -215,7 +215,7 @@ Perform a test request for a webhook.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -278,7 +278,7 @@ Update an existing webhook.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -344,7 +344,7 @@ List all webhooks for the given project.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic

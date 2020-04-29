@@ -25,7 +25,7 @@ Create a new locale.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -88,7 +88,7 @@ Delete an existing locale.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -153,7 +153,7 @@ Download a locale in a specific file format.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -218,7 +218,7 @@ Get details on a single locale for a given project.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -284,7 +284,7 @@ Update an existing locale.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -350,7 +350,7 @@ List all locales for the given project.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic

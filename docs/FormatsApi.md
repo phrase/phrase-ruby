@@ -20,7 +20,7 @@ Get a handy list of all localization file formats supported in Phrase.
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic

@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 
 $:.push File.expand_path("../lib", __FILE__)
-require "Phrase/version"
+require "phrase/version"
 
 Gem::Specification.new do |s|
-  s.name        = "Phrase"
+  s.name        = "phrase"
   s.version     = Phrase::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Phrase"]

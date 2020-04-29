@@ -25,7 +25,7 @@ Invite a person to an account. Developers and translators need <code>project_ids
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -88,7 +88,7 @@ Delete an existing invitation (must not be accepted yet). Access token scope mus
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -151,7 +151,7 @@ Resend the invitation email (must not be accepted yet). Access token scope must 
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -215,7 +215,7 @@ Get details on a single invitation. Access token scope must include <code>team.m
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -279,7 +279,7 @@ Update an existing invitation (must not be accepted yet). The <code>email</code>
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -345,7 +345,7 @@ List invitations for an account. It will also list the accessible resources like
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic

@@ -22,7 +22,7 @@ Export translations from Phrase to Bitbucket according to the .phraseapp.yml fil
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -86,7 +86,7 @@ Import translations from Bitbucket to Phrase according to the .phraseapp.yml fil
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
@@ -149,7 +149,7 @@ List all Bitbucket repositories for which synchronisation with Phrase is activat
 
 ```ruby
 # load the gem
-require 'Phrase'
+require 'phrase'
 # setup authorization
 Phrase.configure do |config|
   # Configure HTTP basic authorization: Basic
