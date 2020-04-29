@@ -7,5 +7,5 @@ rvm:
 script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
-  - gem build Phrase.gemspec
-  - gem install ./Phrase-1.0.0.gem
+  - gem build phrase.gemspec
+  - gem install ./phrase-1.0.0.gem

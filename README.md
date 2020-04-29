@@ -1,4 +1,4 @@
-# Phrase
+# phrase
 
 Phrase - the Ruby gem for the Phrase API Reference
 
@@ -347,28 +347,28 @@ For more information, please visit [https://developers.phrase.com/api/](https://
 To build the Ruby code into a gem:
 
 ```shell
-gem build Phrase.gemspec
+gem build phrase.gemspec
 ```
 
 Then either install the gem locally:
 
 ```shell
-gem install ./Phrase-1.0.0.gem
+gem install ./phrase-1.0.0.gem
 ```
 
-(for development, run `gem install --dev ./Phrase-1.0.0.gem` to install the development dependencies)
+(for development, run `gem install --dev ./phrase-1.0.0.gem` to install the development dependencies)
 
 or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
 
 Finally add this to the Gemfile:
 
-    gem 'Phrase', '~> 1.0.0'
+    gem 'phrase', '~> 1.0.0'
 
 ### Install from Git
 
 If the Ruby gem is hosted at a git repository: https://github.com/GIT_USER_ID/GIT_REPO_ID, then add the following in the Gemfile:
 
-    gem 'Phrase', :git => 'https://github.com/GIT_USER_ID/GIT_REPO_ID.git'
+    gem 'phrase', :git => 'https://github.com/GIT_USER_ID/GIT_REPO_ID.git'
 
 ### Include the Ruby code directly
 
@@ -384,7 +384,7 @@ Please follow the [installation](#installation) procedure and then run the follo
 
 ```ruby
 # Load the gem
-require 'Phrase'
+require 'phrase'
 
 # Setup authorization
 Phrase.configure do |config|
