@@ -51,9 +51,9 @@ describe 'BitbucketSyncApi' do
   # unit tests for bitbucket_syncs_list
   # List Bitbucket syncs
   # List all Bitbucket repositories for which synchronisation with Phrase is activated.
-  # @param bitbucket_syncs_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :account_id Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.
   # @return [Array<BitbucketSync>]
   describe 'bitbucket_syncs_list test' do
     it 'should work' do

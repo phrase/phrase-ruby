@@ -41,9 +41,9 @@ describe 'CommentsApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param id ID
-  # @param comment_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [nil]
   describe 'comment_delete test' do
     it 'should work' do
@@ -57,9 +57,9 @@ describe 'CommentsApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param id ID
-  # @param comment_mark_check_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [nil]
   describe 'comment_mark_check test' do
     it 'should work' do
@@ -89,9 +89,9 @@ describe 'CommentsApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param id ID
-  # @param comment_mark_unread_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [nil]
   describe 'comment_mark_unread test' do
     it 'should work' do
@@ -105,9 +105,9 @@ describe 'CommentsApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param id ID
-  # @param comment_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [Comment]
   describe 'comment_show test' do
     it 'should work' do
@@ -136,11 +136,11 @@ describe 'CommentsApi' do
   # List all comments for a key.
   # @param project_id Project ID
   # @param key_id Translation Key ID
-  # @param comments_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+  # @option opts [String] :branch specify the branch to use
   # @return [Array<Comment>]
   describe 'comments_list test' do
     it 'should work' do

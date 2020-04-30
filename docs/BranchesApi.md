@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## branch_compare
 
-> branch_compare(project_id, name, branch_compare_parameters, opts)
+> branch_compare(project_id, name, opts)
 
 Compare branches
 
@@ -42,14 +42,13 @@ end
 api_instance = Phrase::BranchesApi.new
 project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
-branch_compare_parameters = Phrase::BranchCompareParameters.new # BranchCompareParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Compare branches
-  api_instance.branch_compare(project_id, name, branch_compare_parameters, opts)
+  api_instance.branch_compare(project_id, name, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling BranchesApi->branch_compare: #{e}"
 end
@@ -62,7 +61,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
- **branch_compare_parameters** | [**BranchCompareParameters**](BranchCompareParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -75,7 +73,7 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 

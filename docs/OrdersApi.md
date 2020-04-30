@@ -143,7 +143,7 @@ Response<(nil (empty response body))>
 
 ## order_delete
 
-> order_delete(project_id, id, order_delete_parameters, opts)
+> order_delete(project_id, id, opts)
 
 Cancel an order
 
@@ -169,14 +169,14 @@ end
 api_instance = Phrase::OrdersApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-order_delete_parameters = Phrase::OrderDeleteParameters.new # OrderDeleteParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Cancel an order
-  api_instance.order_delete(project_id, id, order_delete_parameters, opts)
+  api_instance.order_delete(project_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling OrdersApi->order_delete: #{e}"
 end
@@ -189,8 +189,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **order_delete_parameters** | [**OrderDeleteParameters**](OrderDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -202,13 +202,13 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## order_show
 
-> TranslationOrder order_show(project_id, id, order_show_parameters, opts)
+> TranslationOrder order_show(project_id, id, opts)
 
 Get a single order
 
@@ -234,14 +234,14 @@ end
 api_instance = Phrase::OrdersApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-order_show_parameters = Phrase::OrderShowParameters.new # OrderShowParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Get a single order
-  result = api_instance.order_show(project_id, id, order_show_parameters, opts)
+  result = api_instance.order_show(project_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling OrdersApi->order_show: #{e}"
@@ -255,8 +255,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **order_show_parameters** | [**OrderShowParameters**](OrderShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -268,13 +268,13 @@ Response<([**TranslationOrder**](TranslationOrder.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
 ## orders_list
 
-> Array&lt;TranslationOrder&gt; orders_list(project_id, orders_list_parameters, opts)
+> Array&lt;TranslationOrder&gt; orders_list(project_id, opts)
 
 List orders
 
@@ -299,16 +299,16 @@ end
 
 api_instance = Phrase::OrdersApi.new
 project_id = 'project_id_example' # String | Project ID
-orders_list_parameters = Phrase::OrdersListParameters.new # OrdersListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #List orders
-  result = api_instance.orders_list(project_id, orders_list_parameters, opts)
+  result = api_instance.orders_list(project_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling OrdersApi->orders_list: #{e}"
@@ -321,10 +321,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **orders_list_parameters** | [**OrdersListParameters**](OrdersListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -336,6 +336,6 @@ Response<([**Array&lt;TranslationOrder&gt;**](TranslationOrder.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

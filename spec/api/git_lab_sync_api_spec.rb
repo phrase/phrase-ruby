@@ -24,9 +24,9 @@ describe 'GitLabSyncApi' do
   # Delete single Sync Setting
   # Deletes a single GitLab Sync Setting.
   # @param id ID
-  # @param gitlab_sync_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
   # @return [nil]
   describe 'gitlab_sync_delete test' do
     it 'should work' do
@@ -52,11 +52,11 @@ describe 'GitLabSyncApi' do
   # History of single Sync Setting
   # List history for a single Sync Setting.
   # @param gitlab_sync_id Gitlab Sync ID
-  # @param gitlab_sync_history_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+  # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
   # @return [Array<GitlabSyncHistory>]
   describe 'gitlab_sync_history test' do
     it 'should work' do
@@ -81,9 +81,9 @@ describe 'GitLabSyncApi' do
   # unit tests for gitlab_sync_list
   # List GitLab syncs
   # List all GitLab Sync Settings for which synchronisation with Phrase and GitLab is activated.
-  # @param gitlab_sync_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
   # @return [Array<GitlabSync>]
   describe 'gitlab_sync_list test' do
     it 'should work' do
@@ -95,9 +95,9 @@ describe 'GitLabSyncApi' do
   # Get single Sync Setting
   # Shows a single GitLab Sync Setting.
   # @param id ID
-  # @param gitlab_sync_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
   # @return [GitlabSync]
   describe 'gitlab_sync_show test' do
     it 'should work' do
@@ -109,9 +109,12 @@ describe 'GitLabSyncApi' do
   # Update single Sync Setting
   # Updates a single GitLab Sync Setting.
   # @param id ID
-  # @param gitlab_sync_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
+  # @option opts [String] :phrase_project_code Code of the related Phrase Project.
+  # @option opts [Integer] :gitlab_project_id ID of the related GitLab Project.
+  # @option opts [String] :gitlab_branch_name Name of the GitLab Branch.
   # @return [GitlabSync]
   describe 'gitlab_sync_update test' do
     it 'should work' do

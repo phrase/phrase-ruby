@@ -83,12 +83,12 @@ module Phrase
     # Delete an existing locale.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param locale_delete_parameters [LocaleDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [nil]
-    def locale_delete(project_id, id, locale_delete_parameters, opts = {})
-      locale_delete_with_http_info(project_id, id, locale_delete_parameters, opts)
+    def locale_delete(project_id, id, opts = {})
+      locale_delete_with_http_info(project_id, id, opts)
       nil
     end
 
@@ -96,11 +96,11 @@ module Phrase
     # Delete an existing locale.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param locale_delete_parameters [LocaleDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def locale_delete_with_http_info(project_id, id, locale_delete_parameters, opts = {})
+    def locale_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalesApi.locale_delete ...'
       end
@@ -112,27 +112,22 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling LocalesApi.locale_delete"
       end
-      # verify the required parameter 'locale_delete_parameters' is set
-      if @api_client.config.client_side_validation && locale_delete_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'locale_delete_parameters' when calling LocalesApi.locale_delete"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/locales/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(locale_delete_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] 
@@ -161,12 +156,25 @@ module Phrase
     # Download a locale in a specific file format.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param locale_download_parameters [LocaleDownloadParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :file_format File format name. See the format guide for all supported file formats.
+    # @option opts [String] :tags Limit results to keys tagged with a list of comma separated tag names.
+    # @option opts [String] :tag Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead
+    # @option opts [Boolean] :include_empty_translations Indicates whether keys without translations should be included in the output as well.
+    # @option opts [Boolean] :include_translated_keys Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys.
+    # @option opts [Boolean] :keep_notranslate_tags Indicates whether [NOTRANSLATE] tags should be kept.
+    # @option opts [Boolean] :convert_emoji This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively.
+    # @option opts [Object] :format_options Additional formatting and render options. See the &lt;a href&#x3D;\&quot;https://help.phrase.com/help/supported-platforms-and-formats\&quot;&gt;format guide&lt;/a&gt; for a list of options available for each format. Specify format options like this: &lt;code&gt;...&amp;format_options[foo]&#x3D;bar&lt;/code&gt;
+    # @option opts [String] :encoding Enforces a specific encoding on the file contents. Valid options are \&quot;UTF-8\&quot;, \&quot;UTF-16\&quot; and \&quot;ISO-8859-1\&quot;.
+    # @option opts [Boolean] :skip_unverified_translations Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &lt;code&gt;include_unverified_translations&lt;/code&gt;.
+    # @option opts [Boolean] :include_unverified_translations if set to false unverified translations are excluded
+    # @option opts [Boolean] :use_last_reviewed_version If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project.
+    # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;.
     # @return [nil]
-    def locale_download(project_id, id, locale_download_parameters, opts = {})
-      locale_download_with_http_info(project_id, id, locale_download_parameters, opts)
+    def locale_download(project_id, id, opts = {})
+      locale_download_with_http_info(project_id, id, opts)
       nil
     end
 
@@ -174,11 +182,24 @@ module Phrase
     # Download a locale in a specific file format.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param locale_download_parameters [LocaleDownloadParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :file_format File format name. See the format guide for all supported file formats.
+    # @option opts [String] :tags Limit results to keys tagged with a list of comma separated tag names.
+    # @option opts [String] :tag Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead
+    # @option opts [Boolean] :include_empty_translations Indicates whether keys without translations should be included in the output as well.
+    # @option opts [Boolean] :include_translated_keys Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys.
+    # @option opts [Boolean] :keep_notranslate_tags Indicates whether [NOTRANSLATE] tags should be kept.
+    # @option opts [Boolean] :convert_emoji This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively.
+    # @option opts [Object] :format_options Additional formatting and render options. See the &lt;a href&#x3D;\&quot;https://help.phrase.com/help/supported-platforms-and-formats\&quot;&gt;format guide&lt;/a&gt; for a list of options available for each format. Specify format options like this: &lt;code&gt;...&amp;format_options[foo]&#x3D;bar&lt;/code&gt;
+    # @option opts [String] :encoding Enforces a specific encoding on the file contents. Valid options are \&quot;UTF-8\&quot;, \&quot;UTF-16\&quot; and \&quot;ISO-8859-1\&quot;.
+    # @option opts [Boolean] :skip_unverified_translations Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &lt;code&gt;include_unverified_translations&lt;/code&gt;.
+    # @option opts [Boolean] :include_unverified_translations if set to false unverified translations are excluded
+    # @option opts [Boolean] :use_last_reviewed_version If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project.
+    # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;.
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def locale_download_with_http_info(project_id, id, locale_download_parameters, opts = {})
+    def locale_download_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalesApi.locale_download ...'
       end
@@ -190,27 +211,35 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling LocalesApi.locale_download"
       end
-      # verify the required parameter 'locale_download_parameters' is set
-      if @api_client.config.client_side_validation && locale_download_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'locale_download_parameters' when calling LocalesApi.locale_download"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/locales/{id}/download'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'file_format'] = opts[:'file_format'] if !opts[:'file_format'].nil?
+      query_params[:'tags'] = opts[:'tags'] if !opts[:'tags'].nil?
+      query_params[:'tag'] = opts[:'tag'] if !opts[:'tag'].nil?
+      query_params[:'include_empty_translations'] = opts[:'include_empty_translations'] if !opts[:'include_empty_translations'].nil?
+      query_params[:'include_translated_keys'] = opts[:'include_translated_keys'] if !opts[:'include_translated_keys'].nil?
+      query_params[:'keep_notranslate_tags'] = opts[:'keep_notranslate_tags'] if !opts[:'keep_notranslate_tags'].nil?
+      query_params[:'convert_emoji'] = opts[:'convert_emoji'] if !opts[:'convert_emoji'].nil?
+      query_params[:'format_options'] = opts[:'format_options'] if !opts[:'format_options'].nil?
+      query_params[:'encoding'] = opts[:'encoding'] if !opts[:'encoding'].nil?
+      query_params[:'skip_unverified_translations'] = opts[:'skip_unverified_translations'] if !opts[:'skip_unverified_translations'].nil?
+      query_params[:'include_unverified_translations'] = opts[:'include_unverified_translations'] if !opts[:'include_unverified_translations'].nil?
+      query_params[:'use_last_reviewed_version'] = opts[:'use_last_reviewed_version'] if !opts[:'use_last_reviewed_version'].nil?
+      query_params[:'fallback_locale_id'] = opts[:'fallback_locale_id'] if !opts[:'fallback_locale_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(locale_download_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] 
@@ -239,12 +268,12 @@ module Phrase
     # Get details on a single locale for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param locale_show_parameters [LocaleShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [LocaleDetails]
-    def locale_show(project_id, id, locale_show_parameters, opts = {})
-      data, _status_code, _headers = locale_show_with_http_info(project_id, id, locale_show_parameters, opts)
+    def locale_show(project_id, id, opts = {})
+      data, _status_code, _headers = locale_show_with_http_info(project_id, id, opts)
       data
     end
 
@@ -252,11 +281,11 @@ module Phrase
     # Get details on a single locale for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param locale_show_parameters [LocaleShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(LocaleDetails)>, Integer, Hash)>] Response<(LocaleDetails)> data, response status code and response headers
-    def locale_show_with_http_info(project_id, id, locale_show_parameters, opts = {})
+    def locale_show_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalesApi.locale_show ...'
       end
@@ -268,29 +297,24 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling LocalesApi.locale_show"
       end
-      # verify the required parameter 'locale_show_parameters' is set
-      if @api_client.config.client_side_validation && locale_show_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'locale_show_parameters' when calling LocalesApi.locale_show"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/locales/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(locale_show_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'LocaleDetails' 
@@ -398,37 +422,33 @@ module Phrase
     # List locales
     # List all locales for the given project.
     # @param project_id [String] Project ID
-    # @param locales_list_parameters [LocalesListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<Locale>]
-    def locales_list(project_id, locales_list_parameters, opts = {})
-      data, _status_code, _headers = locales_list_with_http_info(project_id, locales_list_parameters, opts)
+    def locales_list(project_id, opts = {})
+      data, _status_code, _headers = locales_list_with_http_info(project_id, opts)
       data
     end
 
     # List locales
     # List all locales for the given project.
     # @param project_id [String] Project ID
-    # @param locales_list_parameters [LocalesListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(Array<Locale>)>, Integer, Hash)>] Response<(Array<Locale>)> data, response status code and response headers
-    def locales_list_with_http_info(project_id, locales_list_parameters, opts = {})
+    def locales_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalesApi.locales_list ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling LocalesApi.locales_list"
-      end
-      # verify the required parameter 'locales_list_parameters' is set
-      if @api_client.config.client_side_validation && locales_list_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'locales_list_parameters' when calling LocalesApi.locales_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/locales'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -437,20 +457,19 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(locales_list_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Locale>' 

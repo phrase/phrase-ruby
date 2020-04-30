@@ -139,7 +139,7 @@ Response<(nil (empty response body))>
 
 ## bitbucket_syncs_list
 
-> Array&lt;BitbucketSync&gt; bitbucket_syncs_list(bitbucket_syncs_list_parameters, opts)
+> Array&lt;BitbucketSync&gt; bitbucket_syncs_list(opts)
 
 List Bitbucket syncs
 
@@ -163,14 +163,14 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::BitbucketSyncApi.new
-bitbucket_syncs_list_parameters = Phrase::BitbucketSyncsListParameters.new # BitbucketSyncsListParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  account_id: 'abcd1234' # String | Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.
 }
 
 begin
   #List Bitbucket syncs
-  result = api_instance.bitbucket_syncs_list(bitbucket_syncs_list_parameters, opts)
+  result = api_instance.bitbucket_syncs_list(opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling BitbucketSyncApi->bitbucket_syncs_list: #{e}"
@@ -182,8 +182,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bitbucket_syncs_list_parameters** | [**BitbucketSyncsListParameters**](BitbucketSyncsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **account_id** | **String**| Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
 
 ### Return type
 
@@ -195,6 +195,6 @@ Response<([**Array&lt;BitbucketSync&gt;**](BitbucketSync.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

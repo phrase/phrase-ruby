@@ -26,9 +26,9 @@ describe 'VersionsHistoryApi' do
   # @param project_id Project ID
   # @param translation_id Translation ID
   # @param id ID
-  # @param version_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [TranslationVersionWithUser]
   describe 'version_show test' do
     it 'should work' do
@@ -41,11 +41,11 @@ describe 'VersionsHistoryApi' do
   # List all versions for the given translation.
   # @param project_id Project ID
   # @param translation_id Translation ID
-  # @param versions_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+  # @option opts [String] :branch specify the branch to use
   # @return [Array<TranslationVersion>]
   describe 'versions_list test' do
     it 'should work' do

@@ -82,7 +82,7 @@ Response<(nil (empty response body))>
 
 ## comment_delete
 
-> comment_delete(project_id, key_id, id, comment_delete_parameters, opts)
+> comment_delete(project_id, key_id, id, opts)
 
 Delete a comment
 
@@ -109,14 +109,14 @@ api_instance = Phrase::CommentsApi.new
 project_id = 'project_id_example' # String | Project ID
 key_id = 'key_id_example' # String | Translation Key ID
 id = 'id_example' # String | ID
-comment_delete_parameters = Phrase::CommentDeleteParameters.new # CommentDeleteParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Delete a comment
-  api_instance.comment_delete(project_id, key_id, id, comment_delete_parameters, opts)
+  api_instance.comment_delete(project_id, key_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling CommentsApi->comment_delete: #{e}"
 end
@@ -130,8 +130,8 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **key_id** | **String**| Translation Key ID | 
  **id** | **String**| ID | 
- **comment_delete_parameters** | [**CommentDeleteParameters**](CommentDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -143,13 +143,13 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## comment_mark_check
 
-> comment_mark_check(project_id, key_id, id, comment_mark_check_parameters, opts)
+> comment_mark_check(project_id, key_id, id, opts)
 
 Check if comment is read
 
@@ -176,14 +176,14 @@ api_instance = Phrase::CommentsApi.new
 project_id = 'project_id_example' # String | Project ID
 key_id = 'key_id_example' # String | Translation Key ID
 id = 'id_example' # String | ID
-comment_mark_check_parameters = Phrase::CommentMarkCheckParameters.new # CommentMarkCheckParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Check if comment is read
-  api_instance.comment_mark_check(project_id, key_id, id, comment_mark_check_parameters, opts)
+  api_instance.comment_mark_check(project_id, key_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling CommentsApi->comment_mark_check: #{e}"
 end
@@ -197,8 +197,8 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **key_id** | **String**| Translation Key ID | 
  **id** | **String**| ID | 
- **comment_mark_check_parameters** | [**CommentMarkCheckParameters**](CommentMarkCheckParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -210,7 +210,7 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -283,7 +283,7 @@ Response<(nil (empty response body))>
 
 ## comment_mark_unread
 
-> comment_mark_unread(project_id, key_id, id, comment_mark_unread_parameters, opts)
+> comment_mark_unread(project_id, key_id, id, opts)
 
 Mark a comment as unread
 
@@ -310,14 +310,14 @@ api_instance = Phrase::CommentsApi.new
 project_id = 'project_id_example' # String | Project ID
 key_id = 'key_id_example' # String | Translation Key ID
 id = 'id_example' # String | ID
-comment_mark_unread_parameters = Phrase::CommentMarkUnreadParameters.new # CommentMarkUnreadParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Mark a comment as unread
-  api_instance.comment_mark_unread(project_id, key_id, id, comment_mark_unread_parameters, opts)
+  api_instance.comment_mark_unread(project_id, key_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling CommentsApi->comment_mark_unread: #{e}"
 end
@@ -331,8 +331,8 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **key_id** | **String**| Translation Key ID | 
  **id** | **String**| ID | 
- **comment_mark_unread_parameters** | [**CommentMarkUnreadParameters**](CommentMarkUnreadParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -344,13 +344,13 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## comment_show
 
-> Comment comment_show(project_id, key_id, id, comment_show_parameters, opts)
+> Comment comment_show(project_id, key_id, id, opts)
 
 Get a single comment
 
@@ -377,14 +377,14 @@ api_instance = Phrase::CommentsApi.new
 project_id = 'project_id_example' # String | Project ID
 key_id = 'key_id_example' # String | Translation Key ID
 id = 'id_example' # String | ID
-comment_show_parameters = Phrase::CommentShowParameters.new # CommentShowParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Get a single comment
-  result = api_instance.comment_show(project_id, key_id, id, comment_show_parameters, opts)
+  result = api_instance.comment_show(project_id, key_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling CommentsApi->comment_show: #{e}"
@@ -399,8 +399,8 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **key_id** | **String**| Translation Key ID | 
  **id** | **String**| ID | 
- **comment_show_parameters** | [**CommentShowParameters**](CommentShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -412,7 +412,7 @@ Response<([**Comment**](Comment.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -486,7 +486,7 @@ Response<([**Comment**](Comment.md))>
 
 ## comments_list
 
-> Array&lt;Comment&gt; comments_list(project_id, key_id, comments_list_parameters, opts)
+> Array&lt;Comment&gt; comments_list(project_id, key_id, opts)
 
 List comments
 
@@ -512,16 +512,16 @@ end
 api_instance = Phrase::CommentsApi.new
 project_id = 'project_id_example' # String | Project ID
 key_id = 'key_id_example' # String | Translation Key ID
-comments_list_parameters = Phrase::CommentsListParameters.new # CommentsListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #List comments
-  result = api_instance.comments_list(project_id, key_id, comments_list_parameters, opts)
+  result = api_instance.comments_list(project_id, key_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling CommentsApi->comments_list: #{e}"
@@ -535,10 +535,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **key_id** | **String**| Translation Key ID | 
- **comments_list_parameters** | [**CommentsListParameters**](CommentsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -550,6 +550,6 @@ Response<([**Array&lt;Comment&gt;**](Comment.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

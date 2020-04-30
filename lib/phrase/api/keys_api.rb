@@ -83,12 +83,12 @@ module Phrase
     # Delete an existing key.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param key_delete_parameters [KeyDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [nil]
-    def key_delete(project_id, id, key_delete_parameters, opts = {})
-      key_delete_with_http_info(project_id, id, key_delete_parameters, opts)
+    def key_delete(project_id, id, opts = {})
+      key_delete_with_http_info(project_id, id, opts)
       nil
     end
 
@@ -96,11 +96,11 @@ module Phrase
     # Delete an existing key.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param key_delete_parameters [KeyDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def key_delete_with_http_info(project_id, id, key_delete_parameters, opts = {})
+    def key_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.key_delete ...'
       end
@@ -112,27 +112,22 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling KeysApi.key_delete"
       end
-      # verify the required parameter 'key_delete_parameters' is set
-      if @api_client.config.client_side_validation && key_delete_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'key_delete_parameters' when calling KeysApi.key_delete"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(key_delete_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] 
@@ -161,12 +156,12 @@ module Phrase
     # Get details on a single key for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param key_show_parameters [KeyShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [TranslationKeyDetails]
-    def key_show(project_id, id, key_show_parameters, opts = {})
-      data, _status_code, _headers = key_show_with_http_info(project_id, id, key_show_parameters, opts)
+    def key_show(project_id, id, opts = {})
+      data, _status_code, _headers = key_show_with_http_info(project_id, id, opts)
       data
     end
 
@@ -174,11 +169,11 @@ module Phrase
     # Get details on a single key for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param key_show_parameters [KeyShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(TranslationKeyDetails)>, Integer, Hash)>] Response<(TranslationKeyDetails)> data, response status code and response headers
-    def key_show_with_http_info(project_id, id, key_show_parameters, opts = {})
+    def key_show_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.key_show ...'
       end
@@ -190,29 +185,24 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling KeysApi.key_show"
       end
-      # verify the required parameter 'key_show_parameters' is set
-      if @api_client.config.client_side_validation && key_show_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'key_show_parameters' when calling KeysApi.key_show"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(key_show_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'TranslationKeyDetails' 
@@ -320,23 +310,27 @@ module Phrase
     # Delete collection of keys
     # Delete all keys matching query. Same constraints as list. Please limit the number of affected keys to about 1,000 as you might experience timeouts otherwise.
     # @param project_id [String] Project ID
-    # @param keys_delete_parameters [KeysDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :q q_description_placeholder
+    # @option opts [String] :locale_id Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
     # @return [AffectedResources]
-    def keys_delete(project_id, keys_delete_parameters, opts = {})
-      data, _status_code, _headers = keys_delete_with_http_info(project_id, keys_delete_parameters, opts)
+    def keys_delete(project_id, opts = {})
+      data, _status_code, _headers = keys_delete_with_http_info(project_id, opts)
       data
     end
 
     # Delete collection of keys
     # Delete all keys matching query. Same constraints as list. Please limit the number of affected keys to about 1,000 as you might experience timeouts otherwise.
     # @param project_id [String] Project ID
-    # @param keys_delete_parameters [KeysDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :q q_description_placeholder
+    # @option opts [String] :locale_id Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
     # @return [Array<(Response<(AffectedResources)>, Integer, Hash)>] Response<(AffectedResources)> data, response status code and response headers
-    def keys_delete_with_http_info(project_id, keys_delete_parameters, opts = {})
+    def keys_delete_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.keys_delete ...'
       end
@@ -344,29 +338,26 @@ module Phrase
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.keys_delete"
       end
-      # verify the required parameter 'keys_delete_parameters' is set
-      if @api_client.config.client_side_validation && keys_delete_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'keys_delete_parameters' when calling KeysApi.keys_delete"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/keys'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
+      query_params[:'locale_id'] = opts[:'locale_id'] if !opts[:'locale_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(keys_delete_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'AffectedResources' 
@@ -394,37 +385,41 @@ module Phrase
     # List keys
     # List all keys for the given project. Alternatively you can POST requests to /search.
     # @param project_id [String] Project ID
-    # @param keys_list_parameters [KeysListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :sort Sort by field. Can be one of: name, created_at, updated_at.
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
+    # @option opts [String] :q q_description_placeholder
+    # @option opts [String] :locale_id Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
     # @return [Array<TranslationKey>]
-    def keys_list(project_id, keys_list_parameters, opts = {})
-      data, _status_code, _headers = keys_list_with_http_info(project_id, keys_list_parameters, opts)
+    def keys_list(project_id, opts = {})
+      data, _status_code, _headers = keys_list_with_http_info(project_id, opts)
       data
     end
 
     # List keys
     # List all keys for the given project. Alternatively you can POST requests to /search.
     # @param project_id [String] Project ID
-    # @param keys_list_parameters [KeysListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :sort Sort by field. Can be one of: name, created_at, updated_at.
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
+    # @option opts [String] :q q_description_placeholder
+    # @option opts [String] :locale_id Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
     # @return [Array<(Response<(Array<TranslationKey>)>, Integer, Hash)>] Response<(Array<TranslationKey>)> data, response status code and response headers
-    def keys_list_with_http_info(project_id, keys_list_parameters, opts = {})
+    def keys_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.keys_list ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.keys_list"
-      end
-      # verify the required parameter 'keys_list_parameters' is set
-      if @api_client.config.client_side_validation && keys_list_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'keys_list_parameters' when calling KeysApi.keys_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -433,20 +428,23 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'sort'] = opts[:'sort'] if !opts[:'sort'].nil?
+      query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
+      query_params[:'locale_id'] = opts[:'locale_id'] if !opts[:'locale_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(keys_list_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'Array<TranslationKey>' 

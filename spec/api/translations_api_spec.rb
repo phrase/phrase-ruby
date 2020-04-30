@@ -84,9 +84,9 @@ describe 'TranslationsApi' do
   # Get details on a single translation.
   # @param project_id Project ID
   # @param id ID
-  # @param translation_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [TranslationDetails]
   describe 'translation_show test' do
     it 'should work' do
@@ -144,11 +144,14 @@ describe 'TranslationsApi' do
   # List translations for a specific key.
   # @param project_id Project ID
   # @param key_id Translation Key ID
-  # @param translations_by_key_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
+  # @option opts [String] :order Order direction. Can be one of: asc, desc.
+  # @option opts [String] :q q_description_placeholder
   # @return [Array<Translation>]
   describe 'translations_by_key test' do
     it 'should work' do
@@ -161,11 +164,14 @@ describe 'TranslationsApi' do
   # List translations for a specific locale. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
   # @param project_id Project ID
   # @param locale_id Locale ID
-  # @param translations_by_locale_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
+  # @option opts [String] :order Order direction. Can be one of: asc, desc.
+  # @option opts [String] :q q_description_placeholder
   # @return [Array<Translation>]
   describe 'translations_by_locale test' do
     it 'should work' do
@@ -205,11 +211,14 @@ describe 'TranslationsApi' do
   # List all translations
   # List translations for the given project. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
   # @param project_id Project ID
-  # @param translations_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
+  # @option opts [String] :order Order direction. Can be one of: asc, desc.
+  # @option opts [String] :q q_description_placeholder
   # @return [Array<Translation>]
   describe 'translations_list test' do
     it 'should work' do

@@ -323,12 +323,12 @@ module Phrase
     # Get details on a single translation.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param translation_show_parameters [TranslationShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [TranslationDetails]
-    def translation_show(project_id, id, translation_show_parameters, opts = {})
-      data, _status_code, _headers = translation_show_with_http_info(project_id, id, translation_show_parameters, opts)
+    def translation_show(project_id, id, opts = {})
+      data, _status_code, _headers = translation_show_with_http_info(project_id, id, opts)
       data
     end
 
@@ -336,11 +336,11 @@ module Phrase
     # Get details on a single translation.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param translation_show_parameters [TranslationShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(TranslationDetails)>, Integer, Hash)>] Response<(TranslationDetails)> data, response status code and response headers
-    def translation_show_with_http_info(project_id, id, translation_show_parameters, opts = {})
+    def translation_show_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translation_show ...'
       end
@@ -352,29 +352,24 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling TranslationsApi.translation_show"
       end
-      # verify the required parameter 'translation_show_parameters' is set
-      if @api_client.config.client_side_validation && translation_show_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'translation_show_parameters' when calling TranslationsApi.translation_show"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/translations/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(translation_show_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'TranslationDetails' 
@@ -643,14 +638,17 @@ module Phrase
     # List translations for a specific key.
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
-    # @param translations_by_key_parameters [TranslationsByKeyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
+    # @option opts [String] :q q_description_placeholder
     # @return [Array<Translation>]
-    def translations_by_key(project_id, key_id, translations_by_key_parameters, opts = {})
-      data, _status_code, _headers = translations_by_key_with_http_info(project_id, key_id, translations_by_key_parameters, opts)
+    def translations_by_key(project_id, key_id, opts = {})
+      data, _status_code, _headers = translations_by_key_with_http_info(project_id, key_id, opts)
       data
     end
 
@@ -658,13 +656,16 @@ module Phrase
     # List translations for a specific key.
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
-    # @param translations_by_key_parameters [TranslationsByKeyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
+    # @option opts [String] :q q_description_placeholder
     # @return [Array<(Response<(Array<Translation>)>, Integer, Hash)>] Response<(Array<Translation>)> data, response status code and response headers
-    def translations_by_key_with_http_info(project_id, key_id, translations_by_key_parameters, opts = {})
+    def translations_by_key_with_http_info(project_id, key_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_by_key ...'
       end
@@ -676,10 +677,6 @@ module Phrase
       if @api_client.config.client_side_validation && key_id.nil?
         fail ArgumentError, "Missing the required parameter 'key_id' when calling TranslationsApi.translations_by_key"
       end
-      # verify the required parameter 'translations_by_key_parameters' is set
-      if @api_client.config.client_side_validation && translations_by_key_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'translations_by_key_parameters' when calling TranslationsApi.translations_by_key"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/translations'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s))
 
@@ -687,20 +684,22 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'sort'] = opts[:'sort'] if !opts[:'sort'].nil?
+      query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(translations_by_key_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Translation>' 
@@ -729,14 +728,17 @@ module Phrase
     # List translations for a specific locale. If you want to download all translations for one locale we recommend to use the <code>locales#download</code> endpoint.
     # @param project_id [String] Project ID
     # @param locale_id [String] Locale ID
-    # @param translations_by_locale_parameters [TranslationsByLocaleParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
+    # @option opts [String] :q q_description_placeholder
     # @return [Array<Translation>]
-    def translations_by_locale(project_id, locale_id, translations_by_locale_parameters, opts = {})
-      data, _status_code, _headers = translations_by_locale_with_http_info(project_id, locale_id, translations_by_locale_parameters, opts)
+    def translations_by_locale(project_id, locale_id, opts = {})
+      data, _status_code, _headers = translations_by_locale_with_http_info(project_id, locale_id, opts)
       data
     end
 
@@ -744,13 +746,16 @@ module Phrase
     # List translations for a specific locale. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
     # @param project_id [String] Project ID
     # @param locale_id [String] Locale ID
-    # @param translations_by_locale_parameters [TranslationsByLocaleParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
+    # @option opts [String] :q q_description_placeholder
     # @return [Array<(Response<(Array<Translation>)>, Integer, Hash)>] Response<(Array<Translation>)> data, response status code and response headers
-    def translations_by_locale_with_http_info(project_id, locale_id, translations_by_locale_parameters, opts = {})
+    def translations_by_locale_with_http_info(project_id, locale_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_by_locale ...'
       end
@@ -762,10 +767,6 @@ module Phrase
       if @api_client.config.client_side_validation && locale_id.nil?
         fail ArgumentError, "Missing the required parameter 'locale_id' when calling TranslationsApi.translations_by_locale"
       end
-      # verify the required parameter 'translations_by_locale_parameters' is set
-      if @api_client.config.client_side_validation && translations_by_locale_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'translations_by_locale_parameters' when calling TranslationsApi.translations_by_locale"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/locales/{locale_id}/translations'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'locale_id' + '}', CGI.escape(locale_id.to_s))
 
@@ -773,20 +774,22 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'sort'] = opts[:'sort'] if !opts[:'sort'].nil?
+      query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(translations_by_locale_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Translation>' 
@@ -962,37 +965,39 @@ module Phrase
     # List all translations
     # List translations for the given project. If you want to download all translations for one locale we recommend to use the <code>locales#download</code> endpoint.
     # @param project_id [String] Project ID
-    # @param translations_list_parameters [TranslationsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
+    # @option opts [String] :q q_description_placeholder
     # @return [Array<Translation>]
-    def translations_list(project_id, translations_list_parameters, opts = {})
-      data, _status_code, _headers = translations_list_with_http_info(project_id, translations_list_parameters, opts)
+    def translations_list(project_id, opts = {})
+      data, _status_code, _headers = translations_list_with_http_info(project_id, opts)
       data
     end
 
     # List all translations
     # List translations for the given project. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
     # @param project_id [String] Project ID
-    # @param translations_list_parameters [TranslationsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
+    # @option opts [String] :q q_description_placeholder
     # @return [Array<(Response<(Array<Translation>)>, Integer, Hash)>] Response<(Array<Translation>)> data, response status code and response headers
-    def translations_list_with_http_info(project_id, translations_list_parameters, opts = {})
+    def translations_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_list ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_list"
-      end
-      # verify the required parameter 'translations_list_parameters' is set
-      if @api_client.config.client_side_validation && translations_list_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'translations_list_parameters' when calling TranslationsApi.translations_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/translations'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -1001,20 +1006,22 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'sort'] = opts[:'sort'] if !opts[:'sort'].nil?
+      query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(translations_list_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Translation>' 

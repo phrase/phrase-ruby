@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## gitlab_sync_delete
 
-> gitlab_sync_delete(id, gitlab_sync_delete_parameters, opts)
+> gitlab_sync_delete(id, opts)
 
 Delete single Sync Setting
 
@@ -41,14 +41,14 @@ end
 
 api_instance = Phrase::GitLabSyncApi.new
 id = 'id_example' # String | ID
-gitlab_sync_delete_parameters = Phrase::GitlabSyncDeleteParameters.new # GitlabSyncDeleteParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  account_id: 'abcd1234' # String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
 }
 
 begin
   #Delete single Sync Setting
-  api_instance.gitlab_sync_delete(id, gitlab_sync_delete_parameters, opts)
+  api_instance.gitlab_sync_delete(id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_delete: #{e}"
 end
@@ -60,8 +60,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID | 
- **gitlab_sync_delete_parameters** | [**GitlabSyncDeleteParameters**](GitlabSyncDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **account_id** | **String**| Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
 
 ### Return type
 
@@ -73,7 +73,7 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -143,7 +143,7 @@ Response<([**GitlabSyncExport**](GitlabSyncExport.md))>
 
 ## gitlab_sync_history
 
-> Array&lt;GitlabSyncHistory&gt; gitlab_sync_history(gitlab_sync_id, gitlab_sync_history_parameters, opts)
+> Array&lt;GitlabSyncHistory&gt; gitlab_sync_history(gitlab_sync_id, opts)
 
 History of single Sync Setting
 
@@ -168,16 +168,16 @@ end
 
 api_instance = Phrase::GitLabSyncApi.new
 gitlab_sync_id = 'gitlab_sync_id_example' # String | Gitlab Sync ID
-gitlab_sync_history_parameters = Phrase::GitlabSyncHistoryParameters.new # GitlabSyncHistoryParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  account_id: 'abcd1234' # String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
 }
 
 begin
   #History of single Sync Setting
-  result = api_instance.gitlab_sync_history(gitlab_sync_id, gitlab_sync_history_parameters, opts)
+  result = api_instance.gitlab_sync_history(gitlab_sync_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_history: #{e}"
@@ -190,10 +190,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gitlab_sync_id** | **String**| Gitlab Sync ID | 
- **gitlab_sync_history_parameters** | [**GitlabSyncHistoryParameters**](GitlabSyncHistoryParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **account_id** | **String**| Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
 
 ### Return type
 
@@ -205,7 +205,7 @@ Response<([**Array&lt;GitlabSyncHistory&gt;**](GitlabSyncHistory.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -275,7 +275,7 @@ Response<([**Array&lt;Upload&gt;**](Upload.md))>
 
 ## gitlab_sync_list
 
-> Array&lt;GitlabSync&gt; gitlab_sync_list(gitlab_sync_list_parameters, opts)
+> Array&lt;GitlabSync&gt; gitlab_sync_list(opts)
 
 List GitLab syncs
 
@@ -299,14 +299,14 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::GitLabSyncApi.new
-gitlab_sync_list_parameters = Phrase::GitlabSyncListParameters.new # GitlabSyncListParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  account_id: 'abcd1234' # String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
 }
 
 begin
   #List GitLab syncs
-  result = api_instance.gitlab_sync_list(gitlab_sync_list_parameters, opts)
+  result = api_instance.gitlab_sync_list(opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_list: #{e}"
@@ -318,8 +318,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gitlab_sync_list_parameters** | [**GitlabSyncListParameters**](GitlabSyncListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **account_id** | **String**| Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
 
 ### Return type
 
@@ -331,13 +331,13 @@ Response<([**Array&lt;GitlabSync&gt;**](GitlabSync.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
 ## gitlab_sync_show
 
-> GitlabSync gitlab_sync_show(id, gitlab_sync_show_parameters, opts)
+> GitlabSync gitlab_sync_show(id, opts)
 
 Get single Sync Setting
 
@@ -362,14 +362,14 @@ end
 
 api_instance = Phrase::GitLabSyncApi.new
 id = 'id_example' # String | ID
-gitlab_sync_show_parameters = Phrase::GitlabSyncShowParameters.new # GitlabSyncShowParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  account_id: 'abcd1234' # String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
 }
 
 begin
   #Get single Sync Setting
-  result = api_instance.gitlab_sync_show(id, gitlab_sync_show_parameters, opts)
+  result = api_instance.gitlab_sync_show(id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_show: #{e}"
@@ -382,8 +382,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID | 
- **gitlab_sync_show_parameters** | [**GitlabSyncShowParameters**](GitlabSyncShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **account_id** | **String**| Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
 
 ### Return type
 
@@ -395,13 +395,13 @@ Response<([**GitlabSync**](GitlabSync.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
 ## gitlab_sync_update
 
-> GitlabSync gitlab_sync_update(id, gitlab_sync_update_parameters, opts)
+> GitlabSync gitlab_sync_update(id, opts)
 
 Update single Sync Setting
 
@@ -426,14 +426,17 @@ end
 
 api_instance = Phrase::GitLabSyncApi.new
 id = 'id_example' # String | ID
-gitlab_sync_update_parameters = Phrase::GitlabSyncUpdateParameters.new # GitlabSyncUpdateParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  account_id: 'abcd1234', # String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
+  phrase_project_code: '3456abcd', # String | Code of the related Phrase Project.
+  gitlab_project_id: 12345, # Integer | ID of the related GitLab Project.
+  gitlab_branch_name: 'feature-development' # String | Name of the GitLab Branch.
 }
 
 begin
   #Update single Sync Setting
-  result = api_instance.gitlab_sync_update(id, gitlab_sync_update_parameters, opts)
+  result = api_instance.gitlab_sync_update(id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GitLabSyncApi->gitlab_sync_update: #{e}"
@@ -446,8 +449,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID | 
- **gitlab_sync_update_parameters** | [**GitlabSyncUpdateParameters**](GitlabSyncUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **account_id** | **String**| Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
+ **phrase_project_code** | **String**| Code of the related Phrase Project. | [optional] 
+ **gitlab_project_id** | **Integer**| ID of the related GitLab Project. | [optional] 
+ **gitlab_branch_name** | **String**| Name of the GitLab Branch. | [optional] 
 
 ### Return type
 
@@ -459,6 +465,6 @@ Response<([**GitlabSync**](GitlabSync.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

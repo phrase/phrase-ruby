@@ -163,12 +163,12 @@ module Phrase
     # Delete an existing job.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param job_delete_parameters [JobDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [nil]
-    def job_delete(project_id, id, job_delete_parameters, opts = {})
-      job_delete_with_http_info(project_id, id, job_delete_parameters, opts)
+    def job_delete(project_id, id, opts = {})
+      job_delete_with_http_info(project_id, id, opts)
       nil
     end
 
@@ -176,11 +176,11 @@ module Phrase
     # Delete an existing job.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param job_delete_parameters [JobDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def job_delete_with_http_info(project_id, id, job_delete_parameters, opts = {})
+    def job_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_delete ...'
       end
@@ -192,27 +192,22 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling JobsApi.job_delete"
       end
-      # verify the required parameter 'job_delete_parameters' is set
-      if @api_client.config.client_side_validation && job_delete_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'job_delete_parameters' when calling JobsApi.job_delete"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_delete_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] 
@@ -321,12 +316,13 @@ module Phrase
     # Remove multiple keys from existing job.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param job_keys_delete_parameters [JobKeysDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [Array<String>] :translation_key_ids ids of keys that should added to the job
     # @return [nil]
-    def job_keys_delete(project_id, id, job_keys_delete_parameters, opts = {})
-      job_keys_delete_with_http_info(project_id, id, job_keys_delete_parameters, opts)
+    def job_keys_delete(project_id, id, opts = {})
+      job_keys_delete_with_http_info(project_id, id, opts)
       nil
     end
 
@@ -334,11 +330,12 @@ module Phrase
     # Remove multiple keys from existing job.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param job_keys_delete_parameters [JobKeysDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [Array<String>] :translation_key_ids ids of keys that should added to the job
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def job_keys_delete_with_http_info(project_id, id, job_keys_delete_parameters, opts = {})
+    def job_keys_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_keys_delete ...'
       end
@@ -350,27 +347,23 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling JobsApi.job_keys_delete"
       end
-      # verify the required parameter 'job_keys_delete_parameters' is set
-      if @api_client.config.client_side_validation && job_keys_delete_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'job_keys_delete_parameters' when calling JobsApi.job_keys_delete"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{id}/keys'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'translation_key_ids'] = @api_client.build_collection_param(opts[:'translation_key_ids'], :multi) if !opts[:'translation_key_ids'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_keys_delete_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] 
@@ -479,12 +472,12 @@ module Phrase
     # Get details on a single job for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param job_show_parameters [JobShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [JobDetails]
-    def job_show(project_id, id, job_show_parameters, opts = {})
-      data, _status_code, _headers = job_show_with_http_info(project_id, id, job_show_parameters, opts)
+    def job_show(project_id, id, opts = {})
+      data, _status_code, _headers = job_show_with_http_info(project_id, id, opts)
       data
     end
 
@@ -492,11 +485,11 @@ module Phrase
     # Get details on a single job for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param job_show_parameters [JobShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(JobDetails)>, Integer, Hash)>] Response<(JobDetails)> data, response status code and response headers
-    def job_show_with_http_info(project_id, id, job_show_parameters, opts = {})
+    def job_show_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_show ...'
       end
@@ -508,29 +501,24 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling JobsApi.job_show"
       end
-      # verify the required parameter 'job_show_parameters' is set
-      if @api_client.config.client_side_validation && job_show_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'job_show_parameters' when calling JobsApi.job_show"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_show_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'JobDetails' 
@@ -718,37 +706,39 @@ module Phrase
     # List jobs
     # List all jobs for the given project.
     # @param project_id [String] Project ID
-    # @param jobs_list_parameters [JobsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :owned_by filter by user owning job
+    # @option opts [String] :assigned_to filter by user assigned to job
+    # @option opts [String] :state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt;
     # @return [Array<Job>]
-    def jobs_list(project_id, jobs_list_parameters, opts = {})
-      data, _status_code, _headers = jobs_list_with_http_info(project_id, jobs_list_parameters, opts)
+    def jobs_list(project_id, opts = {})
+      data, _status_code, _headers = jobs_list_with_http_info(project_id, opts)
       data
     end
 
     # List jobs
     # List all jobs for the given project.
     # @param project_id [String] Project ID
-    # @param jobs_list_parameters [JobsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :owned_by filter by user owning job
+    # @option opts [String] :assigned_to filter by user assigned to job
+    # @option opts [String] :state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt;
     # @return [Array<(Response<(Array<Job>)>, Integer, Hash)>] Response<(Array<Job>)> data, response status code and response headers
-    def jobs_list_with_http_info(project_id, jobs_list_parameters, opts = {})
+    def jobs_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.jobs_list ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling JobsApi.jobs_list"
-      end
-      # verify the required parameter 'jobs_list_parameters' is set
-      if @api_client.config.client_side_validation && jobs_list_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'jobs_list_parameters' when calling JobsApi.jobs_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/jobs'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -757,20 +747,22 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'owned_by'] = opts[:'owned_by'] if !opts[:'owned_by'].nil?
+      query_params[:'assigned_to'] = opts[:'assigned_to'] if !opts[:'assigned_to'].nil?
+      query_params[:'state'] = opts[:'state'] if !opts[:'state'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(jobs_list_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Job>' 

@@ -39,9 +39,9 @@ describe 'LocalesApi' do
   # Delete an existing locale.
   # @param project_id Project ID
   # @param id ID
-  # @param locale_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [nil]
   describe 'locale_delete test' do
     it 'should work' do
@@ -54,9 +54,22 @@ describe 'LocalesApi' do
   # Download a locale in a specific file format.
   # @param project_id Project ID
   # @param id ID
-  # @param locale_download_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :file_format File format name. See the format guide for all supported file formats.
+  # @option opts [String] :tags Limit results to keys tagged with a list of comma separated tag names.
+  # @option opts [String] :tag Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead
+  # @option opts [Boolean] :include_empty_translations Indicates whether keys without translations should be included in the output as well.
+  # @option opts [Boolean] :include_translated_keys Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys.
+  # @option opts [Boolean] :keep_notranslate_tags Indicates whether [NOTRANSLATE] tags should be kept.
+  # @option opts [Boolean] :convert_emoji This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively.
+  # @option opts [Object] :format_options Additional formatting and render options. See the &lt;a href&#x3D;\&quot;https://help.phrase.com/help/supported-platforms-and-formats\&quot;&gt;format guide&lt;/a&gt; for a list of options available for each format. Specify format options like this: &lt;code&gt;...&amp;format_options[foo]&#x3D;bar&lt;/code&gt;
+  # @option opts [String] :encoding Enforces a specific encoding on the file contents. Valid options are \&quot;UTF-8\&quot;, \&quot;UTF-16\&quot; and \&quot;ISO-8859-1\&quot;.
+  # @option opts [Boolean] :skip_unverified_translations Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &lt;code&gt;include_unverified_translations&lt;/code&gt;.
+  # @option opts [Boolean] :include_unverified_translations if set to false unverified translations are excluded
+  # @option opts [Boolean] :use_last_reviewed_version If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project.
+  # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;.
   # @return [nil]
   describe 'locale_download test' do
     it 'should work' do
@@ -69,9 +82,9 @@ describe 'LocalesApi' do
   # Get details on a single locale for a given project.
   # @param project_id Project ID
   # @param id ID
-  # @param locale_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [LocaleDetails]
   describe 'locale_show test' do
     it 'should work' do
@@ -98,11 +111,11 @@ describe 'LocalesApi' do
   # List locales
   # List all locales for the given project.
   # @param project_id Project ID
-  # @param locales_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+  # @option opts [String] :branch specify the branch to use
   # @return [Array<Locale>]
   describe 'locales_list test' do
     it 'should work' do

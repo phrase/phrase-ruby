@@ -76,7 +76,7 @@ Response<(nil (empty response body))>
 
 ## tag_delete
 
-> tag_delete(project_id, name, tag_delete_parameters, opts)
+> tag_delete(project_id, name, opts)
 
 Delete a tag
 
@@ -102,14 +102,14 @@ end
 api_instance = Phrase::TagsApi.new
 project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
-tag_delete_parameters = Phrase::TagDeleteParameters.new # TagDeleteParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Delete a tag
-  api_instance.tag_delete(project_id, name, tag_delete_parameters, opts)
+  api_instance.tag_delete(project_id, name, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling TagsApi->tag_delete: #{e}"
 end
@@ -122,8 +122,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
- **tag_delete_parameters** | [**TagDeleteParameters**](TagDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -135,13 +135,13 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## tag_show
 
-> TagWithStats tag_show(project_id, name, tag_show_parameters, opts)
+> TagWithStats tag_show(project_id, name, opts)
 
 Get a single tag
 
@@ -167,14 +167,14 @@ end
 api_instance = Phrase::TagsApi.new
 project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
-tag_show_parameters = Phrase::TagShowParameters.new # TagShowParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Get a single tag
-  result = api_instance.tag_show(project_id, name, tag_show_parameters, opts)
+  result = api_instance.tag_show(project_id, name, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TagsApi->tag_show: #{e}"
@@ -188,8 +188,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
- **tag_show_parameters** | [**TagShowParameters**](TagShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -201,13 +201,13 @@ Response<([**TagWithStats**](TagWithStats.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
 ## tags_list
 
-> Array&lt;Tag&gt; tags_list(project_id, tags_list_parameters, opts)
+> Array&lt;Tag&gt; tags_list(project_id, opts)
 
 List tags
 
@@ -232,16 +232,16 @@ end
 
 api_instance = Phrase::TagsApi.new
 project_id = 'project_id_example' # String | Project ID
-tags_list_parameters = Phrase::TagsListParameters.new # TagsListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #List tags
-  result = api_instance.tags_list(project_id, tags_list_parameters, opts)
+  result = api_instance.tags_list(project_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TagsApi->tags_list: #{e}"
@@ -254,10 +254,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **tags_list_parameters** | [**TagsListParameters**](TagsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -269,6 +269,6 @@ Response<([**Array&lt;Tag&gt;**](Tag.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

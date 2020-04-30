@@ -155,48 +155,43 @@ module Phrase
 
     # List Bitbucket syncs
     # List all Bitbucket repositories for which synchronisation with Phrase is activated.
-    # @param bitbucket_syncs_list_parameters [BitbucketSyncsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :account_id Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.
     # @return [Array<BitbucketSync>]
-    def bitbucket_syncs_list(bitbucket_syncs_list_parameters, opts = {})
-      data, _status_code, _headers = bitbucket_syncs_list_with_http_info(bitbucket_syncs_list_parameters, opts)
+    def bitbucket_syncs_list(opts = {})
+      data, _status_code, _headers = bitbucket_syncs_list_with_http_info(opts)
       data
     end
 
     # List Bitbucket syncs
     # List all Bitbucket repositories for which synchronisation with Phrase is activated.
-    # @param bitbucket_syncs_list_parameters [BitbucketSyncsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :account_id Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.
     # @return [Array<(Response<(Array<BitbucketSync>)>, Integer, Hash)>] Response<(Array<BitbucketSync>)> data, response status code and response headers
-    def bitbucket_syncs_list_with_http_info(bitbucket_syncs_list_parameters, opts = {})
+    def bitbucket_syncs_list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BitbucketSyncApi.bitbucket_syncs_list ...'
-      end
-      # verify the required parameter 'bitbucket_syncs_list_parameters' is set
-      if @api_client.config.client_side_validation && bitbucket_syncs_list_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'bitbucket_syncs_list_parameters' when calling BitbucketSyncApi.bitbucket_syncs_list"
       end
       # resource path
       local_var_path = '/bitbucket_syncs'
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'account_id'] = opts[:'account_id'] if !opts[:'account_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(bitbucket_syncs_list_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'Array<BitbucketSync>' 

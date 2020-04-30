@@ -81,7 +81,7 @@ Response<(nil (empty response body))>
 
 ## key_delete
 
-> key_delete(project_id, id, key_delete_parameters, opts)
+> key_delete(project_id, id, opts)
 
 Delete a key
 
@@ -107,14 +107,14 @@ end
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-key_delete_parameters = Phrase::KeyDeleteParameters.new # KeyDeleteParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Delete a key
-  api_instance.key_delete(project_id, id, key_delete_parameters, opts)
+  api_instance.key_delete(project_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->key_delete: #{e}"
 end
@@ -127,8 +127,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **key_delete_parameters** | [**KeyDeleteParameters**](KeyDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -140,13 +140,13 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## key_show
 
-> TranslationKeyDetails key_show(project_id, id, key_show_parameters, opts)
+> TranslationKeyDetails key_show(project_id, id, opts)
 
 Get a single key
 
@@ -172,14 +172,14 @@ end
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-key_show_parameters = Phrase::KeyShowParameters.new # KeyShowParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Get a single key
-  result = api_instance.key_show(project_id, id, key_show_parameters, opts)
+  result = api_instance.key_show(project_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->key_show: #{e}"
@@ -193,8 +193,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **key_show_parameters** | [**KeyShowParameters**](KeyShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -206,7 +206,7 @@ Response<([**TranslationKeyDetails**](TranslationKeyDetails.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -278,7 +278,7 @@ Response<([**TranslationKeyDetails**](TranslationKeyDetails.md))>
 
 ## keys_delete
 
-> AffectedResources keys_delete(project_id, keys_delete_parameters, opts)
+> AffectedResources keys_delete(project_id, opts)
 
 Delete collection of keys
 
@@ -303,14 +303,16 @@ end
 
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
-keys_delete_parameters = Phrase::KeysDeleteParameters.new # KeysDeleteParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch', # String | specify the branch to use
+  q: 'mykey* translated:true', # String | q_description_placeholder
+  locale_id: 'abcd1234abcd1234abcd1234abcd1234' # String | Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
 }
 
 begin
   #Delete collection of keys
-  result = api_instance.keys_delete(project_id, keys_delete_parameters, opts)
+  result = api_instance.keys_delete(project_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->keys_delete: #{e}"
@@ -323,8 +325,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **keys_delete_parameters** | [**KeysDeleteParameters**](KeysDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+ **q** | **String**| q_description_placeholder | [optional] 
+ **locale_id** | **String**| Locale used to determine the translation state of a key when filtering for untranslated or translated keys. | [optional] 
 
 ### Return type
 
@@ -336,13 +340,13 @@ Response<([**AffectedResources**](AffectedResources.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
 ## keys_list
 
-> Array&lt;TranslationKey&gt; keys_list(project_id, keys_list_parameters, opts)
+> Array&lt;TranslationKey&gt; keys_list(project_id, opts)
 
 List keys
 
@@ -367,16 +371,20 @@ end
 
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
-keys_list_parameters = Phrase::KeysListParameters.new # KeysListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  branch: 'my-feature-branch', # String | specify the branch to use
+  sort: 'updated_at', # String | Sort by field. Can be one of: name, created_at, updated_at.
+  order: 'desc', # String | Order direction. Can be one of: asc, desc.
+  q: 'mykey* translated:true', # String | q_description_placeholder
+  locale_id: 'abcd1234abcd1234abcd1234abcd1234' # String | Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
 }
 
 begin
   #List keys
-  result = api_instance.keys_list(project_id, keys_list_parameters, opts)
+  result = api_instance.keys_list(project_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->keys_list: #{e}"
@@ -389,10 +397,14 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **keys_list_parameters** | [**KeysListParameters**](KeysListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+ **sort** | **String**| Sort by field. Can be one of: name, created_at, updated_at. | [optional] 
+ **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
+ **q** | **String**| q_description_placeholder | [optional] 
+ **locale_id** | **String**| Locale used to determine the translation state of a key when filtering for untranslated or translated keys. | [optional] 
 
 ### Return type
 
@@ -404,7 +416,7 @@ Response<([**Array&lt;TranslationKey&gt;**](TranslationKey.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

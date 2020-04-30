@@ -25,7 +25,6 @@ describe 'BranchesApi' do
   # Compare branch with main branch.
   # @param project_id Project ID
   # @param name name
-  # @param branch_compare_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]

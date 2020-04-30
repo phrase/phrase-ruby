@@ -287,7 +287,7 @@ Response<([**TranslationDetails**](TranslationDetails.md))>
 
 ## translation_show
 
-> TranslationDetails translation_show(project_id, id, translation_show_parameters, opts)
+> TranslationDetails translation_show(project_id, id, opts)
 
 Get a single translation
 
@@ -313,14 +313,14 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-translation_show_parameters = Phrase::TranslationShowParameters.new # TranslationShowParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Get a single translation
-  result = api_instance.translation_show(project_id, id, translation_show_parameters, opts)
+  result = api_instance.translation_show(project_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translation_show: #{e}"
@@ -334,8 +334,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **translation_show_parameters** | [**TranslationShowParameters**](TranslationShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -347,7 +347,7 @@ Response<([**TranslationDetails**](TranslationDetails.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -551,7 +551,7 @@ Response<([**TranslationDetails**](TranslationDetails.md))>
 
 ## translations_by_key
 
-> Array&lt;Translation&gt; translations_by_key(project_id, key_id, translations_by_key_parameters, opts)
+> Array&lt;Translation&gt; translations_by_key(project_id, key_id, opts)
 
 List translations by key
 
@@ -577,16 +577,19 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 key_id = 'key_id_example' # String | Translation Key ID
-translations_by_key_parameters = Phrase::TranslationsByKeyParameters.new # TranslationsByKeyParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  branch: 'my-feature-branch', # String | specify the branch to use
+  sort: 'updated_at', # String | Sort criteria. Can be one of: key_name, created_at, updated_at.
+  order: 'desc', # String | Order direction. Can be one of: asc, desc.
+  q: 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' # String | q_description_placeholder
 }
 
 begin
   #List translations by key
-  result = api_instance.translations_by_key(project_id, key_id, translations_by_key_parameters, opts)
+  result = api_instance.translations_by_key(project_id, key_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_by_key: #{e}"
@@ -600,10 +603,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **key_id** | **String**| Translation Key ID | 
- **translations_by_key_parameters** | [**TranslationsByKeyParameters**](TranslationsByKeyParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+ **sort** | **String**| Sort criteria. Can be one of: key_name, created_at, updated_at. | [optional] 
+ **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
+ **q** | **String**| q_description_placeholder | [optional] 
 
 ### Return type
 
@@ -615,13 +621,13 @@ Response<([**Array&lt;Translation&gt;**](Translation.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
 ## translations_by_locale
 
-> Array&lt;Translation&gt; translations_by_locale(project_id, locale_id, translations_by_locale_parameters, opts)
+> Array&lt;Translation&gt; translations_by_locale(project_id, locale_id, opts)
 
 List translations by locale
 
@@ -647,16 +653,19 @@ end
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
 locale_id = 'locale_id_example' # String | Locale ID
-translations_by_locale_parameters = Phrase::TranslationsByLocaleParameters.new # TranslationsByLocaleParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  branch: 'my-feature-branch', # String | specify the branch to use
+  sort: 'updated_at', # String | Sort criteria. Can be one of: key_name, created_at, updated_at.
+  order: 'desc', # String | Order direction. Can be one of: asc, desc.
+  q: 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' # String | q_description_placeholder
 }
 
 begin
   #List translations by locale
-  result = api_instance.translations_by_locale(project_id, locale_id, translations_by_locale_parameters, opts)
+  result = api_instance.translations_by_locale(project_id, locale_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_by_locale: #{e}"
@@ -670,10 +679,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **locale_id** | **String**| Locale ID | 
- **translations_by_locale_parameters** | [**TranslationsByLocaleParameters**](TranslationsByLocaleParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+ **sort** | **String**| Sort criteria. Can be one of: key_name, created_at, updated_at. | [optional] 
+ **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
+ **q** | **String**| q_description_placeholder | [optional] 
 
 ### Return type
 
@@ -685,7 +697,7 @@ Response<([**Array&lt;Translation&gt;**](Translation.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -819,7 +831,7 @@ Response<([**AffectedCount**](AffectedCount.md))>
 
 ## translations_list
 
-> Array&lt;Translation&gt; translations_list(project_id, translations_list_parameters, opts)
+> Array&lt;Translation&gt; translations_list(project_id, opts)
 
 List all translations
 
@@ -844,16 +856,19 @@ end
 
 api_instance = Phrase::TranslationsApi.new
 project_id = 'project_id_example' # String | Project ID
-translations_list_parameters = Phrase::TranslationsListParameters.new # TranslationsListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  branch: 'my-feature-branch', # String | specify the branch to use
+  sort: 'updated_at', # String | Sort criteria. Can be one of: key_name, created_at, updated_at.
+  order: 'desc', # String | Order direction. Can be one of: asc, desc.
+  q: 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' # String | q_description_placeholder
 }
 
 begin
   #List all translations
-  result = api_instance.translations_list(project_id, translations_list_parameters, opts)
+  result = api_instance.translations_list(project_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translations_list: #{e}"
@@ -866,10 +881,13 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **translations_list_parameters** | [**TranslationsListParameters**](TranslationsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+ **sort** | **String**| Sort criteria. Can be one of: key_name, created_at, updated_at. | [optional] 
+ **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
+ **q** | **String**| q_description_placeholder | [optional] 
 
 ### Return type
 
@@ -881,7 +899,7 @@ Response<([**Array&lt;Translation&gt;**](Translation.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

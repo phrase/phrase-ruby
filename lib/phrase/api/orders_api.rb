@@ -163,12 +163,12 @@ module Phrase
     # Cancel an existing order. Must not yet be confirmed.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param order_delete_parameters [OrderDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [nil]
-    def order_delete(project_id, id, order_delete_parameters, opts = {})
-      order_delete_with_http_info(project_id, id, order_delete_parameters, opts)
+    def order_delete(project_id, id, opts = {})
+      order_delete_with_http_info(project_id, id, opts)
       nil
     end
 
@@ -176,11 +176,11 @@ module Phrase
     # Cancel an existing order. Must not yet be confirmed.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param order_delete_parameters [OrderDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def order_delete_with_http_info(project_id, id, order_delete_parameters, opts = {})
+    def order_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.order_delete ...'
       end
@@ -192,27 +192,22 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling OrdersApi.order_delete"
       end
-      # verify the required parameter 'order_delete_parameters' is set
-      if @api_client.config.client_side_validation && order_delete_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'order_delete_parameters' when calling OrdersApi.order_delete"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/orders/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(order_delete_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] 
@@ -241,12 +236,12 @@ module Phrase
     # Get details on a single order.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param order_show_parameters [OrderShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [TranslationOrder]
-    def order_show(project_id, id, order_show_parameters, opts = {})
-      data, _status_code, _headers = order_show_with_http_info(project_id, id, order_show_parameters, opts)
+    def order_show(project_id, id, opts = {})
+      data, _status_code, _headers = order_show_with_http_info(project_id, id, opts)
       data
     end
 
@@ -254,11 +249,11 @@ module Phrase
     # Get details on a single order.
     # @param project_id [String] Project ID
     # @param id [String] ID
-    # @param order_show_parameters [OrderShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(TranslationOrder)>, Integer, Hash)>] Response<(TranslationOrder)> data, response status code and response headers
-    def order_show_with_http_info(project_id, id, order_show_parameters, opts = {})
+    def order_show_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.order_show ...'
       end
@@ -270,29 +265,24 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling OrdersApi.order_show"
       end
-      # verify the required parameter 'order_show_parameters' is set
-      if @api_client.config.client_side_validation && order_show_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'order_show_parameters' when calling OrdersApi.order_show"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/orders/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(order_show_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'TranslationOrder' 
@@ -320,37 +310,33 @@ module Phrase
     # List orders
     # List all orders for the given project.
     # @param project_id [String] Project ID
-    # @param orders_list_parameters [OrdersListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<TranslationOrder>]
-    def orders_list(project_id, orders_list_parameters, opts = {})
-      data, _status_code, _headers = orders_list_with_http_info(project_id, orders_list_parameters, opts)
+    def orders_list(project_id, opts = {})
+      data, _status_code, _headers = orders_list_with_http_info(project_id, opts)
       data
     end
 
     # List orders
     # List all orders for the given project.
     # @param project_id [String] Project ID
-    # @param orders_list_parameters [OrdersListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(Array<TranslationOrder>)>, Integer, Hash)>] Response<(Array<TranslationOrder>)> data, response status code and response headers
-    def orders_list_with_http_info(project_id, orders_list_parameters, opts = {})
+    def orders_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.orders_list ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling OrdersApi.orders_list"
-      end
-      # verify the required parameter 'orders_list_parameters' is set
-      if @api_client.config.client_side_validation && orders_list_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'orders_list_parameters' when calling OrdersApi.orders_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/orders'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -359,20 +345,19 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(orders_list_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'Array<TranslationOrder>' 

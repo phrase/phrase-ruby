@@ -148,7 +148,7 @@ Response<(nil (empty response body))>
 
 ## job_delete
 
-> job_delete(project_id, id, job_delete_parameters, opts)
+> job_delete(project_id, id, opts)
 
 Delete a job
 
@@ -174,14 +174,14 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_delete_parameters = Phrase::JobDeleteParameters.new # JobDeleteParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Delete a job
-  api_instance.job_delete(project_id, id, job_delete_parameters, opts)
+  api_instance.job_delete(project_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_delete: #{e}"
 end
@@ -194,8 +194,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **job_delete_parameters** | [**JobDeleteParameters**](JobDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -207,7 +207,7 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -279,7 +279,7 @@ Response<([**JobDetails**](JobDetails.md))>
 
 ## job_keys_delete
 
-> job_keys_delete(project_id, id, job_keys_delete_parameters, opts)
+> job_keys_delete(project_id, id, opts)
 
 Remove keys from job
 
@@ -305,14 +305,15 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_keys_delete_parameters = Phrase::JobKeysDeleteParameters.new # JobKeysDeleteParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch', # String | specify the branch to use
+  translation_key_ids: ['[\"abcd1234cdef1234abcd1234cdef1234\"]'] # Array<String> | ids of keys that should added to the job
 }
 
 begin
   #Remove keys from job
-  api_instance.job_keys_delete(project_id, id, job_keys_delete_parameters, opts)
+  api_instance.job_keys_delete(project_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_keys_delete: #{e}"
 end
@@ -325,8 +326,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **job_keys_delete_parameters** | [**JobKeysDeleteParameters**](JobKeysDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+ **translation_key_ids** | [**Array&lt;String&gt;**](String.md)| ids of keys that should added to the job | [optional] 
 
 ### Return type
 
@@ -338,7 +340,7 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
@@ -410,7 +412,7 @@ Response<([**JobDetails**](JobDetails.md))>
 
 ## job_show
 
-> JobDetails job_show(project_id, id, job_show_parameters, opts)
+> JobDetails job_show(project_id, id, opts)
 
 Get a single job
 
@@ -436,14 +438,14 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_show_parameters = Phrase::JobShowParameters.new # JobShowParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Get a single job
-  result = api_instance.job_show(project_id, id, job_show_parameters, opts)
+  result = api_instance.job_show(project_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_show: #{e}"
@@ -457,8 +459,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **job_show_parameters** | [**JobShowParameters**](JobShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -470,7 +472,7 @@ Response<([**JobDetails**](JobDetails.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -608,7 +610,7 @@ Response<([**JobDetails**](JobDetails.md))>
 
 ## jobs_list
 
-> Array&lt;Job&gt; jobs_list(project_id, jobs_list_parameters, opts)
+> Array&lt;Job&gt; jobs_list(project_id, opts)
 
 List jobs
 
@@ -633,16 +635,19 @@ end
 
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
-jobs_list_parameters = Phrase::JobsListParameters.new # JobsListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  branch: 'my-feature-branch', # String | specify the branch to use
+  owned_by: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user owning job
+  assigned_to: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user assigned to job
+  state: 'completed' # String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
 }
 
 begin
   #List jobs
-  result = api_instance.jobs_list(project_id, jobs_list_parameters, opts)
+  result = api_instance.jobs_list(project_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->jobs_list: #{e}"
@@ -655,10 +660,13 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **jobs_list_parameters** | [**JobsListParameters**](JobsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+ **owned_by** | **String**| filter by user owning job | [optional] 
+ **assigned_to** | **String**| filter by user assigned to job | [optional] 
+ **state** | **String**| filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional] 
 
 ### Return type
 
@@ -670,6 +678,6 @@ Response<([**Array&lt;Job&gt;**](Job.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

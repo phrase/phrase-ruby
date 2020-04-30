@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## version_show
 
-> TranslationVersionWithUser version_show(project_id, translation_id, id, version_show_parameters, opts)
+> TranslationVersionWithUser version_show(project_id, translation_id, id, opts)
 
 Get a single version
 
@@ -38,14 +38,14 @@ api_instance = Phrase::VersionsHistoryApi.new
 project_id = 'project_id_example' # String | Project ID
 translation_id = 'translation_id_example' # String | Translation ID
 id = 'id_example' # String | ID
-version_show_parameters = Phrase::VersionShowParameters.new # VersionShowParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Get a single version
-  result = api_instance.version_show(project_id, translation_id, id, version_show_parameters, opts)
+  result = api_instance.version_show(project_id, translation_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling VersionsHistoryApi->version_show: #{e}"
@@ -60,8 +60,8 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **translation_id** | **String**| Translation ID | 
  **id** | **String**| ID | 
- **version_show_parameters** | [**VersionShowParameters**](VersionShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -73,13 +73,13 @@ Response<([**TranslationVersionWithUser**](TranslationVersionWithUser.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
 ## versions_list
 
-> Array&lt;TranslationVersion&gt; versions_list(project_id, translation_id, versions_list_parameters, opts)
+> Array&lt;TranslationVersion&gt; versions_list(project_id, translation_id, opts)
 
 List all versions
 
@@ -105,16 +105,16 @@ end
 api_instance = Phrase::VersionsHistoryApi.new
 project_id = 'project_id_example' # String | Project ID
 translation_id = 'translation_id_example' # String | Translation ID
-versions_list_parameters = Phrase::VersionsListParameters.new # VersionsListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #List all versions
-  result = api_instance.versions_list(project_id, translation_id, versions_list_parameters, opts)
+  result = api_instance.versions_list(project_id, translation_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling VersionsHistoryApi->versions_list: #{e}"
@@ -128,10 +128,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **translation_id** | **String**| Translation ID | 
- **versions_list_parameters** | [**VersionsListParameters**](VersionsListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -143,6 +143,6 @@ Response<([**Array&lt;TranslationVersion&gt;**](TranslationVersion.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

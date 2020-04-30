@@ -98,12 +98,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_delete_parameters [JobLocaleDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [nil]
-    def job_locale_delete(project_id, job_id, id, job_locale_delete_parameters, opts = {})
-      job_locale_delete_with_http_info(project_id, job_id, id, job_locale_delete_parameters, opts)
+    def job_locale_delete(project_id, job_id, id, opts = {})
+      job_locale_delete_with_http_info(project_id, job_id, id, opts)
       nil
     end
 
@@ -112,11 +112,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_delete_parameters [JobLocaleDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def job_locale_delete_with_http_info(project_id, job_id, id, job_locale_delete_parameters, opts = {})
+    def job_locale_delete_with_http_info(project_id, job_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locale_delete ...'
       end
@@ -132,27 +132,22 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling JobLocalesApi.job_locale_delete"
       end
-      # verify the required parameter 'job_locale_delete_parameters' is set
-      if @api_client.config.client_side_validation && job_locale_delete_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'job_locale_delete_parameters' when calling JobLocalesApi.job_locale_delete"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{job_id}/locales/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_delete_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] 
@@ -268,12 +263,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_show_parameters [JobLocaleShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [JobLocale]
-    def job_locale_show(project_id, job_id, id, job_locale_show_parameters, opts = {})
-      data, _status_code, _headers = job_locale_show_with_http_info(project_id, job_id, id, job_locale_show_parameters, opts)
+    def job_locale_show(project_id, job_id, id, opts = {})
+      data, _status_code, _headers = job_locale_show_with_http_info(project_id, job_id, id, opts)
       data
     end
 
@@ -282,11 +277,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
-    # @param job_locale_show_parameters [JobLocaleShowParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(JobLocale)>, Integer, Hash)>] Response<(JobLocale)> data, response status code and response headers
-    def job_locale_show_with_http_info(project_id, job_id, id, job_locale_show_parameters, opts = {})
+    def job_locale_show_with_http_info(project_id, job_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locale_show ...'
       end
@@ -302,29 +297,24 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling JobLocalesApi.job_locale_show"
       end
-      # verify the required parameter 'job_locale_show_parameters' is set
-      if @api_client.config.client_side_validation && job_locale_show_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'job_locale_show_parameters' when calling JobLocalesApi.job_locale_show"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{job_id}/locale/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_locale_show_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'JobLocale' 
@@ -517,14 +507,14 @@ module Phrase
     # List all job locales for a given job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
-    # @param job_locales_list_parameters [JobLocalesListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<JobLocale>]
-    def job_locales_list(project_id, job_id, job_locales_list_parameters, opts = {})
-      data, _status_code, _headers = job_locales_list_with_http_info(project_id, job_id, job_locales_list_parameters, opts)
+    def job_locales_list(project_id, job_id, opts = {})
+      data, _status_code, _headers = job_locales_list_with_http_info(project_id, job_id, opts)
       data
     end
 
@@ -532,13 +522,13 @@ module Phrase
     # List all job locales for a given job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
-    # @param job_locales_list_parameters [JobLocalesListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(Array<JobLocale>)>, Integer, Hash)>] Response<(Array<JobLocale>)> data, response status code and response headers
-    def job_locales_list_with_http_info(project_id, job_id, job_locales_list_parameters, opts = {})
+    def job_locales_list_with_http_info(project_id, job_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobLocalesApi.job_locales_list ...'
       end
@@ -550,10 +540,6 @@ module Phrase
       if @api_client.config.client_side_validation && job_id.nil?
         fail ArgumentError, "Missing the required parameter 'job_id' when calling JobLocalesApi.job_locales_list"
       end
-      # verify the required parameter 'job_locales_list_parameters' is set
-      if @api_client.config.client_side_validation && job_locales_list_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'job_locales_list_parameters' when calling JobLocalesApi.job_locales_list"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{job_id}/locales'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s))
 
@@ -561,20 +547,19 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(job_locales_list_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'Array<JobLocale>' 

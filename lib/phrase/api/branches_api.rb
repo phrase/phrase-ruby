@@ -11,12 +11,11 @@ module Phrase
     # Compare branch with main branch.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_compare_parameters [BranchCompareParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
-    def branch_compare(project_id, name, branch_compare_parameters, opts = {})
-      branch_compare_with_http_info(project_id, name, branch_compare_parameters, opts)
+    def branch_compare(project_id, name, opts = {})
+      branch_compare_with_http_info(project_id, name, opts)
       nil
     end
 
@@ -24,11 +23,10 @@ module Phrase
     # Compare branch with main branch.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_compare_parameters [BranchCompareParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
-    def branch_compare_with_http_info(project_id, name, branch_compare_parameters, opts = {})
+    def branch_compare_with_http_info(project_id, name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BranchesApi.branch_compare ...'
       end
@@ -40,10 +38,6 @@ module Phrase
       if @api_client.config.client_side_validation && name.nil?
         fail ArgumentError, "Missing the required parameter 'name' when calling BranchesApi.branch_compare"
       end
-      # verify the required parameter 'branch_compare_parameters' is set
-      if @api_client.config.client_side_validation && branch_compare_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'branch_compare_parameters' when calling BranchesApi.branch_compare"
-      end
       # resource path
       local_var_path = '/projects/{project_id}/branches/{name}/compare'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'name' + '}', CGI.escape(name.to_s))
 
@@ -52,15 +46,13 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(branch_compare_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] 

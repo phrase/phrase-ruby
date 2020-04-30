@@ -78,7 +78,7 @@ Response<(nil (empty response body))>
 
 ## locale_delete
 
-> locale_delete(project_id, id, locale_delete_parameters, opts)
+> locale_delete(project_id, id, opts)
 
 Delete a locale
 
@@ -104,14 +104,14 @@ end
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-locale_delete_parameters = Phrase::LocaleDeleteParameters.new # LocaleDeleteParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Delete a locale
-  api_instance.locale_delete(project_id, id, locale_delete_parameters, opts)
+  api_instance.locale_delete(project_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locale_delete: #{e}"
 end
@@ -124,8 +124,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **locale_delete_parameters** | [**LocaleDeleteParameters**](LocaleDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -137,13 +137,13 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## locale_download
 
-> locale_download(project_id, id, locale_download_parameters, opts)
+> locale_download(project_id, id, opts)
 
 Download a locale
 
@@ -169,14 +169,27 @@ end
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-locale_download_parameters = Phrase::LocaleDownloadParameters.new # LocaleDownloadParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch', # String | specify the branch to use
+  file_format: 'yml', # String | File format name. See the format guide for all supported file formats.
+  tags: 'feature1,feature2', # String | Limit results to keys tagged with a list of comma separated tag names.
+  tag: 'feature', # String | Limit download to tagged keys. This parameter is deprecated. Please use the \"tags\" parameter instead
+  include_empty_translations: true, # Boolean | Indicates whether keys without translations should be included in the output as well.
+  include_translated_keys: true, # Boolean | Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys.
+  keep_notranslate_tags: true, # Boolean | Indicates whether [NOTRANSLATE] tags should be kept.
+  convert_emoji: true, # Boolean | This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively.
+  format_options: nil, # Object | Additional formatting and render options. See the <a href=\"https://help.phrase.com/help/supported-platforms-and-formats\">format guide</a> for a list of options available for each format. Specify format options like this: <code>...&format_options[foo]=bar</code>
+  encoding: 'encoding_example', # String | Enforces a specific encoding on the file contents. Valid options are \"UTF-8\", \"UTF-16\" and \"ISO-8859-1\".
+  skip_unverified_translations: true, # Boolean | Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with <code>include_unverified_translations</code>.
+  include_unverified_translations: true, # Boolean | if set to false unverified translations are excluded
+  use_last_reviewed_version: true, # Boolean | If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project.
+  fallback_locale_id: 'fallback_locale_id_example' # String | If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to <code>true</code>.
 }
 
 begin
   #Download a locale
-  api_instance.locale_download(project_id, id, locale_download_parameters, opts)
+  api_instance.locale_download(project_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locale_download: #{e}"
 end
@@ -189,8 +202,21 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **locale_download_parameters** | [**LocaleDownloadParameters**](LocaleDownloadParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+ **file_format** | **String**| File format name. See the format guide for all supported file formats. | [optional] 
+ **tags** | **String**| Limit results to keys tagged with a list of comma separated tag names. | [optional] 
+ **tag** | **String**| Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead | [optional] 
+ **include_empty_translations** | **Boolean**| Indicates whether keys without translations should be included in the output as well. | [optional] 
+ **include_translated_keys** | **Boolean**| Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys. | [optional] 
+ **keep_notranslate_tags** | **Boolean**| Indicates whether [NOTRANSLATE] tags should be kept. | [optional] 
+ **convert_emoji** | **Boolean**| This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively. | [optional] 
+ **format_options** | [**Object**](.md)| Additional formatting and render options. See the &lt;a href&#x3D;\&quot;https://help.phrase.com/help/supported-platforms-and-formats\&quot;&gt;format guide&lt;/a&gt; for a list of options available for each format. Specify format options like this: &lt;code&gt;...&amp;format_options[foo]&#x3D;bar&lt;/code&gt; | [optional] 
+ **encoding** | **String**| Enforces a specific encoding on the file contents. Valid options are \&quot;UTF-8\&quot;, \&quot;UTF-16\&quot; and \&quot;ISO-8859-1\&quot;. | [optional] 
+ **skip_unverified_translations** | **Boolean**| Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &lt;code&gt;include_unverified_translations&lt;/code&gt;. | [optional] 
+ **include_unverified_translations** | **Boolean**| if set to false unverified translations are excluded | [optional] 
+ **use_last_reviewed_version** | **Boolean**| If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project. | [optional] 
+ **fallback_locale_id** | **String**| If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. | [optional] 
 
 ### Return type
 
@@ -202,13 +228,13 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 
 ## locale_show
 
-> LocaleDetails locale_show(project_id, id, locale_show_parameters, opts)
+> LocaleDetails locale_show(project_id, id, opts)
 
 Get a single locale
 
@@ -234,14 +260,14 @@ end
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-locale_show_parameters = Phrase::LocaleShowParameters.new # LocaleShowParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #Get a single locale
-  result = api_instance.locale_show(project_id, id, locale_show_parameters, opts)
+  result = api_instance.locale_show(project_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locale_show: #{e}"
@@ -255,8 +281,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
- **locale_show_parameters** | [**LocaleShowParameters**](LocaleShowParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -268,7 +294,7 @@ Response<([**LocaleDetails**](LocaleDetails.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -340,7 +366,7 @@ Response<([**LocaleDetails**](LocaleDetails.md))>
 
 ## locales_list
 
-> Array&lt;Locale&gt; locales_list(project_id, locales_list_parameters, opts)
+> Array&lt;Locale&gt; locales_list(project_id, opts)
 
 List locales
 
@@ -365,16 +391,16 @@ end
 
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
-locales_list_parameters = Phrase::LocalesListParameters.new # LocalesListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
   #List locales
-  result = api_instance.locales_list(project_id, locales_list_parameters, opts)
+  result = api_instance.locales_list(project_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locales_list: #{e}"
@@ -387,10 +413,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **locales_list_parameters** | [**LocalesListParameters**](LocalesListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -402,6 +428,6 @@ Response<([**Array&lt;Locale&gt;**](Locale.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

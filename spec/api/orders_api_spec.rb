@@ -54,9 +54,9 @@ describe 'OrdersApi' do
   # Cancel an existing order. Must not yet be confirmed.
   # @param project_id Project ID
   # @param id ID
-  # @param order_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [nil]
   describe 'order_delete test' do
     it 'should work' do
@@ -69,9 +69,9 @@ describe 'OrdersApi' do
   # Get details on a single order.
   # @param project_id Project ID
   # @param id ID
-  # @param order_show_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [TranslationOrder]
   describe 'order_show test' do
     it 'should work' do
@@ -83,11 +83,11 @@ describe 'OrdersApi' do
   # List orders
   # List all orders for the given project.
   # @param project_id Project ID
-  # @param orders_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+  # @option opts [String] :branch specify the branch to use
   # @return [Array<TranslationOrder>]
   describe 'orders_list test' do
     it 'should work' do
