@@ -30,7 +30,7 @@ module Phrase
         :'role' => :'String',
         :'project_ids' => :'String',
         :'locale_ids' => :'String',
-        :'permissions' => :'Object'
+        :'permissions' => :'Hash<String, String>'
       }
     end
 
@@ -68,7 +68,9 @@ module Phrase
       end
 
       if attributes.key?(:'permissions')
-        self.permissions = attributes[:'permissions']
+        if (value = attributes[:'permissions']).is_a?(Hash)
+          self.permissions = value
+        end
       end
     end
 

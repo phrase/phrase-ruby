@@ -42,7 +42,7 @@ module Phrase
         :'name' => :'String',
         :'project_id' => :'String',
         :'platforms' => :'Array<String>',
-        :'format_options' => :'Object',
+        :'format_options' => :'Hash<String, String>',
         :'fallback_to_non_regional_locale' => :'Boolean',
         :'fallback_to_default_locale' => :'Boolean',
         :'use_last_reviewed_version' => :'Boolean'
@@ -85,7 +85,9 @@ module Phrase
       end
 
       if attributes.key?(:'format_options')
-        self.format_options = attributes[:'format_options']
+        if (value = attributes[:'format_options']).is_a?(Hash)
+          self.format_options = value
+        end
       end
 
       if attributes.key?(:'fallback_to_non_regional_locale')
