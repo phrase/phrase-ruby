@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## upload_create
 
-> upload_create(project_id, upload_create_parameters, opts)
+> upload_create(project_id, opts)
 
 Upload a new file
 
@@ -37,14 +37,26 @@ end
 
 api_instance = Phrase::UploadsApi.new
 project_id = 'project_id_example' # String | Project ID
-upload_create_parameters = Phrase::UploadCreateParameters.new # UploadCreateParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'branch_example', # String | specify the branch to use
+  file: File.new('/path/to/file'), # File | File to be imported
+  file_format: 'file_format_example', # String | File format. Auto-detected when possible and not specified.
+  locale_id: 'locale_id_example', # String | Locale of the file's content. Can be the name or public id of the locale. Preferred is the public id.
+  tags: 'tags_example', # String | List of tags separated by comma to be associated with the new keys contained in the upload.
+  update_translations: true, # Boolean | Indicates whether existing translations should be updated with the file content.
+  update_descriptions: true, # Boolean | Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
+  convert_emoji: true, # Boolean | This option is obsolete. Providing the option will cause a bad request error.
+  skip_upload_tags: true, # Boolean | Indicates whether the upload should not create upload tags.
+  skip_unverification: true, # Boolean | Indicates whether the upload should unverify updated translations.
+  file_encoding: 'file_encoding_example', # String | Enforces a specific encoding on the file contents. Valid options are \\\"UTF-8\\\", \\\"UTF-16\\\" and \\\"ISO-8859-1\\\".
+  autotranslate: true, # Boolean | If set, translations for the uploaded language will be fetched automatically.
+  mark_reviewed: true # Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
 }
 
 begin
   #Upload a new file
-  api_instance.upload_create(project_id, upload_create_parameters, opts)
+  api_instance.upload_create(project_id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling UploadsApi->upload_create: #{e}"
 end
@@ -56,8 +68,20 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **upload_create_parameters** | [**UploadCreateParameters**](UploadCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+ **file** | **File**| File to be imported | [optional] 
+ **file_format** | **String**| File format. Auto-detected when possible and not specified. | [optional] 
+ **locale_id** | **String**| Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. | [optional] 
+ **tags** | **String**| List of tags separated by comma to be associated with the new keys contained in the upload. | [optional] 
+ **update_translations** | **Boolean**| Indicates whether existing translations should be updated with the file content. | [optional] 
+ **update_descriptions** | **Boolean**| Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. | [optional] 
+ **convert_emoji** | **Boolean**| This option is obsolete. Providing the option will cause a bad request error. | [optional] 
+ **skip_upload_tags** | **Boolean**| Indicates whether the upload should not create upload tags. | [optional] 
+ **skip_unverification** | **Boolean**| Indicates whether the upload should unverify updated translations. | [optional] 
+ **file_encoding** | **String**| Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;. | [optional] 
+ **autotranslate** | **Boolean**| If set, translations for the uploaded language will be fetched automatically. | [optional] 
+ **mark_reviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. | [optional] 
 
 ### Return type
 
@@ -69,7 +93,7 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: multipart/form-data
 - **Accept**: Not defined
 
 
