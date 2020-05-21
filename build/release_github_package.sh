@@ -20,9 +20,6 @@ echo ":github: Bearer ${GITHUB_TOKEN}" >> ~/.gem/credentials
 echo "Building the gem"
 gem build *.gemspec
 
-echo "Pushing the built gem to GitHub Package Registry"
-gem push --key github --host "https://rubygems.pkg.github.com/${OWNER}" *.gem
-
 # Create release
 function create_release_data()
 {
@@ -58,5 +55,9 @@ for file in "$DIST_DIR"/*.gem; do
     curl --data-binary @"$file" -H "Content-Type: application/octet-stream" $asset > /dev/null
     echo Hash: $(sha256sum $file)
 done
+
+echo "Pushing the built gem to GitHub Package Registry"
+mv phrase-${VERSION}.gem phrase-ruby-${VERSION}.gem
+gem push --key github --host "https://rubygems.pkg.github.com/${OWNER}" phrase-ruby-${VERSION}.gem
 
 echo "Release successful"
