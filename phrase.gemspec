@@ -9,11 +9,16 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Phrase"]
   s.email       = ["support@phrase.com"]
-  s.homepage    = "https://developers.phrase.com/api/"
+  s.homepage    = "https://phrase.com"
   s.summary     = "You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account."
   s.description = "Phrase is a translation management platform for software projects."
   s.license     = 'MIT'
   s.required_ruby_version = ">= 1.9"
+
+  s.metadata = {
+    "bug_tracker_uri"   => "https://github.com/phrase/phrase-ruby/issues",
+    "source_code_uri"   => "https://github.com/phrase/phrase-ruby"
+  }
 
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
   s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'
