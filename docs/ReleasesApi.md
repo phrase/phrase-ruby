@@ -34,8 +34,7 @@ Phrase.configure do |config|
 
   # Configure API key authorization: Token
   config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Authorization'] = 'Bearer'
+  config.api_key_prefix['Authorization'] = 'token'
 end
 
 api_instance = Phrase::ReleasesApi.new
@@ -99,8 +98,7 @@ Phrase.configure do |config|
 
   # Configure API key authorization: Token
   config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Authorization'] = 'Bearer'
+  config.api_key_prefix['Authorization'] = 'token'
 end
 
 api_instance = Phrase::ReleasesApi.new
@@ -164,8 +162,7 @@ Phrase.configure do |config|
 
   # Configure API key authorization: Token
   config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Authorization'] = 'Bearer'
+  config.api_key_prefix['Authorization'] = 'token'
 end
 
 api_instance = Phrase::ReleasesApi.new
@@ -230,8 +227,7 @@ Phrase.configure do |config|
 
   # Configure API key authorization: Token
   config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Authorization'] = 'Bearer'
+  config.api_key_prefix['Authorization'] = 'token'
 end
 
 api_instance = Phrase::ReleasesApi.new
@@ -296,8 +292,7 @@ Phrase.configure do |config|
 
   # Configure API key authorization: Token
   config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Authorization'] = 'Bearer'
+  config.api_key_prefix['Authorization'] = 'token'
 end
 
 api_instance = Phrase::ReleasesApi.new
@@ -364,8 +359,7 @@ Phrase.configure do |config|
 
   # Configure API key authorization: Token
   config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Authorization'] = 'Bearer'
+  config.api_key_prefix['Authorization'] = 'token'
 end
 
 api_instance = Phrase::ReleasesApi.new
