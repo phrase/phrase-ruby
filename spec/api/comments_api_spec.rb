@@ -28,7 +28,7 @@ describe 'CommentsApi' do
   # @param comment_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [nil]
+  # @return [Comment]
   describe 'comment_create test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

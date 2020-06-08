@@ -78,7 +78,7 @@ Response<(nil (empty response body))>
 
 ## branch_create
 
-> branch_create(project_id, branch_create_parameters, opts)
+> Branch branch_create(project_id, branch_create_parameters, opts)
 
 Create a branch
 
@@ -109,7 +109,8 @@ opts = {
 
 begin
   #Create a branch
-  api_instance.branch_create(project_id, branch_create_parameters, opts)
+  result = api_instance.branch_create(project_id, branch_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling BranchesApi->branch_create: #{e}"
 end
@@ -126,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**Branch**](Branch.md))>
 
 ### Authorization
 
@@ -135,7 +136,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## branch_delete

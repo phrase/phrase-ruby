@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 ## translation_create
 
-> translation_create(project_id, translation_create_parameters, opts)
+> TranslationDetails translation_create(project_id, translation_create_parameters, opts)
 
 Create a translation
 
@@ -57,7 +57,8 @@ opts = {
 
 begin
   #Create a translation
-  api_instance.translation_create(project_id, translation_create_parameters, opts)
+  result = api_instance.translation_create(project_id, translation_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TranslationsApi->translation_create: #{e}"
 end
@@ -74,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**TranslationDetails**](TranslationDetails.md))>
 
 ### Authorization
 
@@ -83,7 +84,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## translation_exclude

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## screenshot_marker_create
 
-> screenshot_marker_create(project_id, screenshot_id, screenshot_marker_create_parameters, opts)
+> ScreenshotMarker screenshot_marker_create(project_id, screenshot_id, screenshot_marker_create_parameters, opts)
 
 Create a screenshot marker
 
@@ -46,7 +46,8 @@ opts = {
 
 begin
   #Create a screenshot marker
-  api_instance.screenshot_marker_create(project_id, screenshot_id, screenshot_marker_create_parameters, opts)
+  result = api_instance.screenshot_marker_create(project_id, screenshot_id, screenshot_marker_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling ScreenshotMarkersApi->screenshot_marker_create: #{e}"
 end
@@ -64,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**ScreenshotMarker**](ScreenshotMarker.md))>
 
 ### Authorization
 
@@ -73,7 +74,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## screenshot_marker_delete

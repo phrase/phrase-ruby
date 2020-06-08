@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## screenshot_create
 
-> screenshot_create(project_id, screenshot_create_parameters, opts)
+> Screenshot screenshot_create(project_id, screenshot_create_parameters, opts)
 
 Create a screenshot
 
@@ -45,7 +45,8 @@ opts = {
 
 begin
   #Create a screenshot
-  api_instance.screenshot_create(project_id, screenshot_create_parameters, opts)
+  result = api_instance.screenshot_create(project_id, screenshot_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling ScreenshotsApi->screenshot_create: #{e}"
 end
@@ -62,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**Screenshot**](Screenshot.md))>
 
 ### Authorization
 
@@ -71,7 +72,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## screenshot_delete

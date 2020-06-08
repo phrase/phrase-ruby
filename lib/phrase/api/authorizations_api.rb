@@ -12,10 +12,10 @@ module Phrase
     # @param authorization_create_parameters [AuthorizationCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [nil]
+    # @return [AuthorizationWithToken]
     def authorization_create(authorization_create_parameters, opts = {})
-      authorization_create_with_http_info(authorization_create_parameters, opts)
-      nil
+      data, _status_code, _headers = authorization_create_with_http_info(authorization_create_parameters, opts)
+      data
     end
 
     # Create an authorization
@@ -23,7 +23,7 @@ module Phrase
     # @param authorization_create_parameters [AuthorizationCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response<(AuthorizationWithToken)>, Integer, Hash)>] Response<(AuthorizationWithToken)> data, response status code and response headers
     def authorization_create_with_http_info(authorization_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AuthorizationsApi.authorization_create ...'
@@ -40,6 +40,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
@@ -51,7 +53,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(authorization_create_parameters) 
 
       # return_type
-      return_type = opts[:return_type] 
+      return_type = opts[:return_type] || 'AuthorizationWithToken' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

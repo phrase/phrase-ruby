@@ -79,7 +79,7 @@ Response<([**TranslationOrder**](TranslationOrder.md))>
 
 ## order_create
 
-> order_create(project_id, order_create_parameters, opts)
+> TranslationOrder order_create(project_id, order_create_parameters, opts)
 
 Create a new order
 
@@ -110,7 +110,8 @@ opts = {
 
 begin
   #Create a new order
-  api_instance.order_create(project_id, order_create_parameters, opts)
+  result = api_instance.order_create(project_id, order_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling OrdersApi->order_create: #{e}"
 end
@@ -127,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**TranslationOrder**](TranslationOrder.md))>
 
 ### Authorization
 
@@ -136,7 +137,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## order_delete

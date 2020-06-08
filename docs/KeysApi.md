@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## key_create
 
-> key_create(project_id, key_create_parameters, opts)
+> TranslationKeyDetails key_create(project_id, key_create_parameters, opts)
 
 Create a key
 
@@ -49,7 +49,8 @@ opts = {
 
 begin
   #Create a key
-  api_instance.key_create(project_id, key_create_parameters, opts)
+  result = api_instance.key_create(project_id, key_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling KeysApi->key_create: #{e}"
 end
@@ -66,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**TranslationKeyDetails**](TranslationKeyDetails.md))>
 
 ### Authorization
 
@@ -75,7 +76,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## key_delete

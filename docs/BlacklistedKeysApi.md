@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## blacklisted_key_create
 
-> blacklisted_key_create(project_id, blacklisted_key_create_parameters, opts)
+> BlacklistedKey blacklisted_key_create(project_id, blacklisted_key_create_parameters, opts)
 
 Create a blacklisted key
 
@@ -45,7 +45,8 @@ opts = {
 
 begin
   #Create a blacklisted key
-  api_instance.blacklisted_key_create(project_id, blacklisted_key_create_parameters, opts)
+  result = api_instance.blacklisted_key_create(project_id, blacklisted_key_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling BlacklistedKeysApi->blacklisted_key_create: #{e}"
 end
@@ -62,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**BlacklistedKey**](BlacklistedKey.md))>
 
 ### Authorization
 
@@ -71,7 +72,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## blacklisted_key_delete

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## authorization_create
 
-> authorization_create(authorization_create_parameters, opts)
+> AuthorizationWithToken authorization_create(authorization_create_parameters, opts)
 
 Create an authorization
 
@@ -44,7 +44,8 @@ opts = {
 
 begin
   #Create an authorization
-  api_instance.authorization_create(authorization_create_parameters, opts)
+  result = api_instance.authorization_create(authorization_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling AuthorizationsApi->authorization_create: #{e}"
 end
@@ -60,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**AuthorizationWithToken**](AuthorizationWithToken.md))>
 
 ### Authorization
 
@@ -69,7 +70,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## authorization_delete

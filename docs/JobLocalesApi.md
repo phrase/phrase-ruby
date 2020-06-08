@@ -350,7 +350,7 @@ Response<([**JobLocale**](JobLocale.md))>
 
 ## job_locales_create
 
-> job_locales_create(project_id, job_id, job_locales_create_parameters, opts)
+> JobLocale job_locales_create(project_id, job_id, job_locales_create_parameters, opts)
 
 Create a job locale
 
@@ -382,7 +382,8 @@ opts = {
 
 begin
   #Create a job locale
-  api_instance.job_locales_create(project_id, job_id, job_locales_create_parameters, opts)
+  result = api_instance.job_locales_create(project_id, job_id, job_locales_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobLocalesApi->job_locales_create: #{e}"
 end
@@ -400,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**JobLocale**](JobLocale.md))>
 
 ### Authorization
 
@@ -409,7 +410,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## job_locales_list

@@ -39,7 +39,7 @@ describe 'UploadsApi' do
   # @option opts [String] :file_encoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;.
   # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
   # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
-  # @return [nil]
+  # @return [Upload]
   describe 'upload_create test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

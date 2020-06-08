@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## webhook_create
 
-> webhook_create(project_id, webhook_create_parameters, opts)
+> Webhook webhook_create(project_id, webhook_create_parameters, opts)
 
 Create a webhook
 
@@ -46,7 +46,8 @@ opts = {
 
 begin
   #Create a webhook
-  api_instance.webhook_create(project_id, webhook_create_parameters, opts)
+  result = api_instance.webhook_create(project_id, webhook_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling WebhooksApi->webhook_create: #{e}"
 end
@@ -63,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**Webhook**](Webhook.md))>
 
 ### Authorization
 
@@ -72,7 +73,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## webhook_delete

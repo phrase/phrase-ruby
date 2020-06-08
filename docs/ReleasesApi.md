@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## release_create
 
-> release_create(account_id, distribution_id, release_create_parameters, opts)
+> Release release_create(account_id, distribution_id, release_create_parameters, opts)
 
 Create a release
 
@@ -47,7 +47,8 @@ opts = {
 
 begin
   #Create a release
-  api_instance.release_create(account_id, distribution_id, release_create_parameters, opts)
+  result = api_instance.release_create(account_id, distribution_id, release_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling ReleasesApi->release_create: #{e}"
 end
@@ -65,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**Release**](Release.md))>
 
 ### Authorization
 
@@ -74,7 +75,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## release_delete

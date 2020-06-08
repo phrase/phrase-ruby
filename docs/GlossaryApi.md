@@ -79,7 +79,7 @@ Response<([**Array&lt;Glossary&gt;**](Glossary.md))>
 
 ## glossary_create
 
-> glossary_create(account_id, glossary_create_parameters, opts)
+> Glossary glossary_create(account_id, glossary_create_parameters, opts)
 
 Create a glossary
 
@@ -110,7 +110,8 @@ opts = {
 
 begin
   #Create a glossary
-  api_instance.glossary_create(account_id, glossary_create_parameters, opts)
+  result = api_instance.glossary_create(account_id, glossary_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling GlossaryApi->glossary_create: #{e}"
 end
@@ -127,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**Glossary**](Glossary.md))>
 
 ### Authorization
 
@@ -136,7 +137,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## glossary_delete

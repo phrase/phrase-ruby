@@ -93,10 +93,10 @@ module Phrase
     # @param job_create_parameters [JobCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [nil]
+    # @return [JobDetails]
     def job_create(project_id, job_create_parameters, opts = {})
-      job_create_with_http_info(project_id, job_create_parameters, opts)
-      nil
+      data, _status_code, _headers = job_create_with_http_info(project_id, job_create_parameters, opts)
+      data
     end
 
     # Create a job
@@ -105,7 +105,7 @@ module Phrase
     # @param job_create_parameters [JobCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response<(JobDetails)>, Integer, Hash)>] Response<(JobDetails)> data, response status code and response headers
     def job_create_with_http_info(project_id, job_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_create ...'
@@ -126,6 +126,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
@@ -137,7 +139,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_create_parameters) 
 
       # return_type
-      return_type = opts[:return_type] 
+      return_type = opts[:return_type] || 'JobDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

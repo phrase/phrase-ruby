@@ -84,7 +84,7 @@ Response<([**JobDetails**](JobDetails.md))>
 
 ## job_create
 
-> job_create(project_id, job_create_parameters, opts)
+> JobDetails job_create(project_id, job_create_parameters, opts)
 
 Create a job
 
@@ -115,7 +115,8 @@ opts = {
 
 begin
   #Create a job
-  api_instance.job_create(project_id, job_create_parameters, opts)
+  result = api_instance.job_create(project_id, job_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_create: #{e}"
 end
@@ -132,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**JobDetails**](JobDetails.md))>
 
 ### Authorization
 
@@ -141,7 +142,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## job_delete

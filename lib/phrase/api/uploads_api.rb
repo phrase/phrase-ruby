@@ -25,10 +25,10 @@ module Phrase
     # @option opts [String] :file_encoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;.
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
-    # @return [nil]
+    # @return [Upload]
     def upload_create(project_id, opts = {})
-      upload_create_with_http_info(project_id, opts)
-      nil
+      data, _status_code, _headers = upload_create_with_http_info(project_id, opts)
+      data
     end
 
     # Upload a new file
@@ -49,7 +49,7 @@ module Phrase
     # @option opts [String] :file_encoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;.
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response<(Upload)>, Integer, Hash)>] Response<(Upload)> data, response status code and response headers
     def upload_create_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UploadsApi.upload_create ...'
@@ -66,6 +66,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
@@ -90,7 +92,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] 
+      return_type = opts[:return_type] || 'Upload' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

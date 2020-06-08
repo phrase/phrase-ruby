@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## comment_create
 
-> comment_create(project_id, key_id, comment_create_parameters, opts)
+> Comment comment_create(project_id, key_id, comment_create_parameters, opts)
 
 Create a comment
 
@@ -49,7 +49,8 @@ opts = {
 
 begin
   #Create a comment
-  api_instance.comment_create(project_id, key_id, comment_create_parameters, opts)
+  result = api_instance.comment_create(project_id, key_id, comment_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling CommentsApi->comment_create: #{e}"
 end
@@ -67,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**Comment**](Comment.md))>
 
 ### Authorization
 
@@ -76,7 +77,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## comment_delete

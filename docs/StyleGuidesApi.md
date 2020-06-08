@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## styleguide_create
 
-> styleguide_create(project_id, styleguide_create_parameters, opts)
+> StyleguideDetails styleguide_create(project_id, styleguide_create_parameters, opts)
 
 Create a style guide
 
@@ -45,7 +45,8 @@ opts = {
 
 begin
   #Create a style guide
-  api_instance.styleguide_create(project_id, styleguide_create_parameters, opts)
+  result = api_instance.styleguide_create(project_id, styleguide_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling StyleGuidesApi->styleguide_create: #{e}"
 end
@@ -62,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**StyleguideDetails**](StyleguideDetails.md))>
 
 ### Authorization
 
@@ -71,7 +72,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## styleguide_delete

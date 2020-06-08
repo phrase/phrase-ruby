@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## project_create
 
-> project_create(project_create_parameters, opts)
+> ProjectDetails project_create(project_create_parameters, opts)
 
 Create a project
 
@@ -44,7 +44,8 @@ opts = {
 
 begin
   #Create a project
-  api_instance.project_create(project_create_parameters, opts)
+  result = api_instance.project_create(project_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling ProjectsApi->project_create: #{e}"
 end
@@ -60,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**ProjectDetails**](ProjectDetails.md))>
 
 ### Authorization
 
@@ -69,7 +70,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## project_delete

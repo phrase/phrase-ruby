@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## locale_create
 
-> locale_create(project_id, locale_create_parameters, opts)
+> LocaleDetails locale_create(project_id, locale_create_parameters, opts)
 
 Create a locale
 
@@ -46,7 +46,8 @@ opts = {
 
 begin
   #Create a locale
-  api_instance.locale_create(project_id, locale_create_parameters, opts)
+  result = api_instance.locale_create(project_id, locale_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locale_create: #{e}"
 end
@@ -63,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**LocaleDetails**](LocaleDetails.md))>
 
 ### Authorization
 
@@ -72,7 +73,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## locale_delete

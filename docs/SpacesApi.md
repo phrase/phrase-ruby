@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## space_create
 
-> space_create(account_id, space_create_parameters, opts)
+> Space space_create(account_id, space_create_parameters, opts)
 
 Create a Space
 
@@ -48,7 +48,8 @@ opts = {
 
 begin
   #Create a Space
-  api_instance.space_create(account_id, space_create_parameters, opts)
+  result = api_instance.space_create(account_id, space_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling SpacesApi->space_create: #{e}"
 end
@@ -65,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**Space**](Space.md))>
 
 ### Authorization
 
@@ -74,7 +75,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## space_delete

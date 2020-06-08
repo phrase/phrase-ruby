@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## tag_create
 
-> tag_create(project_id, tag_create_parameters, opts)
+> TagWithStats tag_create(project_id, tag_create_parameters, opts)
 
 Create a tag
 
@@ -44,7 +44,8 @@ opts = {
 
 begin
   #Create a tag
-  api_instance.tag_create(project_id, tag_create_parameters, opts)
+  result = api_instance.tag_create(project_id, tag_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling TagsApi->tag_create: #{e}"
 end
@@ -61,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**TagWithStats**](TagWithStats.md))>
 
 ### Authorization
 
@@ -70,7 +71,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## tag_delete

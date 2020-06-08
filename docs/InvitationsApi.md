@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## invitation_create
 
-> invitation_create(account_id, invitation_create_parameters, opts)
+> Invitation invitation_create(account_id, invitation_create_parameters, opts)
 
 Create a new invitation
 
@@ -46,7 +46,8 @@ opts = {
 
 begin
   #Create a new invitation
-  api_instance.invitation_create(account_id, invitation_create_parameters, opts)
+  result = api_instance.invitation_create(account_id, invitation_create_parameters, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling InvitationsApi->invitation_create: #{e}"
 end
@@ -63,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**Invitation**](Invitation.md))>
 
 ### Authorization
 
@@ -72,7 +73,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## invitation_delete

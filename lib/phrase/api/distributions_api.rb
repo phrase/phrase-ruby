@@ -13,10 +13,10 @@ module Phrase
     # @param distribution_create_parameters [DistributionCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [nil]
+    # @return [Distribution]
     def distribution_create(account_id, distribution_create_parameters, opts = {})
-      distribution_create_with_http_info(account_id, distribution_create_parameters, opts)
-      nil
+      data, _status_code, _headers = distribution_create_with_http_info(account_id, distribution_create_parameters, opts)
+      data
     end
 
     # Create a distribution
@@ -25,7 +25,7 @@ module Phrase
     # @param distribution_create_parameters [DistributionCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response<(Distribution)>, Integer, Hash)>] Response<(Distribution)> data, response status code and response headers
     def distribution_create_with_http_info(account_id, distribution_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DistributionsApi.distribution_create ...'
@@ -46,6 +46,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
@@ -57,7 +59,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(distribution_create_parameters) 
 
       # return_type
-      return_type = opts[:return_type] 
+      return_type = opts[:return_type] || 'Distribution' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

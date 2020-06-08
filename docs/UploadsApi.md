@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## upload_create
 
-> upload_create(project_id, opts)
+> Upload upload_create(project_id, opts)
 
 Upload a new file
 
@@ -55,7 +55,8 @@ opts = {
 
 begin
   #Upload a new file
-  api_instance.upload_create(project_id, opts)
+  result = api_instance.upload_create(project_id, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling UploadsApi->upload_create: #{e}"
 end
@@ -84,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**Upload**](Upload.md))>
 
 ### Authorization
 
@@ -93,7 +94,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## upload_show
