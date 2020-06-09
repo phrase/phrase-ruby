@@ -502,11 +502,11 @@ Class | Method | HTTP request | Description
 *Phrase::GitLabSyncApi* | [**gitlab_sync_list**](docs/GitLabSyncApi.md#gitlab_sync_list) | **GET** /gitlab_syncs | List GitLab syncs
 *Phrase::GitLabSyncApi* | [**gitlab_sync_show**](docs/GitLabSyncApi.md#gitlab_sync_show) | **GET** /gitlab_syncs/{id} | Get single Sync Setting
 *Phrase::GitLabSyncApi* | [**gitlab_sync_update**](docs/GitLabSyncApi.md#gitlab_sync_update) | **PUT** /gitlab_syncs/{id} | Update single Sync Setting
-*Phrase::GlossaryApi* | [**glossaries_list**](docs/GlossaryApi.md#glossaries_list) | **GET** /accounts/{account_id}/glossaries | List glossaries
-*Phrase::GlossaryApi* | [**glossary_create**](docs/GlossaryApi.md#glossary_create) | **POST** /accounts/{account_id}/glossaries | Create a glossary
-*Phrase::GlossaryApi* | [**glossary_delete**](docs/GlossaryApi.md#glossary_delete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a glossary
-*Phrase::GlossaryApi* | [**glossary_show**](docs/GlossaryApi.md#glossary_show) | **GET** /accounts/{account_id}/glossaries/{id} | Get a single glossary
-*Phrase::GlossaryApi* | [**glossary_update**](docs/GlossaryApi.md#glossary_update) | **PATCH** /accounts/{account_id}/glossaries/{id} | Update a glossary
+*Phrase::GlossariesApi* | [**glossaries_list**](docs/GlossariesApi.md#glossaries_list) | **GET** /accounts/{account_id}/glossaries | List glossaries
+*Phrase::GlossariesApi* | [**glossary_create**](docs/GlossariesApi.md#glossary_create) | **POST** /accounts/{account_id}/glossaries | Create a glossary
+*Phrase::GlossariesApi* | [**glossary_delete**](docs/GlossariesApi.md#glossary_delete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a glossary
+*Phrase::GlossariesApi* | [**glossary_show**](docs/GlossariesApi.md#glossary_show) | **GET** /accounts/{account_id}/glossaries/{id} | Get a single glossary
+*Phrase::GlossariesApi* | [**glossary_update**](docs/GlossariesApi.md#glossary_update) | **PATCH** /accounts/{account_id}/glossaries/{id} | Update a glossary
 *Phrase::GlossaryTermTranslationsApi* | [**glossary_term_translation_create**](docs/GlossaryTermTranslationsApi.md#glossary_term_translation_create) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations | Create a glossary term translation
 *Phrase::GlossaryTermTranslationsApi* | [**glossary_term_translation_delete**](docs/GlossaryTermTranslationsApi.md#glossary_term_translation_delete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Delete a glossary term translation
 *Phrase::GlossaryTermTranslationsApi* | [**glossary_term_translation_update**](docs/GlossaryTermTranslationsApi.md#glossary_term_translation_update) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Update a glossary term translation

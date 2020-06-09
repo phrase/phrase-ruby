@@ -1,7 +1,7 @@
 require 'cgi'
 
 module Phrase
-  class GlossaryApi
+  class GlossariesApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
@@ -30,11 +30,11 @@ module Phrase
     # @return [Array<(Response<(Array<Glossary>)>, Integer, Hash)>] Response<(Array<Glossary>)> data, response status code and response headers
     def glossaries_list_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GlossaryApi.glossaries_list ...'
+        @api_client.config.logger.debug 'Calling API: GlossariesApi.glossaries_list ...'
       end
       # verify the required parameter 'account_id' is set
       if @api_client.config.client_side_validation && account_id.nil?
-        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossaryApi.glossaries_list"
+        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossariesApi.glossaries_list"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s))
@@ -73,7 +73,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GlossaryApi#glossaries_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GlossariesApi#glossaries_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
@@ -100,15 +100,15 @@ module Phrase
     # @return [Array<(Response<(Glossary)>, Integer, Hash)>] Response<(Glossary)> data, response status code and response headers
     def glossary_create_with_http_info(account_id, glossary_create_parameters, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GlossaryApi.glossary_create ...'
+        @api_client.config.logger.debug 'Calling API: GlossariesApi.glossary_create ...'
       end
       # verify the required parameter 'account_id' is set
       if @api_client.config.client_side_validation && account_id.nil?
-        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossaryApi.glossary_create"
+        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossariesApi.glossary_create"
       end
       # verify the required parameter 'glossary_create_parameters' is set
       if @api_client.config.client_side_validation && glossary_create_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'glossary_create_parameters' when calling GlossaryApi.glossary_create"
+        fail ArgumentError, "Missing the required parameter 'glossary_create_parameters' when calling GlossariesApi.glossary_create"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s))
@@ -147,7 +147,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GlossaryApi#glossary_create\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GlossariesApi#glossary_create\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
@@ -174,15 +174,15 @@ module Phrase
     # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
     def glossary_delete_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GlossaryApi.glossary_delete ...'
+        @api_client.config.logger.debug 'Calling API: GlossariesApi.glossary_delete ...'
       end
       # verify the required parameter 'account_id' is set
       if @api_client.config.client_side_validation && account_id.nil?
-        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossaryApi.glossary_delete"
+        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossariesApi.glossary_delete"
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling GlossaryApi.glossary_delete"
+        fail ArgumentError, "Missing the required parameter 'id' when calling GlossariesApi.glossary_delete"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -217,7 +217,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GlossaryApi#glossary_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GlossariesApi#glossary_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
@@ -244,15 +244,15 @@ module Phrase
     # @return [Array<(Response<(Glossary)>, Integer, Hash)>] Response<(Glossary)> data, response status code and response headers
     def glossary_show_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GlossaryApi.glossary_show ...'
+        @api_client.config.logger.debug 'Calling API: GlossariesApi.glossary_show ...'
       end
       # verify the required parameter 'account_id' is set
       if @api_client.config.client_side_validation && account_id.nil?
-        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossaryApi.glossary_show"
+        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossariesApi.glossary_show"
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling GlossaryApi.glossary_show"
+        fail ArgumentError, "Missing the required parameter 'id' when calling GlossariesApi.glossary_show"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -289,7 +289,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GlossaryApi#glossary_show\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GlossariesApi#glossary_show\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
@@ -318,19 +318,19 @@ module Phrase
     # @return [Array<(Response<(Glossary)>, Integer, Hash)>] Response<(Glossary)> data, response status code and response headers
     def glossary_update_with_http_info(account_id, id, glossary_update_parameters, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GlossaryApi.glossary_update ...'
+        @api_client.config.logger.debug 'Calling API: GlossariesApi.glossary_update ...'
       end
       # verify the required parameter 'account_id' is set
       if @api_client.config.client_side_validation && account_id.nil?
-        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossaryApi.glossary_update"
+        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossariesApi.glossary_update"
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling GlossaryApi.glossary_update"
+        fail ArgumentError, "Missing the required parameter 'id' when calling GlossariesApi.glossary_update"
       end
       # verify the required parameter 'glossary_update_parameters' is set
       if @api_client.config.client_side_validation && glossary_update_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'glossary_update_parameters' when calling GlossaryApi.glossary_update"
+        fail ArgumentError, "Missing the required parameter 'glossary_update_parameters' when calling GlossariesApi.glossary_update"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -369,7 +369,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GlossaryApi#glossary_update\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GlossariesApi#glossary_update\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
