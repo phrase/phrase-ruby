@@ -82,8 +82,8 @@ module Phrase
         :'skip_upload_tags' => :'Boolean',
         :'skip_unverification' => :'Boolean',
         :'file_encoding' => :'String',
-        :'locale_mapping' => :'Hash<String, String>',
-        :'format_options' => :'Hash<String, String>',
+        :'locale_mapping' => :'Object',
+        :'format_options' => :'Object',
         :'autotranslate' => :'Boolean',
         :'mark_reviewed' => :'Boolean'
       }
@@ -155,15 +155,11 @@ module Phrase
       end
 
       if attributes.key?(:'locale_mapping')
-        if (value = attributes[:'locale_mapping']).is_a?(Hash)
-          self.locale_mapping = value
-        end
+        self.locale_mapping = attributes[:'locale_mapping']
       end
 
       if attributes.key?(:'format_options')
-        if (value = attributes[:'format_options']).is_a?(Hash)
-          self.format_options = value
-        end
+        self.format_options = attributes[:'format_options']
       end
 
       if attributes.key?(:'autotranslate')

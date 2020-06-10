@@ -23,6 +23,8 @@ module Phrase
     # @option opts [Boolean] :skip_upload_tags Indicates whether the upload should not create upload tags.
     # @option opts [Boolean] :skip_unverification Indicates whether the upload should unverify updated translations.
     # @option opts [String] :file_encoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;.
+    # @option opts [Object] :locale_mapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.
+    # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for complete list.
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
     # @return [Upload]
@@ -47,6 +49,8 @@ module Phrase
     # @option opts [Boolean] :skip_upload_tags Indicates whether the upload should not create upload tags.
     # @option opts [Boolean] :skip_unverification Indicates whether the upload should unverify updated translations.
     # @option opts [String] :file_encoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;.
+    # @option opts [Object] :locale_mapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.
+    # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for complete list.
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
     # @return [Array<(Response<(Upload)>, Integer, Hash)>] Response<(Upload)> data, response status code and response headers
@@ -85,6 +89,8 @@ module Phrase
       form_params['skip_upload_tags'] = opts[:'skip_upload_tags'] if !opts[:'skip_upload_tags'].nil?
       form_params['skip_unverification'] = opts[:'skip_unverification'] if !opts[:'skip_unverification'].nil?
       form_params['file_encoding'] = opts[:'file_encoding'] if !opts[:'file_encoding'].nil?
+      form_params['locale_mapping'] = opts[:'locale_mapping'] if !opts[:'locale_mapping'].nil?
+      form_params['format_options'] = opts[:'format_options'] if !opts[:'format_options'].nil?
       form_params['autotranslate'] = opts[:'autotranslate'] if !opts[:'autotranslate'].nil?
       form_params['mark_reviewed'] = opts[:'mark_reviewed'] if !opts[:'mark_reviewed'].nil?
 
