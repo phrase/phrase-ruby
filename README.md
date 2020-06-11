@@ -380,7 +380,39 @@ For more information, please visit [https://developers.phrase.com/api/](https://
 
 ## Installation
 
-### Build a gem
+### Install from [rubygems.org](https://rubygems.org/)
+
+Install from the command line:
+
+```shell
+$ gem install phrase
+```
+
+Install via Gemfile:
+
+    gem "phrase"
+
+### Install from GitHub Packages
+
+Install from the command line:
+
+```shell
+$ gem install phrase-ruby --source "https://rubygems.pkg.github.com/phrase"
+```
+
+Install via Gemfile:
+
+    source "https://rubygems.pkg.github.com/phrase" do
+      gem "phrase-ruby"
+    end
+
+### Install from Git
+
+Add the following in the Gemfile:
+
+    gem 'phrase', git: 'https://github.com/phrase/phrase-ruby.git'
+
+### Build and install a gem on your own
 
 To build the Ruby code into a gem:
 
@@ -388,33 +420,13 @@ To build the Ruby code into a gem:
 gem build phrase.gemspec
 ```
 
-Then either install the gem locally:
+Then install the gem locally:
 
 ```shell
 gem install ./phrase-1.0.0.gem
 ```
 
 (for development, run `gem install --dev ./phrase-1.0.0.gem` to install the development dependencies)
-
-or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
-
-Finally add this to the Gemfile:
-
-    gem 'phrase', '~> 1.0.0'
-
-### Install from Git
-
-If the Ruby gem is hosted at a git repository: https://github.com/GIT_USER_ID/GIT_REPO_ID, then add the following in the Gemfile:
-
-    gem 'phrase', :git => 'https://github.com/GIT_USER_ID/GIT_REPO_ID.git'
-
-### Include the Ruby code directly
-
-Include the Ruby code directly using `-I` as follows:
-
-```shell
-ruby -Ilib script.rb
-```
 
 ## Getting Started
 
