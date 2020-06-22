@@ -8,7 +8,7 @@ module Phrase
     # File to be imported
     attr_accessor :file
 
-    # File format. Auto-detected when possible and not specified.
+    # File format. Auto-detected when possible and not specified. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.
     attr_accessor :file_format
 
     # Locale of the file's content. Can be the name or public id of the locale. Preferred is the public id.

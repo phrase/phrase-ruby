@@ -14,7 +14,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
     # @option opts [File] :file File to be imported
-    # @option opts [String] :file_format File format. Auto-detected when possible and not specified.
+    # @option opts [String] :file_format File format. Auto-detected when possible and not specified. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.
     # @option opts [String] :locale_id Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id.
     # @option opts [String] :tags List of tags separated by comma to be associated with the new keys contained in the upload.
     # @option opts [Boolean] :update_translations Indicates whether existing translations should be updated with the file content.
@@ -40,7 +40,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
     # @option opts [File] :file File to be imported
-    # @option opts [String] :file_format File format. Auto-detected when possible and not specified.
+    # @option opts [String] :file_format File format. Auto-detected when possible and not specified. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.
     # @option opts [String] :locale_id Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id.
     # @option opts [String] :tags List of tags separated by comma to be associated with the new keys contained in the upload.
     # @option opts [Boolean] :update_translations Indicates whether existing translations should be updated with the file content.
