@@ -24,23 +24,9 @@ describe 'UploadsApi' do
   # Upload a new file
   # Upload a new language file. Creates necessary resources in your project.
   # @param project_id Project ID
+  # @param upload_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :branch specify the branch to use
-  # @option opts [File] :file File to be imported
-  # @option opts [String] :file_format File format. Auto-detected when possible and not specified. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.
-  # @option opts [String] :locale_id Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id.
-  # @option opts [String] :tags List of tags separated by comma to be associated with the new keys contained in the upload.
-  # @option opts [Boolean] :update_translations Indicates whether existing translations should be updated with the file content.
-  # @option opts [Boolean] :update_descriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
-  # @option opts [Boolean] :convert_emoji This option is obsolete. Providing the option will cause a bad request error.
-  # @option opts [Boolean] :skip_upload_tags Indicates whether the upload should not create upload tags.
-  # @option opts [Boolean] :skip_unverification Indicates whether the upload should unverify updated translations.
-  # @option opts [String] :file_encoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;.
-  # @option opts [Object] :locale_mapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.
-  # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for complete list.
-  # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
-  # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
   # @return [Upload]
   describe 'upload_create test' do
     it 'should work' do

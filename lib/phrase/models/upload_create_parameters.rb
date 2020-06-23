@@ -8,7 +8,7 @@ module Phrase
     # File to be imported
     attr_accessor :file
 
-    # File format. Auto-detected when possible and not specified. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.
+    # File format. Auto-detected when possible and not specified.
     attr_accessor :file_format
 
     # Locale of the file's content. Can be the name or public id of the locale. Preferred is the public id.
@@ -82,8 +82,8 @@ module Phrase
         :'skip_upload_tags' => :'Boolean',
         :'skip_unverification' => :'Boolean',
         :'file_encoding' => :'String',
-        :'locale_mapping' => :'Object',
-        :'format_options' => :'Object',
+        :'locale_mapping' => :'Hash<String, String>',
+        :'format_options' => :'Hash<String, String>',
         :'autotranslate' => :'Boolean',
         :'mark_reviewed' => :'Boolean'
       }
@@ -155,11 +155,15 @@ module Phrase
       end
 
       if attributes.key?(:'locale_mapping')
-        self.locale_mapping = attributes[:'locale_mapping']
+        if (value = attributes[:'locale_mapping']).is_a?(Hash)
+          self.locale_mapping = value
+        end
       end
 
       if attributes.key?(:'format_options')
-        self.format_options = attributes[:'format_options']
+        if (value = attributes[:'format_options']).is_a?(Hash)
+          self.format_options = value
+        end
       end
 
       if attributes.key?(:'autotranslate')

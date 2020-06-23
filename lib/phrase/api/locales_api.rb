@@ -161,7 +161,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @option opts [String] :file_format File format name. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.
+    # @option opts [String] :file_format File format name. See the format guide for all supported file formats.
     # @option opts [String] :tags Limit results to keys tagged with a list of comma separated tag names.
     # @option opts [String] :tag Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead
     # @option opts [Boolean] :include_empty_translations Indicates whether keys without translations should be included in the output as well.
@@ -187,7 +187,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @option opts [String] :file_format File format name. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.
+    # @option opts [String] :file_format File format name. See the format guide for all supported file formats.
     # @option opts [String] :tags Limit results to keys tagged with a list of comma separated tag names.
     # @option opts [String] :tag Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead
     # @option opts [Boolean] :include_empty_translations Indicates whether keys without translations should be included in the output as well.
