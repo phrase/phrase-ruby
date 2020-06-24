@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **skip_upload_tags** | **Boolean** | Indicates whether the upload should not create upload tags. | [optional] 
 **skip_unverification** | **Boolean** | Indicates whether the upload should unverify updated translations. | [optional] 
 **file_encoding** | **String** | Enforces a specific encoding on the file contents. Valid options are \&quot;UTF-8\&quot;, \&quot;UTF-16\&quot; and \&quot;ISO-8859-1\&quot;. | [optional] 
-**locale_mapping** | **Hash&lt;String, String&gt;** | Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. | [optional] 
-**format_options** | **Hash&lt;String, String&gt;** | Additional options available for specific formats. See our format guide for complete list. | [optional] 
+**locale_mapping** | [**Object**](.md) | Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. | [optional] 
+**format_options** | [**Object**](.md) | Additional options available for specific formats. See our format guide for complete list. | [optional] 
 **autotranslate** | **Boolean** | If set, translations for the uploaded language will be fetched automatically. | [optional] 
 **mark_reviewed** | **Boolean** | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. | [optional] 
 
