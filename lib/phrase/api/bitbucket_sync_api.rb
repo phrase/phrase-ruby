@@ -89,8 +89,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def bitbucket_sync_import(id, bitbucket_sync_import_parameters, opts = {})
-      bitbucket_sync_import_with_http_info(id, bitbucket_sync_import_parameters, opts)
-      nil
+      data, _status_code, _headers = bitbucket_sync_import_with_http_info(id, bitbucket_sync_import_parameters, opts)
+      data
     end
 
     # Import to Phrase from Bitbucket
@@ -99,7 +99,7 @@ module Phrase
     # @param bitbucket_sync_import_parameters [BitbucketSyncImportParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def bitbucket_sync_import_with_http_info(id, bitbucket_sync_import_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BitbucketSyncApi.bitbucket_sync_import ...'

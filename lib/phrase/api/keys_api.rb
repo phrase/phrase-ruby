@@ -90,8 +90,8 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @return [nil]
     def key_delete(project_id, id, opts = {})
-      key_delete_with_http_info(project_id, id, opts)
-      nil
+      data, _status_code, _headers = key_delete_with_http_info(project_id, id, opts)
+      data
     end
 
     # Delete a key
@@ -101,7 +101,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def key_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: KeysApi.key_delete ...'

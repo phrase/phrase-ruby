@@ -170,8 +170,8 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @return [nil]
     def job_delete(project_id, id, opts = {})
-      job_delete_with_http_info(project_id, id, opts)
-      nil
+      data, _status_code, _headers = job_delete_with_http_info(project_id, id, opts)
+      data
     end
 
     # Delete a job
@@ -181,7 +181,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def job_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_delete ...'
@@ -324,8 +324,8 @@ module Phrase
     # @option opts [Array<String>] :translation_key_ids ids of keys that should added to the job
     # @return [nil]
     def job_keys_delete(project_id, id, opts = {})
-      job_keys_delete_with_http_info(project_id, id, opts)
-      nil
+      data, _status_code, _headers = job_keys_delete_with_http_info(project_id, id, opts)
+      data
     end
 
     # Remove keys from job
@@ -336,7 +336,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
     # @option opts [Array<String>] :translation_key_ids ids of keys that should added to the job
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def job_keys_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_keys_delete ...'

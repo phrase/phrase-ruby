@@ -89,8 +89,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def space_delete(account_id, id, opts = {})
-      space_delete_with_http_info(account_id, id, opts)
-      nil
+      data, _status_code, _headers = space_delete_with_http_info(account_id, id, opts)
+      data
     end
 
     # Delete Space
@@ -99,7 +99,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def space_delete_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SpacesApi.space_delete ...'
@@ -384,8 +384,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def spaces_projects_create(account_id, space_id, spaces_projects_create_parameters, opts = {})
-      spaces_projects_create_with_http_info(account_id, space_id, spaces_projects_create_parameters, opts)
-      nil
+      data, _status_code, _headers = spaces_projects_create_with_http_info(account_id, space_id, spaces_projects_create_parameters, opts)
+      data
     end
 
     # Add Project
@@ -395,7 +395,7 @@ module Phrase
     # @param spaces_projects_create_parameters [SpacesProjectsCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def spaces_projects_create_with_http_info(account_id, space_id, spaces_projects_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SpacesApi.spaces_projects_create ...'
@@ -462,8 +462,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def spaces_projects_delete(account_id, space_id, id, opts = {})
-      spaces_projects_delete_with_http_info(account_id, space_id, id, opts)
-      nil
+      data, _status_code, _headers = spaces_projects_delete_with_http_info(account_id, space_id, id, opts)
+      data
     end
 
     # Remove Project
@@ -473,7 +473,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def spaces_projects_delete_with_http_info(account_id, space_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SpacesApi.spaces_projects_delete ...'

@@ -15,8 +15,8 @@ module Phrase
     # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
     # @return [nil]
     def gitlab_sync_delete(id, opts = {})
-      gitlab_sync_delete_with_http_info(id, opts)
-      nil
+      data, _status_code, _headers = gitlab_sync_delete_with_http_info(id, opts)
+      data
     end
 
     # Delete single Sync Setting
@@ -25,7 +25,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def gitlab_sync_delete_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: GitLabSyncApi.gitlab_sync_delete ...'

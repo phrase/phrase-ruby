@@ -97,8 +97,8 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @return [nil]
     def comment_delete(project_id, key_id, id, opts = {})
-      comment_delete_with_http_info(project_id, key_id, id, opts)
-      nil
+      data, _status_code, _headers = comment_delete_with_http_info(project_id, key_id, id, opts)
+      data
     end
 
     # Delete a comment
@@ -109,7 +109,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def comment_delete_with_http_info(project_id, key_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comment_delete ...'
@@ -176,8 +176,8 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @return [nil]
     def comment_mark_check(project_id, key_id, id, opts = {})
-      comment_mark_check_with_http_info(project_id, key_id, id, opts)
-      nil
+      data, _status_code, _headers = comment_mark_check_with_http_info(project_id, key_id, id, opts)
+      data
     end
 
     # Check if comment is read
@@ -188,7 +188,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def comment_mark_check_with_http_info(project_id, key_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comment_mark_check ...'
@@ -255,8 +255,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def comment_mark_read(project_id, key_id, id, comment_mark_read_parameters, opts = {})
-      comment_mark_read_with_http_info(project_id, key_id, id, comment_mark_read_parameters, opts)
-      nil
+      data, _status_code, _headers = comment_mark_read_with_http_info(project_id, key_id, id, comment_mark_read_parameters, opts)
+      data
     end
 
     # Mark a comment as read
@@ -267,7 +267,7 @@ module Phrase
     # @param comment_mark_read_parameters [CommentMarkReadParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def comment_mark_read_with_http_info(project_id, key_id, id, comment_mark_read_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comment_mark_read ...'
@@ -339,8 +339,8 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @return [nil]
     def comment_mark_unread(project_id, key_id, id, opts = {})
-      comment_mark_unread_with_http_info(project_id, key_id, id, opts)
-      nil
+      data, _status_code, _headers = comment_mark_unread_with_http_info(project_id, key_id, id, opts)
+      data
     end
 
     # Mark a comment as unread
@@ -351,7 +351,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def comment_mark_unread_with_http_info(project_id, key_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comment_mark_unread ...'

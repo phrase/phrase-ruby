@@ -82,8 +82,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def authorization_delete(id, opts = {})
-      authorization_delete_with_http_info(id, opts)
-      nil
+      data, _status_code, _headers = authorization_delete_with_http_info(id, opts)
+      data
     end
 
     # Delete an authorization
@@ -91,7 +91,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def authorization_delete_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AuthorizationsApi.authorization_delete ...'

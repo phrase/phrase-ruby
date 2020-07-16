@@ -15,8 +15,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def branch_compare(project_id, name, opts = {})
-      branch_compare_with_http_info(project_id, name, opts)
-      nil
+      data, _status_code, _headers = branch_compare_with_http_info(project_id, name, opts)
+      data
     end
 
     # Compare branches
@@ -25,7 +25,7 @@ module Phrase
     # @param name [String] name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def branch_compare_with_http_info(project_id, name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BranchesApi.branch_compare ...'
@@ -159,8 +159,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def branch_delete(project_id, name, opts = {})
-      branch_delete_with_http_info(project_id, name, opts)
-      nil
+      data, _status_code, _headers = branch_delete_with_http_info(project_id, name, opts)
+      data
     end
 
     # Delete a branch
@@ -169,7 +169,7 @@ module Phrase
     # @param name [String] name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def branch_delete_with_http_info(project_id, name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BranchesApi.branch_delete ...'
@@ -230,8 +230,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def branch_merge(project_id, name, branch_merge_parameters, opts = {})
-      branch_merge_with_http_info(project_id, name, branch_merge_parameters, opts)
-      nil
+      data, _status_code, _headers = branch_merge_with_http_info(project_id, name, branch_merge_parameters, opts)
+      data
     end
 
     # Merge a branch
@@ -241,7 +241,7 @@ module Phrase
     # @param branch_merge_parameters [BranchMergeParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def branch_merge_with_http_info(project_id, name, branch_merge_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BranchesApi.branch_merge ...'

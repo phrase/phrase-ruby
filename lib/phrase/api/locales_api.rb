@@ -90,8 +90,8 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @return [nil]
     def locale_delete(project_id, id, opts = {})
-      locale_delete_with_http_info(project_id, id, opts)
-      nil
+      data, _status_code, _headers = locale_delete_with_http_info(project_id, id, opts)
+      data
     end
 
     # Delete a locale
@@ -101,7 +101,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def locale_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalesApi.locale_delete ...'
@@ -176,8 +176,8 @@ module Phrase
     # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;.
     # @return [nil]
     def locale_download(project_id, id, opts = {})
-      locale_download_with_http_info(project_id, id, opts)
-      nil
+      data, _status_code, _headers = locale_download_with_http_info(project_id, id, opts)
+      data
     end
 
     # Download a locale
@@ -200,7 +200,7 @@ module Phrase
     # @option opts [Boolean] :include_unverified_translations if set to false unverified translations are excluded
     # @option opts [Boolean] :use_last_reviewed_version If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project.
     # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;.
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def locale_download_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalesApi.locale_download ...'

@@ -89,8 +89,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def webhook_delete(project_id, id, opts = {})
-      webhook_delete_with_http_info(project_id, id, opts)
-      nil
+      data, _status_code, _headers = webhook_delete_with_http_info(project_id, id, opts)
+      data
     end
 
     # Delete a webhook
@@ -99,7 +99,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def webhook_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WebhooksApi.webhook_delete ...'
@@ -231,8 +231,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def webhook_test(project_id, id, opts = {})
-      webhook_test_with_http_info(project_id, id, opts)
-      nil
+      data, _status_code, _headers = webhook_test_with_http_info(project_id, id, opts)
+      data
     end
 
     # Test a webhook
@@ -241,7 +241,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def webhook_test_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WebhooksApi.webhook_test ...'

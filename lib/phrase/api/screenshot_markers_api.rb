@@ -95,8 +95,8 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [nil]
     def screenshot_marker_delete(project_id, screenshot_id, opts = {})
-      screenshot_marker_delete_with_http_info(project_id, screenshot_id, opts)
-      nil
+      data, _status_code, _headers = screenshot_marker_delete_with_http_info(project_id, screenshot_id, opts)
+      data
     end
 
     # Delete a screenshot marker
@@ -105,7 +105,7 @@ module Phrase
     # @param screenshot_id [String] Screenshot ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(nil)>, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def screenshot_marker_delete_with_http_info(project_id, screenshot_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ScreenshotMarkersApi.screenshot_marker_delete ...'
