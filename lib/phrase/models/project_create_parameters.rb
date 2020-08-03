@@ -20,6 +20,9 @@ module Phrase
     # Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.
     attr_accessor :account_id
 
+    # When a source project ID is given, a clone of that project will be created, including all locales, keys and translations as well as the main project settings if they are not defined otherwise through the params.
+    attr_accessor :source_project_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -28,7 +31,8 @@ module Phrase
         :'shares_translation_memory' => :'shares_translation_memory',
         :'project_image' => :'project_image',
         :'remove_project_image' => :'remove_project_image',
-        :'account_id' => :'account_id'
+        :'account_id' => :'account_id',
+        :'source_project_id' => :'source_project_id'
       }
     end
 
@@ -40,7 +44,8 @@ module Phrase
         :'shares_translation_memory' => :'Boolean',
         :'project_image' => :'File',
         :'remove_project_image' => :'Boolean',
-        :'account_id' => :'String'
+        :'account_id' => :'String',
+        :'source_project_id' => :'String'
       }
     end
 
@@ -88,6 +93,10 @@ module Phrase
       if attributes.key?(:'account_id')
         self.account_id = attributes[:'account_id']
       end
+
+      if attributes.key?(:'source_project_id')
+        self.source_project_id = attributes[:'source_project_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -113,7 +122,8 @@ module Phrase
           shares_translation_memory == o.shares_translation_memory &&
           project_image == o.project_image &&
           remove_project_image == o.remove_project_image &&
-          account_id == o.account_id
+          account_id == o.account_id &&
+          source_project_id == o.source_project_id
     end
 
     # @see the `==` method
@@ -125,7 +135,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, main_format, shares_translation_memory, project_image, remove_project_image, account_id].hash
+      [name, main_format, shares_translation_memory, project_image, remove_project_image, account_id, source_project_id].hash
     end
 
     # Builds the object from hash

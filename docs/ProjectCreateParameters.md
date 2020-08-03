@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **project_image** | **File** | Image to identify the project | [optional] 
 **remove_project_image** | **Boolean** | Indicates whether the project image should be deleted. | [optional] 
 **account_id** | **String** | Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
+**source_project_id** | **String** | When a source project ID is given, a clone of that project will be created, including all locales, keys and translations as well as the main project settings if they are not defined otherwise through the params. | [optional] 
 
 ## Code Sample
 
@@ -21,7 +22,8 @@ instance = Phrase::ProjectCreateParameters.new(name: My Android Project,
                                  shares_translation_memory: true,
                                  project_image: null,
                                  remove_project_image: null,
-                                 account_id: abcd1234)
+                                 account_id: abcd1234,
+                                 source_project_id: abcd1234)
 ```
 
 
