@@ -6,6 +6,8 @@ module Phrase
 
     attr_accessor :name
 
+    attr_accessor :slug
+
     attr_accessor :main_format
 
     attr_accessor :project_image_url
@@ -16,8 +18,6 @@ module Phrase
 
     attr_accessor :updated_at
 
-    attr_accessor :slug
-
     attr_accessor :shares_translation_memory
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -25,12 +25,12 @@ module Phrase
       {
         :'id' => :'id',
         :'name' => :'name',
+        :'slug' => :'slug',
         :'main_format' => :'main_format',
         :'project_image_url' => :'project_image_url',
         :'account' => :'account',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
-        :'slug' => :'slug',
         :'shares_translation_memory' => :'shares_translation_memory'
       }
     end
@@ -40,12 +40,12 @@ module Phrase
       {
         :'id' => :'String',
         :'name' => :'String',
+        :'slug' => :'String',
         :'main_format' => :'String',
         :'project_image_url' => :'String',
         :'account' => :'Account',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
-        :'slug' => :'String',
         :'shares_translation_memory' => :'Boolean'
       }
     end
@@ -87,6 +87,10 @@ module Phrase
         self.name = attributes[:'name']
       end
 
+      if attributes.key?(:'slug')
+        self.slug = attributes[:'slug']
+      end
+
       if attributes.key?(:'main_format')
         self.main_format = attributes[:'main_format']
       end
@@ -105,10 +109,6 @@ module Phrase
 
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
-      end
-
-      if attributes.key?(:'slug')
-        self.slug = attributes[:'slug']
       end
 
       if attributes.key?(:'shares_translation_memory')
@@ -136,12 +136,12 @@ module Phrase
       self.class == o.class &&
           id == o.id &&
           name == o.name &&
+          slug == o.slug &&
           main_format == o.main_format &&
           project_image_url == o.project_image_url &&
           account == o.account &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
-          slug == o.slug &&
           shares_translation_memory == o.shares_translation_memory
     end
 
@@ -154,7 +154,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, main_format, project_image_url, account, created_at, updated_at, slug, shares_translation_memory].hash
+      [id, name, slug, main_format, project_image_url, account, created_at, updated_at, shares_translation_memory].hash
     end
 
     # Builds the object from hash

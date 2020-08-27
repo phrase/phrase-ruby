@@ -6,23 +6,23 @@ module Phrase
 
     attr_accessor :name
 
+    attr_accessor :slug
+
     attr_accessor :company
 
     attr_accessor :created_at
 
     attr_accessor :updated_at
 
-    attr_accessor :slug
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'name' => :'name',
+        :'slug' => :'slug',
         :'company' => :'company',
         :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at',
-        :'slug' => :'slug'
+        :'updated_at' => :'updated_at'
       }
     end
 
@@ -31,10 +31,10 @@ module Phrase
       {
         :'id' => :'String',
         :'name' => :'String',
+        :'slug' => :'String',
         :'company' => :'String',
         :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime',
-        :'slug' => :'String'
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -75,6 +75,10 @@ module Phrase
         self.name = attributes[:'name']
       end
 
+      if attributes.key?(:'slug')
+        self.slug = attributes[:'slug']
+      end
+
       if attributes.key?(:'company')
         self.company = attributes[:'company']
       end
@@ -85,10 +89,6 @@ module Phrase
 
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
-      end
-
-      if attributes.key?(:'slug')
-        self.slug = attributes[:'slug']
       end
     end
 
@@ -112,10 +112,10 @@ module Phrase
       self.class == o.class &&
           id == o.id &&
           name == o.name &&
+          slug == o.slug &&
           company == o.company &&
           created_at == o.created_at &&
-          updated_at == o.updated_at &&
-          slug == o.slug
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -127,7 +127,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, company, created_at, updated_at, slug].hash
+      [id, name, slug, company, created_at, updated_at].hash
     end
 
     # Builds the object from hash

@@ -6,6 +6,8 @@ module Phrase
 
     attr_accessor :name
 
+    attr_accessor :slug
+
     attr_accessor :company
 
     attr_accessor :created_at
@@ -17,6 +19,7 @@ module Phrase
       {
         :'id' => :'id',
         :'name' => :'name',
+        :'slug' => :'slug',
         :'company' => :'company',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at'
@@ -28,6 +31,7 @@ module Phrase
       {
         :'id' => :'String',
         :'name' => :'String',
+        :'slug' => :'String',
         :'company' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
@@ -63,6 +67,10 @@ module Phrase
         self.name = attributes[:'name']
       end
 
+      if attributes.key?(:'slug')
+        self.slug = attributes[:'slug']
+      end
+
       if attributes.key?(:'company')
         self.company = attributes[:'company']
       end
@@ -96,6 +104,7 @@ module Phrase
       self.class == o.class &&
           id == o.id &&
           name == o.name &&
+          slug == o.slug &&
           company == o.company &&
           created_at == o.created_at &&
           updated_at == o.updated_at
@@ -110,7 +119,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, company, created_at, updated_at].hash
+      [id, name, slug, company, created_at, updated_at].hash
     end
 
     # Builds the object from hash

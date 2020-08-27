@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
+**slug** | **String** |  | [optional] 
 **main_format** | **String** |  | [optional] 
 **project_image_url** | **String** |  | [optional] 
 **account** | [**Account**](Account.md) |  | [optional] 
@@ -19,6 +20,7 @@ require 'Phrase'
 
 instance = Phrase::Project.new(id: null,
                                  name: null,
+                                 slug: null,
                                  main_format: null,
                                  project_image_url: null,
                                  account: null,
