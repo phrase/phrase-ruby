@@ -85,6 +85,7 @@ describe 'BlacklistedKeysApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+  # @option opts [String] :branch specify the branch to use
   # @return [Array<BlacklistedKey>]
   describe 'blacklisted_keys_list test' do
     it 'should work' do
