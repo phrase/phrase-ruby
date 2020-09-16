@@ -334,7 +334,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @return [Array<GlossaryTerm>]
     def glossary_terms_list(account_id, glossary_id, opts = {})
       data, _status_code, _headers = glossary_terms_list_with_http_info(account_id, glossary_id, opts)
@@ -348,7 +348,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @return [Array<(Response<(Array<GlossaryTerm>)>, Integer, Hash)>] Response<(Array<GlossaryTerm>)> data, response status code and response headers
     def glossary_terms_list_with_http_info(account_id, glossary_id, opts = {})
       if @api_client.config.debugging

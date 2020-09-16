@@ -322,7 +322,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @return [Array<ScreenshotMarker>]
     def screenshot_markers_list(project_id, id, opts = {})
       data, _status_code, _headers = screenshot_markers_list_with_http_info(project_id, id, opts)
@@ -336,7 +336,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @return [Array<(Response<(Array<ScreenshotMarker>)>, Integer, Hash)>] Response<(Array<ScreenshotMarker>)> data, response status code and response headers
     def screenshot_markers_list_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging

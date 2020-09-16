@@ -309,7 +309,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @return [Array<DistributionPreview>]
     def distributions_list(account_id, opts = {})
       data, _status_code, _headers = distributions_list_with_http_info(account_id, opts)
@@ -322,7 +322,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @return [Array<(Response<(Array<DistributionPreview>)>, Integer, Hash)>] Response<(Array<DistributionPreview>)> data, response status code and response headers
     def distributions_list_with_http_info(account_id, opts = {})
       if @api_client.config.debugging

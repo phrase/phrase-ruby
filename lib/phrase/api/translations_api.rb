@@ -643,7 +643,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
@@ -661,7 +661,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
@@ -733,7 +733,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
@@ -751,7 +751,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
@@ -970,7 +970,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
@@ -987,7 +987,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
@@ -1129,7 +1129,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @return [Array<Translation>]
     def translations_search(project_id, translations_search_parameters, opts = {})
       data, _status_code, _headers = translations_search_with_http_info(project_id, translations_search_parameters, opts)
@@ -1143,7 +1143,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @return [Array<(Response<(Array<Translation>)>, Integer, Hash)>] Response<(Array<Translation>)> data, response status code and response headers
     def translations_search_with_http_info(project_id, translations_search_parameters, opts = {})
       if @api_client.config.debugging

@@ -303,7 +303,7 @@ glossary_id = 'glossary_id_example' # String | Glossary ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 25 # Integer | allows you to specify a page size up to 100 items, 25 by default
 }
 
 begin
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
  **glossary_id** | **String**| Glossary ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
- **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
 
 ### Return type
 

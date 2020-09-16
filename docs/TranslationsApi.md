@@ -572,7 +572,7 @@ key_id = 'key_id_example' # String | Translation Key ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 25, # Integer | allows you to specify a page size up to 100 items, 25 by default
   branch: 'my-feature-branch', # String | specify the branch to use
   sort: 'updated_at', # String | Sort criteria. Can be one of: key_name, created_at, updated_at.
   order: 'desc', # String | Order direction. Can be one of: asc, desc.
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
  **key_id** | **String**| Translation Key ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
- **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
  **sort** | **String**| Sort criteria. Can be one of: key_name, created_at, updated_at. | [optional] 
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
@@ -647,7 +647,7 @@ locale_id = 'locale_id_example' # String | Locale ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 25, # Integer | allows you to specify a page size up to 100 items, 25 by default
   branch: 'my-feature-branch', # String | specify the branch to use
   sort: 'updated_at', # String | Sort criteria. Can be one of: key_name, created_at, updated_at.
   order: 'desc', # String | Order direction. Can be one of: asc, desc.
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
  **locale_id** | **String**| Locale ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
- **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
  **sort** | **String**| Sort criteria. Can be one of: key_name, created_at, updated_at. | [optional] 
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
@@ -847,7 +847,7 @@ project_id = 'project_id_example' # String | Project ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10, # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 25, # Integer | allows you to specify a page size up to 100 items, 25 by default
   branch: 'my-feature-branch', # String | specify the branch to use
   sort: 'updated_at', # String | Sort criteria. Can be one of: key_name, created_at, updated_at.
   order: 'desc', # String | Order direction. Can be one of: asc, desc.
@@ -871,7 +871,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
- **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
  **sort** | **String**| Sort criteria. Can be one of: key_name, created_at, updated_at. | [optional] 
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
@@ -984,7 +984,7 @@ translations_search_parameters = Phrase::TranslationsSearchParameters.new # Tran
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 10 # Integer | allows you to specify a page size up to 100 items, 10 by default
+  per_page: 25 # Integer | allows you to specify a page size up to 100 items, 25 by default
 }
 
 begin
@@ -1005,7 +1005,7 @@ Name | Type | Description  | Notes
  **translations_search_parameters** | [**TranslationsSearchParameters**](TranslationsSearchParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
- **per_page** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional] 
+ **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
 
 ### Return type
 

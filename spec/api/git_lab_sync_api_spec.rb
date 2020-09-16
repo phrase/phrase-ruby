@@ -55,7 +55,7 @@ describe 'GitLabSyncApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
-  # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 10 by default
+  # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
   # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
   # @return [Array<GitlabSyncHistory>]
   describe 'gitlab_sync_history test' do
