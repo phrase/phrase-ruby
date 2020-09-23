@@ -139,6 +139,7 @@ Class | Method | HTTP request | Description
 *Phrase::DistributionsApi* | [**distribution_show**](docs/DistributionsApi.md#distribution_show) | **GET** /accounts/{account_id}/distributions/{id} | Get a single distribution
 *Phrase::DistributionsApi* | [**distribution_update**](docs/DistributionsApi.md#distribution_update) | **PATCH** /accounts/{account_id}/distributions/{id} | Update a distribution
 *Phrase::DistributionsApi* | [**distributions_list**](docs/DistributionsApi.md#distributions_list) | **GET** /accounts/{account_id}/distributions | List distributions
+*Phrase::DocumentsApi* | [**documents_list**](docs/DocumentsApi.md#documents_list) | **GET** /projects/{project_id}/documents | List documents
 *Phrase::FormatsApi* | [**formats_list**](docs/FormatsApi.md#formats_list) | **GET** /formats | List formats
 *Phrase::GitLabSyncApi* | [**gitlab_sync_delete**](docs/GitLabSyncApi.md#gitlab_sync_delete) | **DELETE** /gitlab_syncs/{id} | Delete single Sync Setting
 *Phrase::GitLabSyncApi* | [**gitlab_sync_export**](docs/GitLabSyncApi.md#gitlab_sync_export) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase to GitLab
@@ -318,6 +319,7 @@ Class | Method | HTTP request | Description
  - [Phrase::DistributionCreateParameters](docs/DistributionCreateParameters.md)
  - [Phrase::DistributionPreview](docs/DistributionPreview.md)
  - [Phrase::DistributionUpdateParameters](docs/DistributionUpdateParameters.md)
+ - [Phrase::Document](docs/Document.md)
  - [Phrase::Format](docs/Format.md)
  - [Phrase::GitlabSync](docs/GitlabSync.md)
  - [Phrase::GitlabSyncExport](docs/GitlabSyncExport.md)
