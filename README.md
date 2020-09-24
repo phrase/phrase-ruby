@@ -141,6 +141,7 @@ Class | Method | HTTP request | Description
 *Phrase::DistributionsApi* | [**distributions_list**](docs/DistributionsApi.md#distributions_list) | **GET** /accounts/{account_id}/distributions | List distributions
 *Phrase::DocumentsApi* | [**documents_list**](docs/DocumentsApi.md#documents_list) | **GET** /projects/{project_id}/documents | List documents
 *Phrase::FormatsApi* | [**formats_list**](docs/FormatsApi.md#formats_list) | **GET** /formats | List formats
+*Phrase::GitHubSyncApi* | [**github_sync_export**](docs/GitHubSyncApi.md#github_sync_export) | **POST** /github_syncs/export | Export from Phrase to GitHub
 *Phrase::GitLabSyncApi* | [**gitlab_sync_delete**](docs/GitLabSyncApi.md#gitlab_sync_delete) | **DELETE** /gitlab_syncs/{id} | Delete single Sync Setting
 *Phrase::GitLabSyncApi* | [**gitlab_sync_export**](docs/GitLabSyncApi.md#gitlab_sync_export) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase to GitLab
 *Phrase::GitLabSyncApi* | [**gitlab_sync_history**](docs/GitLabSyncApi.md#gitlab_sync_history) | **GET** /gitlab_syncs/{gitlab_sync_id}/history | History of single Sync Setting
@@ -321,6 +322,7 @@ Class | Method | HTTP request | Description
  - [Phrase::DistributionUpdateParameters](docs/DistributionUpdateParameters.md)
  - [Phrase::Document](docs/Document.md)
  - [Phrase::Format](docs/Format.md)
+ - [Phrase::GithubSyncExportParameters](docs/GithubSyncExportParameters.md)
  - [Phrase::GitlabSync](docs/GitlabSync.md)
  - [Phrase::GitlabSyncExport](docs/GitlabSyncExport.md)
  - [Phrase::GitlabSyncExportParameters](docs/GitlabSyncExportParameters.md)
@@ -335,6 +337,8 @@ Class | Method | HTTP request | Description
  - [Phrase::GlossaryTermTranslationUpdateParameters](docs/GlossaryTermTranslationUpdateParameters.md)
  - [Phrase::GlossaryTermUpdateParameters](docs/GlossaryTermUpdateParameters.md)
  - [Phrase::GlossaryUpdateParameters](docs/GlossaryUpdateParameters.md)
+ - [Phrase::InlineResponse422](docs/InlineResponse422.md)
+ - [Phrase::InlineResponse422Errors](docs/InlineResponse422Errors.md)
  - [Phrase::Invitation](docs/Invitation.md)
  - [Phrase::InvitationCreateParameters](docs/InvitationCreateParameters.md)
  - [Phrase::InvitationUpdateParameters](docs/InvitationUpdateParameters.md)
