@@ -20,9 +20,24 @@ describe 'DocumentsApi' do
     end
   end
 
+  # unit tests for document_delete
+  # Delete document
+  # Delete an existing document.
+  # @param project_id Project ID
+  # @param id ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [nil]
+  describe 'document_delete test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for documents_list
   # List documents
   # List all documents the current user has access to.
+  # @param project_id Project ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
