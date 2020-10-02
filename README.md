@@ -143,6 +143,7 @@ Class | Method | HTTP request | Description
 *Phrase::DocumentsApi* | [**documents_list**](docs/DocumentsApi.md#documents_list) | **GET** /projects/{project_id}/documents | List documents
 *Phrase::FormatsApi* | [**formats_list**](docs/FormatsApi.md#formats_list) | **GET** /formats | List formats
 *Phrase::GitHubSyncApi* | [**github_sync_export**](docs/GitHubSyncApi.md#github_sync_export) | **POST** /github_syncs/export | Export from Phrase to GitHub
+*Phrase::GitHubSyncApi* | [**github_sync_import**](docs/GitHubSyncApi.md#github_sync_import) | **POST** /github_syncs/import | Import to Phrase from GitHub
 *Phrase::GitLabSyncApi* | [**gitlab_sync_delete**](docs/GitLabSyncApi.md#gitlab_sync_delete) | **DELETE** /gitlab_syncs/{id} | Delete single Sync Setting
 *Phrase::GitLabSyncApi* | [**gitlab_sync_export**](docs/GitLabSyncApi.md#gitlab_sync_export) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase to GitLab
 *Phrase::GitLabSyncApi* | [**gitlab_sync_history**](docs/GitLabSyncApi.md#gitlab_sync_history) | **GET** /gitlab_syncs/{gitlab_sync_id}/history | History of single Sync Setting
@@ -324,6 +325,7 @@ Class | Method | HTTP request | Description
  - [Phrase::Document](docs/Document.md)
  - [Phrase::Format](docs/Format.md)
  - [Phrase::GithubSyncExportParameters](docs/GithubSyncExportParameters.md)
+ - [Phrase::GithubSyncImportParameters](docs/GithubSyncImportParameters.md)
  - [Phrase::GitlabSync](docs/GitlabSync.md)
  - [Phrase::GitlabSyncExport](docs/GitlabSyncExport.md)
  - [Phrase::GitlabSyncExportParameters](docs/GitlabSyncExportParameters.md)
