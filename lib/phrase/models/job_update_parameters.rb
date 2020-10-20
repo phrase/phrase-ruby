@@ -14,13 +14,17 @@ module Phrase
     # Date the job should be finished
     attr_accessor :due_date
 
+    # URL to a ticket for this job (e.g. Jira, Trello)
+    attr_accessor :ticket_url
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'branch' => :'branch',
         :'name' => :'name',
         :'briefing' => :'briefing',
-        :'due_date' => :'due_date'
+        :'due_date' => :'due_date',
+        :'ticket_url' => :'ticket_url'
       }
     end
 
@@ -30,7 +34,8 @@ module Phrase
         :'branch' => :'String',
         :'name' => :'String',
         :'briefing' => :'String',
-        :'due_date' => :'DateTime'
+        :'due_date' => :'DateTime',
+        :'ticket_url' => :'String'
       }
     end
 
@@ -70,6 +75,10 @@ module Phrase
       if attributes.key?(:'due_date')
         self.due_date = attributes[:'due_date']
       end
+
+      if attributes.key?(:'ticket_url')
+        self.ticket_url = attributes[:'ticket_url']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -93,7 +102,8 @@ module Phrase
           branch == o.branch &&
           name == o.name &&
           briefing == o.briefing &&
-          due_date == o.due_date
+          due_date == o.due_date &&
+          ticket_url == o.ticket_url
     end
 
     # @see the `==` method
@@ -105,7 +115,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, briefing, due_date].hash
+      [branch, name, briefing, due_date, ticket_url].hash
     end
 
     # Builds the object from hash

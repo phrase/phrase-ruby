@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **briefing** | **String** |  | [optional] 
 **due_date** | **DateTime** |  | [optional] 
 **state** | **String** |  | [optional] 
+**ticket_url** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 
@@ -22,6 +23,7 @@ instance = Phrase::Job.new(id: null,
                                  briefing: null,
                                  due_date: null,
                                  state: null,
+                                 ticket_url: null,
                                  created_at: null,
                                  updated_at: null)
 ```

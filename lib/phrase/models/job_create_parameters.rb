@@ -14,6 +14,9 @@ module Phrase
     # Date the job should be finished
     attr_accessor :due_date
 
+    # URL to a ticket for this job (e.g. Jira, Trello)
+    attr_accessor :ticket_url
+
     # tags of keys that should be included within the job
     attr_accessor :tags
 
@@ -27,6 +30,7 @@ module Phrase
         :'name' => :'name',
         :'briefing' => :'briefing',
         :'due_date' => :'due_date',
+        :'ticket_url' => :'ticket_url',
         :'tags' => :'tags',
         :'translation_key_ids' => :'translation_key_ids'
       }
@@ -39,6 +43,7 @@ module Phrase
         :'name' => :'String',
         :'briefing' => :'String',
         :'due_date' => :'DateTime',
+        :'ticket_url' => :'String',
         :'tags' => :'Array<String>',
         :'translation_key_ids' => :'Array<String>'
       }
@@ -81,6 +86,10 @@ module Phrase
         self.due_date = attributes[:'due_date']
       end
 
+      if attributes.key?(:'ticket_url')
+        self.ticket_url = attributes[:'ticket_url']
+      end
+
       if attributes.key?(:'tags')
         if (value = attributes[:'tags']).is_a?(Array)
           self.tags = value
@@ -116,6 +125,7 @@ module Phrase
           name == o.name &&
           briefing == o.briefing &&
           due_date == o.due_date &&
+          ticket_url == o.ticket_url &&
           tags == o.tags &&
           translation_key_ids == o.translation_key_ids
     end
@@ -129,7 +139,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, briefing, due_date, tags, translation_key_ids].hash
+      [branch, name, briefing, due_date, ticket_url, tags, translation_key_ids].hash
     end
 
     # Builds the object from hash

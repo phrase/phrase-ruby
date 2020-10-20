@@ -12,6 +12,8 @@ module Phrase
 
     attr_accessor :state
 
+    attr_accessor :ticket_url
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -24,6 +26,7 @@ module Phrase
         :'briefing' => :'briefing',
         :'due_date' => :'due_date',
         :'state' => :'state',
+        :'ticket_url' => :'ticket_url',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at'
       }
@@ -37,6 +40,7 @@ module Phrase
         :'briefing' => :'String',
         :'due_date' => :'DateTime',
         :'state' => :'String',
+        :'ticket_url' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }
@@ -83,6 +87,10 @@ module Phrase
         self.state = attributes[:'state']
       end
 
+      if attributes.key?(:'ticket_url')
+        self.ticket_url = attributes[:'ticket_url']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -115,6 +123,7 @@ module Phrase
           briefing == o.briefing &&
           due_date == o.due_date &&
           state == o.state &&
+          ticket_url == o.ticket_url &&
           created_at == o.created_at &&
           updated_at == o.updated_at
     end
@@ -128,7 +137,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, created_at, updated_at].hash
+      [id, name, briefing, due_date, state, ticket_url, created_at, updated_at].hash
     end
 
     # Builds the object from hash
