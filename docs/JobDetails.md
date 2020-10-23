@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ticket_url** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+**project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 **owner** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **job_tag_name** | **String** |  | [optional] 
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
@@ -30,6 +31,7 @@ instance = Phrase::JobDetails.new(id: null,
                                  ticket_url: null,
                                  created_at: null,
                                  updated_at: null,
+                                 project: null,
                                  owner: null,
                                  job_tag_name: null,
                                  locales: null,

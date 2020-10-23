@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ticket_url** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+**project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 
 ## Code Sample
 
@@ -25,7 +26,8 @@ instance = Phrase::Job.new(id: null,
                                  state: null,
                                  ticket_url: null,
                                  created_at: null,
-                                 updated_at: null)
+                                 updated_at: null,
+                                 project: null)
 ```
 
 

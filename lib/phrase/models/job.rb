@@ -18,6 +18,8 @@ module Phrase
 
     attr_accessor :updated_at
 
+    attr_accessor :project
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -28,7 +30,8 @@ module Phrase
         :'state' => :'state',
         :'ticket_url' => :'ticket_url',
         :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at'
+        :'updated_at' => :'updated_at',
+        :'project' => :'project'
       }
     end
 
@@ -42,7 +45,8 @@ module Phrase
         :'state' => :'String',
         :'ticket_url' => :'String',
         :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime'
+        :'updated_at' => :'DateTime',
+        :'project' => :'ProjectShort'
       }
     end
 
@@ -98,6 +102,10 @@ module Phrase
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
       end
+
+      if attributes.key?(:'project')
+        self.project = attributes[:'project']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -125,7 +133,8 @@ module Phrase
           state == o.state &&
           ticket_url == o.ticket_url &&
           created_at == o.created_at &&
-          updated_at == o.updated_at
+          updated_at == o.updated_at &&
+          project == o.project
     end
 
     # @see the `==` method
@@ -137,7 +146,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, ticket_url, created_at, updated_at].hash
+      [id, name, briefing, due_date, state, ticket_url, created_at, updated_at, project].hash
     end
 
     # Builds the object from hash

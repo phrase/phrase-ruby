@@ -18,6 +18,8 @@ module Phrase
 
     attr_accessor :updated_at
 
+    attr_accessor :project
+
     attr_accessor :owner
 
     attr_accessor :job_tag_name
@@ -37,6 +39,7 @@ module Phrase
         :'ticket_url' => :'ticket_url',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
+        :'project' => :'project',
         :'owner' => :'owner',
         :'job_tag_name' => :'job_tag_name',
         :'locales' => :'locales',
@@ -55,6 +58,7 @@ module Phrase
         :'ticket_url' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
+        :'project' => :'ProjectShort',
         :'owner' => :'UserPreview',
         :'job_tag_name' => :'String',
         :'locales' => :'Array<LocalePreview>',
@@ -123,6 +127,10 @@ module Phrase
         self.updated_at = attributes[:'updated_at']
       end
 
+      if attributes.key?(:'project')
+        self.project = attributes[:'project']
+      end
+
       if attributes.key?(:'owner')
         self.owner = attributes[:'owner']
       end
@@ -170,6 +178,7 @@ module Phrase
           ticket_url == o.ticket_url &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
+          project == o.project &&
           owner == o.owner &&
           job_tag_name == o.job_tag_name &&
           locales == o.locales &&
@@ -185,7 +194,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, ticket_url, created_at, updated_at, owner, job_tag_name, locales, keys].hash
+      [id, name, briefing, due_date, state, ticket_url, created_at, updated_at, project, owner, job_tag_name, locales, keys].hash
     end
 
     # Builds the object from hash
