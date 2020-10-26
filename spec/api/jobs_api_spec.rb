@@ -155,6 +155,24 @@ describe 'JobsApi' do
     end
   end
 
+  # unit tests for jobs_by_account
+  # List account jobs
+  # List all jobs for the given account.
+  # @param account_id Account ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [Integer] :page Page number
+  # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+  # @option opts [String] :owned_by filter by user owning job
+  # @option opts [String] :assigned_to filter by user assigned to job
+  # @option opts [String] :state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt;
+  # @return [Array<Job>]
+  describe 'jobs_by_account test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for jobs_list
   # List jobs
   # List all jobs for the given project.

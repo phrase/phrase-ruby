@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**job_show**](JobsApi.md#job_show) | **GET** /projects/{project_id}/jobs/{id} | Get a single job
 [**job_start**](JobsApi.md#job_start) | **POST** /projects/{project_id}/jobs/{id}/start | Start a job
 [**job_update**](JobsApi.md#job_update) | **PATCH** /projects/{project_id}/jobs/{id} | Update a job
+[**jobs_by_account**](JobsApi.md#jobs_by_account) | **GET** /accounts/{account_id}/jobs | List account jobs
 [**jobs_list**](JobsApi.md#jobs_list) | **GET** /projects/{project_id}/jobs | List jobs
 
 
@@ -597,6 +598,77 @@ Response<([**JobDetails**](JobDetails.md))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## jobs_by_account
+
+> Array&lt;Job&gt; jobs_by_account(account_id, opts)
+
+List account jobs
+
+List all jobs for the given account.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::JobsApi.new
+account_id = 'account_id_example' # String | Account ID
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  page: 1, # Integer | Page number
+  per_page: 25, # Integer | allows you to specify a page size up to 100 items, 25 by default
+  owned_by: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user owning job
+  assigned_to: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user assigned to job
+  state: 'completed' # String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+}
+
+begin
+  #List account jobs
+  result = api_instance.jobs_by_account(account_id, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling JobsApi->jobs_by_account: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **String**| Account ID | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **page** | **Integer**| Page number | [optional] 
+ **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
+ **owned_by** | **String**| filter by user owning job | [optional] 
+ **assigned_to** | **String**| filter by user assigned to job | [optional] 
+ **state** | **String**| filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional] 
+
+### Return type
+
+Response<([**Array&lt;Job&gt;**](Job.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

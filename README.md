@@ -186,6 +186,7 @@ Class | Method | HTTP request | Description
 *Phrase::JobsApi* | [**job_show**](docs/JobsApi.md#job_show) | **GET** /projects/{project_id}/jobs/{id} | Get a single job
 *Phrase::JobsApi* | [**job_start**](docs/JobsApi.md#job_start) | **POST** /projects/{project_id}/jobs/{id}/start | Start a job
 *Phrase::JobsApi* | [**job_update**](docs/JobsApi.md#job_update) | **PATCH** /projects/{project_id}/jobs/{id} | Update a job
+*Phrase::JobsApi* | [**jobs_by_account**](docs/JobsApi.md#jobs_by_account) | **GET** /accounts/{account_id}/jobs | List account jobs
 *Phrase::JobsApi* | [**jobs_list**](docs/JobsApi.md#jobs_list) | **GET** /projects/{project_id}/jobs | List jobs
 *Phrase::KeysApi* | [**key_create**](docs/KeysApi.md#key_create) | **POST** /projects/{project_id}/keys | Create a key
 *Phrase::KeysApi* | [**key_delete**](docs/KeysApi.md#key_delete) | **DELETE** /projects/{project_id}/keys/{id} | Delete a key
