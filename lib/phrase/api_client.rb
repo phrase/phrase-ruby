@@ -128,8 +128,8 @@ module Phrase
         data = {}
         form_params.each do |key, value|
           case value
-          when ::File, ::Array, nil
-            # let typhoeus handle File, Array and nil parameters
+          when ::File, ::Tempfile, ::Array, nil
+            # let typhoeus handle File, Tempfile, Array and nil parameters
             data[key] = value
           else
             data[key] = value.to_s
