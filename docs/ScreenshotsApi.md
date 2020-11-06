@@ -294,7 +294,8 @@ project_id = 'project_id_example' # String | Project ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 25 # Integer | allows you to specify a page size up to 100 items, 25 by default
+  per_page: 25, # Integer | allows you to specify a page size up to 100 items, 25 by default
+  key_id: 'abcd1234cdef1234abcd1234cdef1234' # String | filter by key
 }
 
 begin
@@ -315,6 +316,7 @@ Name | Type | Description  | Notes
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
+ **key_id** | **String**| filter by key | [optional] 
 
 ### Return type
 

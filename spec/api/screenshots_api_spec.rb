@@ -85,6 +85,7 @@ describe 'ScreenshotsApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+  # @option opts [String] :key_id filter by key
   # @return [Array<Screenshot>]
   describe 'screenshots_list test' do
     it 'should work' do

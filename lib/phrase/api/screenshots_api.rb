@@ -310,6 +310,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [String] :key_id filter by key
     # @return [Array<Screenshot>]
     def screenshots_list(project_id, opts = {})
       data, _status_code, _headers = screenshots_list_with_http_info(project_id, opts)
@@ -323,6 +324,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [String] :key_id filter by key
     # @return [Array<(Response<(Array<Screenshot>)>, Integer, Hash)>] Response<(Array<Screenshot>)> data, response status code and response headers
     def screenshots_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
@@ -339,6 +341,7 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'key_id'] = opts[:'key_id'] if !opts[:'key_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
