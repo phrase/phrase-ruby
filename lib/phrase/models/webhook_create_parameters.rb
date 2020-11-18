@@ -5,6 +5,9 @@ module Phrase
     # Callback URL to send requests to
     attr_accessor :callback_url
 
+    # Webhook secret used to calculate signature. If empty, the default project secret will be used.
+    attr_accessor :secret
+
     # Webhook description
     attr_accessor :description
 
@@ -18,6 +21,7 @@ module Phrase
     def self.attribute_map
       {
         :'callback_url' => :'callback_url',
+        :'secret' => :'secret',
         :'description' => :'description',
         :'events' => :'events',
         :'active' => :'active'
@@ -28,6 +32,7 @@ module Phrase
     def self.openapi_types
       {
         :'callback_url' => :'String',
+        :'secret' => :'String',
         :'description' => :'String',
         :'events' => :'String',
         :'active' => :'Boolean'
@@ -57,6 +62,10 @@ module Phrase
 
       if attributes.key?(:'callback_url')
         self.callback_url = attributes[:'callback_url']
+      end
+
+      if attributes.key?(:'secret')
+        self.secret = attributes[:'secret']
       end
 
       if attributes.key?(:'description')
@@ -91,6 +100,7 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           callback_url == o.callback_url &&
+          secret == o.secret &&
           description == o.description &&
           events == o.events &&
           active == o.active
@@ -105,7 +115,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [callback_url, description, events, active].hash
+      [callback_url, secret, description, events, active].hash
     end
 
     # Builds the object from hash
