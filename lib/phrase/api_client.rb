@@ -131,6 +131,8 @@ module Phrase
           when ::File, ::Tempfile, ::Array, nil
             # let typhoeus handle File, Tempfile, Array and nil parameters
             data[key] = value
+          when ::Hash
+            data[key] = build_request_body(header_params, value, body)
           else
             data[key] = value.to_s
           end
