@@ -174,6 +174,7 @@ opts = {
   tags: 'feature1,feature2', # String | Limit results to keys tagged with a list of comma separated tag names.
   tag: 'feature', # String | Limit download to tagged keys. This parameter is deprecated. Please use the \"tags\" parameter instead
   include_empty_translations: true, # Boolean | Indicates whether keys without translations should be included in the output as well.
+  exclude_empty_zero_forms: true, # Boolean | Indicates whether zero forms should be included when empty in pluralized keys.
   include_translated_keys: true, # Boolean | Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys.
   keep_notranslate_tags: true, # Boolean | Indicates whether [NOTRANSLATE] tags should be kept.
   convert_emoji: true, # Boolean | This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively.
@@ -206,6 +207,7 @@ Name | Type | Description  | Notes
  **tags** | **String**| Limit results to keys tagged with a list of comma separated tag names. | [optional] 
  **tag** | **String**| Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead | [optional] 
  **include_empty_translations** | **Boolean**| Indicates whether keys without translations should be included in the output as well. | [optional] 
+ **exclude_empty_zero_forms** | **Boolean**| Indicates whether zero forms should be included when empty in pluralized keys. | [optional] 
  **include_translated_keys** | **Boolean**| Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys. | [optional] 
  **keep_notranslate_tags** | **Boolean**| Indicates whether [NOTRANSLATE] tags should be kept. | [optional] 
  **convert_emoji** | **Boolean**| This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively. | [optional] 
