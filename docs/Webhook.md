@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **events** | **Array&lt;String&gt;** |  | [optional] 
 **active** | **Boolean** |  | [optional] 
+**include_branches** | **Boolean** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 
@@ -22,6 +23,7 @@ instance = Phrase::Webhook.new(id: null,
                                  description: null,
                                  events: null,
                                  active: null,
+                                 include_branches: null,
                                  created_at: null,
                                  updated_at: null)
 ```

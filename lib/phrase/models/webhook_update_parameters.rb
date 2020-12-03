@@ -17,6 +17,9 @@ module Phrase
     # Whether webhook is active or inactive
     attr_accessor :active
 
+    # If enabled, webhook will also be triggered for events from branches of the project specified.
+    attr_accessor :include_branches
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -24,7 +27,8 @@ module Phrase
         :'secret' => :'secret',
         :'description' => :'description',
         :'events' => :'events',
-        :'active' => :'active'
+        :'active' => :'active',
+        :'include_branches' => :'include_branches'
       }
     end
 
@@ -35,7 +39,8 @@ module Phrase
         :'secret' => :'String',
         :'description' => :'String',
         :'events' => :'String',
-        :'active' => :'Boolean'
+        :'active' => :'Boolean',
+        :'include_branches' => :'Boolean'
       }
     end
 
@@ -79,6 +84,10 @@ module Phrase
       if attributes.key?(:'active')
         self.active = attributes[:'active']
       end
+
+      if attributes.key?(:'include_branches')
+        self.include_branches = attributes[:'include_branches']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -103,7 +112,8 @@ module Phrase
           secret == o.secret &&
           description == o.description &&
           events == o.events &&
-          active == o.active
+          active == o.active &&
+          include_branches == o.include_branches
     end
 
     # @see the `==` method
@@ -115,7 +125,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [callback_url, secret, description, events, active].hash
+      [callback_url, secret, description, events, active, include_branches].hash
     end
 
     # Builds the object from hash

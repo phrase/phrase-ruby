@@ -12,6 +12,8 @@ module Phrase
 
     attr_accessor :active
 
+    attr_accessor :include_branches
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -24,6 +26,7 @@ module Phrase
         :'description' => :'description',
         :'events' => :'events',
         :'active' => :'active',
+        :'include_branches' => :'include_branches',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at'
       }
@@ -37,6 +40,7 @@ module Phrase
         :'description' => :'String',
         :'events' => :'Array<String>',
         :'active' => :'Boolean',
+        :'include_branches' => :'Boolean',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }
@@ -85,6 +89,10 @@ module Phrase
         self.active = attributes[:'active']
       end
 
+      if attributes.key?(:'include_branches')
+        self.include_branches = attributes[:'include_branches']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -117,6 +125,7 @@ module Phrase
           description == o.description &&
           events == o.events &&
           active == o.active &&
+          include_branches == o.include_branches &&
           created_at == o.created_at &&
           updated_at == o.updated_at
     end
@@ -130,7 +139,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, callback_url, description, events, active, created_at, updated_at].hash
+      [id, callback_url, description, events, active, include_branches, created_at, updated_at].hash
     end
 
     # Builds the object from hash
