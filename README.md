@@ -314,6 +314,7 @@ Class | Method | HTTP request | Description
  - [Phrase::Branch](docs/Branch.md)
  - [Phrase::BranchCreateParameters](docs/BranchCreateParameters.md)
  - [Phrase::BranchMergeParameters](docs/BranchMergeParameters.md)
+ - [Phrase::BranchName](docs/BranchName.md)
  - [Phrase::BranchUpdateParameters](docs/BranchUpdateParameters.md)
  - [Phrase::Comment](docs/Comment.md)
  - [Phrase::CommentCreateParameters](docs/CommentCreateParameters.md)

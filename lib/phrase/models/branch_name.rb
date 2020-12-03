@@ -1,56 +1,20 @@
 require 'date'
 
 module Phrase
-  class Job
-    attr_accessor :id
-
+  class BranchName
     attr_accessor :name
-
-    attr_accessor :briefing
-
-    attr_accessor :due_date
-
-    attr_accessor :state
-
-    attr_accessor :ticket_url
-
-    attr_accessor :project
-
-    attr_accessor :branch
-
-    attr_accessor :created_at
-
-    attr_accessor :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'name' => :'name',
-        :'briefing' => :'briefing',
-        :'due_date' => :'due_date',
-        :'state' => :'state',
-        :'ticket_url' => :'ticket_url',
-        :'project' => :'project',
-        :'branch' => :'branch',
-        :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at'
+        :'name' => :'name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'name' => :'String',
-        :'briefing' => :'String',
-        :'due_date' => :'DateTime',
-        :'state' => :'String',
-        :'ticket_url' => :'String',
-        :'project' => :'ProjectShort',
-        :'branch' => :'BranchName',
-        :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime'
+        :'name' => :'String'
       }
     end
 
@@ -64,55 +28,19 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::Job` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::BranchName` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::Job`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::BranchName`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      end
-
       if attributes.key?(:'name')
         self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'briefing')
-        self.briefing = attributes[:'briefing']
-      end
-
-      if attributes.key?(:'due_date')
-        self.due_date = attributes[:'due_date']
-      end
-
-      if attributes.key?(:'state')
-        self.state = attributes[:'state']
-      end
-
-      if attributes.key?(:'ticket_url')
-        self.ticket_url = attributes[:'ticket_url']
-      end
-
-      if attributes.key?(:'project')
-        self.project = attributes[:'project']
-      end
-
-      if attributes.key?(:'branch')
-        self.branch = attributes[:'branch']
-      end
-
-      if attributes.key?(:'created_at')
-        self.created_at = attributes[:'created_at']
-      end
-
-      if attributes.key?(:'updated_at')
-        self.updated_at = attributes[:'updated_at']
       end
     end
 
@@ -134,16 +62,7 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          name == o.name &&
-          briefing == o.briefing &&
-          due_date == o.due_date &&
-          state == o.state &&
-          ticket_url == o.ticket_url &&
-          project == o.project &&
-          branch == o.branch &&
-          created_at == o.created_at &&
-          updated_at == o.updated_at
+          name == o.name
     end
 
     # @see the `==` method
@@ -155,7 +74,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at].hash
+      [name].hash
     end
 
     # Builds the object from hash

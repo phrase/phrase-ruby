@@ -10,9 +10,10 @@ Name | Type | Description | Notes
 **due_date** | **DateTime** |  | [optional] 
 **state** | **String** |  | [optional] 
 **ticket_url** | **String** |  | [optional] 
+**project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
+**branch** | [**BranchName**](BranchName.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
-**project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 
 ## Code Sample
 
@@ -25,9 +26,10 @@ instance = Phrase::Job.new(id: null,
                                  due_date: null,
                                  state: null,
                                  ticket_url: null,
+                                 project: null,
+                                 branch: null,
                                  created_at: null,
-                                 updated_at: null,
-                                 project: null)
+                                 updated_at: null)
 ```
 
 

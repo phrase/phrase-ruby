@@ -14,11 +14,13 @@ module Phrase
 
     attr_accessor :ticket_url
 
+    attr_accessor :project
+
+    attr_accessor :branch
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
-
-    attr_accessor :project
 
     attr_accessor :owner
 
@@ -37,9 +39,10 @@ module Phrase
         :'due_date' => :'due_date',
         :'state' => :'state',
         :'ticket_url' => :'ticket_url',
+        :'project' => :'project',
+        :'branch' => :'branch',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
-        :'project' => :'project',
         :'owner' => :'owner',
         :'job_tag_name' => :'job_tag_name',
         :'locales' => :'locales',
@@ -56,9 +59,10 @@ module Phrase
         :'due_date' => :'DateTime',
         :'state' => :'String',
         :'ticket_url' => :'String',
+        :'project' => :'ProjectShort',
+        :'branch' => :'BranchName',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
-        :'project' => :'ProjectShort',
         :'owner' => :'UserPreview',
         :'job_tag_name' => :'String',
         :'locales' => :'Array<LocalePreview>',
@@ -119,16 +123,20 @@ module Phrase
         self.ticket_url = attributes[:'ticket_url']
       end
 
+      if attributes.key?(:'project')
+        self.project = attributes[:'project']
+      end
+
+      if attributes.key?(:'branch')
+        self.branch = attributes[:'branch']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
 
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
-      end
-
-      if attributes.key?(:'project')
-        self.project = attributes[:'project']
       end
 
       if attributes.key?(:'owner')
@@ -176,9 +184,10 @@ module Phrase
           due_date == o.due_date &&
           state == o.state &&
           ticket_url == o.ticket_url &&
+          project == o.project &&
+          branch == o.branch &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
-          project == o.project &&
           owner == o.owner &&
           job_tag_name == o.job_tag_name &&
           locales == o.locales &&
@@ -194,7 +203,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, ticket_url, created_at, updated_at, project, owner, job_tag_name, locales, keys].hash
+      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, owner, job_tag_name, locales, keys].hash
     end
 
     # Builds the object from hash
