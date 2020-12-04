@@ -10,13 +10,16 @@ module Phrase
 
     attr_accessor :users
 
+    attr_accessor :completed
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'job' => :'job',
         :'locale' => :'locale',
-        :'users' => :'users'
+        :'users' => :'users',
+        :'completed' => :'completed'
       }
     end
 
@@ -26,7 +29,8 @@ module Phrase
         :'id' => :'String',
         :'job' => :'JobPreview',
         :'locale' => :'LocalePreview',
-        :'users' => :'Array<UserPreview>'
+        :'users' => :'Array<UserPreview>',
+        :'completed' => :'Boolean'
       }
     end
 
@@ -68,6 +72,10 @@ module Phrase
           self.users = value
         end
       end
+
+      if attributes.key?(:'completed')
+        self.completed = attributes[:'completed']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -91,7 +99,8 @@ module Phrase
           id == o.id &&
           job == o.job &&
           locale == o.locale &&
-          users == o.users
+          users == o.users &&
+          completed == o.completed
     end
 
     # @see the `==` method
@@ -103,7 +112,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, job, locale, users].hash
+      [id, job, locale, users, completed].hash
     end
 
     # Builds the object from hash

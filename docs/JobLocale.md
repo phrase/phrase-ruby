@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **job** | [**JobPreview**](JobPreview.md) |  | [optional] 
 **locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **users** | [**Array&lt;UserPreview&gt;**](UserPreview.md) |  | [optional] 
+**completed** | **Boolean** |  | [optional] 
 
 ## Code Sample
 
@@ -17,7 +18,8 @@ require 'Phrase'
 instance = Phrase::JobLocale.new(id: null,
                                  job: null,
                                  locale: null,
-                                 users: null)
+                                 users: null,
+                                 completed: null)
 ```
 
 
