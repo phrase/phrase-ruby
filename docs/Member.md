@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **email** | **String** |  | [optional] 
 **username** | **String** |  | [optional] 
 **role** | **String** |  | [optional] 
+**default_locale_codes** | **Array&lt;String&gt;** |  | [optional] 
 **projects** | [**Array&lt;ProjectLocales&gt;**](ProjectLocales.md) |  | [optional] 
 
 ## Code Sample
@@ -19,6 +20,7 @@ instance = Phrase::Member.new(id: null,
                                  email: null,
                                  username: null,
                                  role: null,
+                                 default_locale_codes: null,
                                  projects: null)
 ```
 

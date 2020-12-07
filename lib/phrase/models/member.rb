@@ -10,6 +10,8 @@ module Phrase
 
     attr_accessor :role
 
+    attr_accessor :default_locale_codes
+
     attr_accessor :projects
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -19,6 +21,7 @@ module Phrase
         :'email' => :'email',
         :'username' => :'username',
         :'role' => :'role',
+        :'default_locale_codes' => :'default_locale_codes',
         :'projects' => :'projects'
       }
     end
@@ -30,6 +33,7 @@ module Phrase
         :'email' => :'String',
         :'username' => :'String',
         :'role' => :'String',
+        :'default_locale_codes' => :'Array<String>',
         :'projects' => :'Array<ProjectLocales>'
       }
     end
@@ -71,6 +75,12 @@ module Phrase
         self.role = attributes[:'role']
       end
 
+      if attributes.key?(:'default_locale_codes')
+        if (value = attributes[:'default_locale_codes']).is_a?(Array)
+          self.default_locale_codes = value
+        end
+      end
+
       if attributes.key?(:'projects')
         if (value = attributes[:'projects']).is_a?(Array)
           self.projects = value
@@ -100,6 +110,7 @@ module Phrase
           email == o.email &&
           username == o.username &&
           role == o.role &&
+          default_locale_codes == o.default_locale_codes &&
           projects == o.projects
     end
 
@@ -112,7 +123,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, email, username, role, projects].hash
+      [id, email, username, role, default_locale_codes, projects].hash
     end
 
     # Builds the object from hash
