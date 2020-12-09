@@ -14,6 +14,8 @@ module Phrase
 
     attr_accessor :locales
 
+    attr_accessor :default_locale_codes
+
     attr_accessor :permissions
 
     attr_accessor :created_at
@@ -31,6 +33,7 @@ module Phrase
         :'state' => :'state',
         :'projects' => :'projects',
         :'locales' => :'locales',
+        :'default_locale_codes' => :'default_locale_codes',
         :'permissions' => :'permissions',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
@@ -47,6 +50,7 @@ module Phrase
         :'state' => :'String',
         :'projects' => :'Array<ProjectShort>',
         :'locales' => :'Array<LocalePreview>',
+        :'default_locale_codes' => :'Array<String>',
         :'permissions' => :'Object',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
@@ -103,6 +107,12 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'default_locale_codes')
+        if (value = attributes[:'default_locale_codes']).is_a?(Array)
+          self.default_locale_codes = value
+        end
+      end
+
       if attributes.key?(:'permissions')
         self.permissions = attributes[:'permissions']
       end
@@ -144,6 +154,7 @@ module Phrase
           state == o.state &&
           projects == o.projects &&
           locales == o.locales &&
+          default_locale_codes == o.default_locale_codes &&
           permissions == o.permissions &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
@@ -159,7 +170,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, email, role, state, projects, locales, permissions, created_at, updated_at, accepted_at].hash
+      [id, email, role, state, projects, locales, default_locale_codes, permissions, created_at, updated_at, accepted_at].hash
     end
 
     # Builds the object from hash

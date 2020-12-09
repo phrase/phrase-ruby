@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **projects** | [**Array&lt;ProjectShort&gt;**](ProjectShort.md) |  | [optional] 
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
+**default_locale_codes** | **Array&lt;String&gt;** |  | [optional] 
 **permissions** | [**Object**](.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
@@ -26,6 +27,7 @@ instance = Phrase::Invitation.new(id: null,
                                  state: null,
                                  projects: null,
                                  locales: null,
+                                 default_locale_codes: null,
                                  permissions: null,
                                  created_at: null,
                                  updated_at: null,
