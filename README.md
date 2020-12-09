@@ -376,6 +376,7 @@ Class | Method | HTTP request | Description
  - [Phrase::LocaleStatistics](docs/LocaleStatistics.md)
  - [Phrase::LocaleUpdateParameters](docs/LocaleUpdateParameters.md)
  - [Phrase::Member](docs/Member.md)
+ - [Phrase::MemberSpaces](docs/MemberSpaces.md)
  - [Phrase::MemberUpdateParameters](docs/MemberUpdateParameters.md)
  - [Phrase::OrderConfirmParameters](docs/OrderConfirmParameters.md)
  - [Phrase::OrderCreateParameters](docs/OrderCreateParameters.md)

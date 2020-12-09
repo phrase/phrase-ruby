@@ -8,8 +8,10 @@ Name | Type | Description | Notes
 **email** | **String** |  | [optional] 
 **username** | **String** |  | [optional] 
 **role** | **String** |  | [optional] 
-**default_locale_codes** | **Array&lt;String&gt;** |  | [optional] 
 **projects** | [**Array&lt;ProjectLocales&gt;**](ProjectLocales.md) |  | [optional] 
+**permissions** | [**Object**](.md) |  | [optional] 
+**default_locale_codes** | **Array&lt;String&gt;** |  | [optional] 
+**spaces** | [**Array&lt;MemberSpaces&gt;**](MemberSpaces.md) |  | [optional] 
 
 ## Code Sample
 
@@ -20,8 +22,10 @@ instance = Phrase::Member.new(id: null,
                                  email: null,
                                  username: null,
                                  role: null,
+                                 projects: null,
+                                 permissions: null,
                                  default_locale_codes: null,
-                                 projects: null)
+                                 spaces: null)
 ```
 
 

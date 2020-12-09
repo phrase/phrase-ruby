@@ -10,9 +10,13 @@ module Phrase
 
     attr_accessor :role
 
+    attr_accessor :projects
+
+    attr_accessor :permissions
+
     attr_accessor :default_locale_codes
 
-    attr_accessor :projects
+    attr_accessor :spaces
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -21,8 +25,10 @@ module Phrase
         :'email' => :'email',
         :'username' => :'username',
         :'role' => :'role',
+        :'projects' => :'projects',
+        :'permissions' => :'permissions',
         :'default_locale_codes' => :'default_locale_codes',
-        :'projects' => :'projects'
+        :'spaces' => :'spaces'
       }
     end
 
@@ -33,8 +39,10 @@ module Phrase
         :'email' => :'String',
         :'username' => :'String',
         :'role' => :'String',
+        :'projects' => :'Array<ProjectLocales>',
+        :'permissions' => :'Object',
         :'default_locale_codes' => :'Array<String>',
-        :'projects' => :'Array<ProjectLocales>'
+        :'spaces' => :'Array<MemberSpaces>'
       }
     end
 
@@ -75,15 +83,25 @@ module Phrase
         self.role = attributes[:'role']
       end
 
+      if attributes.key?(:'projects')
+        if (value = attributes[:'projects']).is_a?(Array)
+          self.projects = value
+        end
+      end
+
+      if attributes.key?(:'permissions')
+        self.permissions = attributes[:'permissions']
+      end
+
       if attributes.key?(:'default_locale_codes')
         if (value = attributes[:'default_locale_codes']).is_a?(Array)
           self.default_locale_codes = value
         end
       end
 
-      if attributes.key?(:'projects')
-        if (value = attributes[:'projects']).is_a?(Array)
-          self.projects = value
+      if attributes.key?(:'spaces')
+        if (value = attributes[:'spaces']).is_a?(Array)
+          self.spaces = value
         end
       end
     end
@@ -110,8 +128,10 @@ module Phrase
           email == o.email &&
           username == o.username &&
           role == o.role &&
+          projects == o.projects &&
+          permissions == o.permissions &&
           default_locale_codes == o.default_locale_codes &&
-          projects == o.projects
+          spaces == o.spaces
     end
 
     # @see the `==` method
@@ -123,7 +143,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, email, username, role, default_locale_codes, projects].hash
+      [id, email, username, role, projects, permissions, default_locale_codes, spaces].hash
     end
 
     # Builds the object from hash
