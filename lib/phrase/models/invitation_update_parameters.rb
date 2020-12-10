@@ -11,6 +11,9 @@ module Phrase
     # List of locale ids the invited user has access to
     attr_accessor :locale_ids
 
+    # List of spaces the user is assigned to.
+    attr_accessor :space_ids
+
     # List of default locales for the user.
     attr_accessor :default_locale_codes
 
@@ -23,6 +26,7 @@ module Phrase
         :'role' => :'role',
         :'project_ids' => :'project_ids',
         :'locale_ids' => :'locale_ids',
+        :'space_ids' => :'space_ids',
         :'default_locale_codes' => :'default_locale_codes',
         :'permissions' => :'permissions'
       }
@@ -34,6 +38,7 @@ module Phrase
         :'role' => :'String',
         :'project_ids' => :'String',
         :'locale_ids' => :'String',
+        :'space_ids' => :'Array<String>',
         :'default_locale_codes' => :'Array<String>',
         :'permissions' => :'Hash<String, String>'
       }
@@ -72,6 +77,12 @@ module Phrase
         self.locale_ids = attributes[:'locale_ids']
       end
 
+      if attributes.key?(:'space_ids')
+        if (value = attributes[:'space_ids']).is_a?(Array)
+          self.space_ids = value
+        end
+      end
+
       if attributes.key?(:'default_locale_codes')
         if (value = attributes[:'default_locale_codes']).is_a?(Array)
           self.default_locale_codes = value
@@ -106,6 +117,7 @@ module Phrase
           role == o.role &&
           project_ids == o.project_ids &&
           locale_ids == o.locale_ids &&
+          space_ids == o.space_ids &&
           default_locale_codes == o.default_locale_codes &&
           permissions == o.permissions
     end
@@ -119,7 +131,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [role, project_ids, locale_ids, default_locale_codes, permissions].hash
+      [role, project_ids, locale_ids, space_ids, default_locale_codes, permissions].hash
     end
 
     # Builds the object from hash

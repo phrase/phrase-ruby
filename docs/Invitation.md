@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 **accepted_at** | **DateTime** |  | [optional] 
+**spaces** | [**Array&lt;MemberSpaces&gt;**](MemberSpaces.md) |  | [optional] 
 
 ## Code Sample
 
@@ -31,7 +32,8 @@ instance = Phrase::Invitation.new(id: null,
                                  permissions: null,
                                  created_at: null,
                                  updated_at: null,
-                                 accepted_at: null)
+                                 accepted_at: null,
+                                 spaces: null)
 ```
 
 

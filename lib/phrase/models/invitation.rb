@@ -24,6 +24,8 @@ module Phrase
 
     attr_accessor :accepted_at
 
+    attr_accessor :spaces
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -37,7 +39,8 @@ module Phrase
         :'permissions' => :'permissions',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
-        :'accepted_at' => :'accepted_at'
+        :'accepted_at' => :'accepted_at',
+        :'spaces' => :'spaces'
       }
     end
 
@@ -54,7 +57,8 @@ module Phrase
         :'permissions' => :'Object',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
-        :'accepted_at' => :'DateTime'
+        :'accepted_at' => :'DateTime',
+        :'spaces' => :'Array<MemberSpaces>'
       }
     end
 
@@ -128,6 +132,12 @@ module Phrase
       if attributes.key?(:'accepted_at')
         self.accepted_at = attributes[:'accepted_at']
       end
+
+      if attributes.key?(:'spaces')
+        if (value = attributes[:'spaces']).is_a?(Array)
+          self.spaces = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -158,7 +168,8 @@ module Phrase
           permissions == o.permissions &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
-          accepted_at == o.accepted_at
+          accepted_at == o.accepted_at &&
+          spaces == o.spaces
     end
 
     # @see the `==` method
@@ -170,7 +181,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, email, role, state, projects, locales, default_locale_codes, permissions, created_at, updated_at, accepted_at].hash
+      [id, email, role, state, projects, locales, default_locale_codes, permissions, created_at, updated_at, accepted_at, spaces].hash
     end
 
     # Builds the object from hash
