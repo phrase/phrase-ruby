@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**member_delete**](MembersApi.md#member_delete) | **DELETE** /accounts/{account_id}/members/{id} | Remove a user from the account
 [**member_show**](MembersApi.md#member_show) | **GET** /accounts/{account_id}/members/{id} | Get single member
 [**member_update**](MembersApi.md#member_update) | **PATCH** /accounts/{account_id}/members/{id} | Update a member
+[**member_update_settings**](MembersApi.md#member_update_settings) | **PATCH** /projects/{project_id}/members/{id} | Update a member&#39;s project settings
 [**members_list**](MembersApi.md#members_list) | **GET** /accounts/{account_id}/members | List members
 
 
@@ -190,6 +191,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 Response<([**Member**](Member.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## member_update_settings
+
+> MemberProjectDetail member_update_settings(project_id, id, member_update_settings_parameters, opts)
+
+Update a member's project settings
+
+Update user settings in the project. Access token scope must include <code>team.manage</code>.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::MembersApi.new
+project_id = 'project_id_example' # String | Project ID
+id = 'id_example' # String | ID
+member_update_settings_parameters = Phrase::MemberUpdateSettingsParameters.new # MemberUpdateSettingsParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Update a member's project settings
+  result = api_instance.member_update_settings(project_id, id, member_update_settings_parameters, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling MembersApi->member_update_settings: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **id** | **String**| ID | 
+ **member_update_settings_parameters** | [**MemberUpdateSettingsParameters**](MemberUpdateSettingsParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<([**MemberProjectDetail**](MemberProjectDetail.md))>
 
 ### Authorization
 

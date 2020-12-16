@@ -63,6 +63,21 @@ describe 'MembersApi' do
     end
   end
 
+  # unit tests for member_update_settings
+  # Update a member&#39;s project settings
+  # Update user settings in the project. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+  # @param project_id Project ID
+  # @param id ID
+  # @param member_update_settings_parameters 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [MemberProjectDetail]
+  describe 'member_update_settings test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for members_list
   # List members
   # Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
