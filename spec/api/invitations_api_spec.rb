@@ -91,6 +91,21 @@ describe 'InvitationsApi' do
     end
   end
 
+  # unit tests for invitation_update_settings
+  # Update a member&#39;s invitation access
+  # Update member&#39;s settings in the invitations. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+  # @param project_id Project ID
+  # @param id ID
+  # @param invitation_update_settings_parameters 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [Invitation]
+  describe 'invitation_update_settings test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for invitations_list
   # List invitations
   # List invitations for an account. It will also list the accessible resources like projects and locales the invited user has access to. In case nothing is shown the default access from the role is used. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.

@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**invitation_resend**](InvitationsApi.md#invitation_resend) | **POST** /accounts/{account_id}/invitations/{id}/resend | Resend an invitation
 [**invitation_show**](InvitationsApi.md#invitation_show) | **GET** /accounts/{account_id}/invitations/{id} | Get a single invitation
 [**invitation_update**](InvitationsApi.md#invitation_update) | **PATCH** /accounts/{account_id}/invitations/{id} | Update an invitation
+[**invitation_update_settings**](InvitationsApi.md#invitation_update_settings) | **PATCH** /projects/{project_id}/invitations/{id} | Update a member&#39;s invitation access
 [**invitations_list**](InvitationsApi.md#invitations_list) | **GET** /accounts/{account_id}/invitations | List invitations
 
 
@@ -313,6 +314,71 @@ Name | Type | Description  | Notes
  **account_id** | **String**| Account ID | 
  **id** | **String**| ID | 
  **invitation_update_parameters** | [**InvitationUpdateParameters**](InvitationUpdateParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<([**Invitation**](Invitation.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## invitation_update_settings
+
+> Invitation invitation_update_settings(project_id, id, invitation_update_settings_parameters, opts)
+
+Update a member's invitation access
+
+Update member's settings in the invitations. Access token scope must include <code>team.manage</code>.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::InvitationsApi.new
+project_id = 'project_id_example' # String | Project ID
+id = 'id_example' # String | ID
+invitation_update_settings_parameters = Phrase::InvitationUpdateSettingsParameters.new # InvitationUpdateSettingsParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Update a member's invitation access
+  result = api_instance.invitation_update_settings(project_id, id, invitation_update_settings_parameters, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling InvitationsApi->invitation_update_settings: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **id** | **String**| ID | 
+ **invitation_update_settings_parameters** | [**InvitationUpdateSettingsParameters**](InvitationUpdateSettingsParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

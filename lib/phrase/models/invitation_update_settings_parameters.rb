@@ -1,72 +1,26 @@
 require 'date'
 
 module Phrase
-  class Invitation
-    attr_accessor :id
-
-    attr_accessor :email
-
-    attr_accessor :role
-
-    attr_accessor :state
-
-    attr_accessor :projects
-
-    attr_accessor :locales
-
-    attr_accessor :default_locale_codes
-
-    attr_accessor :permissions
-
-    attr_accessor :locale_ids
-
-    attr_accessor :created_at
-
-    attr_accessor :updated_at
-
-    attr_accessor :accepted_at
-
-    attr_accessor :spaces
-
+  class InvitationUpdateSettingsParameters
+    # Member role, can be any of of Manager, Developer, Translator
     attr_accessor :project_role
+
+    # List of locale ids the user has access to.
+    attr_accessor :locale_ids
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'email' => :'email',
-        :'role' => :'role',
-        :'state' => :'state',
-        :'projects' => :'projects',
-        :'locales' => :'locales',
-        :'default_locale_codes' => :'default_locale_codes',
-        :'permissions' => :'permissions',
-        :'locale_ids' => :'locale_ids',
-        :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at',
-        :'accepted_at' => :'accepted_at',
-        :'spaces' => :'spaces',
-        :'project_role' => :'project_role'
+        :'project_role' => :'project_role',
+        :'locale_ids' => :'locale_ids'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'email' => :'String',
-        :'role' => :'String',
-        :'state' => :'String',
-        :'projects' => :'Array<ProjectShort>',
-        :'locales' => :'Array<LocalePreview>',
-        :'default_locale_codes' => :'Array<String>',
-        :'permissions' => :'Object',
-        :'locale_ids' => :'Array<String>',
-        :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime',
-        :'accepted_at' => :'DateTime',
-        :'spaces' => :'Array<MemberSpaces>',
-        :'project_role' => :'Array<MemberProjectDetailProjectRoles>'
+        :'project_role' => :'String',
+        :'locale_ids' => :'Array<String>'
       }
     end
 
@@ -80,82 +34,24 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::Invitation` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::InvitationUpdateSettingsParameters` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::Invitation`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::InvitationUpdateSettingsParameters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      end
-
-      if attributes.key?(:'email')
-        self.email = attributes[:'email']
-      end
-
-      if attributes.key?(:'role')
-        self.role = attributes[:'role']
-      end
-
-      if attributes.key?(:'state')
-        self.state = attributes[:'state']
-      end
-
-      if attributes.key?(:'projects')
-        if (value = attributes[:'projects']).is_a?(Array)
-          self.projects = value
-        end
-      end
-
-      if attributes.key?(:'locales')
-        if (value = attributes[:'locales']).is_a?(Array)
-          self.locales = value
-        end
-      end
-
-      if attributes.key?(:'default_locale_codes')
-        if (value = attributes[:'default_locale_codes']).is_a?(Array)
-          self.default_locale_codes = value
-        end
-      end
-
-      if attributes.key?(:'permissions')
-        self.permissions = attributes[:'permissions']
+      if attributes.key?(:'project_role')
+        self.project_role = attributes[:'project_role']
       end
 
       if attributes.key?(:'locale_ids')
         if (value = attributes[:'locale_ids']).is_a?(Array)
           self.locale_ids = value
-        end
-      end
-
-      if attributes.key?(:'created_at')
-        self.created_at = attributes[:'created_at']
-      end
-
-      if attributes.key?(:'updated_at')
-        self.updated_at = attributes[:'updated_at']
-      end
-
-      if attributes.key?(:'accepted_at')
-        self.accepted_at = attributes[:'accepted_at']
-      end
-
-      if attributes.key?(:'spaces')
-        if (value = attributes[:'spaces']).is_a?(Array)
-          self.spaces = value
-        end
-      end
-
-      if attributes.key?(:'project_role')
-        if (value = attributes[:'project_role']).is_a?(Array)
-          self.project_role = value
         end
       end
     end
@@ -178,20 +74,8 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          email == o.email &&
-          role == o.role &&
-          state == o.state &&
-          projects == o.projects &&
-          locales == o.locales &&
-          default_locale_codes == o.default_locale_codes &&
-          permissions == o.permissions &&
-          locale_ids == o.locale_ids &&
-          created_at == o.created_at &&
-          updated_at == o.updated_at &&
-          accepted_at == o.accepted_at &&
-          spaces == o.spaces &&
-          project_role == o.project_role
+          project_role == o.project_role &&
+          locale_ids == o.locale_ids
     end
 
     # @see the `==` method
@@ -203,7 +87,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, email, role, state, projects, locales, default_locale_codes, permissions, locale_ids, created_at, updated_at, accepted_at, spaces, project_role].hash
+      [project_role, locale_ids].hash
     end
 
     # Builds the object from hash

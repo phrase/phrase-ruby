@@ -12,10 +12,12 @@ Name | Type | Description | Notes
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
 **default_locale_codes** | **Array&lt;String&gt;** |  | [optional] 
 **permissions** | [**Object**](.md) |  | [optional] 
+**locale_ids** | **Array&lt;String&gt;** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 **accepted_at** | **DateTime** |  | [optional] 
 **spaces** | [**Array&lt;MemberSpaces&gt;**](MemberSpaces.md) |  | [optional] 
+**project_role** | [**Array&lt;MemberProjectDetailProjectRoles&gt;**](MemberProjectDetailProjectRoles.md) |  | [optional] 
 
 ## Code Sample
 
@@ -30,10 +32,12 @@ instance = Phrase::Invitation.new(id: null,
                                  locales: null,
                                  default_locale_codes: null,
                                  permissions: null,
+                                 locale_ids: null,
                                  created_at: null,
                                  updated_at: null,
                                  accepted_at: null,
-                                 spaces: null)
+                                 spaces: null,
+                                 project_role: null)
 ```
 
 

@@ -169,6 +169,7 @@ Class | Method | HTTP request | Description
 *Phrase::InvitationsApi* | [**invitation_resend**](docs/InvitationsApi.md#invitation_resend) | **POST** /accounts/{account_id}/invitations/{id}/resend | Resend an invitation
 *Phrase::InvitationsApi* | [**invitation_show**](docs/InvitationsApi.md#invitation_show) | **GET** /accounts/{account_id}/invitations/{id} | Get a single invitation
 *Phrase::InvitationsApi* | [**invitation_update**](docs/InvitationsApi.md#invitation_update) | **PATCH** /accounts/{account_id}/invitations/{id} | Update an invitation
+*Phrase::InvitationsApi* | [**invitation_update_settings**](docs/InvitationsApi.md#invitation_update_settings) | **PATCH** /projects/{project_id}/invitations/{id} | Update a member's invitation access
 *Phrase::InvitationsApi* | [**invitations_list**](docs/InvitationsApi.md#invitations_list) | **GET** /accounts/{account_id}/invitations | List invitations
 *Phrase::JobLocalesApi* | [**job_locale_complete**](docs/JobLocalesApi.md#job_locale_complete) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete | Complete a job locale
 *Phrase::JobLocalesApi* | [**job_locale_delete**](docs/JobLocalesApi.md#job_locale_delete) | **DELETE** /projects/{project_id}/jobs/{job_id}/locales/{id} | Delete a job locale
@@ -348,6 +349,7 @@ Class | Method | HTTP request | Description
  - [Phrase::Invitation](docs/Invitation.md)
  - [Phrase::InvitationCreateParameters](docs/InvitationCreateParameters.md)
  - [Phrase::InvitationUpdateParameters](docs/InvitationUpdateParameters.md)
+ - [Phrase::InvitationUpdateSettingsParameters](docs/InvitationUpdateSettingsParameters.md)
  - [Phrase::Job](docs/Job.md)
  - [Phrase::JobCompleteParameters](docs/JobCompleteParameters.md)
  - [Phrase::JobCreateParameters](docs/JobCreateParameters.md)
