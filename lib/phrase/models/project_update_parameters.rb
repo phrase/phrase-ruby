@@ -2,45 +2,130 @@ require 'date'
 
 module Phrase
   class ProjectUpdateParameters
-    # Name of the project
+    # Required if the requesting user is a member of multiple accounts. Account ID to specify the actual account the project should be created in.
+    attr_accessor :account_id
+
+    # (Optional) Name of the project
     attr_accessor :name
 
-    # Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see <a href=\"https://help.phrase.com/help/supported-platforms-and-formats\">Format Guide</a> or our <a href=\"#formats\">Formats API Endpoint</a>.
+    # (Optional) Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see <a href=\"https://help.phrase.com/help/supported-platforms-and-formats\">Format Guide</a> or our <a href=\"#formats\">Formats API Endpoint</a>.
     attr_accessor :main_format
 
-    # Indicates whether the project should share the account's translation memory
+    # (Optional) Indicates whether the project should share the account's translation memory
     attr_accessor :shares_translation_memory
 
-    # Image to identify the project
+    # (Optional) Image to identify the project
     attr_accessor :project_image
 
-    # Indicates whether the project image should be deleted.
+    # (Optional) Indicates whether the project image should be deleted.
     attr_accessor :remove_project_image
 
-    # Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.
-    attr_accessor :account_id
+    # (Optional) Review Workflow. \"simple\" / \"review\". <a href=\"https://help.phrase.com/help/advanced-review-workflow\">Read more</a>
+    attr_accessor :workflow
+
+    # (Optional) Enable machine translation support in the project. Required for Autopilot and Smart Suggest
+    attr_accessor :machine_translation_enabled
+
+    # (Optional) Enable branching in the project
+    attr_accessor :enable_branching
+
+    # (Optional) Protect the master branch in project where branching is enabled
+    attr_accessor :protect_master_branch
+
+    # (Optional) Otherwise, translators are not allowed to edit translations other than strings
+    attr_accessor :enable_all_data_type_translation_keys_for_translators
+
+    # (Optional) We can validate and highlight your ICU messages. <a href=\"https://help.phrase.com/help/icu-message-format\">Read more</a>
+    attr_accessor :enable_icu_message_format
+
+    # (Optional) Displays the input fields for the 'ZERO' plural form for every key as well although only some languages require the 'ZERO' explicitly.
+    attr_accessor :zero_plural_form_enabled
+
+    # (Optional) Autopilot, requires machine_translation_enabled. <a href=\"https://help.phrase.com/help/autopilot\">Read more</a>
+    attr_accessor :autotranslate_enabled
+
+    # (Optional) Requires autotranslate_enabled to be true
+    attr_accessor :autotranslate_check_new_translation_keys
+
+    # (Optional) Requires autotranslate_enabled to be true
+    attr_accessor :autotranslate_check_new_uploads
+
+    # (Optional) Requires autotranslate_enabled to be true
+    attr_accessor :autotranslate_check_new_locales
+
+    # (Optional) Requires autotranslate_enabled to be true
+    attr_accessor :autotranslate_mark_as_unverified
+
+    # (Optional) Requires autotranslate_enabled to be true
+    attr_accessor :autotranslate_use_machine_translation
+
+    # (Optional) Requires autotranslate_enabled to be true
+    attr_accessor :autotranslate_use_translation_memory
+
+    # (Optional) Smart Suggest, requires machine_translation_enabled
+    attr_accessor :smart_suggest_enabled
+
+    # (Optional) Requires smart_suggest_enabled to be true
+    attr_accessor :smart_suggest_use_glossary
+
+    # (Optional) Requires smart_suggest_enabled to be true
+    attr_accessor :smart_suggest_use_machine_translation
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'account_id' => :'account_id',
         :'name' => :'name',
         :'main_format' => :'main_format',
         :'shares_translation_memory' => :'shares_translation_memory',
         :'project_image' => :'project_image',
         :'remove_project_image' => :'remove_project_image',
-        :'account_id' => :'account_id'
+        :'workflow' => :'workflow',
+        :'machine_translation_enabled' => :'machine_translation_enabled',
+        :'enable_branching' => :'enable_branching',
+        :'protect_master_branch' => :'protect_master_branch',
+        :'enable_all_data_type_translation_keys_for_translators' => :'enable_all_data_type_translation_keys_for_translators',
+        :'enable_icu_message_format' => :'enable_icu_message_format',
+        :'zero_plural_form_enabled' => :'zero_plural_form_enabled',
+        :'autotranslate_enabled' => :'autotranslate_enabled',
+        :'autotranslate_check_new_translation_keys' => :'autotranslate_check_new_translation_keys',
+        :'autotranslate_check_new_uploads' => :'autotranslate_check_new_uploads',
+        :'autotranslate_check_new_locales' => :'autotranslate_check_new_locales',
+        :'autotranslate_mark_as_unverified' => :'autotranslate_mark_as_unverified',
+        :'autotranslate_use_machine_translation' => :'autotranslate_use_machine_translation',
+        :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
+        :'smart_suggest_enabled' => :'smart_suggest_enabled',
+        :'smart_suggest_use_glossary' => :'smart_suggest_use_glossary',
+        :'smart_suggest_use_machine_translation' => :'smart_suggest_use_machine_translation'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'account_id' => :'String',
         :'name' => :'String',
         :'main_format' => :'String',
         :'shares_translation_memory' => :'Boolean',
         :'project_image' => :'File',
         :'remove_project_image' => :'Boolean',
-        :'account_id' => :'String'
+        :'workflow' => :'String',
+        :'machine_translation_enabled' => :'Boolean',
+        :'enable_branching' => :'Boolean',
+        :'protect_master_branch' => :'Boolean',
+        :'enable_all_data_type_translation_keys_for_translators' => :'Boolean',
+        :'enable_icu_message_format' => :'Boolean',
+        :'zero_plural_form_enabled' => :'Boolean',
+        :'autotranslate_enabled' => :'Boolean',
+        :'autotranslate_check_new_translation_keys' => :'Boolean',
+        :'autotranslate_check_new_uploads' => :'Boolean',
+        :'autotranslate_check_new_locales' => :'Boolean',
+        :'autotranslate_mark_as_unverified' => :'Boolean',
+        :'autotranslate_use_machine_translation' => :'Boolean',
+        :'autotranslate_use_translation_memory' => :'Boolean',
+        :'smart_suggest_enabled' => :'Boolean',
+        :'smart_suggest_use_glossary' => :'Boolean',
+        :'smart_suggest_use_machine_translation' => :'Boolean'
       }
     end
 
@@ -65,6 +150,10 @@ module Phrase
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'account_id')
+        self.account_id = attributes[:'account_id']
+      end
+
       if attributes.key?(:'name')
         self.name = attributes[:'name']
       end
@@ -85,8 +174,72 @@ module Phrase
         self.remove_project_image = attributes[:'remove_project_image']
       end
 
-      if attributes.key?(:'account_id')
-        self.account_id = attributes[:'account_id']
+      if attributes.key?(:'workflow')
+        self.workflow = attributes[:'workflow']
+      end
+
+      if attributes.key?(:'machine_translation_enabled')
+        self.machine_translation_enabled = attributes[:'machine_translation_enabled']
+      end
+
+      if attributes.key?(:'enable_branching')
+        self.enable_branching = attributes[:'enable_branching']
+      end
+
+      if attributes.key?(:'protect_master_branch')
+        self.protect_master_branch = attributes[:'protect_master_branch']
+      end
+
+      if attributes.key?(:'enable_all_data_type_translation_keys_for_translators')
+        self.enable_all_data_type_translation_keys_for_translators = attributes[:'enable_all_data_type_translation_keys_for_translators']
+      end
+
+      if attributes.key?(:'enable_icu_message_format')
+        self.enable_icu_message_format = attributes[:'enable_icu_message_format']
+      end
+
+      if attributes.key?(:'zero_plural_form_enabled')
+        self.zero_plural_form_enabled = attributes[:'zero_plural_form_enabled']
+      end
+
+      if attributes.key?(:'autotranslate_enabled')
+        self.autotranslate_enabled = attributes[:'autotranslate_enabled']
+      end
+
+      if attributes.key?(:'autotranslate_check_new_translation_keys')
+        self.autotranslate_check_new_translation_keys = attributes[:'autotranslate_check_new_translation_keys']
+      end
+
+      if attributes.key?(:'autotranslate_check_new_uploads')
+        self.autotranslate_check_new_uploads = attributes[:'autotranslate_check_new_uploads']
+      end
+
+      if attributes.key?(:'autotranslate_check_new_locales')
+        self.autotranslate_check_new_locales = attributes[:'autotranslate_check_new_locales']
+      end
+
+      if attributes.key?(:'autotranslate_mark_as_unverified')
+        self.autotranslate_mark_as_unverified = attributes[:'autotranslate_mark_as_unverified']
+      end
+
+      if attributes.key?(:'autotranslate_use_machine_translation')
+        self.autotranslate_use_machine_translation = attributes[:'autotranslate_use_machine_translation']
+      end
+
+      if attributes.key?(:'autotranslate_use_translation_memory')
+        self.autotranslate_use_translation_memory = attributes[:'autotranslate_use_translation_memory']
+      end
+
+      if attributes.key?(:'smart_suggest_enabled')
+        self.smart_suggest_enabled = attributes[:'smart_suggest_enabled']
+      end
+
+      if attributes.key?(:'smart_suggest_use_glossary')
+        self.smart_suggest_use_glossary = attributes[:'smart_suggest_use_glossary']
+      end
+
+      if attributes.key?(:'smart_suggest_use_machine_translation')
+        self.smart_suggest_use_machine_translation = attributes[:'smart_suggest_use_machine_translation']
       end
     end
 
@@ -108,12 +261,29 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          account_id == o.account_id &&
           name == o.name &&
           main_format == o.main_format &&
           shares_translation_memory == o.shares_translation_memory &&
           project_image == o.project_image &&
           remove_project_image == o.remove_project_image &&
-          account_id == o.account_id
+          workflow == o.workflow &&
+          machine_translation_enabled == o.machine_translation_enabled &&
+          enable_branching == o.enable_branching &&
+          protect_master_branch == o.protect_master_branch &&
+          enable_all_data_type_translation_keys_for_translators == o.enable_all_data_type_translation_keys_for_translators &&
+          enable_icu_message_format == o.enable_icu_message_format &&
+          zero_plural_form_enabled == o.zero_plural_form_enabled &&
+          autotranslate_enabled == o.autotranslate_enabled &&
+          autotranslate_check_new_translation_keys == o.autotranslate_check_new_translation_keys &&
+          autotranslate_check_new_uploads == o.autotranslate_check_new_uploads &&
+          autotranslate_check_new_locales == o.autotranslate_check_new_locales &&
+          autotranslate_mark_as_unverified == o.autotranslate_mark_as_unverified &&
+          autotranslate_use_machine_translation == o.autotranslate_use_machine_translation &&
+          autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
+          smart_suggest_enabled == o.smart_suggest_enabled &&
+          smart_suggest_use_glossary == o.smart_suggest_use_glossary &&
+          smart_suggest_use_machine_translation == o.smart_suggest_use_machine_translation
     end
 
     # @see the `==` method
@@ -125,7 +295,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, main_format, shares_translation_memory, project_image, remove_project_image, account_id].hash
+      [account_id, name, main_format, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation].hash
     end
 
     # Builds the object from hash
