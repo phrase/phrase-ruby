@@ -121,19 +121,4 @@ describe 'BranchesApi' do
     end
   end
 
-  # unit tests for variables_list
-  # List variables
-  # List all variables for the current project.
-  # @param project_id Project ID
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [Integer] :page Page number
-  # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
-  # @return [Array<Object>]
-  describe 'variables_list test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
 end

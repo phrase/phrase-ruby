@@ -126,7 +126,6 @@ Class | Method | HTTP request | Description
 *Phrase::BranchesApi* | [**branch_show**](docs/BranchesApi.md#branch_show) | **GET** /projects/{project_id}/branches/{name} | Get a single branch
 *Phrase::BranchesApi* | [**branch_update**](docs/BranchesApi.md#branch_update) | **PATCH** /projects/{project_id}/branches/{name} | Update a branch
 *Phrase::BranchesApi* | [**branches_list**](docs/BranchesApi.md#branches_list) | **GET** /projects/{project_id}/branches | List branches
-*Phrase::BranchesApi* | [**variables_list**](docs/BranchesApi.md#variables_list) | **GET** /projects/{project_id}/variables | List variables
 *Phrase::CommentsApi* | [**comment_create**](docs/CommentsApi.md#comment_create) | **POST** /projects/{project_id}/keys/{key_id}/comments | Create a comment
 *Phrase::CommentsApi* | [**comment_delete**](docs/CommentsApi.md#comment_delete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{id} | Delete a comment
 *Phrase::CommentsApi* | [**comment_mark_check**](docs/CommentsApi.md#comment_mark_check) | **GET** /projects/{project_id}/keys/{key_id}/comments/{id}/read | Check if comment is read
@@ -289,6 +288,7 @@ Class | Method | HTTP request | Description
 *Phrase::VariablesApi* | [**variable_delete**](docs/VariablesApi.md#variable_delete) | **DELETE** /projects/{project_id}/variables/{name} | Delete a variable
 *Phrase::VariablesApi* | [**variable_show**](docs/VariablesApi.md#variable_show) | **GET** /projects/{project_id}/variables/{name} | Get a single variable
 *Phrase::VariablesApi* | [**variable_update**](docs/VariablesApi.md#variable_update) | **PATCH** /projects/{project_id}/variables/{name} | Update a variable
+*Phrase::VariablesApi* | [**variables_list**](docs/VariablesApi.md#variables_list) | **GET** /projects/{project_id}/variables | List variables
 *Phrase::VersionsHistoryApi* | [**version_show**](docs/VersionsHistoryApi.md#version_show) | **GET** /projects/{project_id}/translations/{translation_id}/versions/{id} | Get a single version
 *Phrase::VersionsHistoryApi* | [**versions_list**](docs/VersionsHistoryApi.md#versions_list) | **GET** /projects/{project_id}/translations/{translation_id}/versions | List all versions
 *Phrase::WebhooksApi* | [**webhook_create**](docs/WebhooksApi.md#webhook_create) | **POST** /projects/{project_id}/webhooks | Create a webhook
