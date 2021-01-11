@@ -126,6 +126,7 @@ Class | Method | HTTP request | Description
 *Phrase::BranchesApi* | [**branch_show**](docs/BranchesApi.md#branch_show) | **GET** /projects/{project_id}/branches/{name} | Get a single branch
 *Phrase::BranchesApi* | [**branch_update**](docs/BranchesApi.md#branch_update) | **PATCH** /projects/{project_id}/branches/{name} | Update a branch
 *Phrase::BranchesApi* | [**branches_list**](docs/BranchesApi.md#branches_list) | **GET** /projects/{project_id}/branches | List branches
+*Phrase::BranchesApi* | [**variables_list**](docs/BranchesApi.md#variables_list) | **GET** /projects/{project_id}/variables | List variables
 *Phrase::CommentsApi* | [**comment_create**](docs/CommentsApi.md#comment_create) | **POST** /projects/{project_id}/keys/{key_id}/comments | Create a comment
 *Phrase::CommentsApi* | [**comment_delete**](docs/CommentsApi.md#comment_delete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{id} | Delete a comment
 *Phrase::CommentsApi* | [**comment_mark_check**](docs/CommentsApi.md#comment_mark_check) | **GET** /projects/{project_id}/keys/{key_id}/comments/{id}/read | Check if comment is read
@@ -284,6 +285,10 @@ Class | Method | HTTP request | Description
 *Phrase::UploadsApi* | [**upload_show**](docs/UploadsApi.md#upload_show) | **GET** /projects/{project_id}/uploads/{id} | View upload details
 *Phrase::UploadsApi* | [**uploads_list**](docs/UploadsApi.md#uploads_list) | **GET** /projects/{project_id}/uploads | List uploads
 *Phrase::UsersApi* | [**show_user**](docs/UsersApi.md#show_user) | **GET** /user | Show current User
+*Phrase::VariablesApi* | [**variable_create**](docs/VariablesApi.md#variable_create) | **POST** /projects/{project_id}/variables | Create a variable
+*Phrase::VariablesApi* | [**variable_delete**](docs/VariablesApi.md#variable_delete) | **DELETE** /projects/{project_id}/variables/{name} | Delete a variable
+*Phrase::VariablesApi* | [**variable_show**](docs/VariablesApi.md#variable_show) | **GET** /projects/{project_id}/variables/{name} | Get a single variable
+*Phrase::VariablesApi* | [**variable_update**](docs/VariablesApi.md#variable_update) | **PATCH** /projects/{project_id}/variables/{name} | Update a variable
 *Phrase::VersionsHistoryApi* | [**version_show**](docs/VersionsHistoryApi.md#version_show) | **GET** /projects/{project_id}/translations/{translation_id}/versions/{id} | Get a single version
 *Phrase::VersionsHistoryApi* | [**versions_list**](docs/VersionsHistoryApi.md#versions_list) | **GET** /projects/{project_id}/translations/{translation_id}/versions | List all versions
 *Phrase::WebhooksApi* | [**webhook_create**](docs/WebhooksApi.md#webhook_create) | **POST** /projects/{project_id}/webhooks | Create a webhook
@@ -318,6 +323,7 @@ Class | Method | HTTP request | Description
  - [Phrase::BranchMergeParameters](docs/BranchMergeParameters.md)
  - [Phrase::BranchName](docs/BranchName.md)
  - [Phrase::BranchUpdateParameters](docs/BranchUpdateParameters.md)
+ - [Phrase::BranchUpdateParameters1](docs/BranchUpdateParameters1.md)
  - [Phrase::Comment](docs/Comment.md)
  - [Phrase::CommentCreateParameters](docs/CommentCreateParameters.md)
  - [Phrase::CommentMarkReadParameters](docs/CommentMarkReadParameters.md)
@@ -455,6 +461,8 @@ Class | Method | HTTP request | Description
  - [Phrase::UploadSummary](docs/UploadSummary.md)
  - [Phrase::User](docs/User.md)
  - [Phrase::UserPreview](docs/UserPreview.md)
+ - [Phrase::Variable](docs/Variable.md)
+ - [Phrase::VariableCreateParameters](docs/VariableCreateParameters.md)
  - [Phrase::Webhook](docs/Webhook.md)
  - [Phrase::WebhookCreateParameters](docs/WebhookCreateParameters.md)
  - [Phrase::WebhookUpdateParameters](docs/WebhookUpdateParameters.md)

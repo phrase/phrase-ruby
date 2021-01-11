@@ -1,4 +1,4 @@
-# Phrase::BranchUpdateParameters
+# Phrase::VariableCreateParameters
 
 ## Properties
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::BranchUpdateParameters.new(name: MY_VARIABLE,
+instance = Phrase::VariableCreateParameters.new(name: MY_VARIABLE,
                                  value: Hello World)
 ```
 

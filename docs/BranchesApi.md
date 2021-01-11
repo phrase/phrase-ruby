@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**branch_show**](BranchesApi.md#branch_show) | **GET** /projects/{project_id}/branches/{name} | Get a single branch
 [**branch_update**](BranchesApi.md#branch_update) | **PATCH** /projects/{project_id}/branches/{name} | Update a branch
 [**branches_list**](BranchesApi.md#branches_list) | **GET** /projects/{project_id}/branches | List branches
+[**variables_list**](BranchesApi.md#variables_list) | **GET** /projects/{project_id}/variables | List variables
 
 
 
@@ -330,7 +331,7 @@ Response<([**Branch**](Branch.md))>
 
 ## branch_update
 
-> Branch branch_update(project_id, name, branch_update_parameters, opts)
+> Branch branch_update(project_id, name, branch_update_parameters1, opts)
 
 Update a branch
 
@@ -355,14 +356,14 @@ end
 api_instance = Phrase::BranchesApi.new
 project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
-branch_update_parameters = Phrase::BranchUpdateParameters.new # BranchUpdateParameters | 
+branch_update_parameters1 = Phrase::BranchUpdateParameters1.new # BranchUpdateParameters1 | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a branch
-  result = api_instance.branch_update(project_id, name, branch_update_parameters, opts)
+  result = api_instance.branch_update(project_id, name, branch_update_parameters1, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling BranchesApi->branch_update: #{e}"
@@ -376,7 +377,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
- **branch_update_parameters** | [**BranchUpdateParameters**](BranchUpdateParameters.md)|  | 
+ **branch_update_parameters1** | [**BranchUpdateParameters1**](BranchUpdateParameters1.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -447,6 +448,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 Response<([**Array&lt;Branch&gt;**](Branch.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## variables_list
+
+> Array&lt;Object&gt; variables_list(project_id, opts)
+
+List variables
+
+List all variables for the current project.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::BranchesApi.new
+project_id = 'project_id_example' # String | Project ID
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  page: 1, # Integer | Page number
+  per_page: 25 # Integer | allows you to specify a page size up to 100 items, 25 by default
+}
+
+begin
+  #List variables
+  result = api_instance.variables_list(project_id, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling BranchesApi->variables_list: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **page** | **Integer**| Page number | [optional] 
+ **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
+
+### Return type
+
+Response<(**Array&lt;Object&gt;**)>
 
 ### Authorization
 

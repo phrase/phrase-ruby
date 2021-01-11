@@ -1,26 +1,21 @@
 require 'date'
 
 module Phrase
-  class BranchUpdateParameters
-    # Name of the variable
+  class BranchUpdateParameters1
+    # Name of the branch
     attr_accessor :name
-
-    # Value of the variable
-    attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'value' => :'value'
+        :'name' => :'name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'value' => :'String'
+        :'name' => :'String'
       }
     end
 
@@ -34,23 +29,19 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::BranchUpdateParameters` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::BranchUpdateParameters1` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::BranchUpdateParameters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::BranchUpdateParameters1`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'value')
-        self.value = attributes[:'value']
       end
     end
 
@@ -72,8 +63,7 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          value == o.value
+          name == o.name
     end
 
     # @see the `==` method
@@ -85,7 +75,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, value].hash
+      [name].hash
     end
 
     # Builds the object from hash

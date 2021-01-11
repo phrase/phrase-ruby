@@ -1,18 +1,22 @@
 require 'date'
 
 module Phrase
-  class BranchUpdateParameters
-    # Name of the variable
+  class Variable
     attr_accessor :name
 
-    # Value of the variable
     attr_accessor :value
+
+    attr_accessor :created_at
+
+    attr_accessor :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'name' => :'name',
-        :'value' => :'value'
+        :'value' => :'value',
+        :'created_at' => :'created_at',
+        :'updated_at' => :'updated_at'
       }
     end
 
@@ -20,7 +24,9 @@ module Phrase
     def self.openapi_types
       {
         :'name' => :'String',
-        :'value' => :'String'
+        :'value' => :'String',
+        :'created_at' => :'DateTime',
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -34,13 +40,13 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::BranchUpdateParameters` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::Variable` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::BranchUpdateParameters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::Variable`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -51,6 +57,14 @@ module Phrase
 
       if attributes.key?(:'value')
         self.value = attributes[:'value']
+      end
+
+      if attributes.key?(:'created_at')
+        self.created_at = attributes[:'created_at']
+      end
+
+      if attributes.key?(:'updated_at')
+        self.updated_at = attributes[:'updated_at']
       end
     end
 
@@ -73,7 +87,9 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           name == o.name &&
-          value == o.value
+          value == o.value &&
+          created_at == o.created_at &&
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -85,7 +101,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, value].hash
+      [name, value, created_at, updated_at].hash
     end
 
     # Builds the object from hash
