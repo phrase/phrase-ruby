@@ -2,25 +2,20 @@ require 'date'
 
 module Phrase
   class BranchUpdateParameters
-    # Name of the variable
+    # Name of the branch
     attr_accessor :name
-
-    # Value of the variable
-    attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'value' => :'value'
+        :'name' => :'name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'value' => :'String'
+        :'name' => :'String'
       }
     end
 
@@ -48,10 +43,6 @@ module Phrase
       if attributes.key?(:'name')
         self.name = attributes[:'name']
       end
-
-      if attributes.key?(:'value')
-        self.value = attributes[:'value']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -72,8 +63,7 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          value == o.value
+          name == o.name
     end
 
     # @see the `==` method
@@ -85,7 +75,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, value].hash
+      [name].hash
     end
 
     # Builds the object from hash

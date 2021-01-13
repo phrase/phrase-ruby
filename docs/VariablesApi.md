@@ -139,7 +139,7 @@ Response<(nil (empty response body))>
 
 ## variable_show
 
-> Object variable_show(project_id, name, opts)
+> Variable variable_show(project_id, name, opts)
 
 Get a single variable
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Variable**](Variable.md))>
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Response<(**Object**)>
 
 ## variable_update
 
-> Object variable_update(project_id, name, branch_update_parameters, opts)
+> Variable variable_update(project_id, name, variable_update_parameters, opts)
 
 Update a variable
 
@@ -227,14 +227,14 @@ end
 api_instance = Phrase::VariablesApi.new
 project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
-branch_update_parameters = Phrase::BranchUpdateParameters.new # BranchUpdateParameters | 
+variable_update_parameters = Phrase::VariableUpdateParameters.new # VariableUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a variable
-  result = api_instance.variable_update(project_id, name, branch_update_parameters, opts)
+  result = api_instance.variable_update(project_id, name, variable_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling VariablesApi->variable_update: #{e}"
@@ -248,12 +248,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
- **branch_update_parameters** | [**BranchUpdateParameters**](BranchUpdateParameters.md)|  | 
+ **variable_update_parameters** | [**VariableUpdateParameters**](VariableUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**Variable**](Variable.md))>
 
 ### Authorization
 
@@ -267,7 +267,7 @@ Response<(**Object**)>
 
 ## variables_list
 
-> Array&lt;Object&gt; variables_list(project_id, opts)
+> Array&lt;Variable&gt; variables_list(project_id, opts)
 
 List variables
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Variable&gt;**](Variable.md))>
 
 ### Authorization
 

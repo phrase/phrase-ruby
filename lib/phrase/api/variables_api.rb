@@ -157,7 +157,7 @@ module Phrase
     # @param name [String] name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [Variable]
     def variable_show(project_id, name, opts = {})
       data, _status_code, _headers = variable_show_with_http_info(project_id, name, opts)
       data
@@ -169,7 +169,7 @@ module Phrase
     # @param name [String] name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(Variable)>, Integer, Hash)>] Response<(Variable)> data, response status code and response headers
     def variable_show_with_http_info(project_id, name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VariablesApi.variable_show ...'
@@ -201,7 +201,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'Variable' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -227,12 +227,12 @@ module Phrase
     # Update an existing variable.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_update_parameters [BranchUpdateParameters] 
+    # @param variable_update_parameters [VariableUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
-    def variable_update(project_id, name, branch_update_parameters, opts = {})
-      data, _status_code, _headers = variable_update_with_http_info(project_id, name, branch_update_parameters, opts)
+    # @return [Variable]
+    def variable_update(project_id, name, variable_update_parameters, opts = {})
+      data, _status_code, _headers = variable_update_with_http_info(project_id, name, variable_update_parameters, opts)
       data
     end
 
@@ -240,11 +240,11 @@ module Phrase
     # Update an existing variable.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_update_parameters [BranchUpdateParameters] 
+    # @param variable_update_parameters [VariableUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
-    def variable_update_with_http_info(project_id, name, branch_update_parameters, opts = {})
+    # @return [Array<(Response<(Variable)>, Integer, Hash)>] Response<(Variable)> data, response status code and response headers
+    def variable_update_with_http_info(project_id, name, variable_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VariablesApi.variable_update ...'
       end
@@ -256,9 +256,9 @@ module Phrase
       if @api_client.config.client_side_validation && name.nil?
         fail ArgumentError, "Missing the required parameter 'name' when calling VariablesApi.variable_update"
       end
-      # verify the required parameter 'branch_update_parameters' is set
-      if @api_client.config.client_side_validation && branch_update_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'branch_update_parameters' when calling VariablesApi.variable_update"
+      # verify the required parameter 'variable_update_parameters' is set
+      if @api_client.config.client_side_validation && variable_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'variable_update_parameters' when calling VariablesApi.variable_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/variables/{name}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'name' + '}', CGI.escape(name.to_s))
@@ -278,10 +278,10 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(branch_update_parameters) 
+      post_body = opts[:body] || @api_client.object_to_http_body(variable_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'Variable' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -310,7 +310,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
-    # @return [Array<Object>]
+    # @return [Array<Variable>]
     def variables_list(project_id, opts = {})
       data, _status_code, _headers = variables_list_with_http_info(project_id, opts)
       data
@@ -323,7 +323,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Variable>)>, Integer, Hash)>] Response<(Array<Variable>)> data, response status code and response headers
     def variables_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VariablesApi.variables_list ...'
@@ -353,7 +353,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Variable>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

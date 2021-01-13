@@ -330,7 +330,7 @@ Response<([**Branch**](Branch.md))>
 
 ## branch_update
 
-> Branch branch_update(project_id, name, branch_update_parameters1, opts)
+> Branch branch_update(project_id, name, branch_update_parameters, opts)
 
 Update a branch
 
@@ -355,14 +355,14 @@ end
 api_instance = Phrase::BranchesApi.new
 project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
-branch_update_parameters1 = Phrase::BranchUpdateParameters1.new # BranchUpdateParameters1 | 
+branch_update_parameters = Phrase::BranchUpdateParameters.new # BranchUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a branch
-  result = api_instance.branch_update(project_id, name, branch_update_parameters1, opts)
+  result = api_instance.branch_update(project_id, name, branch_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling BranchesApi->branch_update: #{e}"
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
- **branch_update_parameters1** | [**BranchUpdateParameters1**](BranchUpdateParameters1.md)|  | 
+ **branch_update_parameters** | [**BranchUpdateParameters**](BranchUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

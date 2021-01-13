@@ -375,12 +375,12 @@ module Phrase
     # Update an existing branch.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_update_parameters1 [BranchUpdateParameters1] 
+    # @param branch_update_parameters [BranchUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Branch]
-    def branch_update(project_id, name, branch_update_parameters1, opts = {})
-      data, _status_code, _headers = branch_update_with_http_info(project_id, name, branch_update_parameters1, opts)
+    def branch_update(project_id, name, branch_update_parameters, opts = {})
+      data, _status_code, _headers = branch_update_with_http_info(project_id, name, branch_update_parameters, opts)
       data
     end
 
@@ -388,11 +388,11 @@ module Phrase
     # Update an existing branch.
     # @param project_id [String] Project ID
     # @param name [String] name
-    # @param branch_update_parameters1 [BranchUpdateParameters1] 
+    # @param branch_update_parameters [BranchUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Branch)>, Integer, Hash)>] Response<(Branch)> data, response status code and response headers
-    def branch_update_with_http_info(project_id, name, branch_update_parameters1, opts = {})
+    def branch_update_with_http_info(project_id, name, branch_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BranchesApi.branch_update ...'
       end
@@ -404,9 +404,9 @@ module Phrase
       if @api_client.config.client_side_validation && name.nil?
         fail ArgumentError, "Missing the required parameter 'name' when calling BranchesApi.branch_update"
       end
-      # verify the required parameter 'branch_update_parameters1' is set
-      if @api_client.config.client_side_validation && branch_update_parameters1.nil?
-        fail ArgumentError, "Missing the required parameter 'branch_update_parameters1' when calling BranchesApi.branch_update"
+      # verify the required parameter 'branch_update_parameters' is set
+      if @api_client.config.client_side_validation && branch_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'branch_update_parameters' when calling BranchesApi.branch_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/branches/{name}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'name' + '}', CGI.escape(name.to_s))
@@ -426,7 +426,7 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(branch_update_parameters1) 
+      post_body = opts[:body] || @api_client.object_to_http_body(branch_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Branch' 
