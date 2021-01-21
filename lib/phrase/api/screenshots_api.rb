@@ -87,6 +87,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [nil]
     def screenshot_delete(project_id, id, opts = {})
       data, _status_code, _headers = screenshot_delete_with_http_info(project_id, id, opts)
@@ -99,6 +100,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def screenshot_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
@@ -117,6 +119,7 @@ module Phrase
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -157,6 +160,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Screenshot]
     def screenshot_show(project_id, id, opts = {})
       data, _status_code, _headers = screenshot_show_with_http_info(project_id, id, opts)
@@ -169,6 +173,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(Screenshot)>, Integer, Hash)>] Response<(Screenshot)> data, response status code and response headers
     def screenshot_show_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
@@ -187,6 +192,7 @@ module Phrase
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -310,6 +316,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [String] :branch specify the branch to use
     # @option opts [String] :key_id filter by key
     # @return [Array<Screenshot>]
     def screenshots_list(project_id, opts = {})
@@ -324,6 +331,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [String] :branch specify the branch to use
     # @option opts [String] :key_id filter by key
     # @return [Array<(Response<(Array<Screenshot>)>, Integer, Hash)>] Response<(Array<Screenshot>)> data, response status code and response headers
     def screenshots_list_with_http_info(project_id, opts = {})
@@ -341,6 +349,7 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
       query_params[:'key_id'] = opts[:'key_id'] if !opts[:'key_id'].nil?
 
       # header parameters

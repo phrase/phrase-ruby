@@ -2,6 +2,9 @@ require 'date'
 
 module Phrase
   class ScreenshotUpdateParameters
+    # specify the branch to use
+    attr_accessor :branch
+
     # Name of the screenshot
     attr_accessor :name
 
@@ -14,6 +17,7 @@ module Phrase
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'branch' => :'branch',
         :'name' => :'name',
         :'description' => :'description',
         :'filename' => :'filename'
@@ -23,6 +27,7 @@ module Phrase
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'branch' => :'String',
         :'name' => :'String',
         :'description' => :'String',
         :'filename' => :'File'
@@ -49,6 +54,10 @@ module Phrase
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'branch')
+        self.branch = attributes[:'branch']
+      end
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
@@ -81,6 +90,7 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          branch == o.branch &&
           name == o.name &&
           description == o.description &&
           filename == o.filename
@@ -95,7 +105,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, description, filename].hash
+      [branch, name, description, filename].hash
     end
 
     # Builds the object from hash

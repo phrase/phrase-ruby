@@ -20,6 +20,12 @@ describe 'ScreenshotMarkerCreateParameters' do
       expect(@instance).to be_instance_of(Phrase::ScreenshotMarkerCreateParameters)
     end
   end
+  describe 'test attribute "branch"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "key_id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -105,7 +105,8 @@ api_instance = Phrase::ScreenshotMarkersApi.new
 project_id = 'project_id_example' # String | Project ID
 screenshot_id = 'screenshot_id_example' # String | Screenshot ID
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
@@ -124,6 +125,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **screenshot_id** | **String**| Screenshot ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -168,7 +170,8 @@ project_id = 'project_id_example' # String | Project ID
 screenshot_id = 'screenshot_id_example' # String | Screenshot ID
 id = 'id_example' # String | ID
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
@@ -189,6 +192,7 @@ Name | Type | Description  | Notes
  **screenshot_id** | **String**| Screenshot ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -299,7 +303,8 @@ id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 25 # Integer | allows you to specify a page size up to 100 items, 25 by default
+  per_page: 25, # Integer | allows you to specify a page size up to 100 items, 25 by default
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
@@ -321,6 +326,7 @@ Name | Type | Description  | Notes
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 

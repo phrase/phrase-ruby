@@ -93,6 +93,7 @@ module Phrase
     # @param screenshot_id [String] Screenshot ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [nil]
     def screenshot_marker_delete(project_id, screenshot_id, opts = {})
       data, _status_code, _headers = screenshot_marker_delete_with_http_info(project_id, screenshot_id, opts)
@@ -105,6 +106,7 @@ module Phrase
     # @param screenshot_id [String] Screenshot ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def screenshot_marker_delete_with_http_info(project_id, screenshot_id, opts = {})
       if @api_client.config.debugging
@@ -123,6 +125,7 @@ module Phrase
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -164,6 +167,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [ScreenshotMarker]
     def screenshot_marker_show(project_id, screenshot_id, id, opts = {})
       data, _status_code, _headers = screenshot_marker_show_with_http_info(project_id, screenshot_id, id, opts)
@@ -177,6 +181,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(ScreenshotMarker)>, Integer, Hash)>] Response<(ScreenshotMarker)> data, response status code and response headers
     def screenshot_marker_show_with_http_info(project_id, screenshot_id, id, opts = {})
       if @api_client.config.debugging
@@ -199,6 +204,7 @@ module Phrase
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -323,6 +329,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<ScreenshotMarker>]
     def screenshot_markers_list(project_id, id, opts = {})
       data, _status_code, _headers = screenshot_markers_list_with_http_info(project_id, id, opts)
@@ -337,6 +344,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(Array<ScreenshotMarker>)>, Integer, Hash)>] Response<(Array<ScreenshotMarker>)> data, response status code and response headers
     def screenshot_markers_list_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
@@ -357,6 +365,7 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

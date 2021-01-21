@@ -103,7 +103,8 @@ api_instance = Phrase::ScreenshotsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
@@ -122,6 +123,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -165,7 +167,8 @@ api_instance = Phrase::ScreenshotsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
 }
 
 begin
@@ -185,6 +188,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type
 
@@ -295,6 +299,7 @@ opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
   per_page: 25, # Integer | allows you to specify a page size up to 100 items, 25 by default
+  branch: 'my-feature-branch', # String | specify the branch to use
   key_id: 'abcd1234cdef1234abcd1234cdef1234' # String | filter by key
 }
 
@@ -316,6 +321,7 @@ Name | Type | Description  | Notes
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
  **key_id** | **String**| filter by key | [optional] 
 
 ### Return type

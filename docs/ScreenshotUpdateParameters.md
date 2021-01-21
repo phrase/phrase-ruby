@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**branch** | **String** | specify the branch to use | [optional] 
 **name** | **String** | Name of the screenshot | [optional] 
 **description** | **String** | Description of the screenshot | [optional] 
 **filename** | **File** | Screenshot file | [optional] 
@@ -13,7 +14,8 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::ScreenshotUpdateParameters.new(name: A screenshot name,
+instance = Phrase::ScreenshotUpdateParameters.new(branch: my-feature-branch,
+                                 name: A screenshot name,
                                  description: A screenshot description,
                                  filename: null)
 ```

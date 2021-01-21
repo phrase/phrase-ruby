@@ -42,6 +42,7 @@ describe 'ScreenshotMarkersApi' do
   # @param screenshot_id Screenshot ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [nil]
   describe 'screenshot_marker_delete test' do
     it 'should work' do
@@ -57,6 +58,7 @@ describe 'ScreenshotMarkersApi' do
   # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
   # @return [ScreenshotMarker]
   describe 'screenshot_marker_show test' do
     it 'should work' do
@@ -88,6 +90,7 @@ describe 'ScreenshotMarkersApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+  # @option opts [String] :branch specify the branch to use
   # @return [Array<ScreenshotMarker>]
   describe 'screenshot_markers_list test' do
     it 'should work' do

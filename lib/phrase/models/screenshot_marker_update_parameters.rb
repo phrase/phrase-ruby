@@ -2,6 +2,9 @@ require 'date'
 
 module Phrase
   class ScreenshotMarkerUpdateParameters
+    # specify the branch to use
+    attr_accessor :branch
+
     # Specify the Key ID which should be highlighted on the specified screenshot. The Key must belong to the project.
     attr_accessor :key_id
 
@@ -11,6 +14,7 @@ module Phrase
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'branch' => :'branch',
         :'key_id' => :'key_id',
         :'presentation' => :'presentation'
       }
@@ -19,6 +23,7 @@ module Phrase
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'branch' => :'String',
         :'key_id' => :'String',
         :'presentation' => :'String'
       }
@@ -44,6 +49,10 @@ module Phrase
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'branch')
+        self.branch = attributes[:'branch']
+      end
 
       if attributes.key?(:'key_id')
         self.key_id = attributes[:'key_id']
@@ -72,6 +81,7 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          branch == o.branch &&
           key_id == o.key_id &&
           presentation == o.presentation
     end
@@ -85,7 +95,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [key_id, presentation].hash
+      [branch, key_id, presentation].hash
     end
 
     # Builds the object from hash
