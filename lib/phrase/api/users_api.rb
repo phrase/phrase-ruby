@@ -11,7 +11,7 @@ module Phrase
     # Show details for current User.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [User]
+    # @return [CurrentUser]
     def show_user(opts = {})
       data, _status_code, _headers = show_user_with_http_info(opts)
       data
@@ -21,7 +21,7 @@ module Phrase
     # Show details for current User.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(User)>, Integer, Hash)>] Response<(User)> data, response status code and response headers
+    # @return [Array<(Response<(CurrentUser)>, Integer, Hash)>] Response<(CurrentUser)> data, response status code and response headers
     def show_user_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UsersApi.show_user ...'
@@ -45,7 +45,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'User' 
+      return_type = opts[:return_type] || 'CurrentUser' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

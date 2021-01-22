@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## show_user
 
-> User show_user(opts)
+> CurrentUser show_user(opts)
 
 Show current User
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<([**User**](User.md))>
+Response<([**CurrentUser**](CurrentUser.md))>
 
 ### Authorization
 

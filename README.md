@@ -327,6 +327,7 @@ Class | Method | HTTP request | Description
  - [Phrase::CommentCreateParameters](docs/CommentCreateParameters.md)
  - [Phrase::CommentMarkReadParameters](docs/CommentMarkReadParameters.md)
  - [Phrase::CommentUpdateParameters](docs/CommentUpdateParameters.md)
+ - [Phrase::CurrentUser](docs/CurrentUser.md)
  - [Phrase::Distribution](docs/Distribution.md)
  - [Phrase::DistributionCreateParameters](docs/DistributionCreateParameters.md)
  - [Phrase::DistributionPreview](docs/DistributionPreview.md)
