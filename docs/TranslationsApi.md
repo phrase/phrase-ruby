@@ -14,13 +14,13 @@ Method | HTTP request | Description
 [**translation_verify**](TranslationsApi.md#translation_verify) | **PATCH** /projects/{project_id}/translations/{id}/verify | Verify a translation
 [**translations_by_key**](TranslationsApi.md#translations_by_key) | **GET** /projects/{project_id}/keys/{key_id}/translations | List translations by key
 [**translations_by_locale**](TranslationsApi.md#translations_by_locale) | **GET** /projects/{project_id}/locales/{locale_id}/translations | List translations by locale
-[**translations_exclude**](TranslationsApi.md#translations_exclude) | **PATCH** /projects/{project_id}/translations/exclude | Set exclude from export flag on translations selected by query
-[**translations_include**](TranslationsApi.md#translations_include) | **PATCH** /projects/{project_id}/translations/include | Remove exlude from import flag from translations selected by query
+[**translations_exclude_collection**](TranslationsApi.md#translations_exclude_collection) | **PATCH** /projects/{project_id}/translations/exclude | Set exclude from export flag on translations selected by query
+[**translations_include_collection**](TranslationsApi.md#translations_include_collection) | **PATCH** /projects/{project_id}/translations/include | Remove exlude from import flag from translations selected by query
 [**translations_list**](TranslationsApi.md#translations_list) | **GET** /projects/{project_id}/translations | List all translations
-[**translations_review**](TranslationsApi.md#translations_review) | **PATCH** /projects/{project_id}/translations/review | Review translations selected by query
+[**translations_review_collection**](TranslationsApi.md#translations_review_collection) | **PATCH** /projects/{project_id}/translations/review | Review translations selected by query
 [**translations_search**](TranslationsApi.md#translations_search) | **POST** /projects/{project_id}/translations/search | Search translations
-[**translations_unverify**](TranslationsApi.md#translations_unverify) | **PATCH** /projects/{project_id}/translations/unverify | Mark translations selected by query as unverified
-[**translations_verify**](TranslationsApi.md#translations_verify) | **PATCH** /projects/{project_id}/translations/verify | Verify translations selected by query
+[**translations_unverify_collection**](TranslationsApi.md#translations_unverify_collection) | **PATCH** /projects/{project_id}/translations/unverify | Mark translations selected by query as unverified
+[**translations_verify_collection**](TranslationsApi.md#translations_verify_collection) | **PATCH** /projects/{project_id}/translations/verify | Verify translations selected by query
 
 
 
@@ -692,9 +692,9 @@ Response<([**Array&lt;Translation&gt;**](Translation.md))>
 - **Accept**: application/json
 
 
-## translations_exclude
+## translations_exclude_collection
 
-> AffectedCount translations_exclude(project_id, translations_exclude_parameters, opts)
+> AffectedCount translations_exclude_collection(project_id, translations_exclude_parameters, opts)
 
 Set exclude from export flag on translations selected by query
 
@@ -725,10 +725,10 @@ opts = {
 
 begin
   #Set exclude from export flag on translations selected by query
-  result = api_instance.translations_exclude(project_id, translations_exclude_parameters, opts)
+  result = api_instance.translations_exclude_collection(project_id, translations_exclude_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling TranslationsApi->translations_exclude: #{e}"
+  puts "Exception when calling TranslationsApi->translations_exclude_collection: #{e}"
 end
 ```
 
@@ -755,9 +755,9 @@ Response<([**AffectedCount**](AffectedCount.md))>
 - **Accept**: application/json
 
 
-## translations_include
+## translations_include_collection
 
-> AffectedCount translations_include(project_id, translations_include_parameters, opts)
+> AffectedCount translations_include_collection(project_id, translations_include_parameters, opts)
 
 Remove exlude from import flag from translations selected by query
 
@@ -788,10 +788,10 @@ opts = {
 
 begin
   #Remove exlude from import flag from translations selected by query
-  result = api_instance.translations_include(project_id, translations_include_parameters, opts)
+  result = api_instance.translations_include_collection(project_id, translations_include_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling TranslationsApi->translations_include: #{e}"
+  puts "Exception when calling TranslationsApi->translations_include_collection: #{e}"
 end
 ```
 
@@ -891,9 +891,9 @@ Response<([**Array&lt;Translation&gt;**](Translation.md))>
 - **Accept**: application/json
 
 
-## translations_review
+## translations_review_collection
 
-> AffectedCount translations_review(project_id, translations_review_parameters, opts)
+> AffectedCount translations_review_collection(project_id, translations_review_parameters, opts)
 
 Review translations selected by query
 
@@ -924,10 +924,10 @@ opts = {
 
 begin
   #Review translations selected by query
-  result = api_instance.translations_review(project_id, translations_review_parameters, opts)
+  result = api_instance.translations_review_collection(project_id, translations_review_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling TranslationsApi->translations_review: #{e}"
+  puts "Exception when calling TranslationsApi->translations_review_collection: #{e}"
 end
 ```
 
@@ -1021,9 +1021,9 @@ Response<([**Array&lt;Translation&gt;**](Translation.md))>
 - **Accept**: application/json
 
 
-## translations_unverify
+## translations_unverify_collection
 
-> AffectedCount translations_unverify(project_id, translations_unverify_parameters, opts)
+> AffectedCount translations_unverify_collection(project_id, translations_unverify_parameters, opts)
 
 Mark translations selected by query as unverified
 
@@ -1054,10 +1054,10 @@ opts = {
 
 begin
   #Mark translations selected by query as unverified
-  result = api_instance.translations_unverify(project_id, translations_unverify_parameters, opts)
+  result = api_instance.translations_unverify_collection(project_id, translations_unverify_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling TranslationsApi->translations_unverify: #{e}"
+  puts "Exception when calling TranslationsApi->translations_unverify_collection: #{e}"
 end
 ```
 
@@ -1084,9 +1084,9 @@ Response<([**AffectedCount**](AffectedCount.md))>
 - **Accept**: application/json
 
 
-## translations_verify
+## translations_verify_collection
 
-> AffectedCount translations_verify(project_id, translations_verify_parameters, opts)
+> AffectedCount translations_verify_collection(project_id, translations_verify_parameters, opts)
 
 Verify translations selected by query
 
@@ -1117,10 +1117,10 @@ opts = {
 
 begin
   #Verify translations selected by query
-  result = api_instance.translations_verify(project_id, translations_verify_parameters, opts)
+  result = api_instance.translations_verify_collection(project_id, translations_verify_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling TranslationsApi->translations_verify: #{e}"
+  puts "Exception when calling TranslationsApi->translations_verify_collection: #{e}"
 end
 ```
 

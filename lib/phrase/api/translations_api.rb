@@ -823,8 +823,8 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [AffectedCount]
-    def translations_exclude(project_id, translations_exclude_parameters, opts = {})
-      data, _status_code, _headers = translations_exclude_with_http_info(project_id, translations_exclude_parameters, opts)
+    def translations_exclude_collection(project_id, translations_exclude_parameters, opts = {})
+      data, _status_code, _headers = translations_exclude_collection_with_http_info(project_id, translations_exclude_parameters, opts)
       data
     end
 
@@ -835,17 +835,17 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(AffectedCount)>, Integer, Hash)>] Response<(AffectedCount)> data, response status code and response headers
-    def translations_exclude_with_http_info(project_id, translations_exclude_parameters, opts = {})
+    def translations_exclude_collection_with_http_info(project_id, translations_exclude_parameters, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_exclude ...'
+        @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_exclude_collection ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_exclude"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_exclude_collection"
       end
       # verify the required parameter 'translations_exclude_parameters' is set
       if @api_client.config.client_side_validation && translations_exclude_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'translations_exclude_parameters' when calling TranslationsApi.translations_exclude"
+        fail ArgumentError, "Missing the required parameter 'translations_exclude_parameters' when calling TranslationsApi.translations_exclude_collection"
       end
       # resource path
       local_var_path = '/projects/{project_id}/translations/exclude'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -884,7 +884,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TranslationsApi#translations_exclude\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TranslationsApi#translations_exclude_collection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
@@ -897,8 +897,8 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [AffectedCount]
-    def translations_include(project_id, translations_include_parameters, opts = {})
-      data, _status_code, _headers = translations_include_with_http_info(project_id, translations_include_parameters, opts)
+    def translations_include_collection(project_id, translations_include_parameters, opts = {})
+      data, _status_code, _headers = translations_include_collection_with_http_info(project_id, translations_include_parameters, opts)
       data
     end
 
@@ -909,17 +909,17 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(AffectedCount)>, Integer, Hash)>] Response<(AffectedCount)> data, response status code and response headers
-    def translations_include_with_http_info(project_id, translations_include_parameters, opts = {})
+    def translations_include_collection_with_http_info(project_id, translations_include_parameters, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_include ...'
+        @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_include_collection ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_include"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_include_collection"
       end
       # verify the required parameter 'translations_include_parameters' is set
       if @api_client.config.client_side_validation && translations_include_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'translations_include_parameters' when calling TranslationsApi.translations_include"
+        fail ArgumentError, "Missing the required parameter 'translations_include_parameters' when calling TranslationsApi.translations_include_collection"
       end
       # resource path
       local_var_path = '/projects/{project_id}/translations/include'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -958,7 +958,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TranslationsApi#translations_include\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TranslationsApi#translations_include_collection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
@@ -1055,8 +1055,8 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [AffectedCount]
-    def translations_review(project_id, translations_review_parameters, opts = {})
-      data, _status_code, _headers = translations_review_with_http_info(project_id, translations_review_parameters, opts)
+    def translations_review_collection(project_id, translations_review_parameters, opts = {})
+      data, _status_code, _headers = translations_review_collection_with_http_info(project_id, translations_review_parameters, opts)
       data
     end
 
@@ -1067,17 +1067,17 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(AffectedCount)>, Integer, Hash)>] Response<(AffectedCount)> data, response status code and response headers
-    def translations_review_with_http_info(project_id, translations_review_parameters, opts = {})
+    def translations_review_collection_with_http_info(project_id, translations_review_parameters, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_review ...'
+        @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_review_collection ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_review"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_review_collection"
       end
       # verify the required parameter 'translations_review_parameters' is set
       if @api_client.config.client_side_validation && translations_review_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'translations_review_parameters' when calling TranslationsApi.translations_review"
+        fail ArgumentError, "Missing the required parameter 'translations_review_parameters' when calling TranslationsApi.translations_review_collection"
       end
       # resource path
       local_var_path = '/projects/{project_id}/translations/review'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -1116,7 +1116,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TranslationsApi#translations_review\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TranslationsApi#translations_review_collection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
@@ -1209,8 +1209,8 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [AffectedCount]
-    def translations_unverify(project_id, translations_unverify_parameters, opts = {})
-      data, _status_code, _headers = translations_unverify_with_http_info(project_id, translations_unverify_parameters, opts)
+    def translations_unverify_collection(project_id, translations_unverify_parameters, opts = {})
+      data, _status_code, _headers = translations_unverify_collection_with_http_info(project_id, translations_unverify_parameters, opts)
       data
     end
 
@@ -1221,17 +1221,17 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(AffectedCount)>, Integer, Hash)>] Response<(AffectedCount)> data, response status code and response headers
-    def translations_unverify_with_http_info(project_id, translations_unverify_parameters, opts = {})
+    def translations_unverify_collection_with_http_info(project_id, translations_unverify_parameters, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_unverify ...'
+        @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_unverify_collection ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_unverify"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_unverify_collection"
       end
       # verify the required parameter 'translations_unverify_parameters' is set
       if @api_client.config.client_side_validation && translations_unverify_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'translations_unverify_parameters' when calling TranslationsApi.translations_unverify"
+        fail ArgumentError, "Missing the required parameter 'translations_unverify_parameters' when calling TranslationsApi.translations_unverify_collection"
       end
       # resource path
       local_var_path = '/projects/{project_id}/translations/unverify'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -1270,7 +1270,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TranslationsApi#translations_unverify\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TranslationsApi#translations_unverify_collection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
@@ -1283,8 +1283,8 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [AffectedCount]
-    def translations_verify(project_id, translations_verify_parameters, opts = {})
-      data, _status_code, _headers = translations_verify_with_http_info(project_id, translations_verify_parameters, opts)
+    def translations_verify_collection(project_id, translations_verify_parameters, opts = {})
+      data, _status_code, _headers = translations_verify_collection_with_http_info(project_id, translations_verify_parameters, opts)
       data
     end
 
@@ -1295,17 +1295,17 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(AffectedCount)>, Integer, Hash)>] Response<(AffectedCount)> data, response status code and response headers
-    def translations_verify_with_http_info(project_id, translations_verify_parameters, opts = {})
+    def translations_verify_collection_with_http_info(project_id, translations_verify_parameters, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_verify ...'
+        @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_verify_collection ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_verify"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_verify_collection"
       end
       # verify the required parameter 'translations_verify_parameters' is set
       if @api_client.config.client_side_validation && translations_verify_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'translations_verify_parameters' when calling TranslationsApi.translations_verify"
+        fail ArgumentError, "Missing the required parameter 'translations_verify_parameters' when calling TranslationsApi.translations_verify_collection"
       end
       # resource path
       local_var_path = '/projects/{project_id}/translations/verify'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -1344,7 +1344,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TranslationsApi#translations_verify\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TranslationsApi#translations_verify_collection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers

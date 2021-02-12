@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**key_delete**](KeysApi.md#key_delete) | **DELETE** /projects/{project_id}/keys/{id} | Delete a key
 [**key_show**](KeysApi.md#key_show) | **GET** /projects/{project_id}/keys/{id} | Get a single key
 [**key_update**](KeysApi.md#key_update) | **PATCH** /projects/{project_id}/keys/{id} | Update a key
-[**keys_delete**](KeysApi.md#keys_delete) | **DELETE** /projects/{project_id}/keys | Delete collection of keys
+[**keys_delete_collection**](KeysApi.md#keys_delete_collection) | **DELETE** /projects/{project_id}/keys | Delete collection of keys
 [**keys_list**](KeysApi.md#keys_list) | **GET** /projects/{project_id}/keys | List keys
 [**keys_search**](KeysApi.md#keys_search) | **POST** /projects/{project_id}/keys/search | Search keys
 [**keys_tag**](KeysApi.md#keys_tag) | **PATCH** /projects/{project_id}/keys/tag | Add tags to collection of keys
@@ -273,9 +273,9 @@ Response<([**TranslationKeyDetails**](TranslationKeyDetails.md))>
 - **Accept**: application/json
 
 
-## keys_delete
+## keys_delete_collection
 
-> AffectedResources keys_delete(project_id, opts)
+> AffectedResources keys_delete_collection(project_id, opts)
 
 Delete collection of keys
 
@@ -308,10 +308,10 @@ opts = {
 
 begin
   #Delete collection of keys
-  result = api_instance.keys_delete(project_id, opts)
+  result = api_instance.keys_delete_collection(project_id, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling KeysApi->keys_delete: #{e}"
+  puts "Exception when calling KeysApi->keys_delete_collection: #{e}"
 end
 ```
 

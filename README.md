@@ -193,7 +193,7 @@ Class | Method | HTTP request | Description
 *Phrase::KeysApi* | [**key_delete**](docs/KeysApi.md#key_delete) | **DELETE** /projects/{project_id}/keys/{id} | Delete a key
 *Phrase::KeysApi* | [**key_show**](docs/KeysApi.md#key_show) | **GET** /projects/{project_id}/keys/{id} | Get a single key
 *Phrase::KeysApi* | [**key_update**](docs/KeysApi.md#key_update) | **PATCH** /projects/{project_id}/keys/{id} | Update a key
-*Phrase::KeysApi* | [**keys_delete**](docs/KeysApi.md#keys_delete) | **DELETE** /projects/{project_id}/keys | Delete collection of keys
+*Phrase::KeysApi* | [**keys_delete_collection**](docs/KeysApi.md#keys_delete_collection) | **DELETE** /projects/{project_id}/keys | Delete collection of keys
 *Phrase::KeysApi* | [**keys_list**](docs/KeysApi.md#keys_list) | **GET** /projects/{project_id}/keys | List keys
 *Phrase::KeysApi* | [**keys_search**](docs/KeysApi.md#keys_search) | **POST** /projects/{project_id}/keys/search | Search keys
 *Phrase::KeysApi* | [**keys_tag**](docs/KeysApi.md#keys_tag) | **PATCH** /projects/{project_id}/keys/tag | Add tags to collection of keys
@@ -273,13 +273,13 @@ Class | Method | HTTP request | Description
 *Phrase::TranslationsApi* | [**translation_verify**](docs/TranslationsApi.md#translation_verify) | **PATCH** /projects/{project_id}/translations/{id}/verify | Verify a translation
 *Phrase::TranslationsApi* | [**translations_by_key**](docs/TranslationsApi.md#translations_by_key) | **GET** /projects/{project_id}/keys/{key_id}/translations | List translations by key
 *Phrase::TranslationsApi* | [**translations_by_locale**](docs/TranslationsApi.md#translations_by_locale) | **GET** /projects/{project_id}/locales/{locale_id}/translations | List translations by locale
-*Phrase::TranslationsApi* | [**translations_exclude**](docs/TranslationsApi.md#translations_exclude) | **PATCH** /projects/{project_id}/translations/exclude | Set exclude from export flag on translations selected by query
-*Phrase::TranslationsApi* | [**translations_include**](docs/TranslationsApi.md#translations_include) | **PATCH** /projects/{project_id}/translations/include | Remove exlude from import flag from translations selected by query
+*Phrase::TranslationsApi* | [**translations_exclude_collection**](docs/TranslationsApi.md#translations_exclude_collection) | **PATCH** /projects/{project_id}/translations/exclude | Set exclude from export flag on translations selected by query
+*Phrase::TranslationsApi* | [**translations_include_collection**](docs/TranslationsApi.md#translations_include_collection) | **PATCH** /projects/{project_id}/translations/include | Remove exlude from import flag from translations selected by query
 *Phrase::TranslationsApi* | [**translations_list**](docs/TranslationsApi.md#translations_list) | **GET** /projects/{project_id}/translations | List all translations
-*Phrase::TranslationsApi* | [**translations_review**](docs/TranslationsApi.md#translations_review) | **PATCH** /projects/{project_id}/translations/review | Review translations selected by query
+*Phrase::TranslationsApi* | [**translations_review_collection**](docs/TranslationsApi.md#translations_review_collection) | **PATCH** /projects/{project_id}/translations/review | Review translations selected by query
 *Phrase::TranslationsApi* | [**translations_search**](docs/TranslationsApi.md#translations_search) | **POST** /projects/{project_id}/translations/search | Search translations
-*Phrase::TranslationsApi* | [**translations_unverify**](docs/TranslationsApi.md#translations_unverify) | **PATCH** /projects/{project_id}/translations/unverify | Mark translations selected by query as unverified
-*Phrase::TranslationsApi* | [**translations_verify**](docs/TranslationsApi.md#translations_verify) | **PATCH** /projects/{project_id}/translations/verify | Verify translations selected by query
+*Phrase::TranslationsApi* | [**translations_unverify_collection**](docs/TranslationsApi.md#translations_unverify_collection) | **PATCH** /projects/{project_id}/translations/unverify | Mark translations selected by query as unverified
+*Phrase::TranslationsApi* | [**translations_verify_collection**](docs/TranslationsApi.md#translations_verify_collection) | **PATCH** /projects/{project_id}/translations/verify | Verify translations selected by query
 *Phrase::UploadsApi* | [**upload_create**](docs/UploadsApi.md#upload_create) | **POST** /projects/{project_id}/uploads | Upload a new file
 *Phrase::UploadsApi* | [**upload_show**](docs/UploadsApi.md#upload_show) | **GET** /projects/{project_id}/uploads/{id} | View upload details
 *Phrase::UploadsApi* | [**uploads_list**](docs/UploadsApi.md#uploads_list) | **GET** /projects/{project_id}/uploads | List uploads

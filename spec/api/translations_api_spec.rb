@@ -179,7 +179,7 @@ describe 'TranslationsApi' do
     end
   end
 
-  # unit tests for translations_exclude
+  # unit tests for translations_exclude_collection
   # Set exclude from export flag on translations selected by query
   # Exclude translations matching query from locale export.
   # @param project_id Project ID
@@ -187,13 +187,13 @@ describe 'TranslationsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [AffectedCount]
-  describe 'translations_exclude test' do
+  describe 'translations_exclude_collection test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  # unit tests for translations_include
+  # unit tests for translations_include_collection
   # Remove exlude from import flag from translations selected by query
   # Include translations matching query in locale export.
   # @param project_id Project ID
@@ -201,7 +201,7 @@ describe 'TranslationsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [AffectedCount]
-  describe 'translations_include test' do
+  describe 'translations_include_collection test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -226,7 +226,7 @@ describe 'TranslationsApi' do
     end
   end
 
-  # unit tests for translations_review
+  # unit tests for translations_review_collection
   # Review translations selected by query
   # Review translations matching query.
   # @param project_id Project ID
@@ -234,7 +234,7 @@ describe 'TranslationsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [AffectedCount]
-  describe 'translations_review test' do
+  describe 'translations_review_collection test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -256,7 +256,7 @@ describe 'TranslationsApi' do
     end
   end
 
-  # unit tests for translations_unverify
+  # unit tests for translations_unverify_collection
   # Mark translations selected by query as unverified
   # Mark translations matching query as unverified.
   # @param project_id Project ID
@@ -264,13 +264,13 @@ describe 'TranslationsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [AffectedCount]
-  describe 'translations_unverify test' do
+  describe 'translations_unverify_collection test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  # unit tests for translations_verify
+  # unit tests for translations_verify_collection
   # Verify translations selected by query
   # Verify translations matching query.
   # @param project_id Project ID
@@ -278,7 +278,7 @@ describe 'TranslationsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [AffectedCount]
-  describe 'translations_verify test' do
+  describe 'translations_verify_collection test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

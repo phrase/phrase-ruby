@@ -318,8 +318,8 @@ module Phrase
     # @option opts [String] :q Specify a query to do broad search for keys by name (including wildcards).&lt;br&gt;&lt;br&gt; The following qualifiers are also supported in the search term:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;ids:key_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;name:key_name&lt;/code&gt; for text queries on exact key names - whitespaces need to be prefixed with a backspace (\\\&quot;\\\\\\\&quot;)&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:tag_name&lt;/code&gt; to filter for keys with certain tags&lt;/li&gt;   &lt;li&gt;&lt;code&gt;translated:{true|false}&lt;/code&gt; for translation status (also requires &lt;code&gt;locale_id&lt;/code&gt; to be specified)&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unmentioned_in_upload:upload_id&lt;/code&gt; to filter keys unmentioned within upload&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
     # @option opts [String] :locale_id Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
     # @return [AffectedResources]
-    def keys_delete(project_id, opts = {})
-      data, _status_code, _headers = keys_delete_with_http_info(project_id, opts)
+    def keys_delete_collection(project_id, opts = {})
+      data, _status_code, _headers = keys_delete_collection_with_http_info(project_id, opts)
       data
     end
 
@@ -332,13 +332,13 @@ module Phrase
     # @option opts [String] :q Specify a query to do broad search for keys by name (including wildcards).&lt;br&gt;&lt;br&gt; The following qualifiers are also supported in the search term:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;ids:key_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;name:key_name&lt;/code&gt; for text queries on exact key names - whitespaces need to be prefixed with a backspace (\\\&quot;\\\\\\\&quot;)&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:tag_name&lt;/code&gt; to filter for keys with certain tags&lt;/li&gt;   &lt;li&gt;&lt;code&gt;translated:{true|false}&lt;/code&gt; for translation status (also requires &lt;code&gt;locale_id&lt;/code&gt; to be specified)&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unmentioned_in_upload:upload_id&lt;/code&gt; to filter keys unmentioned within upload&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
     # @option opts [String] :locale_id Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
     # @return [Array<(Response<(AffectedResources)>, Integer, Hash)>] Response<(AffectedResources)> data, response status code and response headers
-    def keys_delete_with_http_info(project_id, opts = {})
+    def keys_delete_collection_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: KeysApi.keys_delete ...'
+        @api_client.config.logger.debug 'Calling API: KeysApi.keys_delete_collection ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.keys_delete"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.keys_delete_collection"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -378,7 +378,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: KeysApi#keys_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KeysApi#keys_delete_collection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
