@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **users** | [**Array&lt;UserPreview&gt;**](UserPreview.md) |  | [optional] 
 **completed** | **Boolean** |  | [optional] 
+**translation_completed_at** | **DateTime** |  | [optional] 
+**review_completed_at** | **DateTime** |  | [optional] 
 
 ## Code Sample
 
@@ -19,7 +21,9 @@ instance = Phrase::JobLocale.new(id: null,
                                  job: null,
                                  locale: null,
                                  users: null,
-                                 completed: null)
+                                 completed: null,
+                                 translation_completed_at: null,
+                                 review_completed_at: null)
 ```
 
 

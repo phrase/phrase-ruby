@@ -12,6 +12,10 @@ module Phrase
 
     attr_accessor :completed
 
+    attr_accessor :translation_completed_at
+
+    attr_accessor :review_completed_at
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -19,7 +23,9 @@ module Phrase
         :'job' => :'job',
         :'locale' => :'locale',
         :'users' => :'users',
-        :'completed' => :'completed'
+        :'completed' => :'completed',
+        :'translation_completed_at' => :'translation_completed_at',
+        :'review_completed_at' => :'review_completed_at'
       }
     end
 
@@ -30,7 +36,9 @@ module Phrase
         :'job' => :'JobPreview',
         :'locale' => :'LocalePreview',
         :'users' => :'Array<UserPreview>',
-        :'completed' => :'Boolean'
+        :'completed' => :'Boolean',
+        :'translation_completed_at' => :'DateTime',
+        :'review_completed_at' => :'DateTime'
       }
     end
 
@@ -76,6 +84,14 @@ module Phrase
       if attributes.key?(:'completed')
         self.completed = attributes[:'completed']
       end
+
+      if attributes.key?(:'translation_completed_at')
+        self.translation_completed_at = attributes[:'translation_completed_at']
+      end
+
+      if attributes.key?(:'review_completed_at')
+        self.review_completed_at = attributes[:'review_completed_at']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -100,7 +116,9 @@ module Phrase
           job == o.job &&
           locale == o.locale &&
           users == o.users &&
-          completed == o.completed
+          completed == o.completed &&
+          translation_completed_at == o.translation_completed_at &&
+          review_completed_at == o.review_completed_at
     end
 
     # @see the `==` method
@@ -112,7 +130,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, job, locale, users, completed].hash
+      [id, job, locale, users, completed, translation_completed_at, review_completed_at].hash
     end
 
     # Builds the object from hash
