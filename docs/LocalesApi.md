@@ -142,7 +142,7 @@ Response<(nil (empty response body))>
 
 ## locale_download
 
-> locale_download(project_id, id, opts)
+> File locale_download(project_id, id, opts)
 
 Download a locale
 
@@ -188,7 +188,8 @@ opts = {
 
 begin
   #Download a locale
-  api_instance.locale_download(project_id, id, opts)
+  result = api_instance.locale_download(project_id, id, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling LocalesApi->locale_download: #{e}"
 end
@@ -220,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<(**File**)>
 
 ### Authorization
 
@@ -229,7 +230,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: *
 
 
 ## locale_show

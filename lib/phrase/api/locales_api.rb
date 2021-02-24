@@ -175,7 +175,7 @@ module Phrase
     # @option opts [Boolean] :include_unverified_translations if set to false unverified translations are excluded
     # @option opts [Boolean] :use_last_reviewed_version If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project.
     # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;.
-    # @return [nil]
+    # @return [File]
     def locale_download(project_id, id, opts = {})
       data, _status_code, _headers = locale_download_with_http_info(project_id, id, opts)
       data
@@ -202,7 +202,7 @@ module Phrase
     # @option opts [Boolean] :include_unverified_translations if set to false unverified translations are excluded
     # @option opts [Boolean] :use_last_reviewed_version If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project.
     # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;.
-    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response<(File)>, Integer, Hash)>] Response<(File)> data, response status code and response headers
     def locale_download_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalesApi.locale_download ...'
@@ -238,6 +238,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
@@ -247,7 +249,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] 
+      return_type = opts[:return_type] || 'File' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

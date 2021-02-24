@@ -71,7 +71,7 @@ describe 'LocalesApi' do
   # @option opts [Boolean] :include_unverified_translations if set to false unverified translations are excluded
   # @option opts [Boolean] :use_last_reviewed_version If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project.
   # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;.
-  # @return [nil]
+  # @return [File]
   describe 'locale_download test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
