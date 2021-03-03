@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **main_format** | **String** |  | [optional] 
 **project_image_url** | **String** |  | [optional] 
 **account** | [**Account**](Account.md) |  | [optional] 
+**space** | [**Space1**](Space1.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 **shares_translation_memory** | **Boolean** |  | [optional] 
@@ -25,6 +26,7 @@ instance = Phrase::ProjectDetails.new(id: null,
                                  main_format: null,
                                  project_image_url: null,
                                  account: null,
+                                 space: null,
                                  created_at: null,
                                  updated_at: null,
                                  shares_translation_memory: null)

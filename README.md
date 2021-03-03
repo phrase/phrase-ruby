@@ -411,6 +411,7 @@ Class | Method | HTTP request | Description
  - [Phrase::ScreenshotMarkerUpdateParameters](docs/ScreenshotMarkerUpdateParameters.md)
  - [Phrase::ScreenshotUpdateParameters](docs/ScreenshotUpdateParameters.md)
  - [Phrase::Space](docs/Space.md)
+ - [Phrase::Space1](docs/Space1.md)
  - [Phrase::SpaceCreateParameters](docs/SpaceCreateParameters.md)
  - [Phrase::SpaceUpdateParameters](docs/SpaceUpdateParameters.md)
  - [Phrase::SpacesProjectsCreateParameters](docs/SpacesProjectsCreateParameters.md)

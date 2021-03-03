@@ -1,37 +1,25 @@
 require 'date'
 
 module Phrase
-  class Project
+  class Space1
     attr_accessor :id
 
     attr_accessor :name
 
-    attr_accessor :slug
-
-    attr_accessor :main_format
-
-    attr_accessor :project_image_url
-
-    attr_accessor :account
-
-    attr_accessor :space
-
     attr_accessor :created_at
 
     attr_accessor :updated_at
+
+    attr_accessor :projects_count
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'name' => :'name',
-        :'slug' => :'slug',
-        :'main_format' => :'main_format',
-        :'project_image_url' => :'project_image_url',
-        :'account' => :'account',
-        :'space' => :'space',
         :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at'
+        :'updated_at' => :'updated_at',
+        :'projects_count' => :'projects_count'
       }
     end
 
@@ -40,13 +28,9 @@ module Phrase
       {
         :'id' => :'String',
         :'name' => :'String',
-        :'slug' => :'String',
-        :'main_format' => :'String',
-        :'project_image_url' => :'String',
-        :'account' => :'Account',
-        :'space' => :'Space1',
         :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime'
+        :'updated_at' => :'DateTime',
+        :'projects_count' => :'Integer'
       }
     end
 
@@ -60,13 +44,13 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::Project` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::Space1` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::Project`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::Space1`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -79,32 +63,16 @@ module Phrase
         self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'slug')
-        self.slug = attributes[:'slug']
-      end
-
-      if attributes.key?(:'main_format')
-        self.main_format = attributes[:'main_format']
-      end
-
-      if attributes.key?(:'project_image_url')
-        self.project_image_url = attributes[:'project_image_url']
-      end
-
-      if attributes.key?(:'account')
-        self.account = attributes[:'account']
-      end
-
-      if attributes.key?(:'space')
-        self.space = attributes[:'space']
-      end
-
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
 
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
+      end
+
+      if attributes.key?(:'projects_count')
+        self.projects_count = attributes[:'projects_count']
       end
     end
 
@@ -128,13 +96,9 @@ module Phrase
       self.class == o.class &&
           id == o.id &&
           name == o.name &&
-          slug == o.slug &&
-          main_format == o.main_format &&
-          project_image_url == o.project_image_url &&
-          account == o.account &&
-          space == o.space &&
           created_at == o.created_at &&
-          updated_at == o.updated_at
+          updated_at == o.updated_at &&
+          projects_count == o.projects_count
     end
 
     # @see the `==` method
@@ -146,7 +110,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, slug, main_format, project_image_url, account, space, created_at, updated_at].hash
+      [id, name, created_at, updated_at, projects_count].hash
     end
 
     # Builds the object from hash
