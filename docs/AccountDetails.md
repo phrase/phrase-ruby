@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **company** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+**company_logo_url** | **String** |  | [optional] 
 
 ## Code Sample
 
@@ -21,7 +22,8 @@ instance = Phrase::AccountDetails.new(id: null,
                                  slug: null,
                                  company: null,
                                  created_at: null,
-                                 updated_at: null)
+                                 updated_at: null,
+                                 company_logo_url: null)
 ```
 
 
