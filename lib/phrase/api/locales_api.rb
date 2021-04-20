@@ -433,6 +433,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [String] :sort_by Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;.
     # @option opts [String] :branch specify the branch to use
     # @return [Array<Locale>]
     def locales_list(project_id, opts = {})
@@ -447,6 +448,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [String] :sort_by Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;.
     # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(Array<Locale>)>, Integer, Hash)>] Response<(Array<Locale>)> data, response status code and response headers
     def locales_list_with_http_info(project_id, opts = {})
@@ -464,6 +466,7 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'sort_by'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
