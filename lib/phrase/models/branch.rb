@@ -2,6 +2,10 @@ require 'date'
 
 module Phrase
   class Branch
+    attr_accessor :base_project_id
+
+    attr_accessor :branch_project_id
+
     attr_accessor :name
 
     attr_accessor :created_at
@@ -19,6 +23,8 @@ module Phrase
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'base_project_id' => :'base_project_id',
+        :'branch_project_id' => :'branch_project_id',
         :'name' => :'name',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
@@ -32,6 +38,8 @@ module Phrase
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'base_project_id' => :'String',
+        :'branch_project_id' => :'String',
         :'name' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
@@ -62,6 +70,14 @@ module Phrase
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'base_project_id')
+        self.base_project_id = attributes[:'base_project_id']
+      end
+
+      if attributes.key?(:'branch_project_id')
+        self.branch_project_id = attributes[:'branch_project_id']
+      end
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
@@ -110,6 +126,8 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          base_project_id == o.base_project_id &&
+          branch_project_id == o.branch_project_id &&
           name == o.name &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
@@ -128,7 +146,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, created_at, updated_at, merged_at, merged_by, created_by, state].hash
+      [base_project_id, branch_project_id, name, created_at, updated_at, merged_at, merged_by, created_by, state].hash
     end
 
     # Builds the object from hash

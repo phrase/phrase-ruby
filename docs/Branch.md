@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**base_project_id** | **String** |  | [optional] 
+**branch_project_id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
@@ -17,7 +19,9 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::Branch.new(name: null,
+instance = Phrase::Branch.new(base_project_id: null,
+                                 branch_project_id: null,
+                                 name: null,
                                  created_at: null,
                                  updated_at: null,
                                  merged_at: null,
