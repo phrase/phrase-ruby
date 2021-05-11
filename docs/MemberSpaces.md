@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**created_at** | [**AnyType**](.md) |  | [optional] 
-**updated_at** | [**AnyType**](.md) |  | [optional] 
+**created_at** | **DateTime** |  | [optional] 
+**updated_at** | **DateTime** |  | [optional] 
 **projects_count** | **Integer** |  | [optional] 
 
 ## Code Sample

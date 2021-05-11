@@ -28,8 +28,8 @@ module Phrase
       {
         :'id' => :'String',
         :'name' => :'String',
-        :'created_at' => :'AnyType',
-        :'updated_at' => :'AnyType',
+        :'created_at' => :'DateTime',
+        :'updated_at' => :'DateTime',
         :'projects_count' => :'Integer'
       }
     end
