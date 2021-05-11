@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **remove_project_image** | **Boolean** | Indicates whether the project image should be deleted. | [optional] 
 **account_id** | **String** | Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
 **source_project_id** | **String** | When a source project ID is given, a clone of that project will be created, including all locales, keys and translations as well as the main project settings if they are not defined otherwise through the params. | [optional] 
+**workflow** | **String** | (Optional) Review Workflow. \&quot;simple\&quot; / \&quot;review\&quot;. &lt;a href&#x3D;\&quot;https://help.phrase.com/help/advanced-review-workflow\&quot;&gt;Read more&lt;/a&gt; | [optional] 
 **machine_translation_enabled** | **Boolean** | (Optional) Enable machine translation support in the project. Required for Autopilot and Smart Suggest | [optional] 
 **enable_branching** | **Boolean** | (Optional) Enable branching in the project | [optional] 
 **protect_master_branch** | **Boolean** | (Optional) Protect the master branch in project where branching is enabled | [optional] 
@@ -40,6 +41,7 @@ instance = Phrase::ProjectCreateParameters.new(name: My Android Project,
                                  remove_project_image: null,
                                  account_id: abcd1234,
                                  source_project_id: abcd1234,
+                                 workflow: review,
                                  machine_translation_enabled: true,
                                  enable_branching: true,
                                  protect_master_branch: true,

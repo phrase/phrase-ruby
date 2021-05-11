@@ -23,6 +23,9 @@ module Phrase
     # When a source project ID is given, a clone of that project will be created, including all locales, keys and translations as well as the main project settings if they are not defined otherwise through the params.
     attr_accessor :source_project_id
 
+    # (Optional) Review Workflow. \"simple\" / \"review\". <a href=\"https://help.phrase.com/help/advanced-review-workflow\">Read more</a>
+    attr_accessor :workflow
+
     # (Optional) Enable machine translation support in the project. Required for Autopilot and Smart Suggest
     attr_accessor :machine_translation_enabled
 
@@ -81,6 +84,7 @@ module Phrase
         :'remove_project_image' => :'remove_project_image',
         :'account_id' => :'account_id',
         :'source_project_id' => :'source_project_id',
+        :'workflow' => :'workflow',
         :'machine_translation_enabled' => :'machine_translation_enabled',
         :'enable_branching' => :'enable_branching',
         :'protect_master_branch' => :'protect_master_branch',
@@ -110,6 +114,7 @@ module Phrase
         :'remove_project_image' => :'Boolean',
         :'account_id' => :'String',
         :'source_project_id' => :'String',
+        :'workflow' => :'String',
         :'machine_translation_enabled' => :'Boolean',
         :'enable_branching' => :'Boolean',
         :'protect_master_branch' => :'Boolean',
@@ -176,6 +181,10 @@ module Phrase
 
       if attributes.key?(:'source_project_id')
         self.source_project_id = attributes[:'source_project_id']
+      end
+
+      if attributes.key?(:'workflow')
+        self.workflow = attributes[:'workflow']
       end
 
       if attributes.key?(:'machine_translation_enabled')
@@ -268,6 +277,7 @@ module Phrase
           remove_project_image == o.remove_project_image &&
           account_id == o.account_id &&
           source_project_id == o.source_project_id &&
+          workflow == o.workflow &&
           machine_translation_enabled == o.machine_translation_enabled &&
           enable_branching == o.enable_branching &&
           protect_master_branch == o.protect_master_branch &&
@@ -295,7 +305,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, main_format, shares_translation_memory, project_image, remove_project_image, account_id, source_project_id, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation].hash
+      [name, main_format, shares_translation_memory, project_image, remove_project_image, account_id, source_project_id, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation].hash
     end
 
     # Builds the object from hash
