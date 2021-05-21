@@ -16,6 +16,8 @@ module Phrase
 
     attr_accessor :company_logo_url
 
+    attr_accessor :subscription
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -25,7 +27,8 @@ module Phrase
         :'company' => :'company',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
-        :'company_logo_url' => :'company_logo_url'
+        :'company_logo_url' => :'company_logo_url',
+        :'subscription' => :'subscription'
       }
     end
 
@@ -38,7 +41,8 @@ module Phrase
         :'company' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
-        :'company_logo_url' => :'String'
+        :'company_logo_url' => :'String',
+        :'subscription' => :'Subscription'
       }
     end
 
@@ -98,6 +102,10 @@ module Phrase
       if attributes.key?(:'company_logo_url')
         self.company_logo_url = attributes[:'company_logo_url']
       end
+
+      if attributes.key?(:'subscription')
+        self.subscription = attributes[:'subscription']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -124,7 +132,8 @@ module Phrase
           company == o.company &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
-          company_logo_url == o.company_logo_url
+          company_logo_url == o.company_logo_url &&
+          subscription == o.subscription
     end
 
     # @see the `==` method
@@ -136,7 +145,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, slug, company, created_at, updated_at, company_logo_url].hash
+      [id, name, slug, company, created_at, updated_at, company_logo_url, subscription].hash
     end
 
     # Builds the object from hash

@@ -421,6 +421,7 @@ Class | Method | HTTP request | Description
  - [Phrase::StyleguideDetails1](docs/StyleguideDetails1.md)
  - [Phrase::StyleguidePreview](docs/StyleguidePreview.md)
  - [Phrase::StyleguideUpdateParameters](docs/StyleguideUpdateParameters.md)
+ - [Phrase::Subscription](docs/Subscription.md)
  - [Phrase::Tag](docs/Tag.md)
  - [Phrase::TagCreateParameters](docs/TagCreateParameters.md)
  - [Phrase::TagWithStats](docs/TagWithStats.md)

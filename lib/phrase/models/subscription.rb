@@ -1,48 +1,24 @@
 require 'date'
 
 module Phrase
-  class Account
-    attr_accessor :id
+  class Subscription
+    attr_accessor :is_current
 
-    attr_accessor :name
-
-    attr_accessor :slug
-
-    attr_accessor :company
-
-    attr_accessor :created_at
-
-    attr_accessor :updated_at
-
-    attr_accessor :company_logo_url
-
-    attr_accessor :subscription
+    attr_accessor :trial_expired
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'name' => :'name',
-        :'slug' => :'slug',
-        :'company' => :'company',
-        :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at',
-        :'company_logo_url' => :'company_logo_url',
-        :'subscription' => :'subscription'
+        :'is_current' => :'is_current',
+        :'trial_expired' => :'trial_expired'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'name' => :'String',
-        :'slug' => :'String',
-        :'company' => :'String',
-        :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime',
-        :'company_logo_url' => :'String',
-        :'subscription' => :'Subscription'
+        :'is_current' => :'Boolean',
+        :'trial_expired' => :'Boolean'
       }
     end
 
@@ -56,47 +32,23 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::Account` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::Subscription` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::Account`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::Subscription`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:'is_current')
+        self.is_current = attributes[:'is_current']
       end
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'slug')
-        self.slug = attributes[:'slug']
-      end
-
-      if attributes.key?(:'company')
-        self.company = attributes[:'company']
-      end
-
-      if attributes.key?(:'created_at')
-        self.created_at = attributes[:'created_at']
-      end
-
-      if attributes.key?(:'updated_at')
-        self.updated_at = attributes[:'updated_at']
-      end
-
-      if attributes.key?(:'company_logo_url')
-        self.company_logo_url = attributes[:'company_logo_url']
-      end
-
-      if attributes.key?(:'subscription')
-        self.subscription = attributes[:'subscription']
+      if attributes.key?(:'trial_expired')
+        self.trial_expired = attributes[:'trial_expired']
       end
     end
 
@@ -118,14 +70,8 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          name == o.name &&
-          slug == o.slug &&
-          company == o.company &&
-          created_at == o.created_at &&
-          updated_at == o.updated_at &&
-          company_logo_url == o.company_logo_url &&
-          subscription == o.subscription
+          is_current == o.is_current &&
+          trial_expired == o.trial_expired
     end
 
     # @see the `==` method
@@ -137,7 +83,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, slug, company, created_at, updated_at, company_logo_url, subscription].hash
+      [is_current, trial_expired].hash
     end
 
     # Builds the object from hash
