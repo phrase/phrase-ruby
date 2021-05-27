@@ -1,24 +1,32 @@
 require 'date'
 
 module Phrase
-  class AccountDetails1
-    attr_accessor :subscription
+  class NotificationGroup
+    attr_accessor :id
 
-    attr_accessor :slug
+    attr_accessor :event_name
+
+    attr_accessor :created_at
+
+    attr_accessor :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'subscription' => :'subscription',
-        :'slug' => :'slug'
+        :'id' => :'id',
+        :'event_name' => :'event_name',
+        :'created_at' => :'created_at',
+        :'updated_at' => :'updated_at'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'subscription' => :'Subscription',
-        :'slug' => :'String'
+        :'id' => :'String',
+        :'event_name' => :'String',
+        :'created_at' => :'DateTime',
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -32,23 +40,31 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::AccountDetails1` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::NotificationGroup` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::AccountDetails1`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::NotificationGroup`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'subscription')
-        self.subscription = attributes[:'subscription']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'slug')
-        self.slug = attributes[:'slug']
+      if attributes.key?(:'event_name')
+        self.event_name = attributes[:'event_name']
+      end
+
+      if attributes.key?(:'created_at')
+        self.created_at = attributes[:'created_at']
+      end
+
+      if attributes.key?(:'updated_at')
+        self.updated_at = attributes[:'updated_at']
       end
     end
 
@@ -70,8 +86,10 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          subscription == o.subscription &&
-          slug == o.slug
+          id == o.id &&
+          event_name == o.event_name &&
+          created_at == o.created_at &&
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -83,7 +101,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [subscription, slug].hash
+      [id, event_name, created_at, updated_at].hash
     end
 
     # Builds the object from hash

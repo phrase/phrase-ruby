@@ -8,8 +8,6 @@ module Phrase
 
     attr_accessor :name
 
-    attr_accessor :email
-
     attr_accessor :position
 
     attr_accessor :created_at
@@ -22,7 +20,6 @@ module Phrase
         :'id' => :'id',
         :'username' => :'username',
         :'name' => :'name',
-        :'email' => :'email',
         :'position' => :'position',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at'
@@ -35,7 +32,6 @@ module Phrase
         :'id' => :'String',
         :'username' => :'String',
         :'name' => :'String',
-        :'email' => :'String',
         :'position' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
@@ -75,10 +71,6 @@ module Phrase
         self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'email')
-        self.email = attributes[:'email']
-      end
-
       if attributes.key?(:'position')
         self.position = attributes[:'position']
       end
@@ -113,7 +105,6 @@ module Phrase
           id == o.id &&
           username == o.username &&
           name == o.name &&
-          email == o.email &&
           position == o.position &&
           created_at == o.created_at &&
           updated_at == o.updated_at
@@ -128,7 +119,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, username, name, email, position, created_at, updated_at].hash
+      [id, username, name, position, created_at, updated_at].hash
     end
 
     # Builds the object from hash

@@ -209,6 +209,8 @@ Class | Method | HTTP request | Description
 *Phrase::MembersApi* | [**member_update**](docs/MembersApi.md#member_update) | **PATCH** /accounts/{account_id}/members/{id} | Update a member
 *Phrase::MembersApi* | [**member_update_settings**](docs/MembersApi.md#member_update_settings) | **PATCH** /projects/{project_id}/members/{id} | Update a member's project settings
 *Phrase::MembersApi* | [**members_list**](docs/MembersApi.md#members_list) | **GET** /accounts/{account_id}/members | List members
+*Phrase::NotificationGroupsApi* | [**notification_groups_list**](docs/NotificationGroupsApi.md#notification_groups_list) | **GET** /notification_groups | List notification groups
+*Phrase::NotificationsApi* | [**notifications_list**](docs/NotificationsApi.md#notifications_list) | **GET** /notifications | List notifications
 *Phrase::OrdersApi* | [**order_confirm**](docs/OrdersApi.md#order_confirm) | **PATCH** /projects/{project_id}/orders/{id}/confirm | Confirm an order
 *Phrase::OrdersApi* | [**order_create**](docs/OrdersApi.md#order_create) | **POST** /projects/{project_id}/orders | Create a new order
 *Phrase::OrdersApi* | [**order_delete**](docs/OrdersApi.md#order_delete) | **DELETE** /projects/{project_id}/orders/{id} | Cancel an order
@@ -390,6 +392,9 @@ Class | Method | HTTP request | Description
  - [Phrase::MemberSpaces](docs/MemberSpaces.md)
  - [Phrase::MemberUpdateParameters](docs/MemberUpdateParameters.md)
  - [Phrase::MemberUpdateSettingsParameters](docs/MemberUpdateSettingsParameters.md)
+ - [Phrase::Notification](docs/Notification.md)
+ - [Phrase::NotificationGroup](docs/NotificationGroup.md)
+ - [Phrase::NotificationGroupDetail](docs/NotificationGroupDetail.md)
  - [Phrase::OrderConfirmParameters](docs/OrderConfirmParameters.md)
  - [Phrase::OrderCreateParameters](docs/OrderCreateParameters.md)
  - [Phrase::Project](docs/Project.md)
