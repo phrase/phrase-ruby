@@ -12,6 +12,8 @@ module Phrase
 
     attr_accessor :updated_at
 
+    attr_accessor :mentioned_users
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -19,7 +21,8 @@ module Phrase
         :'message' => :'message',
         :'user' => :'user',
         :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at'
+        :'updated_at' => :'updated_at',
+        :'mentioned_users' => :'mentioned_users'
       }
     end
 
@@ -30,7 +33,8 @@ module Phrase
         :'message' => :'String',
         :'user' => :'UserPreview',
         :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime'
+        :'updated_at' => :'DateTime',
+        :'mentioned_users' => :'Array<UserPreview>'
       }
     end
 
@@ -74,6 +78,12 @@ module Phrase
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
       end
+
+      if attributes.key?(:'mentioned_users')
+        if (value = attributes[:'mentioned_users']).is_a?(Array)
+          self.mentioned_users = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -98,7 +108,8 @@ module Phrase
           message == o.message &&
           user == o.user &&
           created_at == o.created_at &&
-          updated_at == o.updated_at
+          updated_at == o.updated_at &&
+          mentioned_users == o.mentioned_users
     end
 
     # @see the `==` method
@@ -110,7 +121,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, message, user, created_at, updated_at].hash
+      [id, message, user, created_at, updated_at, mentioned_users].hash
     end
 
     # Builds the object from hash

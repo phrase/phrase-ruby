@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **user** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+**mentioned_users** | [**Array&lt;UserPreview&gt;**](UserPreview.md) |  | [optional] 
 
 ## Code Sample
 
@@ -19,7 +20,8 @@ instance = Phrase::Comment.new(id: null,
                                  message: null,
                                  user: null,
                                  created_at: null,
-                                 updated_at: null)
+                                 updated_at: null,
+                                 mentioned_users: null)
 ```
 
 
