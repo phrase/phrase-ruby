@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
 **lsp** | **String** |  | [optional] 
 **amount_in_cents** | **Integer** |  | [optional] 
 **currency** | **String** |  | [optional] 
@@ -28,6 +29,7 @@ Name | Type | Description | Notes
 require 'Phrase'
 
 instance = Phrase::TranslationOrder.new(id: null,
+                                 name: null,
                                  lsp: null,
                                  amount_in_cents: null,
                                  currency: null,

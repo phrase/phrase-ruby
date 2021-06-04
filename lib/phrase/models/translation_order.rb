@@ -4,6 +4,8 @@ module Phrase
   class TranslationOrder
     attr_accessor :id
 
+    attr_accessor :name
+
     attr_accessor :lsp
 
     attr_accessor :amount_in_cents
@@ -40,6 +42,7 @@ module Phrase
     def self.attribute_map
       {
         :'id' => :'id',
+        :'name' => :'name',
         :'lsp' => :'lsp',
         :'amount_in_cents' => :'amount_in_cents',
         :'currency' => :'currency',
@@ -63,6 +66,7 @@ module Phrase
     def self.openapi_types
       {
         :'id' => :'String',
+        :'name' => :'String',
         :'lsp' => :'String',
         :'amount_in_cents' => :'Integer',
         :'currency' => :'String',
@@ -105,6 +109,10 @@ module Phrase
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.key?(:'lsp')
@@ -193,6 +201,7 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          name == o.name &&
           lsp == o.lsp &&
           amount_in_cents == o.amount_in_cents &&
           currency == o.currency &&
@@ -220,7 +229,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, lsp, amount_in_cents, currency, message, state, translation_type, progress_percent, source_locale, target_locales, tag, styleguide, unverify_translations_upon_delivery, quality, priority, created_at, updated_at].hash
+      [id, name, lsp, amount_in_cents, currency, message, state, translation_type, progress_percent, source_locale, target_locales, tag, styleguide, unverify_translations_upon_delivery, quality, priority, created_at, updated_at].hash
     end
 
     # Builds the object from hash

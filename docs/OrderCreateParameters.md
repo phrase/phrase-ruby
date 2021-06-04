@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branch** | **String** | specify the branch to use | [optional] 
+**name** | **String** | the name of the order, default name is: Translation order from &#39;current datetime&#39; | [optional] 
 **lsp** | **String** | Name of the LSP that should process this order. Can be one of gengo, textmaster. | [optional] 
 **source_locale_id** | **String** | Source locale for the order. Can be the name or public id of the source locale. Preferred is the public id. | [optional] 
 **target_locale_ids** | **Array&lt;String&gt;** | List of target locales you want the source content translate to. Can be the name or public id of the target locales. Preferred is the public id. | [optional] 
@@ -25,6 +26,7 @@ Name | Type | Description | Notes
 require 'Phrase'
 
 instance = Phrase::OrderCreateParameters.new(branch: my-feature-branch,
+                                 name: Welcome message translations,
                                  lsp: textmaster,
                                  source_locale_id: abcd1234abcd1234abcd1234abcd1234,
                                  target_locale_ids: [&quot;1234abcd1234abcd1234abcd1234abcd&quot;,&quot;abcd1234abcd1234abcd1234abcd1234&quot;],

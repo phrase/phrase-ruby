@@ -5,6 +5,9 @@ module Phrase
     # specify the branch to use
     attr_accessor :branch
 
+    # the name of the order, default name is: Translation order from 'current datetime'
+    attr_accessor :name
+
     # Name of the LSP that should process this order. Can be one of gengo, textmaster.
     attr_accessor :lsp
 
@@ -48,6 +51,7 @@ module Phrase
     def self.attribute_map
       {
         :'branch' => :'branch',
+        :'name' => :'name',
         :'lsp' => :'lsp',
         :'source_locale_id' => :'source_locale_id',
         :'target_locale_ids' => :'target_locale_ids',
@@ -68,6 +72,7 @@ module Phrase
     def self.openapi_types
       {
         :'branch' => :'String',
+        :'name' => :'String',
         :'lsp' => :'String',
         :'source_locale_id' => :'String',
         :'target_locale_ids' => :'Array<String>',
@@ -107,6 +112,10 @@ module Phrase
 
       if attributes.key?(:'branch')
         self.branch = attributes[:'branch']
+      end
+
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.key?(:'lsp')
@@ -183,6 +192,7 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           branch == o.branch &&
+          name == o.name &&
           lsp == o.lsp &&
           source_locale_id == o.source_locale_id &&
           target_locale_ids == o.target_locale_ids &&
@@ -207,7 +217,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, lsp, source_locale_id, target_locale_ids, translation_type, tag, message, styleguide_id, unverify_translations_upon_delivery, include_untranslated_keys, include_unverified_translations, category, quality, priority].hash
+      [branch, name, lsp, source_locale_id, target_locale_ids, translation_type, tag, message, styleguide_id, unverify_translations_upon_delivery, include_untranslated_keys, include_unverified_translations, category, quality, priority].hash
     end
 
     # Builds the object from hash
