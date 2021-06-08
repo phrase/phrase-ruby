@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **event_name** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+**notifications_count** | **Integer** |  | [optional] 
 **latest_notification** | **Object** |  | [optional] 
 
 ## Code Sample
@@ -19,6 +20,7 @@ instance = Phrase::NotificationGroupDetail.new(id: null,
                                  event_name: null,
                                  created_at: null,
                                  updated_at: null,
+                                 notifications_count: null,
                                  latest_notification: null)
 ```
 

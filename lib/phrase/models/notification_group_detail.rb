@@ -10,6 +10,8 @@ module Phrase
 
     attr_accessor :updated_at
 
+    attr_accessor :notifications_count
+
     attr_accessor :latest_notification
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -19,6 +21,7 @@ module Phrase
         :'event_name' => :'event_name',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
+        :'notifications_count' => :'notifications_count',
         :'latest_notification' => :'latest_notification'
       }
     end
@@ -30,6 +33,7 @@ module Phrase
         :'event_name' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
+        :'notifications_count' => :'Integer',
         :'latest_notification' => :'Object'
       }
     end
@@ -71,6 +75,10 @@ module Phrase
         self.updated_at = attributes[:'updated_at']
       end
 
+      if attributes.key?(:'notifications_count')
+        self.notifications_count = attributes[:'notifications_count']
+      end
+
       if attributes.key?(:'latest_notification')
         self.latest_notification = attributes[:'latest_notification']
       end
@@ -98,6 +106,7 @@ module Phrase
           event_name == o.event_name &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
+          notifications_count == o.notifications_count &&
           latest_notification == o.latest_notification
     end
 
@@ -110,7 +119,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, event_name, created_at, updated_at, latest_notification].hash
+      [id, event_name, created_at, updated_at, notifications_count, latest_notification].hash
     end
 
     # Builds the object from hash
