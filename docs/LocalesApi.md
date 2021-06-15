@@ -4,6 +4,7 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**account_locales**](LocalesApi.md#account_locales) | **GET** /accounts/{account_id}/locales | List locales used in account
 [**locale_create**](LocalesApi.md#locale_create) | **POST** /projects/{project_id}/locales | Create a locale
 [**locale_delete**](LocalesApi.md#locale_delete) | **DELETE** /projects/{project_id}/locales/{id} | Delete a locale
 [**locale_download**](LocalesApi.md#locale_download) | **GET** /projects/{project_id}/locales/{id}/download | Download a locale
@@ -11,6 +12,69 @@ Method | HTTP request | Description
 [**locale_update**](LocalesApi.md#locale_update) | **PATCH** /projects/{project_id}/locales/{id} | Update a locale
 [**locales_list**](LocalesApi.md#locales_list) | **GET** /projects/{project_id}/locales | List locales
 
+
+
+## account_locales
+
+> Array&lt;LocalePreview1&gt; account_locales(opts)
+
+List locales used in account
+
+List all locales unique by locale code used across all projects within an account.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::LocalesApi.new
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  page: 1, # Integer | Page number
+  per_page: 25 # Integer | allows you to specify a page size up to 100 items, 25 by default
+}
+
+begin
+  #List locales used in account
+  result = api_instance.account_locales(opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling LocalesApi->account_locales: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **page** | **Integer**| Page number | [optional] 
+ **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
+
+### Return type
+
+Response<([**Array&lt;LocalePreview1&gt;**](LocalePreview1.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## locale_create

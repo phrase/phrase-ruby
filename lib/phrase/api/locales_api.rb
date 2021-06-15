@@ -7,6 +7,72 @@ module Phrase
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # List locales used in account
+    # List all locales unique by locale code used across all projects within an account.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [Integer] :page Page number
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @return [Array<LocalePreview1>]
+    def account_locales(opts = {})
+      data, _status_code, _headers = account_locales_with_http_info(opts)
+      data
+    end
+
+    # List locales used in account
+    # List all locales unique by locale code used across all projects within an account.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [Integer] :page Page number
+    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @return [Array<(Response<(Array<LocalePreview1>)>, Integer, Hash)>] Response<(Array<LocalePreview1>)> data, response status code and response headers
+    def account_locales_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: LocalesApi.account_locales ...'
+      end
+      # resource path
+      local_var_path = '/accounts/{account_id}/locales'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'Array<LocalePreview1>' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['Basic', 'Token']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: LocalesApi#account_locales\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      response = ::Phrase::Response.new(data, headers)
+      return response, status_code, headers
+    end
+
     # Create a locale
     # Create a new locale.
     # @param project_id [String] Project ID

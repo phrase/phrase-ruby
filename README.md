@@ -198,6 +198,7 @@ Class | Method | HTTP request | Description
 *Phrase::KeysApi* | [**keys_search**](docs/KeysApi.md#keys_search) | **POST** /projects/{project_id}/keys/search | Search keys
 *Phrase::KeysApi* | [**keys_tag**](docs/KeysApi.md#keys_tag) | **PATCH** /projects/{project_id}/keys/tag | Add tags to collection of keys
 *Phrase::KeysApi* | [**keys_untag**](docs/KeysApi.md#keys_untag) | **PATCH** /projects/{project_id}/keys/untag | Remove tags from collection of keys
+*Phrase::LocalesApi* | [**account_locales**](docs/LocalesApi.md#account_locales) | **GET** /accounts/{account_id}/locales | List locales used in account
 *Phrase::LocalesApi* | [**locale_create**](docs/LocalesApi.md#locale_create) | **POST** /projects/{project_id}/locales | Create a locale
 *Phrase::LocalesApi* | [**locale_delete**](docs/LocalesApi.md#locale_delete) | **DELETE** /projects/{project_id}/locales/{id} | Delete a locale
 *Phrase::LocalesApi* | [**locale_download**](docs/LocalesApi.md#locale_download) | **GET** /projects/{project_id}/locales/{id}/download | Download a locale
@@ -388,6 +389,7 @@ Class | Method | HTTP request | Description
  - [Phrase::LocaleDetails](docs/LocaleDetails.md)
  - [Phrase::LocaleDetails1](docs/LocaleDetails1.md)
  - [Phrase::LocalePreview](docs/LocalePreview.md)
+ - [Phrase::LocalePreview1](docs/LocalePreview1.md)
  - [Phrase::LocaleStatistics](docs/LocaleStatistics.md)
  - [Phrase::LocaleUpdateParameters](docs/LocaleUpdateParameters.md)
  - [Phrase::Member](docs/Member.md)
