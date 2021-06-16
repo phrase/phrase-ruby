@@ -95,6 +95,34 @@ describe 'KeysApi' do
     end
   end
 
+  # unit tests for keys_exclude
+  # Exclude a locale on a collection of keys
+  # Exclude a locale on keys matching query. Same constraints as list.
+  # @param project_id Project ID
+  # @param keys_exclude_parameters 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [AffectedResources]
+  describe 'keys_exclude test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for keys_include
+  # Include a locale on a collection of keys
+  # Include a locale on keys matching query. Same constraints as list.
+  # @param project_id Project ID
+  # @param keys_include_parameters 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [AffectedResources]
+  describe 'keys_include test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for keys_list
   # List keys
   # List all keys for the given project. Alternatively you can POST requests to /search.

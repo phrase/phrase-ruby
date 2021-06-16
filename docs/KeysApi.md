@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**key_show**](KeysApi.md#key_show) | **GET** /projects/{project_id}/keys/{id} | Get a single key
 [**key_update**](KeysApi.md#key_update) | **PATCH** /projects/{project_id}/keys/{id} | Update a key
 [**keys_delete_collection**](KeysApi.md#keys_delete_collection) | **DELETE** /projects/{project_id}/keys | Delete collection of keys
+[**keys_exclude**](KeysApi.md#keys_exclude) | **PATCH** /projects/{project_id}/keys/exclude | Exclude a locale on a collection of keys
+[**keys_include**](KeysApi.md#keys_include) | **PATCH** /projects/{project_id}/keys/include | Include a locale on a collection of keys
 [**keys_list**](KeysApi.md#keys_list) | **GET** /projects/{project_id}/keys | List keys
 [**keys_search**](KeysApi.md#keys_search) | **POST** /projects/{project_id}/keys/search | Search keys
 [**keys_tag**](KeysApi.md#keys_tag) | **PATCH** /projects/{project_id}/keys/tag | Add tags to collection of keys
@@ -337,6 +339,132 @@ Response<([**AffectedResources**](AffectedResources.md))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## keys_exclude
+
+> AffectedResources keys_exclude(project_id, keys_exclude_parameters, opts)
+
+Exclude a locale on a collection of keys
+
+Exclude a locale on keys matching query. Same constraints as list.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::KeysApi.new
+project_id = 'project_id_example' # String | Project ID
+keys_exclude_parameters = Phrase::KeysExcludeParameters.new # KeysExcludeParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Exclude a locale on a collection of keys
+  result = api_instance.keys_exclude(project_id, keys_exclude_parameters, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling KeysApi->keys_exclude: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **keys_exclude_parameters** | [**KeysExcludeParameters**](KeysExcludeParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<([**AffectedResources**](AffectedResources.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## keys_include
+
+> AffectedResources keys_include(project_id, keys_include_parameters, opts)
+
+Include a locale on a collection of keys
+
+Include a locale on keys matching query. Same constraints as list.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::KeysApi.new
+project_id = 'project_id_example' # String | Project ID
+keys_include_parameters = Phrase::KeysIncludeParameters.new # KeysIncludeParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Include a locale on a collection of keys
+  result = api_instance.keys_include(project_id, keys_include_parameters, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling KeysApi->keys_include: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **keys_include_parameters** | [**KeysIncludeParameters**](KeysIncludeParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<([**AffectedResources**](AffectedResources.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

@@ -384,6 +384,154 @@ module Phrase
       return response, status_code, headers
     end
 
+    # Exclude a locale on a collection of keys
+    # Exclude a locale on keys matching query. Same constraints as list.
+    # @param project_id [String] Project ID
+    # @param keys_exclude_parameters [KeysExcludeParameters] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @return [AffectedResources]
+    def keys_exclude(project_id, keys_exclude_parameters, opts = {})
+      data, _status_code, _headers = keys_exclude_with_http_info(project_id, keys_exclude_parameters, opts)
+      data
+    end
+
+    # Exclude a locale on a collection of keys
+    # Exclude a locale on keys matching query. Same constraints as list.
+    # @param project_id [String] Project ID
+    # @param keys_exclude_parameters [KeysExcludeParameters] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @return [Array<(Response<(AffectedResources)>, Integer, Hash)>] Response<(AffectedResources)> data, response status code and response headers
+    def keys_exclude_with_http_info(project_id, keys_exclude_parameters, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: KeysApi.keys_exclude ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.keys_exclude"
+      end
+      # verify the required parameter 'keys_exclude_parameters' is set
+      if @api_client.config.client_side_validation && keys_exclude_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'keys_exclude_parameters' when calling KeysApi.keys_exclude"
+      end
+      # resource path
+      local_var_path = '/projects/{project_id}/keys/exclude'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] || @api_client.object_to_http_body(keys_exclude_parameters) 
+
+      # return_type
+      return_type = opts[:return_type] || 'AffectedResources' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['Basic', 'Token']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: KeysApi#keys_exclude\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      response = ::Phrase::Response.new(data, headers)
+      return response, status_code, headers
+    end
+
+    # Include a locale on a collection of keys
+    # Include a locale on keys matching query. Same constraints as list.
+    # @param project_id [String] Project ID
+    # @param keys_include_parameters [KeysIncludeParameters] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @return [AffectedResources]
+    def keys_include(project_id, keys_include_parameters, opts = {})
+      data, _status_code, _headers = keys_include_with_http_info(project_id, keys_include_parameters, opts)
+      data
+    end
+
+    # Include a locale on a collection of keys
+    # Include a locale on keys matching query. Same constraints as list.
+    # @param project_id [String] Project ID
+    # @param keys_include_parameters [KeysIncludeParameters] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @return [Array<(Response<(AffectedResources)>, Integer, Hash)>] Response<(AffectedResources)> data, response status code and response headers
+    def keys_include_with_http_info(project_id, keys_include_parameters, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: KeysApi.keys_include ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling KeysApi.keys_include"
+      end
+      # verify the required parameter 'keys_include_parameters' is set
+      if @api_client.config.client_side_validation && keys_include_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'keys_include_parameters' when calling KeysApi.keys_include"
+      end
+      # resource path
+      local_var_path = '/projects/{project_id}/keys/include'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] || @api_client.object_to_http_body(keys_include_parameters) 
+
+      # return_type
+      return_type = opts[:return_type] || 'AffectedResources' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['Basic', 'Token']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: KeysApi#keys_include\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      response = ::Phrase::Response.new(data, headers)
+      return response, status_code, headers
+    end
+
     # List keys
     # List all keys for the given project. Alternatively you can POST requests to /search.
     # @param project_id [String] Project ID
