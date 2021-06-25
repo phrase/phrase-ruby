@@ -244,6 +244,7 @@ Class | Method | HTTP request | Description
 *Phrase::ScreenshotsApi* | [**screenshot_show**](docs/ScreenshotsApi.md#screenshot_show) | **GET** /projects/{project_id}/screenshots/{id} | Get a single screenshot
 *Phrase::ScreenshotsApi* | [**screenshot_update**](docs/ScreenshotsApi.md#screenshot_update) | **PATCH** /projects/{project_id}/screenshots/{id} | Update a screenshot
 *Phrase::ScreenshotsApi* | [**screenshots_list**](docs/ScreenshotsApi.md#screenshots_list) | **GET** /projects/{project_id}/screenshots | List screenshots
+*Phrase::SearchApi* | [**search_in_account**](docs/SearchApi.md#search_in_account) | **POST** /accounts/{account_id}/search | Search across projects
 *Phrase::SpacesApi* | [**space_create**](docs/SpacesApi.md#space_create) | **POST** /accounts/{account_id}/spaces | Create a Space
 *Phrase::SpacesApi* | [**space_delete**](docs/SpacesApi.md#space_delete) | **DELETE** /accounts/{account_id}/spaces/{id} | Delete Space
 *Phrase::SpacesApi* | [**space_show**](docs/SpacesApi.md#space_show) | **GET** /accounts/{account_id}/spaces/{id} | Get Space
@@ -313,6 +314,7 @@ Class | Method | HTTP request | Description
  - [Phrase::Account](docs/Account.md)
  - [Phrase::AccountDetails](docs/AccountDetails.md)
  - [Phrase::AccountDetails1](docs/AccountDetails1.md)
+ - [Phrase::AccountSearchResult](docs/AccountSearchResult.md)
  - [Phrase::AffectedCount](docs/AffectedCount.md)
  - [Phrase::AffectedResources](docs/AffectedResources.md)
  - [Phrase::Authorization](docs/Authorization.md)
@@ -425,6 +427,7 @@ Class | Method | HTTP request | Description
  - [Phrase::ScreenshotMarkerCreateParameters](docs/ScreenshotMarkerCreateParameters.md)
  - [Phrase::ScreenshotMarkerUpdateParameters](docs/ScreenshotMarkerUpdateParameters.md)
  - [Phrase::ScreenshotUpdateParameters](docs/ScreenshotUpdateParameters.md)
+ - [Phrase::SearchInAccountParameters](docs/SearchInAccountParameters.md)
  - [Phrase::Space](docs/Space.md)
  - [Phrase::Space1](docs/Space1.md)
  - [Phrase::SpaceCreateParameters](docs/SpaceCreateParameters.md)
