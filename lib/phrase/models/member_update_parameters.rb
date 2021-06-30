@@ -2,7 +2,10 @@ require 'date'
 
 module Phrase
   class MemberUpdateParameters
-    # Member role, can be any of of Manager, Developer, Translator
+    # Update strategy, can be any of set, add, remove. If provided, it will set, add or remove given spaces, projects and locale ids from users access list.
+    attr_accessor :strategy
+
+    # Member role, can be any of of Admin, ProjectManager, Developer, Designer, Translator
     attr_accessor :role
 
     # List of project ids the user has access to. 
@@ -23,6 +26,7 @@ module Phrase
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'strategy' => :'strategy',
         :'role' => :'role',
         :'project_ids' => :'project_ids',
         :'locale_ids' => :'locale_ids',
@@ -35,6 +39,7 @@ module Phrase
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'strategy' => :'String',
         :'role' => :'String',
         :'project_ids' => :'String',
         :'locale_ids' => :'String',
@@ -64,6 +69,10 @@ module Phrase
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'strategy')
+        self.strategy = attributes[:'strategy']
+      end
 
       if attributes.key?(:'role')
         self.role = attributes[:'role']
@@ -114,6 +123,7 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          strategy == o.strategy &&
           role == o.role &&
           project_ids == o.project_ids &&
           locale_ids == o.locale_ids &&
@@ -131,7 +141,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [role, project_ids, locale_ids, default_locale_codes, space_ids, permissions].hash
+      [strategy, role, project_ids, locale_ids, default_locale_codes, space_ids, permissions].hash
     end
 
     # Builds the object from hash
