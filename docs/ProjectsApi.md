@@ -287,7 +287,8 @@ opts = {
   page: 1, # Integer | Page number
   per_page: 25, # Integer | allows you to specify a page size up to 100 items, 25 by default
   account_id: 'account_id_example', # String | Filter by Account ID
-  sort_by: 'sort_by_example' # String | Sort projects. Valid options are \"name_asc\", \"name_desc\", \"updated_at_asc\", \"updated_at_desc\", \"space_asc\" and \"space_desc\".
+  sort_by: 'sort_by_example', # String | Sort projects. Valid options are \"name_asc\", \"name_desc\", \"updated_at_asc\", \"updated_at_desc\", \"space_asc\" and \"space_desc\".
+  filters: ['favorites'] # Array<String> | Filter projects. Valid options are [\"favorites\"].
 }
 
 begin
@@ -309,6 +310,7 @@ Name | Type | Description  | Notes
  **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
  **account_id** | **String**| Filter by Account ID | [optional] 
  **sort_by** | **String**| Sort projects. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;updated_at_asc\&quot;, \&quot;updated_at_desc\&quot;, \&quot;space_asc\&quot; and \&quot;space_desc\&quot;. | [optional] 
+ **filters** | [**Array&lt;String&gt;**](String.md)| Filter projects. Valid options are [\&quot;favorites\&quot;]. | [optional] 
 
 ### Return type
 
