@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branch** | **String** | specify the branch to use | [optional] 
 **name** | **String** | Job name | [optional] 
+**source_locale_id** | **String** | The API id of the source language | [optional] 
 **briefing** | **String** | Briefing for the translators | [optional] 
 **due_date** | **DateTime** | Date the job should be finished | [optional] 
 **ticket_url** | **String** | URL to a ticket for this job (e.g. Jira, Trello) | [optional] 
@@ -19,6 +20,7 @@ require 'Phrase'
 
 instance = Phrase::JobCreateParameters.new(branch: my-feature-branch,
                                  name: de,
+                                 source_locale_id: abcd1234cdef1234abcd1234cdef1234,
                                  briefing: de-DE,
                                  due_date: null,
                                  ticket_url: https://example.atlassian.net/browse/FOO,

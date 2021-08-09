@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **updated_at** | **DateTime** |  | [optional] 
 **owner** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **job_tag_name** | **String** |  | [optional] 
+**source_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
 **keys** | [**Array&lt;KeyPreview&gt;**](KeyPreview.md) |  | [optional] 
 
@@ -36,6 +37,7 @@ instance = Phrase::JobDetails.new(id: null,
                                  updated_at: null,
                                  owner: null,
                                  job_tag_name: null,
+                                 source_locale: null,
                                  locales: null,
                                  keys: null)
 ```

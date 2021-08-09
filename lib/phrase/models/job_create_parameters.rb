@@ -8,6 +8,9 @@ module Phrase
     # Job name
     attr_accessor :name
 
+    # The API id of the source language
+    attr_accessor :source_locale_id
+
     # Briefing for the translators
     attr_accessor :briefing
 
@@ -28,6 +31,7 @@ module Phrase
       {
         :'branch' => :'branch',
         :'name' => :'name',
+        :'source_locale_id' => :'source_locale_id',
         :'briefing' => :'briefing',
         :'due_date' => :'due_date',
         :'ticket_url' => :'ticket_url',
@@ -41,6 +45,7 @@ module Phrase
       {
         :'branch' => :'String',
         :'name' => :'String',
+        :'source_locale_id' => :'String',
         :'briefing' => :'String',
         :'due_date' => :'DateTime',
         :'ticket_url' => :'String',
@@ -76,6 +81,10 @@ module Phrase
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.key?(:'source_locale_id')
+        self.source_locale_id = attributes[:'source_locale_id']
       end
 
       if attributes.key?(:'briefing')
@@ -123,6 +132,7 @@ module Phrase
       self.class == o.class &&
           branch == o.branch &&
           name == o.name &&
+          source_locale_id == o.source_locale_id &&
           briefing == o.briefing &&
           due_date == o.due_date &&
           ticket_url == o.ticket_url &&
@@ -139,7 +149,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, briefing, due_date, ticket_url, tags, translation_key_ids].hash
+      [branch, name, source_locale_id, briefing, due_date, ticket_url, tags, translation_key_ids].hash
     end
 
     # Builds the object from hash
