@@ -23,6 +23,7 @@ describe 'LocalesApi' do
   # unit tests for account_locales
   # List locales used in account
   # List all locales unique by locale code used across all projects within an account.
+  # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number

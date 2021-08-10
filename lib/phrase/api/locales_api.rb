@@ -9,29 +9,35 @@ module Phrase
     end
     # List locales used in account
     # List all locales unique by locale code used across all projects within an account.
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @return [Array<LocalePreview1>]
-    def account_locales(opts = {})
-      data, _status_code, _headers = account_locales_with_http_info(opts)
+    def account_locales(id, opts = {})
+      data, _status_code, _headers = account_locales_with_http_info(id, opts)
       data
     end
 
     # List locales used in account
     # List all locales unique by locale code used across all projects within an account.
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
     # @return [Array<(Response<(Array<LocalePreview1>)>, Integer, Hash)>] Response<(Array<LocalePreview1>)> data, response status code and response headers
-    def account_locales_with_http_info(opts = {})
+    def account_locales_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalesApi.account_locales ...'
       end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling LocalesApi.account_locales"
+      end
       # resource path
-      local_var_path = '/accounts/{account_id}/locales'
+      local_var_path = '/accounts/{account_id}/locales'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
