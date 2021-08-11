@@ -249,7 +249,8 @@ opts = {
   skip_unverified_translations: true, # Boolean | Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with <code>include_unverified_translations</code>.
   include_unverified_translations: true, # Boolean | if set to false unverified translations are excluded
   use_last_reviewed_version: true, # Boolean | If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project.
-  fallback_locale_id: 'fallback_locale_id_example' # String | If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to <code>true</code>.
+  fallback_locale_id: 'fallback_locale_id_example', # String | If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to <code>true</code>.
+  source_locale_id: 'source_locale_id_example' # String | Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a <code>tag</code> parameter indicating a specific job.
 }
 
 begin
@@ -284,6 +285,7 @@ Name | Type | Description  | Notes
  **include_unverified_translations** | **Boolean**| if set to false unverified translations are excluded | [optional] 
  **use_last_reviewed_version** | **Boolean**| If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project. | [optional] 
  **fallback_locale_id** | **String**| If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. | [optional] 
+ **source_locale_id** | **String**| Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job. | [optional] 
 
 ### Return type
 
