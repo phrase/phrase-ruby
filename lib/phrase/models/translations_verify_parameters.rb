@@ -5,22 +5,18 @@ module Phrase
     # specify the branch to use
     attr_accessor :branch
 
+    # specify the locale of the translations to be verified
+    attr_accessor :locale_id
+
     # Specify a query to find translations by content (including wildcards).<br><br> The following qualifiers are supported in the query:<br> <ul>   <li><code>id:translation_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>tags:XYZ</code> for tags on the translation</li>   <li><code>unverified:{true|false}</code> for verification status</li>   <li><code>excluded:{true|false}</code> for exclusion status</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. 
     attr_accessor :q
-
-    # Sort criteria. Can be one of: key_name, created_at, updated_at.
-    attr_accessor :sort
-
-    # Order direction. Can be one of: asc, desc.
-    attr_accessor :order
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'branch' => :'branch',
-        :'q' => :'q',
-        :'sort' => :'sort',
-        :'order' => :'order'
+        :'locale_id' => :'locale_id',
+        :'q' => :'q'
       }
     end
 
@@ -28,9 +24,8 @@ module Phrase
     def self.openapi_types
       {
         :'branch' => :'String',
-        :'q' => :'String',
-        :'sort' => :'String',
-        :'order' => :'String'
+        :'locale_id' => :'String',
+        :'q' => :'String'
       }
     end
 
@@ -59,16 +54,12 @@ module Phrase
         self.branch = attributes[:'branch']
       end
 
+      if attributes.key?(:'locale_id')
+        self.locale_id = attributes[:'locale_id']
+      end
+
       if attributes.key?(:'q')
         self.q = attributes[:'q']
-      end
-
-      if attributes.key?(:'sort')
-        self.sort = attributes[:'sort']
-      end
-
-      if attributes.key?(:'order')
-        self.order = attributes[:'order']
       end
     end
 
@@ -91,9 +82,8 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           branch == o.branch &&
-          q == o.q &&
-          sort == o.sort &&
-          order == o.order
+          locale_id == o.locale_id &&
+          q == o.q
     end
 
     # @see the `==` method
@@ -105,7 +95,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, q, sort, order].hash
+      [branch, locale_id, q].hash
     end
 
     # Builds the object from hash
