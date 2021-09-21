@@ -98,6 +98,10 @@ end
 
 ```
 
+## Get help / support
+
+Please contact [support@phrase.com](mailto:support@phrase.com?subject=[GitHub]%20phrase-go) and we can take more direct action toward finding a solution.
+
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://api.phrase.com/v2*
@@ -521,6 +525,3 @@ Class | Method | HTTP request | Description
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
 
-## Get help / support
-
-Please contact [support@phrase.com](mailto:support@phrase.com?subject=[GitHub]%20phrase-ruby) and we can take more direct action toward finding a solution.
