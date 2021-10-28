@@ -8,6 +8,9 @@ module Phrase
     # List of platforms the release should support.
     attr_accessor :platforms
 
+    # List of locale ids that will be included in the release. If empty, distribution locales will be used
+    attr_accessor :locale_ids
+
     # Branch used for release
     attr_accessor :branch
 
@@ -16,6 +19,7 @@ module Phrase
       {
         :'description' => :'description',
         :'platforms' => :'platforms',
+        :'locale_ids' => :'locale_ids',
         :'branch' => :'branch'
       }
     end
@@ -25,6 +29,7 @@ module Phrase
       {
         :'description' => :'String',
         :'platforms' => :'Array<String>',
+        :'locale_ids' => :'Array<String>',
         :'branch' => :'String'
       }
     end
@@ -60,6 +65,12 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'locale_ids')
+        if (value = attributes[:'locale_ids']).is_a?(Array)
+          self.locale_ids = value
+        end
+      end
+
       if attributes.key?(:'branch')
         self.branch = attributes[:'branch']
       end
@@ -85,6 +96,7 @@ module Phrase
       self.class == o.class &&
           description == o.description &&
           platforms == o.platforms &&
+          locale_ids == o.locale_ids &&
           branch == o.branch
     end
 
@@ -97,7 +109,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [description, platforms, branch].hash
+      [description, platforms, locale_ids, branch].hash
     end
 
     # Builds the object from hash

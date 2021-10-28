@@ -10,6 +10,8 @@ module Phrase
 
     attr_accessor :platforms
 
+    attr_accessor :locales
+
     attr_accessor :releases
 
     attr_accessor :created_at
@@ -23,6 +25,7 @@ module Phrase
         :'name' => :'name',
         :'project' => :'project',
         :'platforms' => :'platforms',
+        :'locales' => :'locales',
         :'releases' => :'releases',
         :'created_at' => :'created_at',
         :'deleted_at' => :'deleted_at'
@@ -36,6 +39,7 @@ module Phrase
         :'name' => :'String',
         :'project' => :'ProjectShort',
         :'platforms' => :'Array<String>',
+        :'locales' => :'Array<LocalePreview>',
         :'releases' => :'Array<ReleasePreview>',
         :'created_at' => :'DateTime',
         :'deleted_at' => :'DateTime'
@@ -81,6 +85,12 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'locales')
+        if (value = attributes[:'locales']).is_a?(Array)
+          self.locales = value
+        end
+      end
+
       if attributes.key?(:'releases')
         if (value = attributes[:'releases']).is_a?(Array)
           self.releases = value
@@ -118,6 +128,7 @@ module Phrase
           name == o.name &&
           project == o.project &&
           platforms == o.platforms &&
+          locales == o.locales &&
           releases == o.releases &&
           created_at == o.created_at &&
           deleted_at == o.deleted_at
@@ -132,7 +143,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, project, platforms, releases, created_at, deleted_at].hash
+      [id, name, project, platforms, locales, releases, created_at, deleted_at].hash
     end
 
     # Builds the object from hash

@@ -11,6 +11,9 @@ module Phrase
     # List of platforms the distribution should support.
     attr_accessor :platforms
 
+    # List of locale ids that will be part of distribution releases
+    attr_accessor :locale_ids
+
     # Additional formatting and render options. Only <code>enclose_in_cdata</code> is available for platform <code>android</code>.
     attr_accessor :format_options
 
@@ -29,6 +32,7 @@ module Phrase
         :'name' => :'name',
         :'project_id' => :'project_id',
         :'platforms' => :'platforms',
+        :'locale_ids' => :'locale_ids',
         :'format_options' => :'format_options',
         :'fallback_to_non_regional_locale' => :'fallback_to_non_regional_locale',
         :'fallback_to_default_locale' => :'fallback_to_default_locale',
@@ -42,6 +46,7 @@ module Phrase
         :'name' => :'String',
         :'project_id' => :'String',
         :'platforms' => :'Array<String>',
+        :'locale_ids' => :'Array<String>',
         :'format_options' => :'Hash<String, String>',
         :'fallback_to_non_regional_locale' => :'Boolean',
         :'fallback_to_default_locale' => :'Boolean',
@@ -81,6 +86,12 @@ module Phrase
       if attributes.key?(:'platforms')
         if (value = attributes[:'platforms']).is_a?(Array)
           self.platforms = value
+        end
+      end
+
+      if attributes.key?(:'locale_ids')
+        if (value = attributes[:'locale_ids']).is_a?(Array)
+          self.locale_ids = value
         end
       end
 
@@ -124,6 +135,7 @@ module Phrase
           name == o.name &&
           project_id == o.project_id &&
           platforms == o.platforms &&
+          locale_ids == o.locale_ids &&
           format_options == o.format_options &&
           fallback_to_non_regional_locale == o.fallback_to_non_regional_locale &&
           fallback_to_default_locale == o.fallback_to_default_locale &&
@@ -139,7 +151,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, project_id, platforms, format_options, fallback_to_non_regional_locale, fallback_to_default_locale, use_last_reviewed_version].hash
+      [name, project_id, platforms, locale_ids, format_options, fallback_to_non_regional_locale, fallback_to_default_locale, use_last_reviewed_version].hash
     end
 
     # Builds the object from hash
