@@ -7,6 +7,7 @@ set -eo pipefail
 
 # -----------
 
+VERSION=2.2.0
 echo "Build release $VERSION"
 
 # -----------
@@ -36,7 +37,7 @@ EOF
 echo "Create release $VERSION"
 api_url="https://api.github.com/repos/phrase/phrase-ruby/releases?access_token=${GITHUB_TOKEN}"
 response="$(curl --data "$(create_release_data)" ${api_url})"
-release_id=$(echo $response | python -c "import sys, json; print(json.load(sys.stdin)['id'])")
+release_id=$(echo $response | python -c "import sys, json; print(json.load(sys.stdin).get('id', ''))")
 
 if [ -z "$release_id" ]
 then
@@ -46,6 +47,8 @@ then
 else
       echo "New release created created with id: ${release_id}"
 fi
+
+exit 1
 
 echo "Uploading ${file}"
 file=phrase-${VERSION}.gem
