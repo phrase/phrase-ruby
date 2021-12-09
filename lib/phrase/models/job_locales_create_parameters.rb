@@ -8,15 +8,19 @@ module Phrase
     # locale id
     attr_accessor :locale_id
 
-    # Array of user ids to be assigned to the job locale
+    # Array of user ids to be assigned to the job locale as translators
     attr_accessor :user_ids
+
+    # Array of reviewer ids to be assigned to the job locale as reviewers
+    attr_accessor :reviewer_ids
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'branch' => :'branch',
         :'locale_id' => :'locale_id',
-        :'user_ids' => :'user_ids'
+        :'user_ids' => :'user_ids',
+        :'reviewer_ids' => :'reviewer_ids'
       }
     end
 
@@ -25,7 +29,8 @@ module Phrase
       {
         :'branch' => :'String',
         :'locale_id' => :'String',
-        :'user_ids' => :'Array<String>'
+        :'user_ids' => :'Array<String>',
+        :'reviewer_ids' => :'Array<String>'
       }
     end
 
@@ -63,6 +68,12 @@ module Phrase
           self.user_ids = value
         end
       end
+
+      if attributes.key?(:'reviewer_ids')
+        if (value = attributes[:'reviewer_ids']).is_a?(Array)
+          self.reviewer_ids = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -85,7 +96,8 @@ module Phrase
       self.class == o.class &&
           branch == o.branch &&
           locale_id == o.locale_id &&
-          user_ids == o.user_ids
+          user_ids == o.user_ids &&
+          reviewer_ids == o.reviewer_ids
     end
 
     # @see the `==` method
@@ -97,7 +109,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, locale_id, user_ids].hash
+      [branch, locale_id, user_ids, reviewer_ids].hash
     end
 
     # Builds the object from hash

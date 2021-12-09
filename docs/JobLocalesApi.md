@@ -5,6 +5,7 @@ All URIs are relative to *https://api.phrase.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**job_locale_complete**](JobLocalesApi.md#job_locale_complete) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete | Complete a job locale
+[**job_locale_complete_review**](JobLocalesApi.md#job_locale_complete_review) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete_review | Review a job locale
 [**job_locale_delete**](JobLocalesApi.md#job_locale_delete) | **DELETE** /projects/{project_id}/jobs/{job_id}/locales/{id} | Delete a job locale
 [**job_locale_reopen**](JobLocalesApi.md#job_locale_reopen) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/reopen | Reopen a job locale
 [**job_locale_show**](JobLocalesApi.md#job_locale_show) | **GET** /projects/{project_id}/jobs/{job_id}/locale/{id} | Get a single job locale
@@ -65,6 +66,73 @@ Name | Type | Description  | Notes
  **job_id** | **String**| Job ID | 
  **id** | **String**| ID | 
  **job_locale_complete_parameters** | [**JobLocaleCompleteParameters**](JobLocaleCompleteParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<([**JobLocale**](JobLocale.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## job_locale_complete_review
+
+> JobLocale job_locale_complete_review(project_id, job_id, id, job_locale_complete_review_parameters, opts)
+
+Review a job locale
+
+Mark job locale as reviewed.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::JobLocalesApi.new
+project_id = 'project_id_example' # String | Project ID
+job_id = 'job_id_example' # String | Job ID
+id = 'id_example' # String | ID
+job_locale_complete_review_parameters = Phrase::JobLocaleCompleteReviewParameters.new # JobLocaleCompleteReviewParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Review a job locale
+  result = api_instance.job_locale_complete_review(project_id, job_id, id, job_locale_complete_review_parameters, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling JobLocalesApi->job_locale_complete_review: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **job_id** | **String**| Job ID | 
+ **id** | **String**| ID | 
+ **job_locale_complete_review_parameters** | [**JobLocaleCompleteReviewParameters**](JobLocaleCompleteReviewParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

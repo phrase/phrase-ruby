@@ -1,36 +1,21 @@
 require 'date'
 
 module Phrase
-  class JobLocaleUpdateParameters
+  class JobLocaleCompleteReviewParameters
     # specify the branch to use
     attr_accessor :branch
-
-    # locale id
-    attr_accessor :locale_id
-
-    # Array of user ids to be assigned to the job locale
-    attr_accessor :user_ids
-
-    # Array of reviewer ids to be assigned to the job locale as reviewers
-    attr_accessor :reviewer_ids
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'branch' => :'branch',
-        :'locale_id' => :'locale_id',
-        :'user_ids' => :'user_ids',
-        :'reviewer_ids' => :'reviewer_ids'
+        :'branch' => :'branch'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'branch' => :'String',
-        :'locale_id' => :'String',
-        :'user_ids' => :'Array<String>',
-        :'reviewer_ids' => :'Array<String>'
+        :'branch' => :'String'
       }
     end
 
@@ -44,35 +29,19 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::JobLocaleUpdateParameters` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::JobLocaleCompleteReviewParameters` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::JobLocaleUpdateParameters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::JobLocaleCompleteReviewParameters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
       if attributes.key?(:'branch')
         self.branch = attributes[:'branch']
-      end
-
-      if attributes.key?(:'locale_id')
-        self.locale_id = attributes[:'locale_id']
-      end
-
-      if attributes.key?(:'user_ids')
-        if (value = attributes[:'user_ids']).is_a?(Array)
-          self.user_ids = value
-        end
-      end
-
-      if attributes.key?(:'reviewer_ids')
-        if (value = attributes[:'reviewer_ids']).is_a?(Array)
-          self.reviewer_ids = value
-        end
       end
     end
 
@@ -94,10 +63,7 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          branch == o.branch &&
-          locale_id == o.locale_id &&
-          user_ids == o.user_ids &&
-          reviewer_ids == o.reviewer_ids
+          branch == o.branch
     end
 
     # @see the `==` method
@@ -109,7 +75,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, locale_id, user_ids, reviewer_ids].hash
+      [branch].hash
     end
 
     # Builds the object from hash

@@ -8,12 +8,15 @@ module Phrase
 
     attr_accessor :name
 
+    attr_accessor :role
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'username' => :'username',
-        :'name' => :'name'
+        :'name' => :'name',
+        :'role' => :'role'
       }
     end
 
@@ -22,7 +25,8 @@ module Phrase
       {
         :'id' => :'String',
         :'username' => :'String',
-        :'name' => :'String'
+        :'name' => :'String',
+        :'role' => :'String'
       }
     end
 
@@ -58,6 +62,10 @@ module Phrase
       if attributes.key?(:'name')
         self.name = attributes[:'name']
       end
+
+      if attributes.key?(:'role')
+        self.role = attributes[:'role']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -80,7 +88,8 @@ module Phrase
       self.class == o.class &&
           id == o.id &&
           username == o.username &&
-          name == o.name
+          name == o.name &&
+          role == o.role
     end
 
     # @see the `==` method
@@ -92,7 +101,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, username, name].hash
+      [id, username, name, role].hash
     end
 
     # Builds the object from hash
