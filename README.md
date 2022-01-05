@@ -78,6 +78,9 @@ Phrase.configure do |config|
   # Or configure API key authorization: Token
   config.api_key['Authorization'] = 'YOUR API KEY'
   config.api_key_prefix['Authorization'] = 'token'
+
+  # Or configure Bearer authorization (JWT): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Phrase::AccountsApi.new
@@ -529,4 +532,8 @@ Class | Method | HTTP request | Description
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+### bearerAuth
+
+- **Type**: Bearer authentication (JWT)
 

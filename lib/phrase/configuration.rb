@@ -195,6 +195,14 @@ module Phrase
             key: 'Authorization',
             value: api_key_with_prefix('Authorization')
           },
+        'bearerAuth' =>
+          {
+            type: 'bearer',
+            in: 'header',
+            format: 'JWT',
+            key: 'Authorization',
+            value: "Bearer #{access_token}"
+          },
       }
     end
 
