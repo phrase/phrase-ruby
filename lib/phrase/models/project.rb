@@ -16,6 +16,8 @@ module Phrase
 
     attr_accessor :space
 
+    attr_accessor :point_of_contact
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -30,6 +32,7 @@ module Phrase
         :'project_image_url' => :'project_image_url',
         :'account' => :'account',
         :'space' => :'space',
+        :'point_of_contact' => :'point_of_contact',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at'
       }
@@ -45,6 +48,7 @@ module Phrase
         :'project_image_url' => :'String',
         :'account' => :'Account',
         :'space' => :'Space1',
+        :'point_of_contact' => :'UserPreview',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }
@@ -99,6 +103,10 @@ module Phrase
         self.space = attributes[:'space']
       end
 
+      if attributes.key?(:'point_of_contact')
+        self.point_of_contact = attributes[:'point_of_contact']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -133,6 +141,7 @@ module Phrase
           project_image_url == o.project_image_url &&
           account == o.account &&
           space == o.space &&
+          point_of_contact == o.point_of_contact &&
           created_at == o.created_at &&
           updated_at == o.updated_at
     end
@@ -146,7 +155,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, slug, main_format, project_image_url, account, space, created_at, updated_at].hash
+      [id, name, slug, main_format, project_image_url, account, space, point_of_contact, created_at, updated_at].hash
     end
 
     # Builds the object from hash

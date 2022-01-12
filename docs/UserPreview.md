@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **username** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**role** | **String** |  | [optional] 
+**gravatar_uid** | **String** |  | [optional] 
 
 ## Code Sample
 
@@ -17,7 +17,7 @@ require 'Phrase'
 instance = Phrase::UserPreview.new(id: null,
                                  username: null,
                                  name: null,
-                                 role: null)
+                                 gravatar_uid: null)
 ```
 
 

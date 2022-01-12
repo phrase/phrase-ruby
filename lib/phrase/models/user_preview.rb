@@ -8,7 +8,7 @@ module Phrase
 
     attr_accessor :name
 
-    attr_accessor :role
+    attr_accessor :gravatar_uid
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -16,7 +16,7 @@ module Phrase
         :'id' => :'id',
         :'username' => :'username',
         :'name' => :'name',
-        :'role' => :'role'
+        :'gravatar_uid' => :'gravatar_uid'
       }
     end
 
@@ -26,7 +26,7 @@ module Phrase
         :'id' => :'String',
         :'username' => :'String',
         :'name' => :'String',
-        :'role' => :'String'
+        :'gravatar_uid' => :'String'
       }
     end
 
@@ -63,8 +63,8 @@ module Phrase
         self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'role')
-        self.role = attributes[:'role']
+      if attributes.key?(:'gravatar_uid')
+        self.gravatar_uid = attributes[:'gravatar_uid']
       end
     end
 
@@ -89,7 +89,7 @@ module Phrase
           id == o.id &&
           username == o.username &&
           name == o.name &&
-          role == o.role
+          gravatar_uid == o.gravatar_uid
     end
 
     # @see the `==` method
@@ -101,7 +101,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, username, name, role].hash
+      [id, username, name, gravatar_uid].hash
     end
 
     # Builds the object from hash

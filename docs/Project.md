@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **project_image_url** | **String** |  | [optional] 
 **account** | [**Account**](Account.md) |  | [optional] 
 **space** | [**Space1**](Space1.md) |  | [optional] 
+**point_of_contact** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 
@@ -26,6 +27,7 @@ instance = Phrase::Project.new(id: null,
                                  project_image_url: null,
                                  account: null,
                                  space: null,
+                                 point_of_contact: null,
                                  created_at: null,
                                  updated_at: null)
 ```
