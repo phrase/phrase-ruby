@@ -1,43 +1,22 @@
 require 'date'
 
 module Phrase
-  class Member
+  class Team1
     attr_accessor :id
 
-    attr_accessor :email
-
-    attr_accessor :username
+    attr_accessor :name
 
     attr_accessor :created_at
 
-    attr_accessor :last_activity_at
-
-    attr_accessor :role
-
-    attr_accessor :projects
-
-    attr_accessor :permissions
-
-    attr_accessor :default_locale_codes
-
-    attr_accessor :teams
-
-    attr_accessor :spaces
+    attr_accessor :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'email' => :'email',
-        :'username' => :'username',
+        :'name' => :'name',
         :'created_at' => :'created_at',
-        :'last_activity_at' => :'last_activity_at',
-        :'role' => :'role',
-        :'projects' => :'projects',
-        :'permissions' => :'permissions',
-        :'default_locale_codes' => :'default_locale_codes',
-        :'teams' => :'teams',
-        :'spaces' => :'spaces'
+        :'updated_at' => :'updated_at'
       }
     end
 
@@ -45,16 +24,9 @@ module Phrase
     def self.openapi_types
       {
         :'id' => :'String',
-        :'email' => :'String',
-        :'username' => :'String',
+        :'name' => :'String',
         :'created_at' => :'DateTime',
-        :'last_activity_at' => :'DateTime',
-        :'role' => :'String',
-        :'projects' => :'Array<ProjectLocales>',
-        :'permissions' => :'Object',
-        :'default_locale_codes' => :'Array<String>',
-        :'teams' => :'Array<Team1>',
-        :'spaces' => :'Array<MemberSpaces>'
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -68,13 +40,13 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::Member` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::Team1` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::Member`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::Team1`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -83,52 +55,16 @@ module Phrase
         self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'email')
-        self.email = attributes[:'email']
-      end
-
-      if attributes.key?(:'username')
-        self.username = attributes[:'username']
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
 
-      if attributes.key?(:'last_activity_at')
-        self.last_activity_at = attributes[:'last_activity_at']
-      end
-
-      if attributes.key?(:'role')
-        self.role = attributes[:'role']
-      end
-
-      if attributes.key?(:'projects')
-        if (value = attributes[:'projects']).is_a?(Array)
-          self.projects = value
-        end
-      end
-
-      if attributes.key?(:'permissions')
-        self.permissions = attributes[:'permissions']
-      end
-
-      if attributes.key?(:'default_locale_codes')
-        if (value = attributes[:'default_locale_codes']).is_a?(Array)
-          self.default_locale_codes = value
-        end
-      end
-
-      if attributes.key?(:'teams')
-        if (value = attributes[:'teams']).is_a?(Array)
-          self.teams = value
-        end
-      end
-
-      if attributes.key?(:'spaces')
-        if (value = attributes[:'spaces']).is_a?(Array)
-          self.spaces = value
-        end
+      if attributes.key?(:'updated_at')
+        self.updated_at = attributes[:'updated_at']
       end
     end
 
@@ -151,16 +87,9 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          email == o.email &&
-          username == o.username &&
+          name == o.name &&
           created_at == o.created_at &&
-          last_activity_at == o.last_activity_at &&
-          role == o.role &&
-          projects == o.projects &&
-          permissions == o.permissions &&
-          default_locale_codes == o.default_locale_codes &&
-          teams == o.teams &&
-          spaces == o.spaces
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -172,7 +101,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, email, username, created_at, last_activity_at, role, projects, permissions, default_locale_codes, teams, spaces].hash
+      [id, name, created_at, updated_at].hash
     end
 
     # Builds the object from hash

@@ -477,6 +477,7 @@ Class | Method | HTTP request | Description
  - [Phrase::TagWithStats1Statistics](docs/TagWithStats1Statistics.md)
  - [Phrase::TagWithStats1Statistics1](docs/TagWithStats1Statistics1.md)
  - [Phrase::Team](docs/Team.md)
+ - [Phrase::Team1](docs/Team1.md)
  - [Phrase::TeamCreateParameters](docs/TeamCreateParameters.md)
  - [Phrase::TeamDetail](docs/TeamDetail.md)
  - [Phrase::TeamUpdateParameters](docs/TeamUpdateParameters.md)
