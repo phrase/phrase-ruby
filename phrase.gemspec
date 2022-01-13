@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account."
   s.description = "Phrase is a translation management platform for software projects."
   s.license     = 'MIT'
-  s.required_ruby_version = ">= 1.9"
+  s.required_ruby_version = ">= 2.6.0"
 
   s.metadata = {
     "bug_tracker_uri"   => "https://github.com/phrase/phrase-ruby/issues",
@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
   s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'
-  s.add_runtime_dependency 'link-header-parser', '~>1.0'
+  s.add_runtime_dependency 'link-header-parser', '~> 4.0'
 
   s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
 
