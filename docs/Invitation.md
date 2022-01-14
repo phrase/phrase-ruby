@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **updated_at** | **DateTime** |  | [optional] 
 **accepted_at** | **DateTime** |  | [optional] 
 **spaces** | [**Array&lt;MemberSpaces&gt;**](MemberSpaces.md) |  | [optional] 
+**teams** | [**Array&lt;Items&gt;**](Items.md) |  | [optional] 
 **project_role** | [**Array&lt;MemberProjectDetailProjectRoles&gt;**](MemberProjectDetailProjectRoles.md) |  | [optional] 
 
 ## Code Sample
@@ -37,6 +38,7 @@ instance = Phrase::Invitation.new(id: null,
                                  updated_at: null,
                                  accepted_at: null,
                                  spaces: null,
+                                 teams: null,
                                  project_role: null)
 ```
 
