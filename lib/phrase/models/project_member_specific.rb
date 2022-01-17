@@ -1,7 +1,7 @@
 require 'date'
 
 module Phrase
-  class ProjectLocales
+  class ProjectMemberSpecific
     attr_accessor :id
 
     attr_accessor :name
@@ -14,8 +14,6 @@ module Phrase
 
     attr_accessor :updated_at
 
-    attr_accessor :locales
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -24,8 +22,7 @@ module Phrase
         :'project_role' => :'project_role',
         :'main_format' => :'main_format',
         :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at',
-        :'locales' => :'locales'
+        :'updated_at' => :'updated_at'
       }
     end
 
@@ -37,8 +34,7 @@ module Phrase
         :'project_role' => :'String',
         :'main_format' => :'String',
         :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime',
-        :'locales' => :'Array<LocalePreview>'
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -48,25 +44,17 @@ module Phrase
       ])
     end
 
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-      :'ProjectLocales1',
-      :'ProjectMemberSpecific'
-      ]
-    end
-
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::ProjectLocales` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::ProjectMemberSpecific` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::ProjectLocales`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::ProjectMemberSpecific`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -94,12 +82,6 @@ module Phrase
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
       end
-
-      if attributes.key?(:'locales')
-        if (value = attributes[:'locales']).is_a?(Array)
-          self.locales = value
-        end
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -125,8 +107,7 @@ module Phrase
           project_role == o.project_role &&
           main_format == o.main_format &&
           created_at == o.created_at &&
-          updated_at == o.updated_at &&
-          locales == o.locales
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -138,7 +119,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, project_role, main_format, created_at, updated_at, locales].hash
+      [id, name, project_role, main_format, created_at, updated_at].hash
     end
 
     # Builds the object from hash

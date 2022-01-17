@@ -445,6 +445,7 @@ Class | Method | HTTP request | Description
  - [Phrase::ProjectDetails1](docs/ProjectDetails1.md)
  - [Phrase::ProjectLocales](docs/ProjectLocales.md)
  - [Phrase::ProjectLocales1](docs/ProjectLocales1.md)
+ - [Phrase::ProjectMemberSpecific](docs/ProjectMemberSpecific.md)
  - [Phrase::ProjectShort](docs/ProjectShort.md)
  - [Phrase::ProjectUpdateParameters](docs/ProjectUpdateParameters.md)
  - [Phrase::Release](docs/Release.md)
