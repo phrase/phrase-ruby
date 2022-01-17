@@ -69,7 +69,7 @@ module Phrase
       return_type = opts[:return_type] || 'TranslationVersionWithUser' 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['Basic', 'Token', 'bearerAuth']
+      auth_names = opts[:auth_names] || ['Basic', 'Token']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -150,7 +150,7 @@ module Phrase
       return_type = opts[:return_type] || 'Array<TranslationVersion>' 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['Basic', 'Token', 'bearerAuth']
+      auth_names = opts[:auth_names] || ['Basic', 'Token']
 
       new_options = opts.merge(
         :header_params => header_params,

@@ -32,9 +32,6 @@ Phrase.configure do |config|
   # Configure API key authorization: Token
   config.api_key['Authorization'] = 'YOUR API KEY'
   config.api_key_prefix['Authorization'] = 'token'
-
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Phrase::UploadsApi.new
@@ -96,7 +93,7 @@ Response<([**Upload**](Upload.md))>
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -126,9 +123,6 @@ Phrase.configure do |config|
   # Configure API key authorization: Token
   config.api_key['Authorization'] = 'YOUR API KEY'
   config.api_key_prefix['Authorization'] = 'token'
-
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Phrase::UploadsApi.new
@@ -164,7 +158,7 @@ Response<([**Upload**](Upload.md))>
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -194,9 +188,6 @@ Phrase.configure do |config|
   # Configure API key authorization: Token
   config.api_key['Authorization'] = 'YOUR API KEY'
   config.api_key_prefix['Authorization'] = 'token'
-
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Phrase::UploadsApi.new
@@ -234,7 +225,7 @@ Response<([**Array&lt;Upload&gt;**](Upload.md))>
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
