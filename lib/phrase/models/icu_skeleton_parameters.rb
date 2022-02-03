@@ -8,6 +8,9 @@ module Phrase
     # Locale codes
     attr_accessor :locale_codes
 
+    # Keep the content and add missing plural forms for each locale
+    attr_accessor :keep_content
+
     # Indicates whether the zero form should be included or excluded in the returned skeletons
     attr_accessor :zero_form_enabled
 
@@ -16,6 +19,7 @@ module Phrase
       {
         :'content' => :'content',
         :'locale_codes' => :'locale_codes',
+        :'keep_content' => :'keep_content',
         :'zero_form_enabled' => :'zero_form_enabled'
       }
     end
@@ -25,6 +29,7 @@ module Phrase
       {
         :'content' => :'String',
         :'locale_codes' => :'Array<String>',
+        :'keep_content' => :'Boolean',
         :'zero_form_enabled' => :'Boolean'
       }
     end
@@ -60,6 +65,10 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'keep_content')
+        self.keep_content = attributes[:'keep_content']
+      end
+
       if attributes.key?(:'zero_form_enabled')
         self.zero_form_enabled = attributes[:'zero_form_enabled']
       end
@@ -85,6 +94,7 @@ module Phrase
       self.class == o.class &&
           content == o.content &&
           locale_codes == o.locale_codes &&
+          keep_content == o.keep_content &&
           zero_form_enabled == o.zero_form_enabled
     end
 
@@ -97,7 +107,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [content, locale_codes, zero_form_enabled].hash
+      [content, locale_codes, keep_content, zero_form_enabled].hash
     end
 
     # Builds the object from hash
