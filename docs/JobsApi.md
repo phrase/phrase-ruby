@@ -9,9 +9,11 @@ Method | HTTP request | Description
 [**job_delete**](JobsApi.md#job_delete) | **DELETE** /projects/{project_id}/jobs/{id} | Delete a job
 [**job_keys_create**](JobsApi.md#job_keys_create) | **POST** /projects/{project_id}/jobs/{id}/keys | Add keys to job
 [**job_keys_delete**](JobsApi.md#job_keys_delete) | **DELETE** /projects/{project_id}/jobs/{id}/keys | Remove keys from job
+[**job_lock**](JobsApi.md#job_lock) | **POST** /projects/{project_id}/jobs/{id}/lock | Lock a job
 [**job_reopen**](JobsApi.md#job_reopen) | **POST** /projects/{project_id}/jobs/{id}/reopen | Reopen a job
 [**job_show**](JobsApi.md#job_show) | **GET** /projects/{project_id}/jobs/{id} | Get a single job
 [**job_start**](JobsApi.md#job_start) | **POST** /projects/{project_id}/jobs/{id}/start | Start a job
+[**job_unlock**](JobsApi.md#job_unlock) | **POST** /projects/{project_id}/jobs/{id}/unlock | Unlock a job
 [**job_update**](JobsApi.md#job_update) | **PATCH** /projects/{project_id}/jobs/{id} | Update a job
 [**jobs_by_account**](JobsApi.md#jobs_by_account) | **GET** /accounts/{account_id}/jobs | List account jobs
 [**jobs_list**](JobsApi.md#jobs_list) | **GET** /projects/{project_id}/jobs | List jobs
@@ -341,6 +343,70 @@ Response<(nil (empty response body))>
 - **Accept**: Not defined
 
 
+## job_lock
+
+> job_lock(project_id, id, opts)
+
+Lock a job
+
+If you are the job owner, you may lock a job using this API request.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::JobsApi.new
+project_id = 'project_id_example' # String | Project ID
+id = 'id_example' # String | ID
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
+}
+
+begin
+  #Lock a job
+  api_instance.job_lock(project_id, id, opts)
+rescue Phrase::ApiError => e
+  puts "Exception when calling JobsApi->job_lock: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **id** | **String**| ID | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+
+### Return type
+
+Response<(nil (empty response body))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
 ## job_reopen
 
 > JobDetails job_reopen(project_id, id, job_reopen_parameters, opts)
@@ -534,6 +600,70 @@ Response<([**JobDetails**](JobDetails.md))>
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+
+## job_unlock
+
+> job_unlock(project_id, id, opts)
+
+Unlock a job
+
+If you are the job owner, you may unlock a locked job using this API request.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::JobsApi.new
+project_id = 'project_id_example' # String | Project ID
+id = 'id_example' # String | ID
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | specify the branch to use
+}
+
+begin
+  #Unlock a job
+  api_instance.job_unlock(project_id, id, opts)
+rescue Phrase::ApiError => e
+  puts "Exception when calling JobsApi->job_unlock: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **id** | **String**| ID | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+
+### Return type
+
+Response<(nil (empty response body))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
 ## job_update

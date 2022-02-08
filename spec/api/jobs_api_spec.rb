@@ -95,6 +95,21 @@ describe 'JobsApi' do
     end
   end
 
+  # unit tests for job_lock
+  # Lock a job
+  # If you are the job owner, you may lock a job using this API request.
+  # @param project_id Project ID
+  # @param id ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
+  # @return [nil]
+  describe 'job_lock test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for job_reopen
   # Reopen a job
   # Mark a job as uncompleted.
@@ -135,6 +150,21 @@ describe 'JobsApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [JobDetails]
   describe 'job_start test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for job_unlock
+  # Unlock a job
+  # If you are the job owner, you may unlock a locked job using this API request.
+  # @param project_id Project ID
+  # @param id ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
+  # @return [nil]
+  describe 'job_unlock test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
