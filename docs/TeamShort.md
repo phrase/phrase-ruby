@@ -1,4 +1,4 @@
-# Phrase::Team1
+# Phrase::TeamShort
 
 ## Properties
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::Team1.new(id: null,
+instance = Phrase::TeamShort.new(id: null,
                                  name: null,
                                  created_at: null,
                                  updated_at: null)

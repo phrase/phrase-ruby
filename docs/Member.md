@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **projects** | [**Array&lt;ProjectLocales&gt;**](ProjectLocales.md) |  | [optional] 
 **permissions** | [**Object**](.md) |  | [optional] 
 **default_locale_codes** | **Array&lt;String&gt;** |  | [optional] 
-**teams** | [**Array&lt;Team1&gt;**](Team1.md) |  | [optional] 
+**teams** | [**Array&lt;TeamShort&gt;**](TeamShort.md) |  | [optional] 
 **spaces** | [**Array&lt;MemberSpaces&gt;**](MemberSpaces.md) |  | [optional] 
 
 ## Code Sample

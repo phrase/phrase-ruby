@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **projects** | [**Array&lt;ProjectShort&gt;**](ProjectShort.md) |  | [optional] 
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
+**teams** | [**Array&lt;TeamShort&gt;**](TeamShort.md) |  | [optional] 
 **default_locale_codes** | **Array&lt;String&gt;** |  | [optional] 
 **permissions** | [**Object**](.md) |  | [optional] 
 **locale_ids** | **Array&lt;String&gt;** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 **accepted_at** | **DateTime** |  | [optional] 
-**spaces** | [**Array&lt;MemberSpaces&gt;**](MemberSpaces.md) |  | [optional] 
-**teams** | [**Array&lt;Items&gt;**](Items.md) |  | [optional] 
+**spaces** | [**Array&lt;Space&gt;**](Space.md) |  | [optional] 
 **project_role** | [**Array&lt;MemberProjectDetailProjectRoles&gt;**](MemberProjectDetailProjectRoles.md) |  | [optional] 
 
 ## Code Sample
@@ -31,6 +31,7 @@ instance = Phrase::Invitation.new(id: null,
                                  state: null,
                                  projects: null,
                                  locales: null,
+                                 teams: null,
                                  default_locale_codes: null,
                                  permissions: null,
                                  locale_ids: null,
@@ -38,7 +39,6 @@ instance = Phrase::Invitation.new(id: null,
                                  updated_at: null,
                                  accepted_at: null,
                                  spaces: null,
-                                 teams: null,
                                  project_role: null)
 ```
 

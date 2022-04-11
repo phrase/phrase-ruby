@@ -53,7 +53,7 @@ module Phrase
         :'projects' => :'Array<ProjectLocales>',
         :'permissions' => :'Object',
         :'default_locale_codes' => :'Array<String>',
-        :'teams' => :'Array<Team1>',
+        :'teams' => :'Array<TeamShort>',
         :'spaces' => :'Array<MemberSpaces>'
       }
     end
