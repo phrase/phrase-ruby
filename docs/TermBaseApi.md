@@ -1,24 +1,24 @@
-# Phrase::GlossaryTermsApi
+# Phrase::TermBaseApi
 
 All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**glossary_term_create**](GlossaryTermsApi.md#glossary_term_create) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms | Create a glossary term
-[**glossary_term_delete**](GlossaryTermsApi.md#glossary_term_delete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Delete a glossary term
-[**glossary_term_show**](GlossaryTermsApi.md#glossary_term_show) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Get a single glossary term
-[**glossary_term_update**](GlossaryTermsApi.md#glossary_term_update) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Update a glossary term
-[**glossary_terms_list**](GlossaryTermsApi.md#glossary_terms_list) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms | List glossary terms
+[**glossaries_list**](TermBaseApi.md#glossaries_list) | **GET** /accounts/{account_id}/glossaries | List term bases
+[**glossary_create**](TermBaseApi.md#glossary_create) | **POST** /accounts/{account_id}/glossaries | Create a term base
+[**glossary_delete**](TermBaseApi.md#glossary_delete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a term base
+[**glossary_show**](TermBaseApi.md#glossary_show) | **GET** /accounts/{account_id}/glossaries/{id} | Get a single term base
+[**glossary_update**](TermBaseApi.md#glossary_update) | **PATCH** /accounts/{account_id}/glossaries/{id} | Update a term base
 
 
 
-## glossary_term_create
+## glossaries_list
 
-> GlossaryTerm glossary_term_create(account_id, glossary_id, glossary_term_create_parameters, opts)
+> Array&lt;Glossary&gt; glossaries_list(account_id, opts)
 
-Create a glossary term
+List term bases
 
-Create a new glossary term.
+List all term bases (previously: glossaries) the current user has access to.
 
 ### Example
 
@@ -36,20 +36,20 @@ Phrase.configure do |config|
   config.api_key_prefix['Authorization'] = 'token'
 end
 
-api_instance = Phrase::GlossaryTermsApi.new
+api_instance = Phrase::TermBaseApi.new
 account_id = 'account_id_example' # String | Account ID
-glossary_id = 'glossary_id_example' # String | Glossary ID
-glossary_term_create_parameters = Phrase::GlossaryTermCreateParameters.new # GlossaryTermCreateParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  page: 1, # Integer | Page number
+  per_page: 25 # Integer | allows you to specify a page size up to 100 items, 25 by default
 }
 
 begin
-  #Create a glossary term
-  result = api_instance.glossary_term_create(account_id, glossary_id, glossary_term_create_parameters, opts)
+  #List term bases
+  result = api_instance.glossaries_list(account_id, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling GlossaryTermsApi->glossary_term_create: #{e}"
+  puts "Exception when calling TermBaseApi->glossaries_list: #{e}"
 end
 ```
 
@@ -59,13 +59,76 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **glossary_id** | **String**| Glossary ID | 
- **glossary_term_create_parameters** | [**GlossaryTermCreateParameters**](GlossaryTermCreateParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **page** | **Integer**| Page number | [optional] 
+ **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
+
+### Return type
+
+Response<([**Array&lt;Glossary&gt;**](Glossary.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## glossary_create
+
+> Glossary glossary_create(account_id, glossary_create_parameters, opts)
+
+Create a term base
+
+Create a new term base (previously: glossary).
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::TermBaseApi.new
+account_id = 'account_id_example' # String | Account ID
+glossary_create_parameters = Phrase::GlossaryCreateParameters.new # GlossaryCreateParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Create a term base
+  result = api_instance.glossary_create(account_id, glossary_create_parameters, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling TermBaseApi->glossary_create: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **String**| Account ID | 
+ **glossary_create_parameters** | [**GlossaryCreateParameters**](GlossaryCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
 
-Response<([**GlossaryTerm**](GlossaryTerm.md))>
+Response<([**Glossary**](Glossary.md))>
 
 ### Authorization
 
@@ -77,13 +140,13 @@ Response<([**GlossaryTerm**](GlossaryTerm.md))>
 - **Accept**: application/json
 
 
-## glossary_term_delete
+## glossary_delete
 
-> glossary_term_delete(account_id, glossary_id, id, opts)
+> glossary_delete(account_id, id, opts)
 
-Delete a glossary term
+Delete a term base
 
-Delete an existing glossary term.
+Delete an existing term base (previously: glossary).
 
 ### Example
 
@@ -101,19 +164,18 @@ Phrase.configure do |config|
   config.api_key_prefix['Authorization'] = 'token'
 end
 
-api_instance = Phrase::GlossaryTermsApi.new
+api_instance = Phrase::TermBaseApi.new
 account_id = 'account_id_example' # String | Account ID
-glossary_id = 'glossary_id_example' # String | Glossary ID
 id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
-  #Delete a glossary term
-  api_instance.glossary_term_delete(account_id, glossary_id, id, opts)
+  #Delete a term base
+  api_instance.glossary_delete(account_id, id, opts)
 rescue Phrase::ApiError => e
-  puts "Exception when calling GlossaryTermsApi->glossary_term_delete: #{e}"
+  puts "Exception when calling TermBaseApi->glossary_delete: #{e}"
 end
 ```
 
@@ -123,7 +185,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **glossary_id** | **String**| Glossary ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
@@ -141,13 +202,13 @@ Response<(nil (empty response body))>
 - **Accept**: Not defined
 
 
-## glossary_term_show
+## glossary_show
 
-> GlossaryTerm glossary_term_show(account_id, glossary_id, id, opts)
+> Glossary glossary_show(account_id, id, opts)
 
-Get a single glossary term
+Get a single term base
 
-Get details on a single glossary term.
+Get details on a single term base (previously: glossary).
 
 ### Example
 
@@ -165,20 +226,19 @@ Phrase.configure do |config|
   config.api_key_prefix['Authorization'] = 'token'
 end
 
-api_instance = Phrase::GlossaryTermsApi.new
+api_instance = Phrase::TermBaseApi.new
 account_id = 'account_id_example' # String | Account ID
-glossary_id = 'glossary_id_example' # String | Glossary ID
 id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
-  #Get a single glossary term
-  result = api_instance.glossary_term_show(account_id, glossary_id, id, opts)
+  #Get a single term base
+  result = api_instance.glossary_show(account_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling GlossaryTermsApi->glossary_term_show: #{e}"
+  puts "Exception when calling TermBaseApi->glossary_show: #{e}"
 end
 ```
 
@@ -188,13 +248,12 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **glossary_id** | **String**| Glossary ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
 
-Response<([**GlossaryTerm**](GlossaryTerm.md))>
+Response<([**Glossary**](Glossary.md))>
 
 ### Authorization
 
@@ -206,13 +265,13 @@ Response<([**GlossaryTerm**](GlossaryTerm.md))>
 - **Accept**: application/json
 
 
-## glossary_term_update
+## glossary_update
 
-> GlossaryTerm glossary_term_update(account_id, glossary_id, id, glossary_term_update_parameters, opts)
+> Glossary glossary_update(account_id, id, glossary_update_parameters, opts)
 
-Update a glossary term
+Update a term base
 
-Update an existing glossary term.
+Update an existing term base (previously: glossary).
 
 ### Example
 
@@ -230,21 +289,20 @@ Phrase.configure do |config|
   config.api_key_prefix['Authorization'] = 'token'
 end
 
-api_instance = Phrase::GlossaryTermsApi.new
+api_instance = Phrase::TermBaseApi.new
 account_id = 'account_id_example' # String | Account ID
-glossary_id = 'glossary_id_example' # String | Glossary ID
 id = 'id_example' # String | ID
-glossary_term_update_parameters = Phrase::GlossaryTermUpdateParameters.new # GlossaryTermUpdateParameters | 
+glossary_update_parameters = Phrase::GlossaryUpdateParameters.new # GlossaryUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
-  #Update a glossary term
-  result = api_instance.glossary_term_update(account_id, glossary_id, id, glossary_term_update_parameters, opts)
+  #Update a term base
+  result = api_instance.glossary_update(account_id, id, glossary_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling GlossaryTermsApi->glossary_term_update: #{e}"
+  puts "Exception when calling TermBaseApi->glossary_update: #{e}"
 end
 ```
 
@@ -254,14 +312,13 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **glossary_id** | **String**| Glossary ID | 
  **id** | **String**| ID | 
- **glossary_term_update_parameters** | [**GlossaryTermUpdateParameters**](GlossaryTermUpdateParameters.md)|  | 
+ **glossary_update_parameters** | [**GlossaryUpdateParameters**](GlossaryUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
 
-Response<([**GlossaryTerm**](GlossaryTerm.md))>
+Response<([**Glossary**](Glossary.md))>
 
 ### Authorization
 
@@ -270,72 +327,5 @@ Response<([**GlossaryTerm**](GlossaryTerm.md))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## glossary_terms_list
-
-> Array&lt;GlossaryTerm&gt; glossary_terms_list(account_id, glossary_id, opts)
-
-List glossary terms
-
-List all glossary terms the current user has access to.
-
-### Example
-
-```ruby
-# load the gem
-require 'phrase'
-# setup authorization
-Phrase.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-
-  # Configure API key authorization: Token
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  config.api_key_prefix['Authorization'] = 'token'
-end
-
-api_instance = Phrase::GlossaryTermsApi.new
-account_id = 'account_id_example' # String | Account ID
-glossary_id = 'glossary_id_example' # String | Glossary ID
-opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  page: 1, # Integer | Page number
-  per_page: 25 # Integer | allows you to specify a page size up to 100 items, 25 by default
-}
-
-begin
-  #List glossary terms
-  result = api_instance.glossary_terms_list(account_id, glossary_id, opts)
-  pp result
-rescue Phrase::ApiError => e
-  puts "Exception when calling GlossaryTermsApi->glossary_terms_list: #{e}"
-end
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **String**| Account ID | 
- **glossary_id** | **String**| Glossary ID | 
- **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **page** | **Integer**| Page number | [optional] 
- **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
-
-### Return type
-
-Response<([**Array&lt;GlossaryTerm&gt;**](GlossaryTerm.md))>
-
-### Authorization
-
-[Basic](../README.md#Basic), [Token](../README.md#Token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
