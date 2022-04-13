@@ -36,6 +36,22 @@ describe 'TermBaseTranslationsApi' do
     end
   end
 
+  # unit tests for glossary_term_translation_delete
+  # Delete a translation for a term
+  # Delete an existing translation of a term in a term base (previously: glossary).
+  # @param account_id Account ID
+  # @param glossary_id Glossary ID
+  # @param term_id Term ID
+  # @param id ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [nil]
+  describe 'glossary_term_translation_delete test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for glossary_term_translation_update
   # Update a translation for a term
   # Update an existing translation for a term in a term base (previously: glossary).

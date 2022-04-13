@@ -21,7 +21,7 @@ describe 'BlockedKeysApi' do
   end
 
   # unit tests for blacklisted_key_create
-  # Create a blacklisted key
+  # Create a blocked key
   # Create a new rule for blocking keys.
   # @param project_id Project ID
   # @param blacklisted_key_create_parameters 
@@ -35,7 +35,7 @@ describe 'BlockedKeysApi' do
   end
 
   # unit tests for blacklisted_key_delete
-  # Delete a blacklisted key
+  # Delete a blocked key
   # Delete an existing rule for blocking keys.
   # @param project_id Project ID
   # @param id ID
@@ -49,7 +49,7 @@ describe 'BlockedKeysApi' do
   end
 
   # unit tests for blacklisted_key_show
-  # Get a single blacklisted key
+  # Get a single blocked key
   # Get details on a single rule for blocking keys for a given project.
   # @param project_id Project ID
   # @param id ID
@@ -63,7 +63,7 @@ describe 'BlockedKeysApi' do
   end
 
   # unit tests for blacklisted_key_update
-  # Update a blacklisted key
+  # Update a blocked key
   # Update an existing rule for blocking keys.
   # @param project_id Project ID
   # @param id ID
@@ -78,7 +78,7 @@ describe 'BlockedKeysApi' do
   end
 
   # unit tests for blacklisted_keys_list
-  # List blacklisted keys
+  # List blocked keys
   # List all rules for blocking keys for the given project.
   # @param project_id Project ID
   # @param [Hash] opts the optional parameters

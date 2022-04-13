@@ -1,14 +1,14 @@
-# Phrase::TermBaseApi
+# Phrase::TermBasesApi
 
 All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**glossaries_list**](TermBaseApi.md#glossaries_list) | **GET** /accounts/{account_id}/glossaries | List term bases
-[**glossary_create**](TermBaseApi.md#glossary_create) | **POST** /accounts/{account_id}/glossaries | Create a term base
-[**glossary_delete**](TermBaseApi.md#glossary_delete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a term base
-[**glossary_show**](TermBaseApi.md#glossary_show) | **GET** /accounts/{account_id}/glossaries/{id} | Get a single term base
-[**glossary_update**](TermBaseApi.md#glossary_update) | **PATCH** /accounts/{account_id}/glossaries/{id} | Update a term base
+[**glossaries_list**](TermBasesApi.md#glossaries_list) | **GET** /accounts/{account_id}/glossaries | List term bases
+[**glossary_create**](TermBasesApi.md#glossary_create) | **POST** /accounts/{account_id}/glossaries | Create a term base
+[**glossary_delete**](TermBasesApi.md#glossary_delete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a term base
+[**glossary_show**](TermBasesApi.md#glossary_show) | **GET** /accounts/{account_id}/glossaries/{id} | Get a single term base
+[**glossary_update**](TermBasesApi.md#glossary_update) | **PATCH** /accounts/{account_id}/glossaries/{id} | Update a term base
 
 
 
@@ -36,7 +36,7 @@ Phrase.configure do |config|
   config.api_key_prefix['Authorization'] = 'token'
 end
 
-api_instance = Phrase::TermBaseApi.new
+api_instance = Phrase::TermBasesApi.new
 account_id = 'account_id_example' # String | Account ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
@@ -49,7 +49,7 @@ begin
   result = api_instance.glossaries_list(account_id, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling TermBaseApi->glossaries_list: #{e}"
+  puts "Exception when calling TermBasesApi->glossaries_list: #{e}"
 end
 ```
 
@@ -101,7 +101,7 @@ Phrase.configure do |config|
   config.api_key_prefix['Authorization'] = 'token'
 end
 
-api_instance = Phrase::TermBaseApi.new
+api_instance = Phrase::TermBasesApi.new
 account_id = 'account_id_example' # String | Account ID
 glossary_create_parameters = Phrase::GlossaryCreateParameters.new # GlossaryCreateParameters | 
 opts = {
@@ -113,7 +113,7 @@ begin
   result = api_instance.glossary_create(account_id, glossary_create_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling TermBaseApi->glossary_create: #{e}"
+  puts "Exception when calling TermBasesApi->glossary_create: #{e}"
 end
 ```
 
@@ -164,7 +164,7 @@ Phrase.configure do |config|
   config.api_key_prefix['Authorization'] = 'token'
 end
 
-api_instance = Phrase::TermBaseApi.new
+api_instance = Phrase::TermBasesApi.new
 account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
 opts = {
@@ -175,7 +175,7 @@ begin
   #Delete a term base
   api_instance.glossary_delete(account_id, id, opts)
 rescue Phrase::ApiError => e
-  puts "Exception when calling TermBaseApi->glossary_delete: #{e}"
+  puts "Exception when calling TermBasesApi->glossary_delete: #{e}"
 end
 ```
 
@@ -226,7 +226,7 @@ Phrase.configure do |config|
   config.api_key_prefix['Authorization'] = 'token'
 end
 
-api_instance = Phrase::TermBaseApi.new
+api_instance = Phrase::TermBasesApi.new
 account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
 opts = {
@@ -238,7 +238,7 @@ begin
   result = api_instance.glossary_show(account_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling TermBaseApi->glossary_show: #{e}"
+  puts "Exception when calling TermBasesApi->glossary_show: #{e}"
 end
 ```
 
@@ -289,7 +289,7 @@ Phrase.configure do |config|
   config.api_key_prefix['Authorization'] = 'token'
 end
 
-api_instance = Phrase::TermBaseApi.new
+api_instance = Phrase::TermBasesApi.new
 account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
 glossary_update_parameters = Phrase::GlossaryUpdateParameters.new # GlossaryUpdateParameters | 
@@ -302,7 +302,7 @@ begin
   result = api_instance.glossary_update(account_id, id, glossary_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling TermBaseApi->glossary_update: #{e}"
+  puts "Exception when calling TermBasesApi->glossary_update: #{e}"
 end
 ```
 

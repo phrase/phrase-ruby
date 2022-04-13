@@ -7,7 +7,7 @@ module Phrase
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Create a blacklisted key
+    # Create a blocked key
     # Create a new rule for blocking keys.
     # @param project_id [String] Project ID
     # @param blacklisted_key_create_parameters [BlacklistedKeyCreateParameters] 
@@ -19,7 +19,7 @@ module Phrase
       data
     end
 
-    # Create a blacklisted key
+    # Create a blocked key
     # Create a new rule for blocking keys.
     # @param project_id [String] Project ID
     # @param blacklisted_key_create_parameters [BlacklistedKeyCreateParameters] 
@@ -81,7 +81,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Delete a blacklisted key
+    # Delete a blocked key
     # Delete an existing rule for blocking keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
@@ -93,7 +93,7 @@ module Phrase
       data
     end
 
-    # Delete a blacklisted key
+    # Delete a blocked key
     # Delete an existing rule for blocking keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
@@ -151,7 +151,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Get a single blacklisted key
+    # Get a single blocked key
     # Get details on a single rule for blocking keys for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
@@ -163,7 +163,7 @@ module Phrase
       data
     end
 
-    # Get a single blacklisted key
+    # Get a single blocked key
     # Get details on a single rule for blocking keys for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
@@ -223,7 +223,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Update a blacklisted key
+    # Update a blocked key
     # Update an existing rule for blocking keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
@@ -236,7 +236,7 @@ module Phrase
       data
     end
 
-    # Update a blacklisted key
+    # Update a blocked key
     # Update an existing rule for blocking keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
@@ -303,7 +303,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # List blacklisted keys
+    # List blocked keys
     # List all rules for blocking keys for the given project.
     # @param project_id [String] Project ID
     # @param [Hash] opts the optional parameters
@@ -317,7 +317,7 @@ module Phrase
       data
     end
 
-    # List blacklisted keys
+    # List blocked keys
     # List all rules for blocking keys for the given project.
     # @param project_id [String] Project ID
     # @param [Hash] opts the optional parameters
