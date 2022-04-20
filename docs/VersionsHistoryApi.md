@@ -1,11 +1,11 @@
-# Phrase::ChangesVersionsApi
+# Phrase::VersionsHistoryApi
 
 All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**version_show**](ChangesVersionsApi.md#version_show) | **GET** /projects/{project_id}/translations/{translation_id}/versions/{id} | Get a single version
-[**versions_list**](ChangesVersionsApi.md#versions_list) | **GET** /projects/{project_id}/translations/{translation_id}/versions | List all versions
+[**version_show**](VersionsHistoryApi.md#version_show) | **GET** /projects/{project_id}/translations/{translation_id}/versions/{id} | Get a single version
+[**versions_list**](VersionsHistoryApi.md#versions_list) | **GET** /projects/{project_id}/translations/{translation_id}/versions | List all versions
 
 
 
@@ -33,7 +33,7 @@ Phrase.configure do |config|
   config.api_key_prefix['Authorization'] = 'token'
 end
 
-api_instance = Phrase::ChangesVersionsApi.new
+api_instance = Phrase::VersionsHistoryApi.new
 project_id = 'project_id_example' # String | Project ID
 translation_id = 'translation_id_example' # String | Translation ID
 id = 'id_example' # String | ID
@@ -47,7 +47,7 @@ begin
   result = api_instance.version_show(project_id, translation_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling ChangesVersionsApi->version_show: #{e}"
+  puts "Exception when calling VersionsHistoryApi->version_show: #{e}"
 end
 ```
 
@@ -82,7 +82,7 @@ Response<([**TranslationVersionWithUser**](TranslationVersionWithUser.md))>
 
 List all versions
 
-List all changes done to a given translation.
+List all versions for the given translation.
 
 ### Example
 
@@ -100,7 +100,7 @@ Phrase.configure do |config|
   config.api_key_prefix['Authorization'] = 'token'
 end
 
-api_instance = Phrase::ChangesVersionsApi.new
+api_instance = Phrase::VersionsHistoryApi.new
 project_id = 'project_id_example' # String | Project ID
 translation_id = 'translation_id_example' # String | Translation ID
 opts = {
@@ -115,7 +115,7 @@ begin
   result = api_instance.versions_list(project_id, translation_id, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling ChangesVersionsApi->versions_list: #{e}"
+  puts "Exception when calling VersionsHistoryApi->versions_list: #{e}"
 end
 ```
 

@@ -1,7 +1,7 @@
 require 'cgi'
 
 module Phrase
-  class ChangesVersionsApi
+  class VersionsHistoryApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
@@ -32,19 +32,19 @@ module Phrase
     # @return [Array<(Response<(TranslationVersionWithUser)>, Integer, Hash)>] Response<(TranslationVersionWithUser)> data, response status code and response headers
     def version_show_with_http_info(project_id, translation_id, id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ChangesVersionsApi.version_show ...'
+        @api_client.config.logger.debug 'Calling API: VersionsHistoryApi.version_show ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling ChangesVersionsApi.version_show"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling VersionsHistoryApi.version_show"
       end
       # verify the required parameter 'translation_id' is set
       if @api_client.config.client_side_validation && translation_id.nil?
-        fail ArgumentError, "Missing the required parameter 'translation_id' when calling ChangesVersionsApi.version_show"
+        fail ArgumentError, "Missing the required parameter 'translation_id' when calling VersionsHistoryApi.version_show"
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling ChangesVersionsApi.version_show"
+        fail ArgumentError, "Missing the required parameter 'id' when calling VersionsHistoryApi.version_show"
       end
       # resource path
       local_var_path = '/projects/{project_id}/translations/{translation_id}/versions/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'translation_id' + '}', CGI.escape(translation_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -82,14 +82,14 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ChangesVersionsApi#version_show\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: VersionsHistoryApi#version_show\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
     end
 
     # List all versions
-    # List all changes done to a given translation.
+    # List all versions for the given translation.
     # @param project_id [String] Project ID
     # @param translation_id [String] Translation ID
     # @param [Hash] opts the optional parameters
@@ -104,7 +104,7 @@ module Phrase
     end
 
     # List all versions
-    # List all changes done to a given translation.
+    # List all versions for the given translation.
     # @param project_id [String] Project ID
     # @param translation_id [String] Translation ID
     # @param [Hash] opts the optional parameters
@@ -115,15 +115,15 @@ module Phrase
     # @return [Array<(Response<(Array<TranslationVersion>)>, Integer, Hash)>] Response<(Array<TranslationVersion>)> data, response status code and response headers
     def versions_list_with_http_info(project_id, translation_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ChangesVersionsApi.versions_list ...'
+        @api_client.config.logger.debug 'Calling API: VersionsHistoryApi.versions_list ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling ChangesVersionsApi.versions_list"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling VersionsHistoryApi.versions_list"
       end
       # verify the required parameter 'translation_id' is set
       if @api_client.config.client_side_validation && translation_id.nil?
-        fail ArgumentError, "Missing the required parameter 'translation_id' when calling ChangesVersionsApi.versions_list"
+        fail ArgumentError, "Missing the required parameter 'translation_id' when calling VersionsHistoryApi.versions_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/translations/{translation_id}/versions'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'translation_id' + '}', CGI.escape(translation_id.to_s))
@@ -163,7 +163,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ChangesVersionsApi#versions_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: VersionsHistoryApi#versions_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers

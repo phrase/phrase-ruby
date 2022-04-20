@@ -1,14 +1,14 @@
 require 'cgi'
 
 module Phrase
-  class TermBaseTranslationsApi
+  class GlossaryTermTranslationsApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Create a translation for a term
-    # Create a new translation for a term in a term base (previously: glossary).
+    # Create a glossary term translation
+    # Create a new glossary term translation.
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
@@ -21,8 +21,8 @@ module Phrase
       data
     end
 
-    # Create a translation for a term
-    # Create a new translation for a term in a term base (previously: glossary).
+    # Create a glossary term translation
+    # Create a new glossary term translation.
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
@@ -32,23 +32,23 @@ module Phrase
     # @return [Array<(Response<(GlossaryTermTranslation)>, Integer, Hash)>] Response<(GlossaryTermTranslation)> data, response status code and response headers
     def glossary_term_translation_create_with_http_info(account_id, glossary_id, term_id, glossary_term_translation_create_parameters, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TermBaseTranslationsApi.glossary_term_translation_create ...'
+        @api_client.config.logger.debug 'Calling API: GlossaryTermTranslationsApi.glossary_term_translation_create ...'
       end
       # verify the required parameter 'account_id' is set
       if @api_client.config.client_side_validation && account_id.nil?
-        fail ArgumentError, "Missing the required parameter 'account_id' when calling TermBaseTranslationsApi.glossary_term_translation_create"
+        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossaryTermTranslationsApi.glossary_term_translation_create"
       end
       # verify the required parameter 'glossary_id' is set
       if @api_client.config.client_side_validation && glossary_id.nil?
-        fail ArgumentError, "Missing the required parameter 'glossary_id' when calling TermBaseTranslationsApi.glossary_term_translation_create"
+        fail ArgumentError, "Missing the required parameter 'glossary_id' when calling GlossaryTermTranslationsApi.glossary_term_translation_create"
       end
       # verify the required parameter 'term_id' is set
       if @api_client.config.client_side_validation && term_id.nil?
-        fail ArgumentError, "Missing the required parameter 'term_id' when calling TermBaseTranslationsApi.glossary_term_translation_create"
+        fail ArgumentError, "Missing the required parameter 'term_id' when calling GlossaryTermTranslationsApi.glossary_term_translation_create"
       end
       # verify the required parameter 'glossary_term_translation_create_parameters' is set
       if @api_client.config.client_side_validation && glossary_term_translation_create_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'glossary_term_translation_create_parameters' when calling TermBaseTranslationsApi.glossary_term_translation_create"
+        fail ArgumentError, "Missing the required parameter 'glossary_term_translation_create_parameters' when calling GlossaryTermTranslationsApi.glossary_term_translation_create"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'glossary_id' + '}', CGI.escape(glossary_id.to_s)).sub('{' + 'term_id' + '}', CGI.escape(term_id.to_s))
@@ -87,14 +87,14 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TermBaseTranslationsApi#glossary_term_translation_create\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GlossaryTermTranslationsApi#glossary_term_translation_create\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
     end
 
-    # Delete a translation for a term
-    # Delete an existing translation of a term in a term base (previously: glossary).
+    # Delete a glossary term translation
+    # Delete an existing glossary term translation.
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
@@ -107,8 +107,8 @@ module Phrase
       data
     end
 
-    # Delete a translation for a term
-    # Delete an existing translation of a term in a term base (previously: glossary).
+    # Delete a glossary term translation
+    # Delete an existing glossary term translation.
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
@@ -118,23 +118,23 @@ module Phrase
     # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def glossary_term_translation_delete_with_http_info(account_id, glossary_id, term_id, id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TermBaseTranslationsApi.glossary_term_translation_delete ...'
+        @api_client.config.logger.debug 'Calling API: GlossaryTermTranslationsApi.glossary_term_translation_delete ...'
       end
       # verify the required parameter 'account_id' is set
       if @api_client.config.client_side_validation && account_id.nil?
-        fail ArgumentError, "Missing the required parameter 'account_id' when calling TermBaseTranslationsApi.glossary_term_translation_delete"
+        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossaryTermTranslationsApi.glossary_term_translation_delete"
       end
       # verify the required parameter 'glossary_id' is set
       if @api_client.config.client_side_validation && glossary_id.nil?
-        fail ArgumentError, "Missing the required parameter 'glossary_id' when calling TermBaseTranslationsApi.glossary_term_translation_delete"
+        fail ArgumentError, "Missing the required parameter 'glossary_id' when calling GlossaryTermTranslationsApi.glossary_term_translation_delete"
       end
       # verify the required parameter 'term_id' is set
       if @api_client.config.client_side_validation && term_id.nil?
-        fail ArgumentError, "Missing the required parameter 'term_id' when calling TermBaseTranslationsApi.glossary_term_translation_delete"
+        fail ArgumentError, "Missing the required parameter 'term_id' when calling GlossaryTermTranslationsApi.glossary_term_translation_delete"
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling TermBaseTranslationsApi.glossary_term_translation_delete"
+        fail ArgumentError, "Missing the required parameter 'id' when calling GlossaryTermTranslationsApi.glossary_term_translation_delete"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'glossary_id' + '}', CGI.escape(glossary_id.to_s)).sub('{' + 'term_id' + '}', CGI.escape(term_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -169,14 +169,14 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TermBaseTranslationsApi#glossary_term_translation_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GlossaryTermTranslationsApi#glossary_term_translation_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
     end
 
-    # Update a translation for a term
-    # Update an existing translation for a term in a term base (previously: glossary).
+    # Update a glossary term translation
+    # Update an existing glossary term translation.
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
@@ -190,8 +190,8 @@ module Phrase
       data
     end
 
-    # Update a translation for a term
-    # Update an existing translation for a term in a term base (previously: glossary).
+    # Update a glossary term translation
+    # Update an existing glossary term translation.
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
@@ -202,27 +202,27 @@ module Phrase
     # @return [Array<(Response<(GlossaryTermTranslation)>, Integer, Hash)>] Response<(GlossaryTermTranslation)> data, response status code and response headers
     def glossary_term_translation_update_with_http_info(account_id, glossary_id, term_id, id, glossary_term_translation_update_parameters, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TermBaseTranslationsApi.glossary_term_translation_update ...'
+        @api_client.config.logger.debug 'Calling API: GlossaryTermTranslationsApi.glossary_term_translation_update ...'
       end
       # verify the required parameter 'account_id' is set
       if @api_client.config.client_side_validation && account_id.nil?
-        fail ArgumentError, "Missing the required parameter 'account_id' when calling TermBaseTranslationsApi.glossary_term_translation_update"
+        fail ArgumentError, "Missing the required parameter 'account_id' when calling GlossaryTermTranslationsApi.glossary_term_translation_update"
       end
       # verify the required parameter 'glossary_id' is set
       if @api_client.config.client_side_validation && glossary_id.nil?
-        fail ArgumentError, "Missing the required parameter 'glossary_id' when calling TermBaseTranslationsApi.glossary_term_translation_update"
+        fail ArgumentError, "Missing the required parameter 'glossary_id' when calling GlossaryTermTranslationsApi.glossary_term_translation_update"
       end
       # verify the required parameter 'term_id' is set
       if @api_client.config.client_side_validation && term_id.nil?
-        fail ArgumentError, "Missing the required parameter 'term_id' when calling TermBaseTranslationsApi.glossary_term_translation_update"
+        fail ArgumentError, "Missing the required parameter 'term_id' when calling GlossaryTermTranslationsApi.glossary_term_translation_update"
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling TermBaseTranslationsApi.glossary_term_translation_update"
+        fail ArgumentError, "Missing the required parameter 'id' when calling GlossaryTermTranslationsApi.glossary_term_translation_update"
       end
       # verify the required parameter 'glossary_term_translation_update_parameters' is set
       if @api_client.config.client_side_validation && glossary_term_translation_update_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'glossary_term_translation_update_parameters' when calling TermBaseTranslationsApi.glossary_term_translation_update"
+        fail ArgumentError, "Missing the required parameter 'glossary_term_translation_update_parameters' when calling GlossaryTermTranslationsApi.glossary_term_translation_update"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'glossary_id' + '}', CGI.escape(glossary_id.to_s)).sub('{' + 'term_id' + '}', CGI.escape(term_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -261,7 +261,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TermBaseTranslationsApi#glossary_term_translation_update\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GlossaryTermTranslationsApi#glossary_term_translation_update\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | Blocked key name | [optional] 
+**name** | **String** | Blacklisted key name | [optional] 
 
 ## Code Sample
 

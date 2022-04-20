@@ -1,14 +1,14 @@
 require 'cgi'
 
 module Phrase
-  class BlockedKeysApi
+  class BlacklistedKeysApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Create a blocked key
-    # Create a new rule for blocking keys.
+    # Create a blacklisted key
+    # Create a new rule for blacklisting keys.
     # @param project_id [String] Project ID
     # @param blacklisted_key_create_parameters [BlacklistedKeyCreateParameters] 
     # @param [Hash] opts the optional parameters
@@ -19,8 +19,8 @@ module Phrase
       data
     end
 
-    # Create a blocked key
-    # Create a new rule for blocking keys.
+    # Create a blacklisted key
+    # Create a new rule for blacklisting keys.
     # @param project_id [String] Project ID
     # @param blacklisted_key_create_parameters [BlacklistedKeyCreateParameters] 
     # @param [Hash] opts the optional parameters
@@ -28,15 +28,15 @@ module Phrase
     # @return [Array<(Response<(BlacklistedKey)>, Integer, Hash)>] Response<(BlacklistedKey)> data, response status code and response headers
     def blacklisted_key_create_with_http_info(project_id, blacklisted_key_create_parameters, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: BlockedKeysApi.blacklisted_key_create ...'
+        @api_client.config.logger.debug 'Calling API: BlacklistedKeysApi.blacklisted_key_create ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling BlockedKeysApi.blacklisted_key_create"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling BlacklistedKeysApi.blacklisted_key_create"
       end
       # verify the required parameter 'blacklisted_key_create_parameters' is set
       if @api_client.config.client_side_validation && blacklisted_key_create_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'blacklisted_key_create_parameters' when calling BlockedKeysApi.blacklisted_key_create"
+        fail ArgumentError, "Missing the required parameter 'blacklisted_key_create_parameters' when calling BlacklistedKeysApi.blacklisted_key_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/blacklisted_keys'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -75,14 +75,14 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BlockedKeysApi#blacklisted_key_create\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BlacklistedKeysApi#blacklisted_key_create\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
     end
 
-    # Delete a blocked key
-    # Delete an existing rule for blocking keys.
+    # Delete a blacklisted key
+    # Delete an existing rule for blacklisting keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -93,8 +93,8 @@ module Phrase
       data
     end
 
-    # Delete a blocked key
-    # Delete an existing rule for blocking keys.
+    # Delete a blacklisted key
+    # Delete an existing rule for blacklisting keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -102,15 +102,15 @@ module Phrase
     # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def blacklisted_key_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: BlockedKeysApi.blacklisted_key_delete ...'
+        @api_client.config.logger.debug 'Calling API: BlacklistedKeysApi.blacklisted_key_delete ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling BlockedKeysApi.blacklisted_key_delete"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling BlacklistedKeysApi.blacklisted_key_delete"
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling BlockedKeysApi.blacklisted_key_delete"
+        fail ArgumentError, "Missing the required parameter 'id' when calling BlacklistedKeysApi.blacklisted_key_delete"
       end
       # resource path
       local_var_path = '/projects/{project_id}/blacklisted_keys/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -145,14 +145,14 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BlockedKeysApi#blacklisted_key_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BlacklistedKeysApi#blacklisted_key_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
     end
 
-    # Get a single blocked key
-    # Get details on a single rule for blocking keys for a given project.
+    # Get a single blacklisted key
+    # Get details on a single rule for blacklisting keys for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -163,8 +163,8 @@ module Phrase
       data
     end
 
-    # Get a single blocked key
-    # Get details on a single rule for blocking keys for a given project.
+    # Get a single blacklisted key
+    # Get details on a single rule for blacklisting keys for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -172,15 +172,15 @@ module Phrase
     # @return [Array<(Response<(BlacklistedKey)>, Integer, Hash)>] Response<(BlacklistedKey)> data, response status code and response headers
     def blacklisted_key_show_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: BlockedKeysApi.blacklisted_key_show ...'
+        @api_client.config.logger.debug 'Calling API: BlacklistedKeysApi.blacklisted_key_show ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling BlockedKeysApi.blacklisted_key_show"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling BlacklistedKeysApi.blacklisted_key_show"
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling BlockedKeysApi.blacklisted_key_show"
+        fail ArgumentError, "Missing the required parameter 'id' when calling BlacklistedKeysApi.blacklisted_key_show"
       end
       # resource path
       local_var_path = '/projects/{project_id}/blacklisted_keys/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -217,14 +217,14 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BlockedKeysApi#blacklisted_key_show\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BlacklistedKeysApi#blacklisted_key_show\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
     end
 
-    # Update a blocked key
-    # Update an existing rule for blocking keys.
+    # Update a blacklisted key
+    # Update an existing rule for blacklisting keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param blacklisted_key_update_parameters [BlacklistedKeyUpdateParameters] 
@@ -236,8 +236,8 @@ module Phrase
       data
     end
 
-    # Update a blocked key
-    # Update an existing rule for blocking keys.
+    # Update a blacklisted key
+    # Update an existing rule for blacklisting keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param blacklisted_key_update_parameters [BlacklistedKeyUpdateParameters] 
@@ -246,19 +246,19 @@ module Phrase
     # @return [Array<(Response<(BlacklistedKey)>, Integer, Hash)>] Response<(BlacklistedKey)> data, response status code and response headers
     def blacklisted_key_update_with_http_info(project_id, id, blacklisted_key_update_parameters, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: BlockedKeysApi.blacklisted_key_update ...'
+        @api_client.config.logger.debug 'Calling API: BlacklistedKeysApi.blacklisted_key_update ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling BlockedKeysApi.blacklisted_key_update"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling BlacklistedKeysApi.blacklisted_key_update"
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling BlockedKeysApi.blacklisted_key_update"
+        fail ArgumentError, "Missing the required parameter 'id' when calling BlacklistedKeysApi.blacklisted_key_update"
       end
       # verify the required parameter 'blacklisted_key_update_parameters' is set
       if @api_client.config.client_side_validation && blacklisted_key_update_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'blacklisted_key_update_parameters' when calling BlockedKeysApi.blacklisted_key_update"
+        fail ArgumentError, "Missing the required parameter 'blacklisted_key_update_parameters' when calling BlacklistedKeysApi.blacklisted_key_update"
       end
       # resource path
       local_var_path = '/projects/{project_id}/blacklisted_keys/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -297,14 +297,14 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BlockedKeysApi#blacklisted_key_update\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BlacklistedKeysApi#blacklisted_key_update\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
     end
 
-    # List blocked keys
-    # List all rules for blocking keys for the given project.
+    # List blacklisted keys
+    # List all rules for blacklisting keys for the given project.
     # @param project_id [String] Project ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -317,8 +317,8 @@ module Phrase
       data
     end
 
-    # List blocked keys
-    # List all rules for blocking keys for the given project.
+    # List blacklisted keys
+    # List all rules for blacklisting keys for the given project.
     # @param project_id [String] Project ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -328,11 +328,11 @@ module Phrase
     # @return [Array<(Response<(Array<BlacklistedKey>)>, Integer, Hash)>] Response<(Array<BlacklistedKey>)> data, response status code and response headers
     def blacklisted_keys_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: BlockedKeysApi.blacklisted_keys_list ...'
+        @api_client.config.logger.debug 'Calling API: BlacklistedKeysApi.blacklisted_keys_list ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling BlockedKeysApi.blacklisted_keys_list"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling BlacklistedKeysApi.blacklisted_keys_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/blacklisted_keys'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -372,7 +372,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BlockedKeysApi#blacklisted_keys_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BlacklistedKeysApi#blacklisted_keys_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers
