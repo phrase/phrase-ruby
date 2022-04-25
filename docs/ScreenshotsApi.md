@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## screenshot_create
 
-> Screenshot screenshot_create(project_id, screenshot_create_parameters, opts)
+> Screenshot screenshot_create(project_id, opts)
 
 Create a screenshot
 
@@ -38,14 +38,17 @@ end
 
 api_instance = Phrase::ScreenshotsApi.new
 project_id = 'project_id_example' # String | Project ID
-screenshot_create_parameters = Phrase::ScreenshotCreateParameters.new # ScreenshotCreateParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'branch_example', # String | specify the branch to use
+  name: 'name_example', # String | Name of the screenshot
+  description: 'description_example', # String | Description of the screenshot
+  filename: File.new('/path/to/file') # File | Screenshot file
 }
 
 begin
   #Create a screenshot
-  result = api_instance.screenshot_create(project_id, screenshot_create_parameters, opts)
+  result = api_instance.screenshot_create(project_id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling ScreenshotsApi->screenshot_create: #{e}"
@@ -58,8 +61,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **screenshot_create_parameters** | [**ScreenshotCreateParameters**](ScreenshotCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| specify the branch to use | [optional] 
+ **name** | **String**| Name of the screenshot | [optional] 
+ **description** | **String**| Description of the screenshot | [optional] 
+ **filename** | **File**| Screenshot file | [optional] 
 
 ### Return type
 
@@ -71,7 +77,7 @@ Response<([**Screenshot**](Screenshot.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: multipart/form-data
 - **Accept**: application/json
 
 

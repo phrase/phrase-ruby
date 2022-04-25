@@ -24,9 +24,12 @@ describe 'ScreenshotsApi' do
   # Create a screenshot
   # Create a new screenshot.
   # @param project_id Project ID
-  # @param screenshot_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :name Name of the screenshot
+  # @option opts [String] :description Description of the screenshot
+  # @option opts [File] :filename Screenshot file
   # @return [Screenshot]
   describe 'screenshot_create test' do
     it 'should work' do
