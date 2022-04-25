@@ -31,7 +31,7 @@ instance = Phrase::StyleguideUpdateParameters.new(title: Web application style g
                                  business: We are a travel site that helps customers find the best hotels and flights.,
                                  company_branding: ACME Inc. should never be translated.,
                                  formatting: Never use capital letters,
-                                 glossary_terms: Appartement, cabin, loft,
+                                 glossary_terms: Apartment, cabin, loft,
                                  grammar_consistency: null,
                                  literal_translation: Neutral,
                                  overall_tone: Tone should be fun and light,
