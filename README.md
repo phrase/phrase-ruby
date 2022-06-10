@@ -176,6 +176,11 @@ Class | Method | HTTP request | Description
 *Phrase::InvitationsApi* | [**invitation_update**](docs/InvitationsApi.md#invitation_update) | **PATCH** /accounts/{account_id}/invitations/{id} | Update an invitation
 *Phrase::InvitationsApi* | [**invitation_update_settings**](docs/InvitationsApi.md#invitation_update_settings) | **PATCH** /projects/{project_id}/invitations/{id} | Update a member's invitation access
 *Phrase::InvitationsApi* | [**invitations_list**](docs/InvitationsApi.md#invitations_list) | **GET** /accounts/{account_id}/invitations | List invitations
+*Phrase::JobCommentsApi* | [**job_comment_create**](docs/JobCommentsApi.md#job_comment_create) | **POST** /projects/{project_id}/jobs/{job_id}/comments | Create a job comment
+*Phrase::JobCommentsApi* | [**job_comment_delete**](docs/JobCommentsApi.md#job_comment_delete) | **DELETE** /projects/{project_id}/jobs/{job_id}/comments/{id} | Delete a job comment
+*Phrase::JobCommentsApi* | [**job_comment_show**](docs/JobCommentsApi.md#job_comment_show) | **GET** /projects/{project_id}/jobs/{job_id}/comments/{id} | Get a single job comment
+*Phrase::JobCommentsApi* | [**job_comment_update**](docs/JobCommentsApi.md#job_comment_update) | **PATCH** /projects/{project_id}/jobs/{job_id}/comments/{id} | Update a job comment
+*Phrase::JobCommentsApi* | [**job_comments_list**](docs/JobCommentsApi.md#job_comments_list) | **GET** /projects/{project_id}/jobs/{job_id}/comments | List job comments
 *Phrase::JobLocalesApi* | [**job_locale_complete**](docs/JobLocalesApi.md#job_locale_complete) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete | Complete a job locale
 *Phrase::JobLocalesApi* | [**job_locale_complete_review**](docs/JobLocalesApi.md#job_locale_complete_review) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete_review | Review a job locale
 *Phrase::JobLocalesApi* | [**job_locale_delete**](docs/JobLocalesApi.md#job_locale_delete) | **DELETE** /projects/{project_id}/jobs/{job_id}/locales/{id} | Delete a job locale
@@ -388,6 +393,9 @@ Class | Method | HTTP request | Description
  - [Phrase::InvitationUpdateParameters](docs/InvitationUpdateParameters.md)
  - [Phrase::InvitationUpdateSettingsParameters](docs/InvitationUpdateSettingsParameters.md)
  - [Phrase::Job](docs/Job.md)
+ - [Phrase::JobComment](docs/JobComment.md)
+ - [Phrase::JobCommentCreateParameters](docs/JobCommentCreateParameters.md)
+ - [Phrase::JobCommentUpdateParameters](docs/JobCommentUpdateParameters.md)
  - [Phrase::JobCompleteParameters](docs/JobCompleteParameters.md)
  - [Phrase::JobCreateParameters](docs/JobCreateParameters.md)
  - [Phrase::JobDetails](docs/JobDetails.md)
