@@ -4,11 +4,11 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**glossary_term_create**](GlossaryTermsApi.md#glossary_term_create) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms | Create a glossary term
-[**glossary_term_delete**](GlossaryTermsApi.md#glossary_term_delete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Delete a glossary term
-[**glossary_term_show**](GlossaryTermsApi.md#glossary_term_show) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Get a single glossary term
-[**glossary_term_update**](GlossaryTermsApi.md#glossary_term_update) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Update a glossary term
-[**glossary_terms_list**](GlossaryTermsApi.md#glossary_terms_list) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms | List glossary terms
+[**glossary_term_create**](GlossaryTermsApi.md#glossary_term_create) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms | Create a term
+[**glossary_term_delete**](GlossaryTermsApi.md#glossary_term_delete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Delete a term
+[**glossary_term_show**](GlossaryTermsApi.md#glossary_term_show) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Get a single term
+[**glossary_term_update**](GlossaryTermsApi.md#glossary_term_update) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Update a term
+[**glossary_terms_list**](GlossaryTermsApi.md#glossary_terms_list) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms | List terms
 
 
 
@@ -16,9 +16,9 @@ Method | HTTP request | Description
 
 > GlossaryTerm glossary_term_create(account_id, glossary_id, glossary_term_create_parameters, opts)
 
-Create a glossary term
+Create a term
 
-Create a new glossary term.
+Create a new term in a term base (previously: glossary).
 
 ### Example
 
@@ -45,7 +45,7 @@ opts = {
 }
 
 begin
-  #Create a glossary term
+  #Create a term
   result = api_instance.glossary_term_create(account_id, glossary_id, glossary_term_create_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -81,9 +81,9 @@ Response<([**GlossaryTerm**](GlossaryTerm.md))>
 
 > glossary_term_delete(account_id, glossary_id, id, opts)
 
-Delete a glossary term
+Delete a term
 
-Delete an existing glossary term.
+Delete an existing term in a term base (previously: glossary).
 
 ### Example
 
@@ -110,7 +110,7 @@ opts = {
 }
 
 begin
-  #Delete a glossary term
+  #Delete a term
   api_instance.glossary_term_delete(account_id, glossary_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling GlossaryTermsApi->glossary_term_delete: #{e}"
@@ -145,9 +145,9 @@ Response<(nil (empty response body))>
 
 > GlossaryTerm glossary_term_show(account_id, glossary_id, id, opts)
 
-Get a single glossary term
+Get a single term
 
-Get details on a single glossary term.
+Get details for a single term in the term base (previously: glossary).
 
 ### Example
 
@@ -174,7 +174,7 @@ opts = {
 }
 
 begin
-  #Get a single glossary term
+  #Get a single term
   result = api_instance.glossary_term_show(account_id, glossary_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -210,9 +210,9 @@ Response<([**GlossaryTerm**](GlossaryTerm.md))>
 
 > GlossaryTerm glossary_term_update(account_id, glossary_id, id, glossary_term_update_parameters, opts)
 
-Update a glossary term
+Update a term
 
-Update an existing glossary term.
+Update an existing term in a term base (previously: glossary).
 
 ### Example
 
@@ -240,7 +240,7 @@ opts = {
 }
 
 begin
-  #Update a glossary term
+  #Update a term
   result = api_instance.glossary_term_update(account_id, glossary_id, id, glossary_term_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -277,9 +277,9 @@ Response<([**GlossaryTerm**](GlossaryTerm.md))>
 
 > Array&lt;GlossaryTerm&gt; glossary_terms_list(account_id, glossary_id, opts)
 
-List glossary terms
+List terms
 
-List all glossary terms the current user has access to.
+List all terms in term bases (previously: glossary) that the current user has access to.
 
 ### Example
 
@@ -307,7 +307,7 @@ opts = {
 }
 
 begin
-  #List glossary terms
+  #List terms
   result = api_instance.glossary_terms_list(account_id, glossary_id, opts)
   pp result
 rescue Phrase::ApiError => e

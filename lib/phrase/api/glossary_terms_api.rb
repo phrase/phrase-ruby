@@ -7,8 +7,8 @@ module Phrase
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Create a glossary term
-    # Create a new glossary term.
+    # Create a term
+    # Create a new term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param glossary_term_create_parameters [GlossaryTermCreateParameters] 
@@ -20,8 +20,8 @@ module Phrase
       data
     end
 
-    # Create a glossary term
-    # Create a new glossary term.
+    # Create a term
+    # Create a new term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param glossary_term_create_parameters [GlossaryTermCreateParameters] 
@@ -87,8 +87,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Delete a glossary term
-    # Delete an existing glossary term.
+    # Delete a term
+    # Delete an existing term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param id [String] ID
@@ -100,8 +100,8 @@ module Phrase
       data
     end
 
-    # Delete a glossary term
-    # Delete an existing glossary term.
+    # Delete a term
+    # Delete an existing term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param id [String] ID
@@ -163,8 +163,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Get a single glossary term
-    # Get details on a single glossary term.
+    # Get a single term
+    # Get details for a single term in the term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param id [String] ID
@@ -176,8 +176,8 @@ module Phrase
       data
     end
 
-    # Get a single glossary term
-    # Get details on a single glossary term.
+    # Get a single term
+    # Get details for a single term in the term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param id [String] ID
@@ -241,8 +241,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Update a glossary term
-    # Update an existing glossary term.
+    # Update a term
+    # Update an existing term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param id [String] ID
@@ -255,8 +255,8 @@ module Phrase
       data
     end
 
-    # Update a glossary term
-    # Update an existing glossary term.
+    # Update a term
+    # Update an existing term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param id [String] ID
@@ -327,8 +327,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # List glossary terms
-    # List all glossary terms the current user has access to.
+    # List terms
+    # List all terms in term bases (previously: glossary) that the current user has access to.
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param [Hash] opts the optional parameters
@@ -341,8 +341,8 @@ module Phrase
       data
     end
 
-    # List glossary terms
-    # List all glossary terms the current user has access to.
+    # List terms
+    # List all terms in term bases (previously: glossary) that the current user has access to.
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param [Hash] opts the optional parameters

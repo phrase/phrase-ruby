@@ -7,8 +7,8 @@ module Phrase
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Create a glossary term translation
-    # Create a new glossary term translation.
+    # Create a translation for a term
+    # Create a new translation for a term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
@@ -21,8 +21,8 @@ module Phrase
       data
     end
 
-    # Create a glossary term translation
-    # Create a new glossary term translation.
+    # Create a translation for a term
+    # Create a new translation for a term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
@@ -93,8 +93,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Delete a glossary term translation
-    # Delete an existing glossary term translation.
+    # Delete a translation for a term
+    # Delete an existing translation of a term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
@@ -107,8 +107,8 @@ module Phrase
       data
     end
 
-    # Delete a glossary term translation
-    # Delete an existing glossary term translation.
+    # Delete a translation for a term
+    # Delete an existing translation of a term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
@@ -175,8 +175,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Update a glossary term translation
-    # Update an existing glossary term translation.
+    # Update a translation for a term
+    # Update an existing translation for a term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID
@@ -190,8 +190,8 @@ module Phrase
       data
     end
 
-    # Update a glossary term translation
-    # Update an existing glossary term translation.
+    # Update a translation for a term
+    # Update an existing translation for a term in a term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_id [String] Glossary ID
     # @param term_id [String] Term ID

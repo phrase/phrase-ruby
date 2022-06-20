@@ -4,9 +4,9 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**glossary_term_translation_create**](GlossaryTermTranslationsApi.md#glossary_term_translation_create) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations | Create a glossary term translation
-[**glossary_term_translation_delete**](GlossaryTermTranslationsApi.md#glossary_term_translation_delete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Delete a glossary term translation
-[**glossary_term_translation_update**](GlossaryTermTranslationsApi.md#glossary_term_translation_update) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Update a glossary term translation
+[**glossary_term_translation_create**](GlossaryTermTranslationsApi.md#glossary_term_translation_create) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations | Create a translation for a term
+[**glossary_term_translation_delete**](GlossaryTermTranslationsApi.md#glossary_term_translation_delete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Delete a translation for a term
+[**glossary_term_translation_update**](GlossaryTermTranslationsApi.md#glossary_term_translation_update) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Update a translation for a term
 
 
 
@@ -14,9 +14,9 @@ Method | HTTP request | Description
 
 > GlossaryTermTranslation glossary_term_translation_create(account_id, glossary_id, term_id, glossary_term_translation_create_parameters, opts)
 
-Create a glossary term translation
+Create a translation for a term
 
-Create a new glossary term translation.
+Create a new translation for a term in a term base (previously: glossary).
 
 ### Example
 
@@ -44,7 +44,7 @@ opts = {
 }
 
 begin
-  #Create a glossary term translation
+  #Create a translation for a term
   result = api_instance.glossary_term_translation_create(account_id, glossary_id, term_id, glossary_term_translation_create_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -81,9 +81,9 @@ Response<([**GlossaryTermTranslation**](GlossaryTermTranslation.md))>
 
 > glossary_term_translation_delete(account_id, glossary_id, term_id, id, opts)
 
-Delete a glossary term translation
+Delete a translation for a term
 
-Delete an existing glossary term translation.
+Delete an existing translation of a term in a term base (previously: glossary).
 
 ### Example
 
@@ -111,7 +111,7 @@ opts = {
 }
 
 begin
-  #Delete a glossary term translation
+  #Delete a translation for a term
   api_instance.glossary_term_translation_delete(account_id, glossary_id, term_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling GlossaryTermTranslationsApi->glossary_term_translation_delete: #{e}"
@@ -147,9 +147,9 @@ Response<(nil (empty response body))>
 
 > GlossaryTermTranslation glossary_term_translation_update(account_id, glossary_id, term_id, id, glossary_term_translation_update_parameters, opts)
 
-Update a glossary term translation
+Update a translation for a term
 
-Update an existing glossary term translation.
+Update an existing translation for a term in a term base (previously: glossary).
 
 ### Example
 
@@ -178,7 +178,7 @@ opts = {
 }
 
 begin
-  #Update a glossary term translation
+  #Update a translation for a term
   result = api_instance.glossary_term_translation_update(account_id, glossary_id, term_id, id, glossary_term_translation_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e

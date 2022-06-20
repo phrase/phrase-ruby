@@ -21,8 +21,8 @@ describe 'GlossariesApi' do
   end
 
   # unit tests for glossaries_list
-  # List glossaries
-  # List all glossaries the current user has access to.
+  # List term bases
+  # List all term bases (previously: glossaries) the current user has access to.
   # @param account_id Account ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -36,8 +36,8 @@ describe 'GlossariesApi' do
   end
 
   # unit tests for glossary_create
-  # Create a glossary
-  # Create a new glossary.
+  # Create a term base
+  # Create a new term base (previously: glossary).
   # @param account_id Account ID
   # @param glossary_create_parameters 
   # @param [Hash] opts the optional parameters
@@ -50,8 +50,8 @@ describe 'GlossariesApi' do
   end
 
   # unit tests for glossary_delete
-  # Delete a glossary
-  # Delete an existing glossary.
+  # Delete a term base
+  # Delete an existing term base (previously: glossary).
   # @param account_id Account ID
   # @param id ID
   # @param [Hash] opts the optional parameters
@@ -64,8 +64,8 @@ describe 'GlossariesApi' do
   end
 
   # unit tests for glossary_show
-  # Get a single glossary
-  # Get details on a single glossary.
+  # Get a single term base
+  # Get details on a single term base (previously: glossary).
   # @param account_id Account ID
   # @param id ID
   # @param [Hash] opts the optional parameters
@@ -78,8 +78,8 @@ describe 'GlossariesApi' do
   end
 
   # unit tests for glossary_update
-  # Update a glossary
-  # Update an existing glossary.
+  # Update a term base
+  # Update an existing term base (previously: glossary).
   # @param account_id Account ID
   # @param id ID
   # @param glossary_update_parameters 

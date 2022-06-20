@@ -38,7 +38,7 @@ describe 'VersionsHistoryApi' do
 
   # unit tests for versions_list
   # List all versions
-  # List all versions for the given translation.
+  # List all changes done to a given translation.
   # @param project_id Project ID
   # @param translation_id Translation ID
   # @param [Hash] opts the optional parameters

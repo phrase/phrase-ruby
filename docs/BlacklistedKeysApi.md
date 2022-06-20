@@ -4,11 +4,11 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**blacklisted_key_create**](BlacklistedKeysApi.md#blacklisted_key_create) | **POST** /projects/{project_id}/blacklisted_keys | Create a blacklisted key
-[**blacklisted_key_delete**](BlacklistedKeysApi.md#blacklisted_key_delete) | **DELETE** /projects/{project_id}/blacklisted_keys/{id} | Delete a blacklisted key
-[**blacklisted_key_show**](BlacklistedKeysApi.md#blacklisted_key_show) | **GET** /projects/{project_id}/blacklisted_keys/{id} | Get a single blacklisted key
-[**blacklisted_key_update**](BlacklistedKeysApi.md#blacklisted_key_update) | **PATCH** /projects/{project_id}/blacklisted_keys/{id} | Update a blacklisted key
-[**blacklisted_keys_list**](BlacklistedKeysApi.md#blacklisted_keys_list) | **GET** /projects/{project_id}/blacklisted_keys | List blacklisted keys
+[**blacklisted_key_create**](BlacklistedKeysApi.md#blacklisted_key_create) | **POST** /projects/{project_id}/blacklisted_keys | Create a blocked key
+[**blacklisted_key_delete**](BlacklistedKeysApi.md#blacklisted_key_delete) | **DELETE** /projects/{project_id}/blacklisted_keys/{id} | Delete a blocked key
+[**blacklisted_key_show**](BlacklistedKeysApi.md#blacklisted_key_show) | **GET** /projects/{project_id}/blacklisted_keys/{id} | Get a single blocked key
+[**blacklisted_key_update**](BlacklistedKeysApi.md#blacklisted_key_update) | **PATCH** /projects/{project_id}/blacklisted_keys/{id} | Update a blocked key
+[**blacklisted_keys_list**](BlacklistedKeysApi.md#blacklisted_keys_list) | **GET** /projects/{project_id}/blacklisted_keys | List blocked keys
 
 
 
@@ -16,9 +16,9 @@ Method | HTTP request | Description
 
 > BlacklistedKey blacklisted_key_create(project_id, blacklisted_key_create_parameters, opts)
 
-Create a blacklisted key
+Create a blocked key
 
-Create a new rule for blacklisting keys.
+Create a new rule for blocking keys.
 
 ### Example
 
@@ -44,7 +44,7 @@ opts = {
 }
 
 begin
-  #Create a blacklisted key
+  #Create a blocked key
   result = api_instance.blacklisted_key_create(project_id, blacklisted_key_create_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -79,9 +79,9 @@ Response<([**BlacklistedKey**](BlacklistedKey.md))>
 
 > blacklisted_key_delete(project_id, id, opts)
 
-Delete a blacklisted key
+Delete a blocked key
 
-Delete an existing rule for blacklisting keys.
+Delete an existing rule for blocking keys.
 
 ### Example
 
@@ -107,7 +107,7 @@ opts = {
 }
 
 begin
-  #Delete a blacklisted key
+  #Delete a blocked key
   api_instance.blacklisted_key_delete(project_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling BlacklistedKeysApi->blacklisted_key_delete: #{e}"
@@ -141,9 +141,9 @@ Response<(nil (empty response body))>
 
 > BlacklistedKey blacklisted_key_show(project_id, id, opts)
 
-Get a single blacklisted key
+Get a single blocked key
 
-Get details on a single rule for blacklisting keys for a given project.
+Get details on a single rule for blocking keys for a given project.
 
 ### Example
 
@@ -169,7 +169,7 @@ opts = {
 }
 
 begin
-  #Get a single blacklisted key
+  #Get a single blocked key
   result = api_instance.blacklisted_key_show(project_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -204,9 +204,9 @@ Response<([**BlacklistedKey**](BlacklistedKey.md))>
 
 > BlacklistedKey blacklisted_key_update(project_id, id, blacklisted_key_update_parameters, opts)
 
-Update a blacklisted key
+Update a blocked key
 
-Update an existing rule for blacklisting keys.
+Update an existing rule for blocking keys.
 
 ### Example
 
@@ -233,7 +233,7 @@ opts = {
 }
 
 begin
-  #Update a blacklisted key
+  #Update a blocked key
   result = api_instance.blacklisted_key_update(project_id, id, blacklisted_key_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -269,9 +269,9 @@ Response<([**BlacklistedKey**](BlacklistedKey.md))>
 
 > Array&lt;BlacklistedKey&gt; blacklisted_keys_list(project_id, opts)
 
-List blacklisted keys
+List blocked keys
 
-List all rules for blacklisting keys for the given project.
+List all rules for blocking keys for the given project.
 
 ### Example
 
@@ -299,7 +299,7 @@ opts = {
 }
 
 begin
-  #List blacklisted keys
+  #List blocked keys
   result = api_instance.blacklisted_keys_list(project_id, opts)
   pp result
 rescue Phrase::ApiError => e

@@ -2,7 +2,7 @@ require 'date'
 
 module Phrase
   class BlacklistedKeyUpdateParameters
-    # Blacklisted key name
+    # Blocked key name
     attr_accessor :name
 
     # Attribute mapping from ruby-style variable name to JSON key.

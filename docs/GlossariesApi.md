@@ -4,11 +4,11 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**glossaries_list**](GlossariesApi.md#glossaries_list) | **GET** /accounts/{account_id}/glossaries | List glossaries
-[**glossary_create**](GlossariesApi.md#glossary_create) | **POST** /accounts/{account_id}/glossaries | Create a glossary
-[**glossary_delete**](GlossariesApi.md#glossary_delete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a glossary
-[**glossary_show**](GlossariesApi.md#glossary_show) | **GET** /accounts/{account_id}/glossaries/{id} | Get a single glossary
-[**glossary_update**](GlossariesApi.md#glossary_update) | **PATCH** /accounts/{account_id}/glossaries/{id} | Update a glossary
+[**glossaries_list**](GlossariesApi.md#glossaries_list) | **GET** /accounts/{account_id}/glossaries | List term bases
+[**glossary_create**](GlossariesApi.md#glossary_create) | **POST** /accounts/{account_id}/glossaries | Create a term base
+[**glossary_delete**](GlossariesApi.md#glossary_delete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a term base
+[**glossary_show**](GlossariesApi.md#glossary_show) | **GET** /accounts/{account_id}/glossaries/{id} | Get a single term base
+[**glossary_update**](GlossariesApi.md#glossary_update) | **PATCH** /accounts/{account_id}/glossaries/{id} | Update a term base
 
 
 
@@ -16,9 +16,9 @@ Method | HTTP request | Description
 
 > Array&lt;Glossary&gt; glossaries_list(account_id, opts)
 
-List glossaries
+List term bases
 
-List all glossaries the current user has access to.
+List all term bases (previously: glossaries) the current user has access to.
 
 ### Example
 
@@ -45,7 +45,7 @@ opts = {
 }
 
 begin
-  #List glossaries
+  #List term bases
   result = api_instance.glossaries_list(account_id, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -81,9 +81,9 @@ Response<([**Array&lt;Glossary&gt;**](Glossary.md))>
 
 > Glossary glossary_create(account_id, glossary_create_parameters, opts)
 
-Create a glossary
+Create a term base
 
-Create a new glossary.
+Create a new term base (previously: glossary).
 
 ### Example
 
@@ -109,7 +109,7 @@ opts = {
 }
 
 begin
-  #Create a glossary
+  #Create a term base
   result = api_instance.glossary_create(account_id, glossary_create_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -144,9 +144,9 @@ Response<([**Glossary**](Glossary.md))>
 
 > glossary_delete(account_id, id, opts)
 
-Delete a glossary
+Delete a term base
 
-Delete an existing glossary.
+Delete an existing term base (previously: glossary).
 
 ### Example
 
@@ -172,7 +172,7 @@ opts = {
 }
 
 begin
-  #Delete a glossary
+  #Delete a term base
   api_instance.glossary_delete(account_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling GlossariesApi->glossary_delete: #{e}"
@@ -206,9 +206,9 @@ Response<(nil (empty response body))>
 
 > Glossary glossary_show(account_id, id, opts)
 
-Get a single glossary
+Get a single term base
 
-Get details on a single glossary.
+Get details on a single term base (previously: glossary).
 
 ### Example
 
@@ -234,7 +234,7 @@ opts = {
 }
 
 begin
-  #Get a single glossary
+  #Get a single term base
   result = api_instance.glossary_show(account_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -269,9 +269,9 @@ Response<([**Glossary**](Glossary.md))>
 
 > Glossary glossary_update(account_id, id, glossary_update_parameters, opts)
 
-Update a glossary
+Update a term base
 
-Update an existing glossary.
+Update an existing term base (previously: glossary).
 
 ### Example
 
@@ -298,7 +298,7 @@ opts = {
 }
 
 begin
-  #Update a glossary
+  #Update a term base
   result = api_instance.glossary_update(account_id, id, glossary_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e

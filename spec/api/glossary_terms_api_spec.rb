@@ -21,8 +21,8 @@ describe 'GlossaryTermsApi' do
   end
 
   # unit tests for glossary_term_create
-  # Create a glossary term
-  # Create a new glossary term.
+  # Create a term
+  # Create a new term in a term base (previously: glossary).
   # @param account_id Account ID
   # @param glossary_id Glossary ID
   # @param glossary_term_create_parameters 
@@ -36,8 +36,8 @@ describe 'GlossaryTermsApi' do
   end
 
   # unit tests for glossary_term_delete
-  # Delete a glossary term
-  # Delete an existing glossary term.
+  # Delete a term
+  # Delete an existing term in a term base (previously: glossary).
   # @param account_id Account ID
   # @param glossary_id Glossary ID
   # @param id ID
@@ -51,8 +51,8 @@ describe 'GlossaryTermsApi' do
   end
 
   # unit tests for glossary_term_show
-  # Get a single glossary term
-  # Get details on a single glossary term.
+  # Get a single term
+  # Get details for a single term in the term base (previously: glossary).
   # @param account_id Account ID
   # @param glossary_id Glossary ID
   # @param id ID
@@ -66,8 +66,8 @@ describe 'GlossaryTermsApi' do
   end
 
   # unit tests for glossary_term_update
-  # Update a glossary term
-  # Update an existing glossary term.
+  # Update a term
+  # Update an existing term in a term base (previously: glossary).
   # @param account_id Account ID
   # @param glossary_id Glossary ID
   # @param id ID
@@ -82,8 +82,8 @@ describe 'GlossaryTermsApi' do
   end
 
   # unit tests for glossary_terms_list
-  # List glossary terms
-  # List all glossary terms the current user has access to.
+  # List terms
+  # List all terms in term bases (previously: glossary) that the current user has access to.
   # @param account_id Account ID
   # @param glossary_id Glossary ID
   # @param [Hash] opts the optional parameters

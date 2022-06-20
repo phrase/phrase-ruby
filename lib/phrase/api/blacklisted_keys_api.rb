@@ -7,8 +7,8 @@ module Phrase
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Create a blacklisted key
-    # Create a new rule for blacklisting keys.
+    # Create a blocked key
+    # Create a new rule for blocking keys.
     # @param project_id [String] Project ID
     # @param blacklisted_key_create_parameters [BlacklistedKeyCreateParameters] 
     # @param [Hash] opts the optional parameters
@@ -19,8 +19,8 @@ module Phrase
       data
     end
 
-    # Create a blacklisted key
-    # Create a new rule for blacklisting keys.
+    # Create a blocked key
+    # Create a new rule for blocking keys.
     # @param project_id [String] Project ID
     # @param blacklisted_key_create_parameters [BlacklistedKeyCreateParameters] 
     # @param [Hash] opts the optional parameters
@@ -81,8 +81,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Delete a blacklisted key
-    # Delete an existing rule for blacklisting keys.
+    # Delete a blocked key
+    # Delete an existing rule for blocking keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -93,8 +93,8 @@ module Phrase
       data
     end
 
-    # Delete a blacklisted key
-    # Delete an existing rule for blacklisting keys.
+    # Delete a blocked key
+    # Delete an existing rule for blocking keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -151,8 +151,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Get a single blacklisted key
-    # Get details on a single rule for blacklisting keys for a given project.
+    # Get a single blocked key
+    # Get details on a single rule for blocking keys for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -163,8 +163,8 @@ module Phrase
       data
     end
 
-    # Get a single blacklisted key
-    # Get details on a single rule for blacklisting keys for a given project.
+    # Get a single blocked key
+    # Get details on a single rule for blocking keys for a given project.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -223,8 +223,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Update a blacklisted key
-    # Update an existing rule for blacklisting keys.
+    # Update a blocked key
+    # Update an existing rule for blocking keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param blacklisted_key_update_parameters [BlacklistedKeyUpdateParameters] 
@@ -236,8 +236,8 @@ module Phrase
       data
     end
 
-    # Update a blacklisted key
-    # Update an existing rule for blacklisting keys.
+    # Update a blocked key
+    # Update an existing rule for blocking keys.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param blacklisted_key_update_parameters [BlacklistedKeyUpdateParameters] 
@@ -303,8 +303,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # List blacklisted keys
-    # List all rules for blacklisting keys for the given project.
+    # List blocked keys
+    # List all rules for blocking keys for the given project.
     # @param project_id [String] Project ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -317,8 +317,8 @@ module Phrase
       data
     end
 
-    # List blacklisted keys
-    # List all rules for blacklisting keys for the given project.
+    # List blocked keys
+    # List all rules for blocking keys for the given project.
     # @param project_id [String] Project ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)

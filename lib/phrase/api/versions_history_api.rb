@@ -89,7 +89,7 @@ module Phrase
     end
 
     # List all versions
-    # List all versions for the given translation.
+    # List all changes done to a given translation.
     # @param project_id [String] Project ID
     # @param translation_id [String] Translation ID
     # @param [Hash] opts the optional parameters
@@ -104,7 +104,7 @@ module Phrase
     end
 
     # List all versions
-    # List all versions for the given translation.
+    # List all changes done to a given translation.
     # @param project_id [String] Project ID
     # @param translation_id [String] Translation ID
     # @param [Hash] opts the optional parameters

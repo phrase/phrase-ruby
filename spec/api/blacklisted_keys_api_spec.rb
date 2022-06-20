@@ -21,8 +21,8 @@ describe 'BlacklistedKeysApi' do
   end
 
   # unit tests for blacklisted_key_create
-  # Create a blacklisted key
-  # Create a new rule for blacklisting keys.
+  # Create a blocked key
+  # Create a new rule for blocking keys.
   # @param project_id Project ID
   # @param blacklisted_key_create_parameters 
   # @param [Hash] opts the optional parameters
@@ -35,8 +35,8 @@ describe 'BlacklistedKeysApi' do
   end
 
   # unit tests for blacklisted_key_delete
-  # Delete a blacklisted key
-  # Delete an existing rule for blacklisting keys.
+  # Delete a blocked key
+  # Delete an existing rule for blocking keys.
   # @param project_id Project ID
   # @param id ID
   # @param [Hash] opts the optional parameters
@@ -49,8 +49,8 @@ describe 'BlacklistedKeysApi' do
   end
 
   # unit tests for blacklisted_key_show
-  # Get a single blacklisted key
-  # Get details on a single rule for blacklisting keys for a given project.
+  # Get a single blocked key
+  # Get details on a single rule for blocking keys for a given project.
   # @param project_id Project ID
   # @param id ID
   # @param [Hash] opts the optional parameters
@@ -63,8 +63,8 @@ describe 'BlacklistedKeysApi' do
   end
 
   # unit tests for blacklisted_key_update
-  # Update a blacklisted key
-  # Update an existing rule for blacklisting keys.
+  # Update a blocked key
+  # Update an existing rule for blocking keys.
   # @param project_id Project ID
   # @param id ID
   # @param blacklisted_key_update_parameters 
@@ -78,8 +78,8 @@ describe 'BlacklistedKeysApi' do
   end
 
   # unit tests for blacklisted_keys_list
-  # List blacklisted keys
-  # List all rules for blacklisting keys for the given project.
+  # List blocked keys
+  # List all rules for blocking keys for the given project.
   # @param project_id Project ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)

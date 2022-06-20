@@ -7,8 +7,8 @@ module Phrase
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # List glossaries
-    # List all glossaries the current user has access to.
+    # List term bases
+    # List all term bases (previously: glossaries) the current user has access to.
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -20,8 +20,8 @@ module Phrase
       data
     end
 
-    # List glossaries
-    # List all glossaries the current user has access to.
+    # List term bases
+    # List all term bases (previously: glossaries) the current user has access to.
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -79,8 +79,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Create a glossary
-    # Create a new glossary.
+    # Create a term base
+    # Create a new term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_create_parameters [GlossaryCreateParameters] 
     # @param [Hash] opts the optional parameters
@@ -91,8 +91,8 @@ module Phrase
       data
     end
 
-    # Create a glossary
-    # Create a new glossary.
+    # Create a term base
+    # Create a new term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param glossary_create_parameters [GlossaryCreateParameters] 
     # @param [Hash] opts the optional parameters
@@ -153,8 +153,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Delete a glossary
-    # Delete an existing glossary.
+    # Delete a term base
+    # Delete an existing term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -165,8 +165,8 @@ module Phrase
       data
     end
 
-    # Delete a glossary
-    # Delete an existing glossary.
+    # Delete a term base
+    # Delete an existing term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -223,8 +223,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Get a single glossary
-    # Get details on a single glossary.
+    # Get a single term base
+    # Get details on a single term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -235,8 +235,8 @@ module Phrase
       data
     end
 
-    # Get a single glossary
-    # Get details on a single glossary.
+    # Get a single term base
+    # Get details on a single term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -295,8 +295,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Update a glossary
-    # Update an existing glossary.
+    # Update a term base
+    # Update an existing term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param glossary_update_parameters [GlossaryUpdateParameters] 
@@ -308,8 +308,8 @@ module Phrase
       data
     end
 
-    # Update a glossary
-    # Update an existing glossary.
+    # Update a term base
+    # Update an existing term base (previously: glossary).
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param glossary_update_parameters [GlossaryUpdateParameters] 

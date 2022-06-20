@@ -21,8 +21,8 @@ describe 'GlossaryTermTranslationsApi' do
   end
 
   # unit tests for glossary_term_translation_create
-  # Create a glossary term translation
-  # Create a new glossary term translation.
+  # Create a translation for a term
+  # Create a new translation for a term in a term base (previously: glossary).
   # @param account_id Account ID
   # @param glossary_id Glossary ID
   # @param term_id Term ID
@@ -37,8 +37,8 @@ describe 'GlossaryTermTranslationsApi' do
   end
 
   # unit tests for glossary_term_translation_delete
-  # Delete a glossary term translation
-  # Delete an existing glossary term translation.
+  # Delete a translation for a term
+  # Delete an existing translation of a term in a term base (previously: glossary).
   # @param account_id Account ID
   # @param glossary_id Glossary ID
   # @param term_id Term ID
@@ -53,8 +53,8 @@ describe 'GlossaryTermTranslationsApi' do
   end
 
   # unit tests for glossary_term_translation_update
-  # Update a glossary term translation
-  # Update an existing glossary term translation.
+  # Update a translation for a term
+  # Update an existing translation for a term in a term base (previously: glossary).
   # @param account_id Account ID
   # @param glossary_id Glossary ID
   # @param term_id Term ID
