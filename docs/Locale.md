@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **rtl** | **Boolean** |  | [optional] 
 **plural_forms** | **Array&lt;String&gt;** |  | [optional] 
 **source_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
+**fallback_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 
@@ -28,6 +29,7 @@ instance = Phrase::Locale.new(id: null,
                                  rtl: null,
                                  plural_forms: null,
                                  source_locale: null,
+                                 fallback_locale: null,
                                  created_at: null,
                                  updated_at: null)
 ```

@@ -23,6 +23,9 @@ module Phrase
     # Source locale. Can be the name or public id of the locale. Preferred is the public id.
     attr_accessor :source_locale_id
 
+    # Fallback locale for empty translations. Can be a locale name or id.
+    attr_accessor :fallback_locale_id
+
     # Indicates that new translations for this locale should be marked as unverified. Part of the <a href=\"https://help.phrase.com/help/verification-and-proofreading\" target=\"_blank\">Advanced Workflows</a> feature.
     attr_accessor :unverify_new_translations
 
@@ -42,6 +45,7 @@ module Phrase
         :'main' => :'main',
         :'rtl' => :'rtl',
         :'source_locale_id' => :'source_locale_id',
+        :'fallback_locale_id' => :'fallback_locale_id',
         :'unverify_new_translations' => :'unverify_new_translations',
         :'unverify_updated_translations' => :'unverify_updated_translations',
         :'autotranslate' => :'autotranslate'
@@ -58,6 +62,7 @@ module Phrase
         :'main' => :'Boolean',
         :'rtl' => :'Boolean',
         :'source_locale_id' => :'String',
+        :'fallback_locale_id' => :'String',
         :'unverify_new_translations' => :'Boolean',
         :'unverify_updated_translations' => :'Boolean',
         :'autotranslate' => :'Boolean'
@@ -113,6 +118,10 @@ module Phrase
         self.source_locale_id = attributes[:'source_locale_id']
       end
 
+      if attributes.key?(:'fallback_locale_id')
+        self.fallback_locale_id = attributes[:'fallback_locale_id']
+      end
+
       if attributes.key?(:'unverify_new_translations')
         self.unverify_new_translations = attributes[:'unverify_new_translations']
       end
@@ -151,6 +160,7 @@ module Phrase
           main == o.main &&
           rtl == o.rtl &&
           source_locale_id == o.source_locale_id &&
+          fallback_locale_id == o.fallback_locale_id &&
           unverify_new_translations == o.unverify_new_translations &&
           unverify_updated_translations == o.unverify_updated_translations &&
           autotranslate == o.autotranslate
@@ -165,7 +175,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, code, default, main, rtl, source_locale_id, unverify_new_translations, unverify_updated_translations, autotranslate].hash
+      [branch, name, code, default, main, rtl, source_locale_id, fallback_locale_id, unverify_new_translations, unverify_updated_translations, autotranslate].hash
     end
 
     # Builds the object from hash

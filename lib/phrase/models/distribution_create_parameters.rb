@@ -17,6 +17,9 @@ module Phrase
     # Additional formatting and render options. Only <code>enclose_in_cdata</code> is available for platform <code>android</code>.
     attr_accessor :format_options
 
+    # Use fallback locale if there is no translation in the current locale.
+    attr_accessor :fallback_locales_enabled
+
     # Indicates whether to fallback to non regional locale when locale can not be found
     attr_accessor :fallback_to_non_regional_locale
 
@@ -34,6 +37,7 @@ module Phrase
         :'platforms' => :'platforms',
         :'locale_ids' => :'locale_ids',
         :'format_options' => :'format_options',
+        :'fallback_locales_enabled' => :'fallback_locales_enabled',
         :'fallback_to_non_regional_locale' => :'fallback_to_non_regional_locale',
         :'fallback_to_default_locale' => :'fallback_to_default_locale',
         :'use_last_reviewed_version' => :'use_last_reviewed_version'
@@ -48,6 +52,7 @@ module Phrase
         :'platforms' => :'Array<String>',
         :'locale_ids' => :'Array<String>',
         :'format_options' => :'Hash<String, String>',
+        :'fallback_locales_enabled' => :'Boolean',
         :'fallback_to_non_regional_locale' => :'Boolean',
         :'fallback_to_default_locale' => :'Boolean',
         :'use_last_reviewed_version' => :'Boolean'
@@ -101,6 +106,10 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'fallback_locales_enabled')
+        self.fallback_locales_enabled = attributes[:'fallback_locales_enabled']
+      end
+
       if attributes.key?(:'fallback_to_non_regional_locale')
         self.fallback_to_non_regional_locale = attributes[:'fallback_to_non_regional_locale']
       end
@@ -137,6 +146,7 @@ module Phrase
           platforms == o.platforms &&
           locale_ids == o.locale_ids &&
           format_options == o.format_options &&
+          fallback_locales_enabled == o.fallback_locales_enabled &&
           fallback_to_non_regional_locale == o.fallback_to_non_regional_locale &&
           fallback_to_default_locale == o.fallback_to_default_locale &&
           use_last_reviewed_version == o.use_last_reviewed_version
@@ -151,7 +161,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, project_id, platforms, locale_ids, format_options, fallback_to_non_regional_locale, fallback_to_default_locale, use_last_reviewed_version].hash
+      [name, project_id, platforms, locale_ids, format_options, fallback_locales_enabled, fallback_to_non_regional_locale, fallback_to_default_locale, use_last_reviewed_version].hash
     end
 
     # Builds the object from hash

@@ -18,6 +18,8 @@ module Phrase
 
     attr_accessor :source_locale
 
+    attr_accessor :fallback_locale
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -35,6 +37,7 @@ module Phrase
         :'rtl' => :'rtl',
         :'plural_forms' => :'plural_forms',
         :'source_locale' => :'source_locale',
+        :'fallback_locale' => :'fallback_locale',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
         :'statistics' => :'statistics'
@@ -52,6 +55,7 @@ module Phrase
         :'rtl' => :'Boolean',
         :'plural_forms' => :'Array<String>',
         :'source_locale' => :'LocalePreview',
+        :'fallback_locale' => :'LocalePreview',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
         :'statistics' => :'LocaleStatistics'
@@ -121,6 +125,10 @@ module Phrase
         self.source_locale = attributes[:'source_locale']
       end
 
+      if attributes.key?(:'fallback_locale')
+        self.fallback_locale = attributes[:'fallback_locale']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -160,6 +168,7 @@ module Phrase
           rtl == o.rtl &&
           plural_forms == o.plural_forms &&
           source_locale == o.source_locale &&
+          fallback_locale == o.fallback_locale &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
           statistics == o.statistics
@@ -174,7 +183,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, code, default, main, rtl, plural_forms, source_locale, created_at, updated_at, statistics].hash
+      [id, name, code, default, main, rtl, plural_forms, source_locale, fallback_locale, created_at, updated_at, statistics].hash
     end
 
     # Builds the object from hash

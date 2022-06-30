@@ -50,6 +50,12 @@ describe 'DistributionUpdateParameters' do
     end
   end
 
+  describe 'test attribute "fallback_locales_enabled"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "fallback_to_non_regional_locale"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
