@@ -199,6 +199,7 @@ require 'phrase/models/variable_create_parameters'
 require 'phrase/models/variable_update_parameters'
 require 'phrase/models/webhook'
 require 'phrase/models/webhook_create_parameters'
+require 'phrase/models/webhook_delivery'
 require 'phrase/models/webhook_update_parameters'
 
 # APIs
@@ -243,6 +244,7 @@ require 'phrase/api/uploads_api'
 require 'phrase/api/users_api'
 require 'phrase/api/variables_api'
 require 'phrase/api/versions_history_api'
+require 'phrase/api/webhook_deliveries_api'
 require 'phrase/api/webhooks_api'
 
 module Phrase
