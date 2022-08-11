@@ -2,7 +2,7 @@ require 'date'
 
 module Phrase
   class BranchMergeParameters
-    # strategy used for merge blocking, use_master or use_branch
+    # strategy used for merge blocking, use_main or use_branch
     attr_accessor :strategy
 
     # Attribute mapping from ruby-style variable name to JSON key.
