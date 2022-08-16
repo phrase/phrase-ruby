@@ -98,6 +98,28 @@ end
 
 ```
 
+## Datacenters
+
+The API is only accessible via HTTPS and the current version is <code>v2</code>, which results in a base URL like: <code>https://api.phrase.com/v2</code> depending on the datacenter.
+
+### EU Datacenter
+```
+https://api.phrase.com/v2
+```
+
+This is the default datacenter.
+
+### US Datacenter
+```
+https://api.us.app.phrase.com/v2/
+```
+
+### Specifying US Datacenter
+You can use the US datacenter by setting the following:
+```
+config.host = "api.us.app.phrase.com"
+```
+
 ## Get help / support
 
 Please contact [support@phrase.com](mailto:support@phrase.com?subject=[GitHub]%20phrase-go) and we can take more direct action toward finding a solution.
