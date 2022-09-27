@@ -4,8 +4,8 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**github_sync_export**](GitHubSyncApi.md#github_sync_export) | **POST** /github_syncs/export | Export from Phrase to GitHub
-[**github_sync_import**](GitHubSyncApi.md#github_sync_import) | **POST** /github_syncs/import | Import to Phrase from GitHub
+[**github_sync_export**](GitHubSyncApi.md#github_sync_export) | **POST** /github_syncs/export | Export from Phrase Strings to GitHub
+[**github_sync_import**](GitHubSyncApi.md#github_sync_import) | **POST** /github_syncs/import | Import to Phrase Strings from GitHub
 
 
 
@@ -13,9 +13,9 @@ Method | HTTP request | Description
 
 > github_sync_export(github_sync_export_parameters, opts)
 
-Export from Phrase to GitHub
+Export from Phrase Strings to GitHub
 
-Export translations from Phrase to GitHub according to the .phraseapp.yml file within the GitHub repository.
+Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository.
 
 ### Example
 
@@ -40,7 +40,7 @@ opts = {
 }
 
 begin
-  #Export from Phrase to GitHub
+  #Export from Phrase Strings to GitHub
   api_instance.github_sync_export(github_sync_export_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling GitHubSyncApi->github_sync_export: #{e}"
@@ -73,9 +73,9 @@ Response<(nil (empty response body))>
 
 > github_sync_import(github_sync_import_parameters, opts)
 
-Import to Phrase from GitHub
+Import to Phrase Strings from GitHub
 
-Import files to Phrase from your connected GitHub repository.
+Import files to Phrase Strings from your connected GitHub repository.
 
 ### Example
 
@@ -100,7 +100,7 @@ opts = {
 }
 
 begin
-  #Import to Phrase from GitHub
+  #Import to Phrase Strings from GitHub
   api_instance.github_sync_import(github_sync_import_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling GitHubSyncApi->github_sync_import: #{e}"

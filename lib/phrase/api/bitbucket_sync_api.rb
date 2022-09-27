@@ -7,8 +7,8 @@ module Phrase
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Export from Phrase to Bitbucket
-    # Export translations from Phrase to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+    # Export from Phrase Strings to Bitbucket
+    # Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
     # @param id [String] ID
     # @param bitbucket_sync_export_parameters [BitbucketSyncExportParameters] 
     # @param [Hash] opts the optional parameters
@@ -19,8 +19,8 @@ module Phrase
       data
     end
 
-    # Export from Phrase to Bitbucket
-    # Export translations from Phrase to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+    # Export from Phrase Strings to Bitbucket
+    # Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
     # @param id [String] ID
     # @param bitbucket_sync_export_parameters [BitbucketSyncExportParameters] 
     # @param [Hash] opts the optional parameters
@@ -81,8 +81,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Import to Phrase from Bitbucket
-    # Import translations from Bitbucket to Phrase according to the .phraseapp.yml file within the Bitbucket repository.
+    # Import to Phrase Strings from Bitbucket
+    # Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
     # @param id [String] ID
     # @param bitbucket_sync_import_parameters [BitbucketSyncImportParameters] 
     # @param [Hash] opts the optional parameters
@@ -93,8 +93,8 @@ module Phrase
       data
     end
 
-    # Import to Phrase from Bitbucket
-    # Import translations from Bitbucket to Phrase according to the .phraseapp.yml file within the Bitbucket repository.
+    # Import to Phrase Strings from Bitbucket
+    # Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
     # @param id [String] ID
     # @param bitbucket_sync_import_parameters [BitbucketSyncImportParameters] 
     # @param [Hash] opts the optional parameters
@@ -154,7 +154,7 @@ module Phrase
     end
 
     # List Bitbucket syncs
-    # List all Bitbucket repositories for which synchronisation with Phrase is activated.
+    # List all Bitbucket repositories for which synchronisation with Phrase Strings is activated.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :account_id Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.
@@ -165,7 +165,7 @@ module Phrase
     end
 
     # List Bitbucket syncs
-    # List all Bitbucket repositories for which synchronisation with Phrase is activated.
+    # List all Bitbucket repositories for which synchronisation with Phrase Strings is activated.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :account_id Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.

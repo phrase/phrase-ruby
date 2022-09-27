@@ -21,8 +21,8 @@ describe 'GitHubSyncApi' do
   end
 
   # unit tests for github_sync_export
-  # Export from Phrase to GitHub
-  # Export translations from Phrase to GitHub according to the .phraseapp.yml file within the GitHub repository.
+  # Export from Phrase Strings to GitHub
+  # Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository.
   # @param github_sync_export_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -34,8 +34,8 @@ describe 'GitHubSyncApi' do
   end
 
   # unit tests for github_sync_import
-  # Import to Phrase from GitHub
-  # Import files to Phrase from your connected GitHub repository.
+  # Import to Phrase Strings from GitHub
+  # Import files to Phrase Strings from your connected GitHub repository.
   # @param github_sync_import_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)

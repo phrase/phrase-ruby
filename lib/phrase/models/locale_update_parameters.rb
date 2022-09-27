@@ -14,7 +14,7 @@ module Phrase
     # Indicates whether locale is the default locale. If set to true, the previous default locale the project is no longer the default locale.
     attr_accessor :default
 
-    # Indicates whether locale is a main locale. Main locales are part of the <a href=\"https://help.phrase.com/help/verification-and-proofreading\" target=\"_blank\">Verification System</a> feature.
+    # Indicates whether locale is a main locale. Main locales are part of the <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\" target=\"_blank\">Verification System</a> feature.
     attr_accessor :main
 
     # Indicates whether locale is a RTL (Right-to-Left) locale.
@@ -26,10 +26,10 @@ module Phrase
     # Fallback locale for empty translations. Can be a locale name or id.
     attr_accessor :fallback_locale_id
 
-    # Indicates that new translations for this locale should be marked as unverified. Part of the <a href=\"https://help.phrase.com/help/verification-and-proofreading\" target=\"_blank\">Advanced Workflows</a> feature.
+    # Indicates that new translations for this locale should be marked as unverified. Part of the <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\" target=\"_blank\">Advanced Workflows</a> feature.
     attr_accessor :unverify_new_translations
 
-    # Indicates that updated translations for this locale should be marked as unverified. Part of the <a href=\"https://help.phrase.com/help/verification-and-proofreading\" target=\"_blank\">Advanced Workflows</a> feature.
+    # Indicates that updated translations for this locale should be marked as unverified. Part of the <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\" target=\"_blank\">Advanced Workflows</a> feature.
     attr_accessor :unverify_updated_translations
 
     # If set, translations for this locale will be fetched automatically, right after creation.

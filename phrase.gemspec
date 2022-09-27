@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Phrase"]
   s.email       = ["support@phrase.com"]
   s.homepage    = "https://phrase.com"
-  s.summary     = "You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account."
-  s.description = "Phrase is a translation management platform for software projects."
+  s.summary     = "You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account."
+  s.description = "Phrase Strings is a translation management platform for software projects."
   s.license     = 'MIT'
   s.required_ruby_version = ">= 2.6.0"
 

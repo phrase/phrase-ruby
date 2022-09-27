@@ -5,7 +5,7 @@ module Phrase
     # Name of the project
     attr_accessor :name
 
-    # Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see <a href=\"https://help.phrase.com/help/supported-platforms-and-formats\">Format Guide</a> or our <a href=\"#formats\">Formats API Endpoint</a>.
+    # Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see <a href=\"https://support.phrase.com/hc/en-us/articles/5784070560412\">Format Guide</a> or our <a href=\"#formats\">Formats API Endpoint</a>.
     attr_accessor :main_format
 
     # Indicates whether the project should share the account's translation memory
@@ -23,7 +23,7 @@ module Phrase
     # When a source project ID is given, a clone of that project will be created, including all locales, keys and translations as well as the main project settings if they are not defined otherwise through the params.
     attr_accessor :source_project_id
 
-    # (Optional) Review Workflow. \"simple\" / \"review\". <a href=\"https://help.phrase.com/help/advanced-review-workflow\">Read more</a>
+    # (Optional) Review Workflow. \"simple\" / \"review\". <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\">Read more</a>
     attr_accessor :workflow
 
     # (Optional) Enable machine translation support in the project. Required for Autopilot and Smart Suggest
@@ -38,13 +38,13 @@ module Phrase
     # (Optional) Otherwise, translators are not allowed to edit translations other than strings
     attr_accessor :enable_all_data_type_translation_keys_for_translators
 
-    # (Optional) We can validate and highlight your ICU messages. <a href=\"https://help.phrase.com/help/icu-message-format\">Read more</a>
+    # (Optional) We can validate and highlight your ICU messages. <a href=\"https://support.phrase.com/hc/en-us/articles/5822319545116\">Read more</a>
     attr_accessor :enable_icu_message_format
 
     # (Optional) Displays the input fields for the 'ZERO' plural form for every key as well although only some languages require the 'ZERO' explicitly.
     attr_accessor :zero_plural_form_enabled
 
-    # (Optional) Autopilot, requires machine_translation_enabled. <a href=\"https://help.phrase.com/help/autopilot\">Read more</a>
+    # (Optional) Autopilot, requires machine_translation_enabled. <a href=\"https://support.phrase.com/hc/en-us/articles/5822187934364\">Read more</a>
     attr_accessor :autotranslate_enabled
 
     # (Optional) Requires autotranslate_enabled to be true

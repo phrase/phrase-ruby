@@ -74,8 +74,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Export from Phrase to GitLab
-    # Export translations from Phrase to GitLab according to the .phraseapp.yml file within the GitLab repository.
+    # Export from Phrase Strings to GitLab
+    # Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
     # @param gitlab_sync_id [String] Gitlab Sync ID
     # @param gitlab_sync_export_parameters [GitlabSyncExportParameters] 
     # @param [Hash] opts the optional parameters
@@ -86,8 +86,8 @@ module Phrase
       data
     end
 
-    # Export from Phrase to GitLab
-    # Export translations from Phrase to GitLab according to the .phraseapp.yml file within the GitLab repository.
+    # Export from Phrase Strings to GitLab
+    # Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
     # @param gitlab_sync_id [String] Gitlab Sync ID
     # @param gitlab_sync_export_parameters [GitlabSyncExportParameters] 
     # @param [Hash] opts the optional parameters
@@ -224,7 +224,7 @@ module Phrase
     end
 
     # Import from GitLab to Phrase
-    # Import translations from GitLab to Phrase according to the .phraseapp.yml file within the GitLab repository.
+    # Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
     # @param gitlab_sync_id [String] Gitlab Sync ID
     # @param gitlab_sync_import_parameters [GitlabSyncImportParameters] 
     # @param [Hash] opts the optional parameters
@@ -236,7 +236,7 @@ module Phrase
     end
 
     # Import from GitLab to Phrase
-    # Import translations from GitLab to Phrase according to the .phraseapp.yml file within the GitLab repository.
+    # Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
     # @param gitlab_sync_id [String] Gitlab Sync ID
     # @param gitlab_sync_import_parameters [GitlabSyncImportParameters] 
     # @param [Hash] opts the optional parameters
@@ -298,7 +298,7 @@ module Phrase
     end
 
     # List GitLab syncs
-    # List all GitLab Sync Settings for which synchronisation with Phrase and GitLab is activated.
+    # List all GitLab Sync Settings for which synchronisation with Phrase Strings and GitLab is activated.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
@@ -309,7 +309,7 @@ module Phrase
     end
 
     # List GitLab syncs
-    # List all GitLab Sync Settings for which synchronisation with Phrase and GitLab is activated.
+    # List all GitLab Sync Settings for which synchronisation with Phrase Strings and GitLab is activated.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
@@ -435,7 +435,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
-    # @option opts [String] :phrase_project_code Code of the related Phrase Project.
+    # @option opts [String] :phrase_project_code Code of the related Phrase Strings Project.
     # @option opts [Integer] :gitlab_project_id ID of the related GitLab Project.
     # @option opts [String] :gitlab_branch_name Name of the GitLab Branch.
     # @return [GitlabSync]
@@ -450,7 +450,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
-    # @option opts [String] :phrase_project_code Code of the related Phrase Project.
+    # @option opts [String] :phrase_project_code Code of the related Phrase Strings Project.
     # @option opts [Integer] :gitlab_project_id ID of the related GitLab Project.
     # @option opts [String] :gitlab_branch_name Name of the GitLab Branch.
     # @return [Array<(Response<(GitlabSync)>, Integer, Hash)>] Response<(GitlabSync)> data, response status code and response headers

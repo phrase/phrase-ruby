@@ -5,7 +5,7 @@ All URIs are relative to *https://api.phrase.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**gitlab_sync_delete**](GitLabSyncApi.md#gitlab_sync_delete) | **DELETE** /gitlab_syncs/{id} | Delete single Sync Setting
-[**gitlab_sync_export**](GitLabSyncApi.md#gitlab_sync_export) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase to GitLab
+[**gitlab_sync_export**](GitLabSyncApi.md#gitlab_sync_export) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase Strings to GitLab
 [**gitlab_sync_history**](GitLabSyncApi.md#gitlab_sync_history) | **GET** /gitlab_syncs/{gitlab_sync_id}/history | History of single Sync Setting
 [**gitlab_sync_import**](GitLabSyncApi.md#gitlab_sync_import) | **POST** /gitlab_syncs/{gitlab_sync_id}/import | Import from GitLab to Phrase
 [**gitlab_sync_list**](GitLabSyncApi.md#gitlab_sync_list) | **GET** /gitlab_syncs | List GitLab syncs
@@ -80,9 +80,9 @@ Response<(nil (empty response body))>
 
 > GitlabSyncExport gitlab_sync_export(gitlab_sync_id, gitlab_sync_export_parameters, opts)
 
-Export from Phrase to GitLab
+Export from Phrase Strings to GitLab
 
-Export translations from Phrase to GitLab according to the .phraseapp.yml file within the GitLab repository.
+Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
 
 ### Example
 
@@ -108,7 +108,7 @@ opts = {
 }
 
 begin
-  #Export from Phrase to GitLab
+  #Export from Phrase Strings to GitLab
   result = api_instance.gitlab_sync_export(gitlab_sync_id, gitlab_sync_export_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -212,7 +212,7 @@ Response<([**Array&lt;GitlabSyncHistory&gt;**](GitlabSyncHistory.md))>
 
 Import from GitLab to Phrase
 
-Import translations from GitLab to Phrase according to the .phraseapp.yml file within the GitLab repository.
+Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
 
 ### Example
 
@@ -275,7 +275,7 @@ Response<([**Array&lt;Upload&gt;**](Upload.md))>
 
 List GitLab syncs
 
-List all GitLab Sync Settings for which synchronisation with Phrase and GitLab is activated.
+List all GitLab Sync Settings for which synchronisation with Phrase Strings and GitLab is activated.
 
 ### Example
 
@@ -422,7 +422,7 @@ id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   account_id: 'abcd1234', # String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
-  phrase_project_code: '3456abcd', # String | Code of the related Phrase Project.
+  phrase_project_code: '3456abcd', # String | Code of the related Phrase Strings Project.
   gitlab_project_id: 12345, # Integer | ID of the related GitLab Project.
   gitlab_branch_name: 'feature-development' # String | Name of the GitLab Branch.
 }
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **account_id** | **String**| Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
- **phrase_project_code** | **String**| Code of the related Phrase Project. | [optional] 
+ **phrase_project_code** | **String**| Code of the related Phrase Strings Project. | [optional] 
  **gitlab_project_id** | **Integer**| ID of the related GitLab Project. | [optional] 
  **gitlab_branch_name** | **String**| Name of the GitLab Branch. | [optional] 
 
