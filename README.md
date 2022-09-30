@@ -308,9 +308,9 @@ Class | Method | HTTP request | Description
 *Phrase::TagsApi* | [**tag_show**](docs/TagsApi.md#tag_show) | **GET** /projects/{project_id}/tags/{name} | Get a single tag
 *Phrase::TagsApi* | [**tags_list**](docs/TagsApi.md#tags_list) | **GET** /projects/{project_id}/tags | List tags
 *Phrase::TeamsApi* | [**team_create**](docs/TeamsApi.md#team_create) | **POST** /accounts/{account_id}/teams | Create a Team
-*Phrase::TeamsApi* | [**team_delete**](docs/TeamsApi.md#team_delete) | **DELETE** /accounts/{account_id}/teams/{team_id} | Delete Team
-*Phrase::TeamsApi* | [**team_show**](docs/TeamsApi.md#team_show) | **GET** /accounts/{account_id}/teams/{team_id} | Get Team
-*Phrase::TeamsApi* | [**team_update**](docs/TeamsApi.md#team_update) | **PATCH** /accounts/{account_id}/teams/{team_id} | Update Team
+*Phrase::TeamsApi* | [**team_delete**](docs/TeamsApi.md#team_delete) | **DELETE** /accounts/{account_id}/teams/{id} | Delete Team
+*Phrase::TeamsApi* | [**team_show**](docs/TeamsApi.md#team_show) | **GET** /accounts/{account_id}/teams/{id} | Get Team
+*Phrase::TeamsApi* | [**team_update**](docs/TeamsApi.md#team_update) | **PATCH** /accounts/{account_id}/teams/{id} | Update Team
 *Phrase::TeamsApi* | [**teams_list**](docs/TeamsApi.md#teams_list) | **GET** /accounts/{account_id}/teams | List Teams
 *Phrase::TeamsApi* | [**teams_projects_create**](docs/TeamsApi.md#teams_projects_create) | **POST** /accounts/{account_id}/teams/{team_id}/projects | Add Project
 *Phrase::TeamsApi* | [**teams_projects_delete**](docs/TeamsApi.md#teams_projects_delete) | **DELETE** /accounts/{account_id}/teams/{team_id}/projects/{id} | Remove Project

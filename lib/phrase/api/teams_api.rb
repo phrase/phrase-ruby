@@ -113,7 +113,7 @@ module Phrase
         fail ArgumentError, "Missing the required parameter 'id' when calling TeamsApi.team_delete"
       end
       # resource path
-      local_var_path = '/accounts/{account_id}/teams/{team_id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
+      local_var_path = '/accounts/{account_id}/teams/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -183,7 +183,7 @@ module Phrase
         fail ArgumentError, "Missing the required parameter 'id' when calling TeamsApi.team_show"
       end
       # resource path
-      local_var_path = '/accounts/{account_id}/teams/{team_id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
+      local_var_path = '/accounts/{account_id}/teams/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -261,7 +261,7 @@ module Phrase
         fail ArgumentError, "Missing the required parameter 'team_update_parameters' when calling TeamsApi.team_update"
       end
       # resource path
-      local_var_path = '/accounts/{account_id}/teams/{team_id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
+      local_var_path = '/accounts/{account_id}/teams/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
