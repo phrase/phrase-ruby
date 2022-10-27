@@ -37,7 +37,7 @@ module Phrase
         fail ArgumentError, "Missing the required parameter 'id' when calling LocalesApi.account_locales"
       end
       # resource path
-      local_var_path = '/accounts/{account_id}/locales'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+      local_var_path = '/accounts/{id}/locales'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
