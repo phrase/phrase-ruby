@@ -321,7 +321,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :key_id filter by key
     # @return [Array<Screenshot>]
@@ -336,7 +336,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :key_id filter by key
     # @return [Array<(Response<(Array<Screenshot>)>, Integer, Hash)>] Response<(Array<Screenshot>)> data, response status code and response headers

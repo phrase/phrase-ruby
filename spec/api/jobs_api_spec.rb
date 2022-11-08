@@ -192,7 +192,7 @@ describe 'JobsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
-  # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+  # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
   # @option opts [String] :owned_by filter by user owning job
   # @option opts [String] :assigned_to filter by user assigned to job
   # @option opts [String] :state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt;
@@ -210,7 +210,7 @@ describe 'JobsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
-  # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+  # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
   # @option opts [String] :branch specify the branch to use
   # @option opts [String] :owned_by filter by user owning job
   # @option opts [String] :assigned_to filter by user assigned to job

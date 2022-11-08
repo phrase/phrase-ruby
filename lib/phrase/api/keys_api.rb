@@ -538,7 +538,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort by field. Can be one of: name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
@@ -556,7 +556,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort by field. Can be one of: name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
@@ -626,7 +626,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @return [Array<TranslationKey>]
     def keys_search(project_id, keys_search_parameters, opts = {})
       data, _status_code, _headers = keys_search_with_http_info(project_id, keys_search_parameters, opts)
@@ -640,7 +640,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @return [Array<(Response<(Array<TranslationKey>)>, Integer, Hash)>] Response<(Array<TranslationKey>)> data, response status code and response headers
     def keys_search_with_http_info(project_id, keys_search_parameters, opts = {})
       if @api_client.config.debugging

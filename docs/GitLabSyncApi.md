@@ -168,7 +168,7 @@ gitlab_sync_id = 'gitlab_sync_id_example' # String | Gitlab Sync ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 25, # Integer | allows you to specify a page size up to 100 items, 25 by default
+  per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
   account_id: 'abcd1234' # String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
 }
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
  **gitlab_sync_id** | **String**| Gitlab Sync ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
- **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
+ **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
  **account_id** | **String**| Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. | [optional] 
 
 ### Return type

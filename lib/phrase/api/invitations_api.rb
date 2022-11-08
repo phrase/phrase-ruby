@@ -461,7 +461,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @return [Array<Invitation>]
     def invitations_list(account_id, opts = {})
       data, _status_code, _headers = invitations_list_with_http_info(account_id, opts)
@@ -474,7 +474,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @return [Array<(Response<(Array<Invitation>)>, Integer, Hash)>] Response<(Array<Invitation>)> data, response status code and response headers
     def invitations_list_with_http_info(account_id, opts = {})
       if @api_client.config.debugging

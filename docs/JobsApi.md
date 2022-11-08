@@ -760,7 +760,7 @@ account_id = 'account_id_example' # String | Account ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 25, # Integer | allows you to specify a page size up to 100 items, 25 by default
+  per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
   owned_by: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user owning job
   assigned_to: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user assigned to job
   state: 'completed' # String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
@@ -783,7 +783,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**| Account ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
- **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
+ **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
  **owned_by** | **String**| filter by user owning job | [optional] 
  **assigned_to** | **String**| filter by user assigned to job | [optional] 
  **state** | **String**| filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional] 
@@ -831,7 +831,7 @@ project_id = 'project_id_example' # String | Project ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
-  per_page: 25, # Integer | allows you to specify a page size up to 100 items, 25 by default
+  per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
   branch: 'my-feature-branch', # String | specify the branch to use
   owned_by: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user owning job
   assigned_to: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user assigned to job
@@ -855,7 +855,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
- **per_page** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional] 
+ **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
  **owned_by** | **String**| filter by user owning job | [optional] 
  **assigned_to** | **String**| filter by user assigned to job | [optional] 

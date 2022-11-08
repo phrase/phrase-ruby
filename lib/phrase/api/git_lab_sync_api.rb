@@ -154,7 +154,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
     # @return [Array<GitlabSyncHistory>]
     def gitlab_sync_history(gitlab_sync_id, opts = {})
@@ -168,7 +168,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :account_id Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
     # @return [Array<(Response<(Array<GitlabSyncHistory>)>, Integer, Hash)>] Response<(Array<GitlabSyncHistory>)> data, response status code and response headers
     def gitlab_sync_history_with_http_info(gitlab_sync_id, opts = {})

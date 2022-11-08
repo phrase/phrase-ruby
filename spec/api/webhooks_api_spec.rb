@@ -98,7 +98,7 @@ describe 'WebhooksApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
-  # @option opts [Integer] :per_page allows you to specify a page size up to 100 items, 25 by default
+  # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
   # @return [Array<Webhook>]
   describe 'webhooks_list test' do
     it 'should work' do
