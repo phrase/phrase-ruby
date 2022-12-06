@@ -8,7 +8,7 @@ module Phrase
       @api_client = api_client
     end
     # Export from Phrase Strings to Bitbucket
-    # Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+    # Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository. <br><br><i>Note: Export is done asynchronously and may take several seconds depending on the project size.</i>
     # @param id [String] ID
     # @param bitbucket_sync_export_parameters [BitbucketSyncExportParameters] 
     # @param [Hash] opts the optional parameters
@@ -20,7 +20,7 @@ module Phrase
     end
 
     # Export from Phrase Strings to Bitbucket
-    # Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+    # Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
     # @param id [String] ID
     # @param bitbucket_sync_export_parameters [BitbucketSyncExportParameters] 
     # @param [Hash] opts the optional parameters
@@ -82,7 +82,7 @@ module Phrase
     end
 
     # Import to Phrase Strings from Bitbucket
-    # Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
+    # Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository. <br><br><i>Note: Import is done asynchronously and may take several seconds depending on the project size.</i>
     # @param id [String] ID
     # @param bitbucket_sync_import_parameters [BitbucketSyncImportParameters] 
     # @param [Hash] opts the optional parameters
@@ -94,7 +94,7 @@ module Phrase
     end
 
     # Import to Phrase Strings from Bitbucket
-    # Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
+    # Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
     # @param id [String] ID
     # @param bitbucket_sync_import_parameters [BitbucketSyncImportParameters] 
     # @param [Hash] opts the optional parameters

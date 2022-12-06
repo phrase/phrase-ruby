@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**translation_create**](TranslationsApi.md#translation_create) | **POST** /projects/{project_id}/translations | Create a translation
 [**translation_exclude**](TranslationsApi.md#translation_exclude) | **PATCH** /projects/{project_id}/translations/{id}/exclude | Exclude a translation from export
-[**translation_include**](TranslationsApi.md#translation_include) | **PATCH** /projects/{project_id}/translations/{id}/include | Revoke exclusion of a translation in export
+[**translation_include**](TranslationsApi.md#translation_include) | **PATCH** /projects/{project_id}/translations/{id}/include | Include a translation
 [**translation_review**](TranslationsApi.md#translation_review) | **PATCH** /projects/{project_id}/translations/{id}/review | Review a translation
 [**translation_show**](TranslationsApi.md#translation_show) | **GET** /projects/{project_id}/translations/{id} | Get a single translation
 [**translation_unverify**](TranslationsApi.md#translation_unverify) | **PATCH** /projects/{project_id}/translations/{id}/unverify | Mark a translation as unverified
@@ -14,13 +14,13 @@ Method | HTTP request | Description
 [**translation_verify**](TranslationsApi.md#translation_verify) | **PATCH** /projects/{project_id}/translations/{id}/verify | Verify a translation
 [**translations_by_key**](TranslationsApi.md#translations_by_key) | **GET** /projects/{project_id}/keys/{key_id}/translations | List translations by key
 [**translations_by_locale**](TranslationsApi.md#translations_by_locale) | **GET** /projects/{project_id}/locales/{locale_id}/translations | List translations by locale
-[**translations_exclude_collection**](TranslationsApi.md#translations_exclude_collection) | **PATCH** /projects/{project_id}/translations/exclude | Set exclude from export flag on translations selected by query
-[**translations_include_collection**](TranslationsApi.md#translations_include_collection) | **PATCH** /projects/{project_id}/translations/include | Remove exlude from import flag from translations selected by query
+[**translations_exclude_collection**](TranslationsApi.md#translations_exclude_collection) | **PATCH** /projects/{project_id}/translations/exclude | Exclude translations by query
+[**translations_include_collection**](TranslationsApi.md#translations_include_collection) | **PATCH** /projects/{project_id}/translations/include | Include translations by query
 [**translations_list**](TranslationsApi.md#translations_list) | **GET** /projects/{project_id}/translations | List all translations
 [**translations_review_collection**](TranslationsApi.md#translations_review_collection) | **PATCH** /projects/{project_id}/translations/review | Review translations selected by query
 [**translations_search**](TranslationsApi.md#translations_search) | **POST** /projects/{project_id}/translations/search | Search translations
-[**translations_unverify_collection**](TranslationsApi.md#translations_unverify_collection) | **PATCH** /projects/{project_id}/translations/unverify | Mark translations selected by query as unverified
-[**translations_verify_collection**](TranslationsApi.md#translations_verify_collection) | **PATCH** /projects/{project_id}/translations/verify | Verify translations selected by query
+[**translations_unverify_collection**](TranslationsApi.md#translations_unverify_collection) | **PATCH** /projects/{project_id}/translations/unverify | Unverify translations by query
+[**translations_verify_collection**](TranslationsApi.md#translations_verify_collection) | **PATCH** /projects/{project_id}/translations/verify | Verify translations by query
 
 
 
@@ -156,7 +156,7 @@ Response<([**TranslationDetails**](TranslationDetails.md))>
 
 > TranslationDetails translation_include(project_id, id, translation_include_parameters, opts)
 
-Revoke exclusion of a translation in export
+Include a translation
 
 Remove exclude from export flag from an existing translation.
 
@@ -185,7 +185,7 @@ opts = {
 }
 
 begin
-  #Revoke exclusion of a translation in export
+  #Include a translation
   result = api_instance.translation_include(project_id, id, translation_include_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -651,7 +651,7 @@ opts = {
   branch: 'my-feature-branch', # String | specify the branch to use
   sort: 'updated_at', # String | Sort criteria. Can be one of: key_name, created_at, updated_at.
   order: 'desc', # String | Order direction. Can be one of: asc, desc.
-  q: 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' # String | Specify a query to find translations by content (including wildcards).<br><br> The following qualifiers are supported in the query:<br> <ul>   <li><code>id:translation_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>unverified:{true|false}</code> for verification status</li>   <li><code>tags:XYZ</code> for tags on the translation</li>   <li><code>excluded:{true|false}</code> for exclusion status</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. 
+  q: 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' # String | Specify a query to find translations by content (including wildcards).<br><br> <i>Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).</i><br> The following qualifiers are supported in the query:<br> <ul>   <li><code>id:translation_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>unverified:{true|false}</code> for verification status</li>   <li><code>tags:XYZ</code> for tags on the translation</li>   <li><code>excluded:{true|false}</code> for exclusion status</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. 
 }
 
 begin
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
  **branch** | **String**| specify the branch to use | [optional] 
  **sort** | **String**| Sort criteria. Can be one of: key_name, created_at, updated_at. | [optional] 
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
- **q** | **String**| Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;.  | [optional] 
+ **q** | **String**| Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; &lt;i&gt;Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).&lt;/i&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;.  | [optional] 
 
 ### Return type
 
@@ -696,7 +696,7 @@ Response<([**Array&lt;Translation&gt;**](Translation.md))>
 
 > AffectedCount translations_exclude_collection(project_id, translations_exclude_parameters, opts)
 
-Set exclude from export flag on translations selected by query
+Exclude translations by query
 
 Exclude translations matching query from locale export.
 
@@ -724,7 +724,7 @@ opts = {
 }
 
 begin
-  #Set exclude from export flag on translations selected by query
+  #Exclude translations by query
   result = api_instance.translations_exclude_collection(project_id, translations_exclude_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -759,7 +759,7 @@ Response<([**AffectedCount**](AffectedCount.md))>
 
 > AffectedCount translations_include_collection(project_id, translations_include_parameters, opts)
 
-Remove exlude from import flag from translations selected by query
+Include translations by query
 
 Include translations matching query in locale export.
 
@@ -787,7 +787,7 @@ opts = {
 }
 
 begin
-  #Remove exlude from import flag from translations selected by query
+  #Include translations by query
   result = api_instance.translations_include_collection(project_id, translations_include_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -851,7 +851,7 @@ opts = {
   branch: 'my-feature-branch', # String | specify the branch to use
   sort: 'updated_at', # String | Sort criteria. Can be one of: key_name, created_at, updated_at.
   order: 'desc', # String | Order direction. Can be one of: asc, desc.
-  q: 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' # String | Specify a query to find translations by content (including wildcards).<br><br> The following qualifiers are supported in the query:<br> <ul>   <li><code>id:translation_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>tags:XYZ</code> for tags on the translation</li>   <li><code>unverified:{true|false}</code> for verification status</li>   <li><code>excluded:{true|false}</code> for exclusion status</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. 
+  q: 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' # String | Specify a query to find translations by content (including wildcards).<br><br> <i>Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).</i><br> The following qualifiers are supported in the query:<br> <ul>   <li><code>id:translation_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>tags:XYZ</code> for tags on the translation</li>   <li><code>unverified:{true|false}</code> for verification status</li>   <li><code>excluded:{true|false}</code> for exclusion status</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. 
 }
 
 begin
@@ -875,7 +875,7 @@ Name | Type | Description  | Notes
  **branch** | **String**| specify the branch to use | [optional] 
  **sort** | **String**| Sort criteria. Can be one of: key_name, created_at, updated_at. | [optional] 
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
- **q** | **String**| Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;.  | [optional] 
+ **q** | **String**| Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; &lt;i&gt;Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).&lt;/i&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;.  | [optional] 
 
 ### Return type
 
@@ -1025,7 +1025,7 @@ Response<([**Array&lt;Translation&gt;**](Translation.md))>
 
 > AffectedCount translations_unverify_collection(project_id, translations_unverify_parameters, opts)
 
-Mark translations selected by query as unverified
+Unverify translations by query
 
 Mark translations matching query as unverified.
 
@@ -1053,7 +1053,7 @@ opts = {
 }
 
 begin
-  #Mark translations selected by query as unverified
+  #Unverify translations by query
   result = api_instance.translations_unverify_collection(project_id, translations_unverify_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -1088,7 +1088,7 @@ Response<([**AffectedCount**](AffectedCount.md))>
 
 > AffectedCount translations_verify_collection(project_id, translations_verify_parameters, opts)
 
-Verify translations selected by query
+Verify translations by query
 
 Verify translations matching query.
 
@@ -1116,7 +1116,7 @@ opts = {
 }
 
 begin
-  #Verify translations selected by query
+  #Verify translations by query
   result = api_instance.translations_verify_collection(project_id, translations_verify_parameters, opts)
   pp result
 rescue Phrase::ApiError => e

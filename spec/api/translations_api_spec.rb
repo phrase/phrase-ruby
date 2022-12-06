@@ -50,7 +50,7 @@ describe 'TranslationsApi' do
   end
 
   # unit tests for translation_include
-  # Revoke exclusion of a translation in export
+  # Include a translation
   # Remove exclude from export flag from an existing translation.
   # @param project_id Project ID
   # @param id ID
@@ -171,7 +171,7 @@ describe 'TranslationsApi' do
   # @option opts [String] :branch specify the branch to use
   # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
   # @option opts [String] :order Order direction. Can be one of: asc, desc.
-  # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
+  # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; &lt;i&gt;Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).&lt;/i&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
   # @return [Array<Translation>]
   describe 'translations_by_locale test' do
     it 'should work' do
@@ -180,7 +180,7 @@ describe 'TranslationsApi' do
   end
 
   # unit tests for translations_exclude_collection
-  # Set exclude from export flag on translations selected by query
+  # Exclude translations by query
   # Exclude translations matching query from locale export.
   # @param project_id Project ID
   # @param translations_exclude_parameters 
@@ -194,7 +194,7 @@ describe 'TranslationsApi' do
   end
 
   # unit tests for translations_include_collection
-  # Remove exlude from import flag from translations selected by query
+  # Include translations by query
   # Include translations matching query in locale export.
   # @param project_id Project ID
   # @param translations_include_parameters 
@@ -218,7 +218,7 @@ describe 'TranslationsApi' do
   # @option opts [String] :branch specify the branch to use
   # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
   # @option opts [String] :order Order direction. Can be one of: asc, desc.
-  # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
+  # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; &lt;i&gt;Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).&lt;/i&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
   # @return [Array<Translation>]
   describe 'translations_list test' do
     it 'should work' do
@@ -257,7 +257,7 @@ describe 'TranslationsApi' do
   end
 
   # unit tests for translations_unverify_collection
-  # Mark translations selected by query as unverified
+  # Unverify translations by query
   # Mark translations matching query as unverified.
   # @param project_id Project ID
   # @param translations_unverify_parameters 
@@ -271,7 +271,7 @@ describe 'TranslationsApi' do
   end
 
   # unit tests for translations_verify_collection
-  # Verify translations selected by query
+  # Verify translations by query
   # Verify translations matching query.
   # @param project_id Project ID
   # @param translations_verify_parameters 

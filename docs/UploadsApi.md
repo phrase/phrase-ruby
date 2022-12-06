@@ -5,7 +5,7 @@ All URIs are relative to *https://api.phrase.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**upload_create**](UploadsApi.md#upload_create) | **POST** /projects/{project_id}/uploads | Upload a new file
-[**upload_show**](UploadsApi.md#upload_show) | **GET** /projects/{project_id}/uploads/{id} | View upload details
+[**upload_show**](UploadsApi.md#upload_show) | **GET** /projects/{project_id}/uploads/{id} | Get a single upload
 [**uploads_list**](UploadsApi.md#uploads_list) | **GET** /projects/{project_id}/uploads | List uploads
 
 
@@ -105,7 +105,7 @@ Response<([**Upload**](Upload.md))>
 
 > Upload upload_show(project_id, id, opts)
 
-View upload details
+Get a single upload
 
 View details and summary for a single upload.
 
@@ -134,7 +134,7 @@ opts = {
 }
 
 begin
-  #View upload details
+  #Get a single upload
   result = api_instance.upload_show(project_id, id, opts)
   pp result
 rescue Phrase::ApiError => e

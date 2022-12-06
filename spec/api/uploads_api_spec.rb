@@ -49,7 +49,7 @@ describe 'UploadsApi' do
   end
 
   # unit tests for upload_show
-  # View upload details
+  # Get a single upload
   # View details and summary for a single upload.
   # @param project_id Project ID
   # @param id ID

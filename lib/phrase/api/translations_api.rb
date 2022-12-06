@@ -161,7 +161,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Revoke exclusion of a translation in export
+    # Include a translation
     # Remove exclude from export flag from an existing translation.
     # @param project_id [String] Project ID
     # @param id [String] ID
@@ -174,7 +174,7 @@ module Phrase
       data
     end
 
-    # Revoke exclusion of a translation in export
+    # Include a translation
     # Remove exclude from export flag from an existing translation.
     # @param project_id [String] Project ID
     # @param id [String] ID
@@ -737,7 +737,7 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
-    # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
+    # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; &lt;i&gt;Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).&lt;/i&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
     # @return [Array<Translation>]
     def translations_by_locale(project_id, locale_id, opts = {})
       data, _status_code, _headers = translations_by_locale_with_http_info(project_id, locale_id, opts)
@@ -755,7 +755,7 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
-    # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
+    # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; &lt;i&gt;Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).&lt;/i&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
     # @return [Array<(Response<(Array<Translation>)>, Integer, Hash)>] Response<(Array<Translation>)> data, response status code and response headers
     def translations_by_locale_with_http_info(project_id, locale_id, opts = {})
       if @api_client.config.debugging
@@ -816,7 +816,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Set exclude from export flag on translations selected by query
+    # Exclude translations by query
     # Exclude translations matching query from locale export.
     # @param project_id [String] Project ID
     # @param translations_exclude_parameters [TranslationsExcludeParameters] 
@@ -828,7 +828,7 @@ module Phrase
       data
     end
 
-    # Set exclude from export flag on translations selected by query
+    # Exclude translations by query
     # Exclude translations matching query from locale export.
     # @param project_id [String] Project ID
     # @param translations_exclude_parameters [TranslationsExcludeParameters] 
@@ -890,7 +890,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Remove exlude from import flag from translations selected by query
+    # Include translations by query
     # Include translations matching query in locale export.
     # @param project_id [String] Project ID
     # @param translations_include_parameters [TranslationsIncludeParameters] 
@@ -902,7 +902,7 @@ module Phrase
       data
     end
 
-    # Remove exlude from import flag from translations selected by query
+    # Include translations by query
     # Include translations matching query in locale export.
     # @param project_id [String] Project ID
     # @param translations_include_parameters [TranslationsIncludeParameters] 
@@ -974,7 +974,7 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
-    # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
+    # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; &lt;i&gt;Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).&lt;/i&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
     # @return [Array<Translation>]
     def translations_list(project_id, opts = {})
       data, _status_code, _headers = translations_list_with_http_info(project_id, opts)
@@ -991,7 +991,7 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
-    # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
+    # @option opts [String] :q Specify a query to find translations by content (including wildcards).&lt;br&gt;&lt;br&gt; &lt;i&gt;Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).&lt;/i&gt;&lt;br&gt; The following qualifiers are supported in the query:&lt;br&gt; &lt;ul&gt;   &lt;li&gt;&lt;code&gt;id:translation_id,...&lt;/code&gt; for queries on a comma-separated list of ids&lt;/li&gt;   &lt;li&gt;&lt;code&gt;tags:XYZ&lt;/code&gt; for tags on the translation&lt;/li&gt;   &lt;li&gt;&lt;code&gt;unverified:{true|false}&lt;/code&gt; for verification status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;excluded:{true|false}&lt;/code&gt; for exclusion status&lt;/li&gt;   &lt;li&gt;&lt;code&gt;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&lt;/code&gt; for date range queries&lt;/li&gt; &lt;/ul&gt; Find more examples &lt;a href&#x3D;\&quot;#overview--usage-examples\&quot;&gt;here&lt;/a&gt;. 
     # @return [Array<(Response<(Array<Translation>)>, Integer, Hash)>] Response<(Array<Translation>)> data, response status code and response headers
     def translations_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
@@ -1202,7 +1202,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Mark translations selected by query as unverified
+    # Unverify translations by query
     # Mark translations matching query as unverified.
     # @param project_id [String] Project ID
     # @param translations_unverify_parameters [TranslationsUnverifyParameters] 
@@ -1214,7 +1214,7 @@ module Phrase
       data
     end
 
-    # Mark translations selected by query as unverified
+    # Unverify translations by query
     # Mark translations matching query as unverified.
     # @param project_id [String] Project ID
     # @param translations_unverify_parameters [TranslationsUnverifyParameters] 
@@ -1276,7 +1276,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Verify translations selected by query
+    # Verify translations by query
     # Verify translations matching query.
     # @param project_id [String] Project ID
     # @param translations_verify_parameters [TranslationsVerifyParameters] 
@@ -1288,7 +1288,7 @@ module Phrase
       data
     end
 
-    # Verify translations selected by query
+    # Verify translations by query
     # Verify translations matching query.
     # @param project_id [String] Project ID
     # @param translations_verify_parameters [TranslationsVerifyParameters] 

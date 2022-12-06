@@ -8,7 +8,7 @@ module Phrase
       @api_client = api_client
     end
     # Compare branches
-    # Compare branch with main branch.
+    # Compare branch with main branch. <br><br><i>Note: Comparing a branch may take several minutes depending on the project size.</i>
     # @param project_id [String] Project ID
     # @param name [String] name
     # @param [Hash] opts the optional parameters
@@ -20,7 +20,7 @@ module Phrase
     end
 
     # Compare branches
-    # Compare branch with main branch.
+    # Compare branch with main branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Comparing a branch may take several minutes depending on the project size.&lt;/i&gt;
     # @param project_id [String] Project ID
     # @param name [String] name
     # @param [Hash] opts the optional parameters
@@ -78,7 +78,7 @@ module Phrase
     end
 
     # Create a branch
-    # Create a new branch.
+    # Create a new branch. <br><br><i>Note: Creating a new branch may take several minutes depending on the project size.</i>
     # @param project_id [String] Project ID
     # @param branch_create_parameters [BranchCreateParameters] 
     # @param [Hash] opts the optional parameters
@@ -90,7 +90,7 @@ module Phrase
     end
 
     # Create a branch
-    # Create a new branch.
+    # Create a new branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Creating a new branch may take several minutes depending on the project size.&lt;/i&gt;
     # @param project_id [String] Project ID
     # @param branch_create_parameters [BranchCreateParameters] 
     # @param [Hash] opts the optional parameters
@@ -222,7 +222,7 @@ module Phrase
     end
 
     # Merge a branch
-    # Merge an existing branch.
+    # Merge an existing branch. <br><br><i>Note: Merging a branch may take several minutes depending on diff size.</i>
     # @param project_id [String] Project ID
     # @param name [String] name
     # @param branch_merge_parameters [BranchMergeParameters] 
@@ -235,7 +235,7 @@ module Phrase
     end
 
     # Merge a branch
-    # Merge an existing branch.
+    # Merge an existing branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Merging a branch may take several minutes depending on diff size.&lt;/i&gt;
     # @param project_id [String] Project ID
     # @param name [String] name
     # @param branch_merge_parameters [BranchMergeParameters] 

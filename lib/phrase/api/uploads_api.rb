@@ -120,7 +120,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # View upload details
+    # Get a single upload
     # View details and summary for a single upload.
     # @param project_id [String] Project ID
     # @param id [String] ID
@@ -133,7 +133,7 @@ module Phrase
       data
     end
 
-    # View upload details
+    # Get a single upload
     # View details and summary for a single upload.
     # @param project_id [String] Project ID
     # @param id [String] ID

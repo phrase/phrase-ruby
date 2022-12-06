@@ -22,7 +22,7 @@ describe 'BranchesApi' do
 
   # unit tests for branch_compare
   # Compare branches
-  # Compare branch with main branch.
+  # Compare branch with main branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Comparing a branch may take several minutes depending on the project size.&lt;/i&gt;
   # @param project_id Project ID
   # @param name name
   # @param [Hash] opts the optional parameters
@@ -36,7 +36,7 @@ describe 'BranchesApi' do
 
   # unit tests for branch_create
   # Create a branch
-  # Create a new branch.
+  # Create a new branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Creating a new branch may take several minutes depending on the project size.&lt;/i&gt;
   # @param project_id Project ID
   # @param branch_create_parameters 
   # @param [Hash] opts the optional parameters
@@ -64,7 +64,7 @@ describe 'BranchesApi' do
 
   # unit tests for branch_merge
   # Merge a branch
-  # Merge an existing branch.
+  # Merge an existing branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Merging a branch may take several minutes depending on diff size.&lt;/i&gt;
   # @param project_id Project ID
   # @param name name
   # @param branch_merge_parameters 
