@@ -233,7 +233,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @option opts [String] :file_format File format name. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5784070560412\&quot;&gt;format guide&lt;/a&gt; for all supported file formats.
+    # @option opts [String] :file_format File format name. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/sections/6111343326364\&quot;&gt;format guide&lt;/a&gt; for all supported file formats.
     # @option opts [String] :tags Limit results to keys tagged with a list of comma separated tag names.
     # @option opts [String] :tag Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead
     # @option opts [Boolean] :include_empty_translations Indicates whether keys without translations should be included in the output as well.
@@ -241,7 +241,7 @@ module Phrase
     # @option opts [Boolean] :include_translated_keys Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys.
     # @option opts [Boolean] :keep_notranslate_tags Indicates whether [NOTRANSLATE] tags should be kept.
     # @option opts [Boolean] :convert_emoji This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively.
-    # @option opts [Object] :format_options Additional formatting and render options. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5784070560412\&quot;&gt;format guide&lt;/a&gt; for a list of options available for each format. Specify format options like this: &lt;code&gt;...&amp;format_options[foo]&#x3D;bar&lt;/code&gt;
+    # @option opts [Object] :format_options Additional formatting and render options. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/sections/6111343326364\&quot;&gt;format guide&lt;/a&gt; for a list of options available for each format. Specify format options like this: &lt;code&gt;...&amp;format_options[foo]&#x3D;bar&lt;/code&gt;
     # @option opts [String] :encoding Enforces a specific encoding on the file contents. Valid options are \&quot;UTF-8\&quot;, \&quot;UTF-16\&quot; and \&quot;ISO-8859-1\&quot;.
     # @option opts [Boolean] :skip_unverified_translations Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &lt;code&gt;include_unverified_translations&lt;/code&gt;.
     # @option opts [Boolean] :include_unverified_translations if set to false unverified translations are excluded
@@ -261,7 +261,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @option opts [String] :file_format File format name. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5784070560412\&quot;&gt;format guide&lt;/a&gt; for all supported file formats.
+    # @option opts [String] :file_format File format name. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/sections/6111343326364\&quot;&gt;format guide&lt;/a&gt; for all supported file formats.
     # @option opts [String] :tags Limit results to keys tagged with a list of comma separated tag names.
     # @option opts [String] :tag Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead
     # @option opts [Boolean] :include_empty_translations Indicates whether keys without translations should be included in the output as well.
@@ -269,7 +269,7 @@ module Phrase
     # @option opts [Boolean] :include_translated_keys Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys.
     # @option opts [Boolean] :keep_notranslate_tags Indicates whether [NOTRANSLATE] tags should be kept.
     # @option opts [Boolean] :convert_emoji This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively.
-    # @option opts [Object] :format_options Additional formatting and render options. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5784070560412\&quot;&gt;format guide&lt;/a&gt; for a list of options available for each format. Specify format options like this: &lt;code&gt;...&amp;format_options[foo]&#x3D;bar&lt;/code&gt;
+    # @option opts [Object] :format_options Additional formatting and render options. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/sections/6111343326364\&quot;&gt;format guide&lt;/a&gt; for a list of options available for each format. Specify format options like this: &lt;code&gt;...&amp;format_options[foo]&#x3D;bar&lt;/code&gt;
     # @option opts [String] :encoding Enforces a specific encoding on the file contents. Valid options are \&quot;UTF-8\&quot;, \&quot;UTF-16\&quot; and \&quot;ISO-8859-1\&quot;.
     # @option opts [Boolean] :skip_unverified_translations Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &lt;code&gt;include_unverified_translations&lt;/code&gt;.
     # @option opts [Boolean] :include_unverified_translations if set to false unverified translations are excluded
