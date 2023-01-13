@@ -12,6 +12,8 @@ module Phrase
 
     attr_accessor :project_image_url
 
+    attr_accessor :media
+
     attr_accessor :account
 
     attr_accessor :space
@@ -32,6 +34,7 @@ module Phrase
         :'slug' => :'slug',
         :'main_format' => :'main_format',
         :'project_image_url' => :'project_image_url',
+        :'media' => :'media',
         :'account' => :'account',
         :'space' => :'space',
         :'point_of_contact' => :'point_of_contact',
@@ -49,6 +52,7 @@ module Phrase
         :'slug' => :'String',
         :'main_format' => :'String',
         :'project_image_url' => :'String',
+        :'media' => :'String',
         :'account' => :'Account',
         :'space' => :'Space1',
         :'point_of_contact' => :'UserPreview',
@@ -107,6 +111,10 @@ module Phrase
         self.project_image_url = attributes[:'project_image_url']
       end
 
+      if attributes.key?(:'media')
+        self.media = attributes[:'media']
+      end
+
       if attributes.key?(:'account')
         self.account = attributes[:'account']
       end
@@ -155,6 +163,7 @@ module Phrase
           slug == o.slug &&
           main_format == o.main_format &&
           project_image_url == o.project_image_url &&
+          media == o.media &&
           account == o.account &&
           space == o.space &&
           point_of_contact == o.point_of_contact &&
@@ -172,7 +181,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, slug, main_format, project_image_url, account, space, point_of_contact, created_at, updated_at, shares_translation_memory].hash
+      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory].hash
     end
 
     # Builds the object from hash

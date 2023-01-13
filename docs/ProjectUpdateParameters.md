@@ -6,7 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **String** | Required if the requesting user is a member of multiple accounts. Account ID to specify the actual account the project should be created in. | [optional] 
 **name** | **String** | (Optional) Name of the project | [optional] 
+**point_of_contact** | **String** | (Optional) User ID of the point of contact for the project. Pass &#x60;null&#x60; to unset. | [optional] 
 **main_format** | **String** | (Optional) Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/sections/6111343326364\&quot;&gt;Format Guide&lt;/a&gt; or our &lt;a href&#x3D;\&quot;#formats\&quot;&gt;Formats API Endpoint&lt;/a&gt;. | [optional] 
+**media** | **Object** |  | [optional] 
 **shares_translation_memory** | **Boolean** | (Optional) Indicates whether the project should share the account&#39;s translation memory | [optional] 
 **project_image** | **File** | (Optional) Image to identify the project | [optional] 
 **remove_project_image** | **Boolean** | (Optional) Indicates whether the project image should be deleted. | [optional] 
@@ -35,7 +37,9 @@ require 'Phrase'
 
 instance = Phrase::ProjectUpdateParameters.new(account_id: abcd1234,
                                  name: My Android Project,
+                                 point_of_contact: abcd1234,
                                  main_format: yml,
+                                 media: null,
                                  shares_translation_memory: true,
                                  project_image: null,
                                  remove_project_image: false,

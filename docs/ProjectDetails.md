@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **slug** | **String** |  | [optional] 
 **main_format** | **String** |  | [optional] 
 **project_image_url** | **String** |  | [optional] 
+**media** | **String** |  | [optional] 
 **account** | [**Account**](Account.md) |  | [optional] 
 **space** | [**Space1**](Space1.md) |  | [optional] 
 **point_of_contact** | [**UserPreview**](UserPreview.md) |  | [optional] 
@@ -26,6 +27,7 @@ instance = Phrase::ProjectDetails.new(id: null,
                                  slug: null,
                                  main_format: null,
                                  project_image_url: null,
+                                 media: null,
                                  account: null,
                                  space: null,
                                  point_of_contact: null,

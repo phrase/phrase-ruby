@@ -8,6 +8,9 @@ module Phrase
     # Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see <a href=\"https://support.phrase.com/hc/en-us/sections/6111343326364\">Format Guide</a> or our <a href=\"#formats\">Formats API Endpoint</a>.
     attr_accessor :main_format
 
+    # (Optional) Main technology stack used in the project. It affects for example the suggested placeholder style. Predefined values include: `Ruby`, `JavaScript`, `AngularJS`, `React`, `iOS`, `Android`, `Python`, `PHP`, `Java`, `Go`, `Windows Phone`, `Rails`, `Node.js`, `.NET`, `Django`, `Symfony`, `Yii Framework`, `Zend Framework`, `Apple App Store Description`, `Google Play Description`, but it can also take any other value.
+    attr_accessor :media
+
     # Indicates whether the project should share the account's translation memory
     attr_accessor :shares_translation_memory
 
@@ -19,6 +22,9 @@ module Phrase
 
     # Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.
     attr_accessor :account_id
+
+    # (Optional) User ID of the point of contact for the project.
+    attr_accessor :point_of_contact
 
     # When a source project ID is given, a clone of that project will be created, including all locales, keys and translations as well as the main project settings if they are not defined otherwise through the params.
     attr_accessor :source_project_id
@@ -79,10 +85,12 @@ module Phrase
       {
         :'name' => :'name',
         :'main_format' => :'main_format',
+        :'media' => :'media',
         :'shares_translation_memory' => :'shares_translation_memory',
         :'project_image' => :'project_image',
         :'remove_project_image' => :'remove_project_image',
         :'account_id' => :'account_id',
+        :'point_of_contact' => :'point_of_contact',
         :'source_project_id' => :'source_project_id',
         :'workflow' => :'workflow',
         :'machine_translation_enabled' => :'machine_translation_enabled',
@@ -109,10 +117,12 @@ module Phrase
       {
         :'name' => :'String',
         :'main_format' => :'String',
+        :'media' => :'String',
         :'shares_translation_memory' => :'Boolean',
         :'project_image' => :'File',
         :'remove_project_image' => :'Boolean',
         :'account_id' => :'String',
+        :'point_of_contact' => :'String',
         :'source_project_id' => :'String',
         :'workflow' => :'String',
         :'machine_translation_enabled' => :'Boolean',
@@ -163,6 +173,10 @@ module Phrase
         self.main_format = attributes[:'main_format']
       end
 
+      if attributes.key?(:'media')
+        self.media = attributes[:'media']
+      end
+
       if attributes.key?(:'shares_translation_memory')
         self.shares_translation_memory = attributes[:'shares_translation_memory']
       end
@@ -177,6 +191,10 @@ module Phrase
 
       if attributes.key?(:'account_id')
         self.account_id = attributes[:'account_id']
+      end
+
+      if attributes.key?(:'point_of_contact')
+        self.point_of_contact = attributes[:'point_of_contact']
       end
 
       if attributes.key?(:'source_project_id')
@@ -272,10 +290,12 @@ module Phrase
       self.class == o.class &&
           name == o.name &&
           main_format == o.main_format &&
+          media == o.media &&
           shares_translation_memory == o.shares_translation_memory &&
           project_image == o.project_image &&
           remove_project_image == o.remove_project_image &&
           account_id == o.account_id &&
+          point_of_contact == o.point_of_contact &&
           source_project_id == o.source_project_id &&
           workflow == o.workflow &&
           machine_translation_enabled == o.machine_translation_enabled &&
@@ -305,7 +325,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, main_format, shares_translation_memory, project_image, remove_project_image, account_id, source_project_id, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation].hash
+      [name, main_format, media, shares_translation_memory, project_image, remove_project_image, account_id, point_of_contact, source_project_id, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation].hash
     end
 
     # Builds the object from hash

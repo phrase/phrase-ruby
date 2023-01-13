@@ -8,8 +8,13 @@ module Phrase
     # (Optional) Name of the project
     attr_accessor :name
 
+    # (Optional) User ID of the point of contact for the project. Pass `null` to unset.
+    attr_accessor :point_of_contact
+
     # (Optional) Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see <a href=\"https://support.phrase.com/hc/en-us/sections/6111343326364\">Format Guide</a> or our <a href=\"#formats\">Formats API Endpoint</a>.
     attr_accessor :main_format
+
+    attr_accessor :media
 
     # (Optional) Indicates whether the project should share the account's translation memory
     attr_accessor :shares_translation_memory
@@ -76,7 +81,9 @@ module Phrase
       {
         :'account_id' => :'account_id',
         :'name' => :'name',
+        :'point_of_contact' => :'point_of_contact',
         :'main_format' => :'main_format',
+        :'media' => :'media',
         :'shares_translation_memory' => :'shares_translation_memory',
         :'project_image' => :'project_image',
         :'remove_project_image' => :'remove_project_image',
@@ -105,7 +112,9 @@ module Phrase
       {
         :'account_id' => :'String',
         :'name' => :'String',
+        :'point_of_contact' => :'String',
         :'main_format' => :'String',
+        :'media' => :'Object',
         :'shares_translation_memory' => :'Boolean',
         :'project_image' => :'File',
         :'remove_project_image' => :'Boolean',
@@ -158,8 +167,16 @@ module Phrase
         self.name = attributes[:'name']
       end
 
+      if attributes.key?(:'point_of_contact')
+        self.point_of_contact = attributes[:'point_of_contact']
+      end
+
       if attributes.key?(:'main_format')
         self.main_format = attributes[:'main_format']
+      end
+
+      if attributes.key?(:'media')
+        self.media = attributes[:'media']
       end
 
       if attributes.key?(:'shares_translation_memory')
@@ -263,7 +280,9 @@ module Phrase
       self.class == o.class &&
           account_id == o.account_id &&
           name == o.name &&
+          point_of_contact == o.point_of_contact &&
           main_format == o.main_format &&
+          media == o.media &&
           shares_translation_memory == o.shares_translation_memory &&
           project_image == o.project_image &&
           remove_project_image == o.remove_project_image &&
@@ -295,7 +314,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id, name, main_format, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation].hash
+      [account_id, name, point_of_contact, main_format, media, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation].hash
     end
 
     # Builds the object from hash
