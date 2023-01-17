@@ -235,6 +235,8 @@ project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  if_modified_since: 'if_modified_since_example', # String | Last modified condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
+  if_none_match: 'if_none_match_example', # String | ETag condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
   branch: 'my-feature-branch', # String | specify the branch to use
   file_format: 'yml', # String | File format name. See the <a href=\"https://support.phrase.com/hc/en-us/sections/6111343326364\">format guide</a> for all supported file formats.
   tags: 'feature1,feature2', # String | Limit results to keys tagged with a list of comma separated tag names.
@@ -270,6 +272,8 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **if_modified_since** | **String**| Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional] 
+ **if_none_match** | **String**| ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
  **file_format** | **String**| File format name. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/sections/6111343326364\&quot;&gt;format guide&lt;/a&gt; for all supported file formats. | [optional] 
  **tags** | **String**| Limit results to keys tagged with a list of comma separated tag names. | [optional] 
