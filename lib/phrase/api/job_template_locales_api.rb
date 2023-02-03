@@ -94,7 +94,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Object]
+    # @return [JobTemplateLocales]
     def job_template_locale_show(project_id, job_template_id, job_template_locale_id, opts = {})
       data, _status_code, _headers = job_template_locale_show_with_http_info(project_id, job_template_id, job_template_locale_id, opts)
       data
@@ -108,7 +108,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobTemplateLocales)>, Integer, Hash)>] Response<(JobTemplateLocales)> data, response status code and response headers
     def job_template_locale_show_with_http_info(project_id, job_template_id, job_template_locale_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobTemplateLocalesApi.job_template_locale_show ...'
@@ -145,7 +145,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobTemplateLocales' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -175,7 +175,7 @@ module Phrase
     # @param job_template_locale_update_parameters [JobTemplateLocaleUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [JobTemplateLocales]
     def job_template_locale_update(project_id, job_template_id, job_template_locale_id, job_template_locale_update_parameters, opts = {})
       data, _status_code, _headers = job_template_locale_update_with_http_info(project_id, job_template_id, job_template_locale_id, job_template_locale_update_parameters, opts)
       data
@@ -189,7 +189,7 @@ module Phrase
     # @param job_template_locale_update_parameters [JobTemplateLocaleUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobTemplateLocales)>, Integer, Hash)>] Response<(JobTemplateLocales)> data, response status code and response headers
     def job_template_locale_update_with_http_info(project_id, job_template_id, job_template_locale_id, job_template_locale_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobTemplateLocalesApi.job_template_locale_update ...'
@@ -231,7 +231,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_template_locale_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobTemplateLocales' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -260,7 +260,7 @@ module Phrase
     # @param job_template_locales_create_parameters [JobTemplateLocalesCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [JobTemplateLocale]
+    # @return [JobTemplateLocales]
     def job_template_locales_create(project_id, job_template_id, job_template_locales_create_parameters, opts = {})
       data, _status_code, _headers = job_template_locales_create_with_http_info(project_id, job_template_id, job_template_locales_create_parameters, opts)
       data
@@ -273,7 +273,7 @@ module Phrase
     # @param job_template_locales_create_parameters [JobTemplateLocalesCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(JobTemplateLocale)>, Integer, Hash)>] Response<(JobTemplateLocale)> data, response status code and response headers
+    # @return [Array<(Response<(JobTemplateLocales)>, Integer, Hash)>] Response<(JobTemplateLocales)> data, response status code and response headers
     def job_template_locales_create_with_http_info(project_id, job_template_id, job_template_locales_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobTemplateLocalesApi.job_template_locales_create ...'
@@ -311,7 +311,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_template_locales_create_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'JobTemplateLocale' 
+      return_type = opts[:return_type] || 'JobTemplateLocales' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -342,7 +342,7 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<Object>]
+    # @return [Array<JobTemplateLocales>]
     def job_template_locales_list(project_id, job_template_id, opts = {})
       data, _status_code, _headers = job_template_locales_list_with_http_info(project_id, job_template_id, opts)
       data
@@ -357,7 +357,7 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<JobTemplateLocales>)>, Integer, Hash)>] Response<(Array<JobTemplateLocales>)> data, response status code and response headers
     def job_template_locales_list_with_http_info(project_id, job_template_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobTemplateLocalesApi.job_template_locales_list ...'
@@ -392,7 +392,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<JobTemplateLocales>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

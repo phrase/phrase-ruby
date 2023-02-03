@@ -1,4 +1,4 @@
-# Phrase::JobTemplateLocale
+# Phrase::JobTemplateLocales
 
 ## Properties
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::JobTemplateLocale.new(id: null,
+instance = Phrase::JobTemplateLocales.new(id: null,
                                  job_template: null,
                                  locale: null,
                                  users: null)

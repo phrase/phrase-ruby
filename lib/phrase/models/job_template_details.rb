@@ -1,28 +1,40 @@
 require 'date'
 
 module Phrase
-  class NotificationGroupDetail
+  class JobTemplateDetails
     attr_accessor :id
 
-    attr_accessor :event_name
+    attr_accessor :name
+
+    attr_accessor :briefing
+
+    attr_accessor :project
+
+    attr_accessor :branch
 
     attr_accessor :created_at
 
     attr_accessor :updated_at
 
-    attr_accessor :notifications_count
+    attr_accessor :owner
 
-    attr_accessor :latest_notification
+    attr_accessor :creator
+
+    attr_accessor :locales
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'event_name' => :'event_name',
+        :'name' => :'name',
+        :'briefing' => :'briefing',
+        :'project' => :'project',
+        :'branch' => :'branch',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
-        :'notifications_count' => :'notifications_count',
-        :'latest_notification' => :'latest_notification'
+        :'owner' => :'owner',
+        :'creator' => :'creator',
+        :'locales' => :'locales'
       }
     end
 
@@ -30,11 +42,15 @@ module Phrase
     def self.openapi_types
       {
         :'id' => :'String',
-        :'event_name' => :'String',
+        :'name' => :'String',
+        :'briefing' => :'String',
+        :'project' => :'ProjectShort',
+        :'branch' => :'Branch',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
-        :'notifications_count' => :'Integer',
-        :'latest_notification' => :'Notification'
+        :'owner' => :'UserPreview',
+        :'creator' => :'UserPreview',
+        :'locales' => :'Array<LocalePreview>'
       }
     end
 
@@ -44,17 +60,25 @@ module Phrase
       ])
     end
 
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'JobTemplate',
+      :'JobTemplateDetails1'
+      ]
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::NotificationGroupDetail` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::JobTemplateDetails` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::NotificationGroupDetail`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::JobTemplateDetails`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -63,8 +87,20 @@ module Phrase
         self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'event_name')
-        self.event_name = attributes[:'event_name']
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.key?(:'briefing')
+        self.briefing = attributes[:'briefing']
+      end
+
+      if attributes.key?(:'project')
+        self.project = attributes[:'project']
+      end
+
+      if attributes.key?(:'branch')
+        self.branch = attributes[:'branch']
       end
 
       if attributes.key?(:'created_at')
@@ -75,12 +111,18 @@ module Phrase
         self.updated_at = attributes[:'updated_at']
       end
 
-      if attributes.key?(:'notifications_count')
-        self.notifications_count = attributes[:'notifications_count']
+      if attributes.key?(:'owner')
+        self.owner = attributes[:'owner']
       end
 
-      if attributes.key?(:'latest_notification')
-        self.latest_notification = attributes[:'latest_notification']
+      if attributes.key?(:'creator')
+        self.creator = attributes[:'creator']
+      end
+
+      if attributes.key?(:'locales')
+        if (value = attributes[:'locales']).is_a?(Array)
+          self.locales = value
+        end
       end
     end
 
@@ -103,11 +145,15 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          event_name == o.event_name &&
+          name == o.name &&
+          briefing == o.briefing &&
+          project == o.project &&
+          branch == o.branch &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
-          notifications_count == o.notifications_count &&
-          latest_notification == o.latest_notification
+          owner == o.owner &&
+          creator == o.creator &&
+          locales == o.locales
     end
 
     # @see the `==` method
@@ -119,7 +165,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, event_name, created_at, updated_at, notifications_count, latest_notification].hash
+      [id, name, briefing, project, branch, created_at, updated_at, owner, creator, locales].hash
     end
 
     # Builds the object from hash

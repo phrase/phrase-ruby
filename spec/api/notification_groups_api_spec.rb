@@ -27,7 +27,7 @@ describe 'NotificationGroupsApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
-  # @return [Array<Object>]
+  # @return [Array<NotificationGroupDetail>]
   describe 'notification_groups_list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -39,7 +39,7 @@ describe 'NotificationGroupsApi' do
   # Mark all notification groups of the current user as read
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Array<Object>]
+  # @return [Array<NotificationGroupDetail>]
   describe 'notification_groups_mark_all_as_read test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

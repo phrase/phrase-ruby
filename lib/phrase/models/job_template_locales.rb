@@ -1,28 +1,22 @@
 require 'date'
 
 module Phrase
-  class NotificationGroupDetail
+  class JobTemplateLocales
     attr_accessor :id
 
-    attr_accessor :event_name
+    attr_accessor :job_template
 
-    attr_accessor :created_at
+    attr_accessor :locale
 
-    attr_accessor :updated_at
-
-    attr_accessor :notifications_count
-
-    attr_accessor :latest_notification
+    attr_accessor :users
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'event_name' => :'event_name',
-        :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at',
-        :'notifications_count' => :'notifications_count',
-        :'latest_notification' => :'latest_notification'
+        :'job_template' => :'job_template',
+        :'locale' => :'locale',
+        :'users' => :'users'
       }
     end
 
@@ -30,11 +24,9 @@ module Phrase
     def self.openapi_types
       {
         :'id' => :'String',
-        :'event_name' => :'String',
-        :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime',
-        :'notifications_count' => :'Integer',
-        :'latest_notification' => :'Notification'
+        :'job_template' => :'JobTemplatePreview',
+        :'locale' => :'LocalePreview',
+        :'users' => :'Array<JobTemplateUserPreview>'
       }
     end
 
@@ -48,13 +40,13 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::NotificationGroupDetail` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::JobTemplateLocales` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::NotificationGroupDetail`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::JobTemplateLocales`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -63,24 +55,18 @@ module Phrase
         self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'event_name')
-        self.event_name = attributes[:'event_name']
+      if attributes.key?(:'job_template')
+        self.job_template = attributes[:'job_template']
       end
 
-      if attributes.key?(:'created_at')
-        self.created_at = attributes[:'created_at']
+      if attributes.key?(:'locale')
+        self.locale = attributes[:'locale']
       end
 
-      if attributes.key?(:'updated_at')
-        self.updated_at = attributes[:'updated_at']
-      end
-
-      if attributes.key?(:'notifications_count')
-        self.notifications_count = attributes[:'notifications_count']
-      end
-
-      if attributes.key?(:'latest_notification')
-        self.latest_notification = attributes[:'latest_notification']
+      if attributes.key?(:'users')
+        if (value = attributes[:'users']).is_a?(Array)
+          self.users = value
+        end
       end
     end
 
@@ -103,11 +89,9 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          event_name == o.event_name &&
-          created_at == o.created_at &&
-          updated_at == o.updated_at &&
-          notifications_count == o.notifications_count &&
-          latest_notification == o.latest_notification
+          job_template == o.job_template &&
+          locale == o.locale &&
+          users == o.users
     end
 
     # @see the `==` method
@@ -119,7 +103,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, event_name, created_at, updated_at, notifications_count, latest_notification].hash
+      [id, job_template, locale, users].hash
     end
 
     # Builds the object from hash

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## notification_groups_list
 
-> Array&lt;Object&gt; notification_groups_list(opts)
+> Array&lt;NotificationGroupDetail&gt; notification_groups_list(opts)
 
 List notification groups
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;NotificationGroupDetail&gt;**](NotificationGroupDetail.md))>
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## notification_groups_mark_all_as_read
 
-> Array&lt;Object&gt; notification_groups_mark_all_as_read(opts)
+> Array&lt;NotificationGroupDetail&gt; notification_groups_mark_all_as_read(opts)
 
 Mark all notification groups as read
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;NotificationGroupDetail&gt;**](NotificationGroupDetail.md))>
 
 ### Authorization
 

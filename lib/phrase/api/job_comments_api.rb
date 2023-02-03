@@ -174,7 +174,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Object]
+    # @return [JobComment]
     def job_comment_show(project_id, job_id, id, opts = {})
       data, _status_code, _headers = job_comment_show_with_http_info(project_id, job_id, id, opts)
       data
@@ -188,7 +188,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobComment)>, Integer, Hash)>] Response<(JobComment)> data, response status code and response headers
     def job_comment_show_with_http_info(project_id, job_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobCommentsApi.job_comment_show ...'
@@ -225,7 +225,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobComment' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -255,7 +255,7 @@ module Phrase
     # @param job_comment_update_parameters [JobCommentUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Object]
+    # @return [JobComment]
     def job_comment_update(project_id, key_id, id, job_comment_update_parameters, opts = {})
       data, _status_code, _headers = job_comment_update_with_http_info(project_id, key_id, id, job_comment_update_parameters, opts)
       data
@@ -269,7 +269,7 @@ module Phrase
     # @param job_comment_update_parameters [JobCommentUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Object)>, Integer, Hash)>] Response<(Object)> data, response status code and response headers
+    # @return [Array<(Response<(JobComment)>, Integer, Hash)>] Response<(JobComment)> data, response status code and response headers
     def job_comment_update_with_http_info(project_id, key_id, id, job_comment_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobCommentsApi.job_comment_update ...'
@@ -311,7 +311,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(job_comment_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'JobComment' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -340,7 +340,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<Object>]
+    # @return [Array<JobComment>]
     def job_comments_list(project_id, job_id, opts = {})
       data, _status_code, _headers = job_comments_list_with_http_info(project_id, job_id, opts)
       data
@@ -353,7 +353,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<JobComment>)>, Integer, Hash)>] Response<(Array<JobComment>)> data, response status code and response headers
     def job_comments_list_with_http_info(project_id, job_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobCommentsApi.job_comments_list ...'
@@ -386,7 +386,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<JobComment>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

@@ -145,7 +145,7 @@ Response<(nil (empty response body))>
 
 ## job_comment_show
 
-> Object job_comment_show(project_id, job_id, id, opts)
+> JobComment job_comment_show(project_id, job_id, id, opts)
 
 Get a single job comment
 
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobComment**](JobComment.md))>
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Response<(**Object**)>
 
 ## job_comment_update
 
-> Object job_comment_update(project_id, key_id, id, job_comment_update_parameters, opts)
+> JobComment job_comment_update(project_id, key_id, id, job_comment_update_parameters, opts)
 
 Update a job comment
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobComment**](JobComment.md))>
 
 ### Authorization
 
@@ -279,7 +279,7 @@ Response<(**Object**)>
 
 ## job_comments_list
 
-> Array&lt;Object&gt; job_comments_list(project_id, job_id, opts)
+> Array&lt;JobComment&gt; job_comments_list(project_id, job_id, opts)
 
 List job comments
 
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;JobComment&gt;**](JobComment.md))>
 
 ### Authorization
 

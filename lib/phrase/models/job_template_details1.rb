@@ -1,32 +1,28 @@
 require 'date'
 
 module Phrase
-  class JobTemplateLocale
-    attr_accessor :id
+  class JobTemplateDetails1
+    attr_accessor :owner
 
-    attr_accessor :job_template
+    attr_accessor :creator
 
-    attr_accessor :locale
-
-    attr_accessor :users
+    attr_accessor :locales
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'job_template' => :'job_template',
-        :'locale' => :'locale',
-        :'users' => :'users'
+        :'owner' => :'owner',
+        :'creator' => :'creator',
+        :'locales' => :'locales'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'job_template' => :'JobTemplatePreview',
-        :'locale' => :'LocalePreview',
-        :'users' => :'Array<JobTemplateUserPreview>'
+        :'owner' => :'UserPreview',
+        :'creator' => :'UserPreview',
+        :'locales' => :'Array<LocalePreview>'
       }
     end
 
@@ -40,32 +36,28 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::JobTemplateLocale` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::JobTemplateDetails1` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::JobTemplateLocale`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::JobTemplateDetails1`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:'owner')
+        self.owner = attributes[:'owner']
       end
 
-      if attributes.key?(:'job_template')
-        self.job_template = attributes[:'job_template']
+      if attributes.key?(:'creator')
+        self.creator = attributes[:'creator']
       end
 
-      if attributes.key?(:'locale')
-        self.locale = attributes[:'locale']
-      end
-
-      if attributes.key?(:'users')
-        if (value = attributes[:'users']).is_a?(Array)
-          self.users = value
+      if attributes.key?(:'locales')
+        if (value = attributes[:'locales']).is_a?(Array)
+          self.locales = value
         end
       end
     end
@@ -88,10 +80,9 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          job_template == o.job_template &&
-          locale == o.locale &&
-          users == o.users
+          owner == o.owner &&
+          creator == o.creator &&
+          locales == o.locales
     end
 
     # @see the `==` method
@@ -103,7 +94,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, job_template, locale, users].hash
+      [owner, creator, locales].hash
     end
 
     # Builds the object from hash

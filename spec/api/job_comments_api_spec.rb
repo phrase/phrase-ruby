@@ -60,7 +60,7 @@ describe 'JobCommentsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [String] :branch specify the branch to use
-  # @return [Object]
+  # @return [JobComment]
   describe 'job_comment_show test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -76,7 +76,7 @@ describe 'JobCommentsApi' do
   # @param job_comment_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [JobComment]
   describe 'job_comment_update test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -91,7 +91,7 @@ describe 'JobCommentsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [String] :branch specify the branch to use
-  # @return [Array<Object>]
+  # @return [Array<JobComment>]
   describe 'job_comments_list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -14,7 +14,7 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [Boolean] :unseen Include only unseen notifications
-    # @return [Array<Object>]
+    # @return [Array<Notification>]
     def notifications_list(opts = {})
       data, _status_code, _headers = notifications_list_with_http_info(opts)
       data
@@ -27,7 +27,7 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [Boolean] :unseen Include only unseen notifications
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Notification>)>, Integer, Hash)>] Response<(Array<Notification>)> data, response status code and response headers
     def notifications_list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NotificationsApi.notifications_list ...'
@@ -54,7 +54,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Notification>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -80,7 +80,7 @@ module Phrase
     # Mark all notifications of the current user as read
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<Object>]
+    # @return [Array<Notification>]
     def notifications_mark_all_as_read(opts = {})
       data, _status_code, _headers = notifications_mark_all_as_read_with_http_info(opts)
       data
@@ -90,7 +90,7 @@ module Phrase
     # Mark all notifications of the current user as read
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Notification>)>, Integer, Hash)>] Response<(Array<Notification>)> data, response status code and response headers
     def notifications_mark_all_as_read_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NotificationsApi.notifications_mark_all_as_read ...'
@@ -114,7 +114,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<Notification>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

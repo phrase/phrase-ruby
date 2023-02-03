@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## notifications_list
 
-> Array&lt;Object&gt; notifications_list(opts)
+> Array&lt;Notification&gt; notifications_list(opts)
 
 List notifications
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Notification&gt;**](Notification.md))>
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Response<(**Array&lt;Object&gt;**)>
 
 ## notifications_mark_all_as_read
 
-> Array&lt;Object&gt; notifications_mark_all_as_read(opts)
+> Array&lt;Notification&gt; notifications_mark_all_as_read(opts)
 
 Mark all notifications as read
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;Notification&gt;**](Notification.md))>
 
 ### Authorization
 

@@ -14,6 +14,7 @@ module Phrase
     # (Optional) Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see <a href=\"https://support.phrase.com/hc/en-us/sections/6111343326364\">Format Guide</a> or our <a href=\"#formats\">Formats API Endpoint</a>.
     attr_accessor :main_format
 
+    # (Optional) Main technology stack used in the project. It affects for example the suggested placeholder style. Predefined values include: `Ruby`, `JavaScript`, `AngularJS`, `React`, `iOS`, `Android`, `Python`, `PHP`, `Java`, `Go`, `Windows Phone`, `Rails`, `Node.js`, `.NET`, `Django`, `Symfony`, `Yii Framework`, `Zend Framework`, `Apple App Store Description`, `Google Play Description`, but it can also take any other value.
     attr_accessor :media
 
     # (Optional) Indicates whether the project should share the account's translation memory
@@ -114,7 +115,7 @@ module Phrase
         :'name' => :'String',
         :'point_of_contact' => :'String',
         :'main_format' => :'String',
-        :'media' => :'Object',
+        :'media' => :'String',
         :'shares_translation_memory' => :'Boolean',
         :'project_image' => :'File',
         :'remove_project_image' => :'Boolean',

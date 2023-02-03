@@ -28,7 +28,7 @@ describe 'NotificationsApi' do
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
   # @option opts [Boolean] :unseen Include only unseen notifications
-  # @return [Array<Object>]
+  # @return [Array<Notification>]
   describe 'notifications_list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -40,7 +40,7 @@ describe 'NotificationsApi' do
   # Mark all notifications of the current user as read
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Array<Object>]
+  # @return [Array<Notification>]
   describe 'notifications_mark_all_as_read test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

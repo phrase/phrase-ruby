@@ -45,7 +45,7 @@ describe 'JobTemplateLocalesApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [String] :branch specify the branch to use
-  # @return [Object]
+  # @return [JobTemplateLocales]
   describe 'job_template_locale_show test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -61,7 +61,7 @@ describe 'JobTemplateLocalesApi' do
   # @param job_template_locale_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [JobTemplateLocales]
   describe 'job_template_locale_update test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -76,7 +76,7 @@ describe 'JobTemplateLocalesApi' do
   # @param job_template_locales_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [JobTemplateLocale]
+  # @return [JobTemplateLocales]
   describe 'job_template_locales_create test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -93,7 +93,7 @@ describe 'JobTemplateLocalesApi' do
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
   # @option opts [String] :branch specify the branch to use
-  # @return [Array<Object>]
+  # @return [Array<JobTemplateLocales>]
   describe 'job_template_locales_list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

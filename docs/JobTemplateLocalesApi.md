@@ -80,7 +80,7 @@ Response<(nil (empty response body))>
 
 ## job_template_locale_show
 
-> Object job_template_locale_show(project_id, job_template_id, job_template_locale_id, opts)
+> JobTemplateLocales job_template_locale_show(project_id, job_template_id, job_template_locale_id, opts)
 
 Get a single job template locale
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobTemplateLocales**](JobTemplateLocales.md))>
 
 ### Authorization
 
@@ -147,7 +147,7 @@ Response<(**Object**)>
 
 ## job_template_locale_update
 
-> Object job_template_locale_update(project_id, job_template_id, job_template_locale_id, job_template_locale_update_parameters, opts)
+> JobTemplateLocales job_template_locale_update(project_id, job_template_id, job_template_locale_id, job_template_locale_update_parameters, opts)
 
 Update a job template locale
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Object**)>
+Response<([**JobTemplateLocales**](JobTemplateLocales.md))>
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Response<(**Object**)>
 
 ## job_template_locales_create
 
-> JobTemplateLocale job_template_locales_create(project_id, job_template_id, job_template_locales_create_parameters, opts)
+> JobTemplateLocales job_template_locales_create(project_id, job_template_id, job_template_locales_create_parameters, opts)
 
 Create a job template locale
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<([**JobTemplateLocale**](JobTemplateLocale.md))>
+Response<([**JobTemplateLocales**](JobTemplateLocales.md))>
 
 ### Authorization
 
@@ -279,7 +279,7 @@ Response<([**JobTemplateLocale**](JobTemplateLocale.md))>
 
 ## job_template_locales_list
 
-> Array&lt;Object&gt; job_template_locales_list(project_id, job_template_id, opts)
+> Array&lt;JobTemplateLocales&gt; job_template_locales_list(project_id, job_template_id, opts)
 
 List job template locales
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(**Array&lt;Object&gt;**)>
+Response<([**Array&lt;JobTemplateLocales&gt;**](JobTemplateLocales.md))>
 
 ### Authorization
 

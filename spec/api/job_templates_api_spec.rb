@@ -27,7 +27,7 @@ describe 'JobTemplatesApi' do
   # @param job_template_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [JobTemplateDetails]
   describe 'job_template_create test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -49,21 +49,6 @@ describe 'JobTemplatesApi' do
     end
   end
 
-  # unit tests for job_template_show
-  # Get a single job template
-  # Get details on a single job template for a given project.
-  # @param project_id Project ID
-  # @param id ID
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :branch specify the branch to use
-  # @return [Object]
-  describe 'job_template_show test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for job_template_update
   # Update a job template
   # Update an existing job template.
@@ -72,7 +57,7 @@ describe 'JobTemplatesApi' do
   # @param job_template_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [Object]
+  # @return [JobTemplateDetails]
   describe 'job_template_update test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -90,6 +75,21 @@ describe 'JobTemplatesApi' do
   # @option opts [String] :branch specify the branch to use
   # @return [Array<JobTemplate>]
   describe 'job_templates_list test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for job_templates_show
+  # Get a single job template
+  # Get details on a single job template for a given project.
+  # @param project_id Project ID
+  # @param id ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch specify the branch to use
+  # @return [JobTemplateDetails]
+  describe 'job_templates_show test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

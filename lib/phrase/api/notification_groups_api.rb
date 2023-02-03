@@ -13,7 +13,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    # @return [Array<Object>]
+    # @return [Array<NotificationGroupDetail>]
     def notification_groups_list(opts = {})
       data, _status_code, _headers = notification_groups_list_with_http_info(opts)
       data
@@ -25,7 +25,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<NotificationGroupDetail>)>, Integer, Hash)>] Response<(Array<NotificationGroupDetail>)> data, response status code and response headers
     def notification_groups_list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NotificationGroupsApi.notification_groups_list ...'
@@ -51,7 +51,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<NotificationGroupDetail>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -77,7 +77,7 @@ module Phrase
     # Mark all notification groups of the current user as read
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<Object>]
+    # @return [Array<NotificationGroupDetail>]
     def notification_groups_mark_all_as_read(opts = {})
       data, _status_code, _headers = notification_groups_mark_all_as_read_with_http_info(opts)
       data
@@ -87,7 +87,7 @@ module Phrase
     # Mark all notification groups of the current user as read
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Array<Object>)>, Integer, Hash)>] Response<(Array<Object>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<NotificationGroupDetail>)>, Integer, Hash)>] Response<(Array<NotificationGroupDetail>)> data, response status code and response headers
     def notification_groups_mark_all_as_read_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NotificationGroupsApi.notification_groups_mark_all_as_read ...'
@@ -111,7 +111,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<Object>' 
+      return_type = opts[:return_type] || 'Array<NotificationGroupDetail>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

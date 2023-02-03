@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 **notifications_count** | **Integer** |  | [optional] 
-**latest_notification** | **Object** |  | [optional] 
+**latest_notification** | [**Notification**](Notification.md) |  | [optional] 
 
 ## Code Sample
 
