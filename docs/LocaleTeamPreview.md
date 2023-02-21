@@ -1,11 +1,10 @@
-# Phrase::JobTemplateUserPreview
+# Phrase::LocaleTeamPreview
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**username** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **role** | **String** |  | [optional] 
 
@@ -14,8 +13,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::JobTemplateUserPreview.new(id: null,
-                                 username: null,
+instance = Phrase::LocaleTeamPreview.new(id: null,
                                  name: null,
                                  role: null)
 ```

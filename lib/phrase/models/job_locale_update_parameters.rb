@@ -14,13 +14,21 @@ module Phrase
     # Array of reviewer ids to be assigned to the job locale as reviewers
     attr_accessor :reviewer_ids
 
+    # Array of team ids to be assigned to the job locale as translators
+    attr_accessor :translator_team_ids
+
+    # Array of team ids to be assigned to the job locale as reviewers
+    attr_accessor :reviewer_team_ids
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'branch' => :'branch',
         :'locale_id' => :'locale_id',
         :'user_ids' => :'user_ids',
-        :'reviewer_ids' => :'reviewer_ids'
+        :'reviewer_ids' => :'reviewer_ids',
+        :'translator_team_ids' => :'translator_team_ids',
+        :'reviewer_team_ids' => :'reviewer_team_ids'
       }
     end
 
@@ -30,7 +38,9 @@ module Phrase
         :'branch' => :'String',
         :'locale_id' => :'String',
         :'user_ids' => :'Array<String>',
-        :'reviewer_ids' => :'Array<String>'
+        :'reviewer_ids' => :'Array<String>',
+        :'translator_team_ids' => :'Array<String>',
+        :'reviewer_team_ids' => :'Array<String>'
       }
     end
 
@@ -74,6 +84,18 @@ module Phrase
           self.reviewer_ids = value
         end
       end
+
+      if attributes.key?(:'translator_team_ids')
+        if (value = attributes[:'translator_team_ids']).is_a?(Array)
+          self.translator_team_ids = value
+        end
+      end
+
+      if attributes.key?(:'reviewer_team_ids')
+        if (value = attributes[:'reviewer_team_ids']).is_a?(Array)
+          self.reviewer_team_ids = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -97,7 +119,9 @@ module Phrase
           branch == o.branch &&
           locale_id == o.locale_id &&
           user_ids == o.user_ids &&
-          reviewer_ids == o.reviewer_ids
+          reviewer_ids == o.reviewer_ids &&
+          translator_team_ids == o.translator_team_ids &&
+          reviewer_team_ids == o.reviewer_team_ids
     end
 
     # @see the `==` method
@@ -109,7 +133,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, locale_id, user_ids, reviewer_ids].hash
+      [branch, locale_id, user_ids, reviewer_ids, translator_team_ids, reviewer_team_ids].hash
     end
 
     # Builds the object from hash

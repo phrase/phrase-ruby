@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **job_template** | [**JobTemplatePreview**](JobTemplatePreview.md) |  | [optional] 
 **locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
-**users** | [**Array&lt;JobTemplateUserPreview&gt;**](JobTemplateUserPreview.md) |  | [optional] 
+**users** | [**Array&lt;Items&gt;**](Items.md) |  | [optional] 
+**teams** | [**Array&lt;Items&gt;**](Items.md) |  | [optional] 
 
 ## Code Sample
 
@@ -17,7 +18,8 @@ require 'Phrase'
 instance = Phrase::JobTemplateLocales.new(id: null,
                                  job_template: null,
                                  locale: null,
-                                 users: null)
+                                 users: null,
+                                 teams: null)
 ```
 
 

@@ -1,46 +1,28 @@
 require 'date'
 
 module Phrase
-  class JobTemplateLocalesCreateParameters
-    # specify the branch to use
-    attr_accessor :branch
+  class LocaleTeamPreview
+    attr_accessor :id
 
-    # locale id
-    attr_accessor :locale_id
+    attr_accessor :name
 
-    # Array of user ids to be assigned to the job template locale
-    attr_accessor :user_ids
-
-    # Array of reviewer ids to be assigned to the job template locale
-    attr_accessor :reviewer_ids
-
-    # Array of team ids to be assigned to the job locale as translators
-    attr_accessor :translator_team_ids
-
-    # Array of team ids to be assigned to the job locale as reviewers
-    attr_accessor :reviewer_team_ids
+    attr_accessor :role
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'branch' => :'branch',
-        :'locale_id' => :'locale_id',
-        :'user_ids' => :'user_ids',
-        :'reviewer_ids' => :'reviewer_ids',
-        :'translator_team_ids' => :'translator_team_ids',
-        :'reviewer_team_ids' => :'reviewer_team_ids'
+        :'id' => :'id',
+        :'name' => :'name',
+        :'role' => :'role'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'branch' => :'String',
-        :'locale_id' => :'String',
-        :'user_ids' => :'Array<String>',
-        :'reviewer_ids' => :'Array<String>',
-        :'translator_team_ids' => :'Array<String>',
-        :'reviewer_team_ids' => :'Array<String>'
+        :'id' => :'String',
+        :'name' => :'String',
+        :'role' => :'String'
       }
     end
 
@@ -54,47 +36,27 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::JobTemplateLocalesCreateParameters` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::LocaleTeamPreview` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::JobTemplateLocalesCreateParameters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::LocaleTeamPreview`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'branch')
-        self.branch = attributes[:'branch']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'locale_id')
-        self.locale_id = attributes[:'locale_id']
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'user_ids')
-        if (value = attributes[:'user_ids']).is_a?(Array)
-          self.user_ids = value
-        end
-      end
-
-      if attributes.key?(:'reviewer_ids')
-        if (value = attributes[:'reviewer_ids']).is_a?(Array)
-          self.reviewer_ids = value
-        end
-      end
-
-      if attributes.key?(:'translator_team_ids')
-        if (value = attributes[:'translator_team_ids']).is_a?(Array)
-          self.translator_team_ids = value
-        end
-      end
-
-      if attributes.key?(:'reviewer_team_ids')
-        if (value = attributes[:'reviewer_team_ids']).is_a?(Array)
-          self.reviewer_team_ids = value
-        end
+      if attributes.key?(:'role')
+        self.role = attributes[:'role']
       end
     end
 
@@ -102,17 +64,12 @@ module Phrase
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @locale_id.nil?
-        invalid_properties.push('invalid value for "locale_id", locale_id cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @locale_id.nil?
       true
     end
 
@@ -121,12 +78,9 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          branch == o.branch &&
-          locale_id == o.locale_id &&
-          user_ids == o.user_ids &&
-          reviewer_ids == o.reviewer_ids &&
-          translator_team_ids == o.translator_team_ids &&
-          reviewer_team_ids == o.reviewer_team_ids
+          id == o.id &&
+          name == o.name &&
+          role == o.role
     end
 
     # @see the `==` method
@@ -138,7 +92,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, locale_id, user_ids, reviewer_ids, translator_team_ids, reviewer_team_ids].hash
+      [id, name, role].hash
     end
 
     # Builds the object from hash

@@ -10,6 +10,8 @@ module Phrase
 
     attr_accessor :users
 
+    attr_accessor :teams
+
     attr_accessor :completed
 
     attr_accessor :translation_completed_at
@@ -23,6 +25,7 @@ module Phrase
         :'job' => :'job',
         :'locale' => :'locale',
         :'users' => :'users',
+        :'teams' => :'teams',
         :'completed' => :'completed',
         :'translation_completed_at' => :'translation_completed_at',
         :'review_completed_at' => :'review_completed_at'
@@ -35,7 +38,8 @@ module Phrase
         :'id' => :'String',
         :'job' => :'JobPreview',
         :'locale' => :'LocalePreview',
-        :'users' => :'Array<UserPreview>',
+        :'users' => :'Array<LocaleUserPreview>',
+        :'teams' => :'Array<LocaleTeamPreview>',
         :'completed' => :'Boolean',
         :'translation_completed_at' => :'DateTime',
         :'review_completed_at' => :'DateTime'
@@ -81,6 +85,12 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'teams')
+        if (value = attributes[:'teams']).is_a?(Array)
+          self.teams = value
+        end
+      end
+
       if attributes.key?(:'completed')
         self.completed = attributes[:'completed']
       end
@@ -116,6 +126,7 @@ module Phrase
           job == o.job &&
           locale == o.locale &&
           users == o.users &&
+          teams == o.teams &&
           completed == o.completed &&
           translation_completed_at == o.translation_completed_at &&
           review_completed_at == o.review_completed_at
@@ -130,7 +141,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, job, locale, users, completed, translation_completed_at, review_completed_at].hash
+      [id, job, locale, users, teams, completed, translation_completed_at, review_completed_at].hash
     end
 
     # Builds the object from hash

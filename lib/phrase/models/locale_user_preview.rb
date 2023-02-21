@@ -1,7 +1,7 @@
 require 'date'
 
 module Phrase
-  class JobTemplateUserPreview
+  class LocaleUserPreview
     attr_accessor :id
 
     attr_accessor :username
@@ -40,13 +40,13 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::JobTemplateUserPreview` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::LocaleUserPreview` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::JobTemplateUserPreview`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::LocaleUserPreview`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
