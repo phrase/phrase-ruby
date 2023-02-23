@@ -29,8 +29,8 @@ module Phrase
         :'id' => :'String',
         :'job_template' => :'JobTemplatePreview',
         :'locale' => :'LocalePreview',
-        :'users' => :'Array<Items>',
-        :'teams' => :'Array<Items>'
+        :'users' => :'Array<LocaleUserPreview>',
+        :'teams' => :'Array<LocaleTeamPreview>'
       }
     end
 
