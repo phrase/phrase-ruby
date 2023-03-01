@@ -8,4 +8,4 @@ script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
   - gem build phrase.gemspec
-  - gem install ./phrase-2.8.7.gem
+  - gem install ./phrase-2.9.0.gem
