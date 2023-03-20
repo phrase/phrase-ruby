@@ -18,6 +18,8 @@ module Phrase
 
     attr_accessor :locale_codes
 
+    attr_accessor :tags
+
     attr_accessor :project
 
     attr_accessor :created_at
@@ -35,6 +37,7 @@ module Phrase
         :'platforms' => :'platforms',
         :'environments' => :'environments',
         :'locale_codes' => :'locale_codes',
+        :'tags' => :'tags',
         :'project' => :'project',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at'
@@ -52,6 +55,7 @@ module Phrase
         :'platforms' => :'Array<String>',
         :'environments' => :'Array<String>',
         :'locale_codes' => :'Array<String>',
+        :'tags' => :'Array<String>',
         :'project' => :'ProjectShort',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
@@ -117,6 +121,12 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'tags')
+        if (value = attributes[:'tags']).is_a?(Array)
+          self.tags = value
+        end
+      end
+
       if attributes.key?(:'project')
         self.project = attributes[:'project']
       end
@@ -156,6 +166,7 @@ module Phrase
           platforms == o.platforms &&
           environments == o.environments &&
           locale_codes == o.locale_codes &&
+          tags == o.tags &&
           project == o.project &&
           created_at == o.created_at &&
           updated_at == o.updated_at
@@ -170,7 +181,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, version, app_min_version, app_max_version, description, platforms, environments, locale_codes, project, created_at, updated_at].hash
+      [id, version, app_min_version, app_max_version, description, platforms, environments, locale_codes, tags, project, created_at, updated_at].hash
     end
 
     # Builds the object from hash

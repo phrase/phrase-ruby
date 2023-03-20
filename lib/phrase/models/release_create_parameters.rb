@@ -11,6 +11,9 @@ module Phrase
     # List of locale ids that will be included in the release. If empty, distribution locales will be used
     attr_accessor :locale_ids
 
+    # Only include tagged keys in the release. For a key to be included it must be tagged with all tags provided
+    attr_accessor :tags
+
     # Branch used for release
     attr_accessor :branch
 
@@ -20,6 +23,7 @@ module Phrase
         :'description' => :'description',
         :'platforms' => :'platforms',
         :'locale_ids' => :'locale_ids',
+        :'tags' => :'tags',
         :'branch' => :'branch'
       }
     end
@@ -30,6 +34,7 @@ module Phrase
         :'description' => :'String',
         :'platforms' => :'Array<String>',
         :'locale_ids' => :'Array<String>',
+        :'tags' => :'Array<String>',
         :'branch' => :'String'
       }
     end
@@ -71,6 +76,12 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'tags')
+        if (value = attributes[:'tags']).is_a?(Array)
+          self.tags = value
+        end
+      end
+
       if attributes.key?(:'branch')
         self.branch = attributes[:'branch']
       end
@@ -97,6 +108,7 @@ module Phrase
           description == o.description &&
           platforms == o.platforms &&
           locale_ids == o.locale_ids &&
+          tags == o.tags &&
           branch == o.branch
     end
 
@@ -109,7 +121,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [description, platforms, locale_ids, branch].hash
+      [description, platforms, locale_ids, tags, branch].hash
     end
 
     # Builds the object from hash
