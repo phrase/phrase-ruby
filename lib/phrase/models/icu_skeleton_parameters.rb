@@ -14,13 +14,17 @@ module Phrase
     # Indicates whether the zero form should be included or excluded in the returned skeletons
     attr_accessor :zero_form_enabled
 
+    # Strings supports two CLDR variants, when it comes to pluralization rules. \\ You can choose which one you want to use when constructing the skeletons. Possible values \\ are `legacy` and `cldr_41`. Default value is `legacy`.
+    attr_accessor :cldr_version
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'content' => :'content',
         :'locale_codes' => :'locale_codes',
         :'keep_content' => :'keep_content',
-        :'zero_form_enabled' => :'zero_form_enabled'
+        :'zero_form_enabled' => :'zero_form_enabled',
+        :'cldr_version' => :'cldr_version'
       }
     end
 
@@ -30,7 +34,8 @@ module Phrase
         :'content' => :'String',
         :'locale_codes' => :'Array<String>',
         :'keep_content' => :'Boolean',
-        :'zero_form_enabled' => :'Boolean'
+        :'zero_form_enabled' => :'Boolean',
+        :'cldr_version' => :'String'
       }
     end
 
@@ -72,6 +77,10 @@ module Phrase
       if attributes.key?(:'zero_form_enabled')
         self.zero_form_enabled = attributes[:'zero_form_enabled']
       end
+
+      if attributes.key?(:'cldr_version')
+        self.cldr_version = attributes[:'cldr_version']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -95,7 +104,8 @@ module Phrase
           content == o.content &&
           locale_codes == o.locale_codes &&
           keep_content == o.keep_content &&
-          zero_form_enabled == o.zero_form_enabled
+          zero_form_enabled == o.zero_form_enabled &&
+          cldr_version == o.cldr_version
     end
 
     # @see the `==` method
@@ -107,7 +117,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [content, locale_codes, keep_content, zero_form_enabled].hash
+      [content, locale_codes, keep_content, zero_form_enabled, cldr_version].hash
     end
 
     # Builds the object from hash
