@@ -384,7 +384,7 @@ module Phrase
         fail ArgumentError, "Missing the required parameter 'id' when calling JobLocalesApi.job_locale_show"
       end
       # resource path
-      local_var_path = '/projects/{project_id}/jobs/{job_id}/locale/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
+      local_var_path = '/projects/{project_id}/jobs/{job_id}/locales/{id}'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'job_id' + '}', CGI.escape(job_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
