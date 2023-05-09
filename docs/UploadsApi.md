@@ -52,7 +52,7 @@ opts = {
   locale_mapping: nil, # Object | Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.
   format_options: nil, # Object | Additional options available for specific formats. See our format guide for complete list.
   autotranslate: true, # Boolean | If set, translations for the uploaded language will be fetched automatically.
-  mark_reviewed: true # Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
+  mark_reviewed: true # Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
 }
 
 begin
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
  **locale_mapping** | [**Object**](Object.md)| Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. | [optional] 
  **format_options** | [**Object**](Object.md)| Additional options available for specific formats. See our format guide for complete list. | [optional] 
  **autotranslate** | **Boolean**| If set, translations for the uploaded language will be fetched automatically. | [optional] 
- **mark_reviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. | [optional] 
+ **mark_reviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. | [optional] 
 
 ### Return type
 

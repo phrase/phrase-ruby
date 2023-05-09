@@ -44,7 +44,7 @@ module Phrase
     # If set, translations for the uploaded language will be fetched automatically.
     attr_accessor :autotranslate
 
-    # Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
+    # Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     attr_accessor :mark_reviewed
 
     # Attribute mapping from ruby-style variable name to JSON key.

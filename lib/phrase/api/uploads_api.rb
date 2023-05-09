@@ -26,7 +26,7 @@ module Phrase
     # @option opts [Object] :locale_mapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.
     # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for complete list.
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
-    # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
+    # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     # @return [Upload]
     def upload_create(project_id, opts = {})
       data, _status_code, _headers = upload_create_with_http_info(project_id, opts)
@@ -52,7 +52,7 @@ module Phrase
     # @option opts [Object] :locale_mapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.
     # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for complete list.
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
-    # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
+    # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     # @return [Array<(Response<(Upload)>, Integer, Hash)>] Response<(Upload)> data, response status code and response headers
     def upload_create_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
