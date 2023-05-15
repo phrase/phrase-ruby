@@ -6,12 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**job_locale_complete**](JobLocalesApi.md#job_locale_complete) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete | Complete a job locale
 [**job_locale_complete_review**](JobLocalesApi.md#job_locale_complete_review) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete_review | Review a job locale
-[**job_locale_delete**](JobLocalesApi.md#job_locale_delete) | **DELETE** /projects/{project_id}/jobs/{job_id}/locales/{id} | Delete a job locale
+[**job_locale_delete**](JobLocalesApi.md#job_locale_delete) | **DELETE** /projects/{project_id}/jobs/{job_id}/locales/{id} | Remove a target locale from a job
 [**job_locale_reopen**](JobLocalesApi.md#job_locale_reopen) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/reopen | Reopen a job locale
-[**job_locale_show**](JobLocalesApi.md#job_locale_show) | **GET** /projects/{project_id}/jobs/{job_id}/locales/{id} | Get a single job locale
-[**job_locale_update**](JobLocalesApi.md#job_locale_update) | **PATCH** /projects/{project_id}/jobs/{job_id}/locales/{id} | Update a job locale
-[**job_locales_create**](JobLocalesApi.md#job_locales_create) | **POST** /projects/{project_id}/jobs/{job_id}/locales | Create a job locale
-[**job_locales_list**](JobLocalesApi.md#job_locales_list) | **GET** /projects/{project_id}/jobs/{job_id}/locales | List job locales
+[**job_locale_show**](JobLocalesApi.md#job_locale_show) | **GET** /projects/{project_id}/jobs/{job_id}/locales/{id} | Show single job target locale
+[**job_locale_update**](JobLocalesApi.md#job_locale_update) | **PATCH** /projects/{project_id}/jobs/{job_id}/locales/{id} | Update a job target locale
+[**job_locales_create**](JobLocalesApi.md#job_locales_create) | **POST** /projects/{project_id}/jobs/{job_id}/locales | Add a target locale to a job
+[**job_locales_list**](JobLocalesApi.md#job_locales_list) | **GET** /projects/{project_id}/jobs/{job_id}/locales | List job target locales
 
 
 
@@ -153,9 +153,9 @@ Response<([**JobLocale**](JobLocale.md))>
 
 > job_locale_delete(project_id, job_id, id, opts)
 
-Delete a job locale
+Remove a target locale from a job
 
-Delete an existing job locale.
+Removes a target locale from a job.
 
 ### Example
 
@@ -183,7 +183,7 @@ opts = {
 }
 
 begin
-  #Delete a job locale
+  #Remove a target locale from a job
   api_instance.job_locale_delete(project_id, job_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling JobLocalesApi->job_locale_delete: #{e}"
@@ -286,9 +286,9 @@ Response<([**JobLocale**](JobLocale.md))>
 
 > JobLocale job_locale_show(project_id, job_id, id, opts)
 
-Get a single job locale
+Show single job target locale
 
-Get a single job locale for a given job.
+Get a single target locale for a given job.
 
 ### Example
 
@@ -316,7 +316,7 @@ opts = {
 }
 
 begin
-  #Get a single job locale
+  #Show single job target locale
   result = api_instance.job_locale_show(project_id, job_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -353,9 +353,9 @@ Response<([**JobLocale**](JobLocale.md))>
 
 > JobLocale job_locale_update(project_id, job_id, id, job_locale_update_parameters, opts)
 
-Update a job locale
+Update a job target locale
 
-Update an existing job locale.
+Update an existing job target locale.
 
 ### Example
 
@@ -383,7 +383,7 @@ opts = {
 }
 
 begin
-  #Update a job locale
+  #Update a job target locale
   result = api_instance.job_locale_update(project_id, job_id, id, job_locale_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -420,9 +420,9 @@ Response<([**JobLocale**](JobLocale.md))>
 
 > JobLocale job_locales_create(project_id, job_id, job_locales_create_parameters, opts)
 
-Create a job locale
+Add a target locale to a job
 
-Create a new job locale.
+Adds a target locale to a job.
 
 ### Example
 
@@ -449,7 +449,7 @@ opts = {
 }
 
 begin
-  #Create a job locale
+  #Add a target locale to a job
   result = api_instance.job_locales_create(project_id, job_id, job_locales_create_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
@@ -485,9 +485,9 @@ Response<([**JobLocale**](JobLocale.md))>
 
 > Array&lt;JobLocale&gt; job_locales_list(project_id, job_id, opts)
 
-List job locales
+List job target locales
 
-List all job locales for a given job.
+List all target locales for a given job.
 
 ### Example
 
@@ -516,7 +516,7 @@ opts = {
 }
 
 begin
-  #List job locales
+  #List job target locales
   result = api_instance.job_locales_list(project_id, job_id, opts)
   pp result
 rescue Phrase::ApiError => e

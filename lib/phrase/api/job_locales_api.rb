@@ -179,8 +179,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Delete a job locale
-    # Delete an existing job locale.
+    # Remove a target locale from a job
+    # Removes a target locale from a job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
@@ -193,8 +193,8 @@ module Phrase
       data
     end
 
-    # Delete a job locale
-    # Delete an existing job locale.
+    # Remove a target locale from a job
+    # Removes a target locale from a job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
@@ -344,8 +344,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Get a single job locale
-    # Get a single job locale for a given job.
+    # Show single job target locale
+    # Get a single target locale for a given job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
@@ -358,8 +358,8 @@ module Phrase
       data
     end
 
-    # Get a single job locale
-    # Get a single job locale for a given job.
+    # Show single job target locale
+    # Get a single target locale for a given job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
@@ -425,8 +425,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Update a job locale
-    # Update an existing job locale.
+    # Update a job target locale
+    # Update an existing job target locale.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
@@ -439,8 +439,8 @@ module Phrase
       data
     end
 
-    # Update a job locale
-    # Update an existing job locale.
+    # Update a job target locale
+    # Update an existing job target locale.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param id [String] ID
@@ -511,8 +511,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Create a job locale
-    # Create a new job locale.
+    # Add a target locale to a job
+    # Adds a target locale to a job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param job_locales_create_parameters [JobLocalesCreateParameters] 
@@ -524,8 +524,8 @@ module Phrase
       data
     end
 
-    # Create a job locale
-    # Create a new job locale.
+    # Add a target locale to a job
+    # Adds a target locale to a job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param job_locales_create_parameters [JobLocalesCreateParameters] 
@@ -591,8 +591,8 @@ module Phrase
       return response, status_code, headers
     end
 
-    # List job locales
-    # List all job locales for a given job.
+    # List job target locales
+    # List all target locales for a given job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param [Hash] opts the optional parameters
@@ -606,8 +606,8 @@ module Phrase
       data
     end
 
-    # List job locales
-    # List all job locales for a given job.
+    # List job target locales
+    # List all target locales for a given job.
     # @param project_id [String] Project ID
     # @param job_id [String] Job ID
     # @param [Hash] opts the optional parameters

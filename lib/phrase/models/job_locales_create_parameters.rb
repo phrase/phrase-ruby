@@ -5,7 +5,7 @@ module Phrase
     # specify the branch to use
     attr_accessor :branch
 
-    # locale id
+    # ID of a locale to be added
     attr_accessor :locale_id
 
     # Array of user ids to be assigned to the job locale as translators

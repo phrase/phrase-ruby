@@ -53,8 +53,8 @@ describe 'JobLocalesApi' do
   end
 
   # unit tests for job_locale_delete
-  # Delete a job locale
-  # Delete an existing job locale.
+  # Remove a target locale from a job
+  # Removes a target locale from a job.
   # @param project_id Project ID
   # @param job_id Job ID
   # @param id ID
@@ -85,8 +85,8 @@ describe 'JobLocalesApi' do
   end
 
   # unit tests for job_locale_show
-  # Get a single job locale
-  # Get a single job locale for a given job.
+  # Show single job target locale
+  # Get a single target locale for a given job.
   # @param project_id Project ID
   # @param job_id Job ID
   # @param id ID
@@ -101,8 +101,8 @@ describe 'JobLocalesApi' do
   end
 
   # unit tests for job_locale_update
-  # Update a job locale
-  # Update an existing job locale.
+  # Update a job target locale
+  # Update an existing job target locale.
   # @param project_id Project ID
   # @param job_id Job ID
   # @param id ID
@@ -117,8 +117,8 @@ describe 'JobLocalesApi' do
   end
 
   # unit tests for job_locales_create
-  # Create a job locale
-  # Create a new job locale.
+  # Add a target locale to a job
+  # Adds a target locale to a job.
   # @param project_id Project ID
   # @param job_id Job ID
   # @param job_locales_create_parameters 
@@ -132,8 +132,8 @@ describe 'JobLocalesApi' do
   end
 
   # unit tests for job_locales_list
-  # List job locales
-  # List all job locales for a given job.
+  # List job target locales
+  # List all target locales for a given job.
   # @param project_id Project ID
   # @param job_id Job ID
   # @param [Hash] opts the optional parameters
