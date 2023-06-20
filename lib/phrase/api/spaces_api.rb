@@ -375,7 +375,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Add Project
+    # Add Project to Space
     # Adds an existing project to the space.
     # @param account_id [String] Account ID
     # @param space_id [String] Space ID
@@ -388,7 +388,7 @@ module Phrase
       data
     end
 
-    # Add Project
+    # Add Project to Space
     # Adds an existing project to the space.
     # @param account_id [String] Account ID
     # @param space_id [String] Space ID
@@ -453,7 +453,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Remove Project
+    # Remove Project from Space
     # Removes a specified project from the specified space.
     # @param account_id [String] Account ID
     # @param space_id [String] Space ID
@@ -466,7 +466,7 @@ module Phrase
       data
     end
 
-    # Remove Project
+    # Remove Project from Space
     # Removes a specified project from the specified space.
     # @param account_id [String] Account ID
     # @param space_id [String] Space ID
@@ -529,7 +529,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # List Projects
+    # List Projects in Space
     # List all projects for the specified Space.
     # @param account_id [String] Account ID
     # @param space_id [String] Space ID
@@ -543,7 +543,7 @@ module Phrase
       data
     end
 
-    # List Projects
+    # List Projects in Space
     # List all projects for the specified Space.
     # @param account_id [String] Account ID
     # @param space_id [String] Space ID

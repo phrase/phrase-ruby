@@ -93,7 +93,7 @@ describe 'TeamsApi' do
   end
 
   # unit tests for teams_projects_create
-  # Add Project
+  # Add Project to Team
   # Adds an existing project to the team.
   # @param account_id Account ID
   # @param team_id Team ID
@@ -108,7 +108,7 @@ describe 'TeamsApi' do
   end
 
   # unit tests for teams_projects_delete
-  # Remove Project
+  # Remove Project from Team
   # Removes a specified project from the specified team.
   # @param account_id Account ID
   # @param team_id Team ID

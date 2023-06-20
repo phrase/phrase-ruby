@@ -9,8 +9,8 @@ Method | HTTP request | Description
 [**team_show**](TeamsApi.md#team_show) | **GET** /accounts/{account_id}/teams/{id} | Get Team
 [**team_update**](TeamsApi.md#team_update) | **PATCH** /accounts/{account_id}/teams/{id} | Update Team
 [**teams_list**](TeamsApi.md#teams_list) | **GET** /accounts/{account_id}/teams | List Teams
-[**teams_projects_create**](TeamsApi.md#teams_projects_create) | **POST** /accounts/{account_id}/teams/{team_id}/projects | Add Project
-[**teams_projects_delete**](TeamsApi.md#teams_projects_delete) | **DELETE** /accounts/{account_id}/teams/{team_id}/projects/{id} | Remove Project
+[**teams_projects_create**](TeamsApi.md#teams_projects_create) | **POST** /accounts/{account_id}/teams/{team_id}/projects | Add Project to Team
+[**teams_projects_delete**](TeamsApi.md#teams_projects_delete) | **DELETE** /accounts/{account_id}/teams/{team_id}/projects/{id} | Remove Project from Team
 [**teams_spaces_create**](TeamsApi.md#teams_spaces_create) | **POST** /accounts/{account_id}/teams/{team_id}/spaces | Add Space
 [**teams_spaces_delete**](TeamsApi.md#teams_spaces_delete) | **DELETE** /accounts/{account_id}/teams/{team_id}/spaces/{id} | Remove Space
 [**teams_users_create**](TeamsApi.md#teams_users_create) | **POST** /accounts/{account_id}/teams/{team_id}/users | Add User
@@ -340,7 +340,7 @@ Response<([**Array&lt;Team&gt;**](Team.md))>
 
 > teams_projects_create(account_id, team_id, teams_projects_create_parameters, opts)
 
-Add Project
+Add Project to Team
 
 Adds an existing project to the team.
 
@@ -369,7 +369,7 @@ opts = {
 }
 
 begin
-  #Add Project
+  #Add Project to Team
   api_instance.teams_projects_create(account_id, team_id, teams_projects_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling TeamsApi->teams_projects_create: #{e}"
@@ -404,7 +404,7 @@ Response<(nil (empty response body))>
 
 > teams_projects_delete(account_id, team_id, id, opts)
 
-Remove Project
+Remove Project from Team
 
 Removes a specified project from the specified team.
 
@@ -433,7 +433,7 @@ opts = {
 }
 
 begin
-  #Remove Project
+  #Remove Project from Team
   api_instance.teams_projects_delete(account_id, team_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling TeamsApi->teams_projects_delete: #{e}"

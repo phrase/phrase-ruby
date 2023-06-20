@@ -375,7 +375,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Add Project
+    # Add Project to Team
     # Adds an existing project to the team.
     # @param account_id [String] Account ID
     # @param team_id [String] Team ID
@@ -388,7 +388,7 @@ module Phrase
       data
     end
 
-    # Add Project
+    # Add Project to Team
     # Adds an existing project to the team.
     # @param account_id [String] Account ID
     # @param team_id [String] Team ID
@@ -453,7 +453,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Remove Project
+    # Remove Project from Team
     # Removes a specified project from the specified team.
     # @param account_id [String] Account ID
     # @param team_id [String] Team ID
@@ -466,7 +466,7 @@ module Phrase
       data
     end
 
-    # Remove Project
+    # Remove Project from Team
     # Removes a specified project from the specified team.
     # @param account_id [String] Account ID
     # @param team_id [String] Team ID

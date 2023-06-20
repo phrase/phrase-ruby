@@ -93,7 +93,7 @@ describe 'SpacesApi' do
   end
 
   # unit tests for spaces_projects_create
-  # Add Project
+  # Add Project to Space
   # Adds an existing project to the space.
   # @param account_id Account ID
   # @param space_id Space ID
@@ -108,7 +108,7 @@ describe 'SpacesApi' do
   end
 
   # unit tests for spaces_projects_delete
-  # Remove Project
+  # Remove Project from Space
   # Removes a specified project from the specified space.
   # @param account_id Account ID
   # @param space_id Space ID
@@ -123,7 +123,7 @@ describe 'SpacesApi' do
   end
 
   # unit tests for spaces_projects_list
-  # List Projects
+  # List Projects in Space
   # List all projects for the specified Space.
   # @param account_id Account ID
   # @param space_id Space ID

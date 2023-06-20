@@ -9,9 +9,9 @@ Method | HTTP request | Description
 [**space_show**](SpacesApi.md#space_show) | **GET** /accounts/{account_id}/spaces/{id} | Get Space
 [**space_update**](SpacesApi.md#space_update) | **PATCH** /accounts/{account_id}/spaces/{id} | Update Space
 [**spaces_list**](SpacesApi.md#spaces_list) | **GET** /accounts/{account_id}/spaces | List Spaces
-[**spaces_projects_create**](SpacesApi.md#spaces_projects_create) | **POST** /accounts/{account_id}/spaces/{space_id}/projects | Add Project
-[**spaces_projects_delete**](SpacesApi.md#spaces_projects_delete) | **DELETE** /accounts/{account_id}/spaces/{space_id}/projects/{id} | Remove Project
-[**spaces_projects_list**](SpacesApi.md#spaces_projects_list) | **GET** /accounts/{account_id}/spaces/{space_id}/projects | List Projects
+[**spaces_projects_create**](SpacesApi.md#spaces_projects_create) | **POST** /accounts/{account_id}/spaces/{space_id}/projects | Add Project to Space
+[**spaces_projects_delete**](SpacesApi.md#spaces_projects_delete) | **DELETE** /accounts/{account_id}/spaces/{space_id}/projects/{id} | Remove Project from Space
+[**spaces_projects_list**](SpacesApi.md#spaces_projects_list) | **GET** /accounts/{account_id}/spaces/{space_id}/projects | List Projects in Space
 
 
 
@@ -337,7 +337,7 @@ Response<([**Array&lt;Space&gt;**](Space.md))>
 
 > spaces_projects_create(account_id, space_id, spaces_projects_create_parameters, opts)
 
-Add Project
+Add Project to Space
 
 Adds an existing project to the space.
 
@@ -366,7 +366,7 @@ opts = {
 }
 
 begin
-  #Add Project
+  #Add Project to Space
   api_instance.spaces_projects_create(account_id, space_id, spaces_projects_create_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling SpacesApi->spaces_projects_create: #{e}"
@@ -401,7 +401,7 @@ Response<(nil (empty response body))>
 
 > spaces_projects_delete(account_id, space_id, id, opts)
 
-Remove Project
+Remove Project from Space
 
 Removes a specified project from the specified space.
 
@@ -430,7 +430,7 @@ opts = {
 }
 
 begin
-  #Remove Project
+  #Remove Project from Space
   api_instance.spaces_projects_delete(account_id, space_id, id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling SpacesApi->spaces_projects_delete: #{e}"
@@ -465,7 +465,7 @@ Response<(nil (empty response body))>
 
 > Array&lt;Project&gt; spaces_projects_list(account_id, space_id, opts)
 
-List Projects
+List Projects in Space
 
 List all projects for the specified Space.
 
@@ -495,7 +495,7 @@ opts = {
 }
 
 begin
-  #List Projects
+  #List Projects in Space
   result = api_instance.spaces_projects_list(account_id, space_id, opts)
   pp result
 rescue Phrase::ApiError => e
