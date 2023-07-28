@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **Integer** |  | [optional] 
+**status** | **String** |  | [optional] 
 **action** | **String** |  | [optional] 
 **errors** | **Array&lt;String&gt;** |  | [optional] 
 **date** | **DateTime** |  | [optional] 

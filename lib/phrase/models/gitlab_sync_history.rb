@@ -26,7 +26,7 @@ module Phrase
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'status' => :'Integer',
+        :'status' => :'String',
         :'action' => :'String',
         :'errors' => :'Array<String>',
         :'date' => :'DateTime',
