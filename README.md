@@ -409,6 +409,7 @@ Class | Method | HTTP request | Description
  - [Phrase::GitlabSyncExport](docs/GitlabSyncExport.md)
  - [Phrase::GitlabSyncExportParameters](docs/GitlabSyncExportParameters.md)
  - [Phrase::GitlabSyncHistory](docs/GitlabSyncHistory.md)
+ - [Phrase::GitlabSyncHistoryErrors](docs/GitlabSyncHistoryErrors.md)
  - [Phrase::GitlabSyncImportParameters](docs/GitlabSyncImportParameters.md)
  - [Phrase::Glossary](docs/Glossary.md)
  - [Phrase::GlossaryCreateParameters](docs/GlossaryCreateParameters.md)
