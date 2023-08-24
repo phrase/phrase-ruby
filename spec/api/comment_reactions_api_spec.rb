@@ -29,6 +29,7 @@ describe 'CommentReactionsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :emoji specify the emoji for the reaction
   # @return [CommentReaction]
   describe 'reaction_create test' do
     it 'should work' do

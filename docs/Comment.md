@@ -6,10 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **message** | **String** |  | [optional] 
+**has_replies** | **Boolean** |  | [optional] 
 **user** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 **mentioned_users** | [**Array&lt;UserPreview&gt;**](UserPreview.md) |  | [optional] 
+**locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
 
 ## Code Sample
 
@@ -18,10 +20,12 @@ require 'Phrase'
 
 instance = Phrase::Comment.new(id: null,
                                  message: null,
+                                 has_replies: null,
                                  user: null,
                                  created_at: null,
                                  updated_at: null,
-                                 mentioned_users: null)
+                                 mentioned_users: null,
+                                 locales: null)
 ```
 
 

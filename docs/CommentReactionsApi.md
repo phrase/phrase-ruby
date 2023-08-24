@@ -41,7 +41,8 @@ key_id = 'key_id_example' # String | Translation Key ID
 comment_id = 'comment_id_example' # String | Comment ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  branch: 'my-feature-branch' # String | specify the branch to use
+  branch: 'my-feature-branch', # String | specify the branch to use
+  emoji: '👍' # String | specify the emoji for the reaction
 }
 
 begin
@@ -63,6 +64,7 @@ Name | Type | Description  | Notes
  **comment_id** | **String**| Comment ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
+ **emoji** | **String**| specify the emoji for the reaction | [optional] 
 
 ### Return type
 

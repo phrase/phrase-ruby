@@ -15,6 +15,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :emoji specify the emoji for the reaction
     # @return [CommentReaction]
     def reaction_create(project_id, key_id, comment_id, opts = {})
       data, _status_code, _headers = reaction_create_with_http_info(project_id, key_id, comment_id, opts)
@@ -29,6 +30,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :emoji specify the emoji for the reaction
     # @return [Array<(Response<(CommentReaction)>, Integer, Hash)>] Response<(CommentReaction)> data, response status code and response headers
     def reaction_create_with_http_info(project_id, key_id, comment_id, opts = {})
       if @api_client.config.debugging
@@ -52,6 +54,7 @@ module Phrase
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'emoji'] = opts[:'emoji'] if !opts[:'emoji'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

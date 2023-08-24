@@ -6,6 +6,8 @@ module Phrase
 
     attr_accessor :message
 
+    attr_accessor :has_replies
+
     attr_accessor :user
 
     attr_accessor :created_at
@@ -14,15 +16,19 @@ module Phrase
 
     attr_accessor :mentioned_users
 
+    attr_accessor :locales
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'message' => :'message',
+        :'has_replies' => :'has_replies',
         :'user' => :'user',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
-        :'mentioned_users' => :'mentioned_users'
+        :'mentioned_users' => :'mentioned_users',
+        :'locales' => :'locales'
       }
     end
 
@@ -31,10 +37,12 @@ module Phrase
       {
         :'id' => :'String',
         :'message' => :'String',
+        :'has_replies' => :'Boolean',
         :'user' => :'UserPreview',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
-        :'mentioned_users' => :'Array<UserPreview>'
+        :'mentioned_users' => :'Array<UserPreview>',
+        :'locales' => :'Array<LocalePreview>'
       }
     end
 
@@ -67,6 +75,10 @@ module Phrase
         self.message = attributes[:'message']
       end
 
+      if attributes.key?(:'has_replies')
+        self.has_replies = attributes[:'has_replies']
+      end
+
       if attributes.key?(:'user')
         self.user = attributes[:'user']
       end
@@ -82,6 +94,12 @@ module Phrase
       if attributes.key?(:'mentioned_users')
         if (value = attributes[:'mentioned_users']).is_a?(Array)
           self.mentioned_users = value
+        end
+      end
+
+      if attributes.key?(:'locales')
+        if (value = attributes[:'locales']).is_a?(Array)
+          self.locales = value
         end
       end
     end
@@ -106,10 +124,12 @@ module Phrase
       self.class == o.class &&
           id == o.id &&
           message == o.message &&
+          has_replies == o.has_replies &&
           user == o.user &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
-          mentioned_users == o.mentioned_users
+          mentioned_users == o.mentioned_users &&
+          locales == o.locales
     end
 
     # @see the `==` method
@@ -121,7 +141,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, message, user, created_at, updated_at, mentioned_users].hash
+      [id, message, has_replies, user, created_at, updated_at, mentioned_users, locales].hash
     end
 
     # Builds the object from hash

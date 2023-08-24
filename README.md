@@ -156,6 +156,12 @@ Class | Method | HTTP request | Description
 *Phrase::CommentReactionsApi* | [**reaction_delete**](docs/CommentReactionsApi.md#reaction_delete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/reactions/{id} | Delete a reaction
 *Phrase::CommentReactionsApi* | [**reaction_show**](docs/CommentReactionsApi.md#reaction_show) | **GET** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/reactions/{id} | Get a single reaction
 *Phrase::CommentReactionsApi* | [**reactions_list**](docs/CommentReactionsApi.md#reactions_list) | **GET** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/reactions | List reactions
+*Phrase::CommentRepliesApi* | [**replies_list**](docs/CommentRepliesApi.md#replies_list) | **GET** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies | List replies
+*Phrase::CommentRepliesApi* | [**reply_create**](docs/CommentRepliesApi.md#reply_create) | **POST** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies | Create a reply
+*Phrase::CommentRepliesApi* | [**reply_delete**](docs/CommentRepliesApi.md#reply_delete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id} | Delete a reply
+*Phrase::CommentRepliesApi* | [**reply_mark_as_read**](docs/CommentRepliesApi.md#reply_mark_as_read) | **PATCH** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id}/mark_as_read | Mark a reply as read
+*Phrase::CommentRepliesApi* | [**reply_mark_as_unread**](docs/CommentRepliesApi.md#reply_mark_as_unread) | **PATCH** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id}/mark_as_unread | Mark a reply as unread
+*Phrase::CommentRepliesApi* | [**reply_show**](docs/CommentRepliesApi.md#reply_show) | **GET** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id} | Get a single reply
 *Phrase::CommentsApi* | [**comment_create**](docs/CommentsApi.md#comment_create) | **POST** /projects/{project_id}/keys/{key_id}/comments | Create a comment
 *Phrase::CommentsApi* | [**comment_delete**](docs/CommentsApi.md#comment_delete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{id} | Delete a comment
 *Phrase::CommentsApi* | [**comment_mark_check**](docs/CommentsApi.md#comment_mark_check) | **GET** /projects/{project_id}/keys/{key_id}/comments/{id}/read | Check if comment is read
