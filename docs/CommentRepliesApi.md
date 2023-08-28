@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## replies_list
 
-> Array&lt;Comment&gt; replies_list(project_id, key_id, comment_id, opts)
+> Array&lt;Comment&gt; replies_list(project_id, key_id, comment_id, replies_list_parameters, opts)
 
 List replies
 
@@ -41,16 +41,19 @@ api_instance = Phrase::CommentRepliesApi.new
 project_id = 'project_id_example' # String | Project ID
 key_id = 'key_id_example' # String | Translation Key ID
 comment_id = 'comment_id_example' # String | Comment ID
+replies_list_parameters = Phrase::RepliesListParameters.new # RepliesListParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-  branch: 'my-feature-branch' # String | specify the branch to use
+  branch: 'my-feature-branch', # String | specify the branch to use
+  query: 'Some comment content', # String | Search query for comment messages
+  filters: ['[\"read\",\"unread\"]'] # Array<String> | Specify the filter for the comments
 }
 
 begin
   #List replies
-  result = api_instance.replies_list(project_id, key_id, comment_id, opts)
+  result = api_instance.replies_list(project_id, key_id, comment_id, replies_list_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling CommentRepliesApi->replies_list: #{e}"
@@ -65,10 +68,13 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **key_id** | **String**| Translation Key ID | 
  **comment_id** | **String**| Comment ID | 
+ **replies_list_parameters** | [**RepliesListParameters**](RepliesListParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
+ **query** | **String**| Search query for comment messages | [optional] 
+ **filters** | [**Array&lt;String&gt;**](String.md)| Specify the filter for the comments | [optional] 
 
 ### Return type
 
@@ -80,7 +86,7 @@ Response<([**Array&lt;Comment&gt;**](Comment.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

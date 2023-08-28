@@ -12,14 +12,17 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param comment_id [String] Comment ID
+    # @param replies_list_parameters [RepliesListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :query Search query for comment messages
+    # @option opts [Array<String>] :filters Specify the filter for the comments
     # @return [Array<Comment>]
-    def replies_list(project_id, key_id, comment_id, opts = {})
-      data, _status_code, _headers = replies_list_with_http_info(project_id, key_id, comment_id, opts)
+    def replies_list(project_id, key_id, comment_id, replies_list_parameters, opts = {})
+      data, _status_code, _headers = replies_list_with_http_info(project_id, key_id, comment_id, replies_list_parameters, opts)
       data
     end
 
@@ -28,13 +31,16 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param comment_id [String] Comment ID
+    # @param replies_list_parameters [RepliesListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :query Search query for comment messages
+    # @option opts [Array<String>] :filters Specify the filter for the comments
     # @return [Array<(Response<(Array<Comment>)>, Integer, Hash)>] Response<(Array<Comment>)> data, response status code and response headers
-    def replies_list_with_http_info(project_id, key_id, comment_id, opts = {})
+    def replies_list_with_http_info(project_id, key_id, comment_id, replies_list_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentRepliesApi.replies_list ...'
       end
@@ -50,6 +56,10 @@ module Phrase
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling CommentRepliesApi.replies_list"
       end
+      # verify the required parameter 'replies_list_parameters' is set
+      if @api_client.config.client_side_validation && replies_list_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'replies_list_parameters' when calling CommentRepliesApi.replies_list"
+      end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s)).sub('{' + 'comment_id' + '}', CGI.escape(comment_id.to_s))
 
@@ -58,18 +68,22 @@ module Phrase
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
+      query_params[:'filters'] = @api_client.build_collection_param(opts[:'filters'], :multi) if !opts[:'filters'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] 
+      post_body = opts[:body] || @api_client.object_to_http_body(replies_list_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Comment>' 
