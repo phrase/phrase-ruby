@@ -156,7 +156,7 @@ module Phrase
     # Delete a locale
     # Delete an existing locale.
     # @param project_id [String] Project ID
-    # @param id [String] ID
+    # @param id [String] Locale ID or locale name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
@@ -169,7 +169,7 @@ module Phrase
     # Delete a locale
     # Delete an existing locale.
     # @param project_id [String] Project ID
-    # @param id [String] ID
+    # @param id [String] Locale ID or locale name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
@@ -229,7 +229,7 @@ module Phrase
     # Download a locale
     # Download a locale in a specific file format.
     # @param project_id [String] Project ID
-    # @param id [String] ID
+    # @param id [String] Locale ID or locale name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :if_modified_since Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional)
@@ -259,7 +259,7 @@ module Phrase
     # Download a locale
     # Download a locale in a specific file format.
     # @param project_id [String] Project ID
-    # @param id [String] ID
+    # @param id [String] Locale ID or locale name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :if_modified_since Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional)
@@ -355,7 +355,7 @@ module Phrase
     # Get a single locale
     # Get details on a single locale for a given project.
     # @param project_id [String] Project ID
-    # @param id [String] ID
+    # @param id [String] Locale ID or locale name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
@@ -368,7 +368,7 @@ module Phrase
     # Get a single locale
     # Get details on a single locale for a given project.
     # @param project_id [String] Project ID
-    # @param id [String] ID
+    # @param id [String] Locale ID or locale name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
@@ -430,7 +430,7 @@ module Phrase
     # Update a locale
     # Update an existing locale.
     # @param project_id [String] Project ID
-    # @param id [String] ID
+    # @param id [String] Locale ID or locale name
     # @param locale_update_parameters [LocaleUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -443,7 +443,7 @@ module Phrase
     # Update a locale
     # Update an existing locale.
     # @param project_id [String] Project ID
-    # @param id [String] ID
+    # @param id [String] Locale ID or locale name
     # @param locale_update_parameters [LocaleUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)

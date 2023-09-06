@@ -168,7 +168,7 @@ end
 
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
-id = 'id_example' # String | ID
+id = 'id_example' # String | Locale ID or locale name
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   branch: 'my-feature-branch' # String | specify the branch to use
@@ -188,7 +188,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **id** | **String**| ID | 
+ **id** | **String**| Locale ID or locale name | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
 
@@ -232,7 +232,7 @@ end
 
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
-id = 'id_example' # String | ID
+id = 'id_example' # String | Locale ID or locale name
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   if_modified_since: 'if_modified_since_example', # String | Last modified condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
@@ -270,7 +270,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **id** | **String**| ID | 
+ **id** | **String**| Locale ID or locale name | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **if_modified_since** | **String**| Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional] 
  **if_none_match** | **String**| ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional] 
@@ -331,7 +331,7 @@ end
 
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
-id = 'id_example' # String | ID
+id = 'id_example' # String | Locale ID or locale name
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   branch: 'my-feature-branch' # String | specify the branch to use
@@ -352,7 +352,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **id** | **String**| ID | 
+ **id** | **String**| Locale ID or locale name | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
 
@@ -396,7 +396,7 @@ end
 
 api_instance = Phrase::LocalesApi.new
 project_id = 'project_id_example' # String | Project ID
-id = 'id_example' # String | ID
+id = 'id_example' # String | Locale ID or locale name
 locale_update_parameters = Phrase::LocaleUpdateParameters.new # LocaleUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
@@ -417,7 +417,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **id** | **String**| ID | 
+ **id** | **String**| Locale ID or locale name | 
  **locale_update_parameters** | [**LocaleUpdateParameters**](LocaleUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
