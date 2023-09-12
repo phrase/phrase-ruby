@@ -47,6 +47,9 @@ module Phrase
     # Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     attr_accessor :mark_reviewed
 
+    # Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
+    attr_accessor :tag_only_affected_keys
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -64,7 +67,8 @@ module Phrase
         :'locale_mapping' => :'locale_mapping',
         :'format_options' => :'format_options',
         :'autotranslate' => :'autotranslate',
-        :'mark_reviewed' => :'mark_reviewed'
+        :'mark_reviewed' => :'mark_reviewed',
+        :'tag_only_affected_keys' => :'tag_only_affected_keys'
       }
     end
 
@@ -85,7 +89,8 @@ module Phrase
         :'locale_mapping' => :'Object',
         :'format_options' => :'Object',
         :'autotranslate' => :'Boolean',
-        :'mark_reviewed' => :'Boolean'
+        :'mark_reviewed' => :'Boolean',
+        :'tag_only_affected_keys' => :'Boolean'
       }
     end
 
@@ -169,6 +174,12 @@ module Phrase
       if attributes.key?(:'mark_reviewed')
         self.mark_reviewed = attributes[:'mark_reviewed']
       end
+
+      if attributes.key?(:'tag_only_affected_keys')
+        self.tag_only_affected_keys = attributes[:'tag_only_affected_keys']
+      else
+        self.tag_only_affected_keys = false
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -203,7 +214,8 @@ module Phrase
           locale_mapping == o.locale_mapping &&
           format_options == o.format_options &&
           autotranslate == o.autotranslate &&
-          mark_reviewed == o.mark_reviewed
+          mark_reviewed == o.mark_reviewed &&
+          tag_only_affected_keys == o.tag_only_affected_keys
     end
 
     # @see the `==` method
@@ -215,7 +227,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, file, file_format, locale_id, tags, update_translations, update_descriptions, convert_emoji, skip_upload_tags, skip_unverification, file_encoding, locale_mapping, format_options, autotranslate, mark_reviewed].hash
+      [branch, file, file_format, locale_id, tags, update_translations, update_descriptions, convert_emoji, skip_upload_tags, skip_unverification, file_encoding, locale_mapping, format_options, autotranslate, mark_reviewed, tag_only_affected_keys].hash
     end
 
     # Builds the object from hash

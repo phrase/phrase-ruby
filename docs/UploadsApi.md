@@ -52,7 +52,8 @@ opts = {
   locale_mapping: nil, # Object | Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.
   format_options: nil, # Object | Additional options available for specific formats. See our format guide for complete list.
   autotranslate: true, # Boolean | If set, translations for the uploaded language will be fetched automatically.
-  mark_reviewed: true # Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
+  mark_reviewed: true, # Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
+  tag_only_affected_keys: false # Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
 }
 
 begin
@@ -86,6 +87,7 @@ Name | Type | Description  | Notes
  **format_options** | [**Object**](Object.md)| Additional options available for specific formats. See our format guide for complete list. | [optional] 
  **autotranslate** | **Boolean**| If set, translations for the uploaded language will be fetched automatically. | [optional] 
  **mark_reviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. | [optional] 
+ **tag_only_affected_keys** | **Boolean**| Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; | [optional] [default to false]
 
 ### Return type
 

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **format_options** | [**Object**](.md) | Additional options available for specific formats. See our format guide for complete list. | [optional] 
 **autotranslate** | **Boolean** | If set, translations for the uploaded language will be fetched automatically. | [optional] 
 **mark_reviewed** | **Boolean** | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. | [optional] 
+**tag_only_affected_keys** | **Boolean** | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; | [optional] [default to false]
 
 ## Code Sample
 
@@ -39,7 +40,8 @@ instance = Phrase::UploadCreateParameters.new(branch: my-feature-branch,
                                  locale_mapping: {&quot;en&quot;: &quot;2&quot;},
                                  format_options: {&quot;foo&quot;: &quot;bar&quot;},
                                  autotranslate: null,
-                                 mark_reviewed: null)
+                                 mark_reviewed: null,
+                                 tag_only_affected_keys: null)
 ```
 
 

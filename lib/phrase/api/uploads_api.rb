@@ -27,6 +27,7 @@ module Phrase
     # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for complete list.
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
+    # @option opts [Boolean] :tag_only_affected_keys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; (default to false)
     # @return [Upload]
     def upload_create(project_id, opts = {})
       data, _status_code, _headers = upload_create_with_http_info(project_id, opts)
@@ -53,6 +54,7 @@ module Phrase
     # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for complete list.
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
+    # @option opts [Boolean] :tag_only_affected_keys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60;
     # @return [Array<(Response<(Upload)>, Integer, Hash)>] Response<(Upload)> data, response status code and response headers
     def upload_create_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
@@ -93,6 +95,7 @@ module Phrase
       form_params['format_options'] = opts[:'format_options'] if !opts[:'format_options'].nil?
       form_params['autotranslate'] = opts[:'autotranslate'] if !opts[:'autotranslate'].nil?
       form_params['mark_reviewed'] = opts[:'mark_reviewed'] if !opts[:'mark_reviewed'].nil?
+      form_params['tag_only_affected_keys'] = opts[:'tag_only_affected_keys'] if !opts[:'tag_only_affected_keys'].nil?
 
       # http body (model)
       post_body = opts[:body] 

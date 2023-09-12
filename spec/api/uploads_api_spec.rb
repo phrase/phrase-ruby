@@ -41,6 +41,7 @@ describe 'UploadsApi' do
   # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for complete list.
   # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
   # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
+  # @option opts [Boolean] :tag_only_affected_keys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60;
   # @return [Upload]
   describe 'upload_create test' do
     it 'should work' do
