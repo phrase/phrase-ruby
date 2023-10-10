@@ -44,8 +44,22 @@ describe 'UploadsApi' do
   # @option opts [Boolean] :tag_only_affected_keys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60;
   # @return [Upload]
   describe 'upload_create test' do
+    let(:response_body) { { data: {} }.to_json }
+    before do
+      stub_request(:any, /.*phrase.com/)
+        .to_return(status: 200, body: response_body, headers: {
+          'Content-Type' => 'application/json'
+        })
+    end
+
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      @api_instance.upload_create('project_id', file: File.new('Gemfile'))
+
+      expect(a_request(:post, 'https://api.phrase.com/v2/projects/project_id/uploads')
+        .with { |req|
+          expect(req.headers['Content-Type']).to eq('multipart/form-data')
+          # expect(req.body).to include('Gemfile')
+        }).to have_been_made
     end
   end
 

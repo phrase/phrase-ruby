@@ -39,7 +39,7 @@ describe 'LocalesApi' do
   # Create a locale
   # Create a new locale.
   # @param project_id Project ID
-  # @param locale_create_parameters 
+  # @param locale_create_parameters
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [LocaleDetails]
@@ -91,8 +91,28 @@ describe 'LocalesApi' do
   # @option opts [String] :source_locale_id Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job.
   # @return [File]
   describe 'locale_download test' do
+    let(:project_id) { 'project_id_example' }
+    let(:id) { 'id_example' }
+    let(:opts) { {
+      branch: 'branch_example',
+      format_options: {foo: 'bar'},
+    } }
+
+    before do
+      stub_request(:any, /.*phrase.com/)
+        .to_return(status: 200, body: "foo", headers: {
+          'Content-Type' => 'application/octet-stream',
+          'Content-Disposition' => 'attachment; filename="test.txt"',
+        })
+    end
+
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      locale = @api_instance.locale_download(project_id, id, opts)
+      expect(a_request(:get, "https://api.phrase.com/v2/projects/project_id_example/locales/id_example/download").with(query: {branch: "branch_example", format_options: {foo: "bar"}})).
+        to have_been_made
+
+      expect(locale).to be_instance_of(Phrase::Response)
+      expect(File.read(locale.data)).to eq("foo")
     end
   end
 
@@ -116,7 +136,7 @@ describe 'LocalesApi' do
   # Update an existing locale.
   # @param project_id Project ID
   # @param id Locale ID or locale name
-  # @param locale_update_parameters 
+  # @param locale_update_parameters
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [LocaleDetails]
@@ -138,8 +158,92 @@ describe 'LocalesApi' do
   # @option opts [String] :branch specify the branch to use
   # @return [Array<Locale>]
   describe 'locales_list test' do
+    let(:project_id) { 'project_id_example' }
+    let(:opts) { {
+      branch: 'branch_example',
+    } }
+    let(:response_body) {
+      <<-EOF
+      [
+        {
+          "id": "ae0ce77b64dbf7e8315b5da8ecbb42c0",
+          "name": "de-DE",
+          "code": "de-DE",
+          "default": false,
+          "main": false,
+          "rtl": false,
+          "plural_forms": [
+            "zero",
+            "one",
+            "other"
+          ],
+          "created_at": "2022-10-27T11:03:39Z",
+          "updated_at": "2023-10-05T09:49:28Z",
+          "source_locale": null,
+          "fallback_locale": null
+        },
+        {
+          "id": "95060c3b178252e0c5d1936493e93108",
+          "name": "en-US",
+          "code": "en-US",
+          "default": true,
+          "main": false,
+          "rtl": false,
+          "plural_forms": [
+            "zero",
+            "one",
+            "other"
+          ],
+          "created_at": "2022-10-27T11:03:39Z",
+          "updated_at": "2023-10-05T09:50:20Z",
+          "source_locale": null,
+          "fallback_locale": null
+        },
+        {
+          "id": "97b4b258d9000f256a97276561294b5b",
+          "name": "sh",
+          "code": "sr-Latn-RS",
+          "default": false,
+          "main": false,
+          "rtl": false,
+          "plural_forms": [
+            "zero",
+            "one",
+            "few",
+            "other"
+          ],
+          "created_at": "2022-10-27T11:03:39Z",
+          "updated_at": "2023-05-10T08:22:18Z",
+          "source_locale": null,
+          "fallback_locale": null
+        }
+      ]
+      EOF
+    }
+
+    before do
+      stub_request(:any, /.*phrase.com/)
+        .to_return(status: 200, body: response_body, headers: {
+          'Content-Type' => 'application/json'
+        })
+    end
+
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      locales = @api_instance.locales_list(project_id, opts)
+      expect(a_request(:get, "https://api.phrase.com/v2/projects/project_id_example/locales").with(query: {branch: "branch_example"})).
+        to have_been_made
+
+      expect(locales).to be_instance_of(Phrase::Response)
+      expect(locales.data).to be_instance_of(Array)
+      expect(locales.data.length).to eq(3)
+      expect(locales.data[0]).to be_instance_of(Phrase::Locale)
+      expect(locales.data[0].id).to eq("ae0ce77b64dbf7e8315b5da8ecbb42c0")
+      expect(locales.data[0].name).to eq("de-DE")
+      expect(locales.data[0].code).to eq("de-DE")
+      expect(locales.data[0].default).to eq(false)
+      expect(locales.data[0].plural_forms).to eq(["zero", "one", "other"])
+      expect(locales.data[0].created_at).to eq(DateTime.parse("2022-10-27T11:03:39Z"))
+      expect(locales.data[0].updated_at).to eq(DateTime.parse("2023-10-05T09:49:28Z"))
     end
   end
 
