@@ -8,7 +8,7 @@ module Phrase
     # Project id the distribution should be assigned to.
     attr_accessor :project_id
 
-    # List of platforms the distribution should support. Valid values are: * `android` * `ios` * `flutter` * `i18next`
+    # List of platforms the distribution should support. Valid values are: * `android` * `ios` * `flutter` * `i18next` * `rails`
     attr_accessor :platforms
 
     # List of locale ids that will be part of distribution releases
