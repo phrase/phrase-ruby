@@ -91,6 +91,7 @@ describe 'JobCommentsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :order Order direction. Can be one of: asc, desc.
   # @return [Array<JobComment>]
   describe 'job_comments_list test' do
     it 'should work' do

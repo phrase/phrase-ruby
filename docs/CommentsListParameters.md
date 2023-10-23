@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **query** | **String** | Search query for comment messages | [optional] 
 **locale_ids** | **Array&lt;String&gt;** | Search comments by their assigned locales | [optional] 
 **filters** | **Array&lt;String&gt;** | Specify filters to find comments by | [optional] 
+**order** | **String** | Specify ordering of comments | [optional] 
 
 ## Code Sample
 
@@ -17,7 +18,8 @@ require 'Phrase'
 instance = Phrase::CommentsListParameters.new(branch: my-feature-branch,
                                  query: Some comment content,
                                  locale_ids: [&quot;someId&quot;,&quot;otherId&quot;],
-                                 filters: [&quot;read&quot;,&quot;unread&quot;])
+                                 filters: [&quot;read&quot;,&quot;unread&quot;],
+                                 order: desc)
 ```
 
 

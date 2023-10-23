@@ -594,6 +594,7 @@ module Phrase
     # @option opts [String] :query Search query for comment messages
     # @option opts [Array<String>] :locale_ids Search comments by their assigned locales
     # @option opts [Array<String>] :filters Specify the filter for the comments
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<Comment>]
     def comments_list(project_id, key_id, comments_list_parameters, opts = {})
       data, _status_code, _headers = comments_list_with_http_info(project_id, key_id, comments_list_parameters, opts)
@@ -613,6 +614,7 @@ module Phrase
     # @option opts [String] :query Search query for comment messages
     # @option opts [Array<String>] :locale_ids Search comments by their assigned locales
     # @option opts [Array<String>] :filters Specify the filter for the comments
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<(Response<(Array<Comment>)>, Integer, Hash)>] Response<(Array<Comment>)> data, response status code and response headers
     def comments_list_with_http_info(project_id, key_id, comments_list_parameters, opts = {})
       if @api_client.config.debugging
@@ -641,6 +643,7 @@ module Phrase
       query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
       query_params[:'locale_ids'] = @api_client.build_collection_param(opts[:'locale_ids'], :multi) if !opts[:'locale_ids'].nil?
       query_params[:'filters'] = @api_client.build_collection_param(opts[:'filters'], :multi) if !opts[:'filters'].nil?
+      query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

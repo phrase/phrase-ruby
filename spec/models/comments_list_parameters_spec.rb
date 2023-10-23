@@ -44,4 +44,10 @@ describe 'CommentsListParameters' do
     end
   end
 
+  describe 'test attribute "order"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

@@ -306,7 +306,8 @@ project_id = 'project_id_example' # String | Project ID
 job_id = 'job_id_example' # String | Job ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  branch: 'my-feature-branch' # String | specify the branch to use
+  branch: 'my-feature-branch', # String | specify the branch to use
+  order: 'desc' # String | Order direction. Can be one of: asc, desc.
 }
 
 begin
@@ -327,6 +328,7 @@ Name | Type | Description  | Notes
  **job_id** | **String**| Job ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
+ **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
 
 ### Return type
 

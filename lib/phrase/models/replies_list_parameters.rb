@@ -11,12 +11,16 @@ module Phrase
     # Specify filters to find comments by
     attr_accessor :filters
 
+    # Specify ordering of comments
+    attr_accessor :order
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'branch' => :'branch',
         :'query' => :'query',
-        :'filters' => :'filters'
+        :'filters' => :'filters',
+        :'order' => :'order'
       }
     end
 
@@ -25,7 +29,8 @@ module Phrase
       {
         :'branch' => :'String',
         :'query' => :'String',
-        :'filters' => :'Array<String>'
+        :'filters' => :'Array<String>',
+        :'order' => :'String'
       }
     end
 
@@ -63,6 +68,10 @@ module Phrase
           self.filters = value
         end
       end
+
+      if attributes.key?(:'order')
+        self.order = attributes[:'order']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -85,7 +94,8 @@ module Phrase
       self.class == o.class &&
           branch == o.branch &&
           query == o.query &&
-          filters == o.filters
+          filters == o.filters &&
+          order == o.order
     end
 
     # @see the `==` method
@@ -97,7 +107,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, query, filters].hash
+      [branch, query, filters, order].hash
     end
 
     # Builds the object from hash

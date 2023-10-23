@@ -340,6 +340,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<JobComment>]
     def job_comments_list(project_id, job_id, opts = {})
       data, _status_code, _headers = job_comments_list_with_http_info(project_id, job_id, opts)
@@ -353,6 +354,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<(Response<(Array<JobComment>)>, Integer, Hash)>] Response<(Array<JobComment>)> data, response status code and response headers
     def job_comments_list_with_http_info(project_id, job_id, opts = {})
       if @api_client.config.debugging
@@ -372,6 +374,7 @@ module Phrase
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

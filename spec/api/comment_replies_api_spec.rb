@@ -34,6 +34,7 @@ describe 'CommentRepliesApi' do
   # @option opts [String] :branch specify the branch to use
   # @option opts [String] :query Search query for comment messages
   # @option opts [Array<String>] :filters Specify the filter for the comments
+  # @option opts [String] :order Order direction. Can be one of: asc, desc.
   # @return [Array<Comment>]
   describe 'replies_list test' do
     it 'should work' do

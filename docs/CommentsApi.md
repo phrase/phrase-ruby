@@ -517,7 +517,8 @@ opts = {
   branch: 'my-feature-branch', # String | specify the branch to use
   query: 'Some comment content', # String | Search query for comment messages
   locale_ids: ['[\"someId\"]'], # Array<String> | Search comments by their assigned locales
-  filters: ['[\"read\",\"unread\"]'] # Array<String> | Specify the filter for the comments
+  filters: ['[\"read\",\"unread\"]'], # Array<String> | Specify the filter for the comments
+  order: 'desc' # String | Order direction. Can be one of: asc, desc.
 }
 
 begin
@@ -544,6 +545,7 @@ Name | Type | Description  | Notes
  **query** | **String**| Search query for comment messages | [optional] 
  **locale_ids** | [**Array&lt;String&gt;**](String.md)| Search comments by their assigned locales | [optional] 
  **filters** | [**Array&lt;String&gt;**](String.md)| Specify the filter for the comments | [optional] 
+ **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
 
 ### Return type
 

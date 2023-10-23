@@ -20,6 +20,7 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :query Search query for comment messages
     # @option opts [Array<String>] :filters Specify the filter for the comments
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<Comment>]
     def replies_list(project_id, key_id, comment_id, replies_list_parameters, opts = {})
       data, _status_code, _headers = replies_list_with_http_info(project_id, key_id, comment_id, replies_list_parameters, opts)
@@ -39,6 +40,7 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :query Search query for comment messages
     # @option opts [Array<String>] :filters Specify the filter for the comments
+    # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<(Response<(Array<Comment>)>, Integer, Hash)>] Response<(Array<Comment>)> data, response status code and response headers
     def replies_list_with_http_info(project_id, key_id, comment_id, replies_list_parameters, opts = {})
       if @api_client.config.debugging
@@ -70,6 +72,7 @@ module Phrase
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
       query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
       query_params[:'filters'] = @api_client.build_collection_param(opts[:'filters'], :multi) if !opts[:'filters'].nil?
+      query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
