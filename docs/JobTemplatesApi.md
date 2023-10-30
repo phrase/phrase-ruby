@@ -38,7 +38,7 @@ end
 
 api_instance = Phrase::JobTemplatesApi.new
 project_id = 'project_id_example' # String | Project ID
-job_template_create_parameters = Phrase::JobTemplateCreateParameters.new # JobTemplateCreateParameters | 
+job_template_create_parameters = Phrase::JobTemplateCreateParameters.new({name: 'template'}) # JobTemplateCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
@@ -166,7 +166,7 @@ end
 api_instance = Phrase::JobTemplatesApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
-job_template_update_parameters = Phrase::JobTemplateUpdateParameters.new # JobTemplateUpdateParameters | 
+job_template_update_parameters = Phrase::JobTemplateUpdateParameters.new({name: 'template'}) # JobTemplateUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

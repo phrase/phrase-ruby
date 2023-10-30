@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **unverify_translations_upon_delivery** | **Boolean** |  | [optional] 
 **quality** | **Boolean** |  | [optional] 
 **priority** | **Boolean** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 
 ## Code Sample
 

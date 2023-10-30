@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
 **keys_count** | **Integer** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 **statistics** | [**Array&lt;TagWithStats1Statistics1&gt;**](TagWithStats1Statistics1.md) |  | [optional] 
 
 ## Code Sample

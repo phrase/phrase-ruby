@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **email** | **String** |  | [optional] 
 **username** | **String** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**last_activity_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**last_activity_at** | **Time** |  | [optional] 
 **role** | **String** |  | [optional] 
 **projects** | [**Array&lt;ProjectLocales&gt;**](ProjectLocales.md) |  | [optional] 
-**permissions** | [**Object**](.md) |  | [optional] 
+**permissions** | **Object** |  | [optional] 
 **default_locale_codes** | **Array&lt;String&gt;** |  | [optional] 
 **teams** | [**Array&lt;TeamShort&gt;**](TeamShort.md) |  | [optional] 
-**spaces** | [**Array&lt;MemberSpaces&gt;**](MemberSpaces.md) |  | [optional] 
+**spaces** | [**Array&lt;MemberSpacesInner&gt;**](MemberSpacesInner.md) |  | [optional] 
 
 ## Code Sample
 

@@ -43,7 +43,7 @@ opts = {
   branch: 'branch_example', # String | specify the branch to use
   name: 'name_example', # String | Name of the screenshot
   description: 'description_example', # String | Description of the screenshot
-  filename: File.new('/path/to/file') # File | Screenshot file
+  filename: File.new('/path/to/some/file') # File | Screenshot file
 }
 
 begin

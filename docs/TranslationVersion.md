@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **plural_suffix** | **String** |  | [optional] 
 **key** | [**KeyPreview**](KeyPreview.md) |  | [optional] 
 **locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
-**changed_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
+**changed_at** | **Time** |  | [optional] 
 
 ## Code Sample
 

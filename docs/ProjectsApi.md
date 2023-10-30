@@ -288,7 +288,7 @@ opts = {
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
   account_id: 'account_id_example', # String | Filter by Account ID
   sort_by: 'sort_by_example', # String | Sort projects. Valid options are \"name_asc\", \"name_desc\", \"updated_at_asc\", \"updated_at_desc\", \"space_asc\" and \"space_desc\".
-  filters: ['favorites'] # Array<String> | Filter projects. Valid options are [\"favorites\"].
+  filters: ['inner_example'] # Array<String> | Filter projects. Valid options are [\"favorites\"].
 }
 
 begin

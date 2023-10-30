@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 **projects** | [**Array&lt;Project&gt;**](Project.md) |  | [optional] 
 **spaces** | [**Array&lt;Space&gt;**](Space.md) |  | [optional] 
 **users** | [**Array&lt;UserPreview&gt;**](UserPreview.md) |  | [optional] 

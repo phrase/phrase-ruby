@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **branch** | **String** | specify the branch to use | [optional] 
 **name** | **String** | Job name | [optional] 
 **briefing** | **String** | Briefing for the translators | [optional] 
-**due_date** | **DateTime** | Date the job should be finished | [optional] 
+**due_date** | **Time** | Date the job should be finished | [optional] 
 **ticket_url** | **String** | URL to a ticket for this job (e.g. Jira, Trello) | [optional] 
 
 ## Code Sample

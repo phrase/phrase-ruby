@@ -48,7 +48,7 @@ opts = {
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
   branch: 'my-feature-branch', # String | specify the branch to use
   query: 'Some comment content', # String | Search query for comment messages
-  filters: ['[\"read\",\"unread\"]'], # Array<String> | Specify the filter for the comments
+  filters: ['inner_example'], # Array<String> | Specify the filter for the comments
   order: 'desc' # String | Order direction. Can be one of: asc, desc.
 }
 

@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **placeholders** | **Array&lt;String&gt;** |  | [optional] 
 **state** | **String** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 
 ## Code Sample
 

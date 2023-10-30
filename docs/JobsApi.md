@@ -307,7 +307,7 @@ id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   branch: 'my-feature-branch', # String | specify the branch to use
-  translation_key_ids: ['[\"abcd1234cdef1234abcd1234cdef1234\"]'] # Array<String> | ids of keys that should added to the job
+  translation_key_ids: ['inner_example'] # Array<String> | ids of keys that should added to the job
 }
 
 begin

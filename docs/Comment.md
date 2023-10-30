@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **message** | **String** |  | [optional] 
 **has_replies** | **Boolean** |  | [optional] 
 **user** | [**UserPreview**](UserPreview.md) |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 **mentioned_users** | [**Array&lt;UserPreview&gt;**](UserPreview.md) |  | [optional] 
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
 

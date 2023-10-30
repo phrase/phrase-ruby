@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **plural_forms** | **Array&lt;String&gt;** |  | [optional] 
 **source_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **fallback_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 **statistics** | [**LocaleStatistics**](LocaleStatistics.md) |  | [optional] 
 
 ## Code Sample

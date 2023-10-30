@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 **platforms** | **Array&lt;String&gt;** |  | [optional] 
 **release_count** | **Integer** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**deleted_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**deleted_at** | **Time** |  | [optional] 
 
 ## Code Sample
 

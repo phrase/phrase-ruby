@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **translatable** | **Boolean** |  | [optional] 
 **case_sensitive** | **Boolean** |  | [optional] 
 **translations** | [**Array&lt;GlossaryTermTranslation&gt;**](GlossaryTermTranslation.md) |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 
 ## Code Sample
 

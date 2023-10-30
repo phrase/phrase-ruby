@@ -235,7 +235,7 @@ end
 api_instance = Phrase::OrganizationJobTemplateLocalesApi.new
 account_id = 'account_id_example' # String | Account ID
 job_template_id = 'job_template_id_example' # String | Job Template ID
-organization_job_template_locales_create_parameters = Phrase::OrganizationJobTemplateLocalesCreateParameters.new # OrganizationJobTemplateLocalesCreateParameters | 
+organization_job_template_locales_create_parameters = Phrase::OrganizationJobTemplateLocalesCreateParameters.new({locale_name: 'de-1', locale_code: 'de-DE'}) # OrganizationJobTemplateLocalesCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

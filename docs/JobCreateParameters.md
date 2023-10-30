@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** | Job name | [optional] 
 **source_locale_id** | **String** | The API id of the source language | [optional] 
 **briefing** | **String** | Briefing for the translators | [optional] 
-**due_date** | **DateTime** | Date the job should be finished | [optional] 
+**due_date** | **Time** | Date the job should be finished | [optional] 
 **ticket_url** | **String** | URL to a ticket for this job (e.g. Jira, Trello) | [optional] 
 **tags** | **Array&lt;String&gt;** | tags of keys that should be included within the job | [optional] 
 **translation_key_ids** | **Array&lt;String&gt;** | ids of keys that should be included within the job | [optional] 

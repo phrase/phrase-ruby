@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **project_role** | **String** |  | [optional] 
 **main_format** | **String** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
 
 ## Code Sample

@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **presentation** | **String** |  | [optional] 
 **presentation_type** | **String** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 **translation_key** | [**TranslationKey**](TranslationKey.md) |  | [optional] 
 
 ## Code Sample

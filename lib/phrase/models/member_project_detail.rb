@@ -49,8 +49,8 @@ module Phrase
         :'permissions' => :'Object',
         :'locale_ids' => :'Array<String>',
         :'default_locale_codes' => :'Array<String>',
-        :'spaces' => :'Array<MemberSpaces>',
-        :'project_roles' => :'Array<MemberProjectDetailProjectRoles>'
+        :'spaces' => :'Array<MemberSpacesInner>',
+        :'project_roles' => :'Array<MemberProjectDetailProjectRolesInner>'
       }
     end
 
@@ -205,6 +205,8 @@ module Phrase
         DateTime.parse(value)
       when :Date
         Date.parse(value)
+      when :Time
+        Time.parse(value)
       when :String
         value.to_s
       when :Integer
@@ -258,7 +260,7 @@ module Phrase
           is_nullable = self.class.openapi_nullable.include?(attr)
           next if !is_nullable || (is_nullable && !instance_variable_defined?(:"@#{attr}"))
         end
-        
+
         hash[param] = _to_hash(value)
       end
       hash

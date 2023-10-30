@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **briefing** | **String** |  | [optional] 
-**due_date** | **DateTime** |  | [optional] 
+**due_date** | **Time** |  | [optional] 
 **state** | **String** |  | [optional] 
 **ticket_url** | **String** |  | [optional] 
 **project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 **branch** | [**BranchName**](BranchName.md) |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 
 ## Code Sample
 

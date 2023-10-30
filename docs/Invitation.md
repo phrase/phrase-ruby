@@ -12,13 +12,13 @@ Name | Type | Description | Notes
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
 **teams** | [**Array&lt;TeamShort&gt;**](TeamShort.md) |  | [optional] 
 **default_locale_codes** | **Array&lt;String&gt;** |  | [optional] 
-**permissions** | [**Object**](.md) |  | [optional] 
+**permissions** | **Object** |  | [optional] 
 **locale_ids** | **Array&lt;String&gt;** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
-**accepted_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
+**accepted_at** | **Time** |  | [optional] 
 **spaces** | [**Array&lt;Space&gt;**](Space.md) |  | [optional] 
-**project_role** | [**Array&lt;MemberProjectDetailProjectRoles&gt;**](MemberProjectDetailProjectRoles.md) |  | [optional] 
+**project_role** | [**Array&lt;MemberProjectDetailProjectRolesInner&gt;**](MemberProjectDetailProjectRolesInner.md) |  | [optional] 
 
 ## Code Sample
 

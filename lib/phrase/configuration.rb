@@ -181,19 +181,19 @@ module Phrase
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
-        'Basic' =>
-          {
-            type: 'basic',
-            in: 'header',
-            key: 'Authorization',
-            value: basic_auth_token
-          },
         'Token' =>
           {
             type: 'api_key',
             in: 'header',
             key: 'Authorization',
             value: api_key_with_prefix('Authorization')
+          },
+        'Basic' =>
+          {
+            type: 'basic',
+            in: 'header',
+            key: 'Authorization',
+            value: basic_auth_token
           },
       }
     end

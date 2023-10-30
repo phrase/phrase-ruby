@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **auto_import_secret** | **String** |  | [optional] 
 **auto_import_url** | **String** |  | [optional] 
 **self_hosted_api_url** | **String** |  | [optional] 
-**last_exported_at** | **DateTime** |  | [optional] 
-**last_imported_at** | **DateTime** |  | [optional] 
+**last_exported_at** | **Time** |  | [optional] 
+**last_imported_at** | **Time** |  | [optional] 
 **last_status** | **String** |  | [optional] 
 
 ## Code Sample

@@ -443,7 +443,7 @@ end
 api_instance = Phrase::JobLocalesApi.new
 project_id = 'project_id_example' # String | Project ID
 job_id = 'job_id_example' # String | Job ID
-job_locales_create_parameters = Phrase::JobLocalesCreateParameters.new # JobLocalesCreateParameters | 
+job_locales_create_parameters = Phrase::JobLocalesCreateParameters.new({locale_id: 'abcd1234cdef1234abcd1234cdef1234'}) # JobLocalesCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

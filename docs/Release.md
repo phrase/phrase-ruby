@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
 **tags** | **Array&lt;String&gt;** |  | [optional] 
 **project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 
 ## Code Sample
 

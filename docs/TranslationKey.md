@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **plural** | **Boolean** |  | [optional] 
 **tags** | **Array&lt;String&gt;** |  | [optional] 
 **data_type** | **String** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 
 ## Code Sample
 

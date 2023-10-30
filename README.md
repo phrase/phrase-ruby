@@ -81,9 +81,9 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::AccountsApi.new
-id = 'id_example' # String | ID
+id = id_example # String | ID
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: x_phrase_app_otp_example # String | Two-Factor-Authentication token (optional)
 }
 
 begin
@@ -388,7 +388,6 @@ Class | Method | HTTP request | Description
 
  - [Phrase::Account](docs/Account.md)
  - [Phrase::AccountDetails](docs/AccountDetails.md)
- - [Phrase::AccountDetails1](docs/AccountDetails1.md)
  - [Phrase::AccountSearchResult](docs/AccountSearchResult.md)
  - [Phrase::AffectedCount](docs/AffectedCount.md)
  - [Phrase::AffectedResources](docs/AffectedResources.md)
@@ -396,7 +395,6 @@ Class | Method | HTTP request | Description
  - [Phrase::AuthorizationCreateParameters](docs/AuthorizationCreateParameters.md)
  - [Phrase::AuthorizationUpdateParameters](docs/AuthorizationUpdateParameters.md)
  - [Phrase::AuthorizationWithToken](docs/AuthorizationWithToken.md)
- - [Phrase::AuthorizationWithToken1](docs/AuthorizationWithToken1.md)
  - [Phrase::BitbucketSync](docs/BitbucketSync.md)
  - [Phrase::BitbucketSyncExportParameters](docs/BitbucketSyncExportParameters.md)
  - [Phrase::BitbucketSyncExportResponse](docs/BitbucketSyncExportResponse.md)
@@ -431,7 +429,7 @@ Class | Method | HTTP request | Description
  - [Phrase::GitlabSyncExport](docs/GitlabSyncExport.md)
  - [Phrase::GitlabSyncExportParameters](docs/GitlabSyncExportParameters.md)
  - [Phrase::GitlabSyncHistory](docs/GitlabSyncHistory.md)
- - [Phrase::GitlabSyncHistoryErrors](docs/GitlabSyncHistoryErrors.md)
+ - [Phrase::GitlabSyncHistoryErrorsInner](docs/GitlabSyncHistoryErrorsInner.md)
  - [Phrase::GitlabSyncImportParameters](docs/GitlabSyncImportParameters.md)
  - [Phrase::Glossary](docs/Glossary.md)
  - [Phrase::GlossaryCreateParameters](docs/GlossaryCreateParameters.md)
@@ -444,9 +442,9 @@ Class | Method | HTTP request | Description
  - [Phrase::GlossaryUpdateParameters](docs/GlossaryUpdateParameters.md)
  - [Phrase::Icu](docs/Icu.md)
  - [Phrase::IcuSkeletonParameters](docs/IcuSkeletonParameters.md)
- - [Phrase::InlineResponse422](docs/InlineResponse422.md)
- - [Phrase::InlineResponse422Errors](docs/InlineResponse422Errors.md)
  - [Phrase::Invitation](docs/Invitation.md)
+ - [Phrase::InvitationCreate422Response](docs/InvitationCreate422Response.md)
+ - [Phrase::InvitationCreate422ResponseErrorsInner](docs/InvitationCreate422ResponseErrorsInner.md)
  - [Phrase::InvitationCreateParameters](docs/InvitationCreateParameters.md)
  - [Phrase::InvitationUpdateParameters](docs/InvitationUpdateParameters.md)
  - [Phrase::InvitationUpdateSettingsParameters](docs/InvitationUpdateSettingsParameters.md)
@@ -457,7 +455,6 @@ Class | Method | HTTP request | Description
  - [Phrase::JobCompleteParameters](docs/JobCompleteParameters.md)
  - [Phrase::JobCreateParameters](docs/JobCreateParameters.md)
  - [Phrase::JobDetails](docs/JobDetails.md)
- - [Phrase::JobDetails1](docs/JobDetails1.md)
  - [Phrase::JobKeysCreateParameters](docs/JobKeysCreateParameters.md)
  - [Phrase::JobLocale](docs/JobLocale.md)
  - [Phrase::JobLocaleCompleteParameters](docs/JobLocaleCompleteParameters.md)
@@ -471,7 +468,6 @@ Class | Method | HTTP request | Description
  - [Phrase::JobTemplate](docs/JobTemplate.md)
  - [Phrase::JobTemplateCreateParameters](docs/JobTemplateCreateParameters.md)
  - [Phrase::JobTemplateDetails](docs/JobTemplateDetails.md)
- - [Phrase::JobTemplateDetails1](docs/JobTemplateDetails1.md)
  - [Phrase::JobTemplateLocaleUpdateParameters](docs/JobTemplateLocaleUpdateParameters.md)
  - [Phrase::JobTemplateLocales](docs/JobTemplateLocales.md)
  - [Phrase::JobTemplateLocalesCreateParameters](docs/JobTemplateLocalesCreateParameters.md)
@@ -489,7 +485,6 @@ Class | Method | HTTP request | Description
  - [Phrase::Locale](docs/Locale.md)
  - [Phrase::LocaleCreateParameters](docs/LocaleCreateParameters.md)
  - [Phrase::LocaleDetails](docs/LocaleDetails.md)
- - [Phrase::LocaleDetails1](docs/LocaleDetails1.md)
  - [Phrase::LocalePreview](docs/LocalePreview.md)
  - [Phrase::LocalePreview1](docs/LocalePreview1.md)
  - [Phrase::LocaleStatistics](docs/LocaleStatistics.md)
@@ -498,8 +493,8 @@ Class | Method | HTTP request | Description
  - [Phrase::LocaleUserPreview](docs/LocaleUserPreview.md)
  - [Phrase::Member](docs/Member.md)
  - [Phrase::MemberProjectDetail](docs/MemberProjectDetail.md)
- - [Phrase::MemberProjectDetailProjectRoles](docs/MemberProjectDetailProjectRoles.md)
- - [Phrase::MemberSpaces](docs/MemberSpaces.md)
+ - [Phrase::MemberProjectDetailProjectRolesInner](docs/MemberProjectDetailProjectRolesInner.md)
+ - [Phrase::MemberSpacesInner](docs/MemberSpacesInner.md)
  - [Phrase::MemberUpdateParameters](docs/MemberUpdateParameters.md)
  - [Phrase::MemberUpdateSettingsParameters](docs/MemberUpdateSettingsParameters.md)
  - [Phrase::Notification](docs/Notification.md)
@@ -516,10 +511,7 @@ Class | Method | HTTP request | Description
  - [Phrase::Project](docs/Project.md)
  - [Phrase::ProjectCreateParameters](docs/ProjectCreateParameters.md)
  - [Phrase::ProjectDetails](docs/ProjectDetails.md)
- - [Phrase::ProjectDetails1](docs/ProjectDetails1.md)
  - [Phrase::ProjectLocales](docs/ProjectLocales.md)
- - [Phrase::ProjectLocales1](docs/ProjectLocales1.md)
- - [Phrase::ProjectMemberSpecific](docs/ProjectMemberSpecific.md)
  - [Phrase::ProjectShort](docs/ProjectShort.md)
  - [Phrase::ProjectUpdateParameters](docs/ProjectUpdateParameters.md)
  - [Phrase::Release](docs/Release.md)
@@ -528,7 +520,6 @@ Class | Method | HTTP request | Description
  - [Phrase::ReleaseUpdateParameters](docs/ReleaseUpdateParameters.md)
  - [Phrase::RepliesListParameters](docs/RepliesListParameters.md)
  - [Phrase::Screenshot](docs/Screenshot.md)
- - [Phrase::ScreenshotCreateParameters](docs/ScreenshotCreateParameters.md)
  - [Phrase::ScreenshotMarker](docs/ScreenshotMarker.md)
  - [Phrase::ScreenshotMarkerCreateParameters](docs/ScreenshotMarkerCreateParameters.md)
  - [Phrase::ScreenshotMarkerUpdateParameters](docs/ScreenshotMarkerUpdateParameters.md)
@@ -542,14 +533,12 @@ Class | Method | HTTP request | Description
  - [Phrase::Styleguide](docs/Styleguide.md)
  - [Phrase::StyleguideCreateParameters](docs/StyleguideCreateParameters.md)
  - [Phrase::StyleguideDetails](docs/StyleguideDetails.md)
- - [Phrase::StyleguideDetails1](docs/StyleguideDetails1.md)
  - [Phrase::StyleguidePreview](docs/StyleguidePreview.md)
  - [Phrase::StyleguideUpdateParameters](docs/StyleguideUpdateParameters.md)
  - [Phrase::Subscription](docs/Subscription.md)
  - [Phrase::Tag](docs/Tag.md)
  - [Phrase::TagCreateParameters](docs/TagCreateParameters.md)
  - [Phrase::TagWithStats](docs/TagWithStats.md)
- - [Phrase::TagWithStats1](docs/TagWithStats1.md)
  - [Phrase::TagWithStats1Statistics](docs/TagWithStats1Statistics.md)
  - [Phrase::TagWithStats1Statistics1](docs/TagWithStats1Statistics1.md)
  - [Phrase::Team](docs/Team.md)
@@ -563,12 +552,10 @@ Class | Method | HTTP request | Description
  - [Phrase::Translation](docs/Translation.md)
  - [Phrase::TranslationCreateParameters](docs/TranslationCreateParameters.md)
  - [Phrase::TranslationDetails](docs/TranslationDetails.md)
- - [Phrase::TranslationDetails1](docs/TranslationDetails1.md)
  - [Phrase::TranslationExcludeParameters](docs/TranslationExcludeParameters.md)
  - [Phrase::TranslationIncludeParameters](docs/TranslationIncludeParameters.md)
  - [Phrase::TranslationKey](docs/TranslationKey.md)
  - [Phrase::TranslationKeyDetails](docs/TranslationKeyDetails.md)
- - [Phrase::TranslationKeyDetails1](docs/TranslationKeyDetails1.md)
  - [Phrase::TranslationOrder](docs/TranslationOrder.md)
  - [Phrase::TranslationReviewParameters](docs/TranslationReviewParameters.md)
  - [Phrase::TranslationUnverifyParameters](docs/TranslationUnverifyParameters.md)
@@ -576,7 +563,6 @@ Class | Method | HTTP request | Description
  - [Phrase::TranslationVerifyParameters](docs/TranslationVerifyParameters.md)
  - [Phrase::TranslationVersion](docs/TranslationVersion.md)
  - [Phrase::TranslationVersionWithUser](docs/TranslationVersionWithUser.md)
- - [Phrase::TranslationVersionWithUser1](docs/TranslationVersionWithUser1.md)
  - [Phrase::TranslationsExcludeParameters](docs/TranslationsExcludeParameters.md)
  - [Phrase::TranslationsIncludeParameters](docs/TranslationsIncludeParameters.md)
  - [Phrase::TranslationsReviewParameters](docs/TranslationsReviewParameters.md)
@@ -584,7 +570,6 @@ Class | Method | HTTP request | Description
  - [Phrase::TranslationsUnverifyParameters](docs/TranslationsUnverifyParameters.md)
  - [Phrase::TranslationsVerifyParameters](docs/TranslationsVerifyParameters.md)
  - [Phrase::Upload](docs/Upload.md)
- - [Phrase::UploadCreateParameters](docs/UploadCreateParameters.md)
  - [Phrase::UploadSummary](docs/UploadSummary.md)
  - [Phrase::User](docs/User.md)
  - [Phrase::UserPreview](docs/UserPreview.md)
@@ -600,14 +585,14 @@ Class | Method | HTTP request | Description
 ## Documentation for Authorization
 
 
-### Basic
-
-- **Type**: HTTP basic authentication
-
 ### Token
 
 
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+### Basic
+
+- **Type**: HTTP basic authentication
 

@@ -38,7 +38,7 @@ end
 
 api_instance = Phrase::OrganizationJobTemplatesApi.new
 account_id = 'account_id_example' # String | Account ID
-organization_job_template_create_parameters = Phrase::OrganizationJobTemplateCreateParameters.new # OrganizationJobTemplateCreateParameters | 
+organization_job_template_create_parameters = Phrase::OrganizationJobTemplateCreateParameters.new({name: 'template'}) # OrganizationJobTemplateCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
@@ -164,7 +164,7 @@ end
 api_instance = Phrase::OrganizationJobTemplatesApi.new
 account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
-organization_job_template_update_parameters = Phrase::OrganizationJobTemplateUpdateParameters.new # OrganizationJobTemplateUpdateParameters | 
+organization_job_template_update_parameters = Phrase::OrganizationJobTemplateUpdateParameters.new({name: 'template'}) # OrganizationJobTemplateUpdateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **account** | [**Account**](Account.md) |  | [optional] 
 **space** | [**Space1**](Space1.md) |  | [optional] 
 **point_of_contact** | [**UserPreview**](UserPreview.md) |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 **shares_translation_memory** | **Boolean** |  | [optional] 
 
 ## Code Sample

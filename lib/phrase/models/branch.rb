@@ -186,6 +186,8 @@ module Phrase
         DateTime.parse(value)
       when :Date
         Date.parse(value)
+      when :Time
+        Time.parse(value)
       when :String
         value.to_s
       when :Integer
@@ -239,7 +241,7 @@ module Phrase
           is_nullable = self.class.openapi_nullable.include?(attr)
           next if !is_nullable || (is_nullable && !instance_variable_defined?(:"@#{attr}"))
         end
-        
+
         hash[param] = _to_hash(value)
       end
       hash

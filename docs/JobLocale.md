@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **users** | [**Array&lt;LocaleUserPreview&gt;**](LocaleUserPreview.md) |  | [optional] 
 **teams** | [**Array&lt;LocaleTeamPreview&gt;**](LocaleTeamPreview.md) |  | [optional] 
 **completed** | **Boolean** |  | [optional] 
-**translation_completed_at** | **DateTime** |  | [optional] 
-**review_completed_at** | **DateTime** |  | [optional] 
+**translation_completed_at** | **Time** |  | [optional] 
+**review_completed_at** | **Time** |  | [optional] 
 
 ## Code Sample
 

@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **slug** | **String** |  | [optional] 
 **company** | **String** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 **company_logo_url** | **String** |  | [optional] 
 **subscription** | [**Subscription**](Subscription.md) |  | [optional] 
 

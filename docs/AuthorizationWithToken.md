@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **token_last_eight** | **String** |  | [optional] 
 **hashed_token** | **String** |  | [optional] 
 **scopes** | **Array&lt;String&gt;** |  | [optional] 
-**expires_at** | **DateTime** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**expires_at** | **Time** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 **token** | **String** |  | [optional] 
 
 ## Code Sample

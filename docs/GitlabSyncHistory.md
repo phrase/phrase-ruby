@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **String** |  | [optional] 
 **action** | **String** |  | [optional] 
-**errors** | [**Array&lt;GitlabSyncHistoryErrors&gt;**](GitlabSyncHistoryErrors.md) |  | [optional] 
-**date** | **DateTime** |  | [optional] 
-**details** | [**Object**](.md) |  | [optional] 
+**errors** | [**Array&lt;GitlabSyncHistoryErrorsInner&gt;**](GitlabSyncHistoryErrorsInner.md) |  | [optional] 
+**date** | **Time** |  | [optional] 
+**details** | **Object** |  | [optional] 
 
 ## Code Sample
 

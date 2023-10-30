@@ -46,7 +46,7 @@ comment_create_parameters = Phrase::CommentCreateParameters.new # CommentCreateP
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   message: 'some message...', # String | specify the message for the comment
-  locale_ids: ['someId'] # Array<String> | specify the locales for the comment
+  locale_ids: ['inner_example'] # Array<String> | specify the locales for the comment
 }
 
 begin
@@ -516,8 +516,8 @@ opts = {
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
   branch: 'my-feature-branch', # String | specify the branch to use
   query: 'Some comment content', # String | Search query for comment messages
-  locale_ids: ['[\"someId\"]'], # Array<String> | Search comments by their assigned locales
-  filters: ['[\"read\",\"unread\"]'], # Array<String> | Specify the filter for the comments
+  locale_ids: ['inner_example'], # Array<String> | Search comments by their assigned locales
+  filters: ['inner_example'], # Array<String> | Specify the filter for the comments
   order: 'desc' # String | Order direction. Can be one of: asc, desc.
 }
 

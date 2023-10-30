@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **platforms** | **Array&lt;String&gt;** |  | [optional] 
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
 **releases** | [**Array&lt;ReleasePreview&gt;**](ReleasePreview.md) |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**deleted_at** | **DateTime** |  | [optional] 
+**created_at** | **Time** |  | [optional] 
+**deleted_at** | **Time** |  | [optional] 
 
 ## Code Sample
 

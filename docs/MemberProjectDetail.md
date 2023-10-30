@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **username** | **String** |  | [optional] 
 **role** | **String** |  | [optional] 
 **projects** | [**Array&lt;ProjectLocales&gt;**](ProjectLocales.md) |  | [optional] 
-**permissions** | [**Object**](.md) |  | [optional] 
+**permissions** | **Object** |  | [optional] 
 **locale_ids** | **Array&lt;String&gt;** |  | [optional] 
 **default_locale_codes** | **Array&lt;String&gt;** |  | [optional] 
-**spaces** | [**Array&lt;MemberSpaces&gt;**](MemberSpaces.md) |  | [optional] 
-**project_roles** | [**Array&lt;MemberProjectDetailProjectRoles&gt;**](MemberProjectDetailProjectRoles.md) |  | [optional] 
+**spaces** | [**Array&lt;MemberSpacesInner&gt;**](MemberSpacesInner.md) |  | [optional] 
+**project_roles** | [**Array&lt;MemberProjectDetailProjectRolesInner&gt;**](MemberProjectDetailProjectRolesInner.md) |  | [optional] 
 
 ## Code Sample
 
