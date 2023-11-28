@@ -134,6 +134,7 @@ docs/LocaleCreateParameters.md
 docs/LocaleDetails.md
 docs/LocalePreview.md
 docs/LocalePreview1.md
+docs/LocaleReport.md
 docs/LocaleStatistics.md
 docs/LocaleTeamPreview.md
 docs/LocaleUpdateParameters.md
@@ -166,6 +167,7 @@ docs/Project.md
 docs/ProjectCreateParameters.md
 docs/ProjectDetails.md
 docs/ProjectLocales.md
+docs/ProjectReport.md
 docs/ProjectShort.md
 docs/ProjectUpdateParameters.md
 docs/ProjectsApi.md
@@ -175,6 +177,7 @@ docs/ReleasePreview.md
 docs/ReleaseUpdateParameters.md
 docs/ReleasesApi.md
 docs/RepliesListParameters.md
+docs/ReportsApi.md
 docs/Screenshot.md
 docs/ScreenshotMarker.md
 docs/ScreenshotMarkerCreateParameters.md
@@ -287,6 +290,7 @@ lib/phrase/api/organization_job_template_locales_api.rb
 lib/phrase/api/organization_job_templates_api.rb
 lib/phrase/api/projects_api.rb
 lib/phrase/api/releases_api.rb
+lib/phrase/api/reports_api.rb
 lib/phrase/api/screenshot_markers_api.rb
 lib/phrase/api/screenshots_api.rb
 lib/phrase/api/search_api.rb
@@ -405,6 +409,7 @@ lib/phrase/models/locale_create_parameters.rb
 lib/phrase/models/locale_details.rb
 lib/phrase/models/locale_preview.rb
 lib/phrase/models/locale_preview1.rb
+lib/phrase/models/locale_report.rb
 lib/phrase/models/locale_statistics.rb
 lib/phrase/models/locale_team_preview.rb
 lib/phrase/models/locale_update_parameters.rb
@@ -430,6 +435,7 @@ lib/phrase/models/project.rb
 lib/phrase/models/project_create_parameters.rb
 lib/phrase/models/project_details.rb
 lib/phrase/models/project_locales.rb
+lib/phrase/models/project_report.rb
 lib/phrase/models/project_short.rb
 lib/phrase/models/project_update_parameters.rb
 lib/phrase/models/release.rb
@@ -534,6 +540,7 @@ spec/api/organization_job_template_locales_api_spec.rb
 spec/api/organization_job_templates_api_spec.rb
 spec/api/projects_api_spec.rb
 spec/api/releases_api_spec.rb
+spec/api/reports_api_spec.rb
 spec/api/screenshot_markers_api_spec.rb
 spec/api/screenshots_api_spec.rb
 spec/api/search_api_spec.rb
@@ -649,6 +656,7 @@ spec/models/locale_create_parameters_spec.rb
 spec/models/locale_details_spec.rb
 spec/models/locale_preview1_spec.rb
 spec/models/locale_preview_spec.rb
+spec/models/locale_report_spec.rb
 spec/models/locale_spec.rb
 spec/models/locale_statistics_spec.rb
 spec/models/locale_team_preview_spec.rb
@@ -674,6 +682,7 @@ spec/models/organization_job_template_update_parameters_spec.rb
 spec/models/project_create_parameters_spec.rb
 spec/models/project_details_spec.rb
 spec/models/project_locales_spec.rb
+spec/models/project_report_spec.rb
 spec/models/project_short_spec.rb
 spec/models/project_spec.rb
 spec/models/project_update_parameters_spec.rb
