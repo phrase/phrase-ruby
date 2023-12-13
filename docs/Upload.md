@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **format** | **String** |  | [optional] 
 **state** | **String** |  | [optional] 
 **tag** | **String** |  | [optional] 
+**url** | **String** | The URL to the upload in Phrase Strings app.  | [optional] 
 **summary** | [**UploadSummary**](UploadSummary.md) |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
@@ -23,6 +24,7 @@ instance = Phrase::Upload.new(id: null,
                                  format: null,
                                  state: null,
                                  tag: null,
+                                 url: null,
                                  summary: null,
                                  created_at: null,
                                  updated_at: null)

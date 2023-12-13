@@ -12,6 +12,9 @@ module Phrase
 
     attr_accessor :tag
 
+    # The URL to the upload in Phrase Strings app. 
+    attr_accessor :url
+
     attr_accessor :summary
 
     attr_accessor :created_at
@@ -26,6 +29,7 @@ module Phrase
         :'format' => :'format',
         :'state' => :'state',
         :'tag' => :'tag',
+        :'url' => :'url',
         :'summary' => :'summary',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at'
@@ -40,6 +44,7 @@ module Phrase
         :'format' => :'String',
         :'state' => :'String',
         :'tag' => :'String',
+        :'url' => :'String',
         :'summary' => :'UploadSummary',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
@@ -87,6 +92,10 @@ module Phrase
         self.tag = attributes[:'tag']
       end
 
+      if attributes.key?(:'url')
+        self.url = attributes[:'url']
+      end
+
       if attributes.key?(:'summary')
         self.summary = attributes[:'summary']
       end
@@ -123,6 +132,7 @@ module Phrase
           format == o.format &&
           state == o.state &&
           tag == o.tag &&
+          url == o.url &&
           summary == o.summary &&
           created_at == o.created_at &&
           updated_at == o.updated_at
@@ -137,7 +147,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, filename, format, state, tag, summary, created_at, updated_at].hash
+      [id, filename, format, state, tag, url, summary, created_at, updated_at].hash
     end
 
     # Builds the object from hash
