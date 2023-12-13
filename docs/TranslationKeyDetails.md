@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **original_file** | **String** |  | [optional] 
 **format_value_type** | **String** |  | [optional] 
 **creator** | [**UserPreview**](UserPreview.md) |  | [optional] 
+**custom_metadata** | **Hash&lt;String, String&gt;** |  | [optional] 
 
 ## Code Sample
 
@@ -45,7 +46,8 @@ instance = Phrase::TranslationKeyDetails.new(id: null,
                                  xml_space_preserve: null,
                                  original_file: null,
                                  format_value_type: null,
-                                 creator: null)
+                                 creator: null,
+                                 custom_metadata: null)
 ```
 
 

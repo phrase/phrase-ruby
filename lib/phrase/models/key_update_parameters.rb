@@ -47,6 +47,9 @@ module Phrase
     # NSStringLocalizedFormatKey attribute. Used in .stringsdict format.
     attr_accessor :localized_format_key
 
+    # Updates/Creates custom metadata property name and value pairs to be associated with key. If you want to delete a custom metadata property, you can set its value to null. If you want to update a custom metadata property, you can set its value to the new value.
+    attr_accessor :custom_metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -64,7 +67,8 @@ module Phrase
         :'xml_space_preserve' => :'xml_space_preserve',
         :'original_file' => :'original_file',
         :'localized_format_string' => :'localized_format_string',
-        :'localized_format_key' => :'localized_format_key'
+        :'localized_format_key' => :'localized_format_key',
+        :'custom_metadata' => :'custom_metadata'
       }
     end
 
@@ -85,7 +89,8 @@ module Phrase
         :'xml_space_preserve' => :'Boolean',
         :'original_file' => :'String',
         :'localized_format_string' => :'String',
-        :'localized_format_key' => :'String'
+        :'localized_format_key' => :'String',
+        :'custom_metadata' => :'Object'
       }
     end
 
@@ -169,6 +174,10 @@ module Phrase
       if attributes.key?(:'localized_format_key')
         self.localized_format_key = attributes[:'localized_format_key']
       end
+
+      if attributes.key?(:'custom_metadata')
+        self.custom_metadata = attributes[:'custom_metadata']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -203,7 +212,8 @@ module Phrase
           xml_space_preserve == o.xml_space_preserve &&
           original_file == o.original_file &&
           localized_format_string == o.localized_format_string &&
-          localized_format_key == o.localized_format_key
+          localized_format_key == o.localized_format_key &&
+          custom_metadata == o.custom_metadata
     end
 
     # @see the `==` method
@@ -215,7 +225,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, description, plural, name_plural, data_type, tags, max_characters_allowed, screenshot, remove_screenshot, unformatted, xml_space_preserve, original_file, localized_format_string, localized_format_key].hash
+      [branch, name, description, plural, name_plural, data_type, tags, max_characters_allowed, screenshot, remove_screenshot, unformatted, xml_space_preserve, original_file, localized_format_string, localized_format_key, custom_metadata].hash
     end
 
     # Builds the object from hash

@@ -1,4 +1,4 @@
-# Phrase::InvitationCreate422ResponseErrorsInner
+# Phrase::CustomMetadataPropertyCreate422ResponseErrorsInner
 
 ## Properties
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::InvitationCreate422ResponseErrorsInner.new(resource: null,
+instance = Phrase::CustomMetadataPropertyCreate422ResponseErrorsInner.new(resource: null,
                                  field: null,
                                  message: null)
 ```

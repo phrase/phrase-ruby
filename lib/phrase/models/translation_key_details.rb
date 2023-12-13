@@ -38,6 +38,8 @@ module Phrase
 
     attr_accessor :creator
 
+    attr_accessor :custom_metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -58,7 +60,8 @@ module Phrase
         :'xml_space_preserve' => :'xml_space_preserve',
         :'original_file' => :'original_file',
         :'format_value_type' => :'format_value_type',
-        :'creator' => :'creator'
+        :'creator' => :'creator',
+        :'custom_metadata' => :'custom_metadata'
       }
     end
 
@@ -82,7 +85,8 @@ module Phrase
         :'xml_space_preserve' => :'Boolean',
         :'original_file' => :'String',
         :'format_value_type' => :'String',
-        :'creator' => :'UserPreview'
+        :'creator' => :'UserPreview',
+        :'custom_metadata' => :'Hash<String, String>'
       }
     end
 
@@ -187,6 +191,12 @@ module Phrase
       if attributes.key?(:'creator')
         self.creator = attributes[:'creator']
       end
+
+      if attributes.key?(:'custom_metadata')
+        if (value = attributes[:'custom_metadata']).is_a?(Hash)
+          self.custom_metadata = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -224,7 +234,8 @@ module Phrase
           xml_space_preserve == o.xml_space_preserve &&
           original_file == o.original_file &&
           format_value_type == o.format_value_type &&
-          creator == o.creator
+          creator == o.creator &&
+          custom_metadata == o.custom_metadata
     end
 
     # @see the `==` method
@@ -236,7 +247,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, description, name_hash, plural, tags, data_type, created_at, updated_at, name_plural, comments_count, max_characters_allowed, screenshot_url, unformatted, xml_space_preserve, original_file, format_value_type, creator].hash
+      [id, name, description, name_hash, plural, tags, data_type, created_at, updated_at, name_plural, comments_count, max_characters_allowed, screenshot_url, unformatted, xml_space_preserve, original_file, format_value_type, creator, custom_metadata].hash
     end
 
     # Builds the object from hash

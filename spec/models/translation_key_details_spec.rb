@@ -128,4 +128,10 @@ describe 'TranslationKeyDetails' do
     end
   end
 
+  describe 'test attribute "custom_metadata"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

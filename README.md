@@ -170,6 +170,11 @@ Class | Method | HTTP request | Description
 *Phrase::CommentsApi* | [**comment_show**](docs/CommentsApi.md#comment_show) | **GET** /projects/{project_id}/keys/{key_id}/comments/{id} | Get a single comment
 *Phrase::CommentsApi* | [**comment_update**](docs/CommentsApi.md#comment_update) | **PATCH** /projects/{project_id}/keys/{key_id}/comments/{id} | Update a comment
 *Phrase::CommentsApi* | [**comments_list**](docs/CommentsApi.md#comments_list) | **GET** /projects/{project_id}/keys/{key_id}/comments | List comments
+*Phrase::CustomMetadataApi* | [**custom_metadata_properties_delete**](docs/CustomMetadataApi.md#custom_metadata_properties_delete) | **DELETE** /accounts/{account_id}/custom_metadata/properties/{id} | Destroy property
+*Phrase::CustomMetadataApi* | [**custom_metadata_properties_list**](docs/CustomMetadataApi.md#custom_metadata_properties_list) | **GET** /accounts/{account_id}/custom_metadata/properties | List properties
+*Phrase::CustomMetadataApi* | [**custom_metadata_property_create**](docs/CustomMetadataApi.md#custom_metadata_property_create) | **POST** /accounts/{account_id}/custom_metadata/properties | Create a property
+*Phrase::CustomMetadataApi* | [**custom_metadata_property_show**](docs/CustomMetadataApi.md#custom_metadata_property_show) | **GET** /accounts/{account_id}/custom_metadata/properties/{id} | Get a single property
+*Phrase::CustomMetadataApi* | [**custom_metadata_property_update**](docs/CustomMetadataApi.md#custom_metadata_property_update) | **PATCH** /accounts/{account_id}/custom_metadata/properties/{id} | Update a property
 *Phrase::DistributionsApi* | [**distribution_create**](docs/DistributionsApi.md#distribution_create) | **POST** /accounts/{account_id}/distributions | Create a distribution
 *Phrase::DistributionsApi* | [**distribution_delete**](docs/DistributionsApi.md#distribution_delete) | **DELETE** /accounts/{account_id}/distributions/{id} | Delete a distribution
 *Phrase::DistributionsApi* | [**distribution_show**](docs/DistributionsApi.md#distribution_show) | **GET** /accounts/{account_id}/distributions/{id} | Get a single distribution
@@ -416,6 +421,10 @@ Class | Method | HTTP request | Description
  - [Phrase::CommentUpdateParameters](docs/CommentUpdateParameters.md)
  - [Phrase::CommentsListParameters](docs/CommentsListParameters.md)
  - [Phrase::CurrentUser](docs/CurrentUser.md)
+ - [Phrase::CustomMetadataDataType](docs/CustomMetadataDataType.md)
+ - [Phrase::CustomMetadataProperty](docs/CustomMetadataProperty.md)
+ - [Phrase::CustomMetadataPropertyCreate422Response](docs/CustomMetadataPropertyCreate422Response.md)
+ - [Phrase::CustomMetadataPropertyCreate422ResponseErrorsInner](docs/CustomMetadataPropertyCreate422ResponseErrorsInner.md)
  - [Phrase::Distribution](docs/Distribution.md)
  - [Phrase::DistributionCreateParameters](docs/DistributionCreateParameters.md)
  - [Phrase::DistributionPreview](docs/DistributionPreview.md)
@@ -445,8 +454,6 @@ Class | Method | HTTP request | Description
  - [Phrase::Icu](docs/Icu.md)
  - [Phrase::IcuSkeletonParameters](docs/IcuSkeletonParameters.md)
  - [Phrase::Invitation](docs/Invitation.md)
- - [Phrase::InvitationCreate422Response](docs/InvitationCreate422Response.md)
- - [Phrase::InvitationCreate422ResponseErrorsInner](docs/InvitationCreate422ResponseErrorsInner.md)
  - [Phrase::InvitationCreateParameters](docs/InvitationCreateParameters.md)
  - [Phrase::InvitationUpdateParameters](docs/InvitationUpdateParameters.md)
  - [Phrase::InvitationUpdateSettingsParameters](docs/InvitationUpdateSettingsParameters.md)

@@ -43,6 +43,11 @@ docs/CommentUpdateParameters.md
 docs/CommentsApi.md
 docs/CommentsListParameters.md
 docs/CurrentUser.md
+docs/CustomMetadataApi.md
+docs/CustomMetadataDataType.md
+docs/CustomMetadataProperty.md
+docs/CustomMetadataPropertyCreate422Response.md
+docs/CustomMetadataPropertyCreate422ResponseErrorsInner.md
 docs/Distribution.md
 docs/DistributionCreateParameters.md
 docs/DistributionPreview.md
@@ -82,8 +87,6 @@ docs/ICUApi.md
 docs/Icu.md
 docs/IcuSkeletonParameters.md
 docs/Invitation.md
-docs/InvitationCreate422Response.md
-docs/InvitationCreate422ResponseErrorsInner.md
 docs/InvitationCreateParameters.md
 docs/InvitationUpdateParameters.md
 docs/InvitationUpdateSettingsParameters.md
@@ -263,6 +266,7 @@ lib/phrase/api/branches_api.rb
 lib/phrase/api/comment_reactions_api.rb
 lib/phrase/api/comment_replies_api.rb
 lib/phrase/api/comments_api.rb
+lib/phrase/api/custom_metadata_api.rb
 lib/phrase/api/distributions_api.rb
 lib/phrase/api/documents_api.rb
 lib/phrase/api/figma_attachments_api.rb
@@ -336,6 +340,10 @@ lib/phrase/models/comment_reaction.rb
 lib/phrase/models/comment_update_parameters.rb
 lib/phrase/models/comments_list_parameters.rb
 lib/phrase/models/current_user.rb
+lib/phrase/models/custom_metadata_data_type.rb
+lib/phrase/models/custom_metadata_property.rb
+lib/phrase/models/custom_metadata_property_create422_response.rb
+lib/phrase/models/custom_metadata_property_create422_response_errors_inner.rb
 lib/phrase/models/distribution.rb
 lib/phrase/models/distribution_create_parameters.rb
 lib/phrase/models/distribution_preview.rb
@@ -365,8 +373,6 @@ lib/phrase/models/glossary_update_parameters.rb
 lib/phrase/models/icu.rb
 lib/phrase/models/icu_skeleton_parameters.rb
 lib/phrase/models/invitation.rb
-lib/phrase/models/invitation_create422_response.rb
-lib/phrase/models/invitation_create422_response_errors_inner.rb
 lib/phrase/models/invitation_create_parameters.rb
 lib/phrase/models/invitation_update_parameters.rb
 lib/phrase/models/invitation_update_settings_parameters.rb
@@ -514,6 +520,7 @@ spec/api/branches_api_spec.rb
 spec/api/comment_reactions_api_spec.rb
 spec/api/comment_replies_api_spec.rb
 spec/api/comments_api_spec.rb
+spec/api/custom_metadata_api_spec.rb
 spec/api/distributions_api_spec.rb
 spec/api/documents_api_spec.rb
 spec/api/figma_attachments_api_spec.rb
@@ -584,6 +591,10 @@ spec/models/comment_spec.rb
 spec/models/comment_update_parameters_spec.rb
 spec/models/comments_list_parameters_spec.rb
 spec/models/current_user_spec.rb
+spec/models/custom_metadata_data_type_spec.rb
+spec/models/custom_metadata_property_create422_response_errors_inner_spec.rb
+spec/models/custom_metadata_property_create422_response_spec.rb
+spec/models/custom_metadata_property_spec.rb
 spec/models/distribution_create_parameters_spec.rb
 spec/models/distribution_preview_spec.rb
 spec/models/distribution_spec.rb
@@ -612,8 +623,6 @@ spec/models/glossary_term_update_parameters_spec.rb
 spec/models/glossary_update_parameters_spec.rb
 spec/models/icu_skeleton_parameters_spec.rb
 spec/models/icu_spec.rb
-spec/models/invitation_create422_response_errors_inner_spec.rb
-spec/models/invitation_create422_response_spec.rb
 spec/models/invitation_create_parameters_spec.rb
 spec/models/invitation_spec.rb
 spec/models/invitation_update_parameters_spec.rb

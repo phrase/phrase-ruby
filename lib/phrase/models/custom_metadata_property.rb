@@ -1,24 +1,74 @@
 require 'date'
 
 module Phrase
-  class InvitationCreate422Response
-    attr_accessor :message
+  class CustomMetadataProperty
+    attr_accessor :id
 
-    attr_accessor :errors
+    attr_accessor :name
+
+    attr_accessor :description
+
+    attr_accessor :data_type
+
+    attr_accessor :user
+
+    attr_accessor :projects
+
+    attr_accessor :value_options
+
+    attr_accessor :created_at
+
+    attr_accessor :updated_at
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'message' => :'message',
-        :'errors' => :'errors'
+        :'id' => :'id',
+        :'name' => :'name',
+        :'description' => :'description',
+        :'data_type' => :'data_type',
+        :'user' => :'user',
+        :'projects' => :'projects',
+        :'value_options' => :'value_options',
+        :'created_at' => :'created_at',
+        :'updated_at' => :'updated_at'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'message' => :'String',
-        :'errors' => :'Array<InvitationCreate422ResponseErrorsInner>'
+        :'id' => :'String',
+        :'name' => :'String',
+        :'description' => :'String',
+        :'data_type' => :'CustomMetadataDataType',
+        :'user' => :'UserPreview',
+        :'projects' => :'Array<ProjectShort>',
+        :'value_options' => :'Array<String>',
+        :'created_at' => :'DateTime',
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -32,25 +82,55 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::InvitationCreate422Response` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::CustomMetadataProperty` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::InvitationCreate422Response`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::CustomMetadataProperty`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'message')
-        self.message = attributes[:'message']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'errors')
-        if (value = attributes[:'errors']).is_a?(Array)
-          self.errors = value
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.key?(:'data_type')
+        self.data_type = attributes[:'data_type']
+      end
+
+      if attributes.key?(:'user')
+        self.user = attributes[:'user']
+      end
+
+      if attributes.key?(:'projects')
+        if (value = attributes[:'projects']).is_a?(Array)
+          self.projects = value
         end
+      end
+
+      if attributes.key?(:'value_options')
+        if (value = attributes[:'value_options']).is_a?(Array)
+          self.value_options = value
+        end
+      end
+
+      if attributes.key?(:'created_at')
+        self.created_at = attributes[:'created_at']
+      end
+
+      if attributes.key?(:'updated_at')
+        self.updated_at = attributes[:'updated_at']
       end
     end
 
@@ -72,8 +152,15 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          message == o.message &&
-          errors == o.errors
+          id == o.id &&
+          name == o.name &&
+          description == o.description &&
+          data_type == o.data_type &&
+          user == o.user &&
+          projects == o.projects &&
+          value_options == o.value_options &&
+          created_at == o.created_at &&
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -85,7 +172,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [message, errors].hash
+      [id, name, description, data_type, user, projects, value_options, created_at, updated_at].hash
     end
 
     # Builds the object from hash

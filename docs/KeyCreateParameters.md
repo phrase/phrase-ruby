@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **original_file** | **String** | Original file attribute. Used in some formats, e.g. XLIFF. | [optional] 
 **localized_format_string** | **String** | NSStringLocalizedFormatKey attribute. Used in .stringsdict format. | [optional] 
 **localized_format_key** | **String** | NSStringLocalizedFormatKey attribute. Used in .stringsdict format. | [optional] 
+**custom_metadata** | **Object** | Custom metadata property name and value pairs to be associated with key. | [optional] 
 
 ## Code Sample
 
@@ -34,14 +35,15 @@ instance = Phrase::KeyCreateParameters.new(branch: my-feature-branch,
                                  data_type: number,
                                  tags: awesome-feature,needs-proofreading,
                                  max_characters_allowed: 140,
-                                 screenshot: [B@476fc8a1,
+                                 screenshot: [B@20865ff2,
                                  remove_screenshot: null,
                                  unformatted: null,
                                  default_translation_content: Default translation content,
                                  xml_space_preserve: null,
                                  original_file: null,
                                  localized_format_string: null,
-                                 localized_format_key: null)
+                                 localized_format_key: null,
+                                 custom_metadata: {&quot;fruit&quot;:&quot;Apple&quot;,&quot;vegetable&quot;:&quot;Tomato&quot;})
 ```
 
 
