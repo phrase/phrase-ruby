@@ -422,6 +422,8 @@ Class | Method | HTTP request | Description
  - [Phrase::CommentsListParameters](docs/CommentsListParameters.md)
  - [Phrase::CurrentUser](docs/CurrentUser.md)
  - [Phrase::CustomMetadataDataType](docs/CustomMetadataDataType.md)
+ - [Phrase::CustomMetadataPropertiesCreateParameters](docs/CustomMetadataPropertiesCreateParameters.md)
+ - [Phrase::CustomMetadataPropertiesUpdateParameters](docs/CustomMetadataPropertiesUpdateParameters.md)
  - [Phrase::CustomMetadataProperty](docs/CustomMetadataProperty.md)
  - [Phrase::CustomMetadataPropertyCreate422Response](docs/CustomMetadataPropertyCreate422Response.md)
  - [Phrase::CustomMetadataPropertyCreate422ResponseErrorsInner](docs/CustomMetadataPropertyCreate422ResponseErrorsInner.md)

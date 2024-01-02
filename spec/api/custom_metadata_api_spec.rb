@@ -57,13 +57,9 @@ describe 'CustomMetadataApi' do
   # Create a property
   # Create a new custom metadata property.
   # @param account_id Account ID
-  # @param name name of the property
-  # @param data_type Data Type of Custom Metadata Property
+  # @param custom_metadata_properties_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :description description of property
-  # @option opts [Array<String>] :project_ids ids of projects that the property belongs to
-  # @option opts [Array<String>] :value_options value options of property (only applies to single or multi select properties)
   # @return [CustomMetadataProperty]
   describe 'custom_metadata_property_create test' do
     it 'should work' do
@@ -90,12 +86,9 @@ describe 'CustomMetadataApi' do
   # Update an existing custom metadata property.
   # @param account_id Account ID
   # @param id ID
+  # @param custom_metadata_properties_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :name name of the property
-  # @option opts [String] :description description of property
-  # @option opts [Array<String>] :project_ids ids of projects that the property belongs to
-  # @option opts [Array<String>] :value_options value options of property (only applies to single or multi select properties)
   # @return [CustomMetadataProperty]
   describe 'custom_metadata_property_update test' do
     it 'should work' do

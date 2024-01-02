@@ -164,31 +164,23 @@ module Phrase
     # Create a property
     # Create a new custom metadata property.
     # @param account_id [String] Account ID
-    # @param name [String] name of the property
-    # @param data_type [CustomMetadataDataType] Data Type of Custom Metadata Property
+    # @param custom_metadata_properties_create_parameters [CustomMetadataPropertiesCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :description description of property
-    # @option opts [Array<String>] :project_ids ids of projects that the property belongs to
-    # @option opts [Array<String>] :value_options value options of property (only applies to single or multi select properties)
     # @return [CustomMetadataProperty]
-    def custom_metadata_property_create(account_id, name, data_type, opts = {})
-      data, _status_code, _headers = custom_metadata_property_create_with_http_info(account_id, name, data_type, opts)
+    def custom_metadata_property_create(account_id, custom_metadata_properties_create_parameters, opts = {})
+      data, _status_code, _headers = custom_metadata_property_create_with_http_info(account_id, custom_metadata_properties_create_parameters, opts)
       data
     end
 
     # Create a property
     # Create a new custom metadata property.
     # @param account_id [String] Account ID
-    # @param name [String] name of the property
-    # @param data_type [CustomMetadataDataType] Data Type of Custom Metadata Property
+    # @param custom_metadata_properties_create_parameters [CustomMetadataPropertiesCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :description description of property
-    # @option opts [Array<String>] :project_ids ids of projects that the property belongs to
-    # @option opts [Array<String>] :value_options value options of property (only applies to single or multi select properties)
     # @return [Array<(Response<(CustomMetadataProperty)>, Integer, Hash)>] Response<(CustomMetadataProperty)> data, response status code and response headers
-    def custom_metadata_property_create_with_http_info(account_id, name, data_type, opts = {})
+    def custom_metadata_property_create_with_http_info(account_id, custom_metadata_properties_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomMetadataApi.custom_metadata_property_create ...'
       end
@@ -196,36 +188,29 @@ module Phrase
       if @api_client.config.client_side_validation && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling CustomMetadataApi.custom_metadata_property_create"
       end
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling CustomMetadataApi.custom_metadata_property_create"
-      end
-      # verify the required parameter 'data_type' is set
-      if @api_client.config.client_side_validation && data_type.nil?
-        fail ArgumentError, "Missing the required parameter 'data_type' when calling CustomMetadataApi.custom_metadata_property_create"
+      # verify the required parameter 'custom_metadata_properties_create_parameters' is set
+      if @api_client.config.client_side_validation && custom_metadata_properties_create_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'custom_metadata_properties_create_parameters' when calling CustomMetadataApi.custom_metadata_property_create"
       end
       # resource path
       local_var_path = '/accounts/{account_id}/custom_metadata/properties'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'name'] = name
-      query_params[:'data_type'] = data_type
-      query_params[:'description'] = opts[:'description'] if !opts[:'description'].nil?
-      query_params[:'project_ids'] = @api_client.build_collection_param(opts[:'project_ids'], :multi) if !opts[:'project_ids'].nil?
-      query_params[:'value_options'] = @api_client.build_collection_param(opts[:'value_options'], :multi) if !opts[:'value_options'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] 
+      post_body = opts[:body] || @api_client.object_to_http_body(custom_metadata_properties_create_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'CustomMetadataProperty' 
@@ -326,15 +311,12 @@ module Phrase
     # Update an existing custom metadata property.
     # @param account_id [String] Account ID
     # @param id [String] ID
+    # @param custom_metadata_properties_update_parameters [CustomMetadataPropertiesUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :name name of the property
-    # @option opts [String] :description description of property
-    # @option opts [Array<String>] :project_ids ids of projects that the property belongs to
-    # @option opts [Array<String>] :value_options value options of property (only applies to single or multi select properties)
     # @return [CustomMetadataProperty]
-    def custom_metadata_property_update(account_id, id, opts = {})
-      data, _status_code, _headers = custom_metadata_property_update_with_http_info(account_id, id, opts)
+    def custom_metadata_property_update(account_id, id, custom_metadata_properties_update_parameters, opts = {})
+      data, _status_code, _headers = custom_metadata_property_update_with_http_info(account_id, id, custom_metadata_properties_update_parameters, opts)
       data
     end
 
@@ -342,14 +324,11 @@ module Phrase
     # Update an existing custom metadata property.
     # @param account_id [String] Account ID
     # @param id [String] ID
+    # @param custom_metadata_properties_update_parameters [CustomMetadataPropertiesUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :name name of the property
-    # @option opts [String] :description description of property
-    # @option opts [Array<String>] :project_ids ids of projects that the property belongs to
-    # @option opts [Array<String>] :value_options value options of property (only applies to single or multi select properties)
     # @return [Array<(Response<(CustomMetadataProperty)>, Integer, Hash)>] Response<(CustomMetadataProperty)> data, response status code and response headers
-    def custom_metadata_property_update_with_http_info(account_id, id, opts = {})
+    def custom_metadata_property_update_with_http_info(account_id, id, custom_metadata_properties_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomMetadataApi.custom_metadata_property_update ...'
       end
@@ -361,27 +340,29 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling CustomMetadataApi.custom_metadata_property_update"
       end
+      # verify the required parameter 'custom_metadata_properties_update_parameters' is set
+      if @api_client.config.client_side_validation && custom_metadata_properties_update_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'custom_metadata_properties_update_parameters' when calling CustomMetadataApi.custom_metadata_property_update"
+      end
       # resource path
       local_var_path = '/accounts/{account_id}/custom_metadata/properties/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'name'] = opts[:'name'] if !opts[:'name'].nil?
-      query_params[:'description'] = opts[:'description'] if !opts[:'description'].nil?
-      query_params[:'project_ids'] = @api_client.build_collection_param(opts[:'project_ids'], :multi) if !opts[:'project_ids'].nil?
-      query_params[:'value_options'] = @api_client.build_collection_param(opts[:'value_options'], :multi) if !opts[:'value_options'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] 
+      post_body = opts[:body] || @api_client.object_to_http_body(custom_metadata_properties_update_parameters) 
 
       # return_type
       return_type = opts[:return_type] || 'CustomMetadataProperty' 

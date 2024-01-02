@@ -45,6 +45,8 @@ docs/CommentsListParameters.md
 docs/CurrentUser.md
 docs/CustomMetadataApi.md
 docs/CustomMetadataDataType.md
+docs/CustomMetadataPropertiesCreateParameters.md
+docs/CustomMetadataPropertiesUpdateParameters.md
 docs/CustomMetadataProperty.md
 docs/CustomMetadataPropertyCreate422Response.md
 docs/CustomMetadataPropertyCreate422ResponseErrorsInner.md
@@ -341,6 +343,8 @@ lib/phrase/models/comment_update_parameters.rb
 lib/phrase/models/comments_list_parameters.rb
 lib/phrase/models/current_user.rb
 lib/phrase/models/custom_metadata_data_type.rb
+lib/phrase/models/custom_metadata_properties_create_parameters.rb
+lib/phrase/models/custom_metadata_properties_update_parameters.rb
 lib/phrase/models/custom_metadata_property.rb
 lib/phrase/models/custom_metadata_property_create422_response.rb
 lib/phrase/models/custom_metadata_property_create422_response_errors_inner.rb
@@ -592,6 +596,8 @@ spec/models/comment_update_parameters_spec.rb
 spec/models/comments_list_parameters_spec.rb
 spec/models/current_user_spec.rb
 spec/models/custom_metadata_data_type_spec.rb
+spec/models/custom_metadata_properties_create_parameters_spec.rb
+spec/models/custom_metadata_properties_update_parameters_spec.rb
 spec/models/custom_metadata_property_create422_response_errors_inner_spec.rb
 spec/models/custom_metadata_property_create422_response_spec.rb
 spec/models/custom_metadata_property_spec.rb

@@ -149,7 +149,7 @@ Response<([**Array&lt;CustomMetadataProperty&gt;**](CustomMetadataProperty.md))>
 
 ## custom_metadata_property_create
 
-> CustomMetadataProperty custom_metadata_property_create(account_id, name, data_type, opts)
+> CustomMetadataProperty custom_metadata_property_create(account_id, custom_metadata_properties_create_parameters, opts)
 
 Create a property
 
@@ -173,18 +173,14 @@ end
 
 api_instance = Phrase::CustomMetadataApi.new
 account_id = 'account_id_example' # String | Account ID
-name = '["Fruit"]' # String | name of the property
-data_type = Phrase::CustomMetadataDataType::BOOLEAN # CustomMetadataDataType | Data Type of Custom Metadata Property
+custom_metadata_properties_create_parameters = Phrase::CustomMetadataPropertiesCreateParameters.new({name: 'Fruit', data_type: Phrase::CustomMetadataDataType::BOOLEAN}) # CustomMetadataPropertiesCreateParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  description: '["A healthy snack for all ages"]', # String | description of property
-  project_ids: ['inner_example'], # Array<String> | ids of projects that the property belongs to
-  value_options: ['inner_example'] # Array<String> | value options of property (only applies to single or multi select properties)
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a property
-  result = api_instance.custom_metadata_property_create(account_id, name, data_type, opts)
+  result = api_instance.custom_metadata_property_create(account_id, custom_metadata_properties_create_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling CustomMetadataApi->custom_metadata_property_create: #{e}"
@@ -197,12 +193,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **name** | **String**| name of the property | 
- **data_type** | [**CustomMetadataDataType**](.md)| Data Type of Custom Metadata Property | 
+ **custom_metadata_properties_create_parameters** | [**CustomMetadataPropertiesCreateParameters**](CustomMetadataPropertiesCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **description** | **String**| description of property | [optional] 
- **project_ids** | [**Array&lt;String&gt;**](String.md)| ids of projects that the property belongs to | [optional] 
- **value_options** | [**Array&lt;String&gt;**](String.md)| value options of property (only applies to single or multi select properties) | [optional] 
 
 ### Return type
 
@@ -214,7 +206,7 @@ Response<([**CustomMetadataProperty**](CustomMetadataProperty.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -283,7 +275,7 @@ Response<([**CustomMetadataProperty**](CustomMetadataProperty.md))>
 
 ## custom_metadata_property_update
 
-> CustomMetadataProperty custom_metadata_property_update(account_id, id, opts)
+> CustomMetadataProperty custom_metadata_property_update(account_id, id, custom_metadata_properties_update_parameters, opts)
 
 Update a property
 
@@ -308,17 +300,14 @@ end
 api_instance = Phrase::CustomMetadataApi.new
 account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
+custom_metadata_properties_update_parameters = Phrase::CustomMetadataPropertiesUpdateParameters.new # CustomMetadataPropertiesUpdateParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  name: '["Fruit"]', # String | name of the property
-  description: '["A healthy snack for all ages"]', # String | description of property
-  project_ids: ['inner_example'], # Array<String> | ids of projects that the property belongs to
-  value_options: ['inner_example'] # Array<String> | value options of property (only applies to single or multi select properties)
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Update a property
-  result = api_instance.custom_metadata_property_update(account_id, id, opts)
+  result = api_instance.custom_metadata_property_update(account_id, id, custom_metadata_properties_update_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling CustomMetadataApi->custom_metadata_property_update: #{e}"
@@ -332,11 +321,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
  **id** | **String**| ID | 
+ **custom_metadata_properties_update_parameters** | [**CustomMetadataPropertiesUpdateParameters**](CustomMetadataPropertiesUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **name** | **String**| name of the property | [optional] 
- **description** | **String**| description of property | [optional] 
- **project_ids** | [**Array&lt;String&gt;**](String.md)| ids of projects that the property belongs to | [optional] 
- **value_options** | [**Array&lt;String&gt;**](String.md)| value options of property (only applies to single or multi select properties) | [optional] 
 
 ### Return type
 
@@ -348,6 +334,6 @@ Response<([**CustomMetadataProperty**](CustomMetadataProperty.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
