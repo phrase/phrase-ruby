@@ -305,6 +305,7 @@ Class | Method | HTTP request | Description
 *Phrase::ProjectsApi* | [**project_show**](docs/ProjectsApi.md#project_show) | **GET** /projects/{id} | Get a single project
 *Phrase::ProjectsApi* | [**project_update**](docs/ProjectsApi.md#project_update) | **PATCH** /projects/{id} | Update a project
 *Phrase::ProjectsApi* | [**projects_list**](docs/ProjectsApi.md#projects_list) | **GET** /projects | List projects
+*Phrase::QualityPerformanceScoreApi* | [**projects_quality_performance_score**](docs/QualityPerformanceScoreApi.md#projects_quality_performance_score) | **POST** /projects/{id}/quality_performance_score | Get project's translations' quality performance scores
 *Phrase::ReleasesApi* | [**release_create**](docs/ReleasesApi.md#release_create) | **POST** /accounts/{account_id}/distributions/{distribution_id}/releases | Create a release
 *Phrase::ReleasesApi* | [**release_delete**](docs/ReleasesApi.md#release_delete) | **DELETE** /accounts/{account_id}/distributions/{distribution_id}/releases/{id} | Delete a release
 *Phrase::ReleasesApi* | [**release_publish**](docs/ReleasesApi.md#release_publish) | **POST** /accounts/{account_id}/distributions/{distribution_id}/releases/{id}/publish | Publish a release
@@ -432,6 +433,8 @@ Class | Method | HTTP request | Description
  - [Phrase::DistributionPreview](docs/DistributionPreview.md)
  - [Phrase::DistributionUpdateParameters](docs/DistributionUpdateParameters.md)
  - [Phrase::Document](docs/Document.md)
+ - [Phrase::Error](docs/Error.md)
+ - [Phrase::ErrorError](docs/ErrorError.md)
  - [Phrase::FigmaAttachment](docs/FigmaAttachment.md)
  - [Phrase::FigmaAttachmentCreateParameters](docs/FigmaAttachmentCreateParameters.md)
  - [Phrase::FigmaAttachmentUpdateParameters](docs/FigmaAttachmentUpdateParameters.md)
@@ -527,6 +530,12 @@ Class | Method | HTTP request | Description
  - [Phrase::ProjectReport](docs/ProjectReport.md)
  - [Phrase::ProjectShort](docs/ProjectShort.md)
  - [Phrase::ProjectUpdateParameters](docs/ProjectUpdateParameters.md)
+ - [Phrase::ProjectsQualityPerformanceScore200Response](docs/ProjectsQualityPerformanceScore200Response.md)
+ - [Phrase::ProjectsQualityPerformanceScore200ResponseAnyOf](docs/ProjectsQualityPerformanceScore200ResponseAnyOf.md)
+ - [Phrase::ProjectsQualityPerformanceScore200ResponseAnyOfData](docs/ProjectsQualityPerformanceScore200ResponseAnyOfData.md)
+ - [Phrase::ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner](docs/ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner.md)
+ - [Phrase::ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner](docs/ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner.md)
+ - [Phrase::ProjectsQualityPerformanceScoreRequest](docs/ProjectsQualityPerformanceScoreRequest.md)
  - [Phrase::Release](docs/Release.md)
  - [Phrase::ReleaseCreateParameters](docs/ReleaseCreateParameters.md)
  - [Phrase::ReleasePreview](docs/ReleasePreview.md)
