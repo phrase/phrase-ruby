@@ -4,7 +4,7 @@ module Phrase
   class ProjectsQualityPerformanceScore200ResponseAnyOf
     attr_accessor :data
 
-    # Array of errors for any failing translation ids
+    # Array of errors for any failing translation IDs
     attr_accessor :errors
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -7,39 +7,39 @@ module Phrase
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Get project's translations' quality performance scores
-    # Get project's translations' quality performance scores
-    # @param id [String] ID
+    # Get Translation Quality
+    # Retrieves the quality scores for your Strings translations. Returns a score, measured by Phrase QPS
+    # @param project_id [String] Project ID
     # @param projects_quality_performance_score_request [ProjectsQualityPerformanceScoreRequest] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [ProjectsQualityPerformanceScore200Response]
-    def projects_quality_performance_score(id, projects_quality_performance_score_request, opts = {})
-      data, _status_code, _headers = projects_quality_performance_score_with_http_info(id, projects_quality_performance_score_request, opts)
+    def projects_quality_performance_score(project_id, projects_quality_performance_score_request, opts = {})
+      data, _status_code, _headers = projects_quality_performance_score_with_http_info(project_id, projects_quality_performance_score_request, opts)
       data
     end
 
-    # Get project&#39;s translations&#39; quality performance scores
-    # Get project&#39;s translations&#39; quality performance scores
-    # @param id [String] ID
+    # Get Translation Quality
+    # Retrieves the quality scores for your Strings translations. Returns a score, measured by Phrase QPS
+    # @param project_id [String] Project ID
     # @param projects_quality_performance_score_request [ProjectsQualityPerformanceScoreRequest] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(ProjectsQualityPerformanceScore200Response)>, Integer, Hash)>] Response<(ProjectsQualityPerformanceScore200Response)> data, response status code and response headers
-    def projects_quality_performance_score_with_http_info(id, projects_quality_performance_score_request, opts = {})
+    def projects_quality_performance_score_with_http_info(project_id, projects_quality_performance_score_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: QualityPerformanceScoreApi.projects_quality_performance_score ...'
       end
-      # verify the required parameter 'id' is set
-      if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling QualityPerformanceScoreApi.projects_quality_performance_score"
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling QualityPerformanceScoreApi.projects_quality_performance_score"
       end
       # verify the required parameter 'projects_quality_performance_score_request' is set
       if @api_client.config.client_side_validation && projects_quality_performance_score_request.nil?
         fail ArgumentError, "Missing the required parameter 'projects_quality_performance_score_request' when calling QualityPerformanceScoreApi.projects_quality_performance_score"
       end
       # resource path
-      local_var_path = '/projects/{id}/quality_performance_score'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+      local_var_path = '/projects/{project_id}/quality_performance_score'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
