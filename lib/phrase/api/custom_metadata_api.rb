@@ -86,6 +86,7 @@ module Phrase
     # @option opts [String] :project_id id of project that the properties belong to
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+    # @option opts [String] :q query to find a property by name
     # @option opts [String] :sort Sort criteria. Can be one of: name, data_type, created_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<CustomMetadataProperty>]
@@ -103,6 +104,7 @@ module Phrase
     # @option opts [String] :project_id id of project that the properties belong to
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+    # @option opts [String] :q query to find a property by name
     # @option opts [String] :sort Sort criteria. Can be one of: name, data_type, created_at.
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<(Response<(Array<CustomMetadataProperty>)>, Integer, Hash)>] Response<(Array<CustomMetadataProperty>)> data, response status code and response headers
@@ -123,6 +125,7 @@ module Phrase
       query_params[:'project_id'] = opts[:'project_id'] if !opts[:'project_id'].nil?
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
       query_params[:'sort'] = opts[:'sort'] if !opts[:'sort'].nil?
       query_params[:'order'] = opts[:'order'] if !opts[:'order'].nil?
 

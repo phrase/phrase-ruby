@@ -106,6 +106,7 @@ opts = {
   project_id: 'abcd1234cdef1234abcd1234cdef1234', # String | id of project that the properties belong to
   page: 1, # Integer | Page number
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
+  q: 'character_name', # String | query to find a property by name
   sort: 'updated_at', # String | Sort criteria. Can be one of: name, data_type, created_at.
   order: 'desc' # String | Order direction. Can be one of: asc, desc.
 }
@@ -130,6 +131,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| id of project that the properties belong to | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
+ **q** | **String**| query to find a property by name | [optional] 
  **sort** | **String**| Sort criteria. Can be one of: name, data_type, created_at. | [optional] 
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
 

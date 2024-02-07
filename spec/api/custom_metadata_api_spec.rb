@@ -44,6 +44,7 @@ describe 'CustomMetadataApi' do
   # @option opts [String] :project_id id of project that the properties belong to
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+  # @option opts [String] :q query to find a property by name
   # @option opts [String] :sort Sort criteria. Can be one of: name, data_type, created_at.
   # @option opts [String] :order Order direction. Can be one of: asc, desc.
   # @return [Array<CustomMetadataProperty>]
