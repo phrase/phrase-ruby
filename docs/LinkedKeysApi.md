@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## key_links_batch_destroy
 
-> key_links_batch_destroy(account_id, key_links_batch_destroy_parameters, opts)
+> key_links_batch_destroy(project_id, id, key_links_batch_destroy_parameters, opts)
 
 Batch unlink child keys from a parent key
 
@@ -36,7 +36,8 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::LinkedKeysApi.new
-account_id = 'account_id_example' # String | Account ID
+project_id = 'project_id_example' # String | Project ID
+id = 'id_example' # String | Parent Translation Key ID
 key_links_batch_destroy_parameters = Phrase::KeyLinksBatchDestroyParameters.new({child_key_ids: ["child_key_id1", "child_key_id2"]}) # KeyLinksBatchDestroyParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
@@ -45,7 +46,7 @@ opts = {
 
 begin
   #Batch unlink child keys from a parent key
-  api_instance.key_links_batch_destroy(account_id, key_links_batch_destroy_parameters, opts)
+  api_instance.key_links_batch_destroy(project_id, id, key_links_batch_destroy_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling LinkedKeysApi->key_links_batch_destroy: #{e}"
 end
@@ -56,7 +57,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| Account ID | 
+ **project_id** | **String**| Project ID | 
+ **id** | **String**| Parent Translation Key ID | 
  **key_links_batch_destroy_parameters** | [**KeyLinksBatchDestroyParameters**](KeyLinksBatchDestroyParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **unlink_parent** | **Boolean**| Whether to unlink the parent key as well and unmark it as linked-key. | [optional] 
@@ -77,7 +79,7 @@ Response<(nil (empty response body))>
 
 ## key_links_create
 
-> KeyLink key_links_create(account_id, key_links_create_parameters, opts)
+> KeyLink key_links_create(project_id, id, key_links_create_parameters, opts)
 
 Link child keys to a parent key
 
@@ -100,7 +102,8 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::LinkedKeysApi.new
-account_id = 'account_id_example' # String | Account ID
+project_id = 'project_id_example' # String | Project ID
+id = 'id_example' # String | Parent Translation Key ID
 key_links_create_parameters = Phrase::KeyLinksCreateParameters.new({child_key_ids: ["child_key_id1", "child_key_id2"]}) # KeyLinksCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
@@ -108,7 +111,7 @@ opts = {
 
 begin
   #Link child keys to a parent key
-  result = api_instance.key_links_create(account_id, key_links_create_parameters, opts)
+  result = api_instance.key_links_create(project_id, id, key_links_create_parameters, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling LinkedKeysApi->key_links_create: #{e}"
@@ -120,7 +123,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| Account ID | 
+ **project_id** | **String**| Project ID | 
+ **id** | **String**| Parent Translation Key ID | 
  **key_links_create_parameters** | [**KeyLinksCreateParameters**](KeyLinksCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
@@ -140,7 +144,7 @@ Response<([**KeyLink**](KeyLink.md))>
 
 ## key_links_destroy
 
-> key_links_destroy(account_id, child_key_id, opts)
+> key_links_destroy(project_id, id, child_key_id, opts)
 
 Unlink a child key from a parent key
 
@@ -163,7 +167,8 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::LinkedKeysApi.new
-account_id = 'account_id_example' # String | Account ID
+project_id = 'project_id_example' # String | Project ID
+id = 'id_example' # String | Parent Translation Key ID
 child_key_id = 'child_key_id_example' # String | The ID of the child key to unlink.
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
@@ -171,7 +176,7 @@ opts = {
 
 begin
   #Unlink a child key from a parent key
-  api_instance.key_links_destroy(account_id, child_key_id, opts)
+  api_instance.key_links_destroy(project_id, id, child_key_id, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling LinkedKeysApi->key_links_destroy: #{e}"
 end
@@ -182,7 +187,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| Account ID | 
+ **project_id** | **String**| Project ID | 
+ **id** | **String**| Parent Translation Key ID | 
  **child_key_id** | **String**| The ID of the child key to unlink. | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
@@ -202,7 +208,7 @@ Response<(nil (empty response body))>
 
 ## key_links_index
 
-> KeyLink key_links_index(account_id, opts)
+> KeyLink key_links_index(project_id, id, opts)
 
 Retrieve all child keys linked to a specific parent key
 
@@ -225,14 +231,15 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::LinkedKeysApi.new
-account_id = 'account_id_example' # String | Account ID
+project_id = 'project_id_example' # String | Project ID
+id = 'id_example' # String | Parent Translation Key ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Retrieve all child keys linked to a specific parent key
-  result = api_instance.key_links_index(account_id, opts)
+  result = api_instance.key_links_index(project_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling LinkedKeysApi->key_links_index: #{e}"
@@ -244,7 +251,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| Account ID | 
+ **project_id** | **String**| Project ID | 
+ **id** | **String**| Parent Translation Key ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type

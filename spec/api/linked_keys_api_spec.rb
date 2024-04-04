@@ -23,7 +23,8 @@ describe 'LinkedKeysApi' do
   # unit tests for key_links_batch_destroy
   # Batch unlink child keys from a parent key
   # Unlinks multiple child keys from a given parent key in a single operation.
-  # @param account_id Account ID
+  # @param project_id Project ID
+  # @param id Parent Translation Key ID
   # @param key_links_batch_destroy_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -38,7 +39,8 @@ describe 'LinkedKeysApi' do
   # unit tests for key_links_create
   # Link child keys to a parent key
   # Creates links between a given parent key and one or more child keys.
-  # @param account_id Account ID
+  # @param project_id Project ID
+  # @param id Parent Translation Key ID
   # @param key_links_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -52,7 +54,8 @@ describe 'LinkedKeysApi' do
   # unit tests for key_links_destroy
   # Unlink a child key from a parent key
   # Unlinks a single child key from a given parent key.
-  # @param account_id Account ID
+  # @param project_id Project ID
+  # @param id Parent Translation Key ID
   # @param child_key_id The ID of the child key to unlink.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -66,7 +69,8 @@ describe 'LinkedKeysApi' do
   # unit tests for key_links_index
   # Retrieve all child keys linked to a specific parent key
   # Returns detailed information about a parent key, including its linked child keys.
-  # @param account_id Account ID
+  # @param project_id Project ID
+  # @param id Parent Translation Key ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [KeyLink]
