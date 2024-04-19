@@ -248,6 +248,7 @@ docs/TranslationIncludeParameters.md
 docs/TranslationKey.md
 docs/TranslationKeyDetails.md
 docs/TranslationOrder.md
+docs/TranslationParent.md
 docs/TranslationReviewParameters.md
 docs/TranslationUnverifyParameters.md
 docs/TranslationUpdateParameters.md
@@ -531,6 +532,7 @@ lib/phrase/models/translation_include_parameters.rb
 lib/phrase/models/translation_key.rb
 lib/phrase/models/translation_key_details.rb
 lib/phrase/models/translation_order.rb
+lib/phrase/models/translation_parent.rb
 lib/phrase/models/translation_review_parameters.rb
 lib/phrase/models/translation_unverify_parameters.rb
 lib/phrase/models/translation_update_parameters.rb
@@ -803,6 +805,7 @@ spec/models/translation_include_parameters_spec.rb
 spec/models/translation_key_details_spec.rb
 spec/models/translation_key_spec.rb
 spec/models/translation_order_spec.rb
+spec/models/translation_parent_spec.rb
 spec/models/translation_review_parameters_spec.rb
 spec/models/translation_spec.rb
 spec/models/translation_unverify_parameters_spec.rb

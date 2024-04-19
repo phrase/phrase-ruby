@@ -1,52 +1,16 @@
 require 'date'
 
 module Phrase
-  class TranslationDetails
+  class TranslationParent
     attr_accessor :id
 
     attr_accessor :content
-
-    attr_accessor :unverified
-
-    attr_accessor :excluded
-
-    attr_accessor :plural_suffix
-
-    attr_accessor :key
-
-    attr_accessor :locale
-
-    attr_accessor :placeholders
-
-    attr_accessor :state
-
-    attr_accessor :created_at
-
-    attr_accessor :updated_at
-
-    attr_accessor :user
-
-    attr_accessor :word_count
-
-    attr_accessor :linked_translation
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'content' => :'content',
-        :'unverified' => :'unverified',
-        :'excluded' => :'excluded',
-        :'plural_suffix' => :'plural_suffix',
-        :'key' => :'key',
-        :'locale' => :'locale',
-        :'placeholders' => :'placeholders',
-        :'state' => :'state',
-        :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at',
-        :'user' => :'user',
-        :'word_count' => :'word_count',
-        :'linked_translation' => :'linked_translation'
+        :'content' => :'content'
       }
     end
 
@@ -54,19 +18,7 @@ module Phrase
     def self.openapi_types
       {
         :'id' => :'String',
-        :'content' => :'String',
-        :'unverified' => :'Boolean',
-        :'excluded' => :'Boolean',
-        :'plural_suffix' => :'String',
-        :'key' => :'KeyPreview',
-        :'locale' => :'LocalePreview',
-        :'placeholders' => :'Array<String>',
-        :'state' => :'String',
-        :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime',
-        :'user' => :'UserPreview',
-        :'word_count' => :'Integer',
-        :'linked_translation' => :'TranslationParent'
+        :'content' => :'String'
       }
     end
 
@@ -76,24 +28,17 @@ module Phrase
       ])
     end
 
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-      :'Translation'
-      ]
-    end
-
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::TranslationDetails` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::TranslationParent` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::TranslationDetails`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::TranslationParent`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -104,56 +49,6 @@ module Phrase
 
       if attributes.key?(:'content')
         self.content = attributes[:'content']
-      end
-
-      if attributes.key?(:'unverified')
-        self.unverified = attributes[:'unverified']
-      end
-
-      if attributes.key?(:'excluded')
-        self.excluded = attributes[:'excluded']
-      end
-
-      if attributes.key?(:'plural_suffix')
-        self.plural_suffix = attributes[:'plural_suffix']
-      end
-
-      if attributes.key?(:'key')
-        self.key = attributes[:'key']
-      end
-
-      if attributes.key?(:'locale')
-        self.locale = attributes[:'locale']
-      end
-
-      if attributes.key?(:'placeholders')
-        if (value = attributes[:'placeholders']).is_a?(Array)
-          self.placeholders = value
-        end
-      end
-
-      if attributes.key?(:'state')
-        self.state = attributes[:'state']
-      end
-
-      if attributes.key?(:'created_at')
-        self.created_at = attributes[:'created_at']
-      end
-
-      if attributes.key?(:'updated_at')
-        self.updated_at = attributes[:'updated_at']
-      end
-
-      if attributes.key?(:'user')
-        self.user = attributes[:'user']
-      end
-
-      if attributes.key?(:'word_count')
-        self.word_count = attributes[:'word_count']
-      end
-
-      if attributes.key?(:'linked_translation')
-        self.linked_translation = attributes[:'linked_translation']
       end
     end
 
@@ -176,19 +71,7 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          content == o.content &&
-          unverified == o.unverified &&
-          excluded == o.excluded &&
-          plural_suffix == o.plural_suffix &&
-          key == o.key &&
-          locale == o.locale &&
-          placeholders == o.placeholders &&
-          state == o.state &&
-          created_at == o.created_at &&
-          updated_at == o.updated_at &&
-          user == o.user &&
-          word_count == o.word_count &&
-          linked_translation == o.linked_translation
+          content == o.content
     end
 
     # @see the `==` method
@@ -200,7 +83,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, content, unverified, excluded, plural_suffix, key, locale, placeholders, state, created_at, updated_at, user, word_count, linked_translation].hash
+      [id, content].hash
     end
 
     # Builds the object from hash

@@ -599,6 +599,7 @@ Class | Method | HTTP request | Description
  - [Phrase::TranslationKey](docs/TranslationKey.md)
  - [Phrase::TranslationKeyDetails](docs/TranslationKeyDetails.md)
  - [Phrase::TranslationOrder](docs/TranslationOrder.md)
+ - [Phrase::TranslationParent](docs/TranslationParent.md)
  - [Phrase::TranslationReviewParameters](docs/TranslationReviewParameters.md)
  - [Phrase::TranslationUnverifyParameters](docs/TranslationUnverifyParameters.md)
  - [Phrase::TranslationUpdateParameters](docs/TranslationUpdateParameters.md)

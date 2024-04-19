@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **updated_at** | **Time** |  | [optional] 
 **user** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **word_count** | **Integer** |  | [optional] 
+**linked_translation** | [**TranslationParent**](TranslationParent.md) |  | [optional] 
 
 ## Code Sample
 
@@ -35,7 +36,8 @@ instance = Phrase::TranslationDetails.new(id: null,
                                  created_at: null,
                                  updated_at: null,
                                  user: null,
-                                 word_count: null)
+                                 word_count: null,
+                                 linked_translation: null)
 ```
 
 
