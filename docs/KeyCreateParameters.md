@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branch** | **String** | specify the branch to use | [optional] 
-**name** | **String** | Key name | [optional] 
+**name** | **String** | Key name | 
 **description** | **String** | Key description (usually includes contextual information for translators) | [optional] 
 **plural** | **Boolean** | Indicates whether key supports pluralization | [optional] 
 **name_plural** | **String** | Plural name for the key (used in some file formats, e.g. Gettext) | [optional] 
@@ -35,7 +35,7 @@ instance = Phrase::KeyCreateParameters.new(branch: my-feature-branch,
                                  data_type: number,
                                  tags: awesome-feature,needs-proofreading,
                                  max_characters_allowed: 140,
-                                 screenshot: [B@2eb4a3ec,
+                                 screenshot: [B@4c57acc5,
                                  remove_screenshot: null,
                                  unformatted: null,
                                  default_translation_content: Default translation content,

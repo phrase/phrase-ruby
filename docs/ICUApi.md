@@ -4,7 +4,7 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**icu_skeleton**](ICUApi.md#icu_skeleton) | **POST** /icu/skeleton | Build icu skeletons
+[**icu_skeleton**](ICUApi.md#icu_skeleton) | **POST** /icu/skeleton | Build ICU skeletons
 
 
 
@@ -12,9 +12,9 @@ Method | HTTP request | Description
 
 > Icu icu_skeleton(icu_skeleton_parameters, opts)
 
-Build icu skeletons
+Build ICU skeletons
 
-Returns icu skeletons for multiple locale codes based on a source content.
+Returns ICU skeletons for multiple locale codes based on a source content.
 
 ### Example
 
@@ -39,7 +39,7 @@ opts = {
 }
 
 begin
-  #Build icu skeletons
+  #Build ICU skeletons
   result = api_instance.icu_skeleton(icu_skeleton_parameters, opts)
   pp result
 rescue Phrase::ApiError => e

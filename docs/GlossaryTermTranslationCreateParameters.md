@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**locale_code** | **String** | Identifies the language for this translation | [optional] 
-**content** | **String** | The content of the translation | [optional] 
+**locale_code** | **String** | Identifies the language for this translation | 
+**content** | **String** | The content of the translation | 
 
 ## Code Sample
 

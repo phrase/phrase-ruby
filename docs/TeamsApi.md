@@ -44,7 +44,7 @@ end
 
 api_instance = Phrase::TeamsApi.new
 account_id = 'account_id_example' # String | Account ID
-team_create_parameters = Phrase::TeamCreateParameters.new # TeamCreateParameters | 
+team_create_parameters = Phrase::TeamCreateParameters.new({name: 'German Translators'}) # TeamCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
@@ -363,7 +363,7 @@ end
 api_instance = Phrase::TeamsApi.new
 account_id = 'account_id_example' # String | Account ID
 team_id = 'team_id_example' # String | Team ID
-teams_projects_create_parameters = Phrase::TeamsProjectsCreateParameters.new # TeamsProjectsCreateParameters | 
+teams_projects_create_parameters = Phrase::TeamsProjectsCreateParameters.new({id: 'a4b3c2d1'}) # TeamsProjectsCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
@@ -491,7 +491,7 @@ end
 api_instance = Phrase::TeamsApi.new
 account_id = 'account_id_example' # String | Account ID
 team_id = 'team_id_example' # String | Team ID
-teams_spaces_create_parameters = Phrase::TeamsSpacesCreateParameters.new # TeamsSpacesCreateParameters | 
+teams_spaces_create_parameters = Phrase::TeamsSpacesCreateParameters.new({id: 'a4b3c2d1'}) # TeamsSpacesCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
@@ -619,7 +619,7 @@ end
 api_instance = Phrase::TeamsApi.new
 account_id = 'account_id_example' # String | Account ID
 team_id = 'team_id_example' # String | Team ID
-teams_users_create_parameters = Phrase::TeamsUsersCreateParameters.new # TeamsUsersCreateParameters | 
+teams_users_create_parameters = Phrase::TeamsUsersCreateParameters.new({id: 'a4b3c2d1'}) # TeamsUsersCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

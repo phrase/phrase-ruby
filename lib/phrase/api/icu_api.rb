@@ -7,8 +7,8 @@ module Phrase
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Build icu skeletons
-    # Returns icu skeletons for multiple locale codes based on a source content.
+    # Build ICU skeletons
+    # Returns ICU skeletons for multiple locale codes based on a source content.
     # @param icu_skeleton_parameters [IcuSkeletonParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -18,8 +18,8 @@ module Phrase
       data
     end
 
-    # Build icu skeletons
-    # Returns icu skeletons for multiple locale codes based on a source content.
+    # Build ICU skeletons
+    # Returns ICU skeletons for multiple locale codes based on a source content.
     # @param icu_skeleton_parameters [IcuSkeletonParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)

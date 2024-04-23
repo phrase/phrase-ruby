@@ -101,47 +101,12 @@ module Phrase
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @created_at.nil?
-        invalid_properties.push('invalid value for "created_at", created_at cannot be nil.')
-      end
-
-      if @updated_at.nil?
-        invalid_properties.push('invalid value for "updated_at", updated_at cannot be nil.')
-      end
-
-      if @created_by.nil?
-        invalid_properties.push('invalid value for "created_by", created_by cannot be nil.')
-      end
-
-      if @updated_by.nil?
-        invalid_properties.push('invalid value for "updated_by", updated_by cannot be nil.')
-      end
-
-      if @account.nil?
-        invalid_properties.push('invalid value for "account", account cannot be nil.')
-      end
-
-      if @parent.nil?
-        invalid_properties.push('invalid value for "parent", parent cannot be nil.')
-      end
-
-      if @children.nil?
-        invalid_properties.push('invalid value for "children", children cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @created_at.nil?
-      return false if @updated_at.nil?
-      return false if @created_by.nil?
-      return false if @updated_by.nil?
-      return false if @account.nil?
-      return false if @parent.nil?
-      return false if @children.nil?
       true
     end
 

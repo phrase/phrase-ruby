@@ -11,10 +11,10 @@ module Phrase
     # Name of the LSP that should process this order. Can be one of gengo, textmaster.
     attr_accessor :lsp
 
-    # Source locale for the order. Can be the name or public id of the source locale. Preferred is the public id.
+    # Source locale for the order. Can be the name or id of the source locale. Preferred is id.
     attr_accessor :source_locale_id
 
-    # List of target locales you want the source content translate to. Can be the name or public id of the target locales. Preferred is the public id.
+    # List of target locales you want the source content translate to. Can be the name or id of the target locales. Preferred is id.
     attr_accessor :target_locale_ids
 
     # Name of the quality level, availability depends on the LSP. Can be one of:  standard, pro (for orders processed by Gengo) and one of regular, premium, enterprise (for orders processed by TextMaster)
@@ -177,12 +177,22 @@ module Phrase
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @lsp.nil?
+        invalid_properties.push('invalid value for "lsp", lsp cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @name.nil?
+      return false if @lsp.nil?
       true
     end
 

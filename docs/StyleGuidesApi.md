@@ -38,7 +38,7 @@ end
 
 api_instance = Phrase::StyleGuidesApi.new
 project_id = 'project_id_example' # String | Project ID
-styleguide_create_parameters = Phrase::StyleguideCreateParameters.new # StyleguideCreateParameters | 
+styleguide_create_parameters = Phrase::StyleguideCreateParameters.new({title: 'Web application style guide'}) # StyleguideCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

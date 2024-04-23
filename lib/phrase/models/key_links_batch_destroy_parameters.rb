@@ -5,17 +5,22 @@ module Phrase
     # The IDs of the child keys to unlink from the parent key.
     attr_accessor :child_key_ids
 
+    # Whether to unlink the parent key as well and unmark it as linked-key.
+    attr_accessor :unlink_parent
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'child_key_ids' => :'child_key_ids'
+        :'child_key_ids' => :'child_key_ids',
+        :'unlink_parent' => :'unlink_parent'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'child_key_ids' => :'Array<String>'
+        :'child_key_ids' => :'Array<String>',
+        :'unlink_parent' => :'Boolean'
       }
     end
 
@@ -45,6 +50,12 @@ module Phrase
           self.child_key_ids = value
         end
       end
+
+      if attributes.key?(:'unlink_parent')
+        self.unlink_parent = attributes[:'unlink_parent']
+      else
+        self.unlink_parent = false
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -70,7 +81,8 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          child_key_ids == o.child_key_ids
+          child_key_ids == o.child_key_ids &&
+          unlink_parent == o.unlink_parent
     end
 
     # @see the `==` method
@@ -82,7 +94,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [child_key_ids].hash
+      [child_key_ids, unlink_parent].hash
     end
 
     # Builds the object from hash

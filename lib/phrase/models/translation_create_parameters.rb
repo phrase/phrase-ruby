@@ -5,7 +5,7 @@ module Phrase
     # specify the branch to use
     attr_accessor :branch
 
-    # Locale. Can be the name or public id of the locale. Preferred is the public id.
+    # Locale. Can be the name or id of the locale. Preferred is id
     attr_accessor :locale_id
 
     # Key

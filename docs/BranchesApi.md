@@ -102,7 +102,7 @@ end
 
 api_instance = Phrase::BranchesApi.new
 project_id = 'project_id_example' # String | Project ID
-branch_create_parameters = Phrase::BranchCreateParameters.new # BranchCreateParameters | 
+branch_create_parameters = Phrase::BranchCreateParameters.new({name: 'my-branch'}) # BranchCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

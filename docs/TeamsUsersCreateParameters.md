@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | User ID to add to the Team | [optional] 
+**id** | **String** | User ID to add to the Team | 
 
 ## Code Sample
 

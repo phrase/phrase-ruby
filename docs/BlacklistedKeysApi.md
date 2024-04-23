@@ -38,7 +38,7 @@ end
 
 api_instance = Phrase::BlacklistedKeysApi.new
 project_id = 'project_id_example' # String | Project ID
-blacklisted_key_create_parameters = Phrase::BlacklistedKeyCreateParameters.new # BlacklistedKeyCreateParameters | 
+blacklisted_key_create_parameters = Phrase::BlacklistedKeyCreateParameters.new({name: 'date.formats.*'}) # BlacklistedKeyCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

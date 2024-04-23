@@ -37,7 +37,7 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::ProjectsApi.new
-project_create_parameters = Phrase::ProjectCreateParameters.new # ProjectCreateParameters | 
+project_create_parameters = Phrase::ProjectCreateParameters.new({name: 'My Android Project'}) # ProjectCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

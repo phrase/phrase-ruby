@@ -20,7 +20,7 @@ module Phrase
     # Indicates whether locale is a RTL (Right-to-Left) locale.
     attr_accessor :rtl
 
-    # Source locale. Can be the name or public id of the locale. Preferred is the public id.
+    # Source locale. Can be the name or id of the locale. Preferred is id.
     attr_accessor :source_locale_id
 
     # Fallback locale for empty translations. Can be a locale name or id.
@@ -139,12 +139,22 @@ module Phrase
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @code.nil?
+        invalid_properties.push('invalid value for "code", code cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @name.nil?
+      return false if @code.nil?
       true
     end
 

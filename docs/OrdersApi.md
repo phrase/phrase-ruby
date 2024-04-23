@@ -103,7 +103,7 @@ end
 
 api_instance = Phrase::OrdersApi.new
 project_id = 'project_id_example' # String | Project ID
-order_create_parameters = Phrase::OrderCreateParameters.new # OrderCreateParameters | 
+order_create_parameters = Phrase::OrderCreateParameters.new({name: 'Welcome message translations', lsp: 'textmaster'}) # OrderCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

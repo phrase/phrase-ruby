@@ -38,7 +38,7 @@ end
 
 api_instance = Phrase::VariablesApi.new
 project_id = 'project_id_example' # String | Project ID
-variable_create_parameters = Phrase::VariableCreateParameters.new # VariableCreateParameters | 
+variable_create_parameters = Phrase::VariableCreateParameters.new({name: 'MY_VARIABLE'}) # VariableCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

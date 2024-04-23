@@ -41,7 +41,7 @@ end
 
 api_instance = Phrase::SpacesApi.new
 account_id = 'account_id_example' # String | Account ID
-space_create_parameters = Phrase::SpaceCreateParameters.new # SpaceCreateParameters | 
+space_create_parameters = Phrase::SpaceCreateParameters.new({name: 'My Android Projects'}) # SpaceCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
@@ -360,7 +360,7 @@ end
 api_instance = Phrase::SpacesApi.new
 account_id = 'account_id_example' # String | Account ID
 space_id = 'space_id_example' # String | Space ID
-spaces_projects_create_parameters = Phrase::SpacesProjectsCreateParameters.new # SpacesProjectsCreateParameters | 
+spaces_projects_create_parameters = Phrase::SpacesProjectsCreateParameters.new({id: 'a4b3c2d1'}) # SpacesProjectsCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

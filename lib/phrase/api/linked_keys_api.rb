@@ -14,7 +14,6 @@ module Phrase
     # @param key_links_batch_destroy_parameters [KeyLinksBatchDestroyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [Boolean] :unlink_parent Whether to unlink the parent key as well and unmark it as linked-key.
     # @return [nil]
     def key_links_batch_destroy(project_id, id, key_links_batch_destroy_parameters, opts = {})
       data, _status_code, _headers = key_links_batch_destroy_with_http_info(project_id, id, key_links_batch_destroy_parameters, opts)
@@ -28,7 +27,6 @@ module Phrase
     # @param key_links_batch_destroy_parameters [KeyLinksBatchDestroyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [Boolean] :unlink_parent Whether to unlink the parent key as well and unmark it as linked-key.
     # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def key_links_batch_destroy_with_http_info(project_id, id, key_links_batch_destroy_parameters, opts = {})
       if @api_client.config.debugging
@@ -51,7 +49,6 @@ module Phrase
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'unlink_parent'] = opts[:'unlink_parent'] if !opts[:'unlink_parent'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -248,7 +245,7 @@ module Phrase
       return response, status_code, headers
     end
 
-    # Retrieve all child keys linked to a specific parent key
+    # List child keys of a parent key
     # Returns detailed information about a parent key, including its linked child keys.
     # @param project_id [String] Project ID
     # @param id [String] Parent Translation Key ID
@@ -260,7 +257,7 @@ module Phrase
       data
     end
 
-    # Retrieve all child keys linked to a specific parent key
+    # List child keys of a parent key
     # Returns detailed information about a parent key, including its linked child keys.
     # @param project_id [String] Project ID
     # @param id [String] Parent Translation Key ID

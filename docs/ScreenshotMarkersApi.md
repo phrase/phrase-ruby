@@ -39,7 +39,7 @@ end
 api_instance = Phrase::ScreenshotMarkersApi.new
 project_id = 'project_id_example' # String | Project ID
 screenshot_id = 'screenshot_id_example' # String | Screenshot ID
-screenshot_marker_create_parameters = Phrase::ScreenshotMarkerCreateParameters.new # ScreenshotMarkerCreateParameters | 
+screenshot_marker_create_parameters = Phrase::ScreenshotMarkerCreateParameters.new({key_id: 'abcd1234abcd1234abcd1234abcd1234'}) # ScreenshotMarkerCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

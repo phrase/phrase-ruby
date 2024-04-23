@@ -37,7 +37,7 @@ end
 
 api_instance = Phrase::TagsApi.new
 project_id = 'project_id_example' # String | Project ID
-tag_create_parameters = Phrase::TagCreateParameters.new # TagCreateParameters | 
+tag_create_parameters = Phrase::TagCreateParameters.new({name: 'my-feature'}) # TagCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

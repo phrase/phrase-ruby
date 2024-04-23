@@ -28,7 +28,6 @@ describe 'LinkedKeysApi' do
   # @param key_links_batch_destroy_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [Boolean] :unlink_parent Whether to unlink the parent key as well and unmark it as linked-key.
   # @return [nil]
   describe 'key_links_batch_destroy test' do
     it 'should work' do
@@ -67,7 +66,7 @@ describe 'LinkedKeysApi' do
   end
 
   # unit tests for key_links_index
-  # Retrieve all child keys linked to a specific parent key
+  # List child keys of a parent key
   # Returns detailed information about a parent key, including its linked child keys.
   # @param project_id Project ID
   # @param id Parent Translation Key ID

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**term** | **String** | Glossary term | [optional] 
+**term** | **String** | Glossary term | 
 **description** | **String** | Description of term | [optional] 
 **translatable** | **Boolean** | Indicates whether the term should be used for all languages or can be translated | [optional] 
 **case_sensitive** | **Boolean** | Indicates whether the term is case sensitive | [optional] 

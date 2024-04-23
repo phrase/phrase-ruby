@@ -38,7 +38,7 @@ api_instance = Phrase::GlossaryTermTranslationsApi.new
 account_id = 'account_id_example' # String | Account ID
 glossary_id = 'glossary_id_example' # String | Glossary ID
 term_id = 'term_id_example' # String | Term ID
-glossary_term_translation_create_parameters = Phrase::GlossaryTermTranslationCreateParameters.new # GlossaryTermTranslationCreateParameters | 
+glossary_term_translation_create_parameters = Phrase::GlossaryTermTranslationCreateParameters.new({locale_code: 'en-US', content: 'My translated term'}) # GlossaryTermTranslationCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

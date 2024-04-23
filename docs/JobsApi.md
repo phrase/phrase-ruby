@@ -111,7 +111,7 @@ end
 
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
-job_create_parameters = Phrase::JobCreateParameters.new # JobCreateParameters | 
+job_create_parameters = Phrase::JobCreateParameters.new({name: 'de'}) # JobCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

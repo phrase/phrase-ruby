@@ -21,8 +21,8 @@ describe 'ICUApi' do
   end
 
   # unit tests for icu_skeleton
-  # Build icu skeletons
-  # Returns icu skeletons for multiple locale codes based on a source content.
+  # Build ICU skeletons
+  # Returns ICU skeletons for multiple locale codes based on a source content.
   # @param icu_skeleton_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)

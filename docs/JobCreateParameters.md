@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branch** | **String** | specify the branch to use | [optional] 
-**name** | **String** | Job name | [optional] 
+**name** | **String** | Job name | 
 **source_locale_id** | **String** | The API id of the source language | [optional] 
 **briefing** | **String** | Briefing for the translators | [optional] 
 **due_date** | **Time** | Date the job should be finished | [optional] 

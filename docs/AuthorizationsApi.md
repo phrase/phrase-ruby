@@ -37,7 +37,7 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::AuthorizationsApi.new
-authorization_create_parameters = Phrase::AuthorizationCreateParameters.new # AuthorizationCreateParameters | 
+authorization_create_parameters = Phrase::AuthorizationCreateParameters.new({note: 'My Deploy Script'}) # AuthorizationCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

@@ -20,7 +20,7 @@ module Phrase
     # Indicates whether locale is a RTL (Right-to-Left) locale.
     attr_accessor :rtl
 
-    # Source locale. Can be the name or public id of the locale. Preferred is the public id.
+    # Source locale. Can be the name or id of the locale. Preferred is id.
     attr_accessor :source_locale_id
 
     # Fallback locale for empty translations. Can be a locale name or id.

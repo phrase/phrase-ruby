@@ -38,7 +38,7 @@ end
 
 api_instance = Phrase::DistributionsApi.new
 account_id = 'account_id_example' # String | Account ID
-distribution_create_parameters = Phrase::DistributionCreateParameters.new # DistributionCreateParameters | 
+distribution_create_parameters = Phrase::DistributionCreateParameters.new({name: 'My Android Distribution', project_id: 'abcd1234abcd1234abcd1234'}) # DistributionCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

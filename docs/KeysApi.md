@@ -44,7 +44,7 @@ end
 
 api_instance = Phrase::KeysApi.new
 project_id = 'project_id_example' # String | Project ID
-key_create_parameters = Phrase::KeyCreateParameters.new # KeyCreateParameters | 
+key_create_parameters = Phrase::KeyCreateParameters.new({name: 'home.index.headline'}) # KeyCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

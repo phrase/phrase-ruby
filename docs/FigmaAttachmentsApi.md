@@ -38,7 +38,7 @@ end
 
 api_instance = Phrase::FigmaAttachmentsApi.new
 project_id = 'project_id_example' # String | Project ID
-figma_attachment_create_parameters = Phrase::FigmaAttachmentCreateParameters.new # FigmaAttachmentCreateParameters | 
+figma_attachment_create_parameters = Phrase::FigmaAttachmentCreateParameters.new({url: 'https://figma.com/file/xxxxx/sample'}) # FigmaAttachmentCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   branch: 'my-feature-branch' # String | specify the branch to use

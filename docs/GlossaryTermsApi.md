@@ -39,7 +39,7 @@ end
 api_instance = Phrase::GlossaryTermsApi.new
 account_id = 'account_id_example' # String | Account ID
 glossary_id = 'glossary_id_example' # String | Glossary ID
-glossary_term_create_parameters = Phrase::GlossaryTermCreateParameters.new # GlossaryTermCreateParameters | 
+glossary_term_create_parameters = Phrase::GlossaryTermCreateParameters.new({term: 'MyCompany'}) # GlossaryTermCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

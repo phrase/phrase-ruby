@@ -40,7 +40,7 @@ end
 
 api_instance = Phrase::InvitationsApi.new
 account_id = 'account_id_example' # String | Account ID
-invitation_create_parameters = Phrase::InvitationCreateParameters.new # InvitationCreateParameters | 
+invitation_create_parameters = Phrase::InvitationCreateParameters.new({email: 'example@mail.com', role: 'Developer'}) # InvitationCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }

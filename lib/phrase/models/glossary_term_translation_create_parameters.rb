@@ -58,12 +58,22 @@ module Phrase
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @locale_code.nil?
+        invalid_properties.push('invalid value for "locale_code", locale_code cannot be nil.')
+      end
+
+      if @content.nil?
+        invalid_properties.push('invalid value for "content", content cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @locale_code.nil?
+      return false if @content.nil?
       true
     end
 

@@ -39,7 +39,7 @@ end
 
 api_instance = Phrase::WebhooksApi.new
 project_id = 'project_id_example' # String | Project ID
-webhook_create_parameters = Phrase::WebhookCreateParameters.new # WebhookCreateParameters | 
+webhook_create_parameters = Phrase::WebhookCreateParameters.new({callback_url: 'http://example.com/hooks/phraseapp-notifications'}) # WebhookCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
