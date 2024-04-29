@@ -44,6 +44,7 @@ opts = {
   branch: 'branch_example', # String | specify the branch to use
   tags: 'tags_example', # String | List of tags separated by comma to be associated with the new keys contained in the upload.
   update_translations: true, # Boolean | Indicates whether existing translations should be updated with the file content.
+  update_translation_keys: true, # Boolean | Pass `false` here to prevent new keys from being created and existing keys updated.
   update_descriptions: true, # Boolean | Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
   convert_emoji: true, # Boolean | This option is obsolete. Providing the option will cause a bad request error.
   skip_upload_tags: true, # Boolean | Indicates whether the upload should not create upload tags.
@@ -78,6 +79,7 @@ Name | Type | Description  | Notes
  **branch** | **String**| specify the branch to use | [optional] 
  **tags** | **String**| List of tags separated by comma to be associated with the new keys contained in the upload. | [optional] 
  **update_translations** | **Boolean**| Indicates whether existing translations should be updated with the file content. | [optional] 
+ **update_translation_keys** | **Boolean**| Pass &#x60;false&#x60; here to prevent new keys from being created and existing keys updated. | [optional] [default to true]
  **update_descriptions** | **Boolean**| Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. | [optional] 
  **convert_emoji** | **Boolean**| This option is obsolete. Providing the option will cause a bad request error. | [optional] 
  **skip_upload_tags** | **Boolean**| Indicates whether the upload should not create upload tags. | [optional] 
