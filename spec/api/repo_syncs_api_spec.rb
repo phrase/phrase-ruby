@@ -24,7 +24,7 @@ describe 'RepoSyncsApi' do
   # Activate a Repo Sync
   # Activate a deactivated Repo Sync. Active syncs can be used to import and export translations, and imports to Phrase are automatically triggered by pushes to the repository, if configured.
   # @param account_id Account ID
-  # @param repo_sync_id Repo Sync ID
+  # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [RepoSync]
@@ -38,7 +38,7 @@ describe 'RepoSyncsApi' do
   # Deactivate a Repo Sync
   # Deactivate an active Repo Sync. Import and export can&#39;t be performed on deactivated syncs and the pushes to the repository won&#39;t trigger the import to Phrase.
   # @param account_id Account ID
-  # @param repo_sync_id Repo Sync ID
+  # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [RepoSync]
@@ -52,7 +52,7 @@ describe 'RepoSyncsApi' do
   # Repository Syncs History
   # Get the history of a single Repo Sync. The history includes all imports and exports performed by the Repo Sync.
   # @param account_id Account ID
-  # @param repo_sync_id Repo Sync ID
+  # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Array<RepoSyncEvent>]
@@ -66,7 +66,7 @@ describe 'RepoSyncsApi' do
   # Export to code repository
   # &gt; Beta: this feature will change in the future.  Export translations from Phrase Strings to repository provider according to the .phrase.yml file within the code repository.  *Export is done asynchronously and may take several seconds depending on the project size.*
   # @param account_id Account ID
-  # @param repo_sync_id Repo Sync ID
+  # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [RepoSyncExport]
@@ -80,7 +80,7 @@ describe 'RepoSyncsApi' do
   # Import from code repository
   # &gt; Beta: this feature will change in the future.  Import translations from repository provider to Phrase Strings according to the .phrase.yml file within the code repository.  _Import is done asynchronously and may take several seconds depending on the project size._
   # @param account_id Account ID
-  # @param repo_sync_id Repo Sync ID
+  # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [RepoSyncImport]
@@ -107,7 +107,7 @@ describe 'RepoSyncsApi' do
   # Get a single Repo Sync
   # Shows a single Repo Sync setting.
   # @param account_id Account ID
-  # @param repo_sync_id Repo Sync ID
+  # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [RepoSync]

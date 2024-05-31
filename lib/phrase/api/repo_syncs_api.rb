@@ -10,23 +10,23 @@ module Phrase
     # Activate a Repo Sync
     # Activate a deactivated Repo Sync. Active syncs can be used to import and export translations, and imports to Phrase are automatically triggered by pushes to the repository, if configured.
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [RepoSync]
-    def repo_sync_activate(account_id, repo_sync_id, opts = {})
-      data, _status_code, _headers = repo_sync_activate_with_http_info(account_id, repo_sync_id, opts)
+    def repo_sync_activate(account_id, id, opts = {})
+      data, _status_code, _headers = repo_sync_activate_with_http_info(account_id, id, opts)
       data
     end
 
     # Activate a Repo Sync
     # Activate a deactivated Repo Sync. Active syncs can be used to import and export translations, and imports to Phrase are automatically triggered by pushes to the repository, if configured.
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(RepoSync)>, Integer, Hash)>] Response<(RepoSync)> data, response status code and response headers
-    def repo_sync_activate_with_http_info(account_id, repo_sync_id, opts = {})
+    def repo_sync_activate_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RepoSyncsApi.repo_sync_activate ...'
       end
@@ -34,12 +34,12 @@ module Phrase
       if @api_client.config.client_side_validation && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling RepoSyncsApi.repo_sync_activate"
       end
-      # verify the required parameter 'repo_sync_id' is set
-      if @api_client.config.client_side_validation && repo_sync_id.nil?
-        fail ArgumentError, "Missing the required parameter 'repo_sync_id' when calling RepoSyncsApi.repo_sync_activate"
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling RepoSyncsApi.repo_sync_activate"
       end
       # resource path
-      local_var_path = '/accounts/{account_id}/repo_syncs/{repo_sync_id}/activate'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'repo_sync_id' + '}', CGI.escape(repo_sync_id.to_s))
+      local_var_path = '/accounts/{account_id}/repo_syncs/{id}/activate'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -82,23 +82,23 @@ module Phrase
     # Deactivate a Repo Sync
     # Deactivate an active Repo Sync. Import and export can't be performed on deactivated syncs and the pushes to the repository won't trigger the import to Phrase.
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [RepoSync]
-    def repo_sync_deactivate(account_id, repo_sync_id, opts = {})
-      data, _status_code, _headers = repo_sync_deactivate_with_http_info(account_id, repo_sync_id, opts)
+    def repo_sync_deactivate(account_id, id, opts = {})
+      data, _status_code, _headers = repo_sync_deactivate_with_http_info(account_id, id, opts)
       data
     end
 
     # Deactivate a Repo Sync
     # Deactivate an active Repo Sync. Import and export can&#39;t be performed on deactivated syncs and the pushes to the repository won&#39;t trigger the import to Phrase.
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(RepoSync)>, Integer, Hash)>] Response<(RepoSync)> data, response status code and response headers
-    def repo_sync_deactivate_with_http_info(account_id, repo_sync_id, opts = {})
+    def repo_sync_deactivate_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RepoSyncsApi.repo_sync_deactivate ...'
       end
@@ -106,12 +106,12 @@ module Phrase
       if @api_client.config.client_side_validation && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling RepoSyncsApi.repo_sync_deactivate"
       end
-      # verify the required parameter 'repo_sync_id' is set
-      if @api_client.config.client_side_validation && repo_sync_id.nil?
-        fail ArgumentError, "Missing the required parameter 'repo_sync_id' when calling RepoSyncsApi.repo_sync_deactivate"
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling RepoSyncsApi.repo_sync_deactivate"
       end
       # resource path
-      local_var_path = '/accounts/{account_id}/repo_syncs/{repo_sync_id}/deactivate'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'repo_sync_id' + '}', CGI.escape(repo_sync_id.to_s))
+      local_var_path = '/accounts/{account_id}/repo_syncs/{id}/deactivate'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -154,23 +154,23 @@ module Phrase
     # Repository Syncs History
     # Get the history of a single Repo Sync. The history includes all imports and exports performed by the Repo Sync.
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<RepoSyncEvent>]
-    def repo_sync_events(account_id, repo_sync_id, opts = {})
-      data, _status_code, _headers = repo_sync_events_with_http_info(account_id, repo_sync_id, opts)
+    def repo_sync_events(account_id, id, opts = {})
+      data, _status_code, _headers = repo_sync_events_with_http_info(account_id, id, opts)
       data
     end
 
     # Repository Syncs History
     # Get the history of a single Repo Sync. The history includes all imports and exports performed by the Repo Sync.
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Array<RepoSyncEvent>)>, Integer, Hash)>] Response<(Array<RepoSyncEvent>)> data, response status code and response headers
-    def repo_sync_events_with_http_info(account_id, repo_sync_id, opts = {})
+    def repo_sync_events_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RepoSyncsApi.repo_sync_events ...'
       end
@@ -178,12 +178,12 @@ module Phrase
       if @api_client.config.client_side_validation && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling RepoSyncsApi.repo_sync_events"
       end
-      # verify the required parameter 'repo_sync_id' is set
-      if @api_client.config.client_side_validation && repo_sync_id.nil?
-        fail ArgumentError, "Missing the required parameter 'repo_sync_id' when calling RepoSyncsApi.repo_sync_events"
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling RepoSyncsApi.repo_sync_events"
       end
       # resource path
-      local_var_path = '/accounts/{account_id}/repo_syncs/{repo_sync_id}/events'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'repo_sync_id' + '}', CGI.escape(repo_sync_id.to_s))
+      local_var_path = '/accounts/{account_id}/repo_syncs/{id}/events'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -226,23 +226,23 @@ module Phrase
     # Export to code repository
     # > Beta: this feature will change in the future.  Export translations from Phrase Strings to repository provider according to the .phrase.yml file within the code repository.  *Export is done asynchronously and may take several seconds depending on the project size.*
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [RepoSyncExport]
-    def repo_sync_export(account_id, repo_sync_id, opts = {})
-      data, _status_code, _headers = repo_sync_export_with_http_info(account_id, repo_sync_id, opts)
+    def repo_sync_export(account_id, id, opts = {})
+      data, _status_code, _headers = repo_sync_export_with_http_info(account_id, id, opts)
       data
     end
 
     # Export to code repository
     # &gt; Beta: this feature will change in the future.  Export translations from Phrase Strings to repository provider according to the .phrase.yml file within the code repository.  *Export is done asynchronously and may take several seconds depending on the project size.*
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(RepoSyncExport)>, Integer, Hash)>] Response<(RepoSyncExport)> data, response status code and response headers
-    def repo_sync_export_with_http_info(account_id, repo_sync_id, opts = {})
+    def repo_sync_export_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RepoSyncsApi.repo_sync_export ...'
       end
@@ -250,12 +250,12 @@ module Phrase
       if @api_client.config.client_side_validation && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling RepoSyncsApi.repo_sync_export"
       end
-      # verify the required parameter 'repo_sync_id' is set
-      if @api_client.config.client_side_validation && repo_sync_id.nil?
-        fail ArgumentError, "Missing the required parameter 'repo_sync_id' when calling RepoSyncsApi.repo_sync_export"
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling RepoSyncsApi.repo_sync_export"
       end
       # resource path
-      local_var_path = '/accounts/{account_id}/repo_syncs/{repo_sync_id}/export'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'repo_sync_id' + '}', CGI.escape(repo_sync_id.to_s))
+      local_var_path = '/accounts/{account_id}/repo_syncs/{id}/export'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -298,23 +298,23 @@ module Phrase
     # Import from code repository
     # > Beta: this feature will change in the future.  Import translations from repository provider to Phrase Strings according to the .phrase.yml file within the code repository.  _Import is done asynchronously and may take several seconds depending on the project size._
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [RepoSyncImport]
-    def repo_sync_import(account_id, repo_sync_id, opts = {})
-      data, _status_code, _headers = repo_sync_import_with_http_info(account_id, repo_sync_id, opts)
+    def repo_sync_import(account_id, id, opts = {})
+      data, _status_code, _headers = repo_sync_import_with_http_info(account_id, id, opts)
       data
     end
 
     # Import from code repository
     # &gt; Beta: this feature will change in the future.  Import translations from repository provider to Phrase Strings according to the .phrase.yml file within the code repository.  _Import is done asynchronously and may take several seconds depending on the project size._
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(RepoSyncImport)>, Integer, Hash)>] Response<(RepoSyncImport)> data, response status code and response headers
-    def repo_sync_import_with_http_info(account_id, repo_sync_id, opts = {})
+    def repo_sync_import_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RepoSyncsApi.repo_sync_import ...'
       end
@@ -322,12 +322,12 @@ module Phrase
       if @api_client.config.client_side_validation && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling RepoSyncsApi.repo_sync_import"
       end
-      # verify the required parameter 'repo_sync_id' is set
-      if @api_client.config.client_side_validation && repo_sync_id.nil?
-        fail ArgumentError, "Missing the required parameter 'repo_sync_id' when calling RepoSyncsApi.repo_sync_import"
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling RepoSyncsApi.repo_sync_import"
       end
       # resource path
-      local_var_path = '/accounts/{account_id}/repo_syncs/{repo_sync_id}/import'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'repo_sync_id' + '}', CGI.escape(repo_sync_id.to_s))
+      local_var_path = '/accounts/{account_id}/repo_syncs/{id}/import'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -436,23 +436,23 @@ module Phrase
     # Get a single Repo Sync
     # Shows a single Repo Sync setting.
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [RepoSync]
-    def repo_sync_show(account_id, repo_sync_id, opts = {})
-      data, _status_code, _headers = repo_sync_show_with_http_info(account_id, repo_sync_id, opts)
+    def repo_sync_show(account_id, id, opts = {})
+      data, _status_code, _headers = repo_sync_show_with_http_info(account_id, id, opts)
       data
     end
 
     # Get a single Repo Sync
     # Shows a single Repo Sync setting.
     # @param account_id [String] Account ID
-    # @param repo_sync_id [String] Repo Sync ID
+    # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(RepoSync)>, Integer, Hash)>] Response<(RepoSync)> data, response status code and response headers
-    def repo_sync_show_with_http_info(account_id, repo_sync_id, opts = {})
+    def repo_sync_show_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RepoSyncsApi.repo_sync_show ...'
       end
@@ -460,12 +460,12 @@ module Phrase
       if @api_client.config.client_side_validation && account_id.nil?
         fail ArgumentError, "Missing the required parameter 'account_id' when calling RepoSyncsApi.repo_sync_show"
       end
-      # verify the required parameter 'repo_sync_id' is set
-      if @api_client.config.client_side_validation && repo_sync_id.nil?
-        fail ArgumentError, "Missing the required parameter 'repo_sync_id' when calling RepoSyncsApi.repo_sync_show"
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling RepoSyncsApi.repo_sync_show"
       end
       # resource path
-      local_var_path = '/accounts/{account_id}/repo_syncs/{repo_sync_id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'repo_sync_id' + '}', CGI.escape(repo_sync_id.to_s))
+      local_var_path = '/accounts/{account_id}/repo_syncs/{id}'.sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

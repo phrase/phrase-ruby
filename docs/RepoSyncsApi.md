@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**repo_sync_activate**](RepoSyncsApi.md#repo_sync_activate) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/activate | Activate a Repo Sync
-[**repo_sync_deactivate**](RepoSyncsApi.md#repo_sync_deactivate) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/deactivate | Deactivate a Repo Sync
-[**repo_sync_events**](RepoSyncsApi.md#repo_sync_events) | **GET** /accounts/{account_id}/repo_syncs/{repo_sync_id}/events | Repository Syncs History
-[**repo_sync_export**](RepoSyncsApi.md#repo_sync_export) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/export | Export to code repository
-[**repo_sync_import**](RepoSyncsApi.md#repo_sync_import) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/import | Import from code repository
+[**repo_sync_activate**](RepoSyncsApi.md#repo_sync_activate) | **POST** /accounts/{account_id}/repo_syncs/{id}/activate | Activate a Repo Sync
+[**repo_sync_deactivate**](RepoSyncsApi.md#repo_sync_deactivate) | **POST** /accounts/{account_id}/repo_syncs/{id}/deactivate | Deactivate a Repo Sync
+[**repo_sync_events**](RepoSyncsApi.md#repo_sync_events) | **GET** /accounts/{account_id}/repo_syncs/{id}/events | Repository Syncs History
+[**repo_sync_export**](RepoSyncsApi.md#repo_sync_export) | **POST** /accounts/{account_id}/repo_syncs/{id}/export | Export to code repository
+[**repo_sync_import**](RepoSyncsApi.md#repo_sync_import) | **POST** /accounts/{account_id}/repo_syncs/{id}/import | Import from code repository
 [**repo_sync_list**](RepoSyncsApi.md#repo_sync_list) | **GET** /accounts/{account_id}/repo_syncs | Get Repo Syncs
-[**repo_sync_show**](RepoSyncsApi.md#repo_sync_show) | **GET** /accounts/{account_id}/repo_syncs/{repo_sync_id} | Get a single Repo Sync
+[**repo_sync_show**](RepoSyncsApi.md#repo_sync_show) | **GET** /accounts/{account_id}/repo_syncs/{id} | Get a single Repo Sync
 
 
 
 ## repo_sync_activate
 
-> RepoSync repo_sync_activate(account_id, repo_sync_id, opts)
+> RepoSync repo_sync_activate(account_id, id, opts)
 
 Activate a Repo Sync
 
@@ -40,14 +40,14 @@ end
 
 api_instance = Phrase::RepoSyncsApi.new
 account_id = 'account_id_example' # String | Account ID
-repo_sync_id = 'repo_sync_id_example' # String | Repo Sync ID
+id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Activate a Repo Sync
-  result = api_instance.repo_sync_activate(account_id, repo_sync_id, opts)
+  result = api_instance.repo_sync_activate(account_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling RepoSyncsApi->repo_sync_activate: #{e}"
@@ -60,7 +60,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **repo_sync_id** | **String**| Repo Sync ID | 
+ **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -79,7 +79,7 @@ Response<([**RepoSync**](RepoSync.md))>
 
 ## repo_sync_deactivate
 
-> RepoSync repo_sync_deactivate(account_id, repo_sync_id, opts)
+> RepoSync repo_sync_deactivate(account_id, id, opts)
 
 Deactivate a Repo Sync
 
@@ -103,14 +103,14 @@ end
 
 api_instance = Phrase::RepoSyncsApi.new
 account_id = 'account_id_example' # String | Account ID
-repo_sync_id = 'repo_sync_id_example' # String | Repo Sync ID
+id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Deactivate a Repo Sync
-  result = api_instance.repo_sync_deactivate(account_id, repo_sync_id, opts)
+  result = api_instance.repo_sync_deactivate(account_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling RepoSyncsApi->repo_sync_deactivate: #{e}"
@@ -123,7 +123,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **repo_sync_id** | **String**| Repo Sync ID | 
+ **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -142,7 +142,7 @@ Response<([**RepoSync**](RepoSync.md))>
 
 ## repo_sync_events
 
-> Array&lt;RepoSyncEvent&gt; repo_sync_events(account_id, repo_sync_id, opts)
+> Array&lt;RepoSyncEvent&gt; repo_sync_events(account_id, id, opts)
 
 Repository Syncs History
 
@@ -166,14 +166,14 @@ end
 
 api_instance = Phrase::RepoSyncsApi.new
 account_id = 'account_id_example' # String | Account ID
-repo_sync_id = 'repo_sync_id_example' # String | Repo Sync ID
+id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Repository Syncs History
-  result = api_instance.repo_sync_events(account_id, repo_sync_id, opts)
+  result = api_instance.repo_sync_events(account_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling RepoSyncsApi->repo_sync_events: #{e}"
@@ -186,7 +186,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **repo_sync_id** | **String**| Repo Sync ID | 
+ **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -205,7 +205,7 @@ Response<([**Array&lt;RepoSyncEvent&gt;**](RepoSyncEvent.md))>
 
 ## repo_sync_export
 
-> RepoSyncExport repo_sync_export(account_id, repo_sync_id, opts)
+> RepoSyncExport repo_sync_export(account_id, id, opts)
 
 Export to code repository
 
@@ -229,14 +229,14 @@ end
 
 api_instance = Phrase::RepoSyncsApi.new
 account_id = 'account_id_example' # String | Account ID
-repo_sync_id = 'repo_sync_id_example' # String | Repo Sync ID
+id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Export to code repository
-  result = api_instance.repo_sync_export(account_id, repo_sync_id, opts)
+  result = api_instance.repo_sync_export(account_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling RepoSyncsApi->repo_sync_export: #{e}"
@@ -249,7 +249,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **repo_sync_id** | **String**| Repo Sync ID | 
+ **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -268,7 +268,7 @@ Response<([**RepoSyncExport**](RepoSyncExport.md))>
 
 ## repo_sync_import
 
-> RepoSyncImport repo_sync_import(account_id, repo_sync_id, opts)
+> RepoSyncImport repo_sync_import(account_id, id, opts)
 
 Import from code repository
 
@@ -292,14 +292,14 @@ end
 
 api_instance = Phrase::RepoSyncsApi.new
 account_id = 'account_id_example' # String | Account ID
-repo_sync_id = 'repo_sync_id_example' # String | Repo Sync ID
+id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Import from code repository
-  result = api_instance.repo_sync_import(account_id, repo_sync_id, opts)
+  result = api_instance.repo_sync_import(account_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling RepoSyncsApi->repo_sync_import: #{e}"
@@ -312,7 +312,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **repo_sync_id** | **String**| Repo Sync ID | 
+ **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
@@ -392,7 +392,7 @@ Response<([**Array&lt;RepoSync&gt;**](RepoSync.md))>
 
 ## repo_sync_show
 
-> RepoSync repo_sync_show(account_id, repo_sync_id, opts)
+> RepoSync repo_sync_show(account_id, id, opts)
 
 Get a single Repo Sync
 
@@ -416,14 +416,14 @@ end
 
 api_instance = Phrase::RepoSyncsApi.new
 account_id = 'account_id_example' # String | Account ID
-repo_sync_id = 'repo_sync_id_example' # String | Repo Sync ID
+id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Get a single Repo Sync
-  result = api_instance.repo_sync_show(account_id, repo_sync_id, opts)
+  result = api_instance.repo_sync_show(account_id, id, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling RepoSyncsApi->repo_sync_show: #{e}"
@@ -436,7 +436,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**| Account ID | 
- **repo_sync_id** | **String**| Repo Sync ID | 
+ **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
