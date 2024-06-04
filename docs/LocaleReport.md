@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **keys_count** | **Integer** |  | [optional] 
-**translated_translations_percentage** | **Integer** |  | [optional] 
-**unverified_translations_percentage** | **Integer** |  | [optional] 
-**reviewed_translations_percentage** | **Integer** |  | [optional] 
-**untranslated_keys_percentage** | **Integer** |  | [optional] 
+**translated_translations_percentage** | **Float** |  | [optional] 
+**unverified_translations_percentage** | **Float** |  | [optional] 
+**reviewed_translations_percentage** | **Float** |  | [optional] 
+**untranslated_keys_percentage** | **Float** |  | [optional] 
 **completed_translations_count** | **Integer** |  | [optional] 
 **untranslated_keys_count** | **Integer** |  | [optional] 
 **unverified_translations_count** | **Integer** |  | [optional] 

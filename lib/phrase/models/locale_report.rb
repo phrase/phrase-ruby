@@ -54,10 +54,10 @@ module Phrase
     def self.openapi_types
       {
         :'keys_count' => :'Integer',
-        :'translated_translations_percentage' => :'Integer',
-        :'unverified_translations_percentage' => :'Integer',
-        :'reviewed_translations_percentage' => :'Integer',
-        :'untranslated_keys_percentage' => :'Integer',
+        :'translated_translations_percentage' => :'Float',
+        :'unverified_translations_percentage' => :'Float',
+        :'reviewed_translations_percentage' => :'Float',
+        :'untranslated_keys_percentage' => :'Float',
         :'completed_translations_count' => :'Integer',
         :'untranslated_keys_count' => :'Integer',
         :'unverified_translations_count' => :'Integer',
