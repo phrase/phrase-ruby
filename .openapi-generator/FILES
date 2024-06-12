@@ -192,8 +192,12 @@ docs/ProjectsQualityPerformanceScoreRequest.md
 docs/QualityPerformanceScoreApi.md
 docs/Release.md
 docs/ReleaseCreateParameters.md
+docs/ReleaseCreateParameters1.md
 docs/ReleasePreview.md
+docs/ReleaseTrigger.md
+docs/ReleaseTriggersApi.md
 docs/ReleaseUpdateParameters.md
+docs/ReleaseUpdateParameters1.md
 docs/ReleasesApi.md
 docs/RepliesListParameters.md
 docs/RepoSync.md
@@ -318,6 +322,7 @@ lib/phrase/api/organization_job_template_locales_api.rb
 lib/phrase/api/organization_job_templates_api.rb
 lib/phrase/api/projects_api.rb
 lib/phrase/api/quality_performance_score_api.rb
+lib/phrase/api/release_triggers_api.rb
 lib/phrase/api/releases_api.rb
 lib/phrase/api/repo_syncs_api.rb
 lib/phrase/api/reports_api.rb
@@ -486,8 +491,11 @@ lib/phrase/models/projects_quality_performance_score200_response_any_of_errors_i
 lib/phrase/models/projects_quality_performance_score_request.rb
 lib/phrase/models/release.rb
 lib/phrase/models/release_create_parameters.rb
+lib/phrase/models/release_create_parameters1.rb
 lib/phrase/models/release_preview.rb
+lib/phrase/models/release_trigger.rb
 lib/phrase/models/release_update_parameters.rb
+lib/phrase/models/release_update_parameters1.rb
 lib/phrase/models/replies_list_parameters.rb
 lib/phrase/models/repo_sync.rb
 lib/phrase/models/repo_sync_event.rb
@@ -594,6 +602,7 @@ spec/api/organization_job_template_locales_api_spec.rb
 spec/api/organization_job_templates_api_spec.rb
 spec/api/projects_api_spec.rb
 spec/api/quality_performance_score_api_spec.rb
+spec/api/release_triggers_api_spec.rb
 spec/api/releases_api_spec.rb
 spec/api/repo_syncs_api_spec.rb
 spec/api/reports_api_spec.rb
@@ -758,9 +767,12 @@ spec/models/projects_quality_performance_score200_response_any_of_errors_inner_s
 spec/models/projects_quality_performance_score200_response_any_of_spec.rb
 spec/models/projects_quality_performance_score200_response_spec.rb
 spec/models/projects_quality_performance_score_request_spec.rb
+spec/models/release_create_parameters1_spec.rb
 spec/models/release_create_parameters_spec.rb
 spec/models/release_preview_spec.rb
 spec/models/release_spec.rb
+spec/models/release_trigger_spec.rb
+spec/models/release_update_parameters1_spec.rb
 spec/models/release_update_parameters_spec.rb
 spec/models/replies_list_parameters_spec.rb
 spec/models/repo_sync_event_errors_inner_spec.rb

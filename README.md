@@ -310,6 +310,11 @@ Class | Method | HTTP request | Description
 *Phrase::ProjectsApi* | [**project_update**](docs/ProjectsApi.md#project_update) | **PATCH** /projects/{id} | Update a project
 *Phrase::ProjectsApi* | [**projects_list**](docs/ProjectsApi.md#projects_list) | **GET** /projects | List projects
 *Phrase::QualityPerformanceScoreApi* | [**projects_quality_performance_score**](docs/QualityPerformanceScoreApi.md#projects_quality_performance_score) | **POST** /projects/{project_id}/quality_performance_score | Get Translation Quality
+*Phrase::ReleaseTriggersApi* | [**release_triggers_create**](docs/ReleaseTriggersApi.md#release_triggers_create) | **POST** /accounts/{account_id}/distributions/{distribution_id}/release_triggers | Create a release trigger
+*Phrase::ReleaseTriggersApi* | [**release_triggers_destroy**](docs/ReleaseTriggersApi.md#release_triggers_destroy) | **DELETE** /accounts/{account_id}/distributions/{distribution_id}/release_triggers/{id} | Delete a single release trigger
+*Phrase::ReleaseTriggersApi* | [**release_triggers_list**](docs/ReleaseTriggersApi.md#release_triggers_list) | **GET** /accounts/{account_id}/distributions/{distribution_id}/release_triggers | List release triggers
+*Phrase::ReleaseTriggersApi* | [**release_triggers_show**](docs/ReleaseTriggersApi.md#release_triggers_show) | **GET** /accounts/{account_id}/distributions/{distribution_id}/release_triggers/{id} | Get a single release trigger
+*Phrase::ReleaseTriggersApi* | [**release_triggers_update**](docs/ReleaseTriggersApi.md#release_triggers_update) | **PATCH** /accounts/{account_id}/distributions/{distribution_id}/release_triggers/{id} | Update a release trigger
 *Phrase::ReleasesApi* | [**release_create**](docs/ReleasesApi.md#release_create) | **POST** /accounts/{account_id}/distributions/{distribution_id}/releases | Create a release
 *Phrase::ReleasesApi* | [**release_delete**](docs/ReleasesApi.md#release_delete) | **DELETE** /accounts/{account_id}/distributions/{distribution_id}/releases/{id} | Delete a release
 *Phrase::ReleasesApi* | [**release_publish**](docs/ReleasesApi.md#release_publish) | **POST** /accounts/{account_id}/distributions/{distribution_id}/releases/{id}/publish | Publish a release
@@ -553,8 +558,11 @@ Class | Method | HTTP request | Description
  - [Phrase::ProjectsQualityPerformanceScoreRequest](docs/ProjectsQualityPerformanceScoreRequest.md)
  - [Phrase::Release](docs/Release.md)
  - [Phrase::ReleaseCreateParameters](docs/ReleaseCreateParameters.md)
+ - [Phrase::ReleaseCreateParameters1](docs/ReleaseCreateParameters1.md)
  - [Phrase::ReleasePreview](docs/ReleasePreview.md)
+ - [Phrase::ReleaseTrigger](docs/ReleaseTrigger.md)
  - [Phrase::ReleaseUpdateParameters](docs/ReleaseUpdateParameters.md)
+ - [Phrase::ReleaseUpdateParameters1](docs/ReleaseUpdateParameters1.md)
  - [Phrase::RepliesListParameters](docs/RepliesListParameters.md)
  - [Phrase::RepoSync](docs/RepoSync.md)
  - [Phrase::RepoSyncEvent](docs/RepoSyncEvent.md)
