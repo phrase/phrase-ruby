@@ -14,6 +14,12 @@ module Phrase
     # Only include tagged keys in the release. For a key to be included it must be tagged with all tags provided
     attr_accessor :tags
 
+    # Minimum version of the app that the release supports in semver format
+    attr_accessor :app_min_version
+
+    # Maximum version of the app that the release supports in semver format
+    attr_accessor :app_max_version
+
     # Branch used for release
     attr_accessor :branch
 
@@ -24,6 +30,8 @@ module Phrase
         :'platforms' => :'platforms',
         :'locale_ids' => :'locale_ids',
         :'tags' => :'tags',
+        :'app_min_version' => :'app_min_version',
+        :'app_max_version' => :'app_max_version',
         :'branch' => :'branch'
       }
     end
@@ -35,6 +43,8 @@ module Phrase
         :'platforms' => :'Array<String>',
         :'locale_ids' => :'Array<String>',
         :'tags' => :'Array<String>',
+        :'app_min_version' => :'String',
+        :'app_max_version' => :'String',
         :'branch' => :'String'
       }
     end
@@ -82,6 +92,14 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'app_min_version')
+        self.app_min_version = attributes[:'app_min_version']
+      end
+
+      if attributes.key?(:'app_max_version')
+        self.app_max_version = attributes[:'app_max_version']
+      end
+
       if attributes.key?(:'branch')
         self.branch = attributes[:'branch']
       end
@@ -109,6 +127,8 @@ module Phrase
           platforms == o.platforms &&
           locale_ids == o.locale_ids &&
           tags == o.tags &&
+          app_min_version == o.app_min_version &&
+          app_max_version == o.app_max_version &&
           branch == o.branch
     end
 
@@ -121,7 +141,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [description, platforms, locale_ids, tags, branch].hash
+      [description, platforms, locale_ids, tags, app_min_version, app_max_version, branch].hash
     end
 
     # Builds the object from hash

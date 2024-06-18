@@ -8,6 +8,12 @@ module Phrase
     # List of platforms the release should support.
     attr_accessor :platforms
 
+    # Minimum version of the app that the release supports in semver format
+    attr_accessor :app_min_version
+
+    # Maximum version of the app that the release supports in semver format
+    attr_accessor :app_max_version
+
     # Branch used for release
     attr_accessor :branch
 
@@ -16,6 +22,8 @@ module Phrase
       {
         :'description' => :'description',
         :'platforms' => :'platforms',
+        :'app_min_version' => :'app_min_version',
+        :'app_max_version' => :'app_max_version',
         :'branch' => :'branch'
       }
     end
@@ -25,6 +33,8 @@ module Phrase
       {
         :'description' => :'String',
         :'platforms' => :'Array<String>',
+        :'app_min_version' => :'String',
+        :'app_max_version' => :'String',
         :'branch' => :'String'
       }
     end
@@ -60,6 +70,14 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'app_min_version')
+        self.app_min_version = attributes[:'app_min_version']
+      end
+
+      if attributes.key?(:'app_max_version')
+        self.app_max_version = attributes[:'app_max_version']
+      end
+
       if attributes.key?(:'branch')
         self.branch = attributes[:'branch']
       end
@@ -85,6 +103,8 @@ module Phrase
       self.class == o.class &&
           description == o.description &&
           platforms == o.platforms &&
+          app_min_version == o.app_min_version &&
+          app_max_version == o.app_max_version &&
           branch == o.branch
     end
 
@@ -97,7 +117,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [description, platforms, branch].hash
+      [description, platforms, app_min_version, app_max_version, branch].hash
     end
 
     # Builds the object from hash
