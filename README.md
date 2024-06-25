@@ -271,6 +271,8 @@ Class | Method | HTTP request | Description
 *Phrase::LinkedKeysApi* | [**key_links_create**](docs/LinkedKeysApi.md#key_links_create) | **POST** /projects/{project_id}/keys/{id}/key_links | Link child keys to a parent key
 *Phrase::LinkedKeysApi* | [**key_links_destroy**](docs/LinkedKeysApi.md#key_links_destroy) | **DELETE** /projects/{project_id}/keys/{id}/key_links/{child_key_id} | Unlink a child key from a parent key
 *Phrase::LinkedKeysApi* | [**key_links_index**](docs/LinkedKeysApi.md#key_links_index) | **GET** /projects/{project_id}/keys/{id}/key_links | List child keys of a parent key
+*Phrase::LocaleDownloadsApi* | [**locale_download_create**](docs/LocaleDownloadsApi.md#locale_download_create) | **POST** /projects/{project_id}/locales/{locale_id}/downloads | Initiate async download of a locale
+*Phrase::LocaleDownloadsApi* | [**locale_download_show**](docs/LocaleDownloadsApi.md#locale_download_show) | **GET** /projects/{project_id}/locales/{locale_id}/downloads/{id} | Show status of an async locale download
 *Phrase::LocalesApi* | [**account_locales**](docs/LocalesApi.md#account_locales) | **GET** /accounts/{id}/locales | List locales used in account
 *Phrase::LocalesApi* | [**locale_create**](docs/LocalesApi.md#locale_create) | **POST** /projects/{project_id}/locales | Create a locale
 *Phrase::LocalesApi* | [**locale_delete**](docs/LocalesApi.md#locale_delete) | **DELETE** /projects/{project_id}/locales/{id} | Delete a locale
@@ -519,6 +521,10 @@ Class | Method | HTTP request | Description
  - [Phrase::Locale](docs/Locale.md)
  - [Phrase::LocaleCreateParameters](docs/LocaleCreateParameters.md)
  - [Phrase::LocaleDetails](docs/LocaleDetails.md)
+ - [Phrase::LocaleDownload](docs/LocaleDownload.md)
+ - [Phrase::LocaleDownloadCreateParameters](docs/LocaleDownloadCreateParameters.md)
+ - [Phrase::LocaleDownloadParams](docs/LocaleDownloadParams.md)
+ - [Phrase::LocaleDownloadResult](docs/LocaleDownloadResult.md)
  - [Phrase::LocalePreview](docs/LocalePreview.md)
  - [Phrase::LocalePreview1](docs/LocalePreview1.md)
  - [Phrase::LocaleReport](docs/LocaleReport.md)

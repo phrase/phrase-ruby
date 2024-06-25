@@ -144,6 +144,11 @@ docs/LinkedKeysApi.md
 docs/Locale.md
 docs/LocaleCreateParameters.md
 docs/LocaleDetails.md
+docs/LocaleDownload.md
+docs/LocaleDownloadCreateParameters.md
+docs/LocaleDownloadParams.md
+docs/LocaleDownloadResult.md
+docs/LocaleDownloadsApi.md
 docs/LocalePreview.md
 docs/LocalePreview1.md
 docs/LocaleReport.md
@@ -313,6 +318,7 @@ lib/phrase/api/jobs_api.rb
 lib/phrase/api/keys_api.rb
 lib/phrase/api/keys_figma_attachments_api.rb
 lib/phrase/api/linked_keys_api.rb
+lib/phrase/api/locale_downloads_api.rb
 lib/phrase/api/locales_api.rb
 lib/phrase/api/members_api.rb
 lib/phrase/api/notification_groups_api.rb
@@ -452,6 +458,10 @@ lib/phrase/models/keys_untag_parameters.rb
 lib/phrase/models/locale.rb
 lib/phrase/models/locale_create_parameters.rb
 lib/phrase/models/locale_details.rb
+lib/phrase/models/locale_download.rb
+lib/phrase/models/locale_download_create_parameters.rb
+lib/phrase/models/locale_download_params.rb
+lib/phrase/models/locale_download_result.rb
 lib/phrase/models/locale_preview.rb
 lib/phrase/models/locale_preview1.rb
 lib/phrase/models/locale_report.rb
@@ -594,6 +604,7 @@ spec/api/jobs_api_spec.rb
 spec/api/keys_api_spec.rb
 spec/api/keys_figma_attachments_api_spec.rb
 spec/api/linked_keys_api_spec.rb
+spec/api/locale_downloads_api_spec.rb
 spec/api/members_api_spec.rb
 spec/api/notification_groups_api_spec.rb
 spec/api/notifications_api_spec.rb
@@ -729,6 +740,10 @@ spec/models/keys_tag_parameters_spec.rb
 spec/models/keys_untag_parameters_spec.rb
 spec/models/locale_create_parameters_spec.rb
 spec/models/locale_details_spec.rb
+spec/models/locale_download_create_parameters_spec.rb
+spec/models/locale_download_params_spec.rb
+spec/models/locale_download_result_spec.rb
+spec/models/locale_download_spec.rb
 spec/models/locale_preview1_spec.rb
 spec/models/locale_preview_spec.rb
 spec/models/locale_report_spec.rb
