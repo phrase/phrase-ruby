@@ -48,6 +48,21 @@ describe 'RepoSyncsApi' do
     end
   end
 
+  # unit tests for repo_sync_event_show
+  # Get a single Repo Sync Event
+  # Shows a single Repo Sync event.
+  # @param account_id Account ID
+  # @param repo_sync_id Repo Sync ID
+  # @param id ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [RepoSyncEvent]
+  describe 'repo_sync_event_show test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for repo_sync_events
   # Repository Syncs History
   # Get the history of a single Repo Sync. The history includes all imports and exports performed by the Repo Sync.
@@ -69,7 +84,7 @@ describe 'RepoSyncsApi' do
   # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [RepoSyncExport]
+  # @return [RepoSyncEvent]
   describe 'repo_sync_export test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -83,7 +98,7 @@ describe 'RepoSyncsApi' do
   # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [RepoSyncImport]
+  # @return [RepoSyncEvent]
   describe 'repo_sync_import test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

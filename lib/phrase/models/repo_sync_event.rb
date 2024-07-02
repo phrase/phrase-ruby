@@ -2,6 +2,8 @@ require 'date'
 
 module Phrase
   class RepoSyncEvent
+    attr_accessor :id
+
     attr_accessor :event_type
 
     attr_accessor :created_at
@@ -42,6 +44,7 @@ module Phrase
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'id' => :'id',
         :'event_type' => :'event_type',
         :'created_at' => :'created_at',
         :'status' => :'status',
@@ -54,6 +57,7 @@ module Phrase
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'id' => :'String',
         :'event_type' => :'String',
         :'created_at' => :'DateTime',
         :'status' => :'String',
@@ -83,6 +87,10 @@ module Phrase
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
+      end
 
       if attributes.key?(:'event_type')
         self.event_type = attributes[:'event_type']
@@ -153,6 +161,7 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          id == o.id &&
           event_type == o.event_type &&
           created_at == o.created_at &&
           status == o.status &&
@@ -170,7 +179,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [event_type, created_at, status, pull_request_url, auto_import, errors].hash
+      [id, event_type, created_at, status, pull_request_url, auto_import, errors].hash
     end
 
     # Builds the object from hash

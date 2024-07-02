@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | [optional] 
 **event_type** | **String** |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **status** | **String** |  | [optional] 
@@ -16,7 +17,8 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::RepoSyncEvent.new(event_type: null,
+instance = Phrase::RepoSyncEvent.new(id: null,
+                                 event_type: null,
                                  created_at: null,
                                  status: null,
                                  pull_request_url: null,
