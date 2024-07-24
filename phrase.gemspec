@@ -20,9 +20,9 @@ Gem::Specification.new do |s|
     "source_code_uri"   => "https://github.com/phrase/phrase-ruby"
   }
 
-  s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
-  s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'
-  s.add_runtime_dependency 'link-header-parser', '~> 4.0'
+  s.add_runtime_dependency 'typhoeus', '~> 1.4'
+  s.add_runtime_dependency 'json', '~> 2.6'
+  s.add_runtime_dependency 'link-header-parser', '~> 6.0'
 
   s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
 
