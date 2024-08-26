@@ -19,6 +19,7 @@ module Phrase
     # @option opts [String] :tags List of tags separated by comma to be associated with the new keys contained in the upload.
     # @option opts [Boolean] :update_translations Indicates whether existing translations should be updated with the file content.
     # @option opts [Boolean] :update_translation_keys Pass &#x60;false&#x60; here to prevent new keys from being created and existing keys updated. (default to true)
+    # @option opts [Boolean] :update_translations_on_source_match Update target translations only if the source translations of the uploaded multilingual file match the stored translations. (default to false)
     # @option opts [Boolean] :update_descriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
     # @option opts [Boolean] :convert_emoji This option is obsolete. Providing the option will cause a bad request error.
     # @option opts [Boolean] :skip_upload_tags Indicates whether the upload should not create upload tags.
@@ -47,6 +48,7 @@ module Phrase
     # @option opts [String] :tags List of tags separated by comma to be associated with the new keys contained in the upload.
     # @option opts [Boolean] :update_translations Indicates whether existing translations should be updated with the file content.
     # @option opts [Boolean] :update_translation_keys Pass &#x60;false&#x60; here to prevent new keys from being created and existing keys updated.
+    # @option opts [Boolean] :update_translations_on_source_match Update target translations only if the source translations of the uploaded multilingual file match the stored translations.
     # @option opts [Boolean] :update_descriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
     # @option opts [Boolean] :convert_emoji This option is obsolete. Providing the option will cause a bad request error.
     # @option opts [Boolean] :skip_upload_tags Indicates whether the upload should not create upload tags.
@@ -101,6 +103,7 @@ module Phrase
       form_params['tags'] = opts[:'tags'] if !opts[:'tags'].nil?
       form_params['update_translations'] = opts[:'update_translations'] if !opts[:'update_translations'].nil?
       form_params['update_translation_keys'] = opts[:'update_translation_keys'] if !opts[:'update_translation_keys'].nil?
+      form_params['update_translations_on_source_match'] = opts[:'update_translations_on_source_match'] if !opts[:'update_translations_on_source_match'].nil?
       form_params['update_descriptions'] = opts[:'update_descriptions'] if !opts[:'update_descriptions'].nil?
       form_params['convert_emoji'] = opts[:'convert_emoji'] if !opts[:'convert_emoji'].nil?
       form_params['skip_upload_tags'] = opts[:'skip_upload_tags'] if !opts[:'skip_upload_tags'].nil?
