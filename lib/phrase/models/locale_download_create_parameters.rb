@@ -35,6 +35,9 @@ module Phrase
     # If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project.
     attr_accessor :use_last_reviewed_version
 
+    # Locale IDs or locale names
+    attr_accessor :locale_ids
+
     # If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to <code>true</code>.
     attr_accessor :fallback_locale_id
 
@@ -58,6 +61,7 @@ module Phrase
         :'encoding' => :'encoding',
         :'include_unverified_translations' => :'include_unverified_translations',
         :'use_last_reviewed_version' => :'use_last_reviewed_version',
+        :'locale_ids' => :'locale_ids',
         :'fallback_locale_id' => :'fallback_locale_id',
         :'source_locale_id' => :'source_locale_id',
         :'custom_metadata_filters' => :'custom_metadata_filters'
@@ -78,6 +82,7 @@ module Phrase
         :'encoding' => :'String',
         :'include_unverified_translations' => :'Boolean',
         :'use_last_reviewed_version' => :'Boolean',
+        :'locale_ids' => :'Array<String>',
         :'fallback_locale_id' => :'String',
         :'source_locale_id' => :'String',
         :'custom_metadata_filters' => :'Object'
@@ -149,6 +154,12 @@ module Phrase
         self.use_last_reviewed_version = attributes[:'use_last_reviewed_version']
       end
 
+      if attributes.key?(:'locale_ids')
+        if (value = attributes[:'locale_ids']).is_a?(Array)
+          self.locale_ids = value
+        end
+      end
+
       if attributes.key?(:'fallback_locale_id')
         self.fallback_locale_id = attributes[:'fallback_locale_id']
       end
@@ -196,6 +207,7 @@ module Phrase
           encoding == o.encoding &&
           include_unverified_translations == o.include_unverified_translations &&
           use_last_reviewed_version == o.use_last_reviewed_version &&
+          locale_ids == o.locale_ids &&
           fallback_locale_id == o.fallback_locale_id &&
           source_locale_id == o.source_locale_id &&
           custom_metadata_filters == o.custom_metadata_filters
@@ -210,7 +222,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [file_format, branch, tags, include_empty_translations, exclude_empty_zero_forms, include_translated_keys, keep_notranslate_tags, format_options, encoding, include_unverified_translations, use_last_reviewed_version, fallback_locale_id, source_locale_id, custom_metadata_filters].hash
+      [file_format, branch, tags, include_empty_translations, exclude_empty_zero_forms, include_translated_keys, keep_notranslate_tags, format_options, encoding, include_unverified_translations, use_last_reviewed_version, locale_ids, fallback_locale_id, source_locale_id, custom_metadata_filters].hash
     end
 
     # Builds the object from hash

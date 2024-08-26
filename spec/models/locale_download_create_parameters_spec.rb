@@ -86,6 +86,12 @@ describe 'LocaleDownloadCreateParameters' do
     end
   end
 
+  describe 'test attribute "locale_ids"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "fallback_locale_id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
