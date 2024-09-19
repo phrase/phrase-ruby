@@ -321,7 +321,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @option opts [Array<String>] :translation_key_ids ids of keys that should added to the job
+    # @option opts [Array<String>] :translation_key_ids ids of keys that should be removed from the job
     # @return [nil]
     def job_keys_delete(project_id, id, opts = {})
       data, _status_code, _headers = job_keys_delete_with_http_info(project_id, id, opts)
@@ -335,7 +335,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @option opts [Array<String>] :translation_key_ids ids of keys that should added to the job
+    # @option opts [Array<String>] :translation_key_ids ids of keys that should be removed from the job
     # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def job_keys_delete_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging

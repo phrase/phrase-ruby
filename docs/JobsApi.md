@@ -307,7 +307,7 @@ id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   branch: 'my-feature-branch', # String | specify the branch to use
-  translation_key_ids: ['inner_example'] # Array<String> | ids of keys that should added to the job
+  translation_key_ids: ['inner_example'] # Array<String> | ids of keys that should be removed from the job
 }
 
 begin
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
- **translation_key_ids** | [**Array&lt;String&gt;**](String.md)| ids of keys that should added to the job | [optional] 
+ **translation_key_ids** | [**Array&lt;String&gt;**](String.md)| ids of keys that should be removed from the job | [optional] 
 
 ### Return type
 

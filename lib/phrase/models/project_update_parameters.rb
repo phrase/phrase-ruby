@@ -29,7 +29,7 @@ module Phrase
     # (Optional) Review Workflow. \"simple\" / \"review\". <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\">Read more</a>
     attr_accessor :workflow
 
-    # (Optional) Enable machine translation support in the project. Required for Autopilot and Smart Suggest
+    # (Optional) Enable machine translation support in the project. Required for Pre-Translation
     attr_accessor :machine_translation_enabled
 
     # (Optional) Enable branching in the project
@@ -68,15 +68,6 @@ module Phrase
     # (Optional) Requires autotranslate_enabled to be true
     attr_accessor :autotranslate_use_translation_memory
 
-    # (Optional) Smart Suggest, requires machine_translation_enabled
-    attr_accessor :smart_suggest_enabled
-
-    # (Optional) Requires smart_suggest_enabled to be true
-    attr_accessor :smart_suggest_use_glossary
-
-    # (Optional) Requires smart_suggest_enabled to be true
-    attr_accessor :smart_suggest_use_machine_translation
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -101,10 +92,7 @@ module Phrase
         :'autotranslate_check_new_locales' => :'autotranslate_check_new_locales',
         :'autotranslate_mark_as_unverified' => :'autotranslate_mark_as_unverified',
         :'autotranslate_use_machine_translation' => :'autotranslate_use_machine_translation',
-        :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
-        :'smart_suggest_enabled' => :'smart_suggest_enabled',
-        :'smart_suggest_use_glossary' => :'smart_suggest_use_glossary',
-        :'smart_suggest_use_machine_translation' => :'smart_suggest_use_machine_translation'
+        :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory'
       }
     end
 
@@ -132,10 +120,7 @@ module Phrase
         :'autotranslate_check_new_locales' => :'Boolean',
         :'autotranslate_mark_as_unverified' => :'Boolean',
         :'autotranslate_use_machine_translation' => :'Boolean',
-        :'autotranslate_use_translation_memory' => :'Boolean',
-        :'smart_suggest_enabled' => :'Boolean',
-        :'smart_suggest_use_glossary' => :'Boolean',
-        :'smart_suggest_use_machine_translation' => :'Boolean'
+        :'autotranslate_use_translation_memory' => :'Boolean'
       }
     end
 
@@ -247,18 +232,6 @@ module Phrase
       if attributes.key?(:'autotranslate_use_translation_memory')
         self.autotranslate_use_translation_memory = attributes[:'autotranslate_use_translation_memory']
       end
-
-      if attributes.key?(:'smart_suggest_enabled')
-        self.smart_suggest_enabled = attributes[:'smart_suggest_enabled']
-      end
-
-      if attributes.key?(:'smart_suggest_use_glossary')
-        self.smart_suggest_use_glossary = attributes[:'smart_suggest_use_glossary']
-      end
-
-      if attributes.key?(:'smart_suggest_use_machine_translation')
-        self.smart_suggest_use_machine_translation = attributes[:'smart_suggest_use_machine_translation']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -300,10 +273,7 @@ module Phrase
           autotranslate_check_new_locales == o.autotranslate_check_new_locales &&
           autotranslate_mark_as_unverified == o.autotranslate_mark_as_unverified &&
           autotranslate_use_machine_translation == o.autotranslate_use_machine_translation &&
-          autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
-          smart_suggest_enabled == o.smart_suggest_enabled &&
-          smart_suggest_use_glossary == o.smart_suggest_use_glossary &&
-          smart_suggest_use_machine_translation == o.smart_suggest_use_machine_translation
+          autotranslate_use_translation_memory == o.autotranslate_use_translation_memory
     end
 
     # @see the `==` method
@@ -315,7 +285,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id, name, point_of_contact, main_format, media, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation].hash
+      [account_id, name, point_of_contact, main_format, media, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory].hash
     end
 
     # Builds the object from hash

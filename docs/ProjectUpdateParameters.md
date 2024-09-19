@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **project_image** | **File** | (Optional) Image to identify the project | [optional] 
 **remove_project_image** | **Boolean** | (Optional) Indicates whether the project image should be deleted. | [optional] 
 **workflow** | **String** | (Optional) Review Workflow. \&quot;simple\&quot; / \&quot;review\&quot;. &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5784094755484\&quot;&gt;Read more&lt;/a&gt; | [optional] 
-**machine_translation_enabled** | **Boolean** | (Optional) Enable machine translation support in the project. Required for Autopilot and Smart Suggest | [optional] 
+**machine_translation_enabled** | **Boolean** | (Optional) Enable machine translation support in the project. Required for Pre-Translation | [optional] 
 **enable_branching** | **Boolean** | (Optional) Enable branching in the project | [optional] 
 **protect_master_branch** | **Boolean** | (Optional) Protect the master branch in project where branching is enabled | [optional] 
 **enable_all_data_type_translation_keys_for_translators** | **Boolean** | (Optional) Otherwise, translators are not allowed to edit translations other than strings | [optional] 
@@ -26,9 +26,6 @@ Name | Type | Description | Notes
 **autotranslate_mark_as_unverified** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **autotranslate_use_machine_translation** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **autotranslate_use_translation_memory** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
-**smart_suggest_enabled** | **Boolean** | (Optional) Smart Suggest, requires machine_translation_enabled | [optional] 
-**smart_suggest_use_glossary** | **Boolean** | (Optional) Requires smart_suggest_enabled to be true | [optional] 
-**smart_suggest_use_machine_translation** | **Boolean** | (Optional) Requires smart_suggest_enabled to be true | [optional] 
 
 ## Code Sample
 
@@ -41,7 +38,7 @@ instance = Phrase::ProjectUpdateParameters.new(account_id: abcd1234,
                                  main_format: yml,
                                  media: Python,
                                  shares_translation_memory: true,
-                                 project_image: [B@3c288a4e,
+                                 project_image: [B@35b1e5e5,
                                  remove_project_image: false,
                                  workflow: review,
                                  machine_translation_enabled: true,
@@ -56,10 +53,7 @@ instance = Phrase::ProjectUpdateParameters.new(account_id: abcd1234,
                                  autotranslate_check_new_locales: true,
                                  autotranslate_mark_as_unverified: true,
                                  autotranslate_use_machine_translation: true,
-                                 autotranslate_use_translation_memory: true,
-                                 smart_suggest_enabled: true,
-                                 smart_suggest_use_glossary: true,
-                                 smart_suggest_use_machine_translation: true)
+                                 autotranslate_use_translation_memory: true)
 ```
 
 
