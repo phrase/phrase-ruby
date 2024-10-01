@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## formats_list
 
-> Array&lt;Format&gt; formats_list(opts)
+> Array&lt;Format&gt; formats_list
 
 List formats
 
@@ -33,13 +33,10 @@ Phrase.configure do |config|
 end
 
 api_instance = Phrase::FormatsApi.new
-opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
-}
 
 begin
   #List formats
-  result = api_instance.formats_list(opts)
+  result = api_instance.formats_list
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling FormatsApi->formats_list: #{e}"
@@ -48,10 +45,7 @@ end
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 

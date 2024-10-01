@@ -10,7 +10,6 @@ module Phrase
     # List formats
     # Get a handy list of all localization file formats supported in Phrase.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<Format>]
     def formats_list(opts = {})
       data, _status_code, _headers = formats_list_with_http_info(opts)
@@ -20,7 +19,6 @@ module Phrase
     # List formats
     # Get a handy list of all localization file formats supported in Phrase.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @return [Array<(Response<(Array<Format>)>, Integer, Hash)>] Response<(Array<Format>)> data, response status code and response headers
     def formats_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -36,7 +34,6 @@ module Phrase
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}

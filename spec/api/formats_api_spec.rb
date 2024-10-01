@@ -24,7 +24,6 @@ describe 'FormatsApi' do
   # List formats
   # Get a handy list of all localization file formats supported in Phrase.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Array<Format>]
   describe 'formats_list test' do
     it 'should work' do
