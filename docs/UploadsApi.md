@@ -55,7 +55,8 @@ opts = {
   format_options: { ... }, # Object | Additional options available for specific formats. See our format guide for complete list.
   autotranslate: true, # Boolean | If set, translations for the uploaded language will be fetched automatically.
   mark_reviewed: true, # Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
-  tag_only_affected_keys: true # Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
+  tag_only_affected_keys: true, # Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
+  translation_key_prefix: 'translation_key_prefix_example' # String | This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
 }
 
 begin
@@ -92,6 +93,7 @@ Name | Type | Description  | Notes
  **autotranslate** | **Boolean**| If set, translations for the uploaded language will be fetched automatically. | [optional] 
  **mark_reviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. | [optional] 
  **tag_only_affected_keys** | **Boolean**| Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; | [optional] [default to false]
+ **translation_key_prefix** | **String**| This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized. | [optional] 
 
 ### Return type
 
