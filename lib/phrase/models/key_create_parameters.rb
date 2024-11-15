@@ -38,6 +38,9 @@ module Phrase
     # Creates a translation in the default locale with the specified content
     attr_accessor :default_translation_content
 
+    # Indicates whether the key should be autotranslated to other locales based on the copy provided in `default_translation_content`.
+    attr_accessor :autotranslate
+
     # Indicates whether the key should be exported with \"xml:space=preserve\". Supported by several XML-based formats.
     attr_accessor :xml_space_preserve
 
@@ -68,6 +71,7 @@ module Phrase
         :'remove_screenshot' => :'remove_screenshot',
         :'unformatted' => :'unformatted',
         :'default_translation_content' => :'default_translation_content',
+        :'autotranslate' => :'autotranslate',
         :'xml_space_preserve' => :'xml_space_preserve',
         :'original_file' => :'original_file',
         :'localized_format_string' => :'localized_format_string',
@@ -91,6 +95,7 @@ module Phrase
         :'remove_screenshot' => :'Boolean',
         :'unformatted' => :'Boolean',
         :'default_translation_content' => :'String',
+        :'autotranslate' => :'Boolean',
         :'xml_space_preserve' => :'Boolean',
         :'original_file' => :'String',
         :'localized_format_string' => :'String',
@@ -168,6 +173,10 @@ module Phrase
         self.default_translation_content = attributes[:'default_translation_content']
       end
 
+      if attributes.key?(:'autotranslate')
+        self.autotranslate = attributes[:'autotranslate']
+      end
+
       if attributes.key?(:'xml_space_preserve')
         self.xml_space_preserve = attributes[:'xml_space_preserve']
       end
@@ -224,6 +233,7 @@ module Phrase
           remove_screenshot == o.remove_screenshot &&
           unformatted == o.unformatted &&
           default_translation_content == o.default_translation_content &&
+          autotranslate == o.autotranslate &&
           xml_space_preserve == o.xml_space_preserve &&
           original_file == o.original_file &&
           localized_format_string == o.localized_format_string &&
@@ -240,7 +250,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, description, plural, name_plural, data_type, tags, max_characters_allowed, screenshot, remove_screenshot, unformatted, default_translation_content, xml_space_preserve, original_file, localized_format_string, localized_format_key, custom_metadata].hash
+      [branch, name, description, plural, name_plural, data_type, tags, max_characters_allowed, screenshot, remove_screenshot, unformatted, default_translation_content, autotranslate, xml_space_preserve, original_file, localized_format_string, localized_format_key, custom_metadata].hash
     end
 
     # Builds the object from hash

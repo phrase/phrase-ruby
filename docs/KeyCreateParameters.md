@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **remove_screenshot** | **Boolean** | Indicates whether the screenshot will be deleted. This parameter is deprecated. Please use the Screenshots endpoint instead. | [optional] 
 **unformatted** | **Boolean** | Indicates whether the key should be exported as \&quot;unformatted\&quot;. Supported by Android XML and other formats. | [optional] 
 **default_translation_content** | **String** | Creates a translation in the default locale with the specified content | [optional] 
+**autotranslate** | **Boolean** | Indicates whether the key should be autotranslated to other locales based on the copy provided in &#x60;default_translation_content&#x60;. | [optional] 
 **xml_space_preserve** | **Boolean** | Indicates whether the key should be exported with \&quot;xml:space&#x3D;preserve\&quot;. Supported by several XML-based formats. | [optional] 
 **original_file** | **String** | Original file attribute. Used in some formats, e.g. XLIFF. | [optional] 
 **localized_format_string** | **String** | NSStringLocalizedFormatKey attribute. Used in .stringsdict format. | [optional] 
@@ -35,10 +36,11 @@ instance = Phrase::KeyCreateParameters.new(branch: my-feature-branch,
                                  data_type: number,
                                  tags: awesome-feature,needs-proofreading,
                                  max_characters_allowed: 140,
-                                 screenshot: [B@771047b4,
+                                 screenshot: [B@3c32105c,
                                  remove_screenshot: null,
                                  unformatted: null,
                                  default_translation_content: Default translation content,
+                                 autotranslate: null,
                                  xml_space_preserve: null,
                                  original_file: null,
                                  localized_format_string: null,
