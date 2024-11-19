@@ -26,7 +26,7 @@ module Phrase
     # @option opts [Boolean] :skip_unverification Indicates whether the upload should unverify updated translations.
     # @option opts [String] :file_encoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;.
     # @option opts [Object] :locale_mapping Mapping between locale names and translation columns. Required in some formats like CSV or XLSX.
-    # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for complete list.
+    # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for the [complete list](https://support.phrase.com/hc/en-us/articles/9652464547740-List-of-Supported-File-Types-Strings).
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     # @option opts [Boolean] :tag_only_affected_keys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; (default to false)
@@ -56,7 +56,7 @@ module Phrase
     # @option opts [Boolean] :skip_unverification Indicates whether the upload should unverify updated translations.
     # @option opts [String] :file_encoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;.
     # @option opts [Object] :locale_mapping Mapping between locale names and translation columns. Required in some formats like CSV or XLSX.
-    # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for complete list.
+    # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for the [complete list](https://support.phrase.com/hc/en-us/articles/9652464547740-List-of-Supported-File-Types-Strings).
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     # @option opts [Boolean] :tag_only_affected_keys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60;
