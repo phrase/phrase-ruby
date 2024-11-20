@@ -42,11 +42,9 @@ end
 api_instance = Phrase::CommentsApi.new
 project_id = 'project_id_example' # String | Project ID
 key_id = 'key_id_example' # String | Translation Key ID
-comment_create_parameters = Phrase::CommentCreateParameters.new # CommentCreateParameters | 
+comment_create_parameters = Phrase::CommentCreateParameters.new({message: 'Some message...'}) # CommentCreateParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  message: 'some message...', # String | specify the message for the comment
-  locale_ids: ['inner_example'] # Array<String> | specify the locales for the comment
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
@@ -67,8 +65,6 @@ Name | Type | Description  | Notes
  **key_id** | **String**| Translation Key ID | 
  **comment_create_parameters** | [**CommentCreateParameters**](CommentCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **message** | **String**| specify the message for the comment | [optional] 
- **locale_ids** | [**Array&lt;String&gt;**](String.md)| specify the locales for the comment | [optional] 
 
 ### Return type
 

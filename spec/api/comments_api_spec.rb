@@ -28,8 +28,6 @@ describe 'CommentsApi' do
   # @param comment_create_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :message specify the message for the comment
-  # @option opts [Array<String>] :locale_ids specify the locales for the comment
   # @return [Comment]
   describe 'comment_create test' do
     it 'should work' do

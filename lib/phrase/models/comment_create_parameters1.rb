@@ -1,22 +1,18 @@
 require 'date'
 
 module Phrase
-  class CommentCreateParameters
-    # Comment message
+  class CommentCreateParameters1
+    # Reply message body
     attr_accessor :message
 
-    # specify the branch to use
+    # Specify the branch to use
     attr_accessor :branch
-
-    # specify the locales for the comment
-    attr_accessor :locale_ids
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'message' => :'message',
-        :'branch' => :'branch',
-        :'locale_ids' => :'locale_ids'
+        :'branch' => :'branch'
       }
     end
 
@@ -24,8 +20,7 @@ module Phrase
     def self.openapi_types
       {
         :'message' => :'String',
-        :'branch' => :'String',
-        :'locale_ids' => :'Array<String>'
+        :'branch' => :'String'
       }
     end
 
@@ -39,13 +34,13 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::CommentCreateParameters` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::CommentCreateParameters1` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::CommentCreateParameters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::CommentCreateParameters1`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -56,12 +51,6 @@ module Phrase
 
       if attributes.key?(:'branch')
         self.branch = attributes[:'branch']
-      end
-
-      if attributes.key?(:'locale_ids')
-        if (value = attributes[:'locale_ids']).is_a?(Array)
-          self.locale_ids = value
-        end
       end
     end
 
@@ -89,8 +78,7 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           message == o.message &&
-          branch == o.branch &&
-          locale_ids == o.locale_ids
+          branch == o.branch
     end
 
     # @see the `==` method
@@ -102,7 +90,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [message, branch, locale_ids].hash
+      [message, branch].hash
     end
 
     # Builds the object from hash

@@ -116,13 +116,12 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param comment_id [String] Comment ID
+    # @param comment_create_parameters1 [CommentCreateParameters1] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
-    # @option opts [String] :message specify the message for the comment
     # @return [Comment]
-    def reply_create(project_id, key_id, comment_id, opts = {})
-      data, _status_code, _headers = reply_create_with_http_info(project_id, key_id, comment_id, opts)
+    def reply_create(project_id, key_id, comment_id, comment_create_parameters1, opts = {})
+      data, _status_code, _headers = reply_create_with_http_info(project_id, key_id, comment_id, comment_create_parameters1, opts)
       data
     end
 
@@ -131,12 +130,11 @@ module Phrase
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
     # @param comment_id [String] Comment ID
+    # @param comment_create_parameters1 [CommentCreateParameters1] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
-    # @option opts [String] :message specify the message for the comment
     # @return [Array<(Response<(Comment)>, Integer, Hash)>] Response<(Comment)> data, response status code and response headers
-    def reply_create_with_http_info(project_id, key_id, comment_id, opts = {})
+    def reply_create_with_http_info(project_id, key_id, comment_id, comment_create_parameters1, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentRepliesApi.reply_create ...'
       end
@@ -152,25 +150,29 @@ module Phrase
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling CommentRepliesApi.reply_create"
       end
+      # verify the required parameter 'comment_create_parameters1' is set
+      if @api_client.config.client_side_validation && comment_create_parameters1.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_create_parameters1' when calling CommentRepliesApi.reply_create"
+      end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s)).sub('{' + 'comment_id' + '}', CGI.escape(comment_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
-      query_params[:'message'] = opts[:'message'] if !opts[:'message'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] 
+      post_body = opts[:body] || @api_client.object_to_http_body(comment_create_parameters1) 
 
       # return_type
       return_type = opts[:return_type] || 'Comment' 

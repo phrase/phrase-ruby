@@ -14,8 +14,6 @@ module Phrase
     # @param comment_create_parameters [CommentCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :message specify the message for the comment
-    # @option opts [Array<String>] :locale_ids specify the locales for the comment
     # @return [Comment]
     def comment_create(project_id, key_id, comment_create_parameters, opts = {})
       data, _status_code, _headers = comment_create_with_http_info(project_id, key_id, comment_create_parameters, opts)
@@ -29,8 +27,6 @@ module Phrase
     # @param comment_create_parameters [CommentCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :message specify the message for the comment
-    # @option opts [Array<String>] :locale_ids specify the locales for the comment
     # @return [Array<(Response<(Comment)>, Integer, Hash)>] Response<(Comment)> data, response status code and response headers
     def comment_create_with_http_info(project_id, key_id, comment_create_parameters, opts = {})
       if @api_client.config.debugging
@@ -53,8 +49,6 @@ module Phrase
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'message'] = opts[:'message'] if !opts[:'message'].nil?
-      query_params[:'locale_ids'] = @api_client.build_collection_param(opts[:'locale_ids'], :multi) if !opts[:'locale_ids'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

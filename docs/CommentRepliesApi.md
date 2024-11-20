@@ -94,7 +94,7 @@ Response<([**Array&lt;Comment&gt;**](Comment.md))>
 
 ## reply_create
 
-> Comment reply_create(project_id, key_id, comment_id, opts)
+> Comment reply_create(project_id, key_id, comment_id, comment_create_parameters1, opts)
 
 Create a reply
 
@@ -120,15 +120,14 @@ api_instance = Phrase::CommentRepliesApi.new
 project_id = 'project_id_example' # String | Project ID
 key_id = 'key_id_example' # String | Translation Key ID
 comment_id = 'comment_id_example' # String | Comment ID
+comment_create_parameters1 = Phrase::CommentCreateParameters1.new({message: 'Some message...'}) # CommentCreateParameters1 | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  branch: 'my-feature-branch', # String | specify the branch to use
-  message: 'some message...' # String | specify the message for the comment
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Create a reply
-  result = api_instance.reply_create(project_id, key_id, comment_id, opts)
+  result = api_instance.reply_create(project_id, key_id, comment_id, comment_create_parameters1, opts)
   pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling CommentRepliesApi->reply_create: #{e}"
@@ -143,9 +142,8 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **key_id** | **String**| Translation Key ID | 
  **comment_id** | **String**| Comment ID | 
+ **comment_create_parameters1** | [**CommentCreateParameters1**](CommentCreateParameters1.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **branch** | **String**| specify the branch to use | [optional] 
- **message** | **String**| specify the message for the comment | [optional] 
 
 ### Return type
 
@@ -157,7 +155,7 @@ Response<([**Comment**](Comment.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

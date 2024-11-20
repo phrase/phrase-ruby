@@ -436,6 +436,7 @@ Class | Method | HTTP request | Description
  - [Phrase::BranchUpdateParameters](docs/BranchUpdateParameters.md)
  - [Phrase::Comment](docs/Comment.md)
  - [Phrase::CommentCreateParameters](docs/CommentCreateParameters.md)
+ - [Phrase::CommentCreateParameters1](docs/CommentCreateParameters1.md)
  - [Phrase::CommentMarkReadParameters](docs/CommentMarkReadParameters.md)
  - [Phrase::CommentReaction](docs/CommentReaction.md)
  - [Phrase::CommentUpdateParameters](docs/CommentUpdateParameters.md)

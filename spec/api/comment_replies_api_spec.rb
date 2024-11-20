@@ -48,10 +48,9 @@ describe 'CommentRepliesApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param comment_id Comment ID
+  # @param comment_create_parameters1 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :branch specify the branch to use
-  # @option opts [String] :message specify the message for the comment
   # @return [Comment]
   describe 'reply_create test' do
     it 'should work' do
