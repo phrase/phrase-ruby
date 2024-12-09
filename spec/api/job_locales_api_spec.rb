@@ -60,7 +60,7 @@ describe 'JobLocalesApi' do
   # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :branch Branch to use
   # @return [nil]
   describe 'job_locale_delete test' do
     it 'should work' do
@@ -92,7 +92,7 @@ describe 'JobLocalesApi' do
   # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :branch Branch to use
   # @return [JobLocale]
   describe 'job_locale_show test' do
     it 'should work' do
@@ -140,7 +140,7 @@ describe 'JobLocalesApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
-  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :branch Branch to use
   # @return [Array<JobLocale>]
   describe 'job_locales_list test' do
     it 'should work' do

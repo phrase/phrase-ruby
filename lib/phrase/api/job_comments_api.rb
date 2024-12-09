@@ -94,7 +94,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @return [nil]
     def job_comment_delete(project_id, job_id, id, opts = {})
       data, _status_code, _headers = job_comment_delete_with_http_info(project_id, job_id, id, opts)
@@ -108,7 +108,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def job_comment_delete_with_http_info(project_id, job_id, id, opts = {})
       if @api_client.config.debugging
@@ -173,7 +173,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @return [JobComment]
     def job_comment_show(project_id, job_id, id, opts = {})
       data, _status_code, _headers = job_comment_show_with_http_info(project_id, job_id, id, opts)
@@ -187,7 +187,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @return [Array<(Response<(JobComment)>, Integer, Hash)>] Response<(JobComment)> data, response status code and response headers
     def job_comment_show_with_http_info(project_id, job_id, id, opts = {})
       if @api_client.config.debugging
@@ -339,7 +339,7 @@ module Phrase
     # @param job_id [String] Job ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<JobComment>]
     def job_comments_list(project_id, job_id, opts = {})
@@ -353,7 +353,7 @@ module Phrase
     # @param job_id [String] Job ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<(Response<(Array<JobComment>)>, Integer, Hash)>] Response<(Array<JobComment>)> data, response status code and response headers
     def job_comments_list_with_http_info(project_id, job_id, opts = {})

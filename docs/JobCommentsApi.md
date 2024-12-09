@@ -107,7 +107,7 @@ job_id = 'job_id_example' # String | Job ID
 id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  branch: 'my-feature-branch' # String | specify the branch to use
+  branch: 'my-feature-branch' # String | Branch to use
 }
 
 begin
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
  **job_id** | **String**| Job ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **branch** | **String**| specify the branch to use | [optional] 
+ **branch** | **String**| Branch to use | [optional] 
 
 ### Return type
 
@@ -173,7 +173,7 @@ job_id = 'job_id_example' # String | Job ID
 id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  branch: 'my-feature-branch' # String | specify the branch to use
+  branch: 'my-feature-branch' # String | Branch to use
 }
 
 begin
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
  **job_id** | **String**| Job ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **branch** | **String**| specify the branch to use | [optional] 
+ **branch** | **String**| Branch to use | [optional] 
 
 ### Return type
 
@@ -306,7 +306,7 @@ project_id = 'project_id_example' # String | Project ID
 job_id = 'job_id_example' # String | Job ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  branch: 'my-feature-branch', # String | specify the branch to use
+  branch: 'my-feature-branch', # String | Branch to use
   order: 'desc' # String | Order direction. Can be one of: asc, desc.
 }
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **job_id** | **String**| Job ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **branch** | **String**| specify the branch to use | [optional] 
+ **branch** | **String**| Branch to use | [optional] 
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
 
 ### Return type

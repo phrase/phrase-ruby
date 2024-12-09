@@ -5,17 +5,22 @@ module Phrase
     # Comment message
     attr_accessor :message
 
+    # Branch name for the job
+    attr_accessor :branch
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'message' => :'message'
+        :'message' => :'message',
+        :'branch' => :'branch'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'message' => :'String'
+        :'message' => :'String',
+        :'branch' => :'String'
       }
     end
 
@@ -43,6 +48,10 @@ module Phrase
       if attributes.key?(:'message')
         self.message = attributes[:'message']
       end
+
+      if attributes.key?(:'branch')
+        self.branch = attributes[:'branch']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -63,7 +72,8 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          message == o.message
+          message == o.message &&
+          branch == o.branch
     end
 
     # @see the `==` method
@@ -75,7 +85,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [message].hash
+      [message, branch].hash
     end
 
     # Builds the object from hash

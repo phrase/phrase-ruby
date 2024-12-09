@@ -186,7 +186,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @return [nil]
     def job_locale_delete(project_id, job_id, id, opts = {})
       data, _status_code, _headers = job_locale_delete_with_http_info(project_id, job_id, id, opts)
@@ -200,7 +200,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
     def job_locale_delete_with_http_info(project_id, job_id, id, opts = {})
       if @api_client.config.debugging
@@ -351,7 +351,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @return [JobLocale]
     def job_locale_show(project_id, job_id, id, opts = {})
       data, _status_code, _headers = job_locale_show_with_http_info(project_id, job_id, id, opts)
@@ -365,7 +365,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @return [Array<(Response<(JobLocale)>, Integer, Hash)>] Response<(JobLocale)> data, response status code and response headers
     def job_locale_show_with_http_info(project_id, job_id, id, opts = {})
       if @api_client.config.debugging
@@ -599,7 +599,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @return [Array<JobLocale>]
     def job_locales_list(project_id, job_id, opts = {})
       data, _status_code, _headers = job_locales_list_with_http_info(project_id, job_id, opts)
@@ -614,7 +614,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
     # @return [Array<(Response<(Array<JobLocale>)>, Integer, Hash)>] Response<(Array<JobLocale>)> data, response status code and response headers
     def job_locales_list_with_http_info(project_id, job_id, opts = {})
       if @api_client.config.debugging

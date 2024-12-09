@@ -43,7 +43,7 @@ describe 'JobCommentsApi' do
   # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :branch Branch to use
   # @return [nil]
   describe 'job_comment_delete test' do
     it 'should work' do
@@ -59,7 +59,7 @@ describe 'JobCommentsApi' do
   # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :branch Branch to use
   # @return [JobComment]
   describe 'job_comment_show test' do
     it 'should work' do
@@ -90,7 +90,7 @@ describe 'JobCommentsApi' do
   # @param job_id Job ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :branch Branch to use
   # @option opts [String] :order Order direction. Can be one of: asc, desc.
   # @return [Array<JobComment>]
   describe 'job_comments_list test' do
