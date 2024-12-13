@@ -68,6 +68,31 @@ module Phrase
     # (Optional) Requires autotranslate_enabled to be true
     attr_accessor :autotranslate_use_translation_memory
 
+    # (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the <a href='#post-/projects/-project_id-/uploads'>`file_encoding`</a> parameter for Uploads.
+    attr_accessor :default_encoding
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -92,7 +117,8 @@ module Phrase
         :'autotranslate_check_new_locales' => :'autotranslate_check_new_locales',
         :'autotranslate_mark_as_unverified' => :'autotranslate_mark_as_unverified',
         :'autotranslate_use_machine_translation' => :'autotranslate_use_machine_translation',
-        :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory'
+        :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
+        :'default_encoding' => :'default_encoding'
       }
     end
 
@@ -120,7 +146,8 @@ module Phrase
         :'autotranslate_check_new_locales' => :'Boolean',
         :'autotranslate_mark_as_unverified' => :'Boolean',
         :'autotranslate_use_machine_translation' => :'Boolean',
-        :'autotranslate_use_translation_memory' => :'Boolean'
+        :'autotranslate_use_translation_memory' => :'Boolean',
+        :'default_encoding' => :'String'
       }
     end
 
@@ -232,6 +259,10 @@ module Phrase
       if attributes.key?(:'autotranslate_use_translation_memory')
         self.autotranslate_use_translation_memory = attributes[:'autotranslate_use_translation_memory']
       end
+
+      if attributes.key?(:'default_encoding')
+        self.default_encoding = attributes[:'default_encoding']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -244,7 +275,19 @@ module Phrase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      default_encoding_validator = EnumAttributeValidator.new('String', ["UTF-8", "UTF-16", "UTF-16BE", "UTF-16LE", "ISO-8859-1"])
+      return false unless default_encoding_validator.valid?(@default_encoding)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] default_encoding Object to be assigned
+    def default_encoding=(default_encoding)
+      validator = EnumAttributeValidator.new('String', ["UTF-8", "UTF-16", "UTF-16BE", "UTF-16LE", "ISO-8859-1"])
+      unless validator.valid?(default_encoding)
+        fail ArgumentError, "invalid value for \"default_encoding\", must be one of #{validator.allowable_values}."
+      end
+      @default_encoding = default_encoding
     end
 
     # Checks equality by comparing each attribute.
@@ -273,7 +316,8 @@ module Phrase
           autotranslate_check_new_locales == o.autotranslate_check_new_locales &&
           autotranslate_mark_as_unverified == o.autotranslate_mark_as_unverified &&
           autotranslate_use_machine_translation == o.autotranslate_use_machine_translation &&
-          autotranslate_use_translation_memory == o.autotranslate_use_translation_memory
+          autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
+          default_encoding == o.default_encoding
     end
 
     # @see the `==` method
@@ -285,7 +329,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id, name, point_of_contact, main_format, media, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory].hash
+      [account_id, name, point_of_contact, main_format, media, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, default_encoding].hash
     end
 
     # Builds the object from hash

@@ -152,4 +152,14 @@ describe 'ProjectUpdateParameters' do
     end
   end
 
+  describe 'test attribute "default_encoding"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["UTF-8", "UTF-16", "UTF-16BE", "UTF-16LE", "ISO-8859-1"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.default_encoding = value }.not_to raise_error
+      # end
+    end
+  end
+
 end
