@@ -137,9 +137,6 @@ Class | Method | HTTP request | Description
 *Phrase::AuthorizationsApi* | [**authorization_show**](docs/AuthorizationsApi.md#authorization_show) | **GET** /authorizations/{id} | Get a single authorization
 *Phrase::AuthorizationsApi* | [**authorization_update**](docs/AuthorizationsApi.md#authorization_update) | **PATCH** /authorizations/{id} | Update an authorization
 *Phrase::AuthorizationsApi* | [**authorizations_list**](docs/AuthorizationsApi.md#authorizations_list) | **GET** /authorizations | List authorizations
-*Phrase::BitbucketSyncApi* | [**bitbucket_sync_export**](docs/BitbucketSyncApi.md#bitbucket_sync_export) | **POST** /bitbucket_syncs/{id}/export | Export from Phrase Strings to Bitbucket
-*Phrase::BitbucketSyncApi* | [**bitbucket_sync_import**](docs/BitbucketSyncApi.md#bitbucket_sync_import) | **POST** /bitbucket_syncs/{id}/import | Import to Phrase Strings from Bitbucket
-*Phrase::BitbucketSyncApi* | [**bitbucket_syncs_list**](docs/BitbucketSyncApi.md#bitbucket_syncs_list) | **GET** /bitbucket_syncs | List Bitbucket syncs
 *Phrase::BlacklistedKeysApi* | [**blacklisted_key_create**](docs/BlacklistedKeysApi.md#blacklisted_key_create) | **POST** /projects/{project_id}/blacklisted_keys | Create a blocked key
 *Phrase::BlacklistedKeysApi* | [**blacklisted_key_delete**](docs/BlacklistedKeysApi.md#blacklisted_key_delete) | **DELETE** /projects/{project_id}/blacklisted_keys/{id} | Delete a blocked key
 *Phrase::BlacklistedKeysApi* | [**blacklisted_key_show**](docs/BlacklistedKeysApi.md#blacklisted_key_show) | **GET** /projects/{project_id}/blacklisted_keys/{id} | Get a single blocked key
@@ -188,15 +185,6 @@ Class | Method | HTTP request | Description
 *Phrase::FigmaAttachmentsApi* | [**figma_attachment_update**](docs/FigmaAttachmentsApi.md#figma_attachment_update) | **PATCH** /projects/{project_id}/figma_attachments/{id} | Update a Figma attachment
 *Phrase::FigmaAttachmentsApi* | [**figma_attachments_list**](docs/FigmaAttachmentsApi.md#figma_attachments_list) | **GET** /projects/{project_id}/figma_attachments | List Figma attachments
 *Phrase::FormatsApi* | [**formats_list**](docs/FormatsApi.md#formats_list) | **GET** /formats | List formats
-*Phrase::GitHubSyncApi* | [**github_sync_export**](docs/GitHubSyncApi.md#github_sync_export) | **POST** /github_syncs/export | Export from Phrase Strings to GitHub
-*Phrase::GitHubSyncApi* | [**github_sync_import**](docs/GitHubSyncApi.md#github_sync_import) | **POST** /github_syncs/import | Import to Phrase Strings from GitHub
-*Phrase::GitLabSyncApi* | [**gitlab_sync_delete**](docs/GitLabSyncApi.md#gitlab_sync_delete) | **DELETE** /gitlab_syncs/{id} | Delete single Sync Setting
-*Phrase::GitLabSyncApi* | [**gitlab_sync_export**](docs/GitLabSyncApi.md#gitlab_sync_export) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase Strings to GitLab
-*Phrase::GitLabSyncApi* | [**gitlab_sync_history**](docs/GitLabSyncApi.md#gitlab_sync_history) | **GET** /gitlab_syncs/{gitlab_sync_id}/history | History of single Sync Setting
-*Phrase::GitLabSyncApi* | [**gitlab_sync_import**](docs/GitLabSyncApi.md#gitlab_sync_import) | **POST** /gitlab_syncs/{gitlab_sync_id}/import | Import from GitLab to Phrase
-*Phrase::GitLabSyncApi* | [**gitlab_sync_list**](docs/GitLabSyncApi.md#gitlab_sync_list) | **GET** /gitlab_syncs | List GitLab syncs
-*Phrase::GitLabSyncApi* | [**gitlab_sync_show**](docs/GitLabSyncApi.md#gitlab_sync_show) | **GET** /gitlab_syncs/{id} | Get single Sync Setting
-*Phrase::GitLabSyncApi* | [**gitlab_sync_update**](docs/GitLabSyncApi.md#gitlab_sync_update) | **PUT** /gitlab_syncs/{id} | Update single Sync Setting
 *Phrase::GlossariesApi* | [**glossaries_list**](docs/GlossariesApi.md#glossaries_list) | **GET** /accounts/{account_id}/glossaries | List term bases
 *Phrase::GlossariesApi* | [**glossary_create**](docs/GlossariesApi.md#glossary_create) | **POST** /accounts/{account_id}/glossaries | Create a term base
 *Phrase::GlossariesApi* | [**glossary_delete**](docs/GlossariesApi.md#glossary_delete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a term base
@@ -422,10 +410,6 @@ Class | Method | HTTP request | Description
  - [Phrase::AuthorizationCreateParameters](docs/AuthorizationCreateParameters.md)
  - [Phrase::AuthorizationUpdateParameters](docs/AuthorizationUpdateParameters.md)
  - [Phrase::AuthorizationWithToken](docs/AuthorizationWithToken.md)
- - [Phrase::BitbucketSync](docs/BitbucketSync.md)
- - [Phrase::BitbucketSyncExportParameters](docs/BitbucketSyncExportParameters.md)
- - [Phrase::BitbucketSyncExportResponse](docs/BitbucketSyncExportResponse.md)
- - [Phrase::BitbucketSyncImportParameters](docs/BitbucketSyncImportParameters.md)
  - [Phrase::BlacklistedKey](docs/BlacklistedKey.md)
  - [Phrase::BlacklistedKeyCreateParameters](docs/BlacklistedKeyCreateParameters.md)
  - [Phrase::BlacklistedKeyUpdateParameters](docs/BlacklistedKeyUpdateParameters.md)
@@ -459,14 +443,6 @@ Class | Method | HTTP request | Description
  - [Phrase::FigmaAttachmentCreateParameters](docs/FigmaAttachmentCreateParameters.md)
  - [Phrase::FigmaAttachmentUpdateParameters](docs/FigmaAttachmentUpdateParameters.md)
  - [Phrase::Format](docs/Format.md)
- - [Phrase::GithubSyncExportParameters](docs/GithubSyncExportParameters.md)
- - [Phrase::GithubSyncImportParameters](docs/GithubSyncImportParameters.md)
- - [Phrase::GitlabSync](docs/GitlabSync.md)
- - [Phrase::GitlabSyncExport](docs/GitlabSyncExport.md)
- - [Phrase::GitlabSyncExportParameters](docs/GitlabSyncExportParameters.md)
- - [Phrase::GitlabSyncHistory](docs/GitlabSyncHistory.md)
- - [Phrase::GitlabSyncHistoryErrorsInner](docs/GitlabSyncHistoryErrorsInner.md)
- - [Phrase::GitlabSyncImportParameters](docs/GitlabSyncImportParameters.md)
  - [Phrase::Glossary](docs/Glossary.md)
  - [Phrase::GlossaryCreateParameters](docs/GlossaryCreateParameters.md)
  - [Phrase::GlossaryTerm](docs/GlossaryTerm.md)
