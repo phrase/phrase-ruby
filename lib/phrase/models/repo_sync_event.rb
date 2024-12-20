@@ -63,7 +63,7 @@ module Phrase
         :'status' => :'String',
         :'pull_request_url' => :'String',
         :'auto_import' => :'Boolean',
-        :'errors' => :'Array<RepoSyncEventErrorsInner>'
+        :'errors' => :'Array<String>'
       }
     end
 

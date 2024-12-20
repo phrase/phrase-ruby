@@ -550,7 +550,6 @@ Class | Method | HTTP request | Description
  - [Phrase::RepliesListParameters](docs/RepliesListParameters.md)
  - [Phrase::RepoSync](docs/RepoSync.md)
  - [Phrase::RepoSyncEvent](docs/RepoSyncEvent.md)
- - [Phrase::RepoSyncEventErrorsInner](docs/RepoSyncEventErrorsInner.md)
  - [Phrase::Screenshot](docs/Screenshot.md)
  - [Phrase::ScreenshotMarker](docs/ScreenshotMarker.md)
  - [Phrase::ScreenshotMarkerCreateParameters](docs/ScreenshotMarkerCreateParameters.md)

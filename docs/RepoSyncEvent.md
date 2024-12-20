@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **status** | **String** |  | [optional] 
 **pull_request_url** | **String** | URL of the pull request created on export | [optional] 
 **auto_import** | **Boolean** | Whether the import was triggered by the repo push event | [optional] 
-**errors** | [**Array&lt;RepoSyncEventErrorsInner&gt;**](RepoSyncEventErrorsInner.md) | List of error messages, in case of failure | [optional] 
+**errors** | **Array&lt;String&gt;** | List of error messages, in case of failure | [optional] 
 
 ## Code Sample
 
