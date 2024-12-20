@@ -194,6 +194,7 @@ docs/RepliesListParameters.md
 docs/RepoSync.md
 docs/RepoSyncEvent.md
 docs/RepoSyncEventErrorsInner.md
+docs/RepoSyncEventsApi.md
 docs/RepoSyncsApi.md
 docs/ReportsApi.md
 docs/Screenshot.md
@@ -311,6 +312,7 @@ lib/phrase/api/projects_api.rb
 lib/phrase/api/quality_performance_score_api.rb
 lib/phrase/api/release_triggers_api.rb
 lib/phrase/api/releases_api.rb
+lib/phrase/api/repo_sync_events_api.rb
 lib/phrase/api/repo_syncs_api.rb
 lib/phrase/api/reports_api.rb
 lib/phrase/api/screenshot_markers_api.rb
@@ -580,6 +582,7 @@ spec/api/projects_api_spec.rb
 spec/api/quality_performance_score_api_spec.rb
 spec/api/release_triggers_api_spec.rb
 spec/api/releases_api_spec.rb
+spec/api/repo_sync_events_api_spec.rb
 spec/api/repo_syncs_api_spec.rb
 spec/api/reports_api_spec.rb
 spec/api/screenshot_markers_api_spec.rb

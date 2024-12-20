@@ -4,7 +4,7 @@ module Phrase
   class RepoSyncEvent
     attr_accessor :id
 
-    attr_accessor :event_type
+    attr_accessor :type
 
     attr_accessor :created_at
 
@@ -45,7 +45,7 @@ module Phrase
     def self.attribute_map
       {
         :'id' => :'id',
-        :'event_type' => :'event_type',
+        :'type' => :'type',
         :'created_at' => :'created_at',
         :'status' => :'status',
         :'pull_request_url' => :'pull_request_url',
@@ -58,7 +58,7 @@ module Phrase
     def self.openapi_types
       {
         :'id' => :'String',
-        :'event_type' => :'String',
+        :'type' => :'String',
         :'created_at' => :'DateTime',
         :'status' => :'String',
         :'pull_request_url' => :'String',
@@ -92,8 +92,8 @@ module Phrase
         self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'event_type')
-        self.event_type = attributes[:'event_type']
+      if attributes.key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.key?(:'created_at')
@@ -129,21 +129,21 @@ module Phrase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      event_type_validator = EnumAttributeValidator.new('String', ["import", "export"])
-      return false unless event_type_validator.valid?(@event_type)
+      type_validator = EnumAttributeValidator.new('String', ["import", "export"])
+      return false unless type_validator.valid?(@type)
       status_validator = EnumAttributeValidator.new('String', ["running", "success", "failure"])
       return false unless status_validator.valid?(@status)
       true
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] event_type Object to be assigned
-    def event_type=(event_type)
+    # @param [Object] type Object to be assigned
+    def type=(type)
       validator = EnumAttributeValidator.new('String', ["import", "export"])
-      unless validator.valid?(event_type)
-        fail ArgumentError, "invalid value for \"event_type\", must be one of #{validator.allowable_values}."
+      unless validator.valid?(type)
+        fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
       end
-      @event_type = event_type
+      @type = type
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -162,7 +162,7 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          event_type == o.event_type &&
+          type == o.type &&
           created_at == o.created_at &&
           status == o.status &&
           pull_request_url == o.pull_request_url &&
@@ -179,7 +179,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, event_type, created_at, status, pull_request_url, auto_import, errors].hash
+      [id, type, created_at, status, pull_request_url, auto_import, errors].hash
     end
 
     # Builds the object from hash

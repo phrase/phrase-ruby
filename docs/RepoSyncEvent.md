@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**event_type** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **status** | **String** |  | [optional] 
 **pull_request_url** | **String** | URL of the pull request created on export | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 require 'Phrase'
 
 instance = Phrase::RepoSyncEvent.new(id: null,
-                                 event_type: null,
+                                 type: null,
                                  created_at: null,
                                  status: null,
                                  pull_request_url: null,
