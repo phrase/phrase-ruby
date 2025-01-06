@@ -1,4 +1,4 @@
-# Phrase::ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner
+# Phrase::QualityPerformanceScoreList200ResponseAnyOfErrorsInner
 
 ## Properties
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner.new(message: null,
+instance = Phrase::QualityPerformanceScoreList200ResponseAnyOfErrorsInner.new(message: null,
                                  code: null,
                                  id: null)
 ```

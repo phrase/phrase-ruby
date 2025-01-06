@@ -1,4 +1,4 @@
-# Phrase::ProjectsQualityPerformanceScoreRequest
+# Phrase::QualityPerformanceScoreListRequest
 
 ## Properties
 
@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::ProjectsQualityPerformanceScoreRequest.new(translation_ids: null)
+instance = Phrase::QualityPerformanceScoreListRequest.new(translation_ids: null)
 ```
 
 

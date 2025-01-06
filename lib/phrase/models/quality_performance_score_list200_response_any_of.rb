@@ -1,20 +1,25 @@
 require 'date'
 
 module Phrase
-  class ProjectsQualityPerformanceScore200ResponseAnyOfData
-    attr_accessor :translations
+  class QualityPerformanceScoreList200ResponseAnyOf
+    attr_accessor :data
+
+    # Array of errors for any failing translation IDs
+    attr_accessor :errors
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'translations' => :'translations'
+        :'data' => :'data',
+        :'errors' => :'errors'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'translations' => :'Array<ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner>'
+        :'data' => :'QualityPerformanceScoreList200ResponseAnyOfData',
+        :'errors' => :'Array<QualityPerformanceScoreList200ResponseAnyOfErrorsInner>'
       }
     end
 
@@ -28,20 +33,24 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::ProjectsQualityPerformanceScore200ResponseAnyOfData` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::QualityPerformanceScoreList200ResponseAnyOf` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::ProjectsQualityPerformanceScore200ResponseAnyOfData`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::QualityPerformanceScoreList200ResponseAnyOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'translations')
-        if (value = attributes[:'translations']).is_a?(Array)
-          self.translations = value
+      if attributes.key?(:'data')
+        self.data = attributes[:'data']
+      end
+
+      if attributes.key?(:'errors')
+        if (value = attributes[:'errors']).is_a?(Array)
+          self.errors = value
         end
       end
     end
@@ -64,7 +73,8 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          translations == o.translations
+          data == o.data &&
+          errors == o.errors
     end
 
     # @see the `==` method
@@ -76,7 +86,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [translations].hash
+      [data, errors].hash
     end
 
     # Builds the object from hash

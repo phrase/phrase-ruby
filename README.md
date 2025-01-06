@@ -299,7 +299,7 @@ Class | Method | HTTP request | Description
 *Phrase::ProjectsApi* | [**project_show**](docs/ProjectsApi.md#project_show) | **GET** /projects/{id} | Get a single project
 *Phrase::ProjectsApi* | [**project_update**](docs/ProjectsApi.md#project_update) | **PATCH** /projects/{id} | Update a project
 *Phrase::ProjectsApi* | [**projects_list**](docs/ProjectsApi.md#projects_list) | **GET** /projects | List projects
-*Phrase::QualityPerformanceScoreApi* | [**projects_quality_performance_score**](docs/QualityPerformanceScoreApi.md#projects_quality_performance_score) | **POST** /projects/{project_id}/quality_performance_score | Get Translation Quality
+*Phrase::QualityPerformanceScoreApi* | [**quality_performance_score_list**](docs/QualityPerformanceScoreApi.md#quality_performance_score_list) | **POST** /projects/{project_id}/quality_performance_score | Get Translation Quality
 *Phrase::ReleaseTriggersApi* | [**release_triggers_create**](docs/ReleaseTriggersApi.md#release_triggers_create) | **POST** /accounts/{account_id}/distributions/{distribution_id}/release_triggers | Create a release trigger
 *Phrase::ReleaseTriggersApi* | [**release_triggers_destroy**](docs/ReleaseTriggersApi.md#release_triggers_destroy) | **DELETE** /accounts/{account_id}/distributions/{distribution_id}/release_triggers/{id} | Delete a single release trigger
 *Phrase::ReleaseTriggersApi* | [**release_triggers_list**](docs/ReleaseTriggersApi.md#release_triggers_list) | **GET** /accounts/{account_id}/distributions/{distribution_id}/release_triggers | List release triggers
@@ -534,12 +534,12 @@ Class | Method | HTTP request | Description
  - [Phrase::ProjectReport](docs/ProjectReport.md)
  - [Phrase::ProjectShort](docs/ProjectShort.md)
  - [Phrase::ProjectUpdateParameters](docs/ProjectUpdateParameters.md)
- - [Phrase::ProjectsQualityPerformanceScore200Response](docs/ProjectsQualityPerformanceScore200Response.md)
- - [Phrase::ProjectsQualityPerformanceScore200ResponseAnyOf](docs/ProjectsQualityPerformanceScore200ResponseAnyOf.md)
- - [Phrase::ProjectsQualityPerformanceScore200ResponseAnyOfData](docs/ProjectsQualityPerformanceScore200ResponseAnyOfData.md)
- - [Phrase::ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner](docs/ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner.md)
- - [Phrase::ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner](docs/ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner.md)
- - [Phrase::ProjectsQualityPerformanceScoreRequest](docs/ProjectsQualityPerformanceScoreRequest.md)
+ - [Phrase::QualityPerformanceScoreList200Response](docs/QualityPerformanceScoreList200Response.md)
+ - [Phrase::QualityPerformanceScoreList200ResponseAnyOf](docs/QualityPerformanceScoreList200ResponseAnyOf.md)
+ - [Phrase::QualityPerformanceScoreList200ResponseAnyOfData](docs/QualityPerformanceScoreList200ResponseAnyOfData.md)
+ - [Phrase::QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner](docs/QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner.md)
+ - [Phrase::QualityPerformanceScoreList200ResponseAnyOfErrorsInner](docs/QualityPerformanceScoreList200ResponseAnyOfErrorsInner.md)
+ - [Phrase::QualityPerformanceScoreListRequest](docs/QualityPerformanceScoreListRequest.md)
  - [Phrase::Release](docs/Release.md)
  - [Phrase::ReleaseCreateParameters](docs/ReleaseCreateParameters.md)
  - [Phrase::ReleaseCreateParameters1](docs/ReleaseCreateParameters1.md)

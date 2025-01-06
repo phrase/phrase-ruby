@@ -10,33 +10,33 @@ module Phrase
     # Get Translation Quality
     # Retrieves the quality scores for your Strings translations. Returns a score, measured by Phrase QPS
     # @param project_id [String] Project ID
-    # @param projects_quality_performance_score_request [ProjectsQualityPerformanceScoreRequest] 
+    # @param quality_performance_score_list_request [QualityPerformanceScoreListRequest] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [ProjectsQualityPerformanceScore200Response]
-    def projects_quality_performance_score(project_id, projects_quality_performance_score_request, opts = {})
-      data, _status_code, _headers = projects_quality_performance_score_with_http_info(project_id, projects_quality_performance_score_request, opts)
+    # @return [QualityPerformanceScoreList200Response]
+    def quality_performance_score_list(project_id, quality_performance_score_list_request, opts = {})
+      data, _status_code, _headers = quality_performance_score_list_with_http_info(project_id, quality_performance_score_list_request, opts)
       data
     end
 
     # Get Translation Quality
     # Retrieves the quality scores for your Strings translations. Returns a score, measured by Phrase QPS
     # @param project_id [String] Project ID
-    # @param projects_quality_performance_score_request [ProjectsQualityPerformanceScoreRequest] 
+    # @param quality_performance_score_list_request [QualityPerformanceScoreListRequest] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(ProjectsQualityPerformanceScore200Response)>, Integer, Hash)>] Response<(ProjectsQualityPerformanceScore200Response)> data, response status code and response headers
-    def projects_quality_performance_score_with_http_info(project_id, projects_quality_performance_score_request, opts = {})
+    # @return [Array<(Response<(QualityPerformanceScoreList200Response)>, Integer, Hash)>] Response<(QualityPerformanceScoreList200Response)> data, response status code and response headers
+    def quality_performance_score_list_with_http_info(project_id, quality_performance_score_list_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: QualityPerformanceScoreApi.projects_quality_performance_score ...'
+        @api_client.config.logger.debug 'Calling API: QualityPerformanceScoreApi.quality_performance_score_list ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling QualityPerformanceScoreApi.projects_quality_performance_score"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling QualityPerformanceScoreApi.quality_performance_score_list"
       end
-      # verify the required parameter 'projects_quality_performance_score_request' is set
-      if @api_client.config.client_side_validation && projects_quality_performance_score_request.nil?
-        fail ArgumentError, "Missing the required parameter 'projects_quality_performance_score_request' when calling QualityPerformanceScoreApi.projects_quality_performance_score"
+      # verify the required parameter 'quality_performance_score_list_request' is set
+      if @api_client.config.client_side_validation && quality_performance_score_list_request.nil?
+        fail ArgumentError, "Missing the required parameter 'quality_performance_score_list_request' when calling QualityPerformanceScoreApi.quality_performance_score_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/quality_performance_score'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -56,10 +56,10 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(projects_quality_performance_score_request) 
+      post_body = opts[:body] || @api_client.object_to_http_body(quality_performance_score_list_request) 
 
       # return_type
-      return_type = opts[:return_type] || 'ProjectsQualityPerformanceScore200Response' 
+      return_type = opts[:return_type] || 'QualityPerformanceScoreList200Response' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -75,7 +75,7 @@ module Phrase
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: QualityPerformanceScoreApi#projects_quality_performance_score\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: QualityPerformanceScoreApi#quality_performance_score_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers

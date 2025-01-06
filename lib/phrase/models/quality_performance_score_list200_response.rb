@@ -1,21 +1,29 @@
 require 'date'
 
 module Phrase
-  class ProjectsQualityPerformanceScoreRequest
-    # Translation ids you want to get the quality performance score for
-    attr_accessor :translation_ids
+  class QualityPerformanceScoreList200Response
+    attr_accessor :error
+
+    attr_accessor :data
+
+    # Array of errors for any failing translation IDs
+    attr_accessor :errors
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'translation_ids' => :'translation_ids'
+        :'error' => :'error',
+        :'data' => :'data',
+        :'errors' => :'errors'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'translation_ids' => :'Array<String>'
+        :'error' => :'ErrorError',
+        :'data' => :'QualityPerformanceScoreList200ResponseAnyOfData',
+        :'errors' => :'Array<QualityPerformanceScoreList200ResponseAnyOfErrorsInner>'
       }
     end
 
@@ -25,24 +33,40 @@ module Phrase
       ])
     end
 
+    # List of class defined in anyOf (OpenAPI v3)
+    def self.openapi_any_of
+      [
+      :'Error',
+      :'QualityPerformanceScoreList200ResponseAnyOf'
+      ]
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::ProjectsQualityPerformanceScoreRequest` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::QualityPerformanceScoreList200Response` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::ProjectsQualityPerformanceScoreRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::QualityPerformanceScoreList200Response`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'translation_ids')
-        if (value = attributes[:'translation_ids']).is_a?(Array)
-          self.translation_ids = value
+      if attributes.key?(:'error')
+        self.error = attributes[:'error']
+      end
+
+      if attributes.key?(:'data')
+        self.data = attributes[:'data']
+      end
+
+      if attributes.key?(:'errors')
+        if (value = attributes[:'errors']).is_a?(Array)
+          self.errors = value
         end
       end
     end
@@ -57,6 +81,18 @@ module Phrase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      _any_of_found = false
+      self.class.openapi_any_of.each do |_class|
+        _any_of = Phrase.const_get(_class).build_from_hash(self.to_hash)
+        if _any_of.valid?
+          _any_of_found = true
+        end
+      end
+
+      if !_any_of_found
+        return false
+      end
+
       true
     end
 
@@ -65,7 +101,9 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          translation_ids == o.translation_ids
+          error == o.error &&
+          data == o.data &&
+          errors == o.errors
     end
 
     # @see the `==` method
@@ -77,7 +115,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [translation_ids].hash
+      [error, data, errors].hash
     end
 
     # Builds the object from hash

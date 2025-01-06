@@ -4,13 +4,13 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**projects_quality_performance_score**](QualityPerformanceScoreApi.md#projects_quality_performance_score) | **POST** /projects/{project_id}/quality_performance_score | Get Translation Quality
+[**quality_performance_score_list**](QualityPerformanceScoreApi.md#quality_performance_score_list) | **POST** /projects/{project_id}/quality_performance_score | Get Translation Quality
 
 
 
-## projects_quality_performance_score
+## quality_performance_score_list
 
-> ProjectsQualityPerformanceScore200Response projects_quality_performance_score(project_id, projects_quality_performance_score_request, opts)
+> QualityPerformanceScoreList200Response quality_performance_score_list(project_id, quality_performance_score_list_request, opts)
 
 Get Translation Quality
 
@@ -34,17 +34,17 @@ end
 
 api_instance = Phrase::QualityPerformanceScoreApi.new
 project_id = 'project_id_example' # String | Project ID
-projects_quality_performance_score_request = Phrase::ProjectsQualityPerformanceScoreRequest.new # ProjectsQualityPerformanceScoreRequest | 
+quality_performance_score_list_request = Phrase::QualityPerformanceScoreListRequest.new # QualityPerformanceScoreListRequest | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Get Translation Quality
-  result = api_instance.projects_quality_performance_score(project_id, projects_quality_performance_score_request, opts)
+  result = api_instance.quality_performance_score_list(project_id, quality_performance_score_list_request, opts)
   pp result
 rescue Phrase::ApiError => e
-  puts "Exception when calling QualityPerformanceScoreApi->projects_quality_performance_score: #{e}"
+  puts "Exception when calling QualityPerformanceScoreApi->quality_performance_score_list: #{e}"
 end
 ```
 
@@ -54,12 +54,12 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
- **projects_quality_performance_score_request** | [**ProjectsQualityPerformanceScoreRequest**](ProjectsQualityPerformanceScoreRequest.md)|  | 
+ **quality_performance_score_list_request** | [**QualityPerformanceScoreListRequest**](QualityPerformanceScoreListRequest.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
 
 ### Return type
 
-Response<([**ProjectsQualityPerformanceScore200Response**](ProjectsQualityPerformanceScore200Response.md))>
+Response<([**QualityPerformanceScoreList200Response**](QualityPerformanceScoreList200Response.md))>
 
 ### Authorization
 
