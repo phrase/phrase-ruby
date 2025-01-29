@@ -90,6 +90,7 @@ docs/JobCompleteParameters.md
 docs/JobCreateParameters.md
 docs/JobDetails.md
 docs/JobKeysCreateParameters.md
+docs/JobKeysDeleteParameters.md
 docs/JobLocale.md
 docs/JobLocaleCompleteParameters.md
 docs/JobLocaleCompleteReviewParameters.md
@@ -396,6 +397,7 @@ lib/phrase/models/job_complete_parameters.rb
 lib/phrase/models/job_create_parameters.rb
 lib/phrase/models/job_details.rb
 lib/phrase/models/job_keys_create_parameters.rb
+lib/phrase/models/job_keys_delete_parameters.rb
 lib/phrase/models/job_locale.rb
 lib/phrase/models/job_locale_complete_parameters.rb
 lib/phrase/models/job_locale_complete_review_parameters.rb
@@ -662,6 +664,7 @@ spec/models/job_complete_parameters_spec.rb
 spec/models/job_create_parameters_spec.rb
 spec/models/job_details_spec.rb
 spec/models/job_keys_create_parameters_spec.rb
+spec/models/job_keys_delete_parameters_spec.rb
 spec/models/job_locale_complete_parameters_spec.rb
 spec/models/job_locale_complete_review_parameters_spec.rb
 spec/models/job_locale_reopen_parameters_spec.rb

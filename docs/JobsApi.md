@@ -279,7 +279,7 @@ Response<([**JobDetails**](JobDetails.md))>
 
 ## job_keys_delete
 
-> job_keys_delete(project_id, id, opts)
+> job_keys_delete(project_id, id, job_keys_delete_parameters, opts)
 
 Remove keys from job
 
@@ -304,15 +304,14 @@ end
 api_instance = Phrase::JobsApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
+job_keys_delete_parameters = Phrase::JobKeysDeleteParameters.new({translation_key_ids: ["abcd1234cdef1234abcd1234cdef1234"]}) # JobKeysDeleteParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  branch: 'my-feature-branch', # String | specify the branch to use
-  translation_key_ids: ['inner_example'] # Array<String> | ids of keys that should be removed from the job
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
   #Remove keys from job
-  api_instance.job_keys_delete(project_id, id, opts)
+  api_instance.job_keys_delete(project_id, id, job_keys_delete_parameters, opts)
 rescue Phrase::ApiError => e
   puts "Exception when calling JobsApi->job_keys_delete: #{e}"
 end
@@ -325,9 +324,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
+ **job_keys_delete_parameters** | [**JobKeysDeleteParameters**](JobKeysDeleteParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **branch** | **String**| specify the branch to use | [optional] 
- **translation_key_ids** | [**Array&lt;String&gt;**](String.md)| ids of keys that should be removed from the job | [optional] 
 
 ### Return type
 
@@ -339,7 +337,7 @@ Response<(nil (empty response body))>
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 

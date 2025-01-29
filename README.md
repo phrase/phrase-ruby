@@ -466,6 +466,7 @@ Class | Method | HTTP request | Description
  - [Phrase::JobCreateParameters](docs/JobCreateParameters.md)
  - [Phrase::JobDetails](docs/JobDetails.md)
  - [Phrase::JobKeysCreateParameters](docs/JobKeysCreateParameters.md)
+ - [Phrase::JobKeysDeleteParameters](docs/JobKeysDeleteParameters.md)
  - [Phrase::JobLocale](docs/JobLocale.md)
  - [Phrase::JobLocaleCompleteParameters](docs/JobLocaleCompleteParameters.md)
  - [Phrase::JobLocaleCompleteReviewParameters](docs/JobLocaleCompleteReviewParameters.md)

@@ -318,13 +318,12 @@ module Phrase
     # Remove multiple keys from existing job.
     # @param project_id [String] Project ID
     # @param id [String] ID
+    # @param job_keys_delete_parameters [JobKeysDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
-    # @option opts [Array<String>] :translation_key_ids ids of keys that should be removed from the job
     # @return [nil]
-    def job_keys_delete(project_id, id, opts = {})
-      data, _status_code, _headers = job_keys_delete_with_http_info(project_id, id, opts)
+    def job_keys_delete(project_id, id, job_keys_delete_parameters, opts = {})
+      data, _status_code, _headers = job_keys_delete_with_http_info(project_id, id, job_keys_delete_parameters, opts)
       data
     end
 
@@ -332,12 +331,11 @@ module Phrase
     # Remove multiple keys from existing job.
     # @param project_id [String] Project ID
     # @param id [String] ID
+    # @param job_keys_delete_parameters [JobKeysDeleteParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
-    # @option opts [Array<String>] :translation_key_ids ids of keys that should be removed from the job
     # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
-    def job_keys_delete_with_http_info(project_id, id, opts = {})
+    def job_keys_delete_with_http_info(project_id, id, job_keys_delete_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: JobsApi.job_keys_delete ...'
       end
@@ -349,23 +347,27 @@ module Phrase
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling JobsApi.job_keys_delete"
       end
+      # verify the required parameter 'job_keys_delete_parameters' is set
+      if @api_client.config.client_side_validation && job_keys_delete_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'job_keys_delete_parameters' when calling JobsApi.job_keys_delete"
+      end
       # resource path
       local_var_path = '/projects/{project_id}/jobs/{id}/keys'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
-      query_params[:'translation_key_ids'] = @api_client.build_collection_param(opts[:'translation_key_ids'], :multi) if !opts[:'translation_key_ids'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] 
+      post_body = opts[:body] || @api_client.object_to_http_body(job_keys_delete_parameters) 
 
       # return_type
       return_type = opts[:return_type] 

@@ -84,10 +84,9 @@ describe 'JobsApi' do
   # Remove multiple keys from existing job.
   # @param project_id Project ID
   # @param id ID
+  # @param job_keys_delete_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :branch specify the branch to use
-  # @option opts [Array<String>] :translation_key_ids ids of keys that should be removed from the job
   # @return [nil]
   describe 'job_keys_delete test' do
     it 'should work' do
