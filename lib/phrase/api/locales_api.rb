@@ -253,6 +253,7 @@ module Phrase
     # @option opts [String] :translation_key_prefix Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed.
     # @option opts [Boolean] :filter_by_prefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file.
     # @option opts [Object] :custom_metadata_filters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download. 
+    # @option opts [Array<String>] :locale_ids Locale IDs or locale names
     # @return [File]
     def locale_download(project_id, id, opts = {})
       data, _status_code, _headers = locale_download_with_http_info(project_id, id, opts)
@@ -286,6 +287,7 @@ module Phrase
     # @option opts [String] :translation_key_prefix Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed.
     # @option opts [Boolean] :filter_by_prefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file.
     # @option opts [Object] :custom_metadata_filters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download. 
+    # @option opts [Array<String>] :locale_ids Locale IDs or locale names
     # @return [Array<(Response<(File)>, Integer, Hash)>] Response<(File)> data, response status code and response headers
     def locale_download_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
@@ -323,6 +325,7 @@ module Phrase
       query_params[:'translation_key_prefix'] = opts[:'translation_key_prefix'] if !opts[:'translation_key_prefix'].nil?
       query_params[:'filter_by_prefix'] = opts[:'filter_by_prefix'] if !opts[:'filter_by_prefix'].nil?
       query_params[:'custom_metadata_filters'] = opts[:'custom_metadata_filters'] if !opts[:'custom_metadata_filters'].nil?
+      query_params[:'locale_ids'] = @api_client.build_collection_param(opts[:'locale_ids'], :multi) if !opts[:'locale_ids'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

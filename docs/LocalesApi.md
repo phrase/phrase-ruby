@@ -255,7 +255,8 @@ opts = {
   source_locale_id: 'source_locale_id_example', # String | Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a <code>tag</code> parameter indicating a specific job.
   translation_key_prefix: 'prefix_', # String | Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed.
   filter_by_prefix: true, # Boolean | Only download translation keys containing the specified prefix, and remove the prefix from the generated file.
-  custom_metadata_filters: { key: 3.56} # Object | Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download. 
+  custom_metadata_filters: { key: 3.56}, # Object | Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download. 
+  locale_ids: ['inner_example'] # Array<String> | Locale IDs or locale names
 }
 
 begin
@@ -296,6 +297,7 @@ Name | Type | Description  | Notes
  **translation_key_prefix** | **String**| Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed. | [optional] 
  **filter_by_prefix** | **Boolean**| Only download translation keys containing the specified prefix, and remove the prefix from the generated file. | [optional] 
  **custom_metadata_filters** | [**Object**](.md)| Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  | [optional] 
+ **locale_ids** | [**Array&lt;String&gt;**](String.md)| Locale IDs or locale names | [optional] 
 
 ### Return type
 

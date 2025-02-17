@@ -26,6 +26,8 @@ module Phrase
 
     attr_accessor :job_tag_name
 
+    attr_accessor :source_translations_updated_at
+
     attr_accessor :source_locale
 
     attr_accessor :locales
@@ -47,6 +49,7 @@ module Phrase
         :'updated_at' => :'updated_at',
         :'owner' => :'owner',
         :'job_tag_name' => :'job_tag_name',
+        :'source_translations_updated_at' => :'source_translations_updated_at',
         :'source_locale' => :'source_locale',
         :'locales' => :'locales',
         :'keys' => :'keys'
@@ -68,6 +71,7 @@ module Phrase
         :'updated_at' => :'DateTime',
         :'owner' => :'UserPreview',
         :'job_tag_name' => :'String',
+        :'source_translations_updated_at' => :'DateTime',
         :'source_locale' => :'LocalePreview',
         :'locales' => :'Array<LocalePreview>',
         :'keys' => :'Array<KeyPreview>'
@@ -151,6 +155,10 @@ module Phrase
         self.job_tag_name = attributes[:'job_tag_name']
       end
 
+      if attributes.key?(:'source_translations_updated_at')
+        self.source_translations_updated_at = attributes[:'source_translations_updated_at']
+      end
+
       if attributes.key?(:'source_locale')
         self.source_locale = attributes[:'source_locale']
       end
@@ -198,6 +206,7 @@ module Phrase
           updated_at == o.updated_at &&
           owner == o.owner &&
           job_tag_name == o.job_tag_name &&
+          source_translations_updated_at == o.source_translations_updated_at &&
           source_locale == o.source_locale &&
           locales == o.locales &&
           keys == o.keys
@@ -212,7 +221,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, owner, job_tag_name, source_locale, locales, keys].hash
+      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, owner, job_tag_name, source_translations_updated_at, source_locale, locales, keys].hash
     end
 
     # Builds the object from hash
