@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **filename** | **String** |  | [optional] 
 **format** | **String** |  | [optional] 
 **state** | **String** |  | [optional] 
-**tag** | **String** |  | [optional] 
+**tag** | **String** | Unique tag of the upload  | [optional] 
+**tags** | **Array&lt;String&gt;** | List of tags that were assigned to the uploaded keys  | [optional] 
 **url** | **String** | The URL to the upload in Phrase Strings app.  | [optional] 
 **summary** | [**UploadSummary**](UploadSummary.md) |  | [optional] 
 **created_at** | **Time** |  | [optional] 
@@ -24,6 +25,7 @@ instance = Phrase::Upload.new(id: null,
                                  format: null,
                                  state: null,
                                  tag: null,
+                                 tags: null,
                                  url: null,
                                  summary: null,
                                  created_at: null,
