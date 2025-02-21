@@ -761,7 +761,8 @@ opts = {
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
   owned_by: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user owning job
   assigned_to: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user assigned to job
-  state: 'completed' # String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+  state: 'completed', # String | filter by state of job; valid states are: <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+  updated_since: '2013-02-21T00:00:00.000Z' # String | filter by jobs updated since given date
 }
 
 begin
@@ -784,7 +785,8 @@ Name | Type | Description  | Notes
  **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
  **owned_by** | **String**| filter by user owning job | [optional] 
  **assigned_to** | **String**| filter by user assigned to job | [optional] 
- **state** | **String**| filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional] 
+ **state** | **String**| filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional] 
+ **updated_since** | **String**| filter by jobs updated since given date | [optional] 
 
 ### Return type
 
@@ -830,10 +832,11 @@ opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-  branch: 'my-feature-branch', # String | specify the branch to use
+  branch: 'my-feature-branch', # String | Branch to use
   owned_by: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user owning job
   assigned_to: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user assigned to job
-  state: 'completed' # String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+  state: 'completed', # String | filter by state of job; valid states are: <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+  updated_since: '2013-02-21T00:00:00.000Z' # String | filter by jobs updated since given date
 }
 
 begin
@@ -854,10 +857,11 @@ Name | Type | Description  | Notes
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
- **branch** | **String**| specify the branch to use | [optional] 
+ **branch** | **String**| Branch to use | [optional] 
  **owned_by** | **String**| filter by user owning job | [optional] 
  **assigned_to** | **String**| filter by user assigned to job | [optional] 
- **state** | **String**| filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional] 
+ **state** | **String**| filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional] 
+ **updated_since** | **String**| filter by jobs updated since given date | [optional] 
 
 ### Return type
 
