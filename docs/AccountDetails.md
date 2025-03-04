@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **updated_at** | **Time** |  | [optional] 
 **company_logo_url** | **String** |  | [optional] 
 **subscription** | [**Subscription**](Subscription.md) |  | [optional] 
+**roles** | **Array&lt;String&gt;** |  | [optional] 
 
 ## Code Sample
 
@@ -25,7 +26,8 @@ instance = Phrase::AccountDetails.new(id: null,
                                  created_at: null,
                                  updated_at: null,
                                  company_logo_url: null,
-                                 subscription: null)
+                                 subscription: null,
+                                 roles: null)
 ```
 
 
