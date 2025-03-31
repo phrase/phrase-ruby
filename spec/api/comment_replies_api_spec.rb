@@ -26,7 +26,6 @@ describe 'CommentRepliesApi' do
   # @param project_id Project ID
   # @param key_id Translation Key ID
   # @param comment_id Comment ID
-  # @param replies_list_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number

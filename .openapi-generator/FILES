@@ -37,7 +37,6 @@ docs/CommentReactionsApi.md
 docs/CommentRepliesApi.md
 docs/CommentUpdateParameters.md
 docs/CommentsApi.md
-docs/CommentsListParameters.md
 docs/CurrentUser.md
 docs/CustomMetadataApi.md
 docs/CustomMetadataDataType.md
@@ -191,7 +190,6 @@ docs/ReleaseTriggersApi.md
 docs/ReleaseUpdateParameters.md
 docs/ReleaseUpdateParameters1.md
 docs/ReleasesApi.md
-docs/RepliesListParameters.md
 docs/RepoSync.md
 docs/RepoSyncEvent.md
 docs/RepoSyncEventsApi.md
@@ -355,7 +353,6 @@ lib/phrase/models/comment_create_parameters1.rb
 lib/phrase/models/comment_mark_read_parameters.rb
 lib/phrase/models/comment_reaction.rb
 lib/phrase/models/comment_update_parameters.rb
-lib/phrase/models/comments_list_parameters.rb
 lib/phrase/models/current_user.rb
 lib/phrase/models/custom_metadata_data_type.rb
 lib/phrase/models/custom_metadata_properties_create_parameters.rb
@@ -479,7 +476,6 @@ lib/phrase/models/release_preview.rb
 lib/phrase/models/release_trigger.rb
 lib/phrase/models/release_update_parameters.rb
 lib/phrase/models/release_update_parameters1.rb
-lib/phrase/models/replies_list_parameters.rb
 lib/phrase/models/repo_sync.rb
 lib/phrase/models/repo_sync_event.rb
 lib/phrase/models/screenshot.rb
@@ -623,7 +619,6 @@ spec/models/comment_mark_read_parameters_spec.rb
 spec/models/comment_reaction_spec.rb
 spec/models/comment_spec.rb
 spec/models/comment_update_parameters_spec.rb
-spec/models/comments_list_parameters_spec.rb
 spec/models/current_user_spec.rb
 spec/models/custom_metadata_data_type_spec.rb
 spec/models/custom_metadata_properties_create_parameters_spec.rb
@@ -747,7 +742,6 @@ spec/models/release_spec.rb
 spec/models/release_trigger_spec.rb
 spec/models/release_update_parameters1_spec.rb
 spec/models/release_update_parameters_spec.rb
-spec/models/replies_list_parameters_spec.rb
 spec/models/repo_sync_event_spec.rb
 spec/models/repo_sync_spec.rb
 spec/models/screenshot_marker_create_parameters_spec.rb

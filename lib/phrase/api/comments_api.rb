@@ -579,7 +579,6 @@ module Phrase
     # List all comments for a key.
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
-    # @param comments_list_parameters [CommentsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
@@ -590,8 +589,8 @@ module Phrase
     # @option opts [Array<String>] :filters Specify the filter for the comments
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<Comment>]
-    def comments_list(project_id, key_id, comments_list_parameters, opts = {})
-      data, _status_code, _headers = comments_list_with_http_info(project_id, key_id, comments_list_parameters, opts)
+    def comments_list(project_id, key_id, opts = {})
+      data, _status_code, _headers = comments_list_with_http_info(project_id, key_id, opts)
       data
     end
 
@@ -599,7 +598,6 @@ module Phrase
     # List all comments for a key.
     # @param project_id [String] Project ID
     # @param key_id [String] Translation Key ID
-    # @param comments_list_parameters [CommentsListParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
@@ -610,7 +608,7 @@ module Phrase
     # @option opts [Array<String>] :filters Specify the filter for the comments
     # @option opts [String] :order Order direction. Can be one of: asc, desc.
     # @return [Array<(Response<(Array<Comment>)>, Integer, Hash)>] Response<(Array<Comment>)> data, response status code and response headers
-    def comments_list_with_http_info(project_id, key_id, comments_list_parameters, opts = {})
+    def comments_list_with_http_info(project_id, key_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CommentsApi.comments_list ...'
       end
@@ -621,10 +619,6 @@ module Phrase
       # verify the required parameter 'key_id' is set
       if @api_client.config.client_side_validation && key_id.nil?
         fail ArgumentError, "Missing the required parameter 'key_id' when calling CommentsApi.comments_list"
-      end
-      # verify the required parameter 'comments_list_parameters' is set
-      if @api_client.config.client_side_validation && comments_list_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'comments_list_parameters' when calling CommentsApi.comments_list"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s))
@@ -643,15 +637,13 @@ module Phrase
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(comments_list_parameters) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Comment>' 
