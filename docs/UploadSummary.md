@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **translations_updated** | **Integer** |  | [optional] 
 **tags_created** | **Integer** |  | [optional] 
 **translation_keys_ignored** | **Integer** |  | [optional] 
+**processed_translations** | **Integer** |  | [optional] 
+**upload_total_translations** | **Integer** |  | [optional] 
 
 ## Code Sample
 
@@ -25,7 +27,9 @@ instance = Phrase::UploadSummary.new(locales_created: null,
                                  translations_created: null,
                                  translations_updated: null,
                                  tags_created: null,
-                                 translation_keys_ignored: null)
+                                 translation_keys_ignored: null,
+                                 processed_translations: null,
+                                 upload_total_translations: null)
 ```
 
 

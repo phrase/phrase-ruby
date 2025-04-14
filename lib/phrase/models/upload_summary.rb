@@ -18,6 +18,10 @@ module Phrase
 
     attr_accessor :translation_keys_ignored
 
+    attr_accessor :processed_translations
+
+    attr_accessor :upload_total_translations
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -28,7 +32,9 @@ module Phrase
         :'translations_created' => :'translations_created',
         :'translations_updated' => :'translations_updated',
         :'tags_created' => :'tags_created',
-        :'translation_keys_ignored' => :'translation_keys_ignored'
+        :'translation_keys_ignored' => :'translation_keys_ignored',
+        :'processed_translations' => :'processed_translations',
+        :'upload_total_translations' => :'upload_total_translations'
       }
     end
 
@@ -42,7 +48,9 @@ module Phrase
         :'translations_created' => :'Integer',
         :'translations_updated' => :'Integer',
         :'tags_created' => :'Integer',
-        :'translation_keys_ignored' => :'Integer'
+        :'translation_keys_ignored' => :'Integer',
+        :'processed_translations' => :'Integer',
+        :'upload_total_translations' => :'Integer'
       }
     end
 
@@ -98,6 +106,14 @@ module Phrase
       if attributes.key?(:'translation_keys_ignored')
         self.translation_keys_ignored = attributes[:'translation_keys_ignored']
       end
+
+      if attributes.key?(:'processed_translations')
+        self.processed_translations = attributes[:'processed_translations']
+      end
+
+      if attributes.key?(:'upload_total_translations')
+        self.upload_total_translations = attributes[:'upload_total_translations']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -125,7 +141,9 @@ module Phrase
           translations_created == o.translations_created &&
           translations_updated == o.translations_updated &&
           tags_created == o.tags_created &&
-          translation_keys_ignored == o.translation_keys_ignored
+          translation_keys_ignored == o.translation_keys_ignored &&
+          processed_translations == o.processed_translations &&
+          upload_total_translations == o.upload_total_translations
     end
 
     # @see the `==` method
@@ -137,7 +155,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [locales_created, translation_keys_created, translation_keys_updated, translation_keys_unmentioned, translations_created, translations_updated, tags_created, translation_keys_ignored].hash
+      [locales_created, translation_keys_created, translation_keys_updated, translation_keys_unmentioned, translations_created, translations_updated, tags_created, translation_keys_ignored, processed_translations, upload_total_translations].hash
     end
 
     # Builds the object from hash
