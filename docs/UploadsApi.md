@@ -54,6 +54,7 @@ opts = {
   locale_mapping: { ... }, # Object | Mapping between locale names and translation columns. Required in some formats like CSV or XLSX.
   format_options: { ... }, # Object | Additional options available for specific formats. See our format guide for the [complete list](https://support.phrase.com/hc/en-us/articles/9652464547740-List-of-Supported-File-Types-Strings).
   autotranslate: true, # Boolean | If set, translations for the uploaded language will be fetched automatically.
+  verify_mentioned_translations: true, # Boolean | Indicates whether all translations mentioned in the upload should be verified.
   mark_reviewed: true, # Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
   tag_only_affected_keys: true, # Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
   translation_key_prefix: 'translation_key_prefix_example' # String | This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
@@ -91,6 +92,7 @@ Name | Type | Description  | Notes
  **locale_mapping** | [**Object**](Object.md)| Mapping between locale names and translation columns. Required in some formats like CSV or XLSX. | [optional] 
  **format_options** | [**Object**](Object.md)| Additional options available for specific formats. See our format guide for the [complete list](https://support.phrase.com/hc/en-us/articles/9652464547740-List-of-Supported-File-Types-Strings). | [optional] 
  **autotranslate** | **Boolean**| If set, translations for the uploaded language will be fetched automatically. | [optional] 
+ **verify_mentioned_translations** | **Boolean**| Indicates whether all translations mentioned in the upload should be verified. | [optional] [default to false]
  **mark_reviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. | [optional] 
  **tag_only_affected_keys** | **Boolean**| Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; | [optional] [default to false]
  **translation_key_prefix** | **String**| This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized. | [optional] 

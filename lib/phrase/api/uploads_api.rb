@@ -28,6 +28,7 @@ module Phrase
     # @option opts [Object] :locale_mapping Mapping between locale names and translation columns. Required in some formats like CSV or XLSX.
     # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for the [complete list](https://support.phrase.com/hc/en-us/articles/9652464547740-List-of-Supported-File-Types-Strings).
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
+    # @option opts [Boolean] :verify_mentioned_translations Indicates whether all translations mentioned in the upload should be verified. (default to false)
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     # @option opts [Boolean] :tag_only_affected_keys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; (default to false)
     # @option opts [String] :translation_key_prefix This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
@@ -58,6 +59,7 @@ module Phrase
     # @option opts [Object] :locale_mapping Mapping between locale names and translation columns. Required in some formats like CSV or XLSX.
     # @option opts [Object] :format_options Additional options available for specific formats. See our format guide for the [complete list](https://support.phrase.com/hc/en-us/articles/9652464547740-List-of-Supported-File-Types-Strings).
     # @option opts [Boolean] :autotranslate If set, translations for the uploaded language will be fetched automatically.
+    # @option opts [Boolean] :verify_mentioned_translations Indicates whether all translations mentioned in the upload should be verified.
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     # @option opts [Boolean] :tag_only_affected_keys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60;
     # @option opts [String] :translation_key_prefix This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
@@ -114,6 +116,7 @@ module Phrase
       form_params['locale_mapping'] = opts[:'locale_mapping'] if !opts[:'locale_mapping'].nil?
       form_params['format_options'] = opts[:'format_options'] if !opts[:'format_options'].nil?
       form_params['autotranslate'] = opts[:'autotranslate'] if !opts[:'autotranslate'].nil?
+      form_params['verify_mentioned_translations'] = opts[:'verify_mentioned_translations'] if !opts[:'verify_mentioned_translations'].nil?
       form_params['mark_reviewed'] = opts[:'mark_reviewed'] if !opts[:'mark_reviewed'].nil?
       form_params['tag_only_affected_keys'] = opts[:'tag_only_affected_keys'] if !opts[:'tag_only_affected_keys'].nil?
       form_params['translation_key_prefix'] = opts[:'translation_key_prefix'] if !opts[:'translation_key_prefix'].nil?
