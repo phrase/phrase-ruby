@@ -242,6 +242,7 @@ docs/TranslationKeyDetails.md
 docs/TranslationOrder.md
 docs/TranslationParent.md
 docs/TranslationReviewParameters.md
+docs/TranslationUnreviewParameters.md
 docs/TranslationUnverifyParameters.md
 docs/TranslationUpdateParameters.md
 docs/TranslationVerifyParameters.md
@@ -252,6 +253,7 @@ docs/TranslationsExcludeParameters.md
 docs/TranslationsIncludeParameters.md
 docs/TranslationsReviewParameters.md
 docs/TranslationsSearchParameters.md
+docs/TranslationsUnreviewParameters.md
 docs/TranslationsUnverifyParameters.md
 docs/TranslationsVerifyParameters.md
 docs/Upload.md
@@ -518,6 +520,7 @@ lib/phrase/models/translation_key_details.rb
 lib/phrase/models/translation_order.rb
 lib/phrase/models/translation_parent.rb
 lib/phrase/models/translation_review_parameters.rb
+lib/phrase/models/translation_unreview_parameters.rb
 lib/phrase/models/translation_unverify_parameters.rb
 lib/phrase/models/translation_update_parameters.rb
 lib/phrase/models/translation_verify_parameters.rb
@@ -527,6 +530,7 @@ lib/phrase/models/translations_exclude_parameters.rb
 lib/phrase/models/translations_include_parameters.rb
 lib/phrase/models/translations_review_parameters.rb
 lib/phrase/models/translations_search_parameters.rb
+lib/phrase/models/translations_unreview_parameters.rb
 lib/phrase/models/translations_unverify_parameters.rb
 lib/phrase/models/translations_verify_parameters.rb
 lib/phrase/models/upload.rb
@@ -784,6 +788,7 @@ spec/models/translation_order_spec.rb
 spec/models/translation_parent_spec.rb
 spec/models/translation_review_parameters_spec.rb
 spec/models/translation_spec.rb
+spec/models/translation_unreview_parameters_spec.rb
 spec/models/translation_unverify_parameters_spec.rb
 spec/models/translation_update_parameters_spec.rb
 spec/models/translation_verify_parameters_spec.rb
@@ -793,6 +798,7 @@ spec/models/translations_exclude_parameters_spec.rb
 spec/models/translations_include_parameters_spec.rb
 spec/models/translations_review_parameters_spec.rb
 spec/models/translations_search_parameters_spec.rb
+spec/models/translations_unreview_parameters_spec.rb
 spec/models/translations_unverify_parameters_spec.rb
 spec/models/translations_verify_parameters_spec.rb
 spec/models/upload_spec.rb

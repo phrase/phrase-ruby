@@ -365,6 +365,7 @@ Class | Method | HTTP request | Description
 *Phrase::TranslationsApi* | [**translation_include**](docs/TranslationsApi.md#translation_include) | **PATCH** /projects/{project_id}/translations/{id}/include | Include a translation
 *Phrase::TranslationsApi* | [**translation_review**](docs/TranslationsApi.md#translation_review) | **PATCH** /projects/{project_id}/translations/{id}/review | Review a translation
 *Phrase::TranslationsApi* | [**translation_show**](docs/TranslationsApi.md#translation_show) | **GET** /projects/{project_id}/translations/{id} | Get a single translation
+*Phrase::TranslationsApi* | [**translation_unreview**](docs/TranslationsApi.md#translation_unreview) | **PATCH** /projects/{project_id}/translations/{id}/unreview | Unreview a translation
 *Phrase::TranslationsApi* | [**translation_unverify**](docs/TranslationsApi.md#translation_unverify) | **PATCH** /projects/{project_id}/translations/{id}/unverify | Mark a translation as unverified
 *Phrase::TranslationsApi* | [**translation_update**](docs/TranslationsApi.md#translation_update) | **PATCH** /projects/{project_id}/translations/{id} | Update a translation
 *Phrase::TranslationsApi* | [**translation_verify**](docs/TranslationsApi.md#translation_verify) | **PATCH** /projects/{project_id}/translations/{id}/verify | Verify a translation
@@ -375,6 +376,7 @@ Class | Method | HTTP request | Description
 *Phrase::TranslationsApi* | [**translations_list**](docs/TranslationsApi.md#translations_list) | **GET** /projects/{project_id}/translations | List all translations
 *Phrase::TranslationsApi* | [**translations_review_collection**](docs/TranslationsApi.md#translations_review_collection) | **PATCH** /projects/{project_id}/translations/review | Review translations selected by query
 *Phrase::TranslationsApi* | [**translations_search**](docs/TranslationsApi.md#translations_search) | **POST** /projects/{project_id}/translations/search | Search translations
+*Phrase::TranslationsApi* | [**translations_unreview_collection**](docs/TranslationsApi.md#translations_unreview_collection) | **PATCH** /projects/{project_id}/translations/unreview | Unreview translations selected by query
 *Phrase::TranslationsApi* | [**translations_unverify_collection**](docs/TranslationsApi.md#translations_unverify_collection) | **PATCH** /projects/{project_id}/translations/unverify | Unverify translations by query
 *Phrase::TranslationsApi* | [**translations_verify_collection**](docs/TranslationsApi.md#translations_verify_collection) | **PATCH** /projects/{project_id}/translations/verify | Verify translations by query
 *Phrase::UploadsApi* | [**upload_create**](docs/UploadsApi.md#upload_create) | **POST** /projects/{project_id}/uploads | Upload a new file
@@ -589,6 +591,7 @@ Class | Method | HTTP request | Description
  - [Phrase::TranslationOrder](docs/TranslationOrder.md)
  - [Phrase::TranslationParent](docs/TranslationParent.md)
  - [Phrase::TranslationReviewParameters](docs/TranslationReviewParameters.md)
+ - [Phrase::TranslationUnreviewParameters](docs/TranslationUnreviewParameters.md)
  - [Phrase::TranslationUnverifyParameters](docs/TranslationUnverifyParameters.md)
  - [Phrase::TranslationUpdateParameters](docs/TranslationUpdateParameters.md)
  - [Phrase::TranslationVerifyParameters](docs/TranslationVerifyParameters.md)
@@ -598,6 +601,7 @@ Class | Method | HTTP request | Description
  - [Phrase::TranslationsIncludeParameters](docs/TranslationsIncludeParameters.md)
  - [Phrase::TranslationsReviewParameters](docs/TranslationsReviewParameters.md)
  - [Phrase::TranslationsSearchParameters](docs/TranslationsSearchParameters.md)
+ - [Phrase::TranslationsUnreviewParameters](docs/TranslationsUnreviewParameters.md)
  - [Phrase::TranslationsUnverifyParameters](docs/TranslationsUnverifyParameters.md)
  - [Phrase::TranslationsVerifyParameters](docs/TranslationsVerifyParameters.md)
  - [Phrase::Upload](docs/Upload.md)

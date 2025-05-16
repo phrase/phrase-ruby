@@ -396,6 +396,86 @@ module Phrase
       return response, status_code, headers
     end
 
+    # Unreview a translation
+    # Mark a reviewed translation as translated.
+    # @param project_id [String] Project ID
+    # @param id [String] ID
+    # @param translation_unreview_parameters [TranslationUnreviewParameters] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @return [TranslationDetails]
+    def translation_unreview(project_id, id, translation_unreview_parameters, opts = {})
+      data, _status_code, _headers = translation_unreview_with_http_info(project_id, id, translation_unreview_parameters, opts)
+      data
+    end
+
+    # Unreview a translation
+    # Mark a reviewed translation as translated.
+    # @param project_id [String] Project ID
+    # @param id [String] ID
+    # @param translation_unreview_parameters [TranslationUnreviewParameters] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @return [Array<(Response<(TranslationDetails)>, Integer, Hash)>] Response<(TranslationDetails)> data, response status code and response headers
+    def translation_unreview_with_http_info(project_id, id, translation_unreview_parameters, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TranslationsApi.translation_unreview ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translation_unreview"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling TranslationsApi.translation_unreview"
+      end
+      # verify the required parameter 'translation_unreview_parameters' is set
+      if @api_client.config.client_side_validation && translation_unreview_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'translation_unreview_parameters' when calling TranslationsApi.translation_unreview"
+      end
+      # resource path
+      local_var_path = '/projects/{project_id}/translations/{id}/unreview'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] || @api_client.object_to_http_body(translation_unreview_parameters) 
+
+      # return_type
+      return_type = opts[:return_type] || 'TranslationDetails' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['Basic', 'Token']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TranslationsApi#translation_unreview\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      response = ::Phrase::Response.new(data, headers)
+      return response, status_code, headers
+    end
+
     # Mark a translation as unverified
     # Mark an existing translation as unverified.
     # @param project_id [String] Project ID
@@ -1203,6 +1283,80 @@ module Phrase
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TranslationsApi#translations_search\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      response = ::Phrase::Response.new(data, headers)
+      return response, status_code, headers
+    end
+
+    # Unreview translations selected by query
+    # Unreview translations matching query.
+    # @param project_id [String] Project ID
+    # @param translations_unreview_parameters [TranslationsUnreviewParameters] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @return [AffectedCount]
+    def translations_unreview_collection(project_id, translations_unreview_parameters, opts = {})
+      data, _status_code, _headers = translations_unreview_collection_with_http_info(project_id, translations_unreview_parameters, opts)
+      data
+    end
+
+    # Unreview translations selected by query
+    # Unreview translations matching query.
+    # @param project_id [String] Project ID
+    # @param translations_unreview_parameters [TranslationsUnreviewParameters] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @return [Array<(Response<(AffectedCount)>, Integer, Hash)>] Response<(AffectedCount)> data, response status code and response headers
+    def translations_unreview_collection_with_http_info(project_id, translations_unreview_parameters, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TranslationsApi.translations_unreview_collection ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling TranslationsApi.translations_unreview_collection"
+      end
+      # verify the required parameter 'translations_unreview_parameters' is set
+      if @api_client.config.client_side_validation && translations_unreview_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'translations_unreview_parameters' when calling TranslationsApi.translations_unreview_collection"
+      end
+      # resource path
+      local_var_path = '/projects/{project_id}/translations/unreview'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] || @api_client.object_to_http_body(translations_unreview_parameters) 
+
+      # return_type
+      return_type = opts[:return_type] || 'AffectedCount' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['Basic', 'Token']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TranslationsApi#translations_unreview_collection\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers

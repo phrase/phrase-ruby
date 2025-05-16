@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**translation_include**](TranslationsApi.md#translation_include) | **PATCH** /projects/{project_id}/translations/{id}/include | Include a translation
 [**translation_review**](TranslationsApi.md#translation_review) | **PATCH** /projects/{project_id}/translations/{id}/review | Review a translation
 [**translation_show**](TranslationsApi.md#translation_show) | **GET** /projects/{project_id}/translations/{id} | Get a single translation
+[**translation_unreview**](TranslationsApi.md#translation_unreview) | **PATCH** /projects/{project_id}/translations/{id}/unreview | Unreview a translation
 [**translation_unverify**](TranslationsApi.md#translation_unverify) | **PATCH** /projects/{project_id}/translations/{id}/unverify | Mark a translation as unverified
 [**translation_update**](TranslationsApi.md#translation_update) | **PATCH** /projects/{project_id}/translations/{id} | Update a translation
 [**translation_verify**](TranslationsApi.md#translation_verify) | **PATCH** /projects/{project_id}/translations/{id}/verify | Verify a translation
@@ -19,6 +20,7 @@ Method | HTTP request | Description
 [**translations_list**](TranslationsApi.md#translations_list) | **GET** /projects/{project_id}/translations | List all translations
 [**translations_review_collection**](TranslationsApi.md#translations_review_collection) | **PATCH** /projects/{project_id}/translations/review | Review translations selected by query
 [**translations_search**](TranslationsApi.md#translations_search) | **POST** /projects/{project_id}/translations/search | Search translations
+[**translations_unreview_collection**](TranslationsApi.md#translations_unreview_collection) | **PATCH** /projects/{project_id}/translations/unreview | Unreview translations selected by query
 [**translations_unverify_collection**](TranslationsApi.md#translations_unverify_collection) | **PATCH** /projects/{project_id}/translations/unverify | Unverify translations by query
 [**translations_verify_collection**](TranslationsApi.md#translations_verify_collection) | **PATCH** /projects/{project_id}/translations/verify | Verify translations by query
 
@@ -344,6 +346,71 @@ Response<([**TranslationDetails**](TranslationDetails.md))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## translation_unreview
+
+> TranslationDetails translation_unreview(project_id, id, translation_unreview_parameters, opts)
+
+Unreview a translation
+
+Mark a reviewed translation as translated.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::TranslationsApi.new
+project_id = 'project_id_example' # String | Project ID
+id = 'id_example' # String | ID
+translation_unreview_parameters = Phrase::TranslationUnreviewParameters.new # TranslationUnreviewParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Unreview a translation
+  result = api_instance.translation_unreview(project_id, id, translation_unreview_parameters, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling TranslationsApi->translation_unreview: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **id** | **String**| ID | 
+ **translation_unreview_parameters** | [**TranslationUnreviewParameters**](TranslationUnreviewParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<([**TranslationDetails**](TranslationDetails.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -1014,6 +1081,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 Response<([**Array&lt;Translation&gt;**](Translation.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## translations_unreview_collection
+
+> AffectedCount translations_unreview_collection(project_id, translations_unreview_parameters, opts)
+
+Unreview translations selected by query
+
+Unreview translations matching query.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::TranslationsApi.new
+project_id = 'project_id_example' # String | Project ID
+translations_unreview_parameters = Phrase::TranslationsUnreviewParameters.new # TranslationsUnreviewParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Unreview translations selected by query
+  result = api_instance.translations_unreview_collection(project_id, translations_unreview_parameters, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling TranslationsApi->translations_unreview_collection: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **translations_unreview_parameters** | [**TranslationsUnreviewParameters**](TranslationsUnreviewParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<([**AffectedCount**](AffectedCount.md))>
 
 ### Authorization
 

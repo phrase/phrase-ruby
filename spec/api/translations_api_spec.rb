@@ -94,6 +94,21 @@ describe 'TranslationsApi' do
     end
   end
 
+  # unit tests for translation_unreview
+  # Unreview a translation
+  # Mark a reviewed translation as translated.
+  # @param project_id Project ID
+  # @param id ID
+  # @param translation_unreview_parameters 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [TranslationDetails]
+  describe 'translation_unreview test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for translation_unverify
   # Mark a translation as unverified
   # Mark an existing translation as unverified.
@@ -253,6 +268,20 @@ describe 'TranslationsApi' do
   # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
   # @return [Array<Translation>]
   describe 'translations_search test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for translations_unreview_collection
+  # Unreview translations selected by query
+  # Unreview translations matching query.
+  # @param project_id Project ID
+  # @param translations_unreview_parameters 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [AffectedCount]
+  describe 'translations_unreview_collection test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
