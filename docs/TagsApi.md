@@ -167,6 +167,7 @@ project_id = 'project_id_example' # String | Project ID
 name = 'name_example' # String | name
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  omit_statistics: true, # Boolean | omit statistics in the response
   branch: 'my-feature-branch' # String | specify the branch to use
 }
 
@@ -187,6 +188,7 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **name** | **String**| name | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **omit_statistics** | **Boolean**| omit statistics in the response | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
 
 ### Return type

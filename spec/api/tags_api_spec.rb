@@ -56,6 +56,7 @@ describe 'TagsApi' do
   # @param name name
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [Boolean] :omit_statistics omit statistics in the response
   # @option opts [String] :branch specify the branch to use
   # @return [TagWithStats]
   describe 'tag_show test' do

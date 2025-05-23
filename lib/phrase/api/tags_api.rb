@@ -160,6 +160,7 @@ module Phrase
     # @param name [String] name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [Boolean] :omit_statistics omit statistics in the response
     # @option opts [String] :branch specify the branch to use
     # @return [TagWithStats]
     def tag_show(project_id, name, opts = {})
@@ -173,6 +174,7 @@ module Phrase
     # @param name [String] name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [Boolean] :omit_statistics omit statistics in the response
     # @option opts [String] :branch specify the branch to use
     # @return [Array<(Response<(TagWithStats)>, Integer, Hash)>] Response<(TagWithStats)> data, response status code and response headers
     def tag_show_with_http_info(project_id, name, opts = {})
@@ -192,6 +194,7 @@ module Phrase
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'omit_statistics'] = opts[:'omit_statistics'] if !opts[:'omit_statistics'].nil?
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
