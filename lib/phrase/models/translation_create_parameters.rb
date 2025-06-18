@@ -17,7 +17,7 @@ module Phrase
     # Plural suffix. Can be one of: zero, one, two, few, many, other. Must be specified if the key associated to the translation is pluralized.
     attr_accessor :plural_suffix
 
-    # Indicates whether translation is unverified. Part of the <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\" target=\"_blank\">Advanced Workflows</a> feature.
+    # Indicates whether translation is unverified. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature.
     attr_accessor :unverified
 
     # Indicates whether translation is excluded.

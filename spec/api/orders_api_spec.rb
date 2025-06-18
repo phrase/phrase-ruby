@@ -37,7 +37,7 @@ describe 'OrdersApi' do
 
   # unit tests for order_create
   # Create a new order
-  # Create a new order. Access token scope must include &lt;code&gt;orders.create&lt;/code&gt;.
+  # Create a new order. Access token scope must include &#x60;orders.create&#x60;.
   # @param project_id Project ID
   # @param order_create_parameters 
   # @param [Hash] opts the optional parameters

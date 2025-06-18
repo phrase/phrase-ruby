@@ -8,7 +8,7 @@ module Phrase
       @api_client = api_client
     end
     # Remove a user from the account
-    # Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include <code>team.manage</code>.
+    # Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include `team.manage`.
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -20,7 +20,7 @@ module Phrase
     end
 
     # Remove a user from the account
-    # Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+    # Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include &#x60;team.manage&#x60;.
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -78,7 +78,7 @@ module Phrase
     end
 
     # Get single member
-    # Get details on a single user in the account. Access token scope must include <code>team.manage</code>.
+    # Get details on a single user in the account. Access token scope must include `team.manage`.
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -90,7 +90,7 @@ module Phrase
     end
 
     # Get single member
-    # Get details on a single user in the account. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+    # Get details on a single user in the account. Access token scope must include &#x60;team.manage&#x60;.
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -150,7 +150,7 @@ module Phrase
     end
 
     # Update a member
-    # Update user permissions in the account. Developers and translators need <code>project_ids</code> and <code>locale_ids</code> assigned to access them. Access token scope must include <code>team.manage</code>.
+    # Update user permissions in the account. Developers and translators need `project_ids` and `locale_ids` assigned to access them. Access token scope must include `team.manage`.
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param member_update_parameters [MemberUpdateParameters] 
@@ -163,7 +163,7 @@ module Phrase
     end
 
     # Update a member
-    # Update user permissions in the account. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+    # Update user permissions in the account. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param member_update_parameters [MemberUpdateParameters] 
@@ -230,7 +230,7 @@ module Phrase
     end
 
     # Update a member's project settings
-    # Update user settings in the project. Access token scope must include <code>team.manage</code>.
+    # Update user settings in the project. Access token scope must include `team.manage`.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param member_update_settings_parameters [MemberUpdateSettingsParameters] 
@@ -243,7 +243,7 @@ module Phrase
     end
 
     # Update a member&#39;s project settings
-    # Update user settings in the project. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+    # Update user settings in the project. Access token scope must include &#x60;team.manage&#x60;.
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param member_update_settings_parameters [MemberUpdateSettingsParameters] 
@@ -310,7 +310,7 @@ module Phrase
     end
 
     # List members
-    # Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include <code>team.manage</code>.
+    # Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include `team.manage`.
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -323,7 +323,7 @@ module Phrase
     end
 
     # List members
-    # Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+    # Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &#x60;team.manage&#x60;.
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)

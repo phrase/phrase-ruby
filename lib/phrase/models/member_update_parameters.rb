@@ -20,7 +20,7 @@ module Phrase
     # List of spaces the user is assigned to.
     attr_accessor :space_ids
 
-    # Additional permissions depending on member role. Available permissions are <code>create_upload</code> and <code>review_translations</code>
+    # Additional permissions depending on member role. Available permissions are `create_upload` and `review_translations`
     attr_accessor :permissions
 
     # Attribute mapping from ruby-style variable name to JSON key.

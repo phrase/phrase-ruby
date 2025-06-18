@@ -39,8 +39,8 @@ locale_id = 'locale_id_example' # String | Locale ID
 locale_download_create_parameters = Phrase::LocaleDownloadCreateParameters.new({file_format: 'yml'}) # LocaleDownloadCreateParameters | 
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  if_modified_since: 'if_modified_since_example', # String | Last modified condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
-  if_none_match: 'if_none_match_example' # String | ETag condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
+  if_modified_since: 'if_modified_since_example', # String | Last modified condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional)
+  if_none_match: 'if_none_match_example' # String | ETag condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional)
 }
 
 begin
@@ -61,8 +61,8 @@ Name | Type | Description  | Notes
  **locale_id** | **String**| Locale ID | 
  **locale_download_create_parameters** | [**LocaleDownloadCreateParameters**](LocaleDownloadCreateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **if_modified_since** | **String**| Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional] 
- **if_none_match** | **String**| ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional] 
+ **if_modified_since** | **String**| Last modified condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional) | [optional] 
+ **if_none_match** | **String**| ETag condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional) | [optional] 
 
 ### Return type
 
@@ -108,8 +108,8 @@ locale_id = 'locale_id_example' # String | Locale ID
 id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  if_modified_since: 'if_modified_since_example', # String | Last modified condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
-  if_none_match: 'if_none_match_example' # String | ETag condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
+  if_modified_since: 'if_modified_since_example', # String | Last modified condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional)
+  if_none_match: 'if_none_match_example' # String | ETag condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional)
 }
 
 begin
@@ -130,8 +130,8 @@ Name | Type | Description  | Notes
  **locale_id** | **String**| Locale ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **if_modified_since** | **String**| Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional] 
- **if_none_match** | **String**| ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional] 
+ **if_modified_since** | **String**| Last modified condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional) | [optional] 
+ **if_none_match** | **String**| ETag condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional) | [optional] 
 
 ### Return type
 

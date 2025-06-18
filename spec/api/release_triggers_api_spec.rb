@@ -52,7 +52,7 @@ describe 'ReleaseTriggersApi' do
 
   # unit tests for release_triggers_list
   # List release triggers
-  # List all release triggers for the given distribution.&lt;br&gt; Note: Currently only one release trigger can exist per distribution. 
+  # List all release triggers for the given distribution.  Note: Currently only one release trigger can exist per distribution. 
   # @param account_id Account ID
   # @param distribution_id Distribution ID
   # @param [Hash] opts the optional parameters

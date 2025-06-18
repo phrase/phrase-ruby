@@ -88,7 +88,7 @@ module Phrase
     end
 
     # Create a new order
-    # Create a new order. Access token scope must include <code>orders.create</code>.
+    # Create a new order. Access token scope must include `orders.create`.
     # @param project_id [String] Project ID
     # @param order_create_parameters [OrderCreateParameters] 
     # @param [Hash] opts the optional parameters
@@ -100,7 +100,7 @@ module Phrase
     end
 
     # Create a new order
-    # Create a new order. Access token scope must include &lt;code&gt;orders.create&lt;/code&gt;.
+    # Create a new order. Access token scope must include &#x60;orders.create&#x60;.
     # @param project_id [String] Project ID
     # @param order_create_parameters [OrderCreateParameters] 
     # @param [Hash] opts the optional parameters

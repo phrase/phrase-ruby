@@ -164,7 +164,7 @@ module Phrase
     end
 
     # List release triggers
-    # List all release triggers for the given distribution.<br> Note: Currently only one release trigger can exist per distribution. 
+    # List all release triggers for the given distribution.  Note: Currently only one release trigger can exist per distribution. 
     # @param account_id [String] Account ID
     # @param distribution_id [String] Distribution ID
     # @param [Hash] opts the optional parameters
@@ -176,7 +176,7 @@ module Phrase
     end
 
     # List release triggers
-    # List all release triggers for the given distribution.&lt;br&gt; Note: Currently only one release trigger can exist per distribution. 
+    # List all release triggers for the given distribution.  Note: Currently only one release trigger can exist per distribution. 
     # @param account_id [String] Account ID
     # @param distribution_id [String] Distribution ID
     # @param [Hash] opts the optional parameters

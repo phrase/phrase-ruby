@@ -8,7 +8,7 @@ module Phrase
       @api_client = api_client
     end
     # Search across projects
-    # Search for keys and translations in all account projects <br><br><i>Note: Search is limited to 10000 results and may not include recently updated data depending on the project sizes.</i>
+    # Search for keys and translations in all account projects  *Note: Search is limited to 10000 results and may not include recently updated data depending on the project sizes.* 
     # @param account_id [String] Account ID
     # @param search_in_account_parameters [SearchInAccountParameters] 
     # @param [Hash] opts the optional parameters
@@ -20,7 +20,7 @@ module Phrase
     end
 
     # Search across projects
-    # Search for keys and translations in all account projects &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Search is limited to 10000 results and may not include recently updated data depending on the project sizes.&lt;/i&gt;
+    # Search for keys and translations in all account projects  *Note: Search is limited to 10000 results and may not include recently updated data depending on the project sizes.* 
     # @param account_id [String] Account ID
     # @param search_in_account_parameters [SearchInAccountParameters] 
     # @param [Hash] opts the optional parameters

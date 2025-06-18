@@ -2,7 +2,7 @@ require 'date'
 
 module Phrase
   class InvitationCreateParameters
-    # The email of the invited user. The <code>email</code> can not be updated once created. Create a new invitation for each unique email.
+    # The email of the invited user. The `email` can not be updated once created. Create a new invitation for each unique email.
     attr_accessor :email
 
     # Invitiation role, can be any of Manager, Developer, Translator.
@@ -23,7 +23,7 @@ module Phrase
     # List of default locales for the user.
     attr_accessor :default_locale_codes
 
-    # Additional permissions depending on invitation role. Available permissions are <code>create_upload</code> and <code>review_translations</code>
+    # Additional permissions depending on invitation role. Available permissions are `create_upload` and `review_translations`
     attr_accessor :permissions
 
     # Attribute mapping from ruby-style variable name to JSON key.

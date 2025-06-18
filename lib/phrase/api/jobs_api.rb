@@ -862,7 +862,7 @@ module Phrase
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :owned_by filter by user owning job
     # @option opts [String] :assigned_to filter by user assigned to job
-    # @option opts [String] :state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt;
+    # @option opts [String] :state filter by state of job; valid states are: &#x60;draft&#x60;, &#x60;in_progress&#x60;, &#x60;completed&#x60;
     # @option opts [String] :updated_since filter by jobs updated since given date
     # @return [Array<Job>]
     def jobs_by_account(account_id, opts = {})
@@ -879,7 +879,7 @@ module Phrase
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :owned_by filter by user owning job
     # @option opts [String] :assigned_to filter by user assigned to job
-    # @option opts [String] :state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt;
+    # @option opts [String] :state filter by state of job; valid states are: &#x60;draft&#x60;, &#x60;in_progress&#x60;, &#x60;completed&#x60;
     # @option opts [String] :updated_since filter by jobs updated since given date
     # @return [Array<(Response<(Array<Job>)>, Integer, Hash)>] Response<(Array<Job>)> data, response status code and response headers
     def jobs_by_account_with_http_info(account_id, opts = {})
@@ -947,7 +947,7 @@ module Phrase
     # @option opts [String] :branch Branch to use
     # @option opts [String] :owned_by filter by user owning job
     # @option opts [String] :assigned_to filter by user assigned to job
-    # @option opts [String] :state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt;
+    # @option opts [String] :state filter by state of job; valid states are: &#x60;draft&#x60;, &#x60;in_progress&#x60;, &#x60;completed&#x60;
     # @option opts [String] :updated_since filter by jobs updated since given date
     # @return [Array<Job>]
     def jobs_list(project_id, opts = {})
@@ -965,7 +965,7 @@ module Phrase
     # @option opts [String] :branch Branch to use
     # @option opts [String] :owned_by filter by user owning job
     # @option opts [String] :assigned_to filter by user assigned to job
-    # @option opts [String] :state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt;
+    # @option opts [String] :state filter by state of job; valid states are: &#x60;draft&#x60;, &#x60;in_progress&#x60;, &#x60;completed&#x60;
     # @option opts [String] :updated_since filter by jobs updated since given date
     # @return [Array<(Response<(Array<Job>)>, Integer, Hash)>] Response<(Array<Job>)> data, response status code and response headers
     def jobs_list_with_http_info(project_id, opts = {})

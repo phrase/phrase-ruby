@@ -14,7 +14,7 @@ module Phrase
     # List of locale ids that will be part of distribution releases
     attr_accessor :locale_ids
 
-    # Additional formatting and render options. Only <code>enclose_in_cdata</code> is available for platform <code>android</code>.
+    # Additional formatting and render options. Only `enclose_in_cdata` is available for platform `android`. 
     attr_accessor :format_options
 
     # Use fallback locale if there is no translation in the current locale.

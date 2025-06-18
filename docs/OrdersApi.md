@@ -83,7 +83,7 @@ Response<([**TranslationOrder**](TranslationOrder.md))>
 
 Create a new order
 
-Create a new order. Access token scope must include <code>orders.create</code>.
+Create a new order. Access token scope must include `orders.create`.
 
 ### Example
 
