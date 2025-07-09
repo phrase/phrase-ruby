@@ -254,6 +254,7 @@ module Phrase
     # @option opts [Boolean] :filter_by_prefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file.
     # @option opts [Object] :custom_metadata_filters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download. 
     # @option opts [Array<String>] :locale_ids Locale IDs or locale names
+    # @option opts [String] :updated_since Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;). 
     # @return [File]
     def locale_download(project_id, id, opts = {})
       data, _status_code, _headers = locale_download_with_http_info(project_id, id, opts)
@@ -288,6 +289,7 @@ module Phrase
     # @option opts [Boolean] :filter_by_prefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file.
     # @option opts [Object] :custom_metadata_filters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download. 
     # @option opts [Array<String>] :locale_ids Locale IDs or locale names
+    # @option opts [String] :updated_since Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;). 
     # @return [Array<(Response<(File)>, Integer, Hash)>] Response<(File)> data, response status code and response headers
     def locale_download_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
@@ -326,6 +328,7 @@ module Phrase
       query_params[:'filter_by_prefix'] = opts[:'filter_by_prefix'] if !opts[:'filter_by_prefix'].nil?
       query_params[:'custom_metadata_filters'] = opts[:'custom_metadata_filters'] if !opts[:'custom_metadata_filters'].nil?
       query_params[:'locale_ids'] = @api_client.build_collection_param(opts[:'locale_ids'], :multi) if !opts[:'locale_ids'].nil?
+      query_params[:'updated_since'] = opts[:'updated_since'] if !opts[:'updated_since'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
