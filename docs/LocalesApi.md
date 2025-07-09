@@ -257,7 +257,7 @@ opts = {
   filter_by_prefix: true, # Boolean | Only download translation keys containing the specified prefix, and remove the prefix from the generated file.
   custom_metadata_filters: { key: 3.56}, # Object | Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download. 
   locale_ids: ['inner_example'], # Array<String> | Locale IDs or locale names
-  updated_since: '2023-01-01T00:00:00Z' # String | Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., `2023-01-01T00:00:00Z`). 
+  updated_since: '2023-01-01T00:00:00Z' # String | Only include translations and keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., `2023-01-01T00:00:00Z`). 
 }
 
 begin
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
  **filter_by_prefix** | **Boolean**| Only download translation keys containing the specified prefix, and remove the prefix from the generated file. | [optional] 
  **custom_metadata_filters** | [**Object**](.md)| Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  | [optional] 
  **locale_ids** | [**Array&lt;String&gt;**](String.md)| Locale IDs or locale names | [optional] 
- **updated_since** | **String**| Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  | [optional] 
+ **updated_since** | **String**| Only include translations and keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  | [optional] 
 
 ### Return type
 

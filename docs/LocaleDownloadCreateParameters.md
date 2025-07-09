@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **fallback_locale_id** | **String** | If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &#x60;true&#x60;. | [optional] 
 **source_locale_id** | **String** | Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &#x60;tag&#x60; parameter indicating a specific job. | [optional] 
 **custom_metadata_filters** | **Object** | Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  | [optional] 
-**updated_since** | **String** | Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  | [optional] 
+**updated_since** | **String** | Only include translations and keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  | [optional] 
 
 ## Code Sample
 
@@ -41,7 +41,7 @@ instance = Phrase::LocaleDownloadCreateParameters.new(file_format: yml,
                                  fallback_locale_id: abcd1234abcd1234abcd1234abcd1234,
                                  source_locale_id: abcd1234abcd1234abcd1234abcd1234,
                                  custom_metadata_filters: null,
-                                 updated_since: null)
+                                 updated_since: 2023-01-01T00:00:00Z)
 ```
 
 
