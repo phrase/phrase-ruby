@@ -14,6 +14,9 @@ module Phrase
     # Indicates whether key supports pluralization
     attr_accessor :plural
 
+    # Indicates whether key uses ordinal rules for pluralization
+    attr_accessor :use_ordinal_rules
+
     # Plural name for the key (used in some file formats, e.g. Gettext)
     attr_accessor :name_plural
 
@@ -57,6 +60,7 @@ module Phrase
         :'name' => :'name',
         :'description' => :'description',
         :'plural' => :'plural',
+        :'use_ordinal_rules' => :'use_ordinal_rules',
         :'name_plural' => :'name_plural',
         :'data_type' => :'data_type',
         :'tags' => :'tags',
@@ -79,6 +83,7 @@ module Phrase
         :'name' => :'String',
         :'description' => :'String',
         :'plural' => :'Boolean',
+        :'use_ordinal_rules' => :'Boolean',
         :'name_plural' => :'String',
         :'data_type' => :'String',
         :'tags' => :'String',
@@ -129,6 +134,10 @@ module Phrase
 
       if attributes.key?(:'plural')
         self.plural = attributes[:'plural']
+      end
+
+      if attributes.key?(:'use_ordinal_rules')
+        self.use_ordinal_rules = attributes[:'use_ordinal_rules']
       end
 
       if attributes.key?(:'name_plural')
@@ -202,6 +211,7 @@ module Phrase
           name == o.name &&
           description == o.description &&
           plural == o.plural &&
+          use_ordinal_rules == o.use_ordinal_rules &&
           name_plural == o.name_plural &&
           data_type == o.data_type &&
           tags == o.tags &&
@@ -225,7 +235,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, description, plural, name_plural, data_type, tags, max_characters_allowed, screenshot, remove_screenshot, unformatted, xml_space_preserve, original_file, localized_format_string, localized_format_key, custom_metadata].hash
+      [branch, name, description, plural, use_ordinal_rules, name_plural, data_type, tags, max_characters_allowed, screenshot, remove_screenshot, unformatted, xml_space_preserve, original_file, localized_format_string, localized_format_key, custom_metadata].hash
     end
 
     # Builds the object from hash

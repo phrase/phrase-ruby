@@ -8,12 +8,15 @@ module Phrase
 
     attr_accessor :plural
 
+    attr_accessor :use_ordinal_rules
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'name' => :'name',
-        :'plural' => :'plural'
+        :'plural' => :'plural',
+        :'use_ordinal_rules' => :'use_ordinal_rules'
       }
     end
 
@@ -22,7 +25,8 @@ module Phrase
       {
         :'id' => :'String',
         :'name' => :'String',
-        :'plural' => :'Boolean'
+        :'plural' => :'Boolean',
+        :'use_ordinal_rules' => :'Boolean'
       }
     end
 
@@ -58,6 +62,10 @@ module Phrase
       if attributes.key?(:'plural')
         self.plural = attributes[:'plural']
       end
+
+      if attributes.key?(:'use_ordinal_rules')
+        self.use_ordinal_rules = attributes[:'use_ordinal_rules']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -80,7 +88,8 @@ module Phrase
       self.class == o.class &&
           id == o.id &&
           name == o.name &&
-          plural == o.plural
+          plural == o.plural &&
+          use_ordinal_rules == o.use_ordinal_rules
     end
 
     # @see the `==` method
@@ -92,7 +101,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, plural].hash
+      [id, name, plural, use_ordinal_rules].hash
     end
 
     # Builds the object from hash
