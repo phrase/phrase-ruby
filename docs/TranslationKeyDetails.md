@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **name_hash** | **String** |  | [optional] 
 **plural** | **Boolean** |  | [optional] 
+**use_ordinal_rules** | **Boolean** |  | [optional] 
 **tags** | **Array&lt;String&gt;** |  | [optional] 
 **data_type** | **String** |  | [optional] 
 **created_at** | **Time** |  | [optional] 
@@ -34,6 +35,7 @@ instance = Phrase::TranslationKeyDetails.new(id: null,
                                  description: null,
                                  name_hash: null,
                                  plural: null,
+                                 use_ordinal_rules: null,
                                  tags: null,
                                  data_type: null,
                                  created_at: null,

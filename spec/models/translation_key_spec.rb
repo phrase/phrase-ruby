@@ -50,6 +50,12 @@ describe 'TranslationKey' do
     end
   end
 
+  describe 'test attribute "use_ordinal_rules"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "tags"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

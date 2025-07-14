@@ -16,6 +16,8 @@ module Phrase
 
     attr_accessor :plural_forms
 
+    attr_accessor :ordinal_plural_forms
+
     attr_accessor :source_locale
 
     attr_accessor :fallback_locale
@@ -36,6 +38,7 @@ module Phrase
         :'main' => :'main',
         :'rtl' => :'rtl',
         :'plural_forms' => :'plural_forms',
+        :'ordinal_plural_forms' => :'ordinal_plural_forms',
         :'source_locale' => :'source_locale',
         :'fallback_locale' => :'fallback_locale',
         :'created_at' => :'created_at',
@@ -54,6 +57,7 @@ module Phrase
         :'main' => :'Boolean',
         :'rtl' => :'Boolean',
         :'plural_forms' => :'Array<String>',
+        :'ordinal_plural_forms' => :'Array<String>',
         :'source_locale' => :'LocalePreview',
         :'fallback_locale' => :'LocalePreview',
         :'created_at' => :'DateTime',
@@ -120,6 +124,12 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'ordinal_plural_forms')
+        if (value = attributes[:'ordinal_plural_forms']).is_a?(Array)
+          self.ordinal_plural_forms = value
+        end
+      end
+
       if attributes.key?(:'source_locale')
         self.source_locale = attributes[:'source_locale']
       end
@@ -166,6 +176,7 @@ module Phrase
           main == o.main &&
           rtl == o.rtl &&
           plural_forms == o.plural_forms &&
+          ordinal_plural_forms == o.ordinal_plural_forms &&
           source_locale == o.source_locale &&
           fallback_locale == o.fallback_locale &&
           created_at == o.created_at &&
@@ -182,7 +193,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, code, default, main, rtl, plural_forms, source_locale, fallback_locale, created_at, updated_at, statistics].hash
+      [id, name, code, default, main, rtl, plural_forms, ordinal_plural_forms, source_locale, fallback_locale, created_at, updated_at, statistics].hash
     end
 
     # Builds the object from hash

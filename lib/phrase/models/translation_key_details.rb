@@ -12,6 +12,8 @@ module Phrase
 
     attr_accessor :plural
 
+    attr_accessor :use_ordinal_rules
+
     attr_accessor :tags
 
     attr_accessor :data_type
@@ -48,6 +50,7 @@ module Phrase
         :'description' => :'description',
         :'name_hash' => :'name_hash',
         :'plural' => :'plural',
+        :'use_ordinal_rules' => :'use_ordinal_rules',
         :'tags' => :'tags',
         :'data_type' => :'data_type',
         :'created_at' => :'created_at',
@@ -73,6 +76,7 @@ module Phrase
         :'description' => :'String',
         :'name_hash' => :'String',
         :'plural' => :'Boolean',
+        :'use_ordinal_rules' => :'Boolean',
         :'tags' => :'Array<String>',
         :'data_type' => :'String',
         :'created_at' => :'DateTime',
@@ -136,6 +140,10 @@ module Phrase
 
       if attributes.key?(:'plural')
         self.plural = attributes[:'plural']
+      end
+
+      if attributes.key?(:'use_ordinal_rules')
+        self.use_ordinal_rules = attributes[:'use_ordinal_rules']
       end
 
       if attributes.key?(:'tags')
@@ -222,6 +230,7 @@ module Phrase
           description == o.description &&
           name_hash == o.name_hash &&
           plural == o.plural &&
+          use_ordinal_rules == o.use_ordinal_rules &&
           tags == o.tags &&
           data_type == o.data_type &&
           created_at == o.created_at &&
@@ -247,7 +256,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, description, name_hash, plural, tags, data_type, created_at, updated_at, name_plural, comments_count, max_characters_allowed, screenshot_url, unformatted, xml_space_preserve, original_file, format_value_type, creator, custom_metadata].hash
+      [id, name, description, name_hash, plural, use_ordinal_rules, tags, data_type, created_at, updated_at, name_plural, comments_count, max_characters_allowed, screenshot_url, unformatted, xml_space_preserve, original_file, format_value_type, creator, custom_metadata].hash
     end
 
     # Builds the object from hash

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **main** | **Boolean** |  | [optional] 
 **rtl** | **Boolean** |  | [optional] 
 **plural_forms** | **Array&lt;String&gt;** |  | [optional] 
+**ordinal_plural_forms** | **Array&lt;String&gt;** |  | [optional] 
 **source_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **fallback_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **created_at** | **Time** |  | [optional] 
@@ -29,6 +30,7 @@ instance = Phrase::LocaleDetails.new(id: null,
                                  main: null,
                                  rtl: null,
                                  plural_forms: null,
+                                 ordinal_plural_forms: null,
                                  source_locale: null,
                                  fallback_locale: null,
                                  created_at: null,
