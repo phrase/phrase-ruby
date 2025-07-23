@@ -352,6 +352,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch Branch to use
+    # @option opts [Boolean] :include_annotations Include job-locale annotations in the response (default to false)
     # @return [JobLocale]
     def job_locale_show(project_id, job_id, id, opts = {})
       data, _status_code, _headers = job_locale_show_with_http_info(project_id, job_id, id, opts)
@@ -366,6 +367,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch Branch to use
+    # @option opts [Boolean] :include_annotations Include job-locale annotations in the response
     # @return [Array<(Response<(JobLocale)>, Integer, Hash)>] Response<(JobLocale)> data, response status code and response headers
     def job_locale_show_with_http_info(project_id, job_id, id, opts = {})
       if @api_client.config.debugging
@@ -389,6 +391,7 @@ module Phrase
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'include_annotations'] = opts[:'include_annotations'] if !opts[:'include_annotations'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -600,6 +603,7 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch Branch to use
+    # @option opts [Boolean] :include_annotations Include job-locale annotations in the response (default to false)
     # @return [Array<JobLocale>]
     def job_locales_list(project_id, job_id, opts = {})
       data, _status_code, _headers = job_locales_list_with_http_info(project_id, job_id, opts)
@@ -615,6 +619,7 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch Branch to use
+    # @option opts [Boolean] :include_annotations Include job-locale annotations in the response
     # @return [Array<(Response<(Array<JobLocale>)>, Integer, Hash)>] Response<(Array<JobLocale>)> data, response status code and response headers
     def job_locales_list_with_http_info(project_id, job_id, opts = {})
       if @api_client.config.debugging
@@ -636,6 +641,7 @@ module Phrase
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'include_annotations'] = opts[:'include_annotations'] if !opts[:'include_annotations'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

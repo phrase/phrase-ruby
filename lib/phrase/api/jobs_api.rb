@@ -551,7 +551,8 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
+    # @option opts [Boolean] :include_annotations Include job-locale annotations in the response (default to false)
     # @return [JobDetails]
     def job_show(project_id, id, opts = {})
       data, _status_code, _headers = job_show_with_http_info(project_id, id, opts)
@@ -564,7 +565,8 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :branch Branch to use
+    # @option opts [Boolean] :include_annotations Include job-locale annotations in the response
     # @return [Array<(Response<(JobDetails)>, Integer, Hash)>] Response<(JobDetails)> data, response status code and response headers
     def job_show_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
@@ -584,6 +586,7 @@ module Phrase
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'include_annotations'] = opts[:'include_annotations'] if !opts[:'include_annotations'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

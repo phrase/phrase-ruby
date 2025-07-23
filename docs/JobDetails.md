@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **source_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
 **keys** | [**Array&lt;KeyPreview&gt;**](KeyPreview.md) |  | [optional] 
+**annotations** | [**Array&lt;JobAnnotationShort&gt;**](JobAnnotationShort.md) |  | [optional] 
 
 ## Code Sample
 
@@ -41,7 +42,8 @@ instance = Phrase::JobDetails.new(id: null,
                                  source_translations_updated_at: null,
                                  source_locale: null,
                                  locales: null,
-                                 keys: null)
+                                 keys: null,
+                                 annotations: null)
 ```
 
 

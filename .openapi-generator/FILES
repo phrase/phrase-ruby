@@ -81,6 +81,10 @@ docs/InvitationUpdateParameters.md
 docs/InvitationUpdateSettingsParameters.md
 docs/InvitationsApi.md
 docs/Job.md
+docs/JobAnnotation.md
+docs/JobAnnotationShort.md
+docs/JobAnnotationUpdateParameters.md
+docs/JobAnnotationsApi.md
 docs/JobComment.md
 docs/JobCommentCreateParameters.md
 docs/JobCommentUpdateParameters.md
@@ -292,6 +296,7 @@ lib/phrase/api/glossary_term_translations_api.rb
 lib/phrase/api/glossary_terms_api.rb
 lib/phrase/api/icu_api.rb
 lib/phrase/api/invitations_api.rb
+lib/phrase/api/job_annotations_api.rb
 lib/phrase/api/job_comments_api.rb
 lib/phrase/api/job_locales_api.rb
 lib/phrase/api/job_template_locales_api.rb
@@ -389,6 +394,9 @@ lib/phrase/models/invitation_create_parameters.rb
 lib/phrase/models/invitation_update_parameters.rb
 lib/phrase/models/invitation_update_settings_parameters.rb
 lib/phrase/models/job.rb
+lib/phrase/models/job_annotation.rb
+lib/phrase/models/job_annotation_short.rb
+lib/phrase/models/job_annotation_update_parameters.rb
 lib/phrase/models/job_comment.rb
 lib/phrase/models/job_comment_create_parameters.rb
 lib/phrase/models/job_comment_update_parameters.rb
@@ -563,6 +571,7 @@ spec/api/glossary_term_translations_api_spec.rb
 spec/api/glossary_terms_api_spec.rb
 spec/api/icu_api_spec.rb
 spec/api/invitations_api_spec.rb
+spec/api/job_annotations_api_spec.rb
 spec/api/job_comments_api_spec.rb
 spec/api/job_locales_api_spec.rb
 spec/api/job_template_locales_api_spec.rb
@@ -656,6 +665,9 @@ spec/models/invitation_create_parameters_spec.rb
 spec/models/invitation_spec.rb
 spec/models/invitation_update_parameters_spec.rb
 spec/models/invitation_update_settings_parameters_spec.rb
+spec/models/job_annotation_short_spec.rb
+spec/models/job_annotation_spec.rb
+spec/models/job_annotation_update_parameters_spec.rb
 spec/models/job_comment_create_parameters_spec.rb
 spec/models/job_comment_spec.rb
 spec/models/job_comment_update_parameters_spec.rb

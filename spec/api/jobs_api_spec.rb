@@ -131,7 +131,8 @@ describe 'JobsApi' do
   # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :branch Branch to use
+  # @option opts [Boolean] :include_annotations Include job-locale annotations in the response
   # @return [JobDetails]
   describe 'job_show test' do
     it 'should work' do

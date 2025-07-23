@@ -499,7 +499,8 @@ project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  branch: 'my-feature-branch' # String | specify the branch to use
+  branch: 'my-feature-branch', # String | Branch to use
+  include_annotations: true # Boolean | Include job-locale annotations in the response
 }
 
 begin
@@ -519,7 +520,8 @@ Name | Type | Description  | Notes
  **project_id** | **String**| Project ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **branch** | **String**| specify the branch to use | [optional] 
+ **branch** | **String**| Branch to use | [optional] 
+ **include_annotations** | **Boolean**| Include job-locale annotations in the response | [optional] [default to false]
 
 ### Return type
 

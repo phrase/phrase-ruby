@@ -312,7 +312,8 @@ job_id = 'job_id_example' # String | Job ID
 id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  branch: 'my-feature-branch' # String | Branch to use
+  branch: 'my-feature-branch', # String | Branch to use
+  include_annotations: true # Boolean | Include job-locale annotations in the response
 }
 
 begin
@@ -334,6 +335,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **branch** | **String**| Branch to use | [optional] 
+ **include_annotations** | **Boolean**| Include job-locale annotations in the response | [optional] [default to false]
 
 ### Return type
 
@@ -512,7 +514,8 @@ opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-  branch: 'my-feature-branch' # String | Branch to use
+  branch: 'my-feature-branch', # String | Branch to use
+  include_annotations: true # Boolean | Include job-locale annotations in the response
 }
 
 begin
@@ -535,6 +538,7 @@ Name | Type | Description  | Notes
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
  **branch** | **String**| Branch to use | [optional] 
+ **include_annotations** | **Boolean**| Include job-locale annotations in the response | [optional] [default to false]
 
 ### Return type
 

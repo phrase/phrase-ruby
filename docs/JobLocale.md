@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **completed** | **Boolean** |  | [optional] 
 **translation_completed_at** | **Time** |  | [optional] 
 **review_completed_at** | **Time** |  | [optional] 
+**annotations** | [**Array&lt;JobAnnotationShort&gt;**](JobAnnotationShort.md) |  | [optional] 
 
 ## Code Sample
 
@@ -25,7 +26,8 @@ instance = Phrase::JobLocale.new(id: null,
                                  teams: null,
                                  completed: null,
                                  translation_completed_at: null,
-                                 review_completed_at: null)
+                                 review_completed_at: null,
+                                 annotations: null)
 ```
 
 

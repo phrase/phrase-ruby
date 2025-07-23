@@ -18,6 +18,8 @@ module Phrase
 
     attr_accessor :review_completed_at
 
+    attr_accessor :annotations
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -28,7 +30,8 @@ module Phrase
         :'teams' => :'teams',
         :'completed' => :'completed',
         :'translation_completed_at' => :'translation_completed_at',
-        :'review_completed_at' => :'review_completed_at'
+        :'review_completed_at' => :'review_completed_at',
+        :'annotations' => :'annotations'
       }
     end
 
@@ -42,7 +45,8 @@ module Phrase
         :'teams' => :'Array<LocaleTeamPreview>',
         :'completed' => :'Boolean',
         :'translation_completed_at' => :'DateTime',
-        :'review_completed_at' => :'DateTime'
+        :'review_completed_at' => :'DateTime',
+        :'annotations' => :'Array<JobAnnotationShort>'
       }
     end
 
@@ -102,6 +106,12 @@ module Phrase
       if attributes.key?(:'review_completed_at')
         self.review_completed_at = attributes[:'review_completed_at']
       end
+
+      if attributes.key?(:'annotations')
+        if (value = attributes[:'annotations']).is_a?(Array)
+          self.annotations = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -129,7 +139,8 @@ module Phrase
           teams == o.teams &&
           completed == o.completed &&
           translation_completed_at == o.translation_completed_at &&
-          review_completed_at == o.review_completed_at
+          review_completed_at == o.review_completed_at &&
+          annotations == o.annotations
     end
 
     # @see the `==` method
@@ -141,7 +152,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, job, locale, users, teams, completed, translation_completed_at, review_completed_at].hash
+      [id, job, locale, users, teams, completed, translation_completed_at, review_completed_at, annotations].hash
     end
 
     # Builds the object from hash
