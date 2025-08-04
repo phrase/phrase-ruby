@@ -18,7 +18,7 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :tags List of tags separated by comma to be associated with the new keys contained in the upload.
     # @option opts [Boolean] :update_translations Indicates whether existing translations should be updated with the file content.
-    # @option opts [Boolean] :update_custom_metadata Indicates whether existing custom metadata properties should be updated with the file content (default to true)
+    # @option opts [Boolean] :update_custom_metadata Determines whether to update custom metadata values when uploading a file. If set to true, existing metadata can be changed or removed. Passing an empty value deletes the corresponding metadata property. (default to true)
     # @option opts [Boolean] :update_translation_keys Pass &#x60;false&#x60; here to prevent new keys from being created and existing keys updated. (default to true)
     # @option opts [Boolean] :update_translations_on_source_match Update target translations only if the source translations of the uploaded multilingual file match the stored translations. (default to false)
     # @option opts [Boolean] :update_descriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
@@ -50,7 +50,7 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :tags List of tags separated by comma to be associated with the new keys contained in the upload.
     # @option opts [Boolean] :update_translations Indicates whether existing translations should be updated with the file content.
-    # @option opts [Boolean] :update_custom_metadata Indicates whether existing custom metadata properties should be updated with the file content
+    # @option opts [Boolean] :update_custom_metadata Determines whether to update custom metadata values when uploading a file. If set to true, existing metadata can be changed or removed. Passing an empty value deletes the corresponding metadata property.
     # @option opts [Boolean] :update_translation_keys Pass &#x60;false&#x60; here to prevent new keys from being created and existing keys updated.
     # @option opts [Boolean] :update_translations_on_source_match Update target translations only if the source translations of the uploaded multilingual file match the stored translations.
     # @option opts [Boolean] :update_descriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
