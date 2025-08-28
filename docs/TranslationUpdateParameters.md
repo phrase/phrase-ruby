@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **unverified** | **Boolean** | Indicates whether translation is unverified. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature. | [optional] 
 **excluded** | **Boolean** | Indicates whether translation is excluded. | [optional] 
 **autotranslate** | **Boolean** | Indicates whether the translation should be auto-translated. Responses with status 422 if provided for translation within a non-default locale or the project does not have the Autopilot feature enabled. | [optional] 
+**reviewed** | **Boolean** | When set to &#x60;true&#x60;, the translation will be marked as reviewed. | [optional] 
 
 ## Code Sample
 
@@ -21,7 +22,8 @@ instance = Phrase::TranslationUpdateParameters.new(branch: my-feature-branch,
                                  plural_suffix: null,
                                  unverified: null,
                                  excluded: null,
-                                 autotranslate: null)
+                                 autotranslate: null,
+                                 reviewed: true)
 ```
 
 
