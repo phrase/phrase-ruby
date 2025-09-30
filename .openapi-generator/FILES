@@ -18,6 +18,10 @@ docs/AuthorizationCreateParameters.md
 docs/AuthorizationUpdateParameters.md
 docs/AuthorizationWithToken.md
 docs/AuthorizationsApi.md
+docs/Automation.md
+docs/AutomationsApi.md
+docs/AutomationsCreateParameters.md
+docs/AutomationsCreateParameters1.md
 docs/BlacklistedKey.md
 docs/BlacklistedKeyCreateParameters.md
 docs/BlacklistedKeyUpdateParameters.md
@@ -281,6 +285,7 @@ git_push.sh
 lib/phrase.rb
 lib/phrase/api/accounts_api.rb
 lib/phrase/api/authorizations_api.rb
+lib/phrase/api/automations_api.rb
 lib/phrase/api/blacklisted_keys_api.rb
 lib/phrase/api/branches_api.rb
 lib/phrase/api/comment_reactions_api.rb
@@ -346,6 +351,9 @@ lib/phrase/models/authorization.rb
 lib/phrase/models/authorization_create_parameters.rb
 lib/phrase/models/authorization_update_parameters.rb
 lib/phrase/models/authorization_with_token.rb
+lib/phrase/models/automation.rb
+lib/phrase/models/automations_create_parameters.rb
+lib/phrase/models/automations_create_parameters1.rb
 lib/phrase/models/blacklisted_key.rb
 lib/phrase/models/blacklisted_key_create_parameters.rb
 lib/phrase/models/blacklisted_key_update_parameters.rb
@@ -556,6 +564,7 @@ lib/phrase/version.rb
 phrase.gemspec
 spec/api/accounts_api_spec.rb
 spec/api/authorizations_api_spec.rb
+spec/api/automations_api_spec.rb
 spec/api/blacklisted_keys_api_spec.rb
 spec/api/branches_api_spec.rb
 spec/api/comment_reactions_api_spec.rb
@@ -618,6 +627,9 @@ spec/models/authorization_create_parameters_spec.rb
 spec/models/authorization_spec.rb
 spec/models/authorization_update_parameters_spec.rb
 spec/models/authorization_with_token_spec.rb
+spec/models/automation_spec.rb
+spec/models/automations_create_parameters1_spec.rb
+spec/models/automations_create_parameters_spec.rb
 spec/models/blacklisted_key_create_parameters_spec.rb
 spec/models/blacklisted_key_spec.rb
 spec/models/blacklisted_key_update_parameters_spec.rb
