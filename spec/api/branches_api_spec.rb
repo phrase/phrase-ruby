@@ -64,7 +64,7 @@ describe 'BranchesApi' do
 
   # unit tests for branch_merge
   # Merge a branch
-  # Merge an existing branch.   *Note: Merging a branch may take several minutes depending on diff size.* 
+  # Merge an existing branch.  *Note: Merging a branch may take several minutes depending on diff size.* 
   # @param project_id Project ID
   # @param name name
   # @param branch_merge_parameters 
@@ -86,6 +86,21 @@ describe 'BranchesApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [Branch]
   describe 'branch_show test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for branch_sync
+  # Sync a branch
+  # Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+  # @param project_id Project ID
+  # @param name name
+  # @param branch_sync_parameters 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [nil]
+  describe 'branch_sync test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

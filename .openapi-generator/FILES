@@ -30,6 +30,7 @@ docs/Branch.md
 docs/BranchCreateParameters.md
 docs/BranchMergeParameters.md
 docs/BranchName.md
+docs/BranchSyncParameters.md
 docs/BranchUpdateParameters.md
 docs/BranchesApi.md
 docs/Comment.md
@@ -361,6 +362,7 @@ lib/phrase/models/branch.rb
 lib/phrase/models/branch_create_parameters.rb
 lib/phrase/models/branch_merge_parameters.rb
 lib/phrase/models/branch_name.rb
+lib/phrase/models/branch_sync_parameters.rb
 lib/phrase/models/branch_update_parameters.rb
 lib/phrase/models/comment.rb
 lib/phrase/models/comment_create_parameters.rb
@@ -637,6 +639,7 @@ spec/models/branch_create_parameters_spec.rb
 spec/models/branch_merge_parameters_spec.rb
 spec/models/branch_name_spec.rb
 spec/models/branch_spec.rb
+spec/models/branch_sync_parameters_spec.rb
 spec/models/branch_update_parameters_spec.rb
 spec/models/comment_create_parameters1_spec.rb
 spec/models/comment_create_parameters_spec.rb

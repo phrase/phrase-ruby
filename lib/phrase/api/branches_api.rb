@@ -222,7 +222,7 @@ module Phrase
     end
 
     # Merge a branch
-    # Merge an existing branch.   *Note: Merging a branch may take several minutes depending on diff size.* 
+    # Merge an existing branch.  *Note: Merging a branch may take several minutes depending on diff size.* 
     # @param project_id [String] Project ID
     # @param name [String] name
     # @param branch_merge_parameters [BranchMergeParameters] 
@@ -235,7 +235,7 @@ module Phrase
     end
 
     # Merge a branch
-    # Merge an existing branch.   *Note: Merging a branch may take several minutes depending on diff size.* 
+    # Merge an existing branch.  *Note: Merging a branch may take several minutes depending on diff size.* 
     # @param project_id [String] Project ID
     # @param name [String] name
     # @param branch_merge_parameters [BranchMergeParameters] 
@@ -366,6 +366,84 @@ module Phrase
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BranchesApi#branch_show\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      response = ::Phrase::Response.new(data, headers)
+      return response, status_code, headers
+    end
+
+    # Sync a branch
+    # Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+    # @param project_id [String] Project ID
+    # @param name [String] name
+    # @param branch_sync_parameters [BranchSyncParameters] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @return [nil]
+    def branch_sync(project_id, name, branch_sync_parameters, opts = {})
+      data, _status_code, _headers = branch_sync_with_http_info(project_id, name, branch_sync_parameters, opts)
+      data
+    end
+
+    # Sync a branch
+    # Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+    # @param project_id [String] Project ID
+    # @param name [String] name
+    # @param branch_sync_parameters [BranchSyncParameters] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
+    def branch_sync_with_http_info(project_id, name, branch_sync_parameters, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: BranchesApi.branch_sync ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling BranchesApi.branch_sync"
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling BranchesApi.branch_sync"
+      end
+      # verify the required parameter 'branch_sync_parameters' is set
+      if @api_client.config.client_side_validation && branch_sync_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'branch_sync_parameters' when calling BranchesApi.branch_sync"
+      end
+      # resource path
+      local_var_path = '/projects/{project_id}/branches/{name}/sync'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'name' + '}', CGI.escape(name.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] || @api_client.object_to_http_body(branch_sync_parameters) 
+
+      # return_type
+      return_type = opts[:return_type] 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['Basic', 'Token']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BranchesApi#branch_sync\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       response = ::Phrase::Response.new(data, headers)
       return response, status_code, headers

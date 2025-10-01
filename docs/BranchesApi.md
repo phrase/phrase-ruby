@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**branch_delete**](BranchesApi.md#branch_delete) | **DELETE** /projects/{project_id}/branches/{name} | Delete a branch
 [**branch_merge**](BranchesApi.md#branch_merge) | **PATCH** /projects/{project_id}/branches/{name}/merge | Merge a branch
 [**branch_show**](BranchesApi.md#branch_show) | **GET** /projects/{project_id}/branches/{name} | Get a single branch
+[**branch_sync**](BranchesApi.md#branch_sync) | **PATCH** /projects/{project_id}/branches/{name}/sync | Sync a branch
 [**branch_update**](BranchesApi.md#branch_update) | **PATCH** /projects/{project_id}/branches/{name} | Update a branch
 [**branches_list**](BranchesApi.md#branches_list) | **GET** /projects/{project_id}/branches | List branches
 
@@ -207,7 +208,7 @@ Response<(nil (empty response body))>
 
 Merge a branch
 
-Merge an existing branch.   *Note: Merging a branch may take several minutes depending on diff size.* 
+Merge an existing branch.  *Note: Merging a branch may take several minutes depending on diff size.* 
 
 ### Example
 
@@ -326,6 +327,70 @@ Response<([**Branch**](Branch.md))>
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## branch_sync
+
+> branch_sync(project_id, name, branch_sync_parameters, opts)
+
+Sync a branch
+
+Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::BranchesApi.new
+project_id = 'project_id_example' # String | Project ID
+name = 'name_example' # String | name
+branch_sync_parameters = Phrase::BranchSyncParameters.new # BranchSyncParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Sync a branch
+  api_instance.branch_sync(project_id, name, branch_sync_parameters, opts)
+rescue Phrase::ApiError => e
+  puts "Exception when calling BranchesApi->branch_sync: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **name** | **String**| name | 
+ **branch_sync_parameters** | [**BranchSyncParameters**](BranchSyncParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<(nil (empty response body))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 
 ## branch_update
