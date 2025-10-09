@@ -22,6 +22,7 @@ describe 'AutomationsApi' do
 
   # unit tests for automation_activate
   # Activate an automation
+  # Activate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
   # @param account_id Account ID
   # @param id ID
   # @param [Hash] opts the optional parameters
@@ -35,7 +36,7 @@ describe 'AutomationsApi' do
 
   # unit tests for automation_create
   # Create an automation
-  # Create a new automation.
+  # Create a new automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
   # @param account_id Account ID
   # @param automations_create_parameters 
   # @param [Hash] opts the optional parameters
@@ -49,6 +50,7 @@ describe 'AutomationsApi' do
 
   # unit tests for automation_deactivate
   # Deactivate an automation
+  # Deactivate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
   # @param account_id Account ID
   # @param id ID
   # @param [Hash] opts the optional parameters
@@ -62,7 +64,7 @@ describe 'AutomationsApi' do
 
   # unit tests for automation_delete
   # Destroy automation
-  # Destroy an automation of an account.  This endpoint is only available to accounts with advanced plans or above. 
+  # Destroy an automation of an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
   # @param account_id Account ID
   # @param id ID
   # @param [Hash] opts the optional parameters
@@ -76,7 +78,7 @@ describe 'AutomationsApi' do
 
   # unit tests for automation_show
   # Get a single automation
-  # Get details of a single automation.
+  # Get details of a single automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
   # @param account_id Account ID
   # @param id ID
   # @param [Hash] opts the optional parameters
@@ -90,7 +92,7 @@ describe 'AutomationsApi' do
 
   # unit tests for automation_update
   # Update an automation
-  # Update an existing automation.
+  # Update an existing automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
   # @param account_id Account ID
   # @param id ID
   # @param automations_create_parameters1 
@@ -105,7 +107,7 @@ describe 'AutomationsApi' do
 
   # unit tests for automations_list
   # List automations
-  # List all automations for an account.  This endpoint is only available to accounts with advanced plans or above. 
+  # List all automations for an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
   # @param account_id Account ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)

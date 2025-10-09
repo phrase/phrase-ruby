@@ -8,6 +8,7 @@ module Phrase
       @api_client = api_client
     end
     # Activate an automation
+    # Activate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -19,6 +20,7 @@ module Phrase
     end
 
     # Activate an automation
+    # Activate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -78,7 +80,7 @@ module Phrase
     end
 
     # Create an automation
-    # Create a new automation.
+    # Create a new automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param automations_create_parameters [AutomationsCreateParameters] 
     # @param [Hash] opts the optional parameters
@@ -90,7 +92,7 @@ module Phrase
     end
 
     # Create an automation
-    # Create a new automation.
+    # Create a new automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param automations_create_parameters [AutomationsCreateParameters] 
     # @param [Hash] opts the optional parameters
@@ -152,6 +154,7 @@ module Phrase
     end
 
     # Deactivate an automation
+    # Deactivate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -163,6 +166,7 @@ module Phrase
     end
 
     # Deactivate an automation
+    # Deactivate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -222,7 +226,7 @@ module Phrase
     end
 
     # Destroy automation
-    # Destroy an automation of an account.  This endpoint is only available to accounts with advanced plans or above. 
+    # Destroy an automation of an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -234,7 +238,7 @@ module Phrase
     end
 
     # Destroy automation
-    # Destroy an automation of an account.  This endpoint is only available to accounts with advanced plans or above. 
+    # Destroy an automation of an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -292,7 +296,7 @@ module Phrase
     end
 
     # Get a single automation
-    # Get details of a single automation.
+    # Get details of a single automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -304,7 +308,7 @@ module Phrase
     end
 
     # Get a single automation
-    # Get details of a single automation.
+    # Get details of a single automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -364,7 +368,7 @@ module Phrase
     end
 
     # Update an automation
-    # Update an existing automation.
+    # Update an existing automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param automations_create_parameters1 [AutomationsCreateParameters1] 
@@ -377,7 +381,7 @@ module Phrase
     end
 
     # Update an automation
-    # Update an existing automation.
+    # Update an existing automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param automations_create_parameters1 [AutomationsCreateParameters1] 
@@ -444,7 +448,7 @@ module Phrase
     end
 
     # List automations
-    # List all automations for an account.  This endpoint is only available to accounts with advanced plans or above. 
+    # List all automations for an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -457,7 +461,7 @@ module Phrase
     end
 
     # List automations
-    # List all automations for an account.  This endpoint is only available to accounts with advanced plans or above. 
+    # List all automations for an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
