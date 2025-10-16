@@ -20,6 +20,8 @@ module Phrase
 
     attr_accessor :state
 
+    attr_accessor :child_branches
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -31,7 +33,8 @@ module Phrase
         :'merged_at' => :'merged_at',
         :'merged_by' => :'merged_by',
         :'created_by' => :'created_by',
-        :'state' => :'state'
+        :'state' => :'state',
+        :'child_branches' => :'child_branches'
       }
     end
 
@@ -46,7 +49,8 @@ module Phrase
         :'merged_at' => :'DateTime',
         :'merged_by' => :'UserPreview',
         :'created_by' => :'UserPreview',
-        :'state' => :'String'
+        :'state' => :'String',
+        :'child_branches' => :'Array<String>'
       }
     end
 
@@ -106,6 +110,12 @@ module Phrase
       if attributes.key?(:'state')
         self.state = attributes[:'state']
       end
+
+      if attributes.key?(:'child_branches')
+        if (value = attributes[:'child_branches']).is_a?(Array)
+          self.child_branches = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -134,7 +144,8 @@ module Phrase
           merged_at == o.merged_at &&
           merged_by == o.merged_by &&
           created_by == o.created_by &&
-          state == o.state
+          state == o.state &&
+          child_branches == o.child_branches
     end
 
     # @see the `==` method
@@ -146,7 +157,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [base_project_id, branch_project_id, name, created_at, updated_at, merged_at, merged_by, created_by, state].hash
+      [base_project_id, branch_project_id, name, created_at, updated_at, merged_at, merged_by, created_by, state, child_branches].hash
     end
 
     # Builds the object from hash

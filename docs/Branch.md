@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **merged_by** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **created_by** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **state** | **String** |  | [optional] 
+**child_branches** | **Array&lt;String&gt;** |  | [optional] 
 
 ## Code Sample
 
@@ -27,7 +28,8 @@ instance = Phrase::Branch.new(base_project_id: null,
                                  merged_at: null,
                                  merged_by: null,
                                  created_by: null,
-                                 state: null)
+                                 state: null,
+                                 child_branches: null)
 ```
 
 
