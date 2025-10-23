@@ -47,6 +47,7 @@ opts = {
   update_custom_metadata: true, # Boolean | Determines whether to update custom metadata values when uploading a file. If set to true, existing metadata can be changed or removed. Passing an empty value deletes the corresponding metadata property.
   update_translation_keys: true, # Boolean | Pass `false` here to prevent new keys from being created and existing keys updated.
   update_translations_on_source_match: true, # Boolean | Update target translations only if the source translations of the uploaded multilingual file match the stored translations.
+  source_locale_id: 'source_locale_id_example', # String | Specifies the source locale for multilingual files. Can be the name or id of the locale. Preferred is id.
   update_descriptions: true, # Boolean | Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
   convert_emoji: true, # Boolean | This option is obsolete. Providing the option will cause a bad request error.
   skip_upload_tags: true, # Boolean | Indicates whether the upload should not create upload tags.
@@ -86,6 +87,7 @@ Name | Type | Description  | Notes
  **update_custom_metadata** | **Boolean**| Determines whether to update custom metadata values when uploading a file. If set to true, existing metadata can be changed or removed. Passing an empty value deletes the corresponding metadata property. | [optional] [default to true]
  **update_translation_keys** | **Boolean**| Pass &#x60;false&#x60; here to prevent new keys from being created and existing keys updated. | [optional] [default to true]
  **update_translations_on_source_match** | **Boolean**| Update target translations only if the source translations of the uploaded multilingual file match the stored translations. | [optional] [default to false]
+ **source_locale_id** | **String**| Specifies the source locale for multilingual files. Can be the name or id of the locale. Preferred is id. | [optional] 
  **update_descriptions** | **Boolean**| Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. | [optional] 
  **convert_emoji** | **Boolean**| This option is obsolete. Providing the option will cause a bad request error. | [optional] 
  **skip_upload_tags** | **Boolean**| Indicates whether the upload should not create upload tags. | [optional] 
