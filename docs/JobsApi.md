@@ -500,7 +500,8 @@ id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   branch: 'my-feature-branch', # String | Branch to use
-  include_annotations: true # Boolean | Include job-locale annotations in the response
+  include_annotations: true, # Boolean | Include job-locale annotations in the response
+  omit_translation_keys: true # Boolean | Omit translation keys in the response to reduce payload size for bigger jobs
 }
 
 begin
@@ -522,6 +523,7 @@ Name | Type | Description  | Notes
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **branch** | **String**| Branch to use | [optional] 
  **include_annotations** | **Boolean**| Include job-locale annotations in the response | [optional] [default to false]
+ **omit_translation_keys** | **Boolean**| Omit translation keys in the response to reduce payload size for bigger jobs | [optional] [default to false]
 
 ### Return type
 

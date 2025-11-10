@@ -133,6 +133,7 @@ describe 'JobsApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [String] :branch Branch to use
   # @option opts [Boolean] :include_annotations Include job-locale annotations in the response
+  # @option opts [Boolean] :omit_translation_keys Omit translation keys in the response to reduce payload size for bigger jobs
   # @return [JobDetails]
   describe 'job_show test' do
     it 'should work' do
