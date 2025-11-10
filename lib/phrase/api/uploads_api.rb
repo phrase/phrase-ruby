@@ -8,7 +8,7 @@ module Phrase
       @api_client = api_client
     end
     # Upload a new file
-    # Upload a new language file. Creates necessary resources in your project.
+    # Upload a new language file. Creates necessary resources in your project.  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
     # @param project_id [String] Project ID
     # @param file [File] File to be imported
     # @param file_format [String] File format. Auto-detected when possible and not specified.
@@ -41,7 +41,7 @@ module Phrase
     end
 
     # Upload a new file
-    # Upload a new language file. Creates necessary resources in your project.
+    # Upload a new language file. Creates necessary resources in your project.  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
     # @param project_id [String] Project ID
     # @param file [File] File to be imported
     # @param file_format [String] File format. Auto-detected when possible and not specified.
