@@ -90,6 +90,20 @@ describe 'AutomationsApi' do
     end
   end
 
+  # unit tests for automation_trigger
+  # Trigger an automation
+  # Trigger an automation. 
+  # @param account_id Account ID
+  # @param id ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [nil]
+  describe 'automation_trigger test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for automation_update
   # Update an automation
   # Update an existing automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 

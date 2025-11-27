@@ -17,7 +17,7 @@ require 'Phrase'
 instance = Phrase::ScreenshotUpdateParameters.new(branch: my-feature-branch,
                                  name: A screenshot name,
                                  description: A screenshot description,
-                                 filename: [B@76db7ef0)
+                                 filename: [B@647b7f63)
 ```
 
 

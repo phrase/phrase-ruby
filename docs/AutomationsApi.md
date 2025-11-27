@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**automation_deactivate**](AutomationsApi.md#automation_deactivate) | **POST** /accounts/{account_id}/automations/{automation_id}/deactivate | Deactivate an automation
 [**automation_delete**](AutomationsApi.md#automation_delete) | **DELETE** /accounts/{account_id}/automations/{automation_id} | Destroy automation
 [**automation_show**](AutomationsApi.md#automation_show) | **GET** /accounts/{account_id}/automations/{automation_id} | Get a single automation
+[**automation_trigger**](AutomationsApi.md#automation_trigger) | **POST** /accounts/{account_id}/automations/{automation_id}/trigger | Trigger an automation
 [**automation_update**](AutomationsApi.md#automation_update) | **PATCH** /accounts/{account_id}/automations/{automation_id} | Update an automation
 [**automations_list**](AutomationsApi.md#automations_list) | **GET** /accounts/{account_id}/automations | List automations
 
@@ -326,6 +327,68 @@ Response<([**Automation**](Automation.md))>
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## automation_trigger
+
+> automation_trigger(account_id, id, opts)
+
+Trigger an automation
+
+Trigger an automation. 
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::AutomationsApi.new
+account_id = 'account_id_example' # String | Account ID
+id = 'id_example' # String | ID
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Trigger an automation
+  api_instance.automation_trigger(account_id, id, opts)
+rescue Phrase::ApiError => e
+  puts "Exception when calling AutomationsApi->automation_trigger: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **String**| Account ID | 
+ **id** | **String**| ID | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<(nil (empty response body))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
 ## automation_update
