@@ -248,7 +248,8 @@ module Phrase
     # @option opts [Boolean] :skip_unverified_translations Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &#x60;include_unverified_translations&#x60;.
     # @option opts [Boolean] :include_unverified_translations if set to false unverified translations are excluded
     # @option opts [Boolean] :use_last_reviewed_version If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project.
-    # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &#x60;true&#x60;.
+    # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires &#x60;include_empty_translations&#x60; to be set to &#x60;true&#x60;. Mutually exclusive with &#x60;use_locale_fallback&#x60;. 
+    # @option opts [Boolean] :use_locale_fallback If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Fallback locale is defined in [locale&#39;s settings](/en/api/strings/locales/update-a-locale#body-fallback-locale-id). Requires &#x60;include_empty_translations&#x60; to be set to &#x60;true&#x60;. Mutually exclusive with &#x60;fallback_locale_id&#x60;. 
     # @option opts [String] :source_locale_id Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &#x60;tag&#x60; parameter indicating a specific job.
     # @option opts [String] :translation_key_prefix Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed.
     # @option opts [Boolean] :filter_by_prefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file.
@@ -283,7 +284,8 @@ module Phrase
     # @option opts [Boolean] :skip_unverified_translations Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &#x60;include_unverified_translations&#x60;.
     # @option opts [Boolean] :include_unverified_translations if set to false unverified translations are excluded
     # @option opts [Boolean] :use_last_reviewed_version If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project.
-    # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &#x60;true&#x60;.
+    # @option opts [String] :fallback_locale_id If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires &#x60;include_empty_translations&#x60; to be set to &#x60;true&#x60;. Mutually exclusive with &#x60;use_locale_fallback&#x60;. 
+    # @option opts [Boolean] :use_locale_fallback If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Fallback locale is defined in [locale&#39;s settings](/en/api/strings/locales/update-a-locale#body-fallback-locale-id). Requires &#x60;include_empty_translations&#x60; to be set to &#x60;true&#x60;. Mutually exclusive with &#x60;fallback_locale_id&#x60;. 
     # @option opts [String] :source_locale_id Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &#x60;tag&#x60; parameter indicating a specific job.
     # @option opts [String] :translation_key_prefix Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed.
     # @option opts [Boolean] :filter_by_prefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file.
@@ -323,6 +325,7 @@ module Phrase
       query_params[:'include_unverified_translations'] = opts[:'include_unverified_translations'] if !opts[:'include_unverified_translations'].nil?
       query_params[:'use_last_reviewed_version'] = opts[:'use_last_reviewed_version'] if !opts[:'use_last_reviewed_version'].nil?
       query_params[:'fallback_locale_id'] = opts[:'fallback_locale_id'] if !opts[:'fallback_locale_id'].nil?
+      query_params[:'use_locale_fallback'] = opts[:'use_locale_fallback'] if !opts[:'use_locale_fallback'].nil?
       query_params[:'source_locale_id'] = opts[:'source_locale_id'] if !opts[:'source_locale_id'].nil?
       query_params[:'translation_key_prefix'] = opts[:'translation_key_prefix'] if !opts[:'translation_key_prefix'].nil?
       query_params[:'filter_by_prefix'] = opts[:'filter_by_prefix'] if !opts[:'filter_by_prefix'].nil?

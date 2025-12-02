@@ -38,8 +38,11 @@ module Phrase
     # Locale IDs or locale names
     attr_accessor :locale_ids
 
-    # If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to `true`.
+    # If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires `include_empty_translations` to be set to `true`. Mutually exclusive with `use_locale_fallback`. 
     attr_accessor :fallback_locale_id
+
+    # If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Fallback locale is defined in [locale's settings](/en/api/strings/locales/update-a-locale#body-fallback-locale-id). Requires `include_empty_translations` to be set to `true`. Mutually exclusive with `fallback_locale_id`. 
+    attr_accessor :use_locale_fallback
 
     # Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a `tag` parameter indicating a specific job.
     attr_accessor :source_locale_id
@@ -66,6 +69,7 @@ module Phrase
         :'use_last_reviewed_version' => :'use_last_reviewed_version',
         :'locale_ids' => :'locale_ids',
         :'fallback_locale_id' => :'fallback_locale_id',
+        :'use_locale_fallback' => :'use_locale_fallback',
         :'source_locale_id' => :'source_locale_id',
         :'custom_metadata_filters' => :'custom_metadata_filters',
         :'updated_since' => :'updated_since'
@@ -88,6 +92,7 @@ module Phrase
         :'use_last_reviewed_version' => :'Boolean',
         :'locale_ids' => :'Array<String>',
         :'fallback_locale_id' => :'String',
+        :'use_locale_fallback' => :'Boolean',
         :'source_locale_id' => :'String',
         :'custom_metadata_filters' => :'Object',
         :'updated_since' => :'String'
@@ -169,6 +174,10 @@ module Phrase
         self.fallback_locale_id = attributes[:'fallback_locale_id']
       end
 
+      if attributes.key?(:'use_locale_fallback')
+        self.use_locale_fallback = attributes[:'use_locale_fallback']
+      end
+
       if attributes.key?(:'source_locale_id')
         self.source_locale_id = attributes[:'source_locale_id']
       end
@@ -218,6 +227,7 @@ module Phrase
           use_last_reviewed_version == o.use_last_reviewed_version &&
           locale_ids == o.locale_ids &&
           fallback_locale_id == o.fallback_locale_id &&
+          use_locale_fallback == o.use_locale_fallback &&
           source_locale_id == o.source_locale_id &&
           custom_metadata_filters == o.custom_metadata_filters &&
           updated_since == o.updated_since
@@ -232,7 +242,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [file_format, branch, tags, include_empty_translations, exclude_empty_zero_forms, include_translated_keys, keep_notranslate_tags, format_options, encoding, include_unverified_translations, use_last_reviewed_version, locale_ids, fallback_locale_id, source_locale_id, custom_metadata_filters, updated_since].hash
+      [file_format, branch, tags, include_empty_translations, exclude_empty_zero_forms, include_translated_keys, keep_notranslate_tags, format_options, encoding, include_unverified_translations, use_last_reviewed_version, locale_ids, fallback_locale_id, use_locale_fallback, source_locale_id, custom_metadata_filters, updated_since].hash
     end
 
     # Builds the object from hash
