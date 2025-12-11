@@ -27,6 +27,7 @@ docs/BlacklistedKeyCreateParameters.md
 docs/BlacklistedKeyUpdateParameters.md
 docs/BlacklistedKeysApi.md
 docs/Branch.md
+docs/BranchCreateComparisonParameters.md
 docs/BranchCreateParameters.md
 docs/BranchMergeParameters.md
 docs/BranchName.md
@@ -359,6 +360,7 @@ lib/phrase/models/blacklisted_key.rb
 lib/phrase/models/blacklisted_key_create_parameters.rb
 lib/phrase/models/blacklisted_key_update_parameters.rb
 lib/phrase/models/branch.rb
+lib/phrase/models/branch_create_comparison_parameters.rb
 lib/phrase/models/branch_create_parameters.rb
 lib/phrase/models/branch_merge_parameters.rb
 lib/phrase/models/branch_name.rb
@@ -635,6 +637,7 @@ spec/models/automations_create_parameters_spec.rb
 spec/models/blacklisted_key_create_parameters_spec.rb
 spec/models/blacklisted_key_spec.rb
 spec/models/blacklisted_key_update_parameters_spec.rb
+spec/models/branch_create_comparison_parameters_spec.rb
 spec/models/branch_create_parameters_spec.rb
 spec/models/branch_merge_parameters_spec.rb
 spec/models/branch_name_spec.rb

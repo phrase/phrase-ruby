@@ -22,13 +22,28 @@ describe 'BranchesApi' do
 
   # unit tests for branch_compare
   # Compare branches
-  # Compare branch with main branch.   *Note: Comparing a branch may take several minutes depending on the project size.* 
+  # Compare branch with main branch.  *Note: Comparing a branch may take several minutes depending on the project size. Consider using the &#x60;POST /compare&#x60; endpoint for creating comparison asynchronously.* 
   # @param project_id Project ID
   # @param name name
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @return [nil]
   describe 'branch_compare test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for branch_comparison_create
+  # Create comparison (async.)
+  # Create a branch comparison asynchronously. 
+  # @param project_id Project ID
+  # @param name name
+  # @param branch_create_comparison_parameters 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [nil]
+  describe 'branch_comparison_create test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -93,7 +108,7 @@ describe 'BranchesApi' do
 
   # unit tests for branch_sync
   # Sync a branch
-  # Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+  # Sync an existing branch.  *Note: Only available for branches created with new branching.* 
   # @param project_id Project ID
   # @param name name
   # @param branch_sync_parameters 

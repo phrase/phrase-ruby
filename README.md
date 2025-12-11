@@ -151,6 +151,7 @@ Class | Method | HTTP request | Description
 *Phrase::BlacklistedKeysApi* | [**blacklisted_key_update**](docs/BlacklistedKeysApi.md#blacklisted_key_update) | **PATCH** /projects/{project_id}/blacklisted_keys/{id} | Update a blocked key
 *Phrase::BlacklistedKeysApi* | [**blacklisted_keys_list**](docs/BlacklistedKeysApi.md#blacklisted_keys_list) | **GET** /projects/{project_id}/blacklisted_keys | List blocked keys
 *Phrase::BranchesApi* | [**branch_compare**](docs/BranchesApi.md#branch_compare) | **GET** /projects/{project_id}/branches/{name}/compare | Compare branches
+*Phrase::BranchesApi* | [**branch_comparison_create**](docs/BranchesApi.md#branch_comparison_create) | **POST** /projects/{project_id}/branches/{name}/compare | Create comparison (async.)
 *Phrase::BranchesApi* | [**branch_create**](docs/BranchesApi.md#branch_create) | **POST** /projects/{project_id}/branches | Create a branch
 *Phrase::BranchesApi* | [**branch_delete**](docs/BranchesApi.md#branch_delete) | **DELETE** /projects/{project_id}/branches/{name} | Delete a branch
 *Phrase::BranchesApi* | [**branch_merge**](docs/BranchesApi.md#branch_merge) | **PATCH** /projects/{project_id}/branches/{name}/merge | Merge a branch
@@ -434,6 +435,7 @@ Class | Method | HTTP request | Description
  - [Phrase::BlacklistedKeyCreateParameters](docs/BlacklistedKeyCreateParameters.md)
  - [Phrase::BlacklistedKeyUpdateParameters](docs/BlacklistedKeyUpdateParameters.md)
  - [Phrase::Branch](docs/Branch.md)
+ - [Phrase::BranchCreateComparisonParameters](docs/BranchCreateComparisonParameters.md)
  - [Phrase::BranchCreateParameters](docs/BranchCreateParameters.md)
  - [Phrase::BranchMergeParameters](docs/BranchMergeParameters.md)
  - [Phrase::BranchName](docs/BranchName.md)

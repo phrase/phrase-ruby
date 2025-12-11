@@ -5,6 +5,7 @@ All URIs are relative to *https://api.phrase.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**branch_compare**](BranchesApi.md#branch_compare) | **GET** /projects/{project_id}/branches/{name}/compare | Compare branches
+[**branch_comparison_create**](BranchesApi.md#branch_comparison_create) | **POST** /projects/{project_id}/branches/{name}/compare | Create comparison (async.)
 [**branch_create**](BranchesApi.md#branch_create) | **POST** /projects/{project_id}/branches | Create a branch
 [**branch_delete**](BranchesApi.md#branch_delete) | **DELETE** /projects/{project_id}/branches/{name} | Delete a branch
 [**branch_merge**](BranchesApi.md#branch_merge) | **PATCH** /projects/{project_id}/branches/{name}/merge | Merge a branch
@@ -21,7 +22,7 @@ Method | HTTP request | Description
 
 Compare branches
 
-Compare branch with main branch.   *Note: Comparing a branch may take several minutes depending on the project size.* 
+Compare branch with main branch.  *Note: Comparing a branch may take several minutes depending on the project size. Consider using the `POST /compare` endpoint for creating comparison asynchronously.* 
 
 ### Example
 
@@ -74,6 +75,70 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## branch_comparison_create
+
+> branch_comparison_create(project_id, name, branch_create_comparison_parameters, opts)
+
+Create comparison (async.)
+
+Create a branch comparison asynchronously. 
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::BranchesApi.new
+project_id = 'project_id_example' # String | Project ID
+name = 'name_example' # String | name
+branch_create_comparison_parameters = Phrase::BranchCreateComparisonParameters.new # BranchCreateComparisonParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Create comparison (async.)
+  api_instance.branch_comparison_create(project_id, name, branch_create_comparison_parameters, opts)
+rescue Phrase::ApiError => e
+  puts "Exception when calling BranchesApi->branch_comparison_create: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **name** | **String**| name | 
+ **branch_create_comparison_parameters** | [**BranchCreateComparisonParameters**](BranchCreateComparisonParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<(nil (empty response body))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 
@@ -335,7 +400,7 @@ Response<([**Branch**](Branch.md))>
 
 Sync a branch
 
-Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+Sync an existing branch.  *Note: Only available for branches created with new branching.* 
 
 ### Example
 
