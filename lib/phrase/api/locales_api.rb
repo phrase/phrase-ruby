@@ -12,8 +12,6 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @return [Array<LocalePreview1>]
     def account_locales(id, opts = {})
       data, _status_code, _headers = account_locales_with_http_info(id, opts)
@@ -25,8 +23,6 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [Integer] :page Page number
-    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @return [Array<(Response<(Array<LocalePreview1>)>, Integer, Hash)>] Response<(Array<LocalePreview1>)> data, response status code and response headers
     def account_locales_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -41,8 +37,6 @@ module Phrase
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
-      query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

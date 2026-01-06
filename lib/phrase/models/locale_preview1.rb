@@ -2,8 +2,6 @@ require 'date'
 
 module Phrase
   class LocalePreview1
-    attr_accessor :id
-
     attr_accessor :name
 
     attr_accessor :code
@@ -13,7 +11,6 @@ module Phrase
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
         :'name' => :'name',
         :'code' => :'code',
         :'project' => :'project'
@@ -23,7 +20,6 @@ module Phrase
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
         :'name' => :'String',
         :'code' => :'String',
         :'project' => :'ProjectShort'
@@ -50,10 +46,6 @@ module Phrase
         end
         h[k.to_sym] = v
       }
-
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      end
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
@@ -86,7 +78,6 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
           name == o.name &&
           code == o.code &&
           project == o.project
@@ -101,7 +92,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, code, project].hash
+      [name, code, project].hash
     end
 
     # Builds the object from hash

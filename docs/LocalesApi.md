@@ -41,9 +41,7 @@ end
 api_instance = Phrase::LocalesApi.new
 id = 'id_example' # String | ID
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  page: 1, # Integer | Page number
-  per_page: 25 # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
 }
 
 begin
@@ -62,8 +60,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
- **page** | **Integer**| Page number | [optional] 
- **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
 
 ### Return type
 
