@@ -26,6 +26,34 @@ module Phrase
 
     attr_accessor :shares_translation_memory
 
+    attr_accessor :machine_translation_enabled
+
+    attr_accessor :zero_plural_form_enabled
+
+    attr_accessor :enable_all_data_type_translation_keys_for_translators
+
+    attr_accessor :enable_icu_message_format
+
+    attr_accessor :enable_branching
+
+    attr_accessor :protect_master_branch
+
+    attr_accessor :autotranslate_enabled
+
+    attr_accessor :autotranslate_check_new_translation_keys
+
+    attr_accessor :autotranslate_check_new_uploads
+
+    attr_accessor :autotranslate_check_new_locales
+
+    attr_accessor :autotranslate_mark_as_unverified
+
+    attr_accessor :autotranslate_use_machine_translation
+
+    attr_accessor :autotranslate_use_translation_memory
+
+    attr_accessor :default_encoding
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -40,7 +68,21 @@ module Phrase
         :'point_of_contact' => :'point_of_contact',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
-        :'shares_translation_memory' => :'shares_translation_memory'
+        :'shares_translation_memory' => :'shares_translation_memory',
+        :'machine_translation_enabled' => :'machine_translation_enabled',
+        :'zero_plural_form_enabled' => :'zero_plural_form_enabled',
+        :'enable_all_data_type_translation_keys_for_translators' => :'enable_all_data_type_translation_keys_for_translators',
+        :'enable_icu_message_format' => :'enable_icu_message_format',
+        :'enable_branching' => :'enable_branching',
+        :'protect_master_branch' => :'protect_master_branch',
+        :'autotranslate_enabled' => :'autotranslate_enabled',
+        :'autotranslate_check_new_translation_keys' => :'autotranslate_check_new_translation_keys',
+        :'autotranslate_check_new_uploads' => :'autotranslate_check_new_uploads',
+        :'autotranslate_check_new_locales' => :'autotranslate_check_new_locales',
+        :'autotranslate_mark_as_unverified' => :'autotranslate_mark_as_unverified',
+        :'autotranslate_use_machine_translation' => :'autotranslate_use_machine_translation',
+        :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
+        :'default_encoding' => :'default_encoding'
       }
     end
 
@@ -58,7 +100,21 @@ module Phrase
         :'point_of_contact' => :'UserPreview',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
-        :'shares_translation_memory' => :'Boolean'
+        :'shares_translation_memory' => :'Boolean',
+        :'machine_translation_enabled' => :'Boolean',
+        :'zero_plural_form_enabled' => :'Boolean',
+        :'enable_all_data_type_translation_keys_for_translators' => :'Boolean',
+        :'enable_icu_message_format' => :'Boolean',
+        :'enable_branching' => :'Boolean',
+        :'protect_master_branch' => :'Boolean',
+        :'autotranslate_enabled' => :'Boolean',
+        :'autotranslate_check_new_translation_keys' => :'Boolean',
+        :'autotranslate_check_new_uploads' => :'Boolean',
+        :'autotranslate_check_new_locales' => :'Boolean',
+        :'autotranslate_mark_as_unverified' => :'Boolean',
+        :'autotranslate_use_machine_translation' => :'Boolean',
+        :'autotranslate_use_translation_memory' => :'Boolean',
+        :'default_encoding' => :'String'
       }
     end
 
@@ -137,6 +193,62 @@ module Phrase
       if attributes.key?(:'shares_translation_memory')
         self.shares_translation_memory = attributes[:'shares_translation_memory']
       end
+
+      if attributes.key?(:'machine_translation_enabled')
+        self.machine_translation_enabled = attributes[:'machine_translation_enabled']
+      end
+
+      if attributes.key?(:'zero_plural_form_enabled')
+        self.zero_plural_form_enabled = attributes[:'zero_plural_form_enabled']
+      end
+
+      if attributes.key?(:'enable_all_data_type_translation_keys_for_translators')
+        self.enable_all_data_type_translation_keys_for_translators = attributes[:'enable_all_data_type_translation_keys_for_translators']
+      end
+
+      if attributes.key?(:'enable_icu_message_format')
+        self.enable_icu_message_format = attributes[:'enable_icu_message_format']
+      end
+
+      if attributes.key?(:'enable_branching')
+        self.enable_branching = attributes[:'enable_branching']
+      end
+
+      if attributes.key?(:'protect_master_branch')
+        self.protect_master_branch = attributes[:'protect_master_branch']
+      end
+
+      if attributes.key?(:'autotranslate_enabled')
+        self.autotranslate_enabled = attributes[:'autotranslate_enabled']
+      end
+
+      if attributes.key?(:'autotranslate_check_new_translation_keys')
+        self.autotranslate_check_new_translation_keys = attributes[:'autotranslate_check_new_translation_keys']
+      end
+
+      if attributes.key?(:'autotranslate_check_new_uploads')
+        self.autotranslate_check_new_uploads = attributes[:'autotranslate_check_new_uploads']
+      end
+
+      if attributes.key?(:'autotranslate_check_new_locales')
+        self.autotranslate_check_new_locales = attributes[:'autotranslate_check_new_locales']
+      end
+
+      if attributes.key?(:'autotranslate_mark_as_unverified')
+        self.autotranslate_mark_as_unverified = attributes[:'autotranslate_mark_as_unverified']
+      end
+
+      if attributes.key?(:'autotranslate_use_machine_translation')
+        self.autotranslate_use_machine_translation = attributes[:'autotranslate_use_machine_translation']
+      end
+
+      if attributes.key?(:'autotranslate_use_translation_memory')
+        self.autotranslate_use_translation_memory = attributes[:'autotranslate_use_translation_memory']
+      end
+
+      if attributes.key?(:'default_encoding')
+        self.default_encoding = attributes[:'default_encoding']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -168,7 +280,21 @@ module Phrase
           point_of_contact == o.point_of_contact &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
-          shares_translation_memory == o.shares_translation_memory
+          shares_translation_memory == o.shares_translation_memory &&
+          machine_translation_enabled == o.machine_translation_enabled &&
+          zero_plural_form_enabled == o.zero_plural_form_enabled &&
+          enable_all_data_type_translation_keys_for_translators == o.enable_all_data_type_translation_keys_for_translators &&
+          enable_icu_message_format == o.enable_icu_message_format &&
+          enable_branching == o.enable_branching &&
+          protect_master_branch == o.protect_master_branch &&
+          autotranslate_enabled == o.autotranslate_enabled &&
+          autotranslate_check_new_translation_keys == o.autotranslate_check_new_translation_keys &&
+          autotranslate_check_new_uploads == o.autotranslate_check_new_uploads &&
+          autotranslate_check_new_locales == o.autotranslate_check_new_locales &&
+          autotranslate_mark_as_unverified == o.autotranslate_mark_as_unverified &&
+          autotranslate_use_machine_translation == o.autotranslate_use_machine_translation &&
+          autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
+          default_encoding == o.default_encoding
     end
 
     # @see the `==` method
@@ -180,7 +306,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory].hash
+      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory, machine_translation_enabled, zero_plural_form_enabled, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, enable_branching, protect_master_branch, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, default_encoding].hash
     end
 
     # Builds the object from hash
