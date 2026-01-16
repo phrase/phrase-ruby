@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
+**linked_translation** | [**TranslationParent**](TranslationParent.md) |  | [optional] 
 **user** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **word_count** | **Integer** |  | [optional] 
-**linked_translation** | [**TranslationParent**](TranslationParent.md) |  | [optional] 
 
 ## Code Sample
 
@@ -35,9 +35,9 @@ instance = Phrase::TranslationDetails.new(id: null,
                                  state: null,
                                  created_at: null,
                                  updated_at: null,
+                                 linked_translation: null,
                                  user: null,
-                                 word_count: null,
-                                 linked_translation: null)
+                                 word_count: null)
 ```
 
 

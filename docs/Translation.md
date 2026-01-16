@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
+**linked_translation** | [**TranslationParent**](TranslationParent.md) |  | [optional] 
 
 ## Code Sample
 
@@ -31,7 +32,8 @@ instance = Phrase::Translation.new(id: null,
                                  placeholders: null,
                                  state: null,
                                  created_at: null,
-                                 updated_at: null)
+                                 updated_at: null,
+                                 linked_translation: null)
 ```
 
 

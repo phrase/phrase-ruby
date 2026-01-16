@@ -24,11 +24,11 @@ module Phrase
 
     attr_accessor :updated_at
 
+    attr_accessor :linked_translation
+
     attr_accessor :user
 
     attr_accessor :word_count
-
-    attr_accessor :linked_translation
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -44,9 +44,9 @@ module Phrase
         :'state' => :'state',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
+        :'linked_translation' => :'linked_translation',
         :'user' => :'user',
-        :'word_count' => :'word_count',
-        :'linked_translation' => :'linked_translation'
+        :'word_count' => :'word_count'
       }
     end
 
@@ -64,9 +64,9 @@ module Phrase
         :'state' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
+        :'linked_translation' => :'TranslationParent',
         :'user' => :'UserPreview',
-        :'word_count' => :'Integer',
-        :'linked_translation' => :'TranslationParent'
+        :'word_count' => :'Integer'
       }
     end
 
@@ -144,16 +144,16 @@ module Phrase
         self.updated_at = attributes[:'updated_at']
       end
 
+      if attributes.key?(:'linked_translation')
+        self.linked_translation = attributes[:'linked_translation']
+      end
+
       if attributes.key?(:'user')
         self.user = attributes[:'user']
       end
 
       if attributes.key?(:'word_count')
         self.word_count = attributes[:'word_count']
-      end
-
-      if attributes.key?(:'linked_translation')
-        self.linked_translation = attributes[:'linked_translation']
       end
     end
 
@@ -186,9 +186,9 @@ module Phrase
           state == o.state &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
+          linked_translation == o.linked_translation &&
           user == o.user &&
-          word_count == o.word_count &&
-          linked_translation == o.linked_translation
+          word_count == o.word_count
     end
 
     # @see the `==` method
@@ -200,7 +200,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, content, unverified, excluded, plural_suffix, key, locale, placeholders, state, created_at, updated_at, user, word_count, linked_translation].hash
+      [id, content, unverified, excluded, plural_suffix, key, locale, placeholders, state, created_at, updated_at, linked_translation, user, word_count].hash
     end
 
     # Builds the object from hash

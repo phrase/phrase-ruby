@@ -24,6 +24,8 @@ module Phrase
 
     attr_accessor :updated_at
 
+    attr_accessor :linked_translation
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -37,7 +39,8 @@ module Phrase
         :'placeholders' => :'placeholders',
         :'state' => :'state',
         :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at'
+        :'updated_at' => :'updated_at',
+        :'linked_translation' => :'linked_translation'
       }
     end
 
@@ -54,7 +57,8 @@ module Phrase
         :'placeholders' => :'Array<String>',
         :'state' => :'String',
         :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime'
+        :'updated_at' => :'DateTime',
+        :'linked_translation' => :'TranslationParent'
       }
     end
 
@@ -124,6 +128,10 @@ module Phrase
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
       end
+
+      if attributes.key?(:'linked_translation')
+        self.linked_translation = attributes[:'linked_translation']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -154,7 +162,8 @@ module Phrase
           placeholders == o.placeholders &&
           state == o.state &&
           created_at == o.created_at &&
-          updated_at == o.updated_at
+          updated_at == o.updated_at &&
+          linked_translation == o.linked_translation
     end
 
     # @see the `==` method
@@ -166,7 +175,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, content, unverified, excluded, plural_suffix, key, locale, placeholders, state, created_at, updated_at].hash
+      [id, content, unverified, excluded, plural_suffix, key, locale, placeholders, state, created_at, updated_at, linked_translation].hash
     end
 
     # Builds the object from hash
