@@ -6,14 +6,11 @@ module Phrase
 
     attr_accessor :code
 
-    attr_accessor :project
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'name' => :'name',
-        :'code' => :'code',
-        :'project' => :'project'
+        :'code' => :'code'
       }
     end
 
@@ -21,8 +18,7 @@ module Phrase
     def self.openapi_types
       {
         :'name' => :'String',
-        :'code' => :'String',
-        :'project' => :'ProjectShort'
+        :'code' => :'String'
       }
     end
 
@@ -54,10 +50,6 @@ module Phrase
       if attributes.key?(:'code')
         self.code = attributes[:'code']
       end
-
-      if attributes.key?(:'project')
-        self.project = attributes[:'project']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -79,8 +71,7 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           name == o.name &&
-          code == o.code &&
-          project == o.project
+          code == o.code
     end
 
     # @see the `==` method
@@ -92,7 +83,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, code, project].hash
+      [name, code].hash
     end
 
     # Builds the object from hash

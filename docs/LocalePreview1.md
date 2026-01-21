@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
 **code** | **String** |  | [optional] 
-**project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 
 ## Code Sample
 
@@ -14,8 +13,7 @@ Name | Type | Description | Notes
 require 'Phrase'
 
 instance = Phrase::LocalePreview1.new(name: null,
-                                 code: null,
-                                 project: null)
+                                 code: null)
 ```
 
 
