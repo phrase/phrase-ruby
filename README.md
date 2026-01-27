@@ -575,6 +575,7 @@ Class | Method | HTTP request | Description
  - [Phrase::ReleaseUpdateParameters1](docs/ReleaseUpdateParameters1.md)
  - [Phrase::RepoSync](docs/RepoSync.md)
  - [Phrase::RepoSyncEvent](docs/RepoSyncEvent.md)
+ - [Phrase::RepoSyncImportParameters](docs/RepoSyncImportParameters.md)
  - [Phrase::Screenshot](docs/Screenshot.md)
  - [Phrase::ScreenshotMarker](docs/ScreenshotMarker.md)
  - [Phrase::ScreenshotMarkerCreateParameters](docs/ScreenshotMarkerCreateParameters.md)
