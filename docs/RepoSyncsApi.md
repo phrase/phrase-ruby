@@ -231,6 +231,7 @@ account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch', # String | Branch to use
   repo_sync_import_parameters: Phrase::RepoSyncImportParameters.new # RepoSyncImportParameters | 
 }
 
@@ -251,6 +252,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**| Account ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| Branch to use | [optional] 
  **repo_sync_import_parameters** | [**RepoSyncImportParameters**](RepoSyncImportParameters.md)|  | [optional] 
 
 ### Return type

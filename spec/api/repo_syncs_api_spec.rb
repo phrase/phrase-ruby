@@ -69,6 +69,7 @@ describe 'RepoSyncsApi' do
   # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch Branch to use
   # @option opts [RepoSyncImportParameters] :repo_sync_import_parameters 
   # @return [RepoSyncEvent]
   describe 'repo_sync_import test' do
