@@ -395,6 +395,7 @@ Class | Method | HTTP request | Description
 *Phrase::TranslationsApi* | [**translations_unreview_collection**](docs/TranslationsApi.md#translations_unreview_collection) | **PATCH** /projects/{project_id}/translations/unreview | Unreview translations selected by query
 *Phrase::TranslationsApi* | [**translations_unverify_collection**](docs/TranslationsApi.md#translations_unverify_collection) | **PATCH** /projects/{project_id}/translations/unverify | Unverify translations by query
 *Phrase::TranslationsApi* | [**translations_verify_collection**](docs/TranslationsApi.md#translations_verify_collection) | **PATCH** /projects/{project_id}/translations/verify | Verify translations by query
+*Phrase::UploadBatchesApi* | [**upload_batches_create**](docs/UploadBatchesApi.md#upload_batches_create) | **POST** /projects/{project_id}/upload_batches | Create upload batch
 *Phrase::UploadsApi* | [**upload_create**](docs/UploadsApi.md#upload_create) | **POST** /projects/{project_id}/uploads | Upload a new file
 *Phrase::UploadsApi* | [**upload_show**](docs/UploadsApi.md#upload_show) | **GET** /projects/{project_id}/uploads/{id} | Get a single upload
 *Phrase::UploadsApi* | [**uploads_list**](docs/UploadsApi.md#uploads_list) | **GET** /projects/{project_id}/uploads | List uploads
@@ -630,6 +631,8 @@ Class | Method | HTTP request | Description
  - [Phrase::TranslationsUnverifyParameters](docs/TranslationsUnverifyParameters.md)
  - [Phrase::TranslationsVerifyParameters](docs/TranslationsVerifyParameters.md)
  - [Phrase::Upload](docs/Upload.md)
+ - [Phrase::UploadBatch](docs/UploadBatch.md)
+ - [Phrase::UploadBatchesCreateParameters](docs/UploadBatchesCreateParameters.md)
  - [Phrase::UploadSummary](docs/UploadSummary.md)
  - [Phrase::User](docs/User.md)
  - [Phrase::UserPreview](docs/UserPreview.md)
