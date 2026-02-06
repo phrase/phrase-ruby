@@ -167,7 +167,8 @@ api_instance = Phrase::RepoSyncsApi.new
 account_id = 'account_id_example' # String | Account ID
 id = 'id_example' # String | ID
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  repo_sync_export_parameters: Phrase::RepoSyncExportParameters.new # RepoSyncExportParameters | 
 }
 
 begin
@@ -187,6 +188,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**| Account ID | 
  **id** | **String**| ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **repo_sync_export_parameters** | [**RepoSyncExportParameters**](RepoSyncExportParameters.md)|  | [optional] 
 
 ### Return type
 
@@ -198,7 +200,7 @@ Response<([**RepoSyncEvent**](RepoSyncEvent.md))>
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

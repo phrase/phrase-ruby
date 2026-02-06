@@ -203,6 +203,7 @@ docs/ReleasesApi.md
 docs/RepoSync.md
 docs/RepoSyncEvent.md
 docs/RepoSyncEventsApi.md
+docs/RepoSyncExportParameters.md
 docs/RepoSyncImportParameters.md
 docs/RepoSyncsApi.md
 docs/ReportsApi.md
@@ -505,6 +506,7 @@ lib/phrase/models/release_update_parameters.rb
 lib/phrase/models/release_update_parameters1.rb
 lib/phrase/models/repo_sync.rb
 lib/phrase/models/repo_sync_event.rb
+lib/phrase/models/repo_sync_export_parameters.rb
 lib/phrase/models/repo_sync_import_parameters.rb
 lib/phrase/models/screenshot.rb
 lib/phrase/models/screenshot_marker.rb
@@ -786,6 +788,7 @@ spec/models/release_trigger_spec.rb
 spec/models/release_update_parameters1_spec.rb
 spec/models/release_update_parameters_spec.rb
 spec/models/repo_sync_event_spec.rb
+spec/models/repo_sync_export_parameters_spec.rb
 spec/models/repo_sync_import_parameters_spec.rb
 spec/models/repo_sync_spec.rb
 spec/models/screenshot_marker_create_parameters_spec.rb

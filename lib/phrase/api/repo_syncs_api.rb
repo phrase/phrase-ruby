@@ -157,6 +157,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [RepoSyncExportParameters] :repo_sync_export_parameters 
     # @return [RepoSyncEvent]
     def repo_sync_export(account_id, id, opts = {})
       data, _status_code, _headers = repo_sync_export_with_http_info(account_id, id, opts)
@@ -169,6 +170,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [RepoSyncExportParameters] :repo_sync_export_parameters 
     # @return [Array<(Response<(RepoSyncEvent)>, Integer, Hash)>] Response<(RepoSyncEvent)> data, response status code and response headers
     def repo_sync_export_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
@@ -192,13 +194,15 @@ module Phrase
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] 
+      post_body = opts[:body] || @api_client.object_to_http_body(opts[:'repo_sync_export_parameters']) 
 
       # return_type
       return_type = opts[:return_type] || 'RepoSyncEvent' 
