@@ -203,7 +203,11 @@ module Phrase
       [
         {
           url: "https://api.phrase.com/v2",
-          description: "No description provided",
+          description: "EU production server",
+        },
+        {
+          url: "https://api.us.app.phrase.com/v2",
+          description: "US production server",
         }
       ]
     end
