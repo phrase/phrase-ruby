@@ -23,7 +23,7 @@ module Phrase
     # Indicates whether [NOTRANSLATE] tags should be kept.
     attr_accessor :keep_notranslate_tags
 
-    # Additional formatting and render options. See the [format guide](https://support.phrase.com/hc/en-us/sections/6111343326364) for a list of options available for each format. Specify format options like this: `...&format_options[foo]=bar`
+    # Additional formatting and render options. See the [format guide](https://support.phrase.com/hc/en-us/sections/6111343326364) for a list of options available for each format. Pass format options as a JSON object with key-value pairs corresponding to the option name and value. For example, to include comments in a Gettext file, pass `{\"include_comments\": true}`. 
     attr_accessor :format_options
 
     # Enforces a specific encoding on the file contents. Valid options are \"UTF-8\", \"UTF-16\" and \"ISO-8859-1\".
