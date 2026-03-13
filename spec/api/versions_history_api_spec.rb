@@ -46,7 +46,8 @@ describe 'VersionsHistoryApi' do
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
   # @option opts [String] :branch specify the branch to use
-  # @return [Array<TranslationVersion>]
+  # @option opts [Boolean] :only_content_updates Indicates whether only content updates should be returned
+  # @return [Array<TranslationVersionWithUser>]
   describe 'versions_list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

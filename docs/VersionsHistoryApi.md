@@ -78,7 +78,7 @@ Response<([**TranslationVersionWithUser**](TranslationVersionWithUser.md))>
 
 ## versions_list
 
-> Array&lt;TranslationVersion&gt; versions_list(project_id, translation_id, opts)
+> Array&lt;TranslationVersionWithUser&gt; versions_list(project_id, translation_id, opts)
 
 List all versions
 
@@ -107,7 +107,8 @@ opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-  branch: 'my-feature-branch' # String | specify the branch to use
+  branch: 'my-feature-branch', # String | specify the branch to use
+  only_content_updates: true # Boolean | Indicates whether only content updates should be returned
 }
 
 begin
@@ -130,10 +131,11 @@ Name | Type | Description  | Notes
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
+ **only_content_updates** | **Boolean**| Indicates whether only content updates should be returned | [optional] [default to false]
 
 ### Return type
 
-Response<([**Array&lt;TranslationVersion&gt;**](TranslationVersion.md))>
+Response<([**Array&lt;TranslationVersionWithUser&gt;**](TranslationVersionWithUser.md))>
 
 ### Authorization
 

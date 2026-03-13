@@ -97,7 +97,8 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<TranslationVersion>]
+    # @option opts [Boolean] :only_content_updates Indicates whether only content updates should be returned (default to false)
+    # @return [Array<TranslationVersionWithUser>]
     def versions_list(project_id, translation_id, opts = {})
       data, _status_code, _headers = versions_list_with_http_info(project_id, translation_id, opts)
       data
@@ -112,7 +113,8 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
-    # @return [Array<(Response<(Array<TranslationVersion>)>, Integer, Hash)>] Response<(Array<TranslationVersion>)> data, response status code and response headers
+    # @option opts [Boolean] :only_content_updates Indicates whether only content updates should be returned
+    # @return [Array<(Response<(Array<TranslationVersionWithUser>)>, Integer, Hash)>] Response<(Array<TranslationVersionWithUser>)> data, response status code and response headers
     def versions_list_with_http_info(project_id, translation_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VersionsHistoryApi.versions_list ...'
@@ -133,6 +135,7 @@ module Phrase
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'only_content_updates'] = opts[:'only_content_updates'] if !opts[:'only_content_updates'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -147,7 +150,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<TranslationVersion>' 
+      return_type = opts[:return_type] || 'Array<TranslationVersionWithUser>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
