@@ -54,6 +54,12 @@ module Phrase
 
     attr_accessor :default_encoding
 
+    attr_accessor :cldr_version
+
+    attr_accessor :job_locking_enabled
+
+    attr_accessor :placeholder_styles
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -82,7 +88,10 @@ module Phrase
         :'autotranslate_mark_as_unverified' => :'autotranslate_mark_as_unverified',
         :'autotranslate_use_machine_translation' => :'autotranslate_use_machine_translation',
         :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
-        :'default_encoding' => :'default_encoding'
+        :'default_encoding' => :'default_encoding',
+        :'cldr_version' => :'cldr_version',
+        :'job_locking_enabled' => :'job_locking_enabled',
+        :'placeholder_styles' => :'placeholder_styles'
       }
     end
 
@@ -114,7 +123,10 @@ module Phrase
         :'autotranslate_mark_as_unverified' => :'Boolean',
         :'autotranslate_use_machine_translation' => :'Boolean',
         :'autotranslate_use_translation_memory' => :'Boolean',
-        :'default_encoding' => :'String'
+        :'default_encoding' => :'String',
+        :'cldr_version' => :'String',
+        :'job_locking_enabled' => :'Boolean',
+        :'placeholder_styles' => :'Array<String>'
       }
     end
 
@@ -249,6 +261,20 @@ module Phrase
       if attributes.key?(:'default_encoding')
         self.default_encoding = attributes[:'default_encoding']
       end
+
+      if attributes.key?(:'cldr_version')
+        self.cldr_version = attributes[:'cldr_version']
+      end
+
+      if attributes.key?(:'job_locking_enabled')
+        self.job_locking_enabled = attributes[:'job_locking_enabled']
+      end
+
+      if attributes.key?(:'placeholder_styles')
+        if (value = attributes[:'placeholder_styles']).is_a?(Array)
+          self.placeholder_styles = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -294,7 +320,10 @@ module Phrase
           autotranslate_mark_as_unverified == o.autotranslate_mark_as_unverified &&
           autotranslate_use_machine_translation == o.autotranslate_use_machine_translation &&
           autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
-          default_encoding == o.default_encoding
+          default_encoding == o.default_encoding &&
+          cldr_version == o.cldr_version &&
+          job_locking_enabled == o.job_locking_enabled &&
+          placeholder_styles == o.placeholder_styles
     end
 
     # @see the `==` method
@@ -306,7 +335,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory, machine_translation_enabled, zero_plural_form_enabled, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, enable_branching, protect_master_branch, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, default_encoding].hash
+      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory, machine_translation_enabled, zero_plural_form_enabled, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, enable_branching, protect_master_branch, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, default_encoding, cldr_version, job_locking_enabled, placeholder_styles].hash
     end
 
     # Builds the object from hash

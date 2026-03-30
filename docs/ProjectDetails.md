@@ -30,6 +30,9 @@ Name | Type | Description | Notes
 **autotranslate_use_machine_translation** | **Boolean** |  | [optional] 
 **autotranslate_use_translation_memory** | **Boolean** |  | [optional] 
 **default_encoding** | **String** |  | [optional] 
+**cldr_version** | **String** |  | [optional] 
+**job_locking_enabled** | **Boolean** |  | [optional] 
+**placeholder_styles** | **Array&lt;String&gt;** |  | [optional] 
 
 ## Code Sample
 
@@ -61,7 +64,10 @@ instance = Phrase::ProjectDetails.new(id: null,
                                  autotranslate_mark_as_unverified: false,
                                  autotranslate_use_machine_translation: false,
                                  autotranslate_use_translation_memory: true,
-                                 default_encoding: UTF-8)
+                                 default_encoding: UTF-8,
+                                 cldr_version: legacy,
+                                 job_locking_enabled: false,
+                                 placeholder_styles: [&quot;angular&quot;,&quot;iOS&quot;])
 ```
 
 
