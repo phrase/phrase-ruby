@@ -5,17 +5,22 @@ module Phrase
     # Source branch to open a pull request from
     attr_accessor :pr_branch
 
+    # Strings branch to export from
+    attr_accessor :branch
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pr_branch' => :'pr_branch'
+        :'pr_branch' => :'pr_branch',
+        :'branch' => :'branch'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pr_branch' => :'String'
+        :'pr_branch' => :'String',
+        :'branch' => :'String'
       }
     end
 
@@ -43,6 +48,10 @@ module Phrase
       if attributes.key?(:'pr_branch')
         self.pr_branch = attributes[:'pr_branch']
       end
+
+      if attributes.key?(:'branch')
+        self.branch = attributes[:'branch']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -63,7 +72,8 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pr_branch == o.pr_branch
+          pr_branch == o.pr_branch &&
+          branch == o.branch
     end
 
     # @see the `==` method
@@ -75,7 +85,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pr_branch].hash
+      [pr_branch, branch].hash
     end
 
     # Builds the object from hash

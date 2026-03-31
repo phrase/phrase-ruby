@@ -233,7 +233,6 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch Branch to use
     # @option opts [RepoSyncImportParameters] :repo_sync_import_parameters 
     # @return [RepoSyncEvent]
     def repo_sync_import(account_id, id, opts = {})
@@ -247,7 +246,6 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @option opts [String] :branch Branch to use
     # @option opts [RepoSyncImportParameters] :repo_sync_import_parameters 
     # @return [Array<(Response<(RepoSyncEvent)>, Integer, Hash)>] Response<(RepoSyncEvent)> data, response status code and response headers
     def repo_sync_import_with_http_info(account_id, id, opts = {})
@@ -267,7 +265,6 @@ module Phrase
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
