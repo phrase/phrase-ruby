@@ -29,6 +29,9 @@ module Phrase
     # id of a job template you would like to model the created job after. Any manually added parameters will take preference over template attributes.
     attr_accessor :job_template_id
 
+    # Automatically translate the job using machine translation.
+    attr_accessor :autotranslate
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -40,7 +43,8 @@ module Phrase
         :'ticket_url' => :'ticket_url',
         :'tags' => :'tags',
         :'translation_key_ids' => :'translation_key_ids',
-        :'job_template_id' => :'job_template_id'
+        :'job_template_id' => :'job_template_id',
+        :'autotranslate' => :'autotranslate'
       }
     end
 
@@ -55,7 +59,8 @@ module Phrase
         :'ticket_url' => :'String',
         :'tags' => :'Array<String>',
         :'translation_key_ids' => :'Array<String>',
-        :'job_template_id' => :'String'
+        :'job_template_id' => :'String',
+        :'autotranslate' => :'Boolean'
       }
     end
 
@@ -120,6 +125,10 @@ module Phrase
       if attributes.key?(:'job_template_id')
         self.job_template_id = attributes[:'job_template_id']
       end
+
+      if attributes.key?(:'autotranslate')
+        self.autotranslate = attributes[:'autotranslate']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -153,7 +162,8 @@ module Phrase
           ticket_url == o.ticket_url &&
           tags == o.tags &&
           translation_key_ids == o.translation_key_ids &&
-          job_template_id == o.job_template_id
+          job_template_id == o.job_template_id &&
+          autotranslate == o.autotranslate
     end
 
     # @see the `==` method
@@ -165,7 +175,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, source_locale_id, briefing, due_date, ticket_url, tags, translation_key_ids, job_template_id].hash
+      [branch, name, source_locale_id, briefing, due_date, ticket_url, tags, translation_key_ids, job_template_id, autotranslate].hash
     end
 
     # Builds the object from hash

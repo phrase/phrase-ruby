@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **autotranslate_mark_as_unverified** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **autotranslate_use_machine_translation** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **autotranslate_use_translation_memory** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
+**autotranslate_overwrite_unverified_translations** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **placeholder_styles** | **Array&lt;String&gt;** | (Optional) List of placeholder styles enabled for the project. | [optional] 
 
 ## Code Sample
@@ -38,7 +39,7 @@ instance = Phrase::ProjectCreateParameters.new(name: My Android Project,
                                  main_format: yml,
                                  media: Python,
                                  shares_translation_memory: true,
-                                 project_image: [B@6a584533,
+                                 project_image: [B@6026c754,
                                  remove_project_image: null,
                                  account_id: abcd1234,
                                  point_of_contact: abcd1234,
@@ -57,6 +58,7 @@ instance = Phrase::ProjectCreateParameters.new(name: My Android Project,
                                  autotranslate_mark_as_unverified: true,
                                  autotranslate_use_machine_translation: true,
                                  autotranslate_use_translation_memory: true,
+                                 autotranslate_overwrite_unverified_translations: true,
                                  placeholder_styles: [&quot;angular&quot;,&quot;iOS&quot;])
 ```
 

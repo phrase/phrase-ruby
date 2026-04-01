@@ -71,6 +71,9 @@ module Phrase
     # (Optional) Requires autotranslate_enabled to be true
     attr_accessor :autotranslate_use_translation_memory
 
+    # (Optional) Requires autotranslate_enabled to be true
+    attr_accessor :autotranslate_overwrite_unverified_translations
+
     # (Optional) List of placeholder styles enabled for the project.
     attr_accessor :placeholder_styles
 
@@ -100,6 +103,7 @@ module Phrase
         :'autotranslate_mark_as_unverified' => :'autotranslate_mark_as_unverified',
         :'autotranslate_use_machine_translation' => :'autotranslate_use_machine_translation',
         :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
+        :'autotranslate_overwrite_unverified_translations' => :'autotranslate_overwrite_unverified_translations',
         :'placeholder_styles' => :'placeholder_styles'
       }
     end
@@ -130,6 +134,7 @@ module Phrase
         :'autotranslate_mark_as_unverified' => :'Boolean',
         :'autotranslate_use_machine_translation' => :'Boolean',
         :'autotranslate_use_translation_memory' => :'Boolean',
+        :'autotranslate_overwrite_unverified_translations' => :'Boolean',
         :'placeholder_styles' => :'Array<String>'
       }
     end
@@ -247,6 +252,10 @@ module Phrase
         self.autotranslate_use_translation_memory = attributes[:'autotranslate_use_translation_memory']
       end
 
+      if attributes.key?(:'autotranslate_overwrite_unverified_translations')
+        self.autotranslate_overwrite_unverified_translations = attributes[:'autotranslate_overwrite_unverified_translations']
+      end
+
       if attributes.key?(:'placeholder_styles')
         if (value = attributes[:'placeholder_styles']).is_a?(Array)
           self.placeholder_styles = value
@@ -300,6 +309,7 @@ module Phrase
           autotranslate_mark_as_unverified == o.autotranslate_mark_as_unverified &&
           autotranslate_use_machine_translation == o.autotranslate_use_machine_translation &&
           autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
+          autotranslate_overwrite_unverified_translations == o.autotranslate_overwrite_unverified_translations &&
           placeholder_styles == o.placeholder_styles
     end
 
@@ -312,7 +322,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, main_format, media, shares_translation_memory, project_image, remove_project_image, account_id, point_of_contact, source_project_id, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, placeholder_styles].hash
+      [name, main_format, media, shares_translation_memory, project_image, remove_project_image, account_id, point_of_contact, source_project_id, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, placeholder_styles].hash
     end
 
     # Builds the object from hash

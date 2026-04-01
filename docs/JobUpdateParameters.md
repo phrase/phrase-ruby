@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **briefing** | **String** | Briefing for the translators | [optional] 
 **due_date** | **Time** | Date the job should be finished | [optional] 
 **ticket_url** | **String** | URL to a ticket for this job (e.g. Jira, Trello) | [optional] 
+**autotranslate** | **Boolean** | Automatically translate the job using machine translation | [optional] 
 
 ## Code Sample
 
@@ -19,7 +20,8 @@ instance = Phrase::JobUpdateParameters.new(branch: my-feature-branch,
                                  name: de,
                                  briefing: de-DE,
                                  due_date: null,
-                                 ticket_url: https://example.atlassian.net/browse/FOO)
+                                 ticket_url: https://example.atlassian.net/browse/FOO,
+                                 autotranslate: true)
 ```
 
 

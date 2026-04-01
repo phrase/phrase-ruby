@@ -68,6 +68,9 @@ module Phrase
     # (Optional) Requires autotranslate_enabled to be true
     attr_accessor :autotranslate_use_translation_memory
 
+    # (Optional) Requires autotranslate_enabled to be true
+    attr_accessor :autotranslate_overwrite_unverified_translations
+
     # (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [`file_encoding`](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads.
     attr_accessor :default_encoding
 
@@ -121,6 +124,7 @@ module Phrase
         :'autotranslate_mark_as_unverified' => :'autotranslate_mark_as_unverified',
         :'autotranslate_use_machine_translation' => :'autotranslate_use_machine_translation',
         :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
+        :'autotranslate_overwrite_unverified_translations' => :'autotranslate_overwrite_unverified_translations',
         :'default_encoding' => :'default_encoding',
         :'placeholder_styles' => :'placeholder_styles'
       }
@@ -151,6 +155,7 @@ module Phrase
         :'autotranslate_mark_as_unverified' => :'Boolean',
         :'autotranslate_use_machine_translation' => :'Boolean',
         :'autotranslate_use_translation_memory' => :'Boolean',
+        :'autotranslate_overwrite_unverified_translations' => :'Boolean',
         :'default_encoding' => :'String',
         :'placeholder_styles' => :'Array<String>'
       }
@@ -265,6 +270,10 @@ module Phrase
         self.autotranslate_use_translation_memory = attributes[:'autotranslate_use_translation_memory']
       end
 
+      if attributes.key?(:'autotranslate_overwrite_unverified_translations')
+        self.autotranslate_overwrite_unverified_translations = attributes[:'autotranslate_overwrite_unverified_translations']
+      end
+
       if attributes.key?(:'default_encoding')
         self.default_encoding = attributes[:'default_encoding']
       end
@@ -328,6 +337,7 @@ module Phrase
           autotranslate_mark_as_unverified == o.autotranslate_mark_as_unverified &&
           autotranslate_use_machine_translation == o.autotranslate_use_machine_translation &&
           autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
+          autotranslate_overwrite_unverified_translations == o.autotranslate_overwrite_unverified_translations &&
           default_encoding == o.default_encoding &&
           placeholder_styles == o.placeholder_styles
     end
@@ -341,7 +351,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id, name, point_of_contact, main_format, media, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, default_encoding, placeholder_styles].hash
+      [account_id, name, point_of_contact, main_format, media, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, default_encoding, placeholder_styles].hash
     end
 
     # Builds the object from hash

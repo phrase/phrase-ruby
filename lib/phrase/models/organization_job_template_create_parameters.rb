@@ -8,11 +8,15 @@ module Phrase
     # Briefing for the translators
     attr_accessor :briefing
 
+    # Automatically translate the job using machine translation.
+    attr_accessor :autotranslate
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'name' => :'name',
-        :'briefing' => :'briefing'
+        :'briefing' => :'briefing',
+        :'autotranslate' => :'autotranslate'
       }
     end
 
@@ -20,7 +24,8 @@ module Phrase
     def self.openapi_types
       {
         :'name' => :'String',
-        :'briefing' => :'String'
+        :'briefing' => :'String',
+        :'autotranslate' => :'Boolean'
       }
     end
 
@@ -52,6 +57,10 @@ module Phrase
       if attributes.key?(:'briefing')
         self.briefing = attributes[:'briefing']
       end
+
+      if attributes.key?(:'autotranslate')
+        self.autotranslate = attributes[:'autotranslate']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -78,7 +87,8 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           name == o.name &&
-          briefing == o.briefing
+          briefing == o.briefing &&
+          autotranslate == o.autotranslate
     end
 
     # @see the `==` method
@@ -90,7 +100,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, briefing].hash
+      [name, briefing, autotranslate].hash
     end
 
     # Builds the object from hash

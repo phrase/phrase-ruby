@@ -17,6 +17,9 @@ module Phrase
     # URL to a ticket for this job (e.g. Jira, Trello)
     attr_accessor :ticket_url
 
+    # Automatically translate the job using machine translation
+    attr_accessor :autotranslate
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -24,7 +27,8 @@ module Phrase
         :'name' => :'name',
         :'briefing' => :'briefing',
         :'due_date' => :'due_date',
-        :'ticket_url' => :'ticket_url'
+        :'ticket_url' => :'ticket_url',
+        :'autotranslate' => :'autotranslate'
       }
     end
 
@@ -35,7 +39,8 @@ module Phrase
         :'name' => :'String',
         :'briefing' => :'String',
         :'due_date' => :'DateTime',
-        :'ticket_url' => :'String'
+        :'ticket_url' => :'String',
+        :'autotranslate' => :'Boolean'
       }
     end
 
@@ -80,6 +85,10 @@ module Phrase
       if attributes.key?(:'ticket_url')
         self.ticket_url = attributes[:'ticket_url']
       end
+
+      if attributes.key?(:'autotranslate')
+        self.autotranslate = attributes[:'autotranslate']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -104,7 +113,8 @@ module Phrase
           name == o.name &&
           briefing == o.briefing &&
           due_date == o.due_date &&
-          ticket_url == o.ticket_url
+          ticket_url == o.ticket_url &&
+          autotranslate == o.autotranslate
     end
 
     # @see the `==` method
@@ -116,7 +126,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, briefing, due_date, ticket_url].hash
+      [branch, name, briefing, due_date, ticket_url, autotranslate].hash
     end
 
     # Builds the object from hash

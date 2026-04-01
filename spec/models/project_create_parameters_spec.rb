@@ -158,6 +158,12 @@ describe 'ProjectCreateParameters' do
     end
   end
 
+  describe 'test attribute "autotranslate_overwrite_unverified_translations"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "placeholder_styles"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

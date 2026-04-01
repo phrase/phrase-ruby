@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **autotranslate_mark_as_unverified** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **autotranslate_use_machine_translation** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **autotranslate_use_translation_memory** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
+**autotranslate_overwrite_unverified_translations** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **default_encoding** | **String** | (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads. | [optional] 
 **placeholder_styles** | **Array&lt;String&gt;** | (Optional) List of placeholder styles enabled for the project. | [optional] 
 
@@ -40,7 +41,7 @@ instance = Phrase::ProjectUpdateParameters.new(account_id: abcd1234,
                                  main_format: yml,
                                  media: Python,
                                  shares_translation_memory: true,
-                                 project_image: [B@1cfb035c,
+                                 project_image: [B@3d7c21b7,
                                  remove_project_image: false,
                                  workflow: review,
                                  machine_translation_enabled: true,
@@ -56,6 +57,7 @@ instance = Phrase::ProjectUpdateParameters.new(account_id: abcd1234,
                                  autotranslate_mark_as_unverified: true,
                                  autotranslate_use_machine_translation: true,
                                  autotranslate_use_translation_memory: true,
+                                 autotranslate_overwrite_unverified_translations: true,
                                  default_encoding: UTF-8,
                                  placeholder_styles: [&quot;angular&quot;,&quot;iOS&quot;])
 ```
