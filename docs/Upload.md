@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **tag** | **String** | Unique tag of the upload  | [optional] 
 **tags** | **Array&lt;String&gt;** | List of tags that were assigned to the uploaded keys  | [optional] 
 **url** | **String** | The URL to the upload in Phrase Strings app.  | [optional] 
+**user** | [**UserPreview**](.md) |  | [optional] 
 **summary** | [**UploadSummary**](UploadSummary.md) |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
@@ -27,6 +28,7 @@ instance = Phrase::Upload.new(id: null,
                                  tag: null,
                                  tags: null,
                                  url: null,
+                                 user: null,
                                  summary: null,
                                  created_at: null,
                                  updated_at: null)
