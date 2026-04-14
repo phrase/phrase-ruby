@@ -14,13 +14,17 @@ module Phrase
     # Automatically translate the job using machine translation.
     attr_accessor :autotranslate
 
+    # The API id of the source language. This locale will be set as source locale for the job template. If not provided, the project default locale will be used.
+    attr_accessor :source_locale_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'branch' => :'branch',
         :'name' => :'name',
         :'briefing' => :'briefing',
-        :'autotranslate' => :'autotranslate'
+        :'autotranslate' => :'autotranslate',
+        :'source_locale_id' => :'source_locale_id'
       }
     end
 
@@ -30,7 +34,8 @@ module Phrase
         :'branch' => :'String',
         :'name' => :'String',
         :'briefing' => :'String',
-        :'autotranslate' => :'Boolean'
+        :'autotranslate' => :'Boolean',
+        :'source_locale_id' => :'String'
       }
     end
 
@@ -70,6 +75,10 @@ module Phrase
       if attributes.key?(:'autotranslate')
         self.autotranslate = attributes[:'autotranslate']
       end
+
+      if attributes.key?(:'source_locale_id')
+        self.source_locale_id = attributes[:'source_locale_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -98,7 +107,8 @@ module Phrase
           branch == o.branch &&
           name == o.name &&
           briefing == o.briefing &&
-          autotranslate == o.autotranslate
+          autotranslate == o.autotranslate &&
+          source_locale_id == o.source_locale_id
     end
 
     # @see the `==` method
@@ -110,7 +120,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, briefing, autotranslate].hash
+      [branch, name, briefing, autotranslate, source_locale_id].hash
     end
 
     # Builds the object from hash
