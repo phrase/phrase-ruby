@@ -26,7 +26,10 @@ module Phrase
     # ids of keys that should be included within the job
     attr_accessor :translation_key_ids
 
-    # id of a job template you would like to model the created job after. Any manually added parameters will take preference over template attributes.
+    # List of target locales for the job. Mutually exclusive with `job_template_id`.
+    attr_accessor :target_locale_ids
+
+    # id of a job template you would like to model the created job after. Any manually added parameters will take preference over template attributes. Mutually exclusive with `target_locale_ids`.
     attr_accessor :job_template_id
 
     # Automatically translate the job using machine translation.
@@ -43,6 +46,7 @@ module Phrase
         :'ticket_url' => :'ticket_url',
         :'tags' => :'tags',
         :'translation_key_ids' => :'translation_key_ids',
+        :'target_locale_ids' => :'target_locale_ids',
         :'job_template_id' => :'job_template_id',
         :'autotranslate' => :'autotranslate'
       }
@@ -59,6 +63,7 @@ module Phrase
         :'ticket_url' => :'String',
         :'tags' => :'Array<String>',
         :'translation_key_ids' => :'Array<String>',
+        :'target_locale_ids' => :'Array<String>',
         :'job_template_id' => :'String',
         :'autotranslate' => :'Boolean'
       }
@@ -122,6 +127,12 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'target_locale_ids')
+        if (value = attributes[:'target_locale_ids']).is_a?(Array)
+          self.target_locale_ids = value
+        end
+      end
+
       if attributes.key?(:'job_template_id')
         self.job_template_id = attributes[:'job_template_id']
       end
@@ -162,6 +173,7 @@ module Phrase
           ticket_url == o.ticket_url &&
           tags == o.tags &&
           translation_key_ids == o.translation_key_ids &&
+          target_locale_ids == o.target_locale_ids &&
           job_template_id == o.job_template_id &&
           autotranslate == o.autotranslate
     end
@@ -175,7 +187,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, source_locale_id, briefing, due_date, ticket_url, tags, translation_key_ids, job_template_id, autotranslate].hash
+      [branch, name, source_locale_id, briefing, due_date, ticket_url, tags, translation_key_ids, target_locale_ids, job_template_id, autotranslate].hash
     end
 
     # Builds the object from hash

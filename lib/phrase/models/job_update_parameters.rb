@@ -17,6 +17,9 @@ module Phrase
     # URL to a ticket for this job (e.g. Jira, Trello)
     attr_accessor :ticket_url
 
+    # List of target locales for the job.
+    attr_accessor :target_locale_ids
+
     # Automatically translate the job using machine translation
     attr_accessor :autotranslate
 
@@ -28,6 +31,7 @@ module Phrase
         :'briefing' => :'briefing',
         :'due_date' => :'due_date',
         :'ticket_url' => :'ticket_url',
+        :'target_locale_ids' => :'target_locale_ids',
         :'autotranslate' => :'autotranslate'
       }
     end
@@ -40,6 +44,7 @@ module Phrase
         :'briefing' => :'String',
         :'due_date' => :'DateTime',
         :'ticket_url' => :'String',
+        :'target_locale_ids' => :'Array<String>',
         :'autotranslate' => :'Boolean'
       }
     end
@@ -86,6 +91,12 @@ module Phrase
         self.ticket_url = attributes[:'ticket_url']
       end
 
+      if attributes.key?(:'target_locale_ids')
+        if (value = attributes[:'target_locale_ids']).is_a?(Array)
+          self.target_locale_ids = value
+        end
+      end
+
       if attributes.key?(:'autotranslate')
         self.autotranslate = attributes[:'autotranslate']
       end
@@ -114,6 +125,7 @@ module Phrase
           briefing == o.briefing &&
           due_date == o.due_date &&
           ticket_url == o.ticket_url &&
+          target_locale_ids == o.target_locale_ids &&
           autotranslate == o.autotranslate
     end
 
@@ -126,7 +138,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, briefing, due_date, ticket_url, autotranslate].hash
+      [branch, name, briefing, due_date, ticket_url, target_locale_ids, autotranslate].hash
     end
 
     # Builds the object from hash
