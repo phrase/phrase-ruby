@@ -201,6 +201,7 @@ docs/ReleaseUpdateParameters.md
 docs/ReleaseUpdateParameters1.md
 docs/ReleasesApi.md
 docs/RepoSync.md
+docs/RepoSyncCreateParameters.md
 docs/RepoSyncEvent.md
 docs/RepoSyncEventsApi.md
 docs/RepoSyncExportParameters.md
@@ -505,6 +506,7 @@ lib/phrase/models/release_trigger.rb
 lib/phrase/models/release_update_parameters.rb
 lib/phrase/models/release_update_parameters1.rb
 lib/phrase/models/repo_sync.rb
+lib/phrase/models/repo_sync_create_parameters.rb
 lib/phrase/models/repo_sync_event.rb
 lib/phrase/models/repo_sync_export_parameters.rb
 lib/phrase/models/repo_sync_import_parameters.rb
@@ -787,6 +789,7 @@ spec/models/release_spec.rb
 spec/models/release_trigger_spec.rb
 spec/models/release_update_parameters1_spec.rb
 spec/models/release_update_parameters_spec.rb
+spec/models/repo_sync_create_parameters_spec.rb
 spec/models/repo_sync_event_spec.rb
 spec/models/repo_sync_export_parameters_spec.rb
 spec/models/repo_sync_import_parameters_spec.rb

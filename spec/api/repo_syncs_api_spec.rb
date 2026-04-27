@@ -34,6 +34,20 @@ describe 'RepoSyncsApi' do
     end
   end
 
+  # unit tests for repo_sync_create
+  # Create a Repo Sync
+  # Create a new Repo Sync.
+  # @param account_id Account ID
+  # @param repo_sync_create_parameters 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [RepoSync]
+  describe 'repo_sync_create test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for repo_sync_deactivate
   # Deactivate a Repo Sync
   # Deactivate an active Repo Sync. Import and export can&#39;t be performed on deactivated syncs and the pushes to the repository won&#39;t trigger the import to Phrase.

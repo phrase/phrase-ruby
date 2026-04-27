@@ -330,6 +330,7 @@ Class | Method | HTTP request | Description
 *Phrase::RepoSyncEventsApi* | [**repo_sync_event_list**](docs/RepoSyncEventsApi.md#repo_sync_event_list) | **GET** /accounts/{account_id}/repo_syncs/{id}/events | Repository Syncs History
 *Phrase::RepoSyncEventsApi* | [**repo_sync_event_show**](docs/RepoSyncEventsApi.md#repo_sync_event_show) | **GET** /accounts/{account_id}/repo_syncs/{repo_sync_id}/events/{id} | Get a single Repo Sync Event
 *Phrase::RepoSyncsApi* | [**repo_sync_activate**](docs/RepoSyncsApi.md#repo_sync_activate) | **POST** /accounts/{account_id}/repo_syncs/{id}/activate | Activate a Repo Sync
+*Phrase::RepoSyncsApi* | [**repo_sync_create**](docs/RepoSyncsApi.md#repo_sync_create) | **POST** /accounts/{account_id}/repo_syncs | Create a Repo Sync
 *Phrase::RepoSyncsApi* | [**repo_sync_deactivate**](docs/RepoSyncsApi.md#repo_sync_deactivate) | **POST** /accounts/{account_id}/repo_syncs/{id}/deactivate | Deactivate a Repo Sync
 *Phrase::RepoSyncsApi* | [**repo_sync_export**](docs/RepoSyncsApi.md#repo_sync_export) | **POST** /accounts/{account_id}/repo_syncs/{id}/export | Export to code repository
 *Phrase::RepoSyncsApi* | [**repo_sync_import**](docs/RepoSyncsApi.md#repo_sync_import) | **POST** /accounts/{account_id}/repo_syncs/{id}/import | Import from code repository
@@ -575,6 +576,7 @@ Class | Method | HTTP request | Description
  - [Phrase::ReleaseUpdateParameters](docs/ReleaseUpdateParameters.md)
  - [Phrase::ReleaseUpdateParameters1](docs/ReleaseUpdateParameters1.md)
  - [Phrase::RepoSync](docs/RepoSync.md)
+ - [Phrase::RepoSyncCreateParameters](docs/RepoSyncCreateParameters.md)
  - [Phrase::RepoSyncEvent](docs/RepoSyncEvent.md)
  - [Phrase::RepoSyncExportParameters](docs/RepoSyncExportParameters.md)
  - [Phrase::RepoSyncImportParameters](docs/RepoSyncImportParameters.md)

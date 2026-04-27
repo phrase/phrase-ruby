@@ -5,6 +5,7 @@ All URIs are relative to *https://api.phrase.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**repo_sync_activate**](RepoSyncsApi.md#repo_sync_activate) | **POST** /accounts/{account_id}/repo_syncs/{id}/activate | Activate a Repo Sync
+[**repo_sync_create**](RepoSyncsApi.md#repo_sync_create) | **POST** /accounts/{account_id}/repo_syncs | Create a Repo Sync
 [**repo_sync_deactivate**](RepoSyncsApi.md#repo_sync_deactivate) | **POST** /accounts/{account_id}/repo_syncs/{id}/deactivate | Deactivate a Repo Sync
 [**repo_sync_export**](RepoSyncsApi.md#repo_sync_export) | **POST** /accounts/{account_id}/repo_syncs/{id}/export | Export to code repository
 [**repo_sync_import**](RepoSyncsApi.md#repo_sync_import) | **POST** /accounts/{account_id}/repo_syncs/{id}/import | Import from code repository
@@ -73,6 +74,69 @@ Response<([**RepoSync**](RepoSync.md))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## repo_sync_create
+
+> RepoSync repo_sync_create(account_id, repo_sync_create_parameters, opts)
+
+Create a Repo Sync
+
+Create a new Repo Sync.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::RepoSyncsApi.new
+account_id = 'account_id_example' # String | Account ID
+repo_sync_create_parameters = Phrase::RepoSyncCreateParameters.new({project_id: 'abcd1234abcd1234abcd1234abcd1234', connection_type: 'token', repo_name: 'my-org/my-repo'}) # RepoSyncCreateParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Create a Repo Sync
+  result = api_instance.repo_sync_create(account_id, repo_sync_create_parameters, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling RepoSyncsApi->repo_sync_create: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **String**| Account ID | 
+ **repo_sync_create_parameters** | [**RepoSyncCreateParameters**](RepoSyncCreateParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<([**RepoSync**](RepoSync.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
