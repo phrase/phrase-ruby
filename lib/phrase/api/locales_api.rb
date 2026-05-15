@@ -528,6 +528,7 @@ module Phrase
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :sort_by Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;.
     # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :q Specify a query to filter locales. Currently supports &#x60;name&#x60; argument, filtering only locales with names starting with the given string.
     # @return [Array<Locale>]
     def locales_list(project_id, opts = {})
       data, _status_code, _headers = locales_list_with_http_info(project_id, opts)
@@ -543,6 +544,7 @@ module Phrase
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :sort_by Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;.
     # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :q Specify a query to filter locales. Currently supports &#x60;name&#x60; argument, filtering only locales with names starting with the given string.
     # @return [Array<(Response<(Array<Locale>)>, Integer, Hash)>] Response<(Array<Locale>)> data, response status code and response headers
     def locales_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
@@ -561,6 +563,7 @@ module Phrase
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
       query_params[:'sort_by'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

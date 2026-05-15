@@ -474,7 +474,8 @@ opts = {
   page: 1, # Integer | Page number
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
   sort_by: 'sort_by_example', # String | Sort locales. Valid options are \"name_asc\", \"name_desc\", \"default_asc\", \"default_desc\".
-  branch: 'my-feature-branch' # String | specify the branch to use
+  branch: 'my-feature-branch', # String | specify the branch to use
+  q: 'name:en' # String | Specify a query to filter locales. Currently supports `name` argument, filtering only locales with names starting with the given string.
 }
 
 begin
@@ -497,6 +498,7 @@ Name | Type | Description  | Notes
  **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
  **sort_by** | **String**| Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
+ **q** | **String**| Specify a query to filter locales. Currently supports &#x60;name&#x60; argument, filtering only locales with names starting with the given string. | [optional] 
 
 ### Return type
 
