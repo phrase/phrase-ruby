@@ -2,8 +2,30 @@ require 'date'
 
 module Phrase
   class BranchMergeParameters
-    # strategy used for merge conflicts, use_main or use_branch
+    # Conflict resolution strategy applied when the branch and its base have diverged. `use_main` keeps the values from the base branch; `use_branch` keeps the values from the branch being merged. 
     attr_accessor :strategy
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -55,7 +77,19 @@ module Phrase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      strategy_validator = EnumAttributeValidator.new('String', ["use_main", "use_branch"])
+      return false unless strategy_validator.valid?(@strategy)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] strategy Object to be assigned
+    def strategy=(strategy)
+      validator = EnumAttributeValidator.new('String', ["use_main", "use_branch"])
+      unless validator.valid?(strategy)
+        fail ArgumentError, "invalid value for \"strategy\", must be one of #{validator.allowable_values}."
+      end
+      @strategy = strategy
     end
 
     # Checks equality by comparing each attribute.

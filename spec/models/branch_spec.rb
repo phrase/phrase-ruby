@@ -38,6 +38,12 @@ describe 'Branch' do
     end
   end
 
+  describe 'test attribute "base"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "created_at"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -71,6 +77,10 @@ describe 'Branch' do
   describe 'test attribute "state"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["creating_branch", "merging_branch", "syncing_branch", "merged", "success", "branch_error", "merge_conflict"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.state = value }.not_to raise_error
+      # end
     end
   end
 

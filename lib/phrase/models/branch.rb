@@ -8,6 +8,9 @@ module Phrase
 
     attr_accessor :name
 
+    # Name of the base branch this branch was created from. Only present for branches created with the newer branching system.
+    attr_accessor :base
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -22,12 +25,35 @@ module Phrase
 
     attr_accessor :child_branches
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'base_project_id' => :'base_project_id',
         :'branch_project_id' => :'branch_project_id',
         :'name' => :'name',
+        :'base' => :'base',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
         :'merged_at' => :'merged_at',
@@ -44,6 +70,7 @@ module Phrase
         :'base_project_id' => :'String',
         :'branch_project_id' => :'String',
         :'name' => :'String',
+        :'base' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
         :'merged_at' => :'DateTime',
@@ -57,6 +84,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'base',
       ])
     end
 
@@ -85,6 +113,10 @@ module Phrase
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.key?(:'base')
+        self.base = attributes[:'base']
       end
 
       if attributes.key?(:'created_at')
@@ -128,7 +160,19 @@ module Phrase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      state_validator = EnumAttributeValidator.new('String', ["creating_branch", "merging_branch", "syncing_branch", "merged", "success", "branch_error", "merge_conflict"])
+      return false unless state_validator.valid?(@state)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] state Object to be assigned
+    def state=(state)
+      validator = EnumAttributeValidator.new('String', ["creating_branch", "merging_branch", "syncing_branch", "merged", "success", "branch_error", "merge_conflict"])
+      unless validator.valid?(state)
+        fail ArgumentError, "invalid value for \"state\", must be one of #{validator.allowable_values}."
+      end
+      @state = state
     end
 
     # Checks equality by comparing each attribute.
@@ -139,6 +183,7 @@ module Phrase
           base_project_id == o.base_project_id &&
           branch_project_id == o.branch_project_id &&
           name == o.name &&
+          base == o.base &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
           merged_at == o.merged_at &&
@@ -157,7 +202,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [base_project_id, branch_project_id, name, created_at, updated_at, merged_at, merged_by, created_by, state, child_branches].hash
+      [base_project_id, branch_project_id, name, base, created_at, updated_at, merged_at, merged_by, created_by, state, child_branches].hash
     end
 
     # Builds the object from hash

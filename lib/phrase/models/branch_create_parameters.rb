@@ -5,17 +5,22 @@ module Phrase
     # Name of the branch
     attr_accessor :name
 
+    # Name of an existing branch to use as the base for the new branch.
+    attr_accessor :base
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name'
+        :'name' => :'name',
+        :'base' => :'base'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String'
+        :'name' => :'String',
+        :'base' => :'String'
       }
     end
 
@@ -43,6 +48,10 @@ module Phrase
       if attributes.key?(:'name')
         self.name = attributes[:'name']
       end
+
+      if attributes.key?(:'base')
+        self.base = attributes[:'base']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -68,7 +77,8 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name
+          name == o.name &&
+          base == o.base
     end
 
     # @see the `==` method
@@ -80,7 +90,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name].hash
+      [name, base].hash
     end
 
     # Builds the object from hash

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **base_project_id** | **String** |  | [optional] 
 **branch_project_id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
+**base** | **String** | Name of the base branch this branch was created from. Only present for branches created with the newer branching system. | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
 **merged_at** | **Time** |  | [optional] 
@@ -23,6 +24,7 @@ require 'Phrase'
 instance = Phrase::Branch.new(base_project_id: null,
                                  branch_project_id: null,
                                  name: null,
+                                 base: null,
                                  created_at: null,
                                  updated_at: null,
                                  merged_at: null,

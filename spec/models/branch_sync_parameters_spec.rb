@@ -23,6 +23,10 @@ describe 'BranchSyncParameters' do
   describe 'test attribute "strategy"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["use_main", "use_branch"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.strategy = value }.not_to raise_error
+      # end
     end
   end
 
