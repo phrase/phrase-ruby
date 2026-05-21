@@ -2,8 +2,11 @@ require 'date'
 
 module Phrase
   class IcuSkeletonParameters
-    # Source content
+    # Source content to derive skeletons from. Mutually exclusive with `id`; exactly one of the two must be provided. 
     attr_accessor :content
+
+    # Translation code to source content from. Mutually exclusive with `content`; exactly one of the two must be provided. 
+    attr_accessor :id
 
     # Locale codes
     attr_accessor :locale_codes
@@ -21,6 +24,7 @@ module Phrase
     def self.attribute_map
       {
         :'content' => :'content',
+        :'id' => :'id',
         :'locale_codes' => :'locale_codes',
         :'keep_content' => :'keep_content',
         :'zero_form_enabled' => :'zero_form_enabled',
@@ -32,6 +36,7 @@ module Phrase
     def self.openapi_types
       {
         :'content' => :'String',
+        :'id' => :'String',
         :'locale_codes' => :'Array<String>',
         :'keep_content' => :'Boolean',
         :'zero_form_enabled' => :'Boolean',
@@ -62,6 +67,10 @@ module Phrase
 
       if attributes.key?(:'content')
         self.content = attributes[:'content']
+      end
+
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
       if attributes.key?(:'locale_codes')
@@ -102,6 +111,7 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           content == o.content &&
+          id == o.id &&
           locale_codes == o.locale_codes &&
           keep_content == o.keep_content &&
           zero_form_enabled == o.zero_form_enabled &&
@@ -117,7 +127,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [content, locale_codes, keep_content, zero_form_enabled, cldr_version].hash
+      [content, id, locale_codes, keep_content, zero_form_enabled, cldr_version].hash
     end
 
     # Builds the object from hash

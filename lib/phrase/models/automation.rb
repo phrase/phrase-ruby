@@ -15,7 +15,16 @@ module Phrase
 
     attr_accessor :project_id
 
+    # All project IDs the automation applies to. Returned alongside the singular `project_id` for backwards compatibility.
+    attr_accessor :project_ids
+
     attr_accessor :job_template_id
+
+    # User ID of the job owner that newly created jobs are assigned to.
+    attr_accessor :job_owner_id
+
+    # When `true`, the automation only acts on locales that changed since its last run.
+    attr_accessor :include_only_updated_locales
 
     attr_accessor :tags
 
@@ -60,7 +69,10 @@ module Phrase
         :'trigger' => :'trigger',
         :'status_filters' => :'status_filters',
         :'project_id' => :'project_id',
+        :'project_ids' => :'project_ids',
         :'job_template_id' => :'job_template_id',
+        :'job_owner_id' => :'job_owner_id',
+        :'include_only_updated_locales' => :'include_only_updated_locales',
         :'tags' => :'tags',
         :'cron_schedule' => :'cron_schedule',
         :'time_zone' => :'time_zone',
@@ -79,7 +91,10 @@ module Phrase
         :'trigger' => :'String',
         :'status_filters' => :'Array<String>',
         :'project_id' => :'String',
+        :'project_ids' => :'Array<String>',
         :'job_template_id' => :'String',
+        :'job_owner_id' => :'String',
+        :'include_only_updated_locales' => :'Boolean',
         :'tags' => :'Array<String>',
         :'cron_schedule' => :'String',
         :'time_zone' => :'String',
@@ -92,6 +107,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'job_owner_id',
       ])
     end
 
@@ -136,8 +152,22 @@ module Phrase
         self.project_id = attributes[:'project_id']
       end
 
+      if attributes.key?(:'project_ids')
+        if (value = attributes[:'project_ids']).is_a?(Array)
+          self.project_ids = value
+        end
+      end
+
       if attributes.key?(:'job_template_id')
         self.job_template_id = attributes[:'job_template_id']
+      end
+
+      if attributes.key?(:'job_owner_id')
+        self.job_owner_id = attributes[:'job_owner_id']
+      end
+
+      if attributes.key?(:'include_only_updated_locales')
+        self.include_only_updated_locales = attributes[:'include_only_updated_locales']
       end
 
       if attributes.key?(:'tags')
@@ -215,7 +245,10 @@ module Phrase
           trigger == o.trigger &&
           status_filters == o.status_filters &&
           project_id == o.project_id &&
+          project_ids == o.project_ids &&
           job_template_id == o.job_template_id &&
+          job_owner_id == o.job_owner_id &&
+          include_only_updated_locales == o.include_only_updated_locales &&
           tags == o.tags &&
           cron_schedule == o.cron_schedule &&
           time_zone == o.time_zone &&
@@ -233,7 +266,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, status, trigger, status_filters, project_id, job_template_id, tags, cron_schedule, time_zone, account, created_at, updated_at].hash
+      [id, name, status, trigger, status_filters, project_id, project_ids, job_template_id, job_owner_id, include_only_updated_locales, tags, cron_schedule, time_zone, account, created_at, updated_at].hash
     end
 
     # Builds the object from hash

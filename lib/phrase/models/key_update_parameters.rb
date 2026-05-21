@@ -53,6 +53,12 @@ module Phrase
     # Updates/Creates custom metadata property name and value pairs to be associated with key. If you want to delete a custom metadata property, you can set its value to null. If you want to update a custom metadata property, you can set its value to the new value.
     attr_accessor :custom_metadata
 
+    # Locales for which translations of this key are excluded from exports. Pass an empty array to clear exclusions. 
+    attr_accessor :excluded_in_locales
+
+    # Override of the value type for the key in the export. Most useful for formats like Android XML that distinguish string vs. plural resources. 
+    attr_accessor :format_value_type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -72,7 +78,9 @@ module Phrase
         :'original_file' => :'original_file',
         :'localized_format_string' => :'localized_format_string',
         :'localized_format_key' => :'localized_format_key',
-        :'custom_metadata' => :'custom_metadata'
+        :'custom_metadata' => :'custom_metadata',
+        :'excluded_in_locales' => :'excluded_in_locales',
+        :'format_value_type' => :'format_value_type'
       }
     end
 
@@ -95,7 +103,9 @@ module Phrase
         :'original_file' => :'String',
         :'localized_format_string' => :'String',
         :'localized_format_key' => :'String',
-        :'custom_metadata' => :'Object'
+        :'custom_metadata' => :'Object',
+        :'excluded_in_locales' => :'Array<String>',
+        :'format_value_type' => :'String'
       }
     end
 
@@ -187,6 +197,16 @@ module Phrase
       if attributes.key?(:'custom_metadata')
         self.custom_metadata = attributes[:'custom_metadata']
       end
+
+      if attributes.key?(:'excluded_in_locales')
+        if (value = attributes[:'excluded_in_locales']).is_a?(Array)
+          self.excluded_in_locales = value
+        end
+      end
+
+      if attributes.key?(:'format_value_type')
+        self.format_value_type = attributes[:'format_value_type']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -223,7 +243,9 @@ module Phrase
           original_file == o.original_file &&
           localized_format_string == o.localized_format_string &&
           localized_format_key == o.localized_format_key &&
-          custom_metadata == o.custom_metadata
+          custom_metadata == o.custom_metadata &&
+          excluded_in_locales == o.excluded_in_locales &&
+          format_value_type == o.format_value_type
     end
 
     # @see the `==` method
@@ -235,7 +257,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, description, plural, use_ordinal_rules, name_plural, data_type, tags, max_characters_allowed, screenshot, remove_screenshot, unformatted, xml_space_preserve, original_file, localized_format_string, localized_format_key, custom_metadata].hash
+      [branch, name, description, plural, use_ordinal_rules, name_plural, data_type, tags, max_characters_allowed, screenshot, remove_screenshot, unformatted, xml_space_preserve, original_file, localized_format_string, localized_format_key, custom_metadata, excluded_in_locales, format_value_type].hash
     end
 
     # Builds the object from hash

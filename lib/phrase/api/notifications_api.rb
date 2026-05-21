@@ -14,6 +14,7 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [Boolean] :unseen Include only unseen notifications
+    # @option opts [Integer] :last_days Restrict the results to notifications created within the last N days. Coerced to integer; non-numeric values resolve to 0 (returning nothing).
     # @return [Array<Notification>]
     def notifications_list(opts = {})
       data, _status_code, _headers = notifications_list_with_http_info(opts)
@@ -27,6 +28,7 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [Boolean] :unseen Include only unseen notifications
+    # @option opts [Integer] :last_days Restrict the results to notifications created within the last N days. Coerced to integer; non-numeric values resolve to 0 (returning nothing).
     # @return [Array<(Response<(Array<Notification>)>, Integer, Hash)>] Response<(Array<Notification>)> data, response status code and response headers
     def notifications_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -40,6 +42,7 @@ module Phrase
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
       query_params[:'unseen'] = opts[:'unseen'] if !opts[:'unseen'].nil?
+      query_params[:'last_days'] = opts[:'last_days'] if !opts[:'last_days'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

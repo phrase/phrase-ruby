@@ -59,7 +59,8 @@ opts = {
   verify_mentioned_translations: true, # Boolean | Indicates whether all translations mentioned in the upload should be verified.
   mark_reviewed: true, # Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
   tag_only_affected_keys: true, # Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
-  translation_key_prefix: 'translation_key_prefix_example' # String | This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
+  translation_key_prefix: 'translation_key_prefix_example', # String | This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
+  skip_automated_job_creation: true # Boolean | When `true`, the automation rules for the project will not fire for this upload, so no jobs are created as a side effect of importing this file. Defaults to `false`. 
 }
 
 begin
@@ -100,6 +101,7 @@ Name | Type | Description  | Notes
  **mark_reviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. | [optional] 
  **tag_only_affected_keys** | **Boolean**| Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; | [optional] [default to false]
  **translation_key_prefix** | **String**| This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized. | [optional] 
+ **skip_automated_job_creation** | **Boolean**| When &#x60;true&#x60;, the automation rules for the project will not fire for this upload, so no jobs are created as a side effect of importing this file. Defaults to &#x60;false&#x60;.  | [optional] [default to false]
 
 ### Return type
 

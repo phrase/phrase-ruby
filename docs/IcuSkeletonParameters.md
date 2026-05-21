@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content** | **String** | Source content | [optional] 
+**content** | **String** | Source content to derive skeletons from. Mutually exclusive with &#x60;id&#x60;; exactly one of the two must be provided.  | [optional] 
+**id** | **String** | Translation code to source content from. Mutually exclusive with &#x60;content&#x60;; exactly one of the two must be provided.  | [optional] 
 **locale_codes** | **Array&lt;String&gt;** | Locale codes | [optional] 
 **keep_content** | **Boolean** | Keep the content and add missing plural forms for each locale | [optional] 
 **zero_form_enabled** | **Boolean** | Indicates whether the zero form should be included or excluded in the returned skeletons | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 require 'Phrase'
 
 instance = Phrase::IcuSkeletonParameters.new(content: {number, plural, one {One} other {%{n}}},
+                                 id: abcd1234abcd1234abcd1234abcd1234,
                                  locale_codes: [&quot;en&quot;],
                                  keep_content: null,
                                  zero_form_enabled: null,

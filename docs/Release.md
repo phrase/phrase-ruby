@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **environments** | **Array&lt;String&gt;** |  | [optional] 
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
 **tags** | **Array&lt;String&gt;** |  | [optional] 
+**state** | **String** |  | [optional] 
 **project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
@@ -31,6 +32,7 @@ instance = Phrase::Release.new(id: null,
                                  environments: null,
                                  locales: null,
                                  tags: null,
+                                 state: null,
                                  project: null,
                                  created_at: null,
                                  updated_at: null)

@@ -12,6 +12,9 @@ module Phrase
 
     attr_accessor :branch
 
+    # When `true`, jobs created from this template are auto-translated on creation. 
+    attr_accessor :autotranslate_enabled
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -30,6 +33,7 @@ module Phrase
         :'briefing' => :'briefing',
         :'project' => :'project',
         :'branch' => :'branch',
+        :'autotranslate_enabled' => :'autotranslate_enabled',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
         :'owner' => :'owner',
@@ -46,6 +50,7 @@ module Phrase
         :'briefing' => :'String',
         :'project' => :'ProjectShort',
         :'branch' => :'Branch',
+        :'autotranslate_enabled' => :'Boolean',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
         :'owner' => :'UserPreview',
@@ -102,6 +107,10 @@ module Phrase
         self.branch = attributes[:'branch']
       end
 
+      if attributes.key?(:'autotranslate_enabled')
+        self.autotranslate_enabled = attributes[:'autotranslate_enabled']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -148,6 +157,7 @@ module Phrase
           briefing == o.briefing &&
           project == o.project &&
           branch == o.branch &&
+          autotranslate_enabled == o.autotranslate_enabled &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
           owner == o.owner &&
@@ -164,7 +174,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, project, branch, created_at, updated_at, owner, creator, locales].hash
+      [id, name, briefing, project, branch, autotranslate_enabled, created_at, updated_at, owner, creator, locales].hash
     end
 
     # Builds the object from hash

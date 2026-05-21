@@ -52,6 +52,10 @@ module Phrase
 
     attr_accessor :autotranslate_use_translation_memory
 
+    attr_accessor :autotranslate_overwrite_unverified_translations
+
+    attr_accessor :autocomplete_job_enabled
+
     attr_accessor :default_encoding
 
     attr_accessor :cldr_version
@@ -59,6 +63,8 @@ module Phrase
     attr_accessor :job_locking_enabled
 
     attr_accessor :placeholder_styles
+
+    attr_accessor :branch
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -88,10 +94,13 @@ module Phrase
         :'autotranslate_mark_as_unverified' => :'autotranslate_mark_as_unverified',
         :'autotranslate_use_machine_translation' => :'autotranslate_use_machine_translation',
         :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
+        :'autotranslate_overwrite_unverified_translations' => :'autotranslate_overwrite_unverified_translations',
+        :'autocomplete_job_enabled' => :'autocomplete_job_enabled',
         :'default_encoding' => :'default_encoding',
         :'cldr_version' => :'cldr_version',
         :'job_locking_enabled' => :'job_locking_enabled',
-        :'placeholder_styles' => :'placeholder_styles'
+        :'placeholder_styles' => :'placeholder_styles',
+        :'branch' => :'branch'
       }
     end
 
@@ -123,10 +132,13 @@ module Phrase
         :'autotranslate_mark_as_unverified' => :'Boolean',
         :'autotranslate_use_machine_translation' => :'Boolean',
         :'autotranslate_use_translation_memory' => :'Boolean',
+        :'autotranslate_overwrite_unverified_translations' => :'Boolean',
+        :'autocomplete_job_enabled' => :'Boolean',
         :'default_encoding' => :'String',
         :'cldr_version' => :'String',
         :'job_locking_enabled' => :'Boolean',
-        :'placeholder_styles' => :'Array<String>'
+        :'placeholder_styles' => :'Array<String>',
+        :'branch' => :'Branch'
       }
     end
 
@@ -258,6 +270,14 @@ module Phrase
         self.autotranslate_use_translation_memory = attributes[:'autotranslate_use_translation_memory']
       end
 
+      if attributes.key?(:'autotranslate_overwrite_unverified_translations')
+        self.autotranslate_overwrite_unverified_translations = attributes[:'autotranslate_overwrite_unverified_translations']
+      end
+
+      if attributes.key?(:'autocomplete_job_enabled')
+        self.autocomplete_job_enabled = attributes[:'autocomplete_job_enabled']
+      end
+
       if attributes.key?(:'default_encoding')
         self.default_encoding = attributes[:'default_encoding']
       end
@@ -274,6 +294,10 @@ module Phrase
         if (value = attributes[:'placeholder_styles']).is_a?(Array)
           self.placeholder_styles = value
         end
+      end
+
+      if attributes.key?(:'branch')
+        self.branch = attributes[:'branch']
       end
     end
 
@@ -320,10 +344,13 @@ module Phrase
           autotranslate_mark_as_unverified == o.autotranslate_mark_as_unverified &&
           autotranslate_use_machine_translation == o.autotranslate_use_machine_translation &&
           autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
+          autotranslate_overwrite_unverified_translations == o.autotranslate_overwrite_unverified_translations &&
+          autocomplete_job_enabled == o.autocomplete_job_enabled &&
           default_encoding == o.default_encoding &&
           cldr_version == o.cldr_version &&
           job_locking_enabled == o.job_locking_enabled &&
-          placeholder_styles == o.placeholder_styles
+          placeholder_styles == o.placeholder_styles &&
+          branch == o.branch
     end
 
     # @see the `==` method
@@ -335,7 +362,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory, machine_translation_enabled, zero_plural_form_enabled, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, enable_branching, protect_master_branch, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, default_encoding, cldr_version, job_locking_enabled, placeholder_styles].hash
+      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory, machine_translation_enabled, zero_plural_form_enabled, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, enable_branching, protect_master_branch, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, autocomplete_job_enabled, default_encoding, cldr_version, job_locking_enabled, placeholder_styles, branch].hash
     end
 
     # Builds the object from hash

@@ -46,6 +46,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
@@ -84,6 +86,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+    # @option opts [String] :q Search query. Filters documents by name (case-insensitive substring match).
     # @return [Array<Document>]
     def documents_list(project_id, opts = {})
       data, _status_code, _headers = documents_list_with_http_info(project_id, opts)
@@ -97,6 +100,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+    # @option opts [String] :q Search query. Filters documents by name (case-insensitive substring match).
     # @return [Array<(Response<(Array<Document>)>, Integer, Hash)>] Response<(Array<Document>)> data, response status code and response headers
     def documents_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
@@ -113,6 +117,7 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

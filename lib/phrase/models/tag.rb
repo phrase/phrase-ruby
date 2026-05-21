@@ -6,6 +6,9 @@ module Phrase
 
     attr_accessor :keys_count
 
+    # `true` when the tag was created automatically by the system (e.g. for jobs, uploads, or Figma attachments) rather than by a user. 
+    attr_accessor :system_tag
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -15,6 +18,7 @@ module Phrase
       {
         :'name' => :'name',
         :'keys_count' => :'keys_count',
+        :'system_tag' => :'system_tag',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at'
       }
@@ -25,6 +29,7 @@ module Phrase
       {
         :'name' => :'String',
         :'keys_count' => :'Integer',
+        :'system_tag' => :'Boolean',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }
@@ -59,6 +64,10 @@ module Phrase
         self.keys_count = attributes[:'keys_count']
       end
 
+      if attributes.key?(:'system_tag')
+        self.system_tag = attributes[:'system_tag']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -88,6 +97,7 @@ module Phrase
       self.class == o.class &&
           name == o.name &&
           keys_count == o.keys_count &&
+          system_tag == o.system_tag &&
           created_at == o.created_at &&
           updated_at == o.updated_at
     end
@@ -101,7 +111,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, keys_count, created_at, updated_at].hash
+      [name, keys_count, system_tag, created_at, updated_at].hash
     end
 
     # Builds the object from hash

@@ -88,6 +88,7 @@ describe 'OrdersApi' do
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
   # @option opts [String] :branch specify the branch to use
+  # @option opts [String] :translation_id Filter the result to orders that include the given translation. When supplied with a translation code that does not exist, an empty list is returned.
   # @return [Array<TranslationOrder>]
   describe 'orders_list test' do
     it 'should work' do

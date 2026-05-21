@@ -29,10 +29,13 @@ Name | Type | Description | Notes
 **autotranslate_mark_as_unverified** | **Boolean** |  | [optional] 
 **autotranslate_use_machine_translation** | **Boolean** |  | [optional] 
 **autotranslate_use_translation_memory** | **Boolean** |  | [optional] 
+**autotranslate_overwrite_unverified_translations** | **Boolean** |  | [optional] 
+**autocomplete_job_enabled** | **Boolean** |  | [optional] 
 **default_encoding** | **String** |  | [optional] 
 **cldr_version** | **String** |  | [optional] 
 **job_locking_enabled** | **Boolean** |  | [optional] 
 **placeholder_styles** | **Array&lt;String&gt;** |  | [optional] 
+**branch** | [**Branch**](Branch.md) |  | [optional] 
 
 ## Code Sample
 
@@ -64,10 +67,13 @@ instance = Phrase::ProjectDetails.new(id: null,
                                  autotranslate_mark_as_unverified: false,
                                  autotranslate_use_machine_translation: false,
                                  autotranslate_use_translation_memory: true,
+                                 autotranslate_overwrite_unverified_translations: false,
+                                 autocomplete_job_enabled: false,
                                  default_encoding: UTF-8,
                                  cldr_version: legacy,
                                  job_locking_enabled: false,
-                                 placeholder_styles: [&quot;angular&quot;,&quot;iOS&quot;])
+                                 placeholder_styles: [&quot;angular&quot;,&quot;iOS&quot;],
+                                 branch: null)
 ```
 
 

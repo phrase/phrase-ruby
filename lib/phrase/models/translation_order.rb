@@ -24,7 +24,8 @@ module Phrase
 
     attr_accessor :target_locales
 
-    attr_accessor :tag
+    # Name of the tag whose keys are included in the order.
+    attr_accessor :tag_name
 
     attr_accessor :styleguide
 
@@ -52,7 +53,7 @@ module Phrase
         :'progress_percent' => :'progress_percent',
         :'source_locale' => :'source_locale',
         :'target_locales' => :'target_locales',
-        :'tag' => :'tag',
+        :'tag_name' => :'tag_name',
         :'styleguide' => :'styleguide',
         :'unverify_translations_upon_delivery' => :'unverify_translations_upon_delivery',
         :'quality' => :'quality',
@@ -76,7 +77,7 @@ module Phrase
         :'progress_percent' => :'Integer',
         :'source_locale' => :'LocalePreview',
         :'target_locales' => :'Array<LocalePreview>',
-        :'tag' => :'String',
+        :'tag_name' => :'String',
         :'styleguide' => :'StyleguidePreview',
         :'unverify_translations_upon_delivery' => :'Boolean',
         :'quality' => :'Boolean',
@@ -153,8 +154,8 @@ module Phrase
         end
       end
 
-      if attributes.key?(:'tag')
-        self.tag = attributes[:'tag']
+      if attributes.key?(:'tag_name')
+        self.tag_name = attributes[:'tag_name']
       end
 
       if attributes.key?(:'styleguide')
@@ -211,7 +212,7 @@ module Phrase
           progress_percent == o.progress_percent &&
           source_locale == o.source_locale &&
           target_locales == o.target_locales &&
-          tag == o.tag &&
+          tag_name == o.tag_name &&
           styleguide == o.styleguide &&
           unverify_translations_upon_delivery == o.unverify_translations_upon_delivery &&
           quality == o.quality &&
@@ -229,7 +230,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, lsp, amount_in_cents, currency, message, state, translation_type, progress_percent, source_locale, target_locales, tag, styleguide, unverify_translations_upon_delivery, quality, priority, created_at, updated_at].hash
+      [id, name, lsp, amount_in_cents, currency, message, state, translation_type, progress_percent, source_locale, target_locales, tag_name, styleguide, unverify_translations_upon_delivery, quality, priority, created_at, updated_at].hash
     end
 
     # Builds the object from hash

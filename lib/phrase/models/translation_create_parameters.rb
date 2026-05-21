@@ -26,6 +26,12 @@ module Phrase
     # Indicates whether the translation should be auto-translated. Responses with status 422 if provided for translation within a non-default locale or the project does not have the Autopilot feature enabled.
     attr_accessor :autotranslate
 
+    # When `true`, the translation is marked as a minor edit and does not trigger downstream re-verification on the linked locales' translations. 
+    attr_accessor :minor_change
+
+    # When `true` and the project's review workflow is enabled, the translation is created in the `reviewed` state. 
+    attr_accessor :reviewed
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -36,7 +42,9 @@ module Phrase
         :'plural_suffix' => :'plural_suffix',
         :'unverified' => :'unverified',
         :'excluded' => :'excluded',
-        :'autotranslate' => :'autotranslate'
+        :'autotranslate' => :'autotranslate',
+        :'minor_change' => :'minor_change',
+        :'reviewed' => :'reviewed'
       }
     end
 
@@ -50,7 +58,9 @@ module Phrase
         :'plural_suffix' => :'String',
         :'unverified' => :'Boolean',
         :'excluded' => :'Boolean',
-        :'autotranslate' => :'Boolean'
+        :'autotranslate' => :'Boolean',
+        :'minor_change' => :'Boolean',
+        :'reviewed' => :'Boolean'
       }
     end
 
@@ -106,6 +116,14 @@ module Phrase
       if attributes.key?(:'autotranslate')
         self.autotranslate = attributes[:'autotranslate']
       end
+
+      if attributes.key?(:'minor_change')
+        self.minor_change = attributes[:'minor_change']
+      end
+
+      if attributes.key?(:'reviewed')
+        self.reviewed = attributes[:'reviewed']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -133,7 +151,9 @@ module Phrase
           plural_suffix == o.plural_suffix &&
           unverified == o.unverified &&
           excluded == o.excluded &&
-          autotranslate == o.autotranslate
+          autotranslate == o.autotranslate &&
+          minor_change == o.minor_change &&
+          reviewed == o.reviewed
     end
 
     # @see the `==` method
@@ -145,7 +165,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, locale_id, key_id, content, plural_suffix, unverified, excluded, autotranslate].hash
+      [branch, locale_id, key_id, content, plural_suffix, unverified, excluded, autotranslate, minor_change, reviewed].hash
     end
 
     # Builds the object from hash

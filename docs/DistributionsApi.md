@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## distribution_create
 
-> Distribution distribution_create(account_id, distribution_create_parameters, opts)
+> DistributionDetails distribution_create(account_id, distribution_create_parameters, opts)
 
 Create a distribution
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<([**Distribution**](Distribution.md))>
+Response<([**DistributionDetails**](DistributionDetails.md))>
 
 ### Authorization
 
@@ -134,12 +134,12 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## distribution_show
 
-> Distribution distribution_show(account_id, id, opts)
+> DistributionDetails distribution_show(account_id, id, opts)
 
 Get a single distribution
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<([**Distribution**](Distribution.md))>
+Response<([**DistributionDetails**](DistributionDetails.md))>
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Response<([**Distribution**](Distribution.md))>
 
 ## distribution_update
 
-> Distribution distribution_update(account_id, id, distribution_update_parameters, opts)
+> DistributionDetails distribution_update(account_id, id, distribution_update_parameters, opts)
 
 Update a distribution
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<([**Distribution**](Distribution.md))>
+Response<([**DistributionDetails**](DistributionDetails.md))>
 
 ### Authorization
 
@@ -267,7 +267,7 @@ Response<([**Distribution**](Distribution.md))>
 
 ## distributions_list
 
-> Array&lt;DistributionPreview&gt; distributions_list(account_id, opts)
+> Array&lt;Distribution&gt; distributions_list(account_id, opts)
 
 List distributions
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<([**Array&lt;DistributionPreview&gt;**](DistributionPreview.md))>
+Response<([**Array&lt;Distribution&gt;**](Distribution.md))>
 
 ### Authorization
 

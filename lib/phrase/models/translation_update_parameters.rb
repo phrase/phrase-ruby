@@ -23,6 +23,9 @@ module Phrase
     # When set to `true`, the translation will be marked as reviewed.
     attr_accessor :reviewed
 
+    # When `true`, the update is treated as a minor edit and does not trigger downstream re-verification on the linked locales' translations. 
+    attr_accessor :minor_change
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -32,7 +35,8 @@ module Phrase
         :'unverified' => :'unverified',
         :'excluded' => :'excluded',
         :'autotranslate' => :'autotranslate',
-        :'reviewed' => :'reviewed'
+        :'reviewed' => :'reviewed',
+        :'minor_change' => :'minor_change'
       }
     end
 
@@ -45,7 +49,8 @@ module Phrase
         :'unverified' => :'Boolean',
         :'excluded' => :'Boolean',
         :'autotranslate' => :'Boolean',
-        :'reviewed' => :'Boolean'
+        :'reviewed' => :'Boolean',
+        :'minor_change' => :'Boolean'
       }
     end
 
@@ -97,6 +102,10 @@ module Phrase
       if attributes.key?(:'reviewed')
         self.reviewed = attributes[:'reviewed']
       end
+
+      if attributes.key?(:'minor_change')
+        self.minor_change = attributes[:'minor_change']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -123,7 +132,8 @@ module Phrase
           unverified == o.unverified &&
           excluded == o.excluded &&
           autotranslate == o.autotranslate &&
-          reviewed == o.reviewed
+          reviewed == o.reviewed &&
+          minor_change == o.minor_change
     end
 
     # @see the `==` method
@@ -135,7 +145,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, content, plural_suffix, unverified, excluded, autotranslate, reviewed].hash
+      [branch, content, plural_suffix, unverified, excluded, autotranslate, reviewed, minor_change].hash
     end
 
     # Builds the object from hash

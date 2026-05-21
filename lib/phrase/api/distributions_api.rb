@@ -13,7 +13,7 @@ module Phrase
     # @param distribution_create_parameters [DistributionCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Distribution]
+    # @return [DistributionDetails]
     def distribution_create(account_id, distribution_create_parameters, opts = {})
       data, _status_code, _headers = distribution_create_with_http_info(account_id, distribution_create_parameters, opts)
       data
@@ -25,7 +25,7 @@ module Phrase
     # @param distribution_create_parameters [DistributionCreateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Distribution)>, Integer, Hash)>] Response<(Distribution)> data, response status code and response headers
+    # @return [Array<(Response<(DistributionDetails)>, Integer, Hash)>] Response<(DistributionDetails)> data, response status code and response headers
     def distribution_create_with_http_info(account_id, distribution_create_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DistributionsApi.distribution_create ...'
@@ -59,7 +59,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(distribution_create_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Distribution' 
+      return_type = opts[:return_type] || 'DistributionDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -120,6 +120,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
@@ -157,7 +159,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Distribution]
+    # @return [DistributionDetails]
     def distribution_show(account_id, id, opts = {})
       data, _status_code, _headers = distribution_show_with_http_info(account_id, id, opts)
       data
@@ -169,7 +171,7 @@ module Phrase
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Distribution)>, Integer, Hash)>] Response<(Distribution)> data, response status code and response headers
+    # @return [Array<(Response<(DistributionDetails)>, Integer, Hash)>] Response<(DistributionDetails)> data, response status code and response headers
     def distribution_show_with_http_info(account_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DistributionsApi.distribution_show ...'
@@ -201,7 +203,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Distribution' 
+      return_type = opts[:return_type] || 'DistributionDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -230,7 +232,7 @@ module Phrase
     # @param distribution_update_parameters [DistributionUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Distribution]
+    # @return [DistributionDetails]
     def distribution_update(account_id, id, distribution_update_parameters, opts = {})
       data, _status_code, _headers = distribution_update_with_http_info(account_id, id, distribution_update_parameters, opts)
       data
@@ -243,7 +245,7 @@ module Phrase
     # @param distribution_update_parameters [DistributionUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response<(Distribution)>, Integer, Hash)>] Response<(Distribution)> data, response status code and response headers
+    # @return [Array<(Response<(DistributionDetails)>, Integer, Hash)>] Response<(DistributionDetails)> data, response status code and response headers
     def distribution_update_with_http_info(account_id, id, distribution_update_parameters, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DistributionsApi.distribution_update ...'
@@ -281,7 +283,7 @@ module Phrase
       post_body = opts[:body] || @api_client.object_to_http_body(distribution_update_parameters) 
 
       # return_type
-      return_type = opts[:return_type] || 'Distribution' 
+      return_type = opts[:return_type] || 'DistributionDetails' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']
@@ -310,7 +312,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    # @return [Array<DistributionPreview>]
+    # @return [Array<Distribution>]
     def distributions_list(account_id, opts = {})
       data, _status_code, _headers = distributions_list_with_http_info(account_id, opts)
       data
@@ -323,7 +325,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    # @return [Array<(Response<(Array<DistributionPreview>)>, Integer, Hash)>] Response<(Array<DistributionPreview>)> data, response status code and response headers
+    # @return [Array<(Response<(Array<Distribution>)>, Integer, Hash)>] Response<(Array<Distribution>)> data, response status code and response headers
     def distributions_list_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DistributionsApi.distributions_list ...'
@@ -353,7 +355,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Array<DistributionPreview>' 
+      return_type = opts[:return_type] || 'Array<Distribution>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

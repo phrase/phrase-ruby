@@ -14,6 +14,9 @@ module Phrase
 
     attr_accessor :repo_name
 
+    # Branch used as the source of exports/PRs. May be `null` when the sync is configured to push directly to `base_branch`. 
+    attr_accessor :pr_branch
+
     attr_accessor :created_at
 
     attr_accessor :last_import_at
@@ -29,6 +32,7 @@ module Phrase
         :'enabled' => :'enabled',
         :'auto_import' => :'auto_import',
         :'repo_name' => :'repo_name',
+        :'pr_branch' => :'pr_branch',
         :'created_at' => :'created_at',
         :'last_import_at' => :'last_import_at',
         :'last_export_at' => :'last_export_at'
@@ -44,6 +48,7 @@ module Phrase
         :'enabled' => :'Boolean',
         :'auto_import' => :'Boolean',
         :'repo_name' => :'String',
+        :'pr_branch' => :'String',
         :'created_at' => :'DateTime',
         :'last_import_at' => :'DateTime',
         :'last_export_at' => :'DateTime'
@@ -53,6 +58,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'pr_branch',
       ])
     end
 
@@ -95,6 +101,10 @@ module Phrase
         self.repo_name = attributes[:'repo_name']
       end
 
+      if attributes.key?(:'pr_branch')
+        self.pr_branch = attributes[:'pr_branch']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -132,6 +142,7 @@ module Phrase
           enabled == o.enabled &&
           auto_import == o.auto_import &&
           repo_name == o.repo_name &&
+          pr_branch == o.pr_branch &&
           created_at == o.created_at &&
           last_import_at == o.last_import_at &&
           last_export_at == o.last_export_at
@@ -146,7 +157,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, project, provider, enabled, auto_import, repo_name, created_at, last_import_at, last_export_at].hash
+      [id, project, provider, enabled, auto_import, repo_name, pr_branch, created_at, last_import_at, last_export_at].hash
     end
 
     # Builds the object from hash

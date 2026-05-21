@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **String** | Required if the requesting user is a member of multiple accounts. Account ID to specify the actual account the project should be created in. | [optional] 
+**account_id** | **String** | (Optional) ID of an account the requesting user belongs to. Used only to disambiguate the request context; the project itself cannot be moved between accounts through this endpoint.  | [optional] 
 **name** | **String** | (Optional) Name of the project | [optional] 
 **point_of_contact** | **String** | (Optional) User ID of the point of contact for the project. Pass &#x60;null&#x60; to unset. | [optional] 
 **main_format** | **String** | (Optional) Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see [Format Guide](https://support.phrase.com/hc/en-us/sections/6111343326364) or our [Formats API Endpoint](#formats). | [optional] 
@@ -29,6 +29,13 @@ Name | Type | Description | Notes
 **autotranslate_overwrite_unverified_translations** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **default_encoding** | **String** | (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads. | [optional] 
 **placeholder_styles** | **Array&lt;String&gt;** | (Optional) List of placeholder styles enabled for the project. | [optional] 
+**autocomplete_job_enabled** | **Boolean** | (Optional) Enable autocomplete-job behavior so that newly created keys and locales are automatically added to in-progress jobs. | [optional] 
+**job_locking_enabled** | **Boolean** | (Optional) When enabled, translations are locked once a job moves into review. | [optional] 
+**smart_suggest_enabled** | **Boolean** | (Optional) Enable Smart Suggest for the project. | [optional] 
+**smart_suggest_use_glossary** | **Boolean** | (Optional) Allow Smart Suggest to source suggestions from the project glossary. | [optional] 
+**smart_suggest_use_machine_translation** | **Boolean** | (Optional) Allow Smart Suggest to source suggestions from machine translation. | [optional] 
+**translation_keys_sort_collation** | **String** | (Optional) Collation used when sorting translation keys alphabetically. | [optional] 
+**cldr_version** | **String** | (Optional) CLDR plural-rule version used by the project. | [optional] 
 
 ## Code Sample
 
@@ -41,7 +48,7 @@ instance = Phrase::ProjectUpdateParameters.new(account_id: abcd1234,
                                  main_format: yml,
                                  media: Python,
                                  shares_translation_memory: true,
-                                 project_image: [B@324bb7fb,
+                                 project_image: [B@26e66e13,
                                  remove_project_image: false,
                                  workflow: review,
                                  machine_translation_enabled: true,
@@ -59,7 +66,14 @@ instance = Phrase::ProjectUpdateParameters.new(account_id: abcd1234,
                                  autotranslate_use_translation_memory: true,
                                  autotranslate_overwrite_unverified_translations: true,
                                  default_encoding: UTF-8,
-                                 placeholder_styles: [&quot;angular&quot;,&quot;iOS&quot;])
+                                 placeholder_styles: [&quot;angular&quot;,&quot;iOS&quot;],
+                                 autocomplete_job_enabled: false,
+                                 job_locking_enabled: false,
+                                 smart_suggest_enabled: true,
+                                 smart_suggest_use_glossary: true,
+                                 smart_suggest_use_machine_translation: true,
+                                 translation_keys_sort_collation: unicode_ci,
+                                 cldr_version: legacy)
 ```
 
 

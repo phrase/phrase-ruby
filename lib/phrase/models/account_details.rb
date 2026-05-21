@@ -18,6 +18,7 @@ module Phrase
 
     attr_accessor :subscription
 
+    # Roles the requesting user holds in the account. 
     attr_accessor :roles
 
     # Attribute mapping from ruby-style variable name to JSON key.

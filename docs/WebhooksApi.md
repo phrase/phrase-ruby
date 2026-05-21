@@ -135,7 +135,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## webhook_show
@@ -203,11 +203,11 @@ Response<([**Webhook**](Webhook.md))>
 
 ## webhook_test
 
-> webhook_test(project_id, id, opts)
+> Webhook webhook_test(project_id, id, opts)
 
 Test a webhook
 
-Perform a test request for a webhook.
+Perform a test request for a webhook. Sends a synthetic `test:event` payload to the webhook's `callback_url` and returns the webhook resource. 
 
 ### Example
 
@@ -234,7 +234,8 @@ opts = {
 
 begin
   #Test a webhook
-  api_instance.webhook_test(project_id, id, opts)
+  result = api_instance.webhook_test(project_id, id, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling WebhooksApi->webhook_test: #{e}"
 end
@@ -251,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**Webhook**](Webhook.md))>
 
 ### Authorization
 
@@ -260,7 +261,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## webhook_update

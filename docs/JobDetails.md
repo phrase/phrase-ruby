@@ -20,7 +20,8 @@ Name | Type | Description | Notes
 **source_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
 **keys** | [**Array&lt;KeyPreview&gt;**](KeyPreview.md) |  | [optional] 
-**annotations** | [**Array&lt;JobAnnotationShort&gt;**](JobAnnotationShort.md) |  | [optional] 
+**annotations** | [**Array&lt;JobAnnotationShort&gt;**](JobAnnotationShort.md) | Returned only when &#x60;include_annotations&#x3D;true&#x60; is supplied on the request. | [optional] 
+**locked** | **Boolean** | &#x60;true&#x60; if the job has been locked by the project&#39;s job-locking workflow (translations attached to the job are read-only until the job advances).  | [optional] 
 
 ## Code Sample
 
@@ -43,7 +44,8 @@ instance = Phrase::JobDetails.new(id: null,
                                  source_locale: null,
                                  locales: null,
                                  keys: null,
-                                 annotations: null)
+                                 annotations: null,
+                                 locked: null)
 ```
 
 

@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **localized_format_string** | **String** | NSStringLocalizedFormatKey attribute. Used in .stringsdict format. | [optional] 
 **localized_format_key** | **String** | NSStringLocalizedFormatKey attribute. Used in .stringsdict format. | [optional] 
 **custom_metadata** | **Object** | Custom metadata property name and value pairs to be associated with key. | [optional] 
+**excluded_in_locales** | **Array&lt;String&gt;** | Locales for which translations of this key are excluded from exports. Pass an empty array to clear exclusions.  | [optional] 
+**format_value_type** | **String** | Override of the value type for the key in the export. Most useful for formats like Android XML that distinguish string vs. plural resources.  | [optional] 
 
 ## Code Sample
 
@@ -38,7 +40,7 @@ instance = Phrase::KeyCreateParameters.new(branch: my-feature-branch,
                                  data_type: number,
                                  tags: awesome-feature,needs-proofreading,
                                  max_characters_allowed: 140,
-                                 screenshot: [B@7977ed32,
+                                 screenshot: [B@6a8129d1,
                                  remove_screenshot: null,
                                  unformatted: null,
                                  default_translation_content: Default translation content,
@@ -47,7 +49,9 @@ instance = Phrase::KeyCreateParameters.new(branch: my-feature-branch,
                                  original_file: null,
                                  localized_format_string: null,
                                  localized_format_key: null,
-                                 custom_metadata: {&quot;fruit&quot;:&quot;Apple&quot;,&quot;vegetable&quot;:&quot;Tomato&quot;})
+                                 custom_metadata: {&quot;fruit&quot;:&quot;Apple&quot;,&quot;vegetable&quot;:&quot;Tomato&quot;},
+                                 excluded_in_locales: [&quot;de&quot;,&quot;fr&quot;],
+                                 format_value_type: string)
 ```
 
 

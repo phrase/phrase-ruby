@@ -25,6 +25,12 @@ module Phrase
     # along with cron_schedule, specifies when the scheduled automation is supposed to run
     attr_accessor :time_zone
 
+    # User ID of the job owner that newly created jobs are assigned to. 
+    attr_accessor :job_owner_id
+
+    # When `true`, the automation only acts on locales that changed since its last run. Defaults to `false`. 
+    attr_accessor :include_only_updated_locales
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -57,7 +63,9 @@ module Phrase
         :'status_filters' => :'status_filters',
         :'tags' => :'tags',
         :'cron_schedule' => :'cron_schedule',
-        :'time_zone' => :'time_zone'
+        :'time_zone' => :'time_zone',
+        :'job_owner_id' => :'job_owner_id',
+        :'include_only_updated_locales' => :'include_only_updated_locales'
       }
     end
 
@@ -71,7 +79,9 @@ module Phrase
         :'status_filters' => :'Array<String>',
         :'tags' => :'Array<String>',
         :'cron_schedule' => :'String',
-        :'time_zone' => :'String'
+        :'time_zone' => :'String',
+        :'job_owner_id' => :'String',
+        :'include_only_updated_locales' => :'Boolean'
       }
     end
 
@@ -133,6 +143,14 @@ module Phrase
       if attributes.key?(:'time_zone')
         self.time_zone = attributes[:'time_zone']
       end
+
+      if attributes.key?(:'job_owner_id')
+        self.job_owner_id = attributes[:'job_owner_id']
+      end
+
+      if attributes.key?(:'include_only_updated_locales')
+        self.include_only_updated_locales = attributes[:'include_only_updated_locales']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -192,7 +210,9 @@ module Phrase
           status_filters == o.status_filters &&
           tags == o.tags &&
           cron_schedule == o.cron_schedule &&
-          time_zone == o.time_zone
+          time_zone == o.time_zone &&
+          job_owner_id == o.job_owner_id &&
+          include_only_updated_locales == o.include_only_updated_locales
     end
 
     # @see the `==` method
@@ -204,7 +224,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, trigger, project_ids, job_template_id, status_filters, tags, cron_schedule, time_zone].hash
+      [name, trigger, project_ids, job_template_id, status_filters, tags, cron_schedule, time_zone, job_owner_id, include_only_updated_locales].hash
     end
 
     # Builds the object from hash

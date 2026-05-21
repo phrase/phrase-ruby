@@ -3,10 +3,13 @@ require 'date'
 module Phrase
   class UploadBatch
     # Processing state of the upload batch
-    attr_accessor :state
+    attr_accessor :status
 
     # Indicates whether unmentioned keys will be deleted after processing all uploads in the batch
     attr_accessor :delete_unmentioned_keys
+
+    # Number of uploads attached to this batch.
+    attr_accessor :uploads_count
 
     attr_accessor :created_at
 
@@ -43,8 +46,9 @@ module Phrase
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'state' => :'state',
+        :'status' => :'status',
         :'delete_unmentioned_keys' => :'delete_unmentioned_keys',
+        :'uploads_count' => :'uploads_count',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
         :'project' => :'project',
@@ -56,8 +60,9 @@ module Phrase
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'state' => :'String',
+        :'status' => :'String',
         :'delete_unmentioned_keys' => :'Boolean',
+        :'uploads_count' => :'Integer',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
         :'project' => :'ProjectShort',
@@ -87,12 +92,16 @@ module Phrase
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'state')
-        self.state = attributes[:'state']
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
       end
 
       if attributes.key?(:'delete_unmentioned_keys')
         self.delete_unmentioned_keys = attributes[:'delete_unmentioned_keys']
+      end
+
+      if attributes.key?(:'uploads_count')
+        self.uploads_count = attributes[:'uploads_count']
       end
 
       if attributes.key?(:'created_at')
@@ -128,19 +137,19 @@ module Phrase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      state_validator = EnumAttributeValidator.new('String', ["started", "done"])
-      return false unless state_validator.valid?(@state)
+      status_validator = EnumAttributeValidator.new('String', ["started", "done"])
+      return false unless status_validator.valid?(@status)
       true
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] state Object to be assigned
-    def state=(state)
+    # @param [Object] status Object to be assigned
+    def status=(status)
       validator = EnumAttributeValidator.new('String', ["started", "done"])
-      unless validator.valid?(state)
-        fail ArgumentError, "invalid value for \"state\", must be one of #{validator.allowable_values}."
+      unless validator.valid?(status)
+        fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
-      @state = state
+      @status = status
     end
 
     # Checks equality by comparing each attribute.
@@ -148,8 +157,9 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          state == o.state &&
+          status == o.status &&
           delete_unmentioned_keys == o.delete_unmentioned_keys &&
+          uploads_count == o.uploads_count &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
           project == o.project &&
@@ -166,7 +176,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [state, delete_unmentioned_keys, created_at, updated_at, project, user, uploads].hash
+      [status, delete_unmentioned_keys, uploads_count, created_at, updated_at, project, user, uploads].hash
     end
 
     # Builds the object from hash

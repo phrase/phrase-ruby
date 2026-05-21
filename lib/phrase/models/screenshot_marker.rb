@@ -6,6 +6,7 @@ module Phrase
 
     attr_accessor :presentation
 
+    # Marker presentation style. The default value is `default`. 
     attr_accessor :presentation_type
 
     attr_accessor :created_at
@@ -30,7 +31,7 @@ module Phrase
     def self.openapi_types
       {
         :'id' => :'String',
-        :'presentation' => :'String',
+        :'presentation' => :'ScreenshotMarkerPresentation',
         :'presentation_type' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',

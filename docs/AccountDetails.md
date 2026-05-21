@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **updated_at** | **Time** |  | [optional] 
 **company_logo_url** | **String** |  | [optional] 
 **subscription** | [**Subscription**](Subscription.md) |  | [optional] 
-**roles** | **Array&lt;String&gt;** |  | [optional] 
+**roles** | **Array&lt;String&gt;** | Roles the requesting user holds in the account.  | [optional] 
 
 ## Code Sample
 

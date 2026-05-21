@@ -135,6 +135,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
@@ -296,6 +298,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
@@ -377,6 +381,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
@@ -586,8 +592,8 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :query Search query for comment messages
     # @option opts [Array<String>] :locale_ids Search comments by their assigned locales
-    # @option opts [Array<String>] :filters Specify the filter for the comments
-    # @option opts [String] :order Order direction. Can be one of: asc, desc.
+    # @option opts [Array<String>] :filters Specify the filter for the comments. Supported values are &#x60;read&#x60; and &#x60;unread&#x60;. Combine both to return all comments (read + unread) without filtering.
+    # @option opts [String] :order Order direction. Defaults to &#x60;desc&#x60;. Values other than &#x60;asc&#x60; and &#x60;desc&#x60; fall back to &#x60;desc&#x60;.
     # @return [Array<Comment>]
     def comments_list(project_id, key_id, opts = {})
       data, _status_code, _headers = comments_list_with_http_info(project_id, key_id, opts)
@@ -605,8 +611,8 @@ module Phrase
     # @option opts [String] :branch specify the branch to use
     # @option opts [String] :query Search query for comment messages
     # @option opts [Array<String>] :locale_ids Search comments by their assigned locales
-    # @option opts [Array<String>] :filters Specify the filter for the comments
-    # @option opts [String] :order Order direction. Can be one of: asc, desc.
+    # @option opts [Array<String>] :filters Specify the filter for the comments. Supported values are &#x60;read&#x60; and &#x60;unread&#x60;. Combine both to return all comments (read + unread) without filtering.
+    # @option opts [String] :order Order direction. Defaults to &#x60;desc&#x60;. Values other than &#x60;asc&#x60; and &#x60;desc&#x60; fall back to &#x60;desc&#x60;.
     # @return [Array<(Response<(Array<Comment>)>, Integer, Hash)>] Response<(Array<Comment>)> data, response status code and response headers
     def comments_list_with_http_info(project_id, key_id, opts = {})
       if @api_client.config.debugging
@@ -619,6 +625,14 @@ module Phrase
       # verify the required parameter 'key_id' is set
       if @api_client.config.client_side_validation && key_id.nil?
         fail ArgumentError, "Missing the required parameter 'key_id' when calling CommentsApi.comments_list"
+      end
+      allowable_values = ["read", "unread"]
+      if @api_client.config.client_side_validation && opts[:'filters'] && !opts[:'filters'].all? { |item| allowable_values.include?(item) }
+        fail ArgumentError, "invalid value for \"filters\", must include one of #{allowable_values}"
+      end
+      allowable_values = ["asc", "desc"]
+      if @api_client.config.client_side_validation && opts[:'order'] && !allowable_values.include?(opts[:'order'])
+        fail ArgumentError, "invalid value for \"order\", must be one of #{allowable_values}"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{key_id}/comments'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'key_id' + '}', CGI.escape(key_id.to_s))

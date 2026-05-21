@@ -102,7 +102,7 @@ describe 'JobsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [String] :branch specify the branch to use
-  # @return [nil]
+  # @return [JobDetails]
   describe 'job_lock test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -164,7 +164,7 @@ describe 'JobsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [String] :branch specify the branch to use
-  # @return [nil]
+  # @return [JobDetails]
   describe 'job_unlock test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -217,6 +217,8 @@ describe 'JobsApi' do
   # @option opts [String] :owned_by filter by user owning job
   # @option opts [String] :assigned_to filter by user assigned to job
   # @option opts [String] :state filter by state of job; valid states are: &#x60;draft&#x60;, &#x60;in_progress&#x60;, &#x60;completed&#x60;
+  # @option opts [Array<String>] :states Filter by multiple job states at once. Accepted values are the same as &#x60;state&#x60;. When supplied, &#x60;state&#x60; is ignored. Rejected with &#x60;400 Bad Request&#x60; if any value is unknown.
+  # @option opts [String] :key_id Filter to jobs that include the translation key identified by this code (matches via the job&#39;s tags).
   # @option opts [String] :updated_since filter by jobs updated since given date
   # @return [Array<Job>]
   describe 'jobs_list test' do

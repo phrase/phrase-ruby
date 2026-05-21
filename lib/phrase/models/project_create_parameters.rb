@@ -74,8 +74,54 @@ module Phrase
     # (Optional) Requires autotranslate_enabled to be true
     attr_accessor :autotranslate_overwrite_unverified_translations
 
+    # (Optional) Enable autocomplete-job behavior so that newly created keys and locales are automatically added to in-progress jobs.
+    attr_accessor :autocomplete_job_enabled
+
+    # (Optional) When enabled, translations are locked once a job moves into review.
+    attr_accessor :job_locking_enabled
+
+    # (Optional) Enable Smart Suggest for the project. Defaults to `true` when omitted.
+    attr_accessor :smart_suggest_enabled
+
+    # (Optional) Allow Smart Suggest to source suggestions from the project glossary. Defaults to `true` when omitted.
+    attr_accessor :smart_suggest_use_glossary
+
+    # (Optional) Allow Smart Suggest to source suggestions from machine translation. Defaults to `true` when omitted.
+    attr_accessor :smart_suggest_use_machine_translation
+
+    # (Optional) Collation used when sorting translation keys alphabetically. Defaults to `unicode_ci` when omitted.
+    attr_accessor :translation_keys_sort_collation
+
+    # (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [`file_encoding`](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads.
+    attr_accessor :default_encoding
+
+    # (Optional) CLDR plural-rule version used by the project.
+    attr_accessor :cldr_version
+
     # (Optional) List of placeholder styles enabled for the project.
     attr_accessor :placeholder_styles
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -104,6 +150,14 @@ module Phrase
         :'autotranslate_use_machine_translation' => :'autotranslate_use_machine_translation',
         :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
         :'autotranslate_overwrite_unverified_translations' => :'autotranslate_overwrite_unverified_translations',
+        :'autocomplete_job_enabled' => :'autocomplete_job_enabled',
+        :'job_locking_enabled' => :'job_locking_enabled',
+        :'smart_suggest_enabled' => :'smart_suggest_enabled',
+        :'smart_suggest_use_glossary' => :'smart_suggest_use_glossary',
+        :'smart_suggest_use_machine_translation' => :'smart_suggest_use_machine_translation',
+        :'translation_keys_sort_collation' => :'translation_keys_sort_collation',
+        :'default_encoding' => :'default_encoding',
+        :'cldr_version' => :'cldr_version',
         :'placeholder_styles' => :'placeholder_styles'
       }
     end
@@ -135,6 +189,14 @@ module Phrase
         :'autotranslate_use_machine_translation' => :'Boolean',
         :'autotranslate_use_translation_memory' => :'Boolean',
         :'autotranslate_overwrite_unverified_translations' => :'Boolean',
+        :'autocomplete_job_enabled' => :'Boolean',
+        :'job_locking_enabled' => :'Boolean',
+        :'smart_suggest_enabled' => :'Boolean',
+        :'smart_suggest_use_glossary' => :'Boolean',
+        :'smart_suggest_use_machine_translation' => :'Boolean',
+        :'translation_keys_sort_collation' => :'String',
+        :'default_encoding' => :'String',
+        :'cldr_version' => :'String',
         :'placeholder_styles' => :'Array<String>'
       }
     end
@@ -256,6 +318,38 @@ module Phrase
         self.autotranslate_overwrite_unverified_translations = attributes[:'autotranslate_overwrite_unverified_translations']
       end
 
+      if attributes.key?(:'autocomplete_job_enabled')
+        self.autocomplete_job_enabled = attributes[:'autocomplete_job_enabled']
+      end
+
+      if attributes.key?(:'job_locking_enabled')
+        self.job_locking_enabled = attributes[:'job_locking_enabled']
+      end
+
+      if attributes.key?(:'smart_suggest_enabled')
+        self.smart_suggest_enabled = attributes[:'smart_suggest_enabled']
+      end
+
+      if attributes.key?(:'smart_suggest_use_glossary')
+        self.smart_suggest_use_glossary = attributes[:'smart_suggest_use_glossary']
+      end
+
+      if attributes.key?(:'smart_suggest_use_machine_translation')
+        self.smart_suggest_use_machine_translation = attributes[:'smart_suggest_use_machine_translation']
+      end
+
+      if attributes.key?(:'translation_keys_sort_collation')
+        self.translation_keys_sort_collation = attributes[:'translation_keys_sort_collation']
+      end
+
+      if attributes.key?(:'default_encoding')
+        self.default_encoding = attributes[:'default_encoding']
+      end
+
+      if attributes.key?(:'cldr_version')
+        self.cldr_version = attributes[:'cldr_version']
+      end
+
       if attributes.key?(:'placeholder_styles')
         if (value = attributes[:'placeholder_styles']).is_a?(Array)
           self.placeholder_styles = value
@@ -278,7 +372,19 @@ module Phrase
     # @return true if the model is valid
     def valid?
       return false if @name.nil?
+      default_encoding_validator = EnumAttributeValidator.new('String', ["UTF-8", "UTF-16", "UTF-16BE", "UTF-16LE", "ISO-8859-1"])
+      return false unless default_encoding_validator.valid?(@default_encoding)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] default_encoding Object to be assigned
+    def default_encoding=(default_encoding)
+      validator = EnumAttributeValidator.new('String', ["UTF-8", "UTF-16", "UTF-16BE", "UTF-16LE", "ISO-8859-1"])
+      unless validator.valid?(default_encoding)
+        fail ArgumentError, "invalid value for \"default_encoding\", must be one of #{validator.allowable_values}."
+      end
+      @default_encoding = default_encoding
     end
 
     # Checks equality by comparing each attribute.
@@ -310,6 +416,14 @@ module Phrase
           autotranslate_use_machine_translation == o.autotranslate_use_machine_translation &&
           autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
           autotranslate_overwrite_unverified_translations == o.autotranslate_overwrite_unverified_translations &&
+          autocomplete_job_enabled == o.autocomplete_job_enabled &&
+          job_locking_enabled == o.job_locking_enabled &&
+          smart_suggest_enabled == o.smart_suggest_enabled &&
+          smart_suggest_use_glossary == o.smart_suggest_use_glossary &&
+          smart_suggest_use_machine_translation == o.smart_suggest_use_machine_translation &&
+          translation_keys_sort_collation == o.translation_keys_sort_collation &&
+          default_encoding == o.default_encoding &&
+          cldr_version == o.cldr_version &&
           placeholder_styles == o.placeholder_styles
     end
 
@@ -322,7 +436,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, main_format, media, shares_translation_memory, project_image, remove_project_image, account_id, point_of_contact, source_project_id, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, placeholder_styles].hash
+      [name, main_format, media, shares_translation_memory, project_image, remove_project_image, account_id, point_of_contact, source_project_id, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, autocomplete_job_enabled, job_locking_enabled, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation, translation_keys_sort_collation, default_encoding, cldr_version, placeholder_styles].hash
     end
 
     # Builds the object from hash

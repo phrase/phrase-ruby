@@ -10,11 +10,11 @@ module Phrase
 
     attr_accessor :platforms
 
-    attr_accessor :locales
-
-    attr_accessor :releases
+    attr_accessor :release_count
 
     attr_accessor :created_at
+
+    attr_accessor :updated_at
 
     attr_accessor :deleted_at
 
@@ -25,9 +25,9 @@ module Phrase
         :'name' => :'name',
         :'project' => :'project',
         :'platforms' => :'platforms',
-        :'locales' => :'locales',
-        :'releases' => :'releases',
+        :'release_count' => :'release_count',
         :'created_at' => :'created_at',
+        :'updated_at' => :'updated_at',
         :'deleted_at' => :'deleted_at'
       }
     end
@@ -39,9 +39,9 @@ module Phrase
         :'name' => :'String',
         :'project' => :'ProjectShort',
         :'platforms' => :'Array<String>',
-        :'locales' => :'Array<LocalePreview>',
-        :'releases' => :'Array<ReleasePreview>',
+        :'release_count' => :'Integer',
         :'created_at' => :'DateTime',
+        :'updated_at' => :'DateTime',
         :'deleted_at' => :'DateTime'
       }
     end
@@ -49,6 +49,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'deleted_at'
       ])
     end
 
@@ -85,20 +86,16 @@ module Phrase
         end
       end
 
-      if attributes.key?(:'locales')
-        if (value = attributes[:'locales']).is_a?(Array)
-          self.locales = value
-        end
-      end
-
-      if attributes.key?(:'releases')
-        if (value = attributes[:'releases']).is_a?(Array)
-          self.releases = value
-        end
+      if attributes.key?(:'release_count')
+        self.release_count = attributes[:'release_count']
       end
 
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
+      end
+
+      if attributes.key?(:'updated_at')
+        self.updated_at = attributes[:'updated_at']
       end
 
       if attributes.key?(:'deleted_at')
@@ -128,9 +125,9 @@ module Phrase
           name == o.name &&
           project == o.project &&
           platforms == o.platforms &&
-          locales == o.locales &&
-          releases == o.releases &&
+          release_count == o.release_count &&
           created_at == o.created_at &&
+          updated_at == o.updated_at &&
           deleted_at == o.deleted_at
     end
 
@@ -143,7 +140,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, project, platforms, locales, releases, created_at, deleted_at].hash
+      [id, name, project, platforms, release_count, created_at, updated_at, deleted_at].hash
     end
 
     # Builds the object from hash

@@ -8,6 +8,12 @@ module Phrase
 
     attr_accessor :briefing
 
+    # When `true`, jobs created from this template are auto-translated on creation. Maps to the `autotranslate` field on the request body. 
+    attr_accessor :autotranslate_enabled
+
+    # Optional. ID of the source locale used by jobs created from this template. When omitted, the project's default source locale is used. 
+    attr_accessor :source_locale_id
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -18,6 +24,8 @@ module Phrase
         :'id' => :'id',
         :'name' => :'name',
         :'briefing' => :'briefing',
+        :'autotranslate_enabled' => :'autotranslate_enabled',
+        :'source_locale_id' => :'source_locale_id',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at'
       }
@@ -29,6 +37,8 @@ module Phrase
         :'id' => :'String',
         :'name' => :'String',
         :'briefing' => :'String',
+        :'autotranslate_enabled' => :'Boolean',
+        :'source_locale_id' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }
@@ -37,6 +47,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'source_locale_id',
       ])
     end
 
@@ -65,6 +76,14 @@ module Phrase
 
       if attributes.key?(:'briefing')
         self.briefing = attributes[:'briefing']
+      end
+
+      if attributes.key?(:'autotranslate_enabled')
+        self.autotranslate_enabled = attributes[:'autotranslate_enabled']
+      end
+
+      if attributes.key?(:'source_locale_id')
+        self.source_locale_id = attributes[:'source_locale_id']
       end
 
       if attributes.key?(:'created_at')
@@ -97,6 +116,8 @@ module Phrase
           id == o.id &&
           name == o.name &&
           briefing == o.briefing &&
+          autotranslate_enabled == o.autotranslate_enabled &&
+          source_locale_id == o.source_locale_id &&
           created_at == o.created_at &&
           updated_at == o.updated_at
     end
@@ -110,7 +131,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, created_at, updated_at].hash
+      [id, name, briefing, autotranslate_enabled, source_locale_id, created_at, updated_at].hash
     end
 
     # Builds the object from hash

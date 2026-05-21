@@ -34,7 +34,11 @@ module Phrase
 
     attr_accessor :keys
 
+    # Returned only when `include_annotations=true` is supplied on the request.
     attr_accessor :annotations
+
+    # `true` if the job has been locked by the project's job-locking workflow (translations attached to the job are read-only until the job advances). 
+    attr_accessor :locked
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -55,7 +59,8 @@ module Phrase
         :'source_locale' => :'source_locale',
         :'locales' => :'locales',
         :'keys' => :'keys',
-        :'annotations' => :'annotations'
+        :'annotations' => :'annotations',
+        :'locked' => :'locked'
       }
     end
 
@@ -78,7 +83,8 @@ module Phrase
         :'source_locale' => :'LocalePreview',
         :'locales' => :'Array<LocalePreview>',
         :'keys' => :'Array<KeyPreview>',
-        :'annotations' => :'Array<JobAnnotationShort>'
+        :'annotations' => :'Array<JobAnnotationShort>',
+        :'locked' => :'Boolean'
       }
     end
 
@@ -184,6 +190,10 @@ module Phrase
           self.annotations = value
         end
       end
+
+      if attributes.key?(:'locked')
+        self.locked = attributes[:'locked']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -220,7 +230,8 @@ module Phrase
           source_locale == o.source_locale &&
           locales == o.locales &&
           keys == o.keys &&
-          annotations == o.annotations
+          annotations == o.annotations &&
+          locked == o.locked
     end
 
     # @see the `==` method
@@ -232,7 +243,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, owner, job_tag_name, source_translations_updated_at, source_locale, locales, keys, annotations].hash
+      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, owner, job_tag_name, source_translations_updated_at, source_locale, locales, keys, annotations, locked].hash
     end
 
     # Builds the object from hash

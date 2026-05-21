@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **updated_at** | **Time** |  | [optional] 
 **accepted_at** | **Time** |  | [optional] 
 **spaces** | [**Array&lt;Space&gt;**](Space.md) |  | [optional] 
-**project_role** | [**Array&lt;MemberProjectDetailProjectRolesInner&gt;**](MemberProjectDetailProjectRolesInner.md) |  | [optional] 
+**project_roles** | [**Array&lt;MemberProjectDetailProjectRolesInner&gt;**](MemberProjectDetailProjectRolesInner.md) | Per-project roles assigned to the invitee.  | [optional] 
 
 ## Code Sample
 
@@ -39,7 +39,7 @@ instance = Phrase::Invitation.new(id: null,
                                  updated_at: null,
                                  accepted_at: null,
                                  spaces: null,
-                                 project_role: null)
+                                 project_roles: null)
 ```
 
 

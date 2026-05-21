@@ -30,7 +30,8 @@ module Phrase
 
     attr_accessor :spaces
 
-    attr_accessor :project_role
+    # Per-project roles assigned to the invitee. 
+    attr_accessor :project_roles
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -49,7 +50,7 @@ module Phrase
         :'updated_at' => :'updated_at',
         :'accepted_at' => :'accepted_at',
         :'spaces' => :'spaces',
-        :'project_role' => :'project_role'
+        :'project_roles' => :'project_roles'
       }
     end
 
@@ -70,7 +71,7 @@ module Phrase
         :'updated_at' => :'DateTime',
         :'accepted_at' => :'DateTime',
         :'spaces' => :'Array<Space>',
-        :'project_role' => :'Array<MemberProjectDetailProjectRolesInner>'
+        :'project_roles' => :'Array<MemberProjectDetailProjectRolesInner>'
       }
     end
 
@@ -163,9 +164,9 @@ module Phrase
         end
       end
 
-      if attributes.key?(:'project_role')
-        if (value = attributes[:'project_role']).is_a?(Array)
-          self.project_role = value
+      if attributes.key?(:'project_roles')
+        if (value = attributes[:'project_roles']).is_a?(Array)
+          self.project_roles = value
         end
       end
     end
@@ -202,7 +203,7 @@ module Phrase
           updated_at == o.updated_at &&
           accepted_at == o.accepted_at &&
           spaces == o.spaces &&
-          project_role == o.project_role
+          project_roles == o.project_roles
     end
 
     # @see the `==` method
@@ -214,7 +215,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, email, role, state, projects, locales, teams, default_locale_codes, permissions, locale_ids, created_at, updated_at, accepted_at, spaces, project_role].hash
+      [id, email, role, state, projects, locales, teams, default_locale_codes, permissions, locale_ids, created_at, updated_at, accepted_at, spaces, project_roles].hash
     end
 
     # Builds the object from hash

@@ -35,18 +35,30 @@ describe 'StyleguideUpdateParameters' do
   describe 'test attribute "target_audience"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["not_specified", "children", "teenager", "young_adults", "adults", "old_adults"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.target_audience = value }.not_to raise_error
+      # end
     end
   end
 
   describe 'test attribute "grammatical_person"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["not_specified", "first_person_singular", "second_person_singular", "third_person_singular_masculine", "third_person_singular_feminine", "third_person_singular_neuter", "first_person_plural", "second_person_plural", "third_person_plural"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.grammatical_person = value }.not_to raise_error
+      # end
     end
   end
 
   describe 'test attribute "vocabulary_type"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["not_specified", "popular", "technical", "fictional"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.vocabulary_type = value }.not_to raise_error
+      # end
     end
   end
 

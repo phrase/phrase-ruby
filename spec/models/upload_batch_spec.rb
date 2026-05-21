@@ -20,17 +20,23 @@ describe 'UploadBatch' do
       expect(@instance).to be_instance_of(Phrase::UploadBatch)
     end
   end
-  describe 'test attribute "state"' do
+  describe 'test attribute "status"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
       # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["started", "done"])
       # validator.allowable_values.each do |value|
-      #   expect { @instance.state = value }.not_to raise_error
+      #   expect { @instance.status = value }.not_to raise_error
       # end
     end
   end
 
   describe 'test attribute "delete_unmentioned_keys"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "uploads_count"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

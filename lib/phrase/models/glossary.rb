@@ -8,6 +8,8 @@ module Phrase
 
     attr_accessor :projects
 
+    attr_accessor :spaces
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -18,6 +20,7 @@ module Phrase
         :'id' => :'id',
         :'name' => :'name',
         :'projects' => :'projects',
+        :'spaces' => :'spaces',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at'
       }
@@ -29,6 +32,7 @@ module Phrase
         :'id' => :'String',
         :'name' => :'String',
         :'projects' => :'Array<ProjectShort>',
+        :'spaces' => :'Array<Space>',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }
@@ -69,6 +73,12 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'spaces')
+        if (value = attributes[:'spaces']).is_a?(Array)
+          self.spaces = value
+        end
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -99,6 +109,7 @@ module Phrase
           id == o.id &&
           name == o.name &&
           projects == o.projects &&
+          spaces == o.spaces &&
           created_at == o.created_at &&
           updated_at == o.updated_at
     end
@@ -112,7 +123,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, projects, created_at, updated_at].hash
+      [id, name, projects, spaces, created_at, updated_at].hash
     end
 
     # Builds the object from hash

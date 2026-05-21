@@ -34,6 +34,7 @@ module Phrase
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     # @option opts [Boolean] :tag_only_affected_keys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; (default to false)
     # @option opts [String] :translation_key_prefix This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
+    # @option opts [Boolean] :skip_automated_job_creation When &#x60;true&#x60;, the automation rules for the project will not fire for this upload, so no jobs are created as a side effect of importing this file. Defaults to &#x60;false&#x60;.  (default to false)
     # @return [Upload]
     def upload_create(project_id, file, file_format, locale_id, opts = {})
       data, _status_code, _headers = upload_create_with_http_info(project_id, file, file_format, locale_id, opts)
@@ -67,6 +68,7 @@ module Phrase
     # @option opts [Boolean] :mark_reviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     # @option opts [Boolean] :tag_only_affected_keys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60;
     # @option opts [String] :translation_key_prefix This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
+    # @option opts [Boolean] :skip_automated_job_creation When &#x60;true&#x60;, the automation rules for the project will not fire for this upload, so no jobs are created as a side effect of importing this file. Defaults to &#x60;false&#x60;. 
     # @return [Array<(Response<(Upload)>, Integer, Hash)>] Response<(Upload)> data, response status code and response headers
     def upload_create_with_http_info(project_id, file, file_format, locale_id, opts = {})
       if @api_client.config.debugging
@@ -126,6 +128,7 @@ module Phrase
       form_params['mark_reviewed'] = opts[:'mark_reviewed'] if !opts[:'mark_reviewed'].nil?
       form_params['tag_only_affected_keys'] = opts[:'tag_only_affected_keys'] if !opts[:'tag_only_affected_keys'].nil?
       form_params['translation_key_prefix'] = opts[:'translation_key_prefix'] if !opts[:'translation_key_prefix'].nil?
+      form_params['skip_automated_job_creation'] = opts[:'skip_automated_job_creation'] if !opts[:'skip_automated_job_creation'].nil?
 
       # http body (model)
       post_body = opts[:body] 

@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **tags** | **Array&lt;String&gt;** | used to filter which keys are added to jobs | [optional] 
 **cron_schedule** | **String** | along with time_zone, specifies when the scheduled automation is supposed to run | [optional] 
 **time_zone** | **String** | along with cron_schedule, specifies when the scheduled automation is supposed to run | [optional] 
+**job_owner_id** | **String** | User ID of the job owner that newly created jobs are assigned to.  | [optional] 
+**include_only_updated_locales** | **Boolean** | When &#x60;true&#x60;, the automation only acts on locales that changed since its last run. Defaults to &#x60;false&#x60;.  | [optional] 
 
 ## Code Sample
 
@@ -25,7 +27,9 @@ instance = Phrase::AutomationsCreateParameters.new(name: Scheduled Job Automatio
                                  status_filters: null,
                                  tags: [&quot;myTag&quot;],
                                  cron_schedule: 00 13 * * 1,2,
-                                 time_zone: GMT)
+                                 time_zone: GMT,
+                                 job_owner_id: abcd1234abcd1234abcd1234abcd1234,
+                                 include_only_updated_locales: false)
 ```
 
 

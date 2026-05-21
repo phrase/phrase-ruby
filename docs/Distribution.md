@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 **platforms** | **Array&lt;String&gt;** |  | [optional] 
-**locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
-**releases** | [**Array&lt;ReleasePreview&gt;**](ReleasePreview.md) |  | [optional] 
+**release_count** | **Integer** |  | [optional] 
 **created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 **deleted_at** | **Time** |  | [optional] 
 
 ## Code Sample
@@ -22,9 +22,9 @@ instance = Phrase::Distribution.new(id: null,
                                  name: null,
                                  project: null,
                                  platforms: null,
-                                 locales: null,
-                                 releases: null,
+                                 release_count: null,
                                  created_at: null,
+                                 updated_at: null,
                                  deleted_at: null)
 ```
 

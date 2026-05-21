@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **projects** | [**Array&lt;ProjectShort&gt;**](ProjectShort.md) |  | [optional] 
+**spaces** | [**Array&lt;Space&gt;**](Space.md) |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
 
@@ -18,6 +19,7 @@ require 'Phrase'
 instance = Phrase::Glossary.new(id: null,
                                  name: null,
                                  projects: null,
+                                 spaces: null,
                                  created_at: null,
                                  updated_at: null)
 ```

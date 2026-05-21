@@ -1,24 +1,28 @@
 require 'date'
 
 module Phrase
-  class CustomMetadataPropertyCreate422Response
-    attr_accessor :message
+  class DocumentDelete422ResponseErrorsInner
+    attr_accessor :resource
 
-    attr_accessor :errors
+    attr_accessor :field
+
+    attr_accessor :message
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'message' => :'message',
-        :'errors' => :'errors'
+        :'resource' => :'resource',
+        :'field' => :'field',
+        :'message' => :'message'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'message' => :'String',
-        :'errors' => :'Array<CustomMetadataPropertyCreate422ResponseErrorsInner>'
+        :'resource' => :'String',
+        :'field' => :'String',
+        :'message' => :'String'
       }
     end
 
@@ -32,25 +36,27 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::CustomMetadataPropertyCreate422Response` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::DocumentDelete422ResponseErrorsInner` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::CustomMetadataPropertyCreate422Response`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::DocumentDelete422ResponseErrorsInner`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'message')
-        self.message = attributes[:'message']
+      if attributes.key?(:'resource')
+        self.resource = attributes[:'resource']
       end
 
-      if attributes.key?(:'errors')
-        if (value = attributes[:'errors']).is_a?(Array)
-          self.errors = value
-        end
+      if attributes.key?(:'field')
+        self.field = attributes[:'field']
+      end
+
+      if attributes.key?(:'message')
+        self.message = attributes[:'message']
       end
     end
 
@@ -72,8 +78,9 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          message == o.message &&
-          errors == o.errors
+          resource == o.resource &&
+          field == o.field &&
+          message == o.message
     end
 
     # @see the `==` method
@@ -85,7 +92,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [message, errors].hash
+      [resource, field, message].hash
     end
 
     # Builds the object from hash

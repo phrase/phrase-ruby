@@ -14,6 +14,8 @@ module Phrase
 
     attr_accessor :translations
 
+    attr_accessor :glossary
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -27,6 +29,7 @@ module Phrase
         :'translatable' => :'translatable',
         :'case_sensitive' => :'case_sensitive',
         :'translations' => :'translations',
+        :'glossary' => :'glossary',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at'
       }
@@ -41,6 +44,7 @@ module Phrase
         :'translatable' => :'Boolean',
         :'case_sensitive' => :'Boolean',
         :'translations' => :'Array<GlossaryTermTranslation>',
+        :'glossary' => :'GlossaryTermGlossary',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }
@@ -93,6 +97,10 @@ module Phrase
         end
       end
 
+      if attributes.key?(:'glossary')
+        self.glossary = attributes[:'glossary']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -126,6 +134,7 @@ module Phrase
           translatable == o.translatable &&
           case_sensitive == o.case_sensitive &&
           translations == o.translations &&
+          glossary == o.glossary &&
           created_at == o.created_at &&
           updated_at == o.updated_at
     end
@@ -139,7 +148,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, term, description, translatable, case_sensitive, translations, created_at, updated_at].hash
+      [id, term, description, translatable, case_sensitive, translations, glossary, created_at, updated_at].hash
     end
 
     # Builds the object from hash

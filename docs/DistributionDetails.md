@@ -1,4 +1,4 @@
-# Phrase::DistributionPreview
+# Phrase::DistributionDetails
 
 ## Properties
 
@@ -10,20 +10,26 @@ Name | Type | Description | Notes
 **platforms** | **Array&lt;String&gt;** |  | [optional] 
 **release_count** | **Integer** |  | [optional] 
 **created_at** | **Time** |  | [optional] 
+**updated_at** | **Time** |  | [optional] 
 **deleted_at** | **Time** |  | [optional] 
+**locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
+**releases** | [**Array&lt;ReleasePreview&gt;**](ReleasePreview.md) |  | [optional] 
 
 ## Code Sample
 
 ```ruby
 require 'Phrase'
 
-instance = Phrase::DistributionPreview.new(id: null,
+instance = Phrase::DistributionDetails.new(id: null,
                                  name: null,
                                  project: null,
                                  platforms: null,
                                  release_count: null,
                                  created_at: null,
-                                 deleted_at: null)
+                                 updated_at: null,
+                                 deleted_at: null,
+                                 locales: null,
+                                 releases: null)
 ```
 
 

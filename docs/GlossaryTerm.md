@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **translatable** | **Boolean** |  | [optional] 
 **case_sensitive** | **Boolean** |  | [optional] 
 **translations** | [**Array&lt;GlossaryTermTranslation&gt;**](GlossaryTermTranslation.md) |  | [optional] 
+**glossary** | [**GlossaryTermGlossary**](GlossaryTermGlossary.md) |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
 
@@ -24,6 +25,7 @@ instance = Phrase::GlossaryTerm.new(id: null,
                                  translatable: null,
                                  case_sensitive: null,
                                  translations: null,
+                                 glossary: null,
                                  created_at: null,
                                  updated_at: null)
 ```

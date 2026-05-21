@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **briefing** | **String** |  | [optional] 
 **project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 **branch** | [**Branch**](Branch.md) |  | [optional] 
+**autotranslate_enabled** | **Boolean** | When &#x60;true&#x60;, jobs created from this template are auto-translated on creation.  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
 **owner** | [**UserPreview**](UserPreview.md) |  | [optional] 
@@ -25,6 +26,7 @@ instance = Phrase::JobTemplateDetails.new(id: null,
                                  briefing: null,
                                  project: null,
                                  branch: null,
+                                 autotranslate_enabled: null,
                                  created_at: null,
                                  updated_at: null,
                                  owner: null,

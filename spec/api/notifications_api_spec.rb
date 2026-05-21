@@ -28,6 +28,7 @@ describe 'NotificationsApi' do
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
   # @option opts [Boolean] :unseen Include only unseen notifications
+  # @option opts [Integer] :last_days Restrict the results to notifications created within the last N days. Coerced to integer; non-numeric values resolve to 0 (returning nothing).
   # @return [Array<Notification>]
   describe 'notifications_list test' do
     it 'should work' do

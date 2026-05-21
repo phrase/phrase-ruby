@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**state** | **String** | Processing state of the upload batch | [optional] 
+**status** | **String** | Processing state of the upload batch | [optional] 
 **delete_unmentioned_keys** | **Boolean** | Indicates whether unmentioned keys will be deleted after processing all uploads in the batch | [optional] 
+**uploads_count** | **Integer** | Number of uploads attached to this batch. | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
 **project** | [**ProjectShort**](.md) |  | [optional] 
@@ -17,8 +18,9 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::UploadBatch.new(state: null,
+instance = Phrase::UploadBatch.new(status: null,
                                  delete_unmentioned_keys: null,
+                                 uploads_count: null,
                                  created_at: null,
                                  updated_at: null,
                                  project: null,

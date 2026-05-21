@@ -143,7 +143,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## comment_mark_check
@@ -275,7 +275,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## comment_mark_unread
@@ -341,7 +341,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## comment_show
@@ -512,8 +512,8 @@ opts = {
   branch: 'my-feature-branch', # String | specify the branch to use
   query: 'Some comment content', # String | Search query for comment messages
   locale_ids: ['inner_example'], # Array<String> | Search comments by their assigned locales
-  filters: ['inner_example'], # Array<String> | Specify the filter for the comments
-  order: 'desc' # String | Order direction. Can be one of: asc, desc.
+  filters: ['read'], # Array<String> | Specify the filter for the comments. Supported values are `read` and `unread`. Combine both to return all comments (read + unread) without filtering.
+  order: 'asc' # String | Order direction. Defaults to `desc`. Values other than `asc` and `desc` fall back to `desc`.
 }
 
 begin
@@ -538,8 +538,8 @@ Name | Type | Description  | Notes
  **branch** | **String**| specify the branch to use | [optional] 
  **query** | **String**| Search query for comment messages | [optional] 
  **locale_ids** | [**Array&lt;String&gt;**](String.md)| Search comments by their assigned locales | [optional] 
- **filters** | [**Array&lt;String&gt;**](String.md)| Specify the filter for the comments | [optional] 
- **order** | **String**| Order direction. Can be one of: asc, desc. | [optional] 
+ **filters** | [**Array&lt;String&gt;**](String.md)| Specify the filter for the comments. Supported values are &#x60;read&#x60; and &#x60;unread&#x60;. Combine both to return all comments (read + unread) without filtering. | [optional] 
+ **order** | **String**| Order direction. Defaults to &#x60;desc&#x60;. Values other than &#x60;asc&#x60; and &#x60;desc&#x60; fall back to &#x60;desc&#x60;. | [optional] 
 
 ### Return type
 

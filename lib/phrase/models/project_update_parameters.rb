@@ -2,7 +2,7 @@ require 'date'
 
 module Phrase
   class ProjectUpdateParameters
-    # Required if the requesting user is a member of multiple accounts. Account ID to specify the actual account the project should be created in.
+    # (Optional) ID of an account the requesting user belongs to. Used only to disambiguate the request context; the project itself cannot be moved between accounts through this endpoint. 
     attr_accessor :account_id
 
     # (Optional) Name of the project
@@ -77,6 +77,27 @@ module Phrase
     # (Optional) List of placeholder styles enabled for the project.
     attr_accessor :placeholder_styles
 
+    # (Optional) Enable autocomplete-job behavior so that newly created keys and locales are automatically added to in-progress jobs.
+    attr_accessor :autocomplete_job_enabled
+
+    # (Optional) When enabled, translations are locked once a job moves into review.
+    attr_accessor :job_locking_enabled
+
+    # (Optional) Enable Smart Suggest for the project.
+    attr_accessor :smart_suggest_enabled
+
+    # (Optional) Allow Smart Suggest to source suggestions from the project glossary.
+    attr_accessor :smart_suggest_use_glossary
+
+    # (Optional) Allow Smart Suggest to source suggestions from machine translation.
+    attr_accessor :smart_suggest_use_machine_translation
+
+    # (Optional) Collation used when sorting translation keys alphabetically.
+    attr_accessor :translation_keys_sort_collation
+
+    # (Optional) CLDR plural-rule version used by the project.
+    attr_accessor :cldr_version
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -126,7 +147,14 @@ module Phrase
         :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
         :'autotranslate_overwrite_unverified_translations' => :'autotranslate_overwrite_unverified_translations',
         :'default_encoding' => :'default_encoding',
-        :'placeholder_styles' => :'placeholder_styles'
+        :'placeholder_styles' => :'placeholder_styles',
+        :'autocomplete_job_enabled' => :'autocomplete_job_enabled',
+        :'job_locking_enabled' => :'job_locking_enabled',
+        :'smart_suggest_enabled' => :'smart_suggest_enabled',
+        :'smart_suggest_use_glossary' => :'smart_suggest_use_glossary',
+        :'smart_suggest_use_machine_translation' => :'smart_suggest_use_machine_translation',
+        :'translation_keys_sort_collation' => :'translation_keys_sort_collation',
+        :'cldr_version' => :'cldr_version'
       }
     end
 
@@ -157,7 +185,14 @@ module Phrase
         :'autotranslate_use_translation_memory' => :'Boolean',
         :'autotranslate_overwrite_unverified_translations' => :'Boolean',
         :'default_encoding' => :'String',
-        :'placeholder_styles' => :'Array<String>'
+        :'placeholder_styles' => :'Array<String>',
+        :'autocomplete_job_enabled' => :'Boolean',
+        :'job_locking_enabled' => :'Boolean',
+        :'smart_suggest_enabled' => :'Boolean',
+        :'smart_suggest_use_glossary' => :'Boolean',
+        :'smart_suggest_use_machine_translation' => :'Boolean',
+        :'translation_keys_sort_collation' => :'String',
+        :'cldr_version' => :'String'
       }
     end
 
@@ -283,6 +318,34 @@ module Phrase
           self.placeholder_styles = value
         end
       end
+
+      if attributes.key?(:'autocomplete_job_enabled')
+        self.autocomplete_job_enabled = attributes[:'autocomplete_job_enabled']
+      end
+
+      if attributes.key?(:'job_locking_enabled')
+        self.job_locking_enabled = attributes[:'job_locking_enabled']
+      end
+
+      if attributes.key?(:'smart_suggest_enabled')
+        self.smart_suggest_enabled = attributes[:'smart_suggest_enabled']
+      end
+
+      if attributes.key?(:'smart_suggest_use_glossary')
+        self.smart_suggest_use_glossary = attributes[:'smart_suggest_use_glossary']
+      end
+
+      if attributes.key?(:'smart_suggest_use_machine_translation')
+        self.smart_suggest_use_machine_translation = attributes[:'smart_suggest_use_machine_translation']
+      end
+
+      if attributes.key?(:'translation_keys_sort_collation')
+        self.translation_keys_sort_collation = attributes[:'translation_keys_sort_collation']
+      end
+
+      if attributes.key?(:'cldr_version')
+        self.cldr_version = attributes[:'cldr_version']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -339,7 +402,14 @@ module Phrase
           autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
           autotranslate_overwrite_unverified_translations == o.autotranslate_overwrite_unverified_translations &&
           default_encoding == o.default_encoding &&
-          placeholder_styles == o.placeholder_styles
+          placeholder_styles == o.placeholder_styles &&
+          autocomplete_job_enabled == o.autocomplete_job_enabled &&
+          job_locking_enabled == o.job_locking_enabled &&
+          smart_suggest_enabled == o.smart_suggest_enabled &&
+          smart_suggest_use_glossary == o.smart_suggest_use_glossary &&
+          smart_suggest_use_machine_translation == o.smart_suggest_use_machine_translation &&
+          translation_keys_sort_collation == o.translation_keys_sort_collation &&
+          cldr_version == o.cldr_version
     end
 
     # @see the `==` method
@@ -351,7 +421,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id, name, point_of_contact, main_format, media, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, default_encoding, placeholder_styles].hash
+      [account_id, name, point_of_contact, main_format, media, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, default_encoding, placeholder_styles, autocomplete_job_enabled, job_locking_enabled, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation, translation_keys_sort_collation, cldr_version].hash
     end
 
     # Builds the object from hash

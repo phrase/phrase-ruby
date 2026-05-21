@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **progress_percent** | **Integer** |  | [optional] 
 **source_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **target_locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
-**tag** | **String** |  | [optional] 
+**tag_name** | **String** | Name of the tag whose keys are included in the order. | [optional] 
 **styleguide** | [**StyleguidePreview**](StyleguidePreview.md) |  | [optional] 
 **unverify_translations_upon_delivery** | **Boolean** |  | [optional] 
 **quality** | **Boolean** |  | [optional] 
@@ -39,7 +39,7 @@ instance = Phrase::TranslationOrder.new(id: null,
                                  progress_percent: null,
                                  source_locale: null,
                                  target_locales: null,
-                                 tag: null,
+                                 tag_name: null,
                                  styleguide: null,
                                  unverify_translations_upon_delivery: null,
                                  quality: null,

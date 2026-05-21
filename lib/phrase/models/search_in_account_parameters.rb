@@ -14,13 +14,17 @@ module Phrase
     # Number of results per page
     attr_accessor :per_page
 
+    # Limit the search to the given project codes. When omitted, the search spans every project the user can access in this account. 
+    attr_accessor :project_ids
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'query' => :'query',
         :'locale_code' => :'locale_code',
         :'page' => :'page',
-        :'per_page' => :'per_page'
+        :'per_page' => :'per_page',
+        :'project_ids' => :'project_ids'
       }
     end
 
@@ -30,7 +34,8 @@ module Phrase
         :'query' => :'String',
         :'locale_code' => :'String',
         :'page' => :'Integer',
-        :'per_page' => :'Integer'
+        :'per_page' => :'Integer',
+        :'project_ids' => :'Array<String>'
       }
     end
 
@@ -70,6 +75,12 @@ module Phrase
       if attributes.key?(:'per_page')
         self.per_page = attributes[:'per_page']
       end
+
+      if attributes.key?(:'project_ids')
+        if (value = attributes[:'project_ids']).is_a?(Array)
+          self.project_ids = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -93,7 +104,8 @@ module Phrase
           query == o.query &&
           locale_code == o.locale_code &&
           page == o.page &&
-          per_page == o.per_page
+          per_page == o.per_page &&
+          project_ids == o.project_ids
     end
 
     # @see the `==` method
@@ -105,7 +117,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [query, locale_code, page, per_page].hash
+      [query, locale_code, page, per_page, project_ids].hash
     end
 
     # Builds the object from hash

@@ -120,6 +120,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
@@ -224,24 +226,24 @@ module Phrase
     end
 
     # Test a webhook
-    # Perform a test request for a webhook.
+    # Perform a test request for a webhook. Sends a synthetic `test:event` payload to the webhook's `callback_url` and returns the webhook resource. 
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [nil]
+    # @return [Webhook]
     def webhook_test(project_id, id, opts = {})
       data, _status_code, _headers = webhook_test_with_http_info(project_id, id, opts)
       data
     end
 
     # Test a webhook
-    # Perform a test request for a webhook.
+    # Perform a test request for a webhook. Sends a synthetic &#x60;test:event&#x60; payload to the webhook&#39;s &#x60;callback_url&#x60; and returns the webhook resource. 
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response<(Webhook)>, Integer, Hash)>] Response<(Webhook)> data, response status code and response headers
     def webhook_test_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WebhooksApi.webhook_test ...'
@@ -262,6 +264,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
@@ -271,7 +275,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] 
+      return_type = opts[:return_type] || 'Webhook' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

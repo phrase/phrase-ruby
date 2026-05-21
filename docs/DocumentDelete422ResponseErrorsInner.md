@@ -1,4 +1,4 @@
-# Phrase::CustomMetadataPropertyCreate422ResponseErrorsInner
+# Phrase::DocumentDelete422ResponseErrorsInner
 
 ## Properties
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Phrase'
 
-instance = Phrase::CustomMetadataPropertyCreate422ResponseErrorsInner.new(resource: null,
+instance = Phrase::DocumentDelete422ResponseErrorsInner.new(resource: null,
                                  field: null,
                                  message: null)
 ```

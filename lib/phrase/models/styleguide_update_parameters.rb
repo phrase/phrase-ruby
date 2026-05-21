@@ -8,13 +8,13 @@ module Phrase
     # Audience description
     attr_accessor :audience
 
-    # Can be one of: not_specified, children, teenager, young_adults, adults, old_adults.
+    # Target audience for the translations.
     attr_accessor :target_audience
 
-    # Can be one of: not_specified, first_person_singular, second_person_singular, third_person_singular_masculine, third_person_singular_feminine, third_person_singular_neuter, first_person_plural, second_person_plural, third_person_plural.
+    # Preferred grammatical person.
     attr_accessor :grammatical_person
 
-    # Can be one of: not_specified, popular, technical, fictional.
+    # Vocabulary register the translations should use.
     attr_accessor :vocabulary_type
 
     # Description of the business
@@ -40,6 +40,28 @@ module Phrase
 
     # Provide links to sample product pages, FAQ pages, etc. to give the translator a point of reference. You can also provide past translations. Even snippets or short paragraphs are helpful for maintaining consistency.
     attr_accessor :samples
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -163,7 +185,43 @@ module Phrase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      target_audience_validator = EnumAttributeValidator.new('String', ["not_specified", "children", "teenager", "young_adults", "adults", "old_adults"])
+      return false unless target_audience_validator.valid?(@target_audience)
+      grammatical_person_validator = EnumAttributeValidator.new('String', ["not_specified", "first_person_singular", "second_person_singular", "third_person_singular_masculine", "third_person_singular_feminine", "third_person_singular_neuter", "first_person_plural", "second_person_plural", "third_person_plural"])
+      return false unless grammatical_person_validator.valid?(@grammatical_person)
+      vocabulary_type_validator = EnumAttributeValidator.new('String', ["not_specified", "popular", "technical", "fictional"])
+      return false unless vocabulary_type_validator.valid?(@vocabulary_type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] target_audience Object to be assigned
+    def target_audience=(target_audience)
+      validator = EnumAttributeValidator.new('String', ["not_specified", "children", "teenager", "young_adults", "adults", "old_adults"])
+      unless validator.valid?(target_audience)
+        fail ArgumentError, "invalid value for \"target_audience\", must be one of #{validator.allowable_values}."
+      end
+      @target_audience = target_audience
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] grammatical_person Object to be assigned
+    def grammatical_person=(grammatical_person)
+      validator = EnumAttributeValidator.new('String', ["not_specified", "first_person_singular", "second_person_singular", "third_person_singular_masculine", "third_person_singular_feminine", "third_person_singular_neuter", "first_person_plural", "second_person_plural", "third_person_plural"])
+      unless validator.valid?(grammatical_person)
+        fail ArgumentError, "invalid value for \"grammatical_person\", must be one of #{validator.allowable_values}."
+      end
+      @grammatical_person = grammatical_person
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] vocabulary_type Object to be assigned
+    def vocabulary_type=(vocabulary_type)
+      validator = EnumAttributeValidator.new('String', ["not_specified", "popular", "technical", "fictional"])
+      unless validator.valid?(vocabulary_type)
+        fail ArgumentError, "invalid value for \"vocabulary_type\", must be one of #{validator.allowable_values}."
+      end
+      @vocabulary_type = vocabulary_type
     end
 
     # Checks equality by comparing each attribute.

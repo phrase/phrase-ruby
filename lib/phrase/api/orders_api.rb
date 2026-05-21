@@ -203,6 +203,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
@@ -317,6 +319,7 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :translation_id Filter the result to orders that include the given translation. When supplied with a translation code that does not exist, an empty list is returned.
     # @return [Array<TranslationOrder>]
     def orders_list(project_id, opts = {})
       data, _status_code, _headers = orders_list_with_http_info(project_id, opts)
@@ -331,6 +334,7 @@ module Phrase
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @option opts [String] :branch specify the branch to use
+    # @option opts [String] :translation_id Filter the result to orders that include the given translation. When supplied with a translation code that does not exist, an empty list is returned.
     # @return [Array<(Response<(Array<TranslationOrder>)>, Integer, Hash)>] Response<(Array<TranslationOrder>)> data, response status code and response headers
     def orders_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
@@ -348,6 +352,7 @@ module Phrase
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
       query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
+      query_params[:'translation_id'] = opts[:'translation_id'] if !opts[:'translation_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

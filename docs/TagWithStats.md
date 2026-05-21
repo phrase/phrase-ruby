@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
 **keys_count** | **Integer** |  | [optional] 
+**system_tag** | **Boolean** | &#x60;true&#x60; when the tag was created automatically by the system (e.g. for jobs, uploads, or Figma attachments) rather than by a user.  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
 **statistics** | [**Array&lt;TagWithStats1Statistics1&gt;**](TagWithStats1Statistics1.md) |  | [optional] 
@@ -17,6 +18,7 @@ require 'Phrase'
 
 instance = Phrase::TagWithStats.new(name: null,
                                  keys_count: null,
+                                 system_tag: null,
                                  created_at: null,
                                  updated_at: null,
                                  statistics: null)

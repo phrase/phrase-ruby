@@ -143,8 +143,8 @@ describe 'CommentsApi' do
   # @option opts [String] :branch specify the branch to use
   # @option opts [String] :query Search query for comment messages
   # @option opts [Array<String>] :locale_ids Search comments by their assigned locales
-  # @option opts [Array<String>] :filters Specify the filter for the comments
-  # @option opts [String] :order Order direction. Can be one of: asc, desc.
+  # @option opts [Array<String>] :filters Specify the filter for the comments. Supported values are &#x60;read&#x60; and &#x60;unread&#x60;. Combine both to return all comments (read + unread) without filtering.
+  # @option opts [String] :order Order direction. Defaults to &#x60;desc&#x60;. Values other than &#x60;asc&#x60; and &#x60;desc&#x60; fall back to &#x60;desc&#x60;.
   # @return [Array<Comment>]
   describe 'comments_list test' do
     it 'should work' do

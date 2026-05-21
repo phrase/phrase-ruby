@@ -64,12 +64,12 @@ describe 'WebhooksApi' do
 
   # unit tests for webhook_test
   # Test a webhook
-  # Perform a test request for a webhook.
+  # Perform a test request for a webhook. Sends a synthetic &#x60;test:event&#x60; payload to the webhook&#39;s &#x60;callback_url&#x60; and returns the webhook resource. 
   # @param project_id Project ID
   # @param id ID
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [nil]
+  # @return [Webhook]
   describe 'webhook_test test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

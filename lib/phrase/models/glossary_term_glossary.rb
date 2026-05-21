@@ -1,31 +1,17 @@
 require 'date'
 
 module Phrase
-  class DistributionPreview
+  # The glossary this term belongs to.
+  class GlossaryTermGlossary
     attr_accessor :id
 
     attr_accessor :name
-
-    attr_accessor :project
-
-    attr_accessor :platforms
-
-    attr_accessor :release_count
-
-    attr_accessor :created_at
-
-    attr_accessor :deleted_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'name' => :'name',
-        :'project' => :'project',
-        :'platforms' => :'platforms',
-        :'release_count' => :'release_count',
-        :'created_at' => :'created_at',
-        :'deleted_at' => :'deleted_at'
+        :'name' => :'name'
       }
     end
 
@@ -33,12 +19,7 @@ module Phrase
     def self.openapi_types
       {
         :'id' => :'String',
-        :'name' => :'String',
-        :'project' => :'ProjectShort',
-        :'platforms' => :'Array<String>',
-        :'release_count' => :'Integer',
-        :'created_at' => :'DateTime',
-        :'deleted_at' => :'DateTime'
+        :'name' => :'String'
       }
     end
 
@@ -52,13 +33,13 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::DistributionPreview` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::GlossaryTermGlossary` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::DistributionPreview`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::GlossaryTermGlossary`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -69,28 +50,6 @@ module Phrase
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'project')
-        self.project = attributes[:'project']
-      end
-
-      if attributes.key?(:'platforms')
-        if (value = attributes[:'platforms']).is_a?(Array)
-          self.platforms = value
-        end
-      end
-
-      if attributes.key?(:'release_count')
-        self.release_count = attributes[:'release_count']
-      end
-
-      if attributes.key?(:'created_at')
-        self.created_at = attributes[:'created_at']
-      end
-
-      if attributes.key?(:'deleted_at')
-        self.deleted_at = attributes[:'deleted_at']
       end
     end
 
@@ -113,12 +72,7 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          name == o.name &&
-          project == o.project &&
-          platforms == o.platforms &&
-          release_count == o.release_count &&
-          created_at == o.created_at &&
-          deleted_at == o.deleted_at
+          name == o.name
     end
 
     # @see the `==` method
@@ -130,7 +84,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, project, platforms, release_count, created_at, deleted_at].hash
+      [id, name].hash
     end
 
     # Builds the object from hash

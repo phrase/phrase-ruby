@@ -42,6 +42,7 @@ describe 'DocumentsApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+  # @option opts [String] :q Search query. Filters documents by name (case-insensitive substring match).
   # @return [Array<Document>]
   describe 'documents_list test' do
     it 'should work' do

@@ -86,7 +86,7 @@ describe 'TranslationOrder' do
     end
   end
 
-  describe 'test attribute "tag"' do
+  describe 'test attribute "tag_name"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
