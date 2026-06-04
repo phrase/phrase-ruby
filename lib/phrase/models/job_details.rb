@@ -22,6 +22,12 @@ module Phrase
 
     attr_accessor :updated_at
 
+    # The ID of the automation that created this job, or null if the job was created manually.
+    attr_accessor :automation_id
+
+    # The ID of the job template this job was created from, or null if no template was used.
+    attr_accessor :job_template_id
+
     attr_accessor :owner
 
     attr_accessor :job_tag_name
@@ -53,6 +59,8 @@ module Phrase
         :'branch' => :'branch',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
+        :'automation_id' => :'automation_id',
+        :'job_template_id' => :'job_template_id',
         :'owner' => :'owner',
         :'job_tag_name' => :'job_tag_name',
         :'source_translations_updated_at' => :'source_translations_updated_at',
@@ -77,6 +85,8 @@ module Phrase
         :'branch' => :'BranchName',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
+        :'automation_id' => :'String',
+        :'job_template_id' => :'String',
         :'owner' => :'UserPreview',
         :'job_tag_name' => :'String',
         :'source_translations_updated_at' => :'DateTime',
@@ -92,6 +102,8 @@ module Phrase
     def self.openapi_nullable
       Set.new([
         :'due_date',
+        :'automation_id',
+        :'job_template_id',
       ])
     end
 
@@ -155,6 +167,14 @@ module Phrase
 
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
+      end
+
+      if attributes.key?(:'automation_id')
+        self.automation_id = attributes[:'automation_id']
+      end
+
+      if attributes.key?(:'job_template_id')
+        self.job_template_id = attributes[:'job_template_id']
       end
 
       if attributes.key?(:'owner')
@@ -224,6 +244,8 @@ module Phrase
           branch == o.branch &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
+          automation_id == o.automation_id &&
+          job_template_id == o.job_template_id &&
           owner == o.owner &&
           job_tag_name == o.job_tag_name &&
           source_translations_updated_at == o.source_translations_updated_at &&
@@ -243,7 +265,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, owner, job_tag_name, source_translations_updated_at, source_locale, locales, keys, annotations, locked].hash
+      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, automation_id, job_template_id, owner, job_tag_name, source_translations_updated_at, source_locale, locales, keys, annotations, locked].hash
     end
 
     # Builds the object from hash

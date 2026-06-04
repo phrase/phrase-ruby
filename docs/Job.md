@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **branch** | [**BranchName**](BranchName.md) |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
+**automation_id** | **String** | The ID of the automation that created this job, or null if the job was created manually. | [optional] 
+**job_template_id** | **String** | The ID of the job template this job was created from, or null if no template was used. | [optional] 
 
 ## Code Sample
 
@@ -29,7 +31,9 @@ instance = Phrase::Job.new(id: null,
                                  project: null,
                                  branch: null,
                                  created_at: null,
-                                 updated_at: null)
+                                 updated_at: null,
+                                 automation_id: null,
+                                 job_template_id: null)
 ```
 
 

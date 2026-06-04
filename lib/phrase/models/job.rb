@@ -22,6 +22,12 @@ module Phrase
 
     attr_accessor :updated_at
 
+    # The ID of the automation that created this job, or null if the job was created manually.
+    attr_accessor :automation_id
+
+    # The ID of the job template this job was created from, or null if no template was used.
+    attr_accessor :job_template_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -34,7 +40,9 @@ module Phrase
         :'project' => :'project',
         :'branch' => :'branch',
         :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at'
+        :'updated_at' => :'updated_at',
+        :'automation_id' => :'automation_id',
+        :'job_template_id' => :'job_template_id'
       }
     end
 
@@ -50,7 +58,9 @@ module Phrase
         :'project' => :'ProjectShort',
         :'branch' => :'BranchName',
         :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime'
+        :'updated_at' => :'DateTime',
+        :'automation_id' => :'String',
+        :'job_template_id' => :'String'
       }
     end
 
@@ -58,6 +68,8 @@ module Phrase
     def self.openapi_nullable
       Set.new([
         :'due_date',
+        :'automation_id',
+        :'job_template_id'
       ])
     end
 
@@ -115,6 +127,14 @@ module Phrase
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
       end
+
+      if attributes.key?(:'automation_id')
+        self.automation_id = attributes[:'automation_id']
+      end
+
+      if attributes.key?(:'job_template_id')
+        self.job_template_id = attributes[:'job_template_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -144,7 +164,9 @@ module Phrase
           project == o.project &&
           branch == o.branch &&
           created_at == o.created_at &&
-          updated_at == o.updated_at
+          updated_at == o.updated_at &&
+          automation_id == o.automation_id &&
+          job_template_id == o.job_template_id
     end
 
     # @see the `==` method
@@ -156,7 +178,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at].hash
+      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, automation_id, job_template_id].hash
     end
 
     # Builds the object from hash
