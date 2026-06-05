@@ -38,11 +38,14 @@ module Phrase
     # Locale IDs or locale names
     attr_accessor :locale_ids
 
-    # If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires `include_empty_translations` to be set to `true`. Mutually exclusive with `use_locale_fallback`. 
+    # If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires `include_empty_translations` to be set to `true` unless `fallback_for_unverified_translations` is also set to `true`. Mutually exclusive with `use_locale_fallback`. 
     attr_accessor :fallback_locale_id
 
-    # If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Fallback locale is defined in [locale's settings](/en/api/strings/locales/update-a-locale#body-fallback-locale-id). Requires `include_empty_translations` to be set to `true`. Mutually exclusive with `fallback_locale_id`. 
+    # If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Fallback locale is defined in [locale's settings](/en/api/strings/locales/update-a-locale#body-fallback-locale-id). Requires `include_empty_translations` to be set to `true` unless `fallback_for_unverified_translations` is also set to `true`. Mutually exclusive with `fallback_locale_id`. 
     attr_accessor :use_locale_fallback
+
+    # If set to `true`, translations in a non-final state are replaced by the fallback locale's translation at export time. In the simple workflow, \"non-final\" means `unverified`. In the review workflow, it additionally includes `translated` (awaiting review). No stored translations are modified. Requires `fallback_locale_id` or `use_locale_fallback` to be set; a `422` validation error is returned otherwise. 
+    attr_accessor :fallback_for_unverified_translations
 
     # Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a `tag` parameter indicating a specific job.
     attr_accessor :source_locale_id
@@ -70,6 +73,7 @@ module Phrase
         :'locale_ids' => :'locale_ids',
         :'fallback_locale_id' => :'fallback_locale_id',
         :'use_locale_fallback' => :'use_locale_fallback',
+        :'fallback_for_unverified_translations' => :'fallback_for_unverified_translations',
         :'source_locale_id' => :'source_locale_id',
         :'custom_metadata_filters' => :'custom_metadata_filters',
         :'updated_since' => :'updated_since'
@@ -93,6 +97,7 @@ module Phrase
         :'locale_ids' => :'Array<String>',
         :'fallback_locale_id' => :'String',
         :'use_locale_fallback' => :'Boolean',
+        :'fallback_for_unverified_translations' => :'Boolean',
         :'source_locale_id' => :'String',
         :'custom_metadata_filters' => :'Object',
         :'updated_since' => :'String'
@@ -178,6 +183,10 @@ module Phrase
         self.use_locale_fallback = attributes[:'use_locale_fallback']
       end
 
+      if attributes.key?(:'fallback_for_unverified_translations')
+        self.fallback_for_unverified_translations = attributes[:'fallback_for_unverified_translations']
+      end
+
       if attributes.key?(:'source_locale_id')
         self.source_locale_id = attributes[:'source_locale_id']
       end
@@ -228,6 +237,7 @@ module Phrase
           locale_ids == o.locale_ids &&
           fallback_locale_id == o.fallback_locale_id &&
           use_locale_fallback == o.use_locale_fallback &&
+          fallback_for_unverified_translations == o.fallback_for_unverified_translations &&
           source_locale_id == o.source_locale_id &&
           custom_metadata_filters == o.custom_metadata_filters &&
           updated_since == o.updated_since
@@ -242,7 +252,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [file_format, branch, tags, include_empty_translations, exclude_empty_zero_forms, include_translated_keys, keep_notranslate_tags, format_options, encoding, include_unverified_translations, use_last_reviewed_version, locale_ids, fallback_locale_id, use_locale_fallback, source_locale_id, custom_metadata_filters, updated_since].hash
+      [file_format, branch, tags, include_empty_translations, exclude_empty_zero_forms, include_translated_keys, keep_notranslate_tags, format_options, encoding, include_unverified_translations, use_last_reviewed_version, locale_ids, fallback_locale_id, use_locale_fallback, fallback_for_unverified_translations, source_locale_id, custom_metadata_filters, updated_since].hash
     end
 
     # Builds the object from hash
