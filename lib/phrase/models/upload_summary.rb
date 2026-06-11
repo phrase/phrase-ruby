@@ -8,7 +8,7 @@ module Phrase
 
     attr_accessor :translation_keys_updated
 
-    # The number of translation keys in the project that were not mentioned in the upload.  Note: this field is not calculated (and shows 0) if the upload contains more than 10,000 keys. 
+    # The number of translation keys in the project that were not mentioned in the upload.  Note: this field is not calculated (and shows 0) if the upload contains more than 100,000 keys. 
     attr_accessor :translation_keys_unmentioned
 
     attr_accessor :translations_created
