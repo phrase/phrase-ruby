@@ -8,7 +8,7 @@ module Phrase
       @api_client = api_client
     end
     # List formats
-    # Get a handy list of all localization file formats supported in Phrase.
+    # Returns all file formats that Phrase Strings supports. Use the api_name value from each format as the file_format parameter when uploading or downloading locale files. Not every format supports both directions: check the importable and exportable fields before using a format in a workflow. This endpoint does not require authentication and is not subject to rate limiting. 
     # @param [Hash] opts the optional parameters
     # @return [Array<Format>]
     def formats_list(opts = {})
@@ -17,7 +17,7 @@ module Phrase
     end
 
     # List formats
-    # Get a handy list of all localization file formats supported in Phrase.
+    # Returns all file formats that Phrase Strings supports. Use the api_name value from each format as the file_format parameter when uploading or downloading locale files. Not every format supports both directions: check the importable and exportable fields before using a format in a workflow. This endpoint does not require authentication and is not subject to rate limiting. 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Response<(Array<Format>)>, Integer, Hash)>] Response<(Array<Format>)> data, response status code and response headers
     def formats_list_with_http_info(opts = {})

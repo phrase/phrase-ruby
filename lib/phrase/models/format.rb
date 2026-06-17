@@ -2,24 +2,34 @@ require 'date'
 
 module Phrase
   class Format
+    # Human-readable display name of the format.
     attr_accessor :name
 
+    # Identifier used to reference this format in API requests, such as the file_format parameter on the uploads and downloads endpoints.
     attr_accessor :api_name
 
+    # Human-readable summary of the format and its typical use case.
     attr_accessor :description
 
+    # Default file extension associated with this format.
     attr_accessor :extension
 
+    # Default character encoding used when reading or writing files in this format.
     attr_accessor :default_encoding
 
+    # Whether locale files can be imported using this format.
     attr_accessor :importable
 
+    # Whether locale files can be exported using this format.
     attr_accessor :exportable
 
+    # Conventional file path pattern for this format. Contains locale_name as a placeholder for the locale identifier.
     attr_accessor :default_file
 
+    # When true, exported files contain the default locale's content for any key that has no translation in the target locale.
     attr_accessor :renders_default_locale
 
+    # When true, files in this format embed locale information so Phrase can detect the locale automatically on import.
     attr_accessor :includes_locale_information
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -120,12 +130,62 @@ module Phrase
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @api_name.nil?
+        invalid_properties.push('invalid value for "api_name", api_name cannot be nil.')
+      end
+
+      if @description.nil?
+        invalid_properties.push('invalid value for "description", description cannot be nil.')
+      end
+
+      if @extension.nil?
+        invalid_properties.push('invalid value for "extension", extension cannot be nil.')
+      end
+
+      if @default_encoding.nil?
+        invalid_properties.push('invalid value for "default_encoding", default_encoding cannot be nil.')
+      end
+
+      if @importable.nil?
+        invalid_properties.push('invalid value for "importable", importable cannot be nil.')
+      end
+
+      if @exportable.nil?
+        invalid_properties.push('invalid value for "exportable", exportable cannot be nil.')
+      end
+
+      if @default_file.nil?
+        invalid_properties.push('invalid value for "default_file", default_file cannot be nil.')
+      end
+
+      if @renders_default_locale.nil?
+        invalid_properties.push('invalid value for "renders_default_locale", renders_default_locale cannot be nil.')
+      end
+
+      if @includes_locale_information.nil?
+        invalid_properties.push('invalid value for "includes_locale_information", includes_locale_information cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @name.nil?
+      return false if @api_name.nil?
+      return false if @description.nil?
+      return false if @extension.nil?
+      return false if @default_encoding.nil?
+      return false if @importable.nil?
+      return false if @exportable.nil?
+      return false if @default_file.nil?
+      return false if @renders_default_locale.nil?
+      return false if @includes_locale_information.nil?
       true
     end
 
