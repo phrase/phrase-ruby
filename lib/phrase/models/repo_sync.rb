@@ -4,6 +4,9 @@ module Phrase
   class RepoSync
     attr_accessor :id
 
+    # Optional custom display name for this repo sync. When null or blank, the sync is displayed using the associated project name. 
+    attr_accessor :name
+
     attr_accessor :project
 
     attr_accessor :provider
@@ -27,6 +30,7 @@ module Phrase
     def self.attribute_map
       {
         :'id' => :'id',
+        :'name' => :'name',
         :'project' => :'project',
         :'provider' => :'provider',
         :'enabled' => :'enabled',
@@ -43,6 +47,7 @@ module Phrase
     def self.openapi_types
       {
         :'id' => :'String',
+        :'name' => :'String',
         :'project' => :'ProjectShort',
         :'provider' => :'String',
         :'enabled' => :'Boolean',
@@ -58,7 +63,10 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'name',
         :'pr_branch',
+        :'last_import_at',
+        :'last_export_at'
       ])
     end
 
@@ -79,6 +87,10 @@ module Phrase
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.key?(:'project')
@@ -122,13 +134,28 @@ module Phrase
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if !@name.nil? && @name.to_s.length > 100
+        invalid_properties.push('invalid value for "name", the character length must be smaller than or equal to 100.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !@name.nil? && @name.to_s.length > 100
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] name Value to be assigned
+    def name=(name)
+      if !name.nil? && name.to_s.length > 100
+        fail ArgumentError, 'invalid value for "name", the character length must be smaller than or equal to 100.'
+      end
+
+      @name = name
     end
 
     # Checks equality by comparing each attribute.
@@ -137,6 +164,7 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          name == o.name &&
           project == o.project &&
           provider == o.provider &&
           enabled == o.enabled &&
@@ -157,7 +185,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, project, provider, enabled, auto_import, repo_name, pr_branch, created_at, last_import_at, last_export_at].hash
+      [id, name, project, provider, enabled, auto_import, repo_name, pr_branch, created_at, last_import_at, last_export_at].hash
     end
 
     # Builds the object from hash

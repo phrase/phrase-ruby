@@ -5,6 +5,9 @@ module Phrase
     # ID of the project to connect the Repo Sync to.
     attr_accessor :project_id
 
+    # Optional custom display name for this repo sync. Defaults to null; when null the project name is used as the display name. 
+    attr_accessor :name
+
     # The Git provider to use.
     attr_accessor :git_provider
 
@@ -55,6 +58,7 @@ module Phrase
     def self.attribute_map
       {
         :'project_id' => :'project_id',
+        :'name' => :'name',
         :'git_provider' => :'git_provider',
         :'connection_type' => :'connection_type',
         :'repo_name' => :'repo_name',
@@ -70,6 +74,7 @@ module Phrase
     def self.openapi_types
       {
         :'project_id' => :'String',
+        :'name' => :'String',
         :'git_provider' => :'String',
         :'connection_type' => :'String',
         :'repo_name' => :'String',
@@ -84,6 +89,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'name',
       ])
     end
 
@@ -104,6 +110,10 @@ module Phrase
 
       if attributes.key?(:'project_id')
         self.project_id = attributes[:'project_id']
+      end
+
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.key?(:'git_provider')
@@ -149,6 +159,10 @@ module Phrase
         invalid_properties.push('invalid value for "project_id", project_id cannot be nil.')
       end
 
+      if !@name.nil? && @name.to_s.length > 100
+        invalid_properties.push('invalid value for "name", the character length must be smaller than or equal to 100.')
+      end
+
       if @connection_type.nil?
         invalid_properties.push('invalid value for "connection_type", connection_type cannot be nil.')
       end
@@ -164,6 +178,7 @@ module Phrase
     # @return true if the model is valid
     def valid?
       return false if @project_id.nil?
+      return false if !@name.nil? && @name.to_s.length > 100
       git_provider_validator = EnumAttributeValidator.new('String', ["github", "gitlab", "bitbucket"])
       return false unless git_provider_validator.valid?(@git_provider)
       return false if @connection_type.nil?
@@ -171,6 +186,16 @@ module Phrase
       return false unless connection_type_validator.valid?(@connection_type)
       return false if @repo_name.nil?
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] name Value to be assigned
+    def name=(name)
+      if !name.nil? && name.to_s.length > 100
+        fail ArgumentError, 'invalid value for "name", the character length must be smaller than or equal to 100.'
+      end
+
+      @name = name
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -199,6 +224,7 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           project_id == o.project_id &&
+          name == o.name &&
           git_provider == o.git_provider &&
           connection_type == o.connection_type &&
           repo_name == o.repo_name &&
@@ -218,7 +244,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [project_id, git_provider, connection_type, repo_name, base_branch, pr_branch, auto_import, access_token, custom_api_endpoint].hash
+      [project_id, name, git_provider, connection_type, repo_name, base_branch, pr_branch, auto_import, access_token, custom_api_endpoint].hash
     end
 
     # Builds the object from hash

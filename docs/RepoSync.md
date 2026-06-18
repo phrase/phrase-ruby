@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
+**name** | **String** | Optional custom display name for this repo sync. When null or blank, the sync is displayed using the associated project name.  | [optional] 
 **project** | [**ProjectShort**](ProjectShort.md) |  | [optional] 
 **provider** | **String** |  | [optional] 
 **enabled** | **Boolean** |  | [optional] 
@@ -21,6 +22,7 @@ Name | Type | Description | Notes
 require 'Phrase'
 
 instance = Phrase::RepoSync.new(id: null,
+                                 name: null,
                                  project: null,
                                  provider: null,
                                  enabled: null,
