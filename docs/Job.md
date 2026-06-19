@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **updated_at** | **Time** |  | [optional] 
 **automation_id** | **String** | The ID of the automation that created this job, or null if the job was created manually. | [optional] 
 **job_template_id** | **String** | The ID of the job template this job was created from, or null if no template was used. | [optional] 
+**review_due_date** | **Time** | The review due date for this job. Returns &#x60;null&#x60; when the project does not have review workflow enabled. | [optional] 
 
 ## Code Sample
 
@@ -33,7 +34,8 @@ instance = Phrase::Job.new(id: null,
                                  created_at: null,
                                  updated_at: null,
                                  automation_id: null,
-                                 job_template_id: null)
+                                 job_template_id: null,
+                                 review_due_date: 2015-03-25T11:43:52Z)
 ```
 
 

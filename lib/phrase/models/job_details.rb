@@ -28,6 +28,9 @@ module Phrase
     # The ID of the job template this job was created from, or null if no template was used.
     attr_accessor :job_template_id
 
+    # The review due date for this job. Returns `null` when the project does not have review workflow enabled.
+    attr_accessor :review_due_date
+
     attr_accessor :owner
 
     attr_accessor :job_tag_name
@@ -61,6 +64,7 @@ module Phrase
         :'updated_at' => :'updated_at',
         :'automation_id' => :'automation_id',
         :'job_template_id' => :'job_template_id',
+        :'review_due_date' => :'review_due_date',
         :'owner' => :'owner',
         :'job_tag_name' => :'job_tag_name',
         :'source_translations_updated_at' => :'source_translations_updated_at',
@@ -87,6 +91,7 @@ module Phrase
         :'updated_at' => :'DateTime',
         :'automation_id' => :'String',
         :'job_template_id' => :'String',
+        :'review_due_date' => :'DateTime',
         :'owner' => :'UserPreview',
         :'job_tag_name' => :'String',
         :'source_translations_updated_at' => :'DateTime',
@@ -104,6 +109,7 @@ module Phrase
         :'due_date',
         :'automation_id',
         :'job_template_id',
+        :'review_due_date',
       ])
     end
 
@@ -177,6 +183,10 @@ module Phrase
         self.job_template_id = attributes[:'job_template_id']
       end
 
+      if attributes.key?(:'review_due_date')
+        self.review_due_date = attributes[:'review_due_date']
+      end
+
       if attributes.key?(:'owner')
         self.owner = attributes[:'owner']
       end
@@ -246,6 +256,7 @@ module Phrase
           updated_at == o.updated_at &&
           automation_id == o.automation_id &&
           job_template_id == o.job_template_id &&
+          review_due_date == o.review_due_date &&
           owner == o.owner &&
           job_tag_name == o.job_tag_name &&
           source_translations_updated_at == o.source_translations_updated_at &&
@@ -265,7 +276,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, automation_id, job_template_id, owner, job_tag_name, source_translations_updated_at, source_locale, locales, keys, annotations, locked].hash
+      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, automation_id, job_template_id, review_due_date, owner, job_tag_name, source_translations_updated_at, source_locale, locales, keys, annotations, locked].hash
     end
 
     # Builds the object from hash

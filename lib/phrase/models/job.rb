@@ -28,6 +28,9 @@ module Phrase
     # The ID of the job template this job was created from, or null if no template was used.
     attr_accessor :job_template_id
 
+    # The review due date for this job. Returns `null` when the project does not have review workflow enabled.
+    attr_accessor :review_due_date
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -42,7 +45,8 @@ module Phrase
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
         :'automation_id' => :'automation_id',
-        :'job_template_id' => :'job_template_id'
+        :'job_template_id' => :'job_template_id',
+        :'review_due_date' => :'review_due_date'
       }
     end
 
@@ -60,7 +64,8 @@ module Phrase
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
         :'automation_id' => :'String',
-        :'job_template_id' => :'String'
+        :'job_template_id' => :'String',
+        :'review_due_date' => :'DateTime'
       }
     end
 
@@ -69,7 +74,8 @@ module Phrase
       Set.new([
         :'due_date',
         :'automation_id',
-        :'job_template_id'
+        :'job_template_id',
+        :'review_due_date'
       ])
     end
 
@@ -135,6 +141,10 @@ module Phrase
       if attributes.key?(:'job_template_id')
         self.job_template_id = attributes[:'job_template_id']
       end
+
+      if attributes.key?(:'review_due_date')
+        self.review_due_date = attributes[:'review_due_date']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -166,7 +176,8 @@ module Phrase
           created_at == o.created_at &&
           updated_at == o.updated_at &&
           automation_id == o.automation_id &&
-          job_template_id == o.job_template_id
+          job_template_id == o.job_template_id &&
+          review_due_date == o.review_due_date
     end
 
     # @see the `==` method
@@ -178,7 +189,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, automation_id, job_template_id].hash
+      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, automation_id, job_template_id, review_due_date].hash
     end
 
     # Builds the object from hash
