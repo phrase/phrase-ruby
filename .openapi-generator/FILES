@@ -27,6 +27,10 @@ docs/BlacklistedKeyCreateParameters.md
 docs/BlacklistedKeyUpdateParameters.md
 docs/BlacklistedKeysApi.md
 docs/Branch.md
+docs/BranchComparison.md
+docs/BranchComparisonChange.md
+docs/BranchComparisonDiff.md
+docs/BranchComparisonDiffConflictsValue.md
 docs/BranchCreateComparisonParameters.md
 docs/BranchCreateParameters.md
 docs/BranchMergeParameters.md
@@ -369,6 +373,10 @@ lib/phrase/models/blacklisted_key.rb
 lib/phrase/models/blacklisted_key_create_parameters.rb
 lib/phrase/models/blacklisted_key_update_parameters.rb
 lib/phrase/models/branch.rb
+lib/phrase/models/branch_comparison.rb
+lib/phrase/models/branch_comparison_change.rb
+lib/phrase/models/branch_comparison_diff.rb
+lib/phrase/models/branch_comparison_diff_conflicts_value.rb
 lib/phrase/models/branch_create_comparison_parameters.rb
 lib/phrase/models/branch_create_parameters.rb
 lib/phrase/models/branch_merge_parameters.rb
@@ -654,6 +662,10 @@ spec/models/automations_create_parameters_spec.rb
 spec/models/blacklisted_key_create_parameters_spec.rb
 spec/models/blacklisted_key_spec.rb
 spec/models/blacklisted_key_update_parameters_spec.rb
+spec/models/branch_comparison_change_spec.rb
+spec/models/branch_comparison_diff_conflicts_value_spec.rb
+spec/models/branch_comparison_diff_spec.rb
+spec/models/branch_comparison_spec.rb
 spec/models/branch_create_comparison_parameters_spec.rb
 spec/models/branch_create_parameters_spec.rb
 spec/models/branch_merge_parameters_spec.rb

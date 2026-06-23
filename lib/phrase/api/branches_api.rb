@@ -13,7 +13,7 @@ module Phrase
     # @param name [String] name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [nil]
+    # @return [BranchComparison]
     def branch_compare(project_id, name, opts = {})
       data, _status_code, _headers = branch_compare_with_http_info(project_id, name, opts)
       data
@@ -25,7 +25,7 @@ module Phrase
     # @param name [String] name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
+    # @return [Array<(Response<(BranchComparison)>, Integer, Hash)>] Response<(BranchComparison)> data, response status code and response headers
     def branch_compare_with_http_info(project_id, name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BranchesApi.branch_compare ...'
@@ -46,6 +46,8 @@ module Phrase
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
 
       # form parameters
@@ -55,7 +57,7 @@ module Phrase
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] 
+      return_type = opts[:return_type] || 'BranchComparison' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## branch_compare
 
-> branch_compare(project_id, name, opts)
+> BranchComparison branch_compare(project_id, name, opts)
 
 Compare branches
 
@@ -49,7 +49,8 @@ opts = {
 
 begin
   #Compare branches
-  api_instance.branch_compare(project_id, name, opts)
+  result = api_instance.branch_compare(project_id, name, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling BranchesApi->branch_compare: #{e}"
 end
@@ -66,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**BranchComparison**](BranchComparison.md))>
 
 ### Authorization
 
@@ -75,7 +76,7 @@ Response<(nil (empty response body))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## branch_comparison_create

@@ -27,7 +27,7 @@ describe 'BranchesApi' do
   # @param name name
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [nil]
+  # @return [BranchComparison]
   describe 'branch_compare test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
