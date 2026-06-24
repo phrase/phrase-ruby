@@ -22,14 +22,14 @@ describe 'ScreenshotsApi' do
 
   # unit tests for screenshot_create
   # Create a screenshot
-  # Create a new screenshot.
+  # Creates a screenshot in a project to provide visual context for in-context translation. Attach translation keys to regions of the uploaded image so translators can see where each string appears in your UI.  This endpoint accepts a multipart/form-data request with a binary file upload, unlike most Phrase API endpoints that use JSON. Use a multipart form client or the -F flag in curl rather than a JSON body.  The screenshot name must be unique within the project (case-insensitive). When name is omitted, it is derived from the uploaded filename. The account must have the Screenshots feature enabled; requests to projects on accounts without it return 403. Creating a screenshot requires a token with the write scope and manage access to the project. 
   # @param project_id Project ID
+  # @param filename Image file to upload. Accepted formats are JPEG (jpg/jpeg), GIF, and PNG. Maximum file size is 10 MB. Submitting an unsupported format or a file exceeding the size limit returns 422.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [String] :branch specify the branch to use
-  # @option opts [String] :name Name of the screenshot
-  # @option opts [String] :description Description of the screenshot
-  # @option opts [File] :filename Screenshot file
+  # @option opts [String] :name Display name for the screenshot. Must be unique within the project (case-insensitive). When omitted, the name is derived from the uploaded filename.
+  # @option opts [String] :description Optional free-text description of the screenshot.
   # @return [Screenshot]
   describe 'screenshot_create test' do
     it 'should work' do

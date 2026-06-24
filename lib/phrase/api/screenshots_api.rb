@@ -8,37 +8,41 @@ module Phrase
       @api_client = api_client
     end
     # Create a screenshot
-    # Create a new screenshot.
+    # Creates a screenshot in a project to provide visual context for in-context translation. Attach translation keys to regions of the uploaded image so translators can see where each string appears in your UI.  This endpoint accepts a multipart/form-data request with a binary file upload, unlike most Phrase API endpoints that use JSON. Use a multipart form client or the -F flag in curl rather than a JSON body.  The screenshot name must be unique within the project (case-insensitive). When name is omitted, it is derived from the uploaded filename. The account must have the Screenshots feature enabled; requests to projects on accounts without it return 403. Creating a screenshot requires a token with the write scope and manage access to the project. 
     # @param project_id [String] Project ID
+    # @param filename [File] Image file to upload. Accepted formats are JPEG (jpg/jpeg), GIF, and PNG. Maximum file size is 10 MB. Submitting an unsupported format or a file exceeding the size limit returns 422.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @option opts [String] :name Name of the screenshot
-    # @option opts [String] :description Description of the screenshot
-    # @option opts [File] :filename Screenshot file
+    # @option opts [String] :name Display name for the screenshot. Must be unique within the project (case-insensitive). When omitted, the name is derived from the uploaded filename.
+    # @option opts [String] :description Optional free-text description of the screenshot.
     # @return [Screenshot]
-    def screenshot_create(project_id, opts = {})
-      data, _status_code, _headers = screenshot_create_with_http_info(project_id, opts)
+    def screenshot_create(project_id, filename, opts = {})
+      data, _status_code, _headers = screenshot_create_with_http_info(project_id, filename, opts)
       data
     end
 
     # Create a screenshot
-    # Create a new screenshot.
+    # Creates a screenshot in a project to provide visual context for in-context translation. Attach translation keys to regions of the uploaded image so translators can see where each string appears in your UI.  This endpoint accepts a multipart/form-data request with a binary file upload, unlike most Phrase API endpoints that use JSON. Use a multipart form client or the -F flag in curl rather than a JSON body.  The screenshot name must be unique within the project (case-insensitive). When name is omitted, it is derived from the uploaded filename. The account must have the Screenshots feature enabled; requests to projects on accounts without it return 403. Creating a screenshot requires a token with the write scope and manage access to the project. 
     # @param project_id [String] Project ID
+    # @param filename [File] Image file to upload. Accepted formats are JPEG (jpg/jpeg), GIF, and PNG. Maximum file size is 10 MB. Submitting an unsupported format or a file exceeding the size limit returns 422.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :branch specify the branch to use
-    # @option opts [String] :name Name of the screenshot
-    # @option opts [String] :description Description of the screenshot
-    # @option opts [File] :filename Screenshot file
+    # @option opts [String] :name Display name for the screenshot. Must be unique within the project (case-insensitive). When omitted, the name is derived from the uploaded filename.
+    # @option opts [String] :description Optional free-text description of the screenshot.
     # @return [Array<(Response<(Screenshot)>, Integer, Hash)>] Response<(Screenshot)> data, response status code and response headers
-    def screenshot_create_with_http_info(project_id, opts = {})
+    def screenshot_create_with_http_info(project_id, filename, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ScreenshotsApi.screenshot_create ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
         fail ArgumentError, "Missing the required parameter 'project_id' when calling ScreenshotsApi.screenshot_create"
+      end
+      # verify the required parameter 'filename' is set
+      if @api_client.config.client_side_validation && filename.nil?
+        fail ArgumentError, "Missing the required parameter 'filename' when calling ScreenshotsApi.screenshot_create"
       end
       # resource path
       local_var_path = '/projects/{project_id}/screenshots'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
@@ -56,10 +60,10 @@ module Phrase
 
       # form parameters
       form_params = opts[:form_params] || {}
+      form_params['filename'] = filename
       form_params['branch'] = opts[:'branch'] if !opts[:'branch'].nil?
       form_params['name'] = opts[:'name'] if !opts[:'name'].nil?
       form_params['description'] = opts[:'description'] if !opts[:'description'].nil?
-      form_params['filename'] = opts[:'filename'] if !opts[:'filename'].nil?
 
       # http body (model)
       post_body = opts[:body] 
