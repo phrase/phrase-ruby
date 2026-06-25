@@ -53,6 +53,12 @@ module Phrase
     # Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download. 
     attr_accessor :custom_metadata_filters
 
+    # Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed.
+    attr_accessor :translation_key_prefix
+
+    # Only download translation keys containing the prefix specified by `translation_key_prefix`, and remove that prefix from the generated file. Requires `translation_key_prefix` to be set.
+    attr_accessor :filter_by_prefix
+
     # Only include translations and keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., `2023-01-01T00:00:00Z`). 
     attr_accessor :updated_since
 
@@ -76,6 +82,8 @@ module Phrase
         :'fallback_for_unverified_translations' => :'fallback_for_unverified_translations',
         :'source_locale_id' => :'source_locale_id',
         :'custom_metadata_filters' => :'custom_metadata_filters',
+        :'translation_key_prefix' => :'translation_key_prefix',
+        :'filter_by_prefix' => :'filter_by_prefix',
         :'updated_since' => :'updated_since'
       }
     end
@@ -100,6 +108,8 @@ module Phrase
         :'fallback_for_unverified_translations' => :'Boolean',
         :'source_locale_id' => :'String',
         :'custom_metadata_filters' => :'Object',
+        :'translation_key_prefix' => :'String',
+        :'filter_by_prefix' => :'Boolean',
         :'updated_since' => :'String'
       }
     end
@@ -195,6 +205,14 @@ module Phrase
         self.custom_metadata_filters = attributes[:'custom_metadata_filters']
       end
 
+      if attributes.key?(:'translation_key_prefix')
+        self.translation_key_prefix = attributes[:'translation_key_prefix']
+      end
+
+      if attributes.key?(:'filter_by_prefix')
+        self.filter_by_prefix = attributes[:'filter_by_prefix']
+      end
+
       if attributes.key?(:'updated_since')
         self.updated_since = attributes[:'updated_since']
       end
@@ -240,6 +258,8 @@ module Phrase
           fallback_for_unverified_translations == o.fallback_for_unverified_translations &&
           source_locale_id == o.source_locale_id &&
           custom_metadata_filters == o.custom_metadata_filters &&
+          translation_key_prefix == o.translation_key_prefix &&
+          filter_by_prefix == o.filter_by_prefix &&
           updated_since == o.updated_since
     end
 
@@ -252,7 +272,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [file_format, branch, tags, include_empty_translations, exclude_empty_zero_forms, include_translated_keys, keep_notranslate_tags, format_options, encoding, include_unverified_translations, use_last_reviewed_version, locale_ids, fallback_locale_id, use_locale_fallback, fallback_for_unverified_translations, source_locale_id, custom_metadata_filters, updated_since].hash
+      [file_format, branch, tags, include_empty_translations, exclude_empty_zero_forms, include_translated_keys, keep_notranslate_tags, format_options, encoding, include_unverified_translations, use_last_reviewed_version, locale_ids, fallback_locale_id, use_locale_fallback, fallback_for_unverified_translations, source_locale_id, custom_metadata_filters, translation_key_prefix, filter_by_prefix, updated_since].hash
     end
 
     # Builds the object from hash

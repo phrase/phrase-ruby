@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **fallback_for_unverified_translations** | **Boolean** | If set to &#x60;true&#x60;, translations in a non-final state are replaced by the fallback locale&#39;s translation at export time. In the simple workflow, \&quot;non-final\&quot; means &#x60;unverified&#x60;. In the review workflow, it additionally includes &#x60;translated&#x60; (awaiting review). No stored translations are modified. Requires &#x60;fallback_locale_id&#x60; or &#x60;use_locale_fallback&#x60; to be set; a &#x60;422&#x60; validation error is returned otherwise.  | [optional] 
 **source_locale_id** | **String** | Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &#x60;tag&#x60; parameter indicating a specific job. | [optional] 
 **custom_metadata_filters** | **Object** | Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  | [optional] 
+**translation_key_prefix** | **String** | Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed. | [optional] 
+**filter_by_prefix** | **Boolean** | Only download translation keys containing the prefix specified by &#x60;translation_key_prefix&#x60;, and remove that prefix from the generated file. Requires &#x60;translation_key_prefix&#x60; to be set. | [optional] 
 **updated_since** | **String** | Only include translations and keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  | [optional] 
 
 ## Code Sample
@@ -45,6 +47,8 @@ instance = Phrase::LocaleDownloadCreateParameters.new(file_format: yml,
                                  fallback_for_unverified_translations: false,
                                  source_locale_id: abcd1234abcd1234abcd1234abcd1234,
                                  custom_metadata_filters: null,
+                                 translation_key_prefix: prefix_,
+                                 filter_by_prefix: null,
                                  updated_since: 2023-01-01T00:00:00Z)
 ```
 
