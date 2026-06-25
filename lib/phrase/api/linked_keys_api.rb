@@ -8,27 +8,27 @@ module Phrase
       @api_client = api_client
     end
     # Batch unlink child keys from a parent key
-    # Unlinks multiple child keys from a given parent key in a single operation.
+    # Removes one or more child keys from a parent key's linked-key group, or dissolves the entire group by setting unlink_parent to true.  Use this when you need to detach specific child keys from a shared translation source, or to fully break apart a linked-key group so each key manages its own translations independently. When child keys are unlinked, their translations are updated with a copy of the parent's current content (strategy keep_content, the default) or cleared (strategy remove_content).  This operation is only available on main projects. It returns 422 when a child key in `child_key_ids` is not currently linked to the parent, or when a translation update fails while unlinking. 
     # @param project_id [String] Project ID
     # @param id [String] Parent Translation Key ID
-    # @param key_links_batch_destroy_parameters [KeyLinksBatchDestroyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [nil]
-    def key_links_batch_destroy(project_id, id, key_links_batch_destroy_parameters, opts = {})
-      data, _status_code, _headers = key_links_batch_destroy_with_http_info(project_id, id, key_links_batch_destroy_parameters, opts)
+    # @option opts [KeyLinksBatchDestroyParameters] :key_links_batch_destroy_parameters 
+    # @return [KeyLink]
+    def key_links_batch_destroy(project_id, id, opts = {})
+      data, _status_code, _headers = key_links_batch_destroy_with_http_info(project_id, id, opts)
       data
     end
 
     # Batch unlink child keys from a parent key
-    # Unlinks multiple child keys from a given parent key in a single operation.
+    # Removes one or more child keys from a parent key&#39;s linked-key group, or dissolves the entire group by setting unlink_parent to true.  Use this when you need to detach specific child keys from a shared translation source, or to fully break apart a linked-key group so each key manages its own translations independently. When child keys are unlinked, their translations are updated with a copy of the parent&#39;s current content (strategy keep_content, the default) or cleared (strategy remove_content).  This operation is only available on main projects. It returns 422 when a child key in &#x60;child_key_ids&#x60; is not currently linked to the parent, or when a translation update fails while unlinking. 
     # @param project_id [String] Project ID
     # @param id [String] Parent Translation Key ID
-    # @param key_links_batch_destroy_parameters [KeyLinksBatchDestroyParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-    # @return [Array<(Response, Integer, Hash)>] Response<(nil, response status code and response headers
-    def key_links_batch_destroy_with_http_info(project_id, id, key_links_batch_destroy_parameters, opts = {})
+    # @option opts [KeyLinksBatchDestroyParameters] :key_links_batch_destroy_parameters 
+    # @return [Array<(Response<(KeyLink)>, Integer, Hash)>] Response<(KeyLink)> data, response status code and response headers
+    def key_links_batch_destroy_with_http_info(project_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LinkedKeysApi.key_links_batch_destroy ...'
       end
@@ -39,10 +39,6 @@ module Phrase
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling LinkedKeysApi.key_links_batch_destroy"
-      end
-      # verify the required parameter 'key_links_batch_destroy_parameters' is set
-      if @api_client.config.client_side_validation && key_links_batch_destroy_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'key_links_batch_destroy_parameters' when calling LinkedKeysApi.key_links_batch_destroy"
       end
       # resource path
       local_var_path = '/projects/{project_id}/keys/{id}/key_links'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -62,10 +58,10 @@ module Phrase
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(key_links_batch_destroy_parameters) 
+      post_body = opts[:body] || @api_client.object_to_http_body(opts[:'key_links_batch_destroy_parameters']) 
 
       # return_type
-      return_type = opts[:return_type] 
+      return_type = opts[:return_type] || 'KeyLink' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['Basic', 'Token']

@@ -2,17 +2,43 @@ require 'date'
 
 module Phrase
   class KeyLinksBatchDestroyParameters
-    # The IDs of the child keys to unlink from the parent key.
+    # Codes of the child keys to unlink. Required when unlink_parent is false or omitted. Ignored when unlink_parent is true.
     attr_accessor :child_key_ids
 
-    # Whether to unlink the parent key as well and unmark it as linked-key.
+    # When true, dissolves the entire linked-key group by unlinking all children and removing the group. The child_key_ids field is ignored when this is set to true.
     attr_accessor :unlink_parent
+
+    # Controls what happens to child key translation content after unlinking. keep_content (default) copies the parent translation into each child; remove_content clears each child translation.
+    attr_accessor :strategy
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'child_key_ids' => :'child_key_ids',
-        :'unlink_parent' => :'unlink_parent'
+        :'unlink_parent' => :'unlink_parent',
+        :'strategy' => :'strategy'
       }
     end
 
@@ -20,7 +46,8 @@ module Phrase
     def self.openapi_types
       {
         :'child_key_ids' => :'Array<String>',
-        :'unlink_parent' => :'Boolean'
+        :'unlink_parent' => :'Boolean',
+        :'strategy' => :'String'
       }
     end
 
@@ -56,6 +83,12 @@ module Phrase
       else
         self.unlink_parent = false
       end
+
+      if attributes.key?(:'strategy')
+        self.strategy = attributes[:'strategy']
+      else
+        self.strategy = 'keep_content'
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -73,7 +106,19 @@ module Phrase
     # @return true if the model is valid
     def valid?
       return false if @child_key_ids.nil?
+      strategy_validator = EnumAttributeValidator.new('String', ["keep_content", "remove_content"])
+      return false unless strategy_validator.valid?(@strategy)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] strategy Object to be assigned
+    def strategy=(strategy)
+      validator = EnumAttributeValidator.new('String', ["keep_content", "remove_content"])
+      unless validator.valid?(strategy)
+        fail ArgumentError, "invalid value for \"strategy\", must be one of #{validator.allowable_values}."
+      end
+      @strategy = strategy
     end
 
     # Checks equality by comparing each attribute.
@@ -82,7 +127,8 @@ module Phrase
       return true if self.equal?(o)
       self.class == o.class &&
           child_key_ids == o.child_key_ids &&
-          unlink_parent == o.unlink_parent
+          unlink_parent == o.unlink_parent &&
+          strategy == o.strategy
     end
 
     # @see the `==` method
@@ -94,7 +140,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [child_key_ids, unlink_parent].hash
+      [child_key_ids, unlink_parent, strategy].hash
     end
 
     # Builds the object from hash

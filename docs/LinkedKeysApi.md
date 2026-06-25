@@ -13,11 +13,11 @@ Method | HTTP request | Description
 
 ## key_links_batch_destroy
 
-> key_links_batch_destroy(project_id, id, key_links_batch_destroy_parameters, opts)
+> KeyLink key_links_batch_destroy(project_id, id, opts)
 
 Batch unlink child keys from a parent key
 
-Unlinks multiple child keys from a given parent key in a single operation.
+Removes one or more child keys from a parent key's linked-key group, or dissolves the entire group by setting unlink_parent to true.  Use this when you need to detach specific child keys from a shared translation source, or to fully break apart a linked-key group so each key manages its own translations independently. When child keys are unlinked, their translations are updated with a copy of the parent's current content (strategy keep_content, the default) or cleared (strategy remove_content).  This operation is only available on main projects. It returns 422 when a child key in `child_key_ids` is not currently linked to the parent, or when a translation update fails while unlinking. 
 
 ### Example
 
@@ -38,14 +38,15 @@ end
 api_instance = Phrase::LinkedKeysApi.new
 project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | Parent Translation Key ID
-key_links_batch_destroy_parameters = Phrase::KeyLinksBatchDestroyParameters.new({child_key_ids: ["child_key_id1", "child_key_id2"]}) # KeyLinksBatchDestroyParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  key_links_batch_destroy_parameters: Phrase::KeyLinksBatchDestroyParameters.new({child_key_ids: ["feature.subtitle", "nav.home"]}) # KeyLinksBatchDestroyParameters | 
 }
 
 begin
   #Batch unlink child keys from a parent key
-  api_instance.key_links_batch_destroy(project_id, id, key_links_batch_destroy_parameters, opts)
+  result = api_instance.key_links_batch_destroy(project_id, id, opts)
+  pp result
 rescue Phrase::ApiError => e
   puts "Exception when calling LinkedKeysApi->key_links_batch_destroy: #{e}"
 end
@@ -58,12 +59,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **id** | **String**| Parent Translation Key ID | 
- **key_links_batch_destroy_parameters** | [**KeyLinksBatchDestroyParameters**](KeyLinksBatchDestroyParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **key_links_batch_destroy_parameters** | [**KeyLinksBatchDestroyParameters**](KeyLinksBatchDestroyParameters.md)|  | [optional] 
 
 ### Return type
 
-Response<(nil (empty response body))>
+Response<([**KeyLink**](KeyLink.md))>
 
 ### Authorization
 

@@ -22,13 +22,13 @@ describe 'LinkedKeysApi' do
 
   # unit tests for key_links_batch_destroy
   # Batch unlink child keys from a parent key
-  # Unlinks multiple child keys from a given parent key in a single operation.
+  # Removes one or more child keys from a parent key&#39;s linked-key group, or dissolves the entire group by setting unlink_parent to true.  Use this when you need to detach specific child keys from a shared translation source, or to fully break apart a linked-key group so each key manages its own translations independently. When child keys are unlinked, their translations are updated with a copy of the parent&#39;s current content (strategy keep_content, the default) or cleared (strategy remove_content).  This operation is only available on main projects. It returns 422 when a child key in &#x60;child_key_ids&#x60; is not currently linked to the parent, or when a translation update fails while unlinking. 
   # @param project_id Project ID
   # @param id Parent Translation Key ID
-  # @param key_links_batch_destroy_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
-  # @return [nil]
+  # @option opts [KeyLinksBatchDestroyParameters] :key_links_batch_destroy_parameters 
+  # @return [KeyLink]
   describe 'key_links_batch_destroy test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
