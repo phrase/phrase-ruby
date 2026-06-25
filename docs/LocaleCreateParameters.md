@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **unverify_new_translations** | **Boolean** | Indicates that new translations for this locale should be marked as unverified. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature. | [optional] 
 **unverify_updated_translations** | **Boolean** | Indicates that updated translations for this locale should be marked as unverified. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature. | [optional] 
 **autotranslate** | **Boolean** | If set, translations for this locale will be fetched automatically, right after creation. | [optional] 
+**language_ai_profile** | **String** | Identifier of the Language AI profile to use for this locale. | [optional] 
 
 ## Code Sample
 
@@ -31,7 +32,8 @@ instance = Phrase::LocaleCreateParameters.new(branch: my-feature-branch,
                                  fallback_locale_id: abcd1234abcd1234abcd1234abcd1234,
                                  unverify_new_translations: null,
                                  unverify_updated_translations: null,
-                                 autotranslate: null)
+                                 autotranslate: null,
+                                 language_ai_profile: abcd1234abcd1234abcd1234abcd1234)
 ```
 
 

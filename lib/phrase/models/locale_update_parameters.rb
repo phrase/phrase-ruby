@@ -35,6 +35,9 @@ module Phrase
     # If set, translations for this locale will be fetched automatically, right after creation.
     attr_accessor :autotranslate
 
+    # Identifier of the Language AI profile to use for this locale.
+    attr_accessor :language_ai_profile
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -48,7 +51,8 @@ module Phrase
         :'fallback_locale_id' => :'fallback_locale_id',
         :'unverify_new_translations' => :'unverify_new_translations',
         :'unverify_updated_translations' => :'unverify_updated_translations',
-        :'autotranslate' => :'autotranslate'
+        :'autotranslate' => :'autotranslate',
+        :'language_ai_profile' => :'language_ai_profile'
       }
     end
 
@@ -65,7 +69,8 @@ module Phrase
         :'fallback_locale_id' => :'String',
         :'unverify_new_translations' => :'Boolean',
         :'unverify_updated_translations' => :'Boolean',
-        :'autotranslate' => :'Boolean'
+        :'autotranslate' => :'Boolean',
+        :'language_ai_profile' => :'String'
       }
     end
 
@@ -133,6 +138,10 @@ module Phrase
       if attributes.key?(:'autotranslate')
         self.autotranslate = attributes[:'autotranslate']
       end
+
+      if attributes.key?(:'language_ai_profile')
+        self.language_ai_profile = attributes[:'language_ai_profile']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -163,7 +172,8 @@ module Phrase
           fallback_locale_id == o.fallback_locale_id &&
           unverify_new_translations == o.unverify_new_translations &&
           unverify_updated_translations == o.unverify_updated_translations &&
-          autotranslate == o.autotranslate
+          autotranslate == o.autotranslate &&
+          language_ai_profile == o.language_ai_profile
     end
 
     # @see the `==` method
@@ -175,7 +185,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, code, default, main, rtl, source_locale_id, fallback_locale_id, unverify_new_translations, unverify_updated_translations, autotranslate].hash
+      [branch, name, code, default, main, rtl, source_locale_id, fallback_locale_id, unverify_new_translations, unverify_updated_translations, autotranslate, language_ai_profile].hash
     end
 
     # Builds the object from hash

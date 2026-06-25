@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ordinal_plural_forms** | **Array&lt;String&gt;** |  | [optional] 
 **source_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
 **fallback_locale** | [**LocalePreview**](LocalePreview.md) |  | [optional] 
+**language_ai_profile** | **String** |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
 **statistics** | [**LocaleStatistics**](LocaleStatistics.md) |  | [optional] 
@@ -33,6 +34,7 @@ instance = Phrase::LocaleDetails.new(id: null,
                                  ordinal_plural_forms: null,
                                  source_locale: null,
                                  fallback_locale: null,
+                                 language_ai_profile: null,
                                  created_at: null,
                                  updated_at: null,
                                  statistics: null)

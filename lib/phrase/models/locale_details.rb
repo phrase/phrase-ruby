@@ -22,6 +22,8 @@ module Phrase
 
     attr_accessor :fallback_locale
 
+    attr_accessor :language_ai_profile
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -41,6 +43,7 @@ module Phrase
         :'ordinal_plural_forms' => :'ordinal_plural_forms',
         :'source_locale' => :'source_locale',
         :'fallback_locale' => :'fallback_locale',
+        :'language_ai_profile' => :'language_ai_profile',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
         :'statistics' => :'statistics'
@@ -60,6 +63,7 @@ module Phrase
         :'ordinal_plural_forms' => :'Array<String>',
         :'source_locale' => :'LocalePreview',
         :'fallback_locale' => :'LocalePreview',
+        :'language_ai_profile' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
         :'statistics' => :'LocaleStatistics'
@@ -138,6 +142,10 @@ module Phrase
         self.fallback_locale = attributes[:'fallback_locale']
       end
 
+      if attributes.key?(:'language_ai_profile')
+        self.language_ai_profile = attributes[:'language_ai_profile']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -179,6 +187,7 @@ module Phrase
           ordinal_plural_forms == o.ordinal_plural_forms &&
           source_locale == o.source_locale &&
           fallback_locale == o.fallback_locale &&
+          language_ai_profile == o.language_ai_profile &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
           statistics == o.statistics
@@ -193,7 +202,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, code, default, main, rtl, plural_forms, ordinal_plural_forms, source_locale, fallback_locale, created_at, updated_at, statistics].hash
+      [id, name, code, default, main, rtl, plural_forms, ordinal_plural_forms, source_locale, fallback_locale, language_ai_profile, created_at, updated_at, statistics].hash
     end
 
     # Builds the object from hash
