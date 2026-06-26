@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**child_key_ids** | **Array&lt;String&gt;** | The IDs of the child keys to link to the parent key. Can be left empty, to only mark the given translation-key as parent | 
+**child_key_ids** | **Array&lt;String&gt;** | Codes of the keys to link as children. Pass an empty array to mark the parent key without linking any children. | 
 
 ## Code Sample
 
 ```ruby
 require 'Phrase'
 
-instance = Phrase::KeyLinksCreateParameters.new(child_key_ids: [&quot;child_key_id1&quot;,&quot;child_key_id2&quot;])
+instance = Phrase::KeyLinksCreateParameters.new(child_key_ids: [&quot;ijkl9012mnop3456ijkl9012mnop3456&quot;,&quot;abcd1234efgh5678abcd1234efgh5678&quot;])
 ```
 
 
