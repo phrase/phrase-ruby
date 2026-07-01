@@ -77,7 +77,7 @@ Response<(nil (empty response body))>
 
 List documents
 
-List all documents the current user has access to.
+Returns all documents in a project that the authenticated user has read access to. A Document is a source file — an HTML or DOCX file — that has been uploaded to Phrase Strings and whose content is segmented into translation keys for localization.  Use this endpoint to enumerate documents before downloading, previewing, or triggering translation workflows for individual files.  The q parameter performs a prefix match on the document name (case-insensitive). For example, passing q=invoice returns documents whose names begin with \"invoice\" but not documents containing \"invoice\" elsewhere in the name. 
 
 ### Example
 
@@ -101,7 +101,7 @@ opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
   page: 1, # Integer | Page number
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-  q: 'invoice' # String | Search query. Filters documents by name (case-insensitive substring match).
+  q: 'invoice' # String | Filter documents by name prefix. Returns documents whose name starts with the given value (case-insensitive).
 }
 
 begin
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **page** | **Integer**| Page number | [optional] 
  **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
- **q** | **String**| Search query. Filters documents by name (case-insensitive substring match). | [optional] 
+ **q** | **String**| Filter documents by name prefix. Returns documents whose name starts with the given value (case-insensitive). | [optional] 
 
 ### Return type
 
