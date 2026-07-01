@@ -167,7 +167,7 @@ module Phrase
     end
 
     # Get a single screenshot
-    # Get details on a single screenshot for a given project.
+    # Returns a single screenshot belonging to the specified project. Use this to retrieve the screenshot's name, description, hosted image URL, and marker count after uploading, or before creating, updating, or inspecting its markers. The response is a synchronous, idempotent read — repeated calls return the same record without side effects.  The Attachable Screenshots feature must be enabled on the account. 
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -180,7 +180,7 @@ module Phrase
     end
 
     # Get a single screenshot
-    # Get details on a single screenshot for a given project.
+    # Returns a single screenshot belonging to the specified project. Use this to retrieve the screenshot&#39;s name, description, hosted image URL, and marker count after uploading, or before creating, updating, or inspecting its markers. The response is a synchronous, idempotent read — repeated calls return the same record without side effects.  The Attachable Screenshots feature must be enabled on the account. 
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
