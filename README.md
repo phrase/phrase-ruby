@@ -522,7 +522,6 @@ Class | Method | HTTP request | Description
  - [Phrase::KeyLink](docs/KeyLink.md)
  - [Phrase::KeyLinksBatchDestroyParameters](docs/KeyLinksBatchDestroyParameters.md)
  - [Phrase::KeyLinksCreateParameters](docs/KeyLinksCreateParameters.md)
- - [Phrase::KeyLinksIndex400Response](docs/KeyLinksIndex400Response.md)
  - [Phrase::KeyPreview](docs/KeyPreview.md)
  - [Phrase::KeyUpdateParameters](docs/KeyUpdateParameters.md)
  - [Phrase::KeysExcludeParameters](docs/KeysExcludeParameters.md)
