@@ -22,7 +22,7 @@ describe 'DocumentsApi' do
 
   # unit tests for document_delete
   # Delete document
-  # Delete an existing document.
+  # Permanently deletes a document and all of its associated translation segments from the project. Use this when you want to remove a document that is no longer needed; the deletion cannot be reversed and all associated segments will be lost. 
   # @param project_id Project ID
   # @param id ID
   # @param [Hash] opts the optional parameters

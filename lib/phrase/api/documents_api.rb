@@ -8,7 +8,7 @@ module Phrase
       @api_client = api_client
     end
     # Delete document
-    # Delete an existing document.
+    # Permanently deletes a document and all of its associated translation segments from the project. Use this when you want to remove a document that is no longer needed; the deletion cannot be reversed and all associated segments will be lost. 
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -20,7 +20,7 @@ module Phrase
     end
 
     # Delete document
-    # Delete an existing document.
+    # Permanently deletes a document and all of its associated translation segments from the project. Use this when you want to remove a document that is no longer needed; the deletion cannot be reversed and all associated segments will be lost. 
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
