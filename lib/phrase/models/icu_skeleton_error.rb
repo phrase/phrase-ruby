@@ -1,46 +1,21 @@
 require 'date'
 
 module Phrase
-  class IcuSkeletonParameters
-    # Source ICU message string to derive skeletons from. Mutually exclusive with `id`; exactly one of the two must be provided. 
-    attr_accessor :content
-
-    # Code of an existing translation to source content from. Mutually exclusive with `content`; exactly one of the two must be provided. Returns 404 when the translation does not exist. 
-    attr_accessor :id
-
-    # Locale codes for which to generate skeletons. The pluralization rules of each locale determine which plural forms appear in the output. 
-    attr_accessor :locale_codes
-
-    # When true, preserves the existing translation text in each plural form and adds any missing forms for the locale rather than stripping all literal content.
-    attr_accessor :keep_content
-
-    # When true, includes the zero plural form in the generated skeleton for locales that support it.
-    attr_accessor :zero_form_enabled
-
-    # Pluralization rule set to apply when constructing skeletons. Accepted values are `legacy` and `cldr_41`. Defaults to `legacy` when omitted.
-    attr_accessor :cldr_version
+  class IcuSkeletonError
+    # Human-readable description of the ICU message format parse failure.
+    attr_accessor :error
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'content' => :'content',
-        :'id' => :'id',
-        :'locale_codes' => :'locale_codes',
-        :'keep_content' => :'keep_content',
-        :'zero_form_enabled' => :'zero_form_enabled',
-        :'cldr_version' => :'cldr_version'
+        :'error' => :'error'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'content' => :'String',
-        :'id' => :'String',
-        :'locale_codes' => :'Array<String>',
-        :'keep_content' => :'Boolean',
-        :'zero_form_enabled' => :'Boolean',
-        :'cldr_version' => :'String'
+        :'error' => :'String'
       }
     end
 
@@ -54,41 +29,19 @@ module Phrase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::IcuSkeletonParameters` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Phrase::IcuSkeletonError` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::IcuSkeletonParameters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Phrase::IcuSkeletonError`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'content')
-        self.content = attributes[:'content']
-      end
-
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      end
-
-      if attributes.key?(:'locale_codes')
-        if (value = attributes[:'locale_codes']).is_a?(Array)
-          self.locale_codes = value
-        end
-      end
-
-      if attributes.key?(:'keep_content')
-        self.keep_content = attributes[:'keep_content']
-      end
-
-      if attributes.key?(:'zero_form_enabled')
-        self.zero_form_enabled = attributes[:'zero_form_enabled']
-      end
-
-      if attributes.key?(:'cldr_version')
-        self.cldr_version = attributes[:'cldr_version']
+      if attributes.key?(:'error')
+        self.error = attributes[:'error']
       end
     end
 
@@ -102,19 +55,7 @@ module Phrase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      cldr_version_validator = EnumAttributeValidator.new('String', ["legacy", "cldr_41"])
-      return false unless cldr_version_validator.valid?(@cldr_version)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] cldr_version Object to be assigned
-    def cldr_version=(cldr_version)
-      validator = EnumAttributeValidator.new('String', ["legacy", "cldr_41"])
-      unless validator.valid?(cldr_version)
-        fail ArgumentError, "invalid value for \"cldr_version\", must be one of #{validator.allowable_values}."
-      end
-      @cldr_version = cldr_version
     end
 
     # Checks equality by comparing each attribute.
@@ -122,12 +63,7 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          content == o.content &&
-          id == o.id &&
-          locale_codes == o.locale_codes &&
-          keep_content == o.keep_content &&
-          zero_form_enabled == o.zero_form_enabled &&
-          cldr_version == o.cldr_version
+          error == o.error
     end
 
     # @see the `==` method
@@ -139,7 +75,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [content, id, locale_codes, keep_content, zero_form_enabled, cldr_version].hash
+      [error].hash
     end
 
     # Builds the object from hash

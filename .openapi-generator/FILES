@@ -85,6 +85,7 @@ docs/GlossaryTermsApi.md
 docs/GlossaryUpdateParameters.md
 docs/ICUApi.md
 docs/Icu.md
+docs/IcuSkeletonError.md
 docs/IcuSkeletonParameters.md
 docs/Invitation.md
 docs/InvitationCreateParameters.md
@@ -418,6 +419,7 @@ lib/phrase/models/glossary_term_translation_update_parameters.rb
 lib/phrase/models/glossary_term_update_parameters.rb
 lib/phrase/models/glossary_update_parameters.rb
 lib/phrase/models/icu.rb
+lib/phrase/models/icu_skeleton_error.rb
 lib/phrase/models/icu_skeleton_parameters.rb
 lib/phrase/models/invitation.rb
 lib/phrase/models/invitation_create_parameters.rb
@@ -707,6 +709,7 @@ spec/models/glossary_term_translation_spec.rb
 spec/models/glossary_term_translation_update_parameters_spec.rb
 spec/models/glossary_term_update_parameters_spec.rb
 spec/models/glossary_update_parameters_spec.rb
+spec/models/icu_skeleton_error_spec.rb
 spec/models/icu_skeleton_parameters_spec.rb
 spec/models/icu_spec.rb
 spec/models/invitation_create_parameters_spec.rb

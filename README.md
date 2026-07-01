@@ -482,6 +482,7 @@ Class | Method | HTTP request | Description
  - [Phrase::GlossaryTermUpdateParameters](docs/GlossaryTermUpdateParameters.md)
  - [Phrase::GlossaryUpdateParameters](docs/GlossaryUpdateParameters.md)
  - [Phrase::Icu](docs/Icu.md)
+ - [Phrase::IcuSkeletonError](docs/IcuSkeletonError.md)
  - [Phrase::IcuSkeletonParameters](docs/IcuSkeletonParameters.md)
  - [Phrase::Invitation](docs/Invitation.md)
  - [Phrase::InvitationCreateParameters](docs/InvitationCreateParameters.md)

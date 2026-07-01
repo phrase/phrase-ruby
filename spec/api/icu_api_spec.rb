@@ -22,7 +22,7 @@ describe 'ICUApi' do
 
   # unit tests for icu_skeleton
   # Build ICU skeletons
-  # Returns ICU skeletons for multiple locale codes based on a source content.
+  # Generates ICU (International Components for Unicode) message format skeletons for a given source string across one or more locales. An ICU skeleton strips the literal text from a pluralized or select message while preserving its structural rules — argument names, plural categories, select cases, and ordinal forms — adjusted to the pluralization rules of each requested locale.  Use this endpoint to normalize translation templates before importing them into locale files, or to validate that a source string carries the plural forms required by a target language.  Either &#x60;content&#x60; or &#x60;id&#x60; must be provided — supplying both or neither returns 400. When &#x60;id&#x60; is used and the referenced translation does not exist, the endpoint returns 404. When the source string is not valid ICU message format syntax, the endpoint returns 422 with an &#x60;error&#x60; field describing the parse failure. 
   # @param icu_skeleton_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
