@@ -17,7 +17,7 @@ module Phrase
     # When true, includes the zero plural form in the generated skeleton for locales that support it.
     attr_accessor :zero_form_enabled
 
-    # Pluralization rule set to apply when constructing skeletons. Accepted values are `legacy` and `cldr_41`. Defaults to `legacy` when omitted.
+    # Pluralization rule set to use when constructing skeletons. Pass `legacy` for pre-CLDR behaviour, or a CLDR version string such as `cldr48`. Defaults to the project's configured version when omitted.
     attr_accessor :cldr_version
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -102,19 +102,7 @@ module Phrase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      cldr_version_validator = EnumAttributeValidator.new('String', ["legacy", "cldr_41"])
-      return false unless cldr_version_validator.valid?(@cldr_version)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] cldr_version Object to be assigned
-    def cldr_version=(cldr_version)
-      validator = EnumAttributeValidator.new('String', ["legacy", "cldr_41"])
-      unless validator.valid?(cldr_version)
-        fail ArgumentError, "invalid value for \"cldr_version\", must be one of #{validator.allowable_values}."
-      end
-      @cldr_version = cldr_version
     end
 
     # Checks equality by comparing each attribute.
