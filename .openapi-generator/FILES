@@ -129,6 +129,8 @@ docs/JobTemplatesApi.md
 docs/JobUpdateParameters.md
 docs/JobsApi.md
 docs/KeyCreateParameters.md
+docs/KeyFormatAnnotationsApi.md
+docs/KeyFormatAnnotationsList200ResponseInner.md
 docs/KeyLink.md
 docs/KeyLinksBatchDestroyParameters.md
 docs/KeyLinksCreateParameters.md
@@ -321,6 +323,7 @@ lib/phrase/api/job_locales_api.rb
 lib/phrase/api/job_template_locales_api.rb
 lib/phrase/api/job_templates_api.rb
 lib/phrase/api/jobs_api.rb
+lib/phrase/api/key_format_annotations_api.rb
 lib/phrase/api/keys_api.rb
 lib/phrase/api/keys_figma_attachments_api.rb
 lib/phrase/api/linked_keys_api.rb
@@ -455,6 +458,7 @@ lib/phrase/models/job_template_preview.rb
 lib/phrase/models/job_template_update_parameters.rb
 lib/phrase/models/job_update_parameters.rb
 lib/phrase/models/key_create_parameters.rb
+lib/phrase/models/key_format_annotations_list200_response_inner.rb
 lib/phrase/models/key_link.rb
 lib/phrase/models/key_links_batch_destroy_parameters.rb
 lib/phrase/models/key_links_create_parameters.rb
@@ -614,6 +618,7 @@ spec/api/job_locales_api_spec.rb
 spec/api/job_template_locales_api_spec.rb
 spec/api/job_templates_api_spec.rb
 spec/api/jobs_api_spec.rb
+spec/api/key_format_annotations_api_spec.rb
 spec/api/keys_api_spec.rb
 spec/api/keys_figma_attachments_api_spec.rb
 spec/api/linked_keys_api_spec.rb
@@ -745,6 +750,7 @@ spec/models/job_template_spec.rb
 spec/models/job_template_update_parameters_spec.rb
 spec/models/job_update_parameters_spec.rb
 spec/models/key_create_parameters_spec.rb
+spec/models/key_format_annotations_list200_response_inner_spec.rb
 spec/models/key_link_spec.rb
 spec/models/key_links_batch_destroy_parameters_spec.rb
 spec/models/key_links_create_parameters_spec.rb

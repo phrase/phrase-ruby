@@ -258,6 +258,7 @@ Class | Method | HTTP request | Description
 *Phrase::JobsApi* | [**job_update**](docs/JobsApi.md#job_update) | **PATCH** /projects/{project_id}/jobs/{id} | Update a job
 *Phrase::JobsApi* | [**jobs_by_account**](docs/JobsApi.md#jobs_by_account) | **GET** /accounts/{account_id}/jobs | List account jobs
 *Phrase::JobsApi* | [**jobs_list**](docs/JobsApi.md#jobs_list) | **GET** /projects/{project_id}/jobs | List jobs
+*Phrase::KeyFormatAnnotationsApi* | [**key_format_annotations_list**](docs/KeyFormatAnnotationsApi.md#key_format_annotations_list) | **GET** /projects/{project_id}/keys/{id}/format_annotations | List format annotations for a key
 *Phrase::KeysApi* | [**key_create**](docs/KeysApi.md#key_create) | **POST** /projects/{project_id}/keys | Create a key
 *Phrase::KeysApi* | [**key_delete**](docs/KeysApi.md#key_delete) | **DELETE** /projects/{project_id}/keys/{id} | Delete a key
 *Phrase::KeysApi* | [**key_show**](docs/KeysApi.md#key_show) | **GET** /projects/{project_id}/keys/{id} | Get a single key
@@ -519,6 +520,7 @@ Class | Method | HTTP request | Description
  - [Phrase::JobTemplateUpdateParameters](docs/JobTemplateUpdateParameters.md)
  - [Phrase::JobUpdateParameters](docs/JobUpdateParameters.md)
  - [Phrase::KeyCreateParameters](docs/KeyCreateParameters.md)
+ - [Phrase::KeyFormatAnnotationsList200ResponseInner](docs/KeyFormatAnnotationsList200ResponseInner.md)
  - [Phrase::KeyLink](docs/KeyLink.md)
  - [Phrase::KeyLinksBatchDestroyParameters](docs/KeyLinksBatchDestroyParameters.md)
  - [Phrase::KeyLinksCreateParameters](docs/KeyLinksCreateParameters.md)
