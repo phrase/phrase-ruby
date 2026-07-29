@@ -311,6 +311,9 @@ Class | Method | HTTP request | Description
 *Phrase::OrganizationJobTemplatesApi* | [**organization_job_template_update**](docs/OrganizationJobTemplatesApi.md#organization_job_template_update) | **PATCH** /accounts/{account_id}/job_templates/{id} | Update an organization job template
 *Phrase::OrganizationJobTemplatesApi* | [**organization_job_templates_list**](docs/OrganizationJobTemplatesApi.md#organization_job_templates_list) | **GET** /accounts/{account_id}/job_templates | List organization job templates
 *Phrase::OrganizationJobTemplatesApi* | [**organization_job_templates_show**](docs/OrganizationJobTemplatesApi.md#organization_job_templates_show) | **GET** /accounts/{account_id}/job_templates/{id} | Get a single organization job template
+*Phrase::PreTranslationsApi* | [**pre_translation_create**](docs/PreTranslationsApi.md#pre_translation_create) | **POST** /projects/{project_id}/pre_translations | Create a pre-translation job
+*Phrase::PreTranslationsApi* | [**pre_translation_show**](docs/PreTranslationsApi.md#pre_translation_show) | **GET** /projects/{project_id}/pre_translations/{id} | Get a single pre-translation job
+*Phrase::PreTranslationsApi* | [**pre_translations_list**](docs/PreTranslationsApi.md#pre_translations_list) | **GET** /projects/{project_id}/pre_translations | List pre-translation jobs
 *Phrase::ProjectsApi* | [**project_create**](docs/ProjectsApi.md#project_create) | **POST** /projects | Create a project
 *Phrase::ProjectsApi* | [**project_delete**](docs/ProjectsApi.md#project_delete) | **DELETE** /projects/{id} | Delete a project
 *Phrase::ProjectsApi* | [**project_show**](docs/ProjectsApi.md#project_show) | **GET** /projects/{id} | Get a single project
@@ -562,6 +565,8 @@ Class | Method | HTTP request | Description
  - [Phrase::OrganizationJobTemplateLocaleUpdateParameters](docs/OrganizationJobTemplateLocaleUpdateParameters.md)
  - [Phrase::OrganizationJobTemplateLocalesCreateParameters](docs/OrganizationJobTemplateLocalesCreateParameters.md)
  - [Phrase::OrganizationJobTemplateUpdateParameters](docs/OrganizationJobTemplateUpdateParameters.md)
+ - [Phrase::PreTranslation](docs/PreTranslation.md)
+ - [Phrase::PreTranslationCreateParameters](docs/PreTranslationCreateParameters.md)
  - [Phrase::Project](docs/Project.md)
  - [Phrase::ProjectCreateParameters](docs/ProjectCreateParameters.md)
  - [Phrase::ProjectDetails](docs/ProjectDetails.md)
