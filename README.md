@@ -137,6 +137,8 @@ Class | Method | HTTP request | Description
 *Phrase::AuthorizationsApi* | [**authorization_show**](docs/AuthorizationsApi.md#authorization_show) | **GET** /authorizations/{id} | Get a single authorization
 *Phrase::AuthorizationsApi* | [**authorization_update**](docs/AuthorizationsApi.md#authorization_update) | **PATCH** /authorizations/{id} | Update an authorization
 *Phrase::AuthorizationsApi* | [**authorizations_list**](docs/AuthorizationsApi.md#authorizations_list) | **GET** /authorizations | List authorizations
+*Phrase::AutomationEventsApi* | [**account_automation_events_list**](docs/AutomationEventsApi.md#account_automation_events_list) | **GET** /accounts/{account_id}/automation_events | List automation events for an account
+*Phrase::AutomationEventsApi* | [**automation_events_list**](docs/AutomationEventsApi.md#automation_events_list) | **GET** /accounts/{account_id}/automations/{automation_id}/events | List events for an automation
 *Phrase::AutomationsApi* | [**automation_activate**](docs/AutomationsApi.md#automation_activate) | **POST** /accounts/{account_id}/automations/{automation_id}/activate | Activate an automation
 *Phrase::AutomationsApi* | [**automation_create**](docs/AutomationsApi.md#automation_create) | **POST** /accounts/{account_id}/automations | Create an automation
 *Phrase::AutomationsApi* | [**automation_deactivate**](docs/AutomationsApi.md#automation_deactivate) | **POST** /accounts/{account_id}/automations/{automation_id}/deactivate | Deactivate an automation
@@ -435,6 +437,8 @@ Class | Method | HTTP request | Description
  - [Phrase::AuthorizationUpdateParameters](docs/AuthorizationUpdateParameters.md)
  - [Phrase::AuthorizationWithToken](docs/AuthorizationWithToken.md)
  - [Phrase::Automation](docs/Automation.md)
+ - [Phrase::AutomationEvent](docs/AutomationEvent.md)
+ - [Phrase::AutomationEventProject](docs/AutomationEventProject.md)
  - [Phrase::AutomationsCreateParameters](docs/AutomationsCreateParameters.md)
  - [Phrase::AutomationsCreateParameters1](docs/AutomationsCreateParameters1.md)
  - [Phrase::BlacklistedKey](docs/BlacklistedKey.md)

@@ -768,7 +768,7 @@ opts = {
   owned_by: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user owning job
   assigned_to: 'abcd1234cdef1234abcd1234cdef1234', # String | filter by user assigned to job
   state: 'completed', # String | filter by state of job; valid states are: `draft`, `in_progress`, `completed`
-  updated_since: '2013-02-21T00:00:00.000Z' # String | filter by jobs updated since given date
+  updated_since: '2013-02-21T00:00:00Z' # String | filter by jobs updated since given date
 }
 
 begin
@@ -844,7 +844,7 @@ opts = {
   state: 'completed', # String | filter by state of job; valid states are: `draft`, `in_progress`, `completed`
   states: ['inner_example'], # Array<String> | Filter by multiple job states at once. Accepted values are the same as `state`. When supplied, `state` is ignored. Rejected with `400 Bad Request` if any value is unknown.
   key_id: 'abcd1234cdef1234abcd1234cdef1234', # String | Filter to jobs that include the translation key identified by this code (matches via the job's tags).
-  updated_since: '2013-02-21T00:00:00.000Z' # String | filter by jobs updated since given date
+  updated_since: '2013-02-21T00:00:00Z' # String | filter by jobs updated since given date
 }
 
 begin
