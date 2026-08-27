@@ -24,6 +24,15 @@ module Phrase
 
     attr_accessor :language_ai_profile
 
+    # Indicates that new translations for this locale are marked as unverified. Only applies to locales using the basic verification workflow. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature.
+    attr_accessor :unverify_new_translations
+
+    # Indicates that updated translations for this locale are marked as unverified. Only applies to locales using the basic verification workflow. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature.
+    attr_accessor :unverify_updated_translations
+
+    # Indicates that translations for this locale are marked as unverified when the source language has been changed.
+    attr_accessor :unverify_on_source_changes
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -44,6 +53,9 @@ module Phrase
         :'source_locale' => :'source_locale',
         :'fallback_locale' => :'fallback_locale',
         :'language_ai_profile' => :'language_ai_profile',
+        :'unverify_new_translations' => :'unverify_new_translations',
+        :'unverify_updated_translations' => :'unverify_updated_translations',
+        :'unverify_on_source_changes' => :'unverify_on_source_changes',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
         :'statistics' => :'statistics'
@@ -64,6 +76,9 @@ module Phrase
         :'source_locale' => :'LocalePreview',
         :'fallback_locale' => :'LocalePreview',
         :'language_ai_profile' => :'String',
+        :'unverify_new_translations' => :'Boolean',
+        :'unverify_updated_translations' => :'Boolean',
+        :'unverify_on_source_changes' => :'Boolean',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
         :'statistics' => :'LocaleStatistics'
@@ -146,6 +161,18 @@ module Phrase
         self.language_ai_profile = attributes[:'language_ai_profile']
       end
 
+      if attributes.key?(:'unverify_new_translations')
+        self.unverify_new_translations = attributes[:'unverify_new_translations']
+      end
+
+      if attributes.key?(:'unverify_updated_translations')
+        self.unverify_updated_translations = attributes[:'unverify_updated_translations']
+      end
+
+      if attributes.key?(:'unverify_on_source_changes')
+        self.unverify_on_source_changes = attributes[:'unverify_on_source_changes']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -188,6 +215,9 @@ module Phrase
           source_locale == o.source_locale &&
           fallback_locale == o.fallback_locale &&
           language_ai_profile == o.language_ai_profile &&
+          unverify_new_translations == o.unverify_new_translations &&
+          unverify_updated_translations == o.unverify_updated_translations &&
+          unverify_on_source_changes == o.unverify_on_source_changes &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
           statistics == o.statistics
@@ -202,7 +232,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, code, default, main, rtl, plural_forms, ordinal_plural_forms, source_locale, fallback_locale, language_ai_profile, created_at, updated_at, statistics].hash
+      [id, name, code, default, main, rtl, plural_forms, ordinal_plural_forms, source_locale, fallback_locale, language_ai_profile, unverify_new_translations, unverify_updated_translations, unverify_on_source_changes, created_at, updated_at, statistics].hash
     end
 
     # Builds the object from hash

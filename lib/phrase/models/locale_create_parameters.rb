@@ -32,6 +32,9 @@ module Phrase
     # Indicates that updated translations for this locale should be marked as unverified. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature.
     attr_accessor :unverify_updated_translations
 
+    # Indicates that translations for this locale should be marked as unverified when the source language has been changed.
+    attr_accessor :unverify_on_source_changes
+
     # If set, translations for this locale will be fetched automatically, right after creation.
     attr_accessor :autotranslate
 
@@ -51,6 +54,7 @@ module Phrase
         :'fallback_locale_id' => :'fallback_locale_id',
         :'unverify_new_translations' => :'unverify_new_translations',
         :'unverify_updated_translations' => :'unverify_updated_translations',
+        :'unverify_on_source_changes' => :'unverify_on_source_changes',
         :'autotranslate' => :'autotranslate',
         :'language_ai_profile' => :'language_ai_profile'
       }
@@ -69,6 +73,7 @@ module Phrase
         :'fallback_locale_id' => :'String',
         :'unverify_new_translations' => :'Boolean',
         :'unverify_updated_translations' => :'Boolean',
+        :'unverify_on_source_changes' => :'Boolean',
         :'autotranslate' => :'Boolean',
         :'language_ai_profile' => :'String'
       }
@@ -135,6 +140,10 @@ module Phrase
         self.unverify_updated_translations = attributes[:'unverify_updated_translations']
       end
 
+      if attributes.key?(:'unverify_on_source_changes')
+        self.unverify_on_source_changes = attributes[:'unverify_on_source_changes']
+      end
+
       if attributes.key?(:'autotranslate')
         self.autotranslate = attributes[:'autotranslate']
       end
@@ -182,6 +191,7 @@ module Phrase
           fallback_locale_id == o.fallback_locale_id &&
           unverify_new_translations == o.unverify_new_translations &&
           unverify_updated_translations == o.unverify_updated_translations &&
+          unverify_on_source_changes == o.unverify_on_source_changes &&
           autotranslate == o.autotranslate &&
           language_ai_profile == o.language_ai_profile
     end
@@ -195,7 +205,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, code, default, main, rtl, source_locale_id, fallback_locale_id, unverify_new_translations, unverify_updated_translations, autotranslate, language_ai_profile].hash
+      [branch, name, code, default, main, rtl, source_locale_id, fallback_locale_id, unverify_new_translations, unverify_updated_translations, unverify_on_source_changes, autotranslate, language_ai_profile].hash
     end
 
     # Builds the object from hash

@@ -80,6 +80,12 @@ describe 'LocaleCreateParameters' do
     end
   end
 
+  describe 'test attribute "unverify_on_source_changes"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "autotranslate"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
