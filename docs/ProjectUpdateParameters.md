@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **main_format** | **String** | (Optional) Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see [Format Guide](https://support.phrase.com/hc/en-us/sections/6111343326364) or our [Formats API Endpoint](#formats). | [optional] 
 **media** | **String** | (Optional) Main technology stack used in the project. It affects for example the suggested placeholder style. Predefined values include: &#x60;Ruby&#x60;, &#x60;JavaScript&#x60;, &#x60;AngularJS&#x60;, &#x60;React&#x60;, &#x60;iOS&#x60;, &#x60;Android&#x60;, &#x60;Python&#x60;, &#x60;PHP&#x60;, &#x60;Java&#x60;, &#x60;Go&#x60;, &#x60;Windows Phone&#x60;, &#x60;Rails&#x60;, &#x60;Node.js&#x60;, &#x60;.NET&#x60;, &#x60;Django&#x60;, &#x60;Symfony&#x60;, &#x60;Yii Framework&#x60;, &#x60;Zend Framework&#x60;, &#x60;Apple App Store Description&#x60;, &#x60;Google Play Description&#x60;, but it can also take any other value. | [optional] 
 **shares_translation_memory** | **Boolean** | (Optional) Indicates whether the project should share the account&#39;s translation memory | [optional] 
+**tm_ids** | **Array&lt;String&gt;** | List of TMS translation memory IDs, used to provide reference translations for the AI translation agent. | [optional] 
+**term_base_ids** | **Array&lt;String&gt;** | List of TMS term base IDs, used to ensure consistent terminology for the AI translation agent. | [optional] 
 **project_image** | **File** | (Optional) Image to identify the project | [optional] 
 **remove_project_image** | **Boolean** | (Optional) Indicates whether the project image should be deleted. | [optional] 
 **workflow** | **String** | (Optional) Review Workflow. \&quot;simple\&quot; / \&quot;review\&quot;. [Read more](https://support.phrase.com/hc/en-us/articles/5784094755484) | [optional] 
@@ -48,7 +50,9 @@ instance = Phrase::ProjectUpdateParameters.new(account_id: abcd1234,
                                  main_format: yml,
                                  media: Python,
                                  shares_translation_memory: true,
-                                 project_image: [B@456af3a3,
+                                 tm_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
+                                 term_base_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
+                                 project_image: [B@798b1cf8,
                                  remove_project_image: false,
                                  workflow: review,
                                  machine_translation_enabled: true,

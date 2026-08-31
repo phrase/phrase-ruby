@@ -20,6 +20,12 @@ module Phrase
     # (Optional) Indicates whether the project should share the account's translation memory
     attr_accessor :shares_translation_memory
 
+    # List of TMS translation memory IDs, used to provide reference translations for the AI translation agent.
+    attr_accessor :tm_ids
+
+    # List of TMS term base IDs, used to ensure consistent terminology for the AI translation agent.
+    attr_accessor :term_base_ids
+
     # (Optional) Image to identify the project
     attr_accessor :project_image
 
@@ -129,6 +135,8 @@ module Phrase
         :'main_format' => :'main_format',
         :'media' => :'media',
         :'shares_translation_memory' => :'shares_translation_memory',
+        :'tm_ids' => :'tm_ids',
+        :'term_base_ids' => :'term_base_ids',
         :'project_image' => :'project_image',
         :'remove_project_image' => :'remove_project_image',
         :'workflow' => :'workflow',
@@ -167,6 +175,8 @@ module Phrase
         :'main_format' => :'String',
         :'media' => :'String',
         :'shares_translation_memory' => :'Boolean',
+        :'tm_ids' => :'Array<String>',
+        :'term_base_ids' => :'Array<String>',
         :'project_image' => :'File',
         :'remove_project_image' => :'Boolean',
         :'workflow' => :'String',
@@ -239,6 +249,18 @@ module Phrase
 
       if attributes.key?(:'shares_translation_memory')
         self.shares_translation_memory = attributes[:'shares_translation_memory']
+      end
+
+      if attributes.key?(:'tm_ids')
+        if (value = attributes[:'tm_ids']).is_a?(Array)
+          self.tm_ids = value
+        end
+      end
+
+      if attributes.key?(:'term_base_ids')
+        if (value = attributes[:'term_base_ids']).is_a?(Array)
+          self.term_base_ids = value
+        end
       end
 
       if attributes.key?(:'project_image')
@@ -384,6 +406,8 @@ module Phrase
           main_format == o.main_format &&
           media == o.media &&
           shares_translation_memory == o.shares_translation_memory &&
+          tm_ids == o.tm_ids &&
+          term_base_ids == o.term_base_ids &&
           project_image == o.project_image &&
           remove_project_image == o.remove_project_image &&
           workflow == o.workflow &&
@@ -421,7 +445,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id, name, point_of_contact, main_format, media, shares_translation_memory, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, default_encoding, placeholder_styles, autocomplete_job_enabled, job_locking_enabled, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation, translation_keys_sort_collation, cldr_version].hash
+      [account_id, name, point_of_contact, main_format, media, shares_translation_memory, tm_ids, term_base_ids, project_image, remove_project_image, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, default_encoding, placeholder_styles, autocomplete_job_enabled, job_locking_enabled, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation, translation_keys_sort_collation, cldr_version].hash
     end
 
     # Builds the object from hash
