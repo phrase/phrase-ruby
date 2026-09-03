@@ -41,6 +41,8 @@ docs/BranchName.md
 docs/BranchSyncParameters.md
 docs/BranchUpdateParameters.md
 docs/BranchesApi.md
+docs/CheckIssue.md
+docs/ChecksApi.md
 docs/Comment.md
 docs/CommentCreateParameters.md
 docs/CommentCreateParameters1.md
@@ -311,6 +313,7 @@ lib/phrase/api/automation_events_api.rb
 lib/phrase/api/automations_api.rb
 lib/phrase/api/blacklisted_keys_api.rb
 lib/phrase/api/branches_api.rb
+lib/phrase/api/checks_api.rb
 lib/phrase/api/comment_reactions_api.rb
 lib/phrase/api/comment_replies_api.rb
 lib/phrase/api/comments_api.rb
@@ -396,6 +399,7 @@ lib/phrase/models/branch_merge_parameters.rb
 lib/phrase/models/branch_name.rb
 lib/phrase/models/branch_sync_parameters.rb
 lib/phrase/models/branch_update_parameters.rb
+lib/phrase/models/check_issue.rb
 lib/phrase/models/comment.rb
 lib/phrase/models/comment_create_parameters.rb
 lib/phrase/models/comment_create_parameters1.rb
@@ -612,6 +616,7 @@ spec/api/automation_events_api_spec.rb
 spec/api/automations_api_spec.rb
 spec/api/blacklisted_keys_api_spec.rb
 spec/api/branches_api_spec.rb
+spec/api/checks_api_spec.rb
 spec/api/comment_reactions_api_spec.rb
 spec/api/comment_replies_api_spec.rb
 spec/api/comments_api_spec.rb
@@ -694,6 +699,7 @@ spec/models/branch_name_spec.rb
 spec/models/branch_spec.rb
 spec/models/branch_sync_parameters_spec.rb
 spec/models/branch_update_parameters_spec.rb
+spec/models/check_issue_spec.rb
 spec/models/comment_create_parameters1_spec.rb
 spec/models/comment_create_parameters_spec.rb
 spec/models/comment_mark_read_parameters_spec.rb
