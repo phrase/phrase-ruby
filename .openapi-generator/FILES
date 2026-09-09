@@ -165,6 +165,11 @@ docs/LocaleTeamPreview.md
 docs/LocaleUpdateParameters.md
 docs/LocaleUserPreview.md
 docs/LocalesApi.md
+docs/MachineTranslationApi.md
+docs/MachineTranslationLocaleProviderMapping.md
+docs/MachineTranslationLocaleProviderMappingsCreateParameters.md
+docs/MachineTranslationSettings.md
+docs/MachineTranslationSettingsUpdateParameters.md
 docs/Member.md
 docs/MemberProjectDetail.md
 docs/MemberProjectDetailProjectRolesInner.md
@@ -339,6 +344,7 @@ lib/phrase/api/keys_figma_attachments_api.rb
 lib/phrase/api/linked_keys_api.rb
 lib/phrase/api/locale_downloads_api.rb
 lib/phrase/api/locales_api.rb
+lib/phrase/api/machine_translation_api.rb
 lib/phrase/api/members_api.rb
 lib/phrase/api/notification_groups_api.rb
 lib/phrase/api/notifications_api.rb
@@ -497,6 +503,10 @@ lib/phrase/models/locale_statistics.rb
 lib/phrase/models/locale_team_preview.rb
 lib/phrase/models/locale_update_parameters.rb
 lib/phrase/models/locale_user_preview.rb
+lib/phrase/models/machine_translation_locale_provider_mapping.rb
+lib/phrase/models/machine_translation_locale_provider_mappings_create_parameters.rb
+lib/phrase/models/machine_translation_settings.rb
+lib/phrase/models/machine_translation_settings_update_parameters.rb
 lib/phrase/models/member.rb
 lib/phrase/models/member_project_detail.rb
 lib/phrase/models/member_project_detail_project_roles_inner.rb
@@ -641,6 +651,7 @@ spec/api/keys_api_spec.rb
 spec/api/keys_figma_attachments_api_spec.rb
 spec/api/linked_keys_api_spec.rb
 spec/api/locale_downloads_api_spec.rb
+spec/api/machine_translation_api_spec.rb
 spec/api/members_api_spec.rb
 spec/api/notification_groups_api_spec.rb
 spec/api/notifications_api_spec.rb
@@ -797,6 +808,10 @@ spec/models/locale_statistics_spec.rb
 spec/models/locale_team_preview_spec.rb
 spec/models/locale_update_parameters_spec.rb
 spec/models/locale_user_preview_spec.rb
+spec/models/machine_translation_locale_provider_mapping_spec.rb
+spec/models/machine_translation_locale_provider_mappings_create_parameters_spec.rb
+spec/models/machine_translation_settings_spec.rb
+spec/models/machine_translation_settings_update_parameters_spec.rb
 spec/models/member_project_detail_project_roles_inner_spec.rb
 spec/models/member_project_detail_spec.rb
 spec/models/member_spaces_inner_spec.rb
