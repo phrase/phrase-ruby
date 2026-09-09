@@ -20,7 +20,7 @@ module Phrase
     # URL to a ticket for this job (e.g. Jira, Trello)
     attr_accessor :ticket_url
 
-    # tags of keys that should be included within the job
+    # tags of keys that should be included within the job.  *Note: a tag matches every key currently carrying that tag, not just the ones you just tagged. For example, if hundreds of pre-existing keys already share the tag `myUploadTag`, adding it here pulls in every one of them, not only the key you just tagged. Use `translation_key_ids` to scope the job to specific keys instead.* 
     attr_accessor :tags
 
     # ids of keys that should be included within the job
