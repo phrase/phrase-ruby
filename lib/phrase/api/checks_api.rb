@@ -89,6 +89,7 @@ module Phrase
     # @option opts [String] :state Filter by state of the check issue. Can be one of: &#x60;active&#x60;, &#x60;solved&#x60;, &#x60;dismissed&#x60;, &#x60;all&#x60;. Defaults to &#x60;active&#x60;. (default to 'active')
     # @option opts [Array<String>] :locale_ids Filter by one or more locale IDs.
     # @option opts [Array<String>] :check_names Filter by one or more check names. Valid values are:  - &#x60;translation_content_length&#x60; — the translation exceeds the maximum character limit configured for the key. - &#x60;translation_placeholder_usage&#x60; — the translation is missing placeholders present in the source, or contains unexpected ones. - &#x60;translation_glossary_usage&#x60; — the translation does not follow the glossary term translations.
+    # @option opts [String] :created_since Return only check issues created on or after this ISO 8601 datetime. Returns 400 if the value is not a valid date-time.
     # @return [Array<CheckIssue>]
     def check_issues_list(project_id, opts = {})
       data, _status_code, _headers = check_issues_list_with_http_info(project_id, opts)
@@ -105,6 +106,7 @@ module Phrase
     # @option opts [String] :state Filter by state of the check issue. Can be one of: &#x60;active&#x60;, &#x60;solved&#x60;, &#x60;dismissed&#x60;, &#x60;all&#x60;. Defaults to &#x60;active&#x60;.
     # @option opts [Array<String>] :locale_ids Filter by one or more locale IDs.
     # @option opts [Array<String>] :check_names Filter by one or more check names. Valid values are:  - &#x60;translation_content_length&#x60; — the translation exceeds the maximum character limit configured for the key. - &#x60;translation_placeholder_usage&#x60; — the translation is missing placeholders present in the source, or contains unexpected ones. - &#x60;translation_glossary_usage&#x60; — the translation does not follow the glossary term translations.
+    # @option opts [String] :created_since Return only check issues created on or after this ISO 8601 datetime. Returns 400 if the value is not a valid date-time.
     # @return [Array<(Response<(Array<CheckIssue>)>, Integer, Hash)>] Response<(Array<CheckIssue>)> data, response status code and response headers
     def check_issues_list_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
@@ -132,6 +134,7 @@ module Phrase
       query_params[:'state'] = opts[:'state'] if !opts[:'state'].nil?
       query_params[:'locale_ids'] = @api_client.build_collection_param(opts[:'locale_ids'], :multi) if !opts[:'locale_ids'].nil?
       query_params[:'check_names'] = @api_client.build_collection_param(opts[:'check_names'], :multi) if !opts[:'check_names'].nil?
+      query_params[:'created_since'] = opts[:'created_since'] if !opts[:'created_since'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

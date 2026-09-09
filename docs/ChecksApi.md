@@ -104,7 +104,8 @@ opts = {
   per_page: 25, # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
   state: 'active', # String | Filter by state of the check issue. Can be one of: `active`, `solved`, `dismissed`, `all`. Defaults to `active`.
   locale_ids: ['inner_example'], # Array<String> | Filter by one or more locale IDs.
-  check_names: ['translation_content_length'] # Array<String> | Filter by one or more check names. Valid values are:  - `translation_content_length` — the translation exceeds the maximum character limit configured for the key. - `translation_placeholder_usage` — the translation is missing placeholders present in the source, or contains unexpected ones. - `translation_glossary_usage` — the translation does not follow the glossary term translations.
+  check_names: ['translation_content_length'], # Array<String> | Filter by one or more check names. Valid values are:  - `translation_content_length` — the translation exceeds the maximum character limit configured for the key. - `translation_placeholder_usage` — the translation is missing placeholders present in the source, or contains unexpected ones. - `translation_glossary_usage` — the translation does not follow the glossary term translations.
+  created_since: '2026-01-01T12:00:00Z' # String | Return only check issues created on or after this ISO 8601 datetime. Returns 400 if the value is not a valid date-time.
 }
 
 begin
@@ -128,6 +129,7 @@ Name | Type | Description  | Notes
  **state** | **String**| Filter by state of the check issue. Can be one of: &#x60;active&#x60;, &#x60;solved&#x60;, &#x60;dismissed&#x60;, &#x60;all&#x60;. Defaults to &#x60;active&#x60;. | [optional] [default to &#39;active&#39;]
  **locale_ids** | [**Array&lt;String&gt;**](String.md)| Filter by one or more locale IDs. | [optional] 
  **check_names** | [**Array&lt;String&gt;**](String.md)| Filter by one or more check names. Valid values are:  - &#x60;translation_content_length&#x60; — the translation exceeds the maximum character limit configured for the key. - &#x60;translation_placeholder_usage&#x60; — the translation is missing placeholders present in the source, or contains unexpected ones. - &#x60;translation_glossary_usage&#x60; — the translation does not follow the glossary term translations. | [optional] 
+ **created_since** | **String**| Return only check issues created on or after this ISO 8601 datetime. Returns 400 if the value is not a valid date-time. | [optional] 
 
 ### Return type
 

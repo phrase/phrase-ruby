@@ -45,6 +45,7 @@ describe 'ChecksApi' do
   # @option opts [String] :state Filter by state of the check issue. Can be one of: &#x60;active&#x60;, &#x60;solved&#x60;, &#x60;dismissed&#x60;, &#x60;all&#x60;. Defaults to &#x60;active&#x60;.
   # @option opts [Array<String>] :locale_ids Filter by one or more locale IDs.
   # @option opts [Array<String>] :check_names Filter by one or more check names. Valid values are:  - &#x60;translation_content_length&#x60; — the translation exceeds the maximum character limit configured for the key. - &#x60;translation_placeholder_usage&#x60; — the translation is missing placeholders present in the source, or contains unexpected ones. - &#x60;translation_glossary_usage&#x60; — the translation does not follow the glossary term translations.
+  # @option opts [String] :created_since Return only check issues created on or after this ISO 8601 datetime. Returns 400 if the value is not a valid date-time.
   # @return [Array<CheckIssue>]
   describe 'check_issues_list test' do
     it 'should work' do
