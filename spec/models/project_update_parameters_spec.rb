@@ -170,6 +170,12 @@ describe 'ProjectUpdateParameters' do
     end
   end
 
+  describe 'test attribute "fallback_for_unverified_translations"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "default_encoding"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -54,6 +54,8 @@ module Phrase
 
     attr_accessor :autotranslate_overwrite_unverified_translations
 
+    attr_accessor :fallback_for_unverified_translations
+
     attr_accessor :autocomplete_job_enabled
 
     attr_accessor :default_encoding
@@ -95,6 +97,7 @@ module Phrase
         :'autotranslate_use_machine_translation' => :'autotranslate_use_machine_translation',
         :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
         :'autotranslate_overwrite_unverified_translations' => :'autotranslate_overwrite_unverified_translations',
+        :'fallback_for_unverified_translations' => :'fallback_for_unverified_translations',
         :'autocomplete_job_enabled' => :'autocomplete_job_enabled',
         :'default_encoding' => :'default_encoding',
         :'cldr_version' => :'cldr_version',
@@ -133,6 +136,7 @@ module Phrase
         :'autotranslate_use_machine_translation' => :'Boolean',
         :'autotranslate_use_translation_memory' => :'Boolean',
         :'autotranslate_overwrite_unverified_translations' => :'Boolean',
+        :'fallback_for_unverified_translations' => :'Boolean',
         :'autocomplete_job_enabled' => :'Boolean',
         :'default_encoding' => :'String',
         :'cldr_version' => :'String',
@@ -274,6 +278,10 @@ module Phrase
         self.autotranslate_overwrite_unverified_translations = attributes[:'autotranslate_overwrite_unverified_translations']
       end
 
+      if attributes.key?(:'fallback_for_unverified_translations')
+        self.fallback_for_unverified_translations = attributes[:'fallback_for_unverified_translations']
+      end
+
       if attributes.key?(:'autocomplete_job_enabled')
         self.autocomplete_job_enabled = attributes[:'autocomplete_job_enabled']
       end
@@ -345,6 +353,7 @@ module Phrase
           autotranslate_use_machine_translation == o.autotranslate_use_machine_translation &&
           autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
           autotranslate_overwrite_unverified_translations == o.autotranslate_overwrite_unverified_translations &&
+          fallback_for_unverified_translations == o.fallback_for_unverified_translations &&
           autocomplete_job_enabled == o.autocomplete_job_enabled &&
           default_encoding == o.default_encoding &&
           cldr_version == o.cldr_version &&
@@ -362,7 +371,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory, machine_translation_enabled, zero_plural_form_enabled, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, enable_branching, protect_master_branch, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, autocomplete_job_enabled, default_encoding, cldr_version, job_locking_enabled, placeholder_styles, branch].hash
+      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory, machine_translation_enabled, zero_plural_form_enabled, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, enable_branching, protect_master_branch, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, fallback_for_unverified_translations, autocomplete_job_enabled, default_encoding, cldr_version, job_locking_enabled, placeholder_styles, branch].hash
     end
 
     # Builds the object from hash

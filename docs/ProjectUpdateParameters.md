@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **autotranslate_use_machine_translation** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **autotranslate_use_translation_memory** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **autotranslate_overwrite_unverified_translations** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
+**fallback_for_unverified_translations** | **Boolean** | (Optional) When enabled, the fallback locale&#39;s translation is used on export for unverified translations in addition to empty ones. Requires a fallback locale to be configured on the locale. | [optional] 
 **default_encoding** | **String** | (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads. | [optional] 
 **placeholder_styles** | **Array&lt;String&gt;** | (Optional) List of placeholder styles enabled for the project. | [optional] 
 **autocomplete_job_enabled** | **Boolean** | (Optional) Enable autocomplete-job behavior so that newly created keys and locales are automatically added to in-progress jobs. | [optional] 
@@ -52,7 +53,7 @@ instance = Phrase::ProjectUpdateParameters.new(account_id: abcd1234,
                                  shares_translation_memory: true,
                                  tm_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
                                  term_base_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 project_image: [B@a2dc92d,
+                                 project_image: [B@5884d435,
                                  remove_project_image: false,
                                  workflow: review,
                                  machine_translation_enabled: true,
@@ -69,6 +70,7 @@ instance = Phrase::ProjectUpdateParameters.new(account_id: abcd1234,
                                  autotranslate_use_machine_translation: true,
                                  autotranslate_use_translation_memory: true,
                                  autotranslate_overwrite_unverified_translations: true,
+                                 fallback_for_unverified_translations: false,
                                  default_encoding: UTF-8,
                                  placeholder_styles: [&quot;angular&quot;,&quot;iOS&quot;],
                                  autocomplete_job_enabled: false,

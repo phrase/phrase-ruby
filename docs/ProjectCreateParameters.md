@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **autotranslate_use_machine_translation** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **autotranslate_use_translation_memory** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
 **autotranslate_overwrite_unverified_translations** | **Boolean** | (Optional) Requires autotranslate_enabled to be true | [optional] 
+**fallback_for_unverified_translations** | **Boolean** | (Optional) When enabled, the fallback locale&#39;s translation is used on export for unverified translations in addition to empty ones. Requires a fallback locale to be configured on the locale. | [optional] 
 **autocomplete_job_enabled** | **Boolean** | (Optional) Enable autocomplete-job behavior so that newly created keys and locales are automatically added to in-progress jobs. | [optional] 
 **job_locking_enabled** | **Boolean** | (Optional) When enabled, translations are locked once a job moves into review. | [optional] 
 **smart_suggest_enabled** | **Boolean** | (Optional) Enable Smart Suggest for the project. Defaults to &#x60;true&#x60; when omitted. | [optional] 
@@ -51,7 +52,7 @@ instance = Phrase::ProjectCreateParameters.new(name: My Android Project,
                                  shares_translation_memory: true,
                                  tm_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
                                  term_base_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 project_image: [B@7787a602,
+                                 project_image: [B@56f8032,
                                  remove_project_image: null,
                                  account_id: abcd1234,
                                  point_of_contact: abcd1234,
@@ -71,6 +72,7 @@ instance = Phrase::ProjectCreateParameters.new(name: My Android Project,
                                  autotranslate_use_machine_translation: true,
                                  autotranslate_use_translation_memory: true,
                                  autotranslate_overwrite_unverified_translations: true,
+                                 fallback_for_unverified_translations: false,
                                  autocomplete_job_enabled: false,
                                  job_locking_enabled: false,
                                  smart_suggest_enabled: true,

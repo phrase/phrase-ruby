@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **autotranslate_use_machine_translation** | **Boolean** |  | [optional] 
 **autotranslate_use_translation_memory** | **Boolean** |  | [optional] 
 **autotranslate_overwrite_unverified_translations** | **Boolean** |  | [optional] 
+**fallback_for_unverified_translations** | **Boolean** |  | [optional] 
 **autocomplete_job_enabled** | **Boolean** |  | [optional] 
 **default_encoding** | **String** |  | [optional] 
 **cldr_version** | **String** |  | [optional] 
@@ -68,6 +69,7 @@ instance = Phrase::ProjectDetails.new(id: null,
                                  autotranslate_use_machine_translation: false,
                                  autotranslate_use_translation_memory: true,
                                  autotranslate_overwrite_unverified_translations: false,
+                                 fallback_for_unverified_translations: false,
                                  autocomplete_job_enabled: false,
                                  default_encoding: UTF-8,
                                  cldr_version: legacy,

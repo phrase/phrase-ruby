@@ -80,6 +80,9 @@ module Phrase
     # (Optional) Requires autotranslate_enabled to be true
     attr_accessor :autotranslate_overwrite_unverified_translations
 
+    # (Optional) When enabled, the fallback locale's translation is used on export for unverified translations in addition to empty ones. Requires a fallback locale to be configured on the locale.
+    attr_accessor :fallback_for_unverified_translations
+
     # (Optional) Enable autocomplete-job behavior so that newly created keys and locales are automatically added to in-progress jobs.
     attr_accessor :autocomplete_job_enabled
 
@@ -158,6 +161,7 @@ module Phrase
         :'autotranslate_use_machine_translation' => :'autotranslate_use_machine_translation',
         :'autotranslate_use_translation_memory' => :'autotranslate_use_translation_memory',
         :'autotranslate_overwrite_unverified_translations' => :'autotranslate_overwrite_unverified_translations',
+        :'fallback_for_unverified_translations' => :'fallback_for_unverified_translations',
         :'autocomplete_job_enabled' => :'autocomplete_job_enabled',
         :'job_locking_enabled' => :'job_locking_enabled',
         :'smart_suggest_enabled' => :'smart_suggest_enabled',
@@ -199,6 +203,7 @@ module Phrase
         :'autotranslate_use_machine_translation' => :'Boolean',
         :'autotranslate_use_translation_memory' => :'Boolean',
         :'autotranslate_overwrite_unverified_translations' => :'Boolean',
+        :'fallback_for_unverified_translations' => :'Boolean',
         :'autocomplete_job_enabled' => :'Boolean',
         :'job_locking_enabled' => :'Boolean',
         :'smart_suggest_enabled' => :'Boolean',
@@ -340,6 +345,10 @@ module Phrase
         self.autotranslate_overwrite_unverified_translations = attributes[:'autotranslate_overwrite_unverified_translations']
       end
 
+      if attributes.key?(:'fallback_for_unverified_translations')
+        self.fallback_for_unverified_translations = attributes[:'fallback_for_unverified_translations']
+      end
+
       if attributes.key?(:'autocomplete_job_enabled')
         self.autocomplete_job_enabled = attributes[:'autocomplete_job_enabled']
       end
@@ -440,6 +449,7 @@ module Phrase
           autotranslate_use_machine_translation == o.autotranslate_use_machine_translation &&
           autotranslate_use_translation_memory == o.autotranslate_use_translation_memory &&
           autotranslate_overwrite_unverified_translations == o.autotranslate_overwrite_unverified_translations &&
+          fallback_for_unverified_translations == o.fallback_for_unverified_translations &&
           autocomplete_job_enabled == o.autocomplete_job_enabled &&
           job_locking_enabled == o.job_locking_enabled &&
           smart_suggest_enabled == o.smart_suggest_enabled &&
@@ -460,7 +470,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, main_format, media, shares_translation_memory, tm_ids, term_base_ids, project_image, remove_project_image, account_id, point_of_contact, source_project_id, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, autocomplete_job_enabled, job_locking_enabled, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation, translation_keys_sort_collation, default_encoding, cldr_version, placeholder_styles].hash
+      [name, main_format, media, shares_translation_memory, tm_ids, term_base_ids, project_image, remove_project_image, account_id, point_of_contact, source_project_id, workflow, machine_translation_enabled, enable_branching, protect_master_branch, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, zero_plural_form_enabled, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, fallback_for_unverified_translations, autocomplete_job_enabled, job_locking_enabled, smart_suggest_enabled, smart_suggest_use_glossary, smart_suggest_use_machine_translation, translation_keys_sort_collation, default_encoding, cldr_version, placeholder_styles].hash
     end
 
     # Builds the object from hash
