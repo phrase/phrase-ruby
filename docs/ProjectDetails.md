@@ -74,7 +74,7 @@ instance = Phrase::ProjectDetails.new(id: null,
                                  default_encoding: UTF-8,
                                  cldr_version: legacy,
                                  job_locking_enabled: false,
-                                 placeholder_styles: [&quot;angular&quot;,&quot;iOS&quot;],
+                                 placeholder_styles: [&quot;rails_i18n&quot;,&quot;java_properties&quot;],
                                  branch: null)
 ```
 

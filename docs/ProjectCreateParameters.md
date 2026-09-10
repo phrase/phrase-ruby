@@ -52,7 +52,7 @@ instance = Phrase::ProjectCreateParameters.new(name: My Android Project,
                                  shares_translation_memory: true,
                                  tm_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
                                  term_base_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 project_image: [B@56f8032,
+                                 project_image: [B@383ce871,
                                  remove_project_image: null,
                                  account_id: abcd1234,
                                  point_of_contact: abcd1234,
@@ -81,7 +81,7 @@ instance = Phrase::ProjectCreateParameters.new(name: My Android Project,
                                  translation_keys_sort_collation: unicode_ci,
                                  default_encoding: UTF-8,
                                  cldr_version: cldr48,
-                                 placeholder_styles: [&quot;angular&quot;,&quot;iOS&quot;])
+                                 placeholder_styles: [&quot;rails_i18n&quot;,&quot;java_properties&quot;])
 ```
 
 
