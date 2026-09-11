@@ -8,10 +8,10 @@ module Phrase
       @api_client = api_client
     end
     # Upload a new file
-    # Upload a new language file. Creates necessary resources in your project.  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
+    # Upload a new language file. Creates necessary resources in your project.  The upload is processed asynchronously: this endpoint returns `201 Created` once the file has been accepted and enqueued, not once processing has finished. Poll `GET /projects/{project_id}/uploads/{id}` and check the `state` field — `error` means processing failed (for example, an unparseable file or a `file_format` that doesn't match the file's actual content).  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
     # @param project_id [String] Project ID
     # @param file [File] File to be imported
-    # @param file_format [String] File format. Auto-detected when possible and not specified.
+    # @param file_format [String] File format of the uploaded file, given as a format&#39;s &#x60;api_name&#x60;. See our [Formats API Endpoint](/en/api/strings/formats/list-formats) for the full list of supported formats.  Optional. When omitted, Phrase tries to auto-detect the format from the file&#39;s content. This is not always possible for JSON files, since several JSON-based formats (e.g. &#x60;json&#x60;, &#x60;simple_json&#x60;, &#x60;nested_json&#x60;) share the same structure. 
     # @param locale_id [String] Locale of the file&#39;s content. Can be the name or id of the locale. Preferred is id.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -42,10 +42,10 @@ module Phrase
     end
 
     # Upload a new file
-    # Upload a new language file. Creates necessary resources in your project.  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
+    # Upload a new language file. Creates necessary resources in your project.  The upload is processed asynchronously: this endpoint returns &#x60;201 Created&#x60; once the file has been accepted and enqueued, not once processing has finished. Poll &#x60;GET /projects/{project_id}/uploads/{id}&#x60; and check the &#x60;state&#x60; field — &#x60;error&#x60; means processing failed (for example, an unparseable file or a &#x60;file_format&#x60; that doesn&#39;t match the file&#39;s actual content).  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
     # @param project_id [String] Project ID
     # @param file [File] File to be imported
-    # @param file_format [String] File format. Auto-detected when possible and not specified.
+    # @param file_format [String] File format of the uploaded file, given as a format&#39;s &#x60;api_name&#x60;. See our [Formats API Endpoint](/en/api/strings/formats/list-formats) for the full list of supported formats.  Optional. When omitted, Phrase tries to auto-detect the format from the file&#39;s content. This is not always possible for JSON files, since several JSON-based formats (e.g. &#x60;json&#x60;, &#x60;simple_json&#x60;, &#x60;nested_json&#x60;) share the same structure. 
     # @param locale_id [String] Locale of the file&#39;s content. Can be the name or id of the locale. Preferred is id.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -157,7 +157,7 @@ module Phrase
     end
 
     # Get a single upload
-    # View details and summary for a single upload.
+    # View details and summary for a single upload. Use this endpoint to poll for the outcome of an upload created via `POST /projects/{project_id}/uploads` — check the `state` field. 
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters
@@ -170,7 +170,7 @@ module Phrase
     end
 
     # Get a single upload
-    # View details and summary for a single upload.
+    # View details and summary for a single upload. Use this endpoint to poll for the outcome of an upload created via &#x60;POST /projects/{project_id}/uploads&#x60; — check the &#x60;state&#x60; field. 
     # @param project_id [String] Project ID
     # @param id [String] ID
     # @param [Hash] opts the optional parameters

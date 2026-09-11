@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Upload a new file
 
-Upload a new language file. Creates necessary resources in your project.  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
+Upload a new language file. Creates necessary resources in your project.  The upload is processed asynchronously: this endpoint returns `201 Created` once the file has been accepted and enqueued, not once processing has finished. Poll `GET /projects/{project_id}/uploads/{id}` and check the `state` field — `error` means processing failed (for example, an unparseable file or a `file_format` that doesn't match the file's actual content).  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
 
 ### Example
 
@@ -37,7 +37,7 @@ end
 api_instance = Phrase::UploadsApi.new
 project_id = 'project_id_example' # String | Project ID
 file = File.new('/path/to/some/file') # File | File to be imported
-file_format = 'file_format_example' # String | File format. Auto-detected when possible and not specified.
+file_format = 'file_format_example' # String | File format of the uploaded file, given as a format's `api_name`. See our [Formats API Endpoint](/en/api/strings/formats/list-formats) for the full list of supported formats.  Optional. When omitted, Phrase tries to auto-detect the format from the file's content. This is not always possible for JSON files, since several JSON-based formats (e.g. `json`, `simple_json`, `nested_json`) share the same structure. 
 locale_id = 'locale_id_example' # String | Locale of the file's content. Can be the name or id of the locale. Preferred is id.
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **String**| Project ID | 
  **file** | **File**| File to be imported | 
- **file_format** | **String**| File format. Auto-detected when possible and not specified. | 
+ **file_format** | **String**| File format of the uploaded file, given as a format&#39;s &#x60;api_name&#x60;. See our [Formats API Endpoint](/en/api/strings/formats/list-formats) for the full list of supported formats.  Optional. When omitted, Phrase tries to auto-detect the format from the file&#39;s content. This is not always possible for JSON files, since several JSON-based formats (e.g. &#x60;json&#x60;, &#x60;simple_json&#x60;, &#x60;nested_json&#x60;) share the same structure.  | 
  **locale_id** | **String**| Locale of the file&#39;s content. Can be the name or id of the locale. Preferred is id. | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **branch** | **String**| specify the branch to use | [optional] 
@@ -123,7 +123,7 @@ Response<([**Upload**](Upload.md))>
 
 Get a single upload
 
-View details and summary for a single upload.
+View details and summary for a single upload. Use this endpoint to poll for the outcome of an upload created via `POST /projects/{project_id}/uploads` — check the `state` field. 
 
 ### Example
 

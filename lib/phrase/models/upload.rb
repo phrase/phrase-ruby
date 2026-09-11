@@ -8,6 +8,7 @@ module Phrase
 
     attr_accessor :format
 
+    # Processing state of the upload: `initialized`, `processing`, `success`, or `error`. `error` means processing failed — for example the file could not be parsed, or a provided `file_format` didn't match the file's actual content. Poll this field until it leaves `initialized`/`processing` to get the final outcome. 
     attr_accessor :state
 
     # A user-facing message explaining why the upload failed, or `null` if the upload did not fail.  This message is intended for display only. Its wording may change at any time and it should not be parsed or relied upon programmatically. 
