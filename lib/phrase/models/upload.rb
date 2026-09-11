@@ -10,6 +10,9 @@ module Phrase
 
     attr_accessor :state
 
+    # A user-facing message explaining why the upload failed, or `null` if the upload did not fail.  This message is intended for display only. Its wording may change at any time and it should not be parsed or relied upon programmatically. 
+    attr_accessor :error_message
+
     # Unique tag of the upload 
     attr_accessor :tag
 
@@ -34,6 +37,7 @@ module Phrase
         :'filename' => :'filename',
         :'format' => :'format',
         :'state' => :'state',
+        :'error_message' => :'error_message',
         :'tag' => :'tag',
         :'tags' => :'tags',
         :'url' => :'url',
@@ -51,6 +55,7 @@ module Phrase
         :'filename' => :'String',
         :'format' => :'String',
         :'state' => :'String',
+        :'error_message' => :'String',
         :'tag' => :'String',
         :'tags' => :'Array<String>',
         :'url' => :'String',
@@ -64,6 +69,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'error_message',
       ])
     end
 
@@ -96,6 +102,10 @@ module Phrase
 
       if attributes.key?(:'state')
         self.state = attributes[:'state']
+      end
+
+      if attributes.key?(:'error_message')
+        self.error_message = attributes[:'error_message']
       end
 
       if attributes.key?(:'tag')
@@ -151,6 +161,7 @@ module Phrase
           filename == o.filename &&
           format == o.format &&
           state == o.state &&
+          error_message == o.error_message &&
           tag == o.tag &&
           tags == o.tags &&
           url == o.url &&
@@ -169,7 +180,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, filename, format, state, tag, tags, url, user, summary, created_at, updated_at].hash
+      [id, filename, format, state, error_message, tag, tags, url, user, summary, created_at, updated_at].hash
     end
 
     # Builds the object from hash
