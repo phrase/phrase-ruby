@@ -2,7 +2,7 @@ require 'date'
 
 module Phrase
   class MachineTranslationSettingsUpdateParameters
-    # The machine translation engine to use as the account default. Supported values: language_ai_translate, aita_translate, microsoft_translate, google_translate, amazon_translate, intento_translate, gpt_translate. Pass null or an empty string to reset to the plan default. 
+    # The machine translation engine to use as the account default. Supported values: language_ai_translate, aita_translate, microsoft_translate, google_translate, amazon_translate. Pass null or an empty string to reset to the plan default. 
     attr_accessor :default_service
 
     # Attribute mapping from ruby-style variable name to JSON key.
