@@ -61,7 +61,7 @@ describe 'ProjectsApi' do
 
   # unit tests for project_update
   # Update a project
-  # Update an existing project.
+  # Update an existing project, including its review workflow, pre-translation/autotranslate rules, and machine-translation configuration (see workflow, machine_translation_enabled, and the autotranslate_* fields below).
   # @param id ID
   # @param project_update_parameters 
   # @param [Hash] opts the optional parameters
