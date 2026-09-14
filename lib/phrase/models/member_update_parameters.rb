@@ -11,10 +11,10 @@ module Phrase
     # List of project ids the user has access to. 
     attr_accessor :project_ids
 
-    # List of locale ids the user has access to.
+    # List of locale ids the user has access to. This is project-scoped and must be paired with `project_ids` (and `strategy`) to take effect; it does not grant account-wide language access.
     attr_accessor :locale_ids
 
-    # List of default locales for the user.
+    # List of default locales for the user, applied across all of the user's projects. This is the account-level field corresponding to \"Language access\" in the translator profile UI.
     attr_accessor :default_locale_codes
 
     # List of spaces the user is assigned to.

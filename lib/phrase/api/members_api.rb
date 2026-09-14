@@ -152,7 +152,7 @@ module Phrase
     end
 
     # Update a member
-    # Update user permissions in the account. Developers and translators need `project_ids` and `locale_ids` assigned to access them. Access token scope must include `team.manage`.
+    # Update user permissions in the account. Developers and translators need `project_ids` and `locale_ids` assigned to access them. To grant account-wide language access instead of access scoped to specific projects, use `default_locale_codes`. Access token scope must include `team.manage`.
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param member_update_parameters [MemberUpdateParameters] 
@@ -165,7 +165,7 @@ module Phrase
     end
 
     # Update a member
-    # Update user permissions in the account. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
+    # Update user permissions in the account. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. To grant account-wide language access instead of access scoped to specific projects, use &#x60;default_locale_codes&#x60;. Access token scope must include &#x60;team.manage&#x60;.
     # @param account_id [String] Account ID
     # @param id [String] ID
     # @param member_update_parameters [MemberUpdateParameters] 
