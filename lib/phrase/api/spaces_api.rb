@@ -310,6 +310,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+    # @option opts [String] :q Filter results by name. Supports the prefix-match syntax &#x60;name:&lt;value&gt;&#x60;, which returns only spaces whose names begin with &#x60;&lt;value&gt;&#x60;. Other query formats are ignored; omitting &#x60;q&#x60; returns all accessible spaces. 
     # @return [Array<Space>]
     def spaces_list(account_id, opts = {})
       data, _status_code, _headers = spaces_list_with_http_info(account_id, opts)
@@ -323,6 +324,7 @@ module Phrase
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [Integer] :page Page number
     # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+    # @option opts [String] :q Filter results by name. Supports the prefix-match syntax &#x60;name:&lt;value&gt;&#x60;, which returns only spaces whose names begin with &#x60;&lt;value&gt;&#x60;. Other query formats are ignored; omitting &#x60;q&#x60; returns all accessible spaces. 
     # @return [Array<(Response<(Array<Space>)>, Integer, Hash)>] Response<(Array<Space>)> data, response status code and response headers
     def spaces_list_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
@@ -339,6 +341,7 @@ module Phrase
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

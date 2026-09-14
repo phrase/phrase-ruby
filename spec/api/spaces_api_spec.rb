@@ -85,6 +85,7 @@ describe 'SpacesApi' do
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [Integer] :page Page number
   # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+  # @option opts [String] :q Filter results by name. Supports the prefix-match syntax &#x60;name:&lt;value&gt;&#x60;, which returns only spaces whose names begin with &#x60;&lt;value&gt;&#x60;. Other query formats are ignored; omitting &#x60;q&#x60; returns all accessible spaces. 
   # @return [Array<Space>]
   describe 'spaces_list test' do
     it 'should work' do
