@@ -104,7 +104,7 @@ module Phrase
     # (Optional) Collation used when sorting translation keys alphabetically.
     attr_accessor :translation_keys_sort_collation
 
-    # (Optional) CLDR plural-rule version used by the project.
+    # (Optional) CLDR plural-rule version used by the project. Pass `legacy` for pre-CLDR pluralization behaviour, or a CLDR version string such as `cldr48`. Also used as the default version for the ICU skeleton endpoint (`POST /icu/skeleton`) when its own `cldr_version` parameter is omitted.
     attr_accessor :cldr_version
 
     class EnumAttributeValidator

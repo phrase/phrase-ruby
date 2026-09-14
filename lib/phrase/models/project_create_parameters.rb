@@ -104,7 +104,7 @@ module Phrase
     # (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [`file_encoding`](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads.
     attr_accessor :default_encoding
 
-    # (Optional) CLDR plural-rule version used by the project.
+    # (Optional) CLDR plural-rule version used by the project. Pass `legacy` for pre-CLDR pluralization behaviour, or a CLDR version string such as `cldr48`. Also used as the default version for the ICU skeleton endpoint (`POST /icu/skeleton`) when its own `cldr_version` parameter is omitted.
     attr_accessor :cldr_version
 
     # (Optional) List of placeholder styles enabled for the project.
