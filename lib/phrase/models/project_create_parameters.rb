@@ -403,9 +403,21 @@ module Phrase
     # @return true if the model is valid
     def valid?
       return false if @name.nil?
+      translation_keys_sort_collation_validator = EnumAttributeValidator.new('String', ["general_ci", "unicode_ci"])
+      return false unless translation_keys_sort_collation_validator.valid?(@translation_keys_sort_collation)
       default_encoding_validator = EnumAttributeValidator.new('String', ["UTF-8", "UTF-16", "UTF-16BE", "UTF-16LE", "ISO-8859-1"])
       return false unless default_encoding_validator.valid?(@default_encoding)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] translation_keys_sort_collation Object to be assigned
+    def translation_keys_sort_collation=(translation_keys_sort_collation)
+      validator = EnumAttributeValidator.new('String', ["general_ci", "unicode_ci"])
+      unless validator.valid?(translation_keys_sort_collation)
+        fail ArgumentError, "invalid value for \"translation_keys_sort_collation\", must be one of #{validator.allowable_values}."
+      end
+      @translation_keys_sort_collation = translation_keys_sort_collation
     end
 
     # Custom attribute writer method checking allowed values (enum).

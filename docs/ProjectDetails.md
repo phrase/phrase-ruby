@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **autocomplete_job_enabled** | **Boolean** |  | [optional] 
 **default_encoding** | **String** |  | [optional] 
 **cldr_version** | **String** |  | [optional] 
+**translation_keys_sort_collation** | **String** |  | [optional] 
 **job_locking_enabled** | **Boolean** |  | [optional] 
 **placeholder_styles** | **Array&lt;String&gt;** |  | [optional] 
 **branch** | [**Branch**](Branch.md) |  | [optional] 
@@ -73,6 +74,7 @@ instance = Phrase::ProjectDetails.new(id: null,
                                  autocomplete_job_enabled: false,
                                  default_encoding: UTF-8,
                                  cldr_version: legacy,
+                                 translation_keys_sort_collation: unicode_ci,
                                  job_locking_enabled: false,
                                  placeholder_styles: [&quot;rails_i18n&quot;,&quot;java_properties&quot;],
                                  branch: null)

@@ -225,6 +225,10 @@ describe 'ProjectUpdateParameters' do
   describe 'test attribute "translation_keys_sort_collation"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["general_ci", "unicode_ci"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.translation_keys_sort_collation = value }.not_to raise_error
+      # end
     end
   end
 

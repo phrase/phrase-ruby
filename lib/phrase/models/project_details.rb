@@ -62,11 +62,35 @@ module Phrase
 
     attr_accessor :cldr_version
 
+    attr_accessor :translation_keys_sort_collation
+
     attr_accessor :job_locking_enabled
 
     attr_accessor :placeholder_styles
 
     attr_accessor :branch
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -101,6 +125,7 @@ module Phrase
         :'autocomplete_job_enabled' => :'autocomplete_job_enabled',
         :'default_encoding' => :'default_encoding',
         :'cldr_version' => :'cldr_version',
+        :'translation_keys_sort_collation' => :'translation_keys_sort_collation',
         :'job_locking_enabled' => :'job_locking_enabled',
         :'placeholder_styles' => :'placeholder_styles',
         :'branch' => :'branch'
@@ -140,6 +165,7 @@ module Phrase
         :'autocomplete_job_enabled' => :'Boolean',
         :'default_encoding' => :'String',
         :'cldr_version' => :'String',
+        :'translation_keys_sort_collation' => :'String',
         :'job_locking_enabled' => :'Boolean',
         :'placeholder_styles' => :'Array<String>',
         :'branch' => :'Branch'
@@ -294,6 +320,10 @@ module Phrase
         self.cldr_version = attributes[:'cldr_version']
       end
 
+      if attributes.key?(:'translation_keys_sort_collation')
+        self.translation_keys_sort_collation = attributes[:'translation_keys_sort_collation']
+      end
+
       if attributes.key?(:'job_locking_enabled')
         self.job_locking_enabled = attributes[:'job_locking_enabled']
       end
@@ -319,7 +349,19 @@ module Phrase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      translation_keys_sort_collation_validator = EnumAttributeValidator.new('String', ["general_ci", "unicode_ci"])
+      return false unless translation_keys_sort_collation_validator.valid?(@translation_keys_sort_collation)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] translation_keys_sort_collation Object to be assigned
+    def translation_keys_sort_collation=(translation_keys_sort_collation)
+      validator = EnumAttributeValidator.new('String', ["general_ci", "unicode_ci"])
+      unless validator.valid?(translation_keys_sort_collation)
+        fail ArgumentError, "invalid value for \"translation_keys_sort_collation\", must be one of #{validator.allowable_values}."
+      end
+      @translation_keys_sort_collation = translation_keys_sort_collation
     end
 
     # Checks equality by comparing each attribute.
@@ -357,6 +399,7 @@ module Phrase
           autocomplete_job_enabled == o.autocomplete_job_enabled &&
           default_encoding == o.default_encoding &&
           cldr_version == o.cldr_version &&
+          translation_keys_sort_collation == o.translation_keys_sort_collation &&
           job_locking_enabled == o.job_locking_enabled &&
           placeholder_styles == o.placeholder_styles &&
           branch == o.branch
@@ -371,7 +414,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory, machine_translation_enabled, zero_plural_form_enabled, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, enable_branching, protect_master_branch, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, fallback_for_unverified_translations, autocomplete_job_enabled, default_encoding, cldr_version, job_locking_enabled, placeholder_styles, branch].hash
+      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory, machine_translation_enabled, zero_plural_form_enabled, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, enable_branching, protect_master_branch, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, fallback_for_unverified_translations, autocomplete_job_enabled, default_encoding, cldr_version, translation_keys_sort_collation, job_locking_enabled, placeholder_styles, branch].hash
     end
 
     # Builds the object from hash
