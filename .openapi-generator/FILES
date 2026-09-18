@@ -200,6 +200,7 @@ docs/Project.md
 docs/ProjectCreateParameters.md
 docs/ProjectDetails.md
 docs/ProjectLocales.md
+docs/ProjectMember.md
 docs/ProjectReport.md
 docs/ProjectShort.md
 docs/ProjectUpdateParameters.md
@@ -530,6 +531,7 @@ lib/phrase/models/project.rb
 lib/phrase/models/project_create_parameters.rb
 lib/phrase/models/project_details.rb
 lib/phrase/models/project_locales.rb
+lib/phrase/models/project_member.rb
 lib/phrase/models/project_report.rb
 lib/phrase/models/project_short.rb
 lib/phrase/models/project_update_parameters.rb
@@ -834,6 +836,7 @@ spec/models/pre_translation_spec.rb
 spec/models/project_create_parameters_spec.rb
 spec/models/project_details_spec.rb
 spec/models/project_locales_spec.rb
+spec/models/project_member_spec.rb
 spec/models/project_report_spec.rb
 spec/models/project_short_spec.rb
 spec/models/project_spec.rb

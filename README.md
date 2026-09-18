@@ -297,6 +297,7 @@ Class | Method | HTTP request | Description
 *Phrase::MembersApi* | [**member_show**](docs/MembersApi.md#member_show) | **GET** /accounts/{account_id}/members/{id} | Get single member
 *Phrase::MembersApi* | [**member_update**](docs/MembersApi.md#member_update) | **PATCH** /accounts/{account_id}/members/{id} | Update a member
 *Phrase::MembersApi* | [**member_update_settings**](docs/MembersApi.md#member_update_settings) | **PATCH** /projects/{project_id}/members/{id} | Update a member's project settings
+*Phrase::MembersApi* | [**members_by_project**](docs/MembersApi.md#members_by_project) | **GET** /projects/{project_id}/members | List project members
 *Phrase::MembersApi* | [**members_list**](docs/MembersApi.md#members_list) | **GET** /accounts/{account_id}/members | List members
 *Phrase::NotificationGroupsApi* | [**notification_groups_list**](docs/NotificationGroupsApi.md#notification_groups_list) | **GET** /notification_groups | List notification groups
 *Phrase::NotificationGroupsApi* | [**notification_groups_mark_all_as_read**](docs/NotificationGroupsApi.md#notification_groups_mark_all_as_read) | **PATCH** /notification_groups/mark_all_as_read | Mark all notification groups as read
@@ -586,6 +587,7 @@ Class | Method | HTTP request | Description
  - [Phrase::ProjectCreateParameters](docs/ProjectCreateParameters.md)
  - [Phrase::ProjectDetails](docs/ProjectDetails.md)
  - [Phrase::ProjectLocales](docs/ProjectLocales.md)
+ - [Phrase::ProjectMember](docs/ProjectMember.md)
  - [Phrase::ProjectReport](docs/ProjectReport.md)
  - [Phrase::ProjectShort](docs/ProjectShort.md)
  - [Phrase::ProjectUpdateParameters](docs/ProjectUpdateParameters.md)

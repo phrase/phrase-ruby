@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**member_show**](MembersApi.md#member_show) | **GET** /accounts/{account_id}/members/{id} | Get single member
 [**member_update**](MembersApi.md#member_update) | **PATCH** /accounts/{account_id}/members/{id} | Update a member
 [**member_update_settings**](MembersApi.md#member_update_settings) | **PATCH** /projects/{project_id}/members/{id} | Update a member&#39;s project settings
+[**members_by_project**](MembersApi.md#members_by_project) | **GET** /projects/{project_id}/members | List project members
 [**members_list**](MembersApi.md#members_list) | **GET** /accounts/{account_id}/members | List members
 
 
@@ -264,6 +265,75 @@ Response<([**MemberProjectDetail**](MemberProjectDetail.md))>
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## members_by_project
+
+> Array&lt;ProjectMember&gt; members_by_project(project_id, opts)
+
+List project members
+
+Get all members active in the project. Access token scope must include `read`.
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::MembersApi.new
+project_id = 'project_id_example' # String | Project ID
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  q: 'jane*', # String | Specify a query to search for members by name or email (including wildcards).
+  job_id: 'abcd1234cdef1234abcd1234cdef1234', # String | Filter members to those assigned to the job identified by this id.
+  page: 1, # Integer | Page number
+  per_page: 25 # Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
+}
+
+begin
+  #List project members
+  result = api_instance.members_by_project(project_id, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling MembersApi->members_by_project: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **String**| Project ID | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **q** | **String**| Specify a query to search for members by name or email (including wildcards). | [optional] 
+ **job_id** | **String**| Filter members to those assigned to the job identified by this id. | [optional] 
+ **page** | **Integer**| Page number | [optional] 
+ **per_page** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional] 
+
+### Return type
+
+Response<([**Array&lt;ProjectMember&gt;**](ProjectMember.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

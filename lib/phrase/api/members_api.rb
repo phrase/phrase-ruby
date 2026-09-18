@@ -311,6 +311,84 @@ module Phrase
       return response, status_code, headers
     end
 
+    # List project members
+    # Get all members active in the project. Access token scope must include `read`.
+    # @param project_id [String] Project ID
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :q Specify a query to search for members by name or email (including wildcards).
+    # @option opts [String] :job_id Filter members to those assigned to the job identified by this id.
+    # @option opts [Integer] :page Page number
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+    # @return [Array<ProjectMember>]
+    def members_by_project(project_id, opts = {})
+      data, _status_code, _headers = members_by_project_with_http_info(project_id, opts)
+      data
+    end
+
+    # List project members
+    # Get all members active in the project. Access token scope must include &#x60;read&#x60;.
+    # @param project_id [String] Project ID
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :q Specify a query to search for members by name or email (including wildcards).
+    # @option opts [String] :job_id Filter members to those assigned to the job identified by this id.
+    # @option opts [Integer] :page Page number
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+    # @return [Array<(Response<(Array<ProjectMember>)>, Integer, Hash)>] Response<(Array<ProjectMember>)> data, response status code and response headers
+    def members_by_project_with_http_info(project_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MembersApi.members_by_project ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling MembersApi.members_by_project"
+      end
+      # resource path
+      local_var_path = '/projects/{project_id}/members'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
+      query_params[:'job_id'] = opts[:'job_id'] if !opts[:'job_id'].nil?
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params[:'X-PhraseApp-OTP'] = opts[:'x_phrase_app_otp'] if !opts[:'x_phrase_app_otp'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'Array<ProjectMember>' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['Basic', 'Token']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MembersApi#members_by_project\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      response = ::Phrase::Response.new(data, headers)
+      return response, status_code, headers
+    end
+
     # List members
     # Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include `team.manage`.
     # @param account_id [String] Account ID

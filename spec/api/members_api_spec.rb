@@ -78,6 +78,23 @@ describe 'MembersApi' do
     end
   end
 
+  # unit tests for members_by_project
+  # List project members
+  # Get all members active in the project. Access token scope must include &#x60;read&#x60;.
+  # @param project_id Project ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :q Specify a query to search for members by name or email (including wildcards).
+  # @option opts [String] :job_id Filter members to those assigned to the job identified by this id.
+  # @option opts [Integer] :page Page number
+  # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
+  # @return [Array<ProjectMember>]
+  describe 'members_by_project test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for members_list
   # List members
   # Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &#x60;team.manage&#x60;.
