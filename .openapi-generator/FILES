@@ -252,6 +252,7 @@ docs/StyleguideDetails.md
 docs/StyleguidePreview.md
 docs/StyleguideUpdateParameters.md
 docs/Subscription.md
+docs/SupportedLanguagesApi.md
 docs/Tag.md
 docs/TagCreateParameters.md
 docs/TagWithStats.md
@@ -365,6 +366,7 @@ lib/phrase/api/screenshots_api.rb
 lib/phrase/api/search_api.rb
 lib/phrase/api/spaces_api.rb
 lib/phrase/api/style_guides_api.rb
+lib/phrase/api/supported_languages_api.rb
 lib/phrase/api/tags_api.rb
 lib/phrase/api/teams_api.rb
 lib/phrase/api/translations_api.rb
@@ -673,6 +675,7 @@ spec/api/screenshots_api_spec.rb
 spec/api/search_api_spec.rb
 spec/api/spaces_api_spec.rb
 spec/api/style_guides_api_spec.rb
+spec/api/supported_languages_api_spec.rb
 spec/api/tags_api_spec.rb
 spec/api/teams_api_spec.rb
 spec/api/translations_api_spec.rb
