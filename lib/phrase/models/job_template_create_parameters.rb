@@ -17,6 +17,9 @@ module Phrase
     # The API id of the source language. This locale will be set as source locale for the job template. If not provided, the project default locale will be used.
     attr_accessor :source_locale_id
 
+    # Code of the account member to set as the job template owner. The referenced user must also be a member of the project; passing the code of an account member who is not a project member returns a 404. When omitted or blank, no owner is pre-set; the user who creates a job from this template is assigned as owner at job-creation time. 
+    attr_accessor :owner_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -24,7 +27,8 @@ module Phrase
         :'name' => :'name',
         :'briefing' => :'briefing',
         :'autotranslate' => :'autotranslate',
-        :'source_locale_id' => :'source_locale_id'
+        :'source_locale_id' => :'source_locale_id',
+        :'owner_id' => :'owner_id'
       }
     end
 
@@ -35,7 +39,8 @@ module Phrase
         :'name' => :'String',
         :'briefing' => :'String',
         :'autotranslate' => :'Boolean',
-        :'source_locale_id' => :'String'
+        :'source_locale_id' => :'String',
+        :'owner_id' => :'String'
       }
     end
 
@@ -79,6 +84,10 @@ module Phrase
       if attributes.key?(:'source_locale_id')
         self.source_locale_id = attributes[:'source_locale_id']
       end
+
+      if attributes.key?(:'owner_id')
+        self.owner_id = attributes[:'owner_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -108,7 +117,8 @@ module Phrase
           name == o.name &&
           briefing == o.briefing &&
           autotranslate == o.autotranslate &&
-          source_locale_id == o.source_locale_id
+          source_locale_id == o.source_locale_id &&
+          owner_id == o.owner_id
     end
 
     # @see the `==` method
@@ -120,7 +130,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, briefing, autotranslate, source_locale_id].hash
+      [branch, name, briefing, autotranslate, source_locale_id, owner_id].hash
     end
 
     # Builds the object from hash

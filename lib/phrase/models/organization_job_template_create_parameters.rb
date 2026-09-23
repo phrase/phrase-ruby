@@ -11,12 +11,16 @@ module Phrase
     # Automatically translate the job using machine translation.
     attr_accessor :autotranslate
 
+    # Code of the account member to set as the job template owner. When omitted or blank, no owner is pre-set; the user who creates a job from this template is assigned as its owner at job-creation time. 
+    attr_accessor :owner_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'name' => :'name',
         :'briefing' => :'briefing',
-        :'autotranslate' => :'autotranslate'
+        :'autotranslate' => :'autotranslate',
+        :'owner_id' => :'owner_id'
       }
     end
 
@@ -25,7 +29,8 @@ module Phrase
       {
         :'name' => :'String',
         :'briefing' => :'String',
-        :'autotranslate' => :'Boolean'
+        :'autotranslate' => :'Boolean',
+        :'owner_id' => :'String'
       }
     end
 
@@ -61,6 +66,10 @@ module Phrase
       if attributes.key?(:'autotranslate')
         self.autotranslate = attributes[:'autotranslate']
       end
+
+      if attributes.key?(:'owner_id')
+        self.owner_id = attributes[:'owner_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -88,7 +97,8 @@ module Phrase
       self.class == o.class &&
           name == o.name &&
           briefing == o.briefing &&
-          autotranslate == o.autotranslate
+          autotranslate == o.autotranslate &&
+          owner_id == o.owner_id
     end
 
     # @see the `==` method
@@ -100,7 +110,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, briefing, autotranslate].hash
+      [name, briefing, autotranslate, owner_id].hash
     end
 
     # Builds the object from hash
