@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobKeysDeleteParameters.new(branch: my-feature-branch,
-                                 translation_key_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;])
+instance = Phrase::JobKeysDeleteParameters.new(branch: 'my-feature-branch',
+                                 translation_key_ids: ["abcd1234cdef1234abcd1234cdef1234"])
 ```
 
 

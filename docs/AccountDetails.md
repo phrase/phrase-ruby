@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::AccountDetails.new(id: null,
-                                 name: null,
-                                 slug: null,
-                                 company: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 company_logo_url: null,
-                                 subscription: null,
-                                 roles: null)
+instance = Phrase::AccountDetails.new(id: nil,
+                                 name: nil,
+                                 slug: nil,
+                                 company: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 company_logo_url: nil,
+                                 subscription: nil,
+                                 roles: nil)
 ```
 
 

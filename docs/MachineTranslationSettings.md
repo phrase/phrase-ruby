@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::MachineTranslationSettings.new(default_service: google_translate,
+instance = Phrase::MachineTranslationSettings.new(default_service: 'google_translate',
                                  machine_translation_units_used: 12500,
                                  machine_translation_units_total: 1000000,
-                                 locale_provider_mappings: null)
+                                 locale_provider_mappings: nil)
 ```
 
 

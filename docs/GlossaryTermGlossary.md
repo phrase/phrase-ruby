@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::GlossaryTermGlossary.new(id: null,
-                                 name: null)
+instance = Phrase::GlossaryTermGlossary.new(id: nil,
+                                 name: nil)
 ```
 
 

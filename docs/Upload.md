@@ -20,20 +20,20 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Upload.new(id: null,
-                                 filename: null,
-                                 format: null,
-                                 state: null,
-                                 error_message: null,
-                                 tag: null,
-                                 tags: null,
-                                 url: null,
-                                 user: null,
-                                 summary: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::Upload.new(id: nil,
+                                 filename: nil,
+                                 format: nil,
+                                 state: nil,
+                                 error_message: nil,
+                                 tag: nil,
+                                 tags: nil,
+                                 url: nil,
+                                 user: nil,
+                                 summary: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

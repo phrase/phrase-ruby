@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::SpaceCreateParameters.new(name: My Android Projects)
+instance = Phrase::SpaceCreateParameters.new(name: 'My Android Projects')
 ```
 
 

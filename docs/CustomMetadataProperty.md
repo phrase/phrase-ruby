@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::CustomMetadataProperty.new(id: null,
-                                 name: null,
-                                 description: null,
-                                 data_type: null,
-                                 user: null,
-                                 projects: null,
-                                 value_options: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::CustomMetadataProperty.new(id: nil,
+                                 name: nil,
+                                 description: nil,
+                                 data_type: nil,
+                                 user: nil,
+                                 projects: nil,
+                                 value_options: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

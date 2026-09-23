@@ -53,8 +53,8 @@ opts = {
   skip_upload_tags: true, # Boolean | Indicates whether the upload should not create upload tags.
   skip_unverification: true, # Boolean | Indicates whether the upload should unverify updated translations.
   file_encoding: 'file_encoding_example', # String | Enforces a specific encoding on the file contents. Valid options are \\\"UTF-8\\\", \\\"UTF-16\\\" and \\\"ISO-8859-1\\\".
-  locale_mapping: { ... }, # Object | Mapping between locale names and translation columns. Required in some formats like CSV or XLSX.
-  format_options: { ... }, # Object | Additional options available for specific formats. See our format guide for the [complete list](https://support.phrase.com/hc/en-us/articles/9652464547740-List-of-Supported-File-Types-Strings).
+  locale_mapping: {}, # Object | Mapping between locale names and translation columns. Required in some formats like CSV or XLSX.
+  format_options: {}, # Object | Additional options available for specific formats. See our format guide for the [complete list](https://support.phrase.com/hc/en-us/articles/9652464547740-List-of-Supported-File-Types-Strings).
   autotranslate: true, # Boolean | If set, translations for the uploaded language will be fetched automatically.
   verify_mentioned_translations: true, # Boolean | Indicates whether all translations mentioned in the upload should be verified.
   mark_reviewed: true, # Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.

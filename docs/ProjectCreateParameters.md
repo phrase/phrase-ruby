@@ -44,20 +44,20 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ProjectCreateParameters.new(name: My Android Project,
-                                 main_format: yml,
-                                 media: Python,
+instance = Phrase::ProjectCreateParameters.new(name: 'My Android Project',
+                                 main_format: 'yml',
+                                 media: 'Python',
                                  shares_translation_memory: true,
-                                 tm_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 term_base_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
+                                 tm_ids: ["abcd1234cdef1234abcd1234cdef1234"],
+                                 term_base_ids: ["abcd1234cdef1234abcd1234cdef1234"],
                                  project_image: File.new('/path/to/file'),
-                                 remove_project_image: null,
-                                 account_id: abcd1234,
-                                 point_of_contact: abcd1234,
-                                 source_project_id: abcd1234,
-                                 workflow: review,
+                                 remove_project_image: nil,
+                                 account_id: 'abcd1234',
+                                 point_of_contact: 'abcd1234',
+                                 source_project_id: 'abcd1234',
+                                 workflow: 'review',
                                  machine_translation_enabled: true,
                                  enable_branching: true,
                                  protect_master_branch: true,
@@ -78,10 +78,10 @@ instance = Phrase::ProjectCreateParameters.new(name: My Android Project,
                                  smart_suggest_enabled: true,
                                  smart_suggest_use_glossary: true,
                                  smart_suggest_use_machine_translation: true,
-                                 translation_keys_sort_collation: unicode_ci,
-                                 default_encoding: UTF-8,
-                                 cldr_version: cldr48,
-                                 placeholder_styles: [&quot;rails_i18n&quot;,&quot;java_properties&quot;])
+                                 translation_keys_sort_collation: 'unicode_ci',
+                                 default_encoding: 'UTF-8',
+                                 cldr_version: 'cldr48',
+                                 placeholder_styles: ["rails_i18n","java_properties"])
 ```
 
 

@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ScreenshotMarkerUpdateParameters.new(branch: my-feature-branch,
-                                 key_id: abcd1234abcd1234abcd1234abcd1234,
-                                 presentation: { &quot;x&quot;: 100, &quot;y&quot;: 100, &quot;w&quot;: 100, &quot;h&quot;: 100 })
+instance = Phrase::ScreenshotMarkerUpdateParameters.new(branch: 'my-feature-branch',
+                                 key_id: 'abcd1234abcd1234abcd1234abcd1234',
+                                 presentation: '{ "x": 100, "y": 100, "w": 100, "h": 100 }')
 ```
 
 

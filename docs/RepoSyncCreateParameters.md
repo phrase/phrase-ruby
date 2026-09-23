@@ -18,18 +18,18 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::RepoSyncCreateParameters.new(project_id: abcd1234abcd1234abcd1234abcd1234,
-                                 name: null,
-                                 git_provider: github,
-                                 connection_type: github_app,
-                                 repo_name: my-org/my-repo,
-                                 base_branch: main,
-                                 pr_branch: phrase-translations,
+instance = Phrase::RepoSyncCreateParameters.new(project_id: 'abcd1234abcd1234abcd1234abcd1234',
+                                 name: nil,
+                                 git_provider: 'github',
+                                 connection_type: 'github_app',
+                                 repo_name: 'my-org/my-repo',
+                                 base_branch: 'main',
+                                 pr_branch: 'phrase-translations',
                                  auto_import: false,
-                                 access_token: ghp_xxxxxxxxxxxxxxxxxxxx,
-                                 custom_api_endpoint: https://git.example.com/api/v4)
+                                 access_token: 'ghp_xxxxxxxxxxxxxxxxxxxx',
+                                 custom_api_endpoint: 'https://git.example.com/api/v4')
 ```
 
 

@@ -12,11 +12,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ScreenshotUpdateParameters.new(branch: my-feature-branch,
-                                 name: A screenshot name,
-                                 description: A screenshot description,
+instance = Phrase::ScreenshotUpdateParameters.new(branch: 'my-feature-branch',
+                                 name: 'A screenshot name',
+                                 description: 'A screenshot description',
                                  filename: File.new('/path/to/file'))
 ```
 

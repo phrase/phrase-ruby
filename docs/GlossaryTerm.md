@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::GlossaryTerm.new(id: null,
-                                 term: null,
-                                 description: null,
-                                 translatable: null,
-                                 case_sensitive: null,
-                                 translations: null,
-                                 glossary: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::GlossaryTerm.new(id: nil,
+                                 term: nil,
+                                 description: nil,
+                                 translatable: nil,
+                                 case_sensitive: nil,
+                                 translations: nil,
+                                 glossary: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

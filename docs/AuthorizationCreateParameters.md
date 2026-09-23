@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::AuthorizationCreateParameters.new(note: My Deploy Script,
-                                 scopes: [&quot;read&quot;,&quot;write&quot;],
-                                 expires_at: 2015-03-30T09:52:53Z)
+instance = Phrase::AuthorizationCreateParameters.new(note: 'My Deploy Script',
+                                 scopes: ["read","write"],
+                                 expires_at: Time.parse('2015-03-30T09:52:53Z'))
 ```
 
 

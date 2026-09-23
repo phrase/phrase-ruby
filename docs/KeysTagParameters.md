@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::KeysTagParameters.new(branch: my-feature-branch,
-                                 q: mykey* translated:true,
-                                 locale_id: abcd1234abcd1234abcd1234abcd1234,
-                                 tags: landing-page,release-1.2)
+instance = Phrase::KeysTagParameters.new(branch: 'my-feature-branch',
+                                 q: 'mykey* translated:true',
+                                 locale_id: 'abcd1234abcd1234abcd1234abcd1234',
+                                 tags: 'landing-page,release-1.2')
 ```
 
 

@@ -23,23 +23,23 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Invitation.new(id: null,
-                                 email: null,
-                                 role: null,
-                                 state: null,
-                                 projects: null,
-                                 locales: null,
-                                 teams: null,
-                                 default_locale_codes: null,
-                                 permissions: null,
-                                 locale_ids: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 accepted_at: null,
-                                 spaces: null,
-                                 project_roles: null)
+instance = Phrase::Invitation.new(id: nil,
+                                 email: nil,
+                                 role: nil,
+                                 state: nil,
+                                 projects: nil,
+                                 locales: nil,
+                                 teams: nil,
+                                 default_locale_codes: nil,
+                                 permissions: nil,
+                                 locale_ids: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 accepted_at: nil,
+                                 spaces: nil,
+                                 project_roles: nil)
 ```
 
 

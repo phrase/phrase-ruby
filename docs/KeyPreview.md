@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::KeyPreview.new(id: null,
-                                 name: null,
-                                 plural: null,
-                                 use_ordinal_rules: null)
+instance = Phrase::KeyPreview.new(id: nil,
+                                 name: nil,
+                                 plural: nil,
+                                 use_ordinal_rules: nil)
 ```
 
 

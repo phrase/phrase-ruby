@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::GlossaryTermTranslationUpdateParameters.new(locale_code: en-US,
-                                 content: My translated term)
+instance = Phrase::GlossaryTermTranslationUpdateParameters.new(locale_code: 'en-US',
+                                 content: 'My translated term')
 ```
 
 

@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::RepoSyncImportParameters.new(repository_branch: my-feature-branch,
-                                 branch: my-strings-branch)
+instance = Phrase::RepoSyncImportParameters.new(repository_branch: 'my-feature-branch',
+                                 branch: 'my-strings-branch')
 ```
 
 

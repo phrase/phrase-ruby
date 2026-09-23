@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::OrganizationJobTemplateLocalesCreateParameters.new(locale_name: de-1,
-                                 locale_code: de-DE,
-                                 user_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 reviewer_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 translator_team_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 reviewer_team_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;])
+instance = Phrase::OrganizationJobTemplateLocalesCreateParameters.new(locale_name: 'de-1',
+                                 locale_code: 'de-DE',
+                                 user_ids: ["abcd1234cdef1234abcd1234cdef1234"],
+                                 reviewer_ids: ["abcd1234cdef1234abcd1234cdef1234"],
+                                 translator_team_ids: ["abcd1234cdef1234abcd1234cdef1234"],
+                                 reviewer_team_ids: ["abcd1234cdef1234abcd1234cdef1234"])
 ```
 
 

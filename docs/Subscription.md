@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Subscription.new(is_current: null,
-                                 trial_expired: null)
+instance = Phrase::Subscription.new(is_current: nil,
+                                 trial_expired: nil)
 ```
 
 

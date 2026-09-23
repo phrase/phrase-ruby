@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::NotificationGroupDetail.new(id: null,
-                                 event_name: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 notifications_count: null,
-                                 latest_notification: null)
+instance = Phrase::NotificationGroupDetail.new(id: nil,
+                                 event_name: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 notifications_count: nil,
+                                 latest_notification: nil)
 ```
 
 

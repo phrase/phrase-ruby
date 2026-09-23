@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::IcuSkeletonError.new(error: Expected &quot;#&quot; but &quot;x&quot; found.)
+instance = Phrase::IcuSkeletonError.new(error: 'Expected "#" but "x" found.')
 ```
 
 

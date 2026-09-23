@@ -16,16 +16,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Webhook.new(id: null,
-                                 callback_url: null,
-                                 description: null,
-                                 events: null,
-                                 active: null,
-                                 include_branches: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::Webhook.new(id: nil,
+                                 callback_url: nil,
+                                 description: nil,
+                                 events: nil,
+                                 active: nil,
+                                 include_branches: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

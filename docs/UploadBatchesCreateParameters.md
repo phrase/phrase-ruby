@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::UploadBatchesCreateParameters.new(branch: my-feature-branch,
+instance = Phrase::UploadBatchesCreateParameters.new(branch: 'my-feature-branch',
                                  delete_unmentioned_keys: true,
-                                 upload_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;,&quot;bcde2345defg2345bcde2345defg2345&quot;])
+                                 upload_ids: ["abcd1234cdef1234abcd1234cdef1234","bcde2345defg2345bcde2345defg2345"])
 ```
 
 

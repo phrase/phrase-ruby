@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::AutomationEventProject.new(id: null,
-                                 name: null)
+instance = Phrase::AutomationEventProject.new(id: nil,
+                                 name: nil)
 ```
 
 

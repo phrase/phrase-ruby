@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::UserPreview.new(id: null,
-                                 username: null,
-                                 name: null,
-                                 gravatar_uid: null)
+instance = Phrase::UserPreview.new(id: nil,
+                                 username: nil,
+                                 name: nil,
+                                 gravatar_uid: nil)
 ```
 
 

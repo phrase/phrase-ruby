@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationParent.new(id: null,
-                                 content: null)
+instance = Phrase::TranslationParent.new(id: nil,
+                                 content: nil)
 ```
 
 

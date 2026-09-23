@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::BranchCreateParameters.new(name: my-branch,
-                                 base: parent-branch)
+instance = Phrase::BranchCreateParameters.new(name: 'my-branch',
+                                 base: 'parent-branch')
 ```
 
 

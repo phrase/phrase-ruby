@@ -42,20 +42,20 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ProjectDetails.new(id: null,
-                                 name: null,
-                                 slug: null,
-                                 main_format: null,
-                                 project_image_url: null,
-                                 media: null,
-                                 account: null,
-                                 space: null,
-                                 point_of_contact: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 shares_translation_memory: null,
+instance = Phrase::ProjectDetails.new(id: nil,
+                                 name: nil,
+                                 slug: nil,
+                                 main_format: nil,
+                                 project_image_url: nil,
+                                 media: nil,
+                                 account: nil,
+                                 space: nil,
+                                 point_of_contact: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 shares_translation_memory: nil,
                                  machine_translation_enabled: true,
                                  zero_plural_form_enabled: true,
                                  enable_all_data_type_translation_keys_for_translators: false,
@@ -72,12 +72,12 @@ instance = Phrase::ProjectDetails.new(id: null,
                                  autotranslate_overwrite_unverified_translations: false,
                                  fallback_for_unverified_translations: false,
                                  autocomplete_job_enabled: false,
-                                 default_encoding: UTF-8,
-                                 cldr_version: legacy,
-                                 translation_keys_sort_collation: unicode_ci,
+                                 default_encoding: 'UTF-8',
+                                 cldr_version: 'legacy',
+                                 translation_keys_sort_collation: 'unicode_ci',
                                  job_locking_enabled: false,
-                                 placeholder_styles: [&quot;rails_i18n&quot;,&quot;java_properties&quot;],
-                                 branch: null)
+                                 placeholder_styles: ["rails_i18n","java_properties"],
+                                 branch: nil)
 ```
 
 

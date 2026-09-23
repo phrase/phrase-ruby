@@ -19,19 +19,19 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ReleaseTrigger.new(id: null,
-                                 branch: null,
-                                 cron_schedule: null,
-                                 time_zone: null,
-                                 next_run_at: null,
-                                 app_min_version: null,
-                                 app_max_version: null,
-                                 locales: null,
-                                 tags: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::ReleaseTrigger.new(id: nil,
+                                 branch: nil,
+                                 cron_schedule: nil,
+                                 time_zone: nil,
+                                 next_run_at: nil,
+                                 app_min_version: nil,
+                                 app_max_version: nil,
+                                 locales: nil,
+                                 tags: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

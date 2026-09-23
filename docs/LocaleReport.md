@@ -22,22 +22,22 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::LocaleReport.new(keys_count: null,
-                                 translated_translations_percentage: null,
-                                 unverified_translations_percentage: null,
-                                 reviewed_translations_percentage: null,
-                                 untranslated_keys_percentage: null,
-                                 completed_translations_count: null,
-                                 untranslated_keys_count: null,
-                                 unverified_translations_count: null,
-                                 reviewed_translations_count: null,
-                                 source_word_count: null,
-                                 word_count: null,
-                                 word_count_unverified: null,
-                                 word_count_missing: null,
-                                 locale: null)
+instance = Phrase::LocaleReport.new(keys_count: nil,
+                                 translated_translations_percentage: nil,
+                                 unverified_translations_percentage: nil,
+                                 reviewed_translations_percentage: nil,
+                                 untranslated_keys_percentage: nil,
+                                 completed_translations_count: nil,
+                                 untranslated_keys_count: nil,
+                                 unverified_translations_count: nil,
+                                 reviewed_translations_count: nil,
+                                 source_word_count: nil,
+                                 word_count: nil,
+                                 word_count_unverified: nil,
+                                 word_count_missing: nil,
+                                 locale: nil)
 ```
 
 

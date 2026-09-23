@@ -25,25 +25,25 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::StyleguideDetails.new(id: null,
-                                 title: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 public_url: null,
-                                 audience: null,
-                                 target_audience: null,
-                                 grammatical_person: null,
-                                 vocabulary_type: null,
-                                 business: null,
-                                 company_branding: null,
-                                 formatting: null,
-                                 glossary_terms: null,
-                                 grammar_consistency: null,
-                                 literal_translation: null,
-                                 overall_tone: null,
-                                 samples: null)
+instance = Phrase::StyleguideDetails.new(id: nil,
+                                 title: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 public_url: nil,
+                                 audience: nil,
+                                 target_audience: nil,
+                                 grammatical_person: nil,
+                                 vocabulary_type: nil,
+                                 business: nil,
+                                 company_branding: nil,
+                                 formatting: nil,
+                                 glossary_terms: nil,
+                                 grammar_consistency: nil,
+                                 literal_translation: nil,
+                                 overall_tone: nil,
+                                 samples: nil)
 ```
 
 

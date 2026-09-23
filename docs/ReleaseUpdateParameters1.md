@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ReleaseUpdateParameters1.new(cron_schedule: 15 18 * * 1,3,
-                                 time_zone: Europe/Berlin,
-                                 locale_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;,&quot;fff565db236400772368235db2c6117e&quot;],
-                                 tags: [&quot;android&quot;,&quot;feature1&quot;],
-                                 branch: my-feature-branch,
-                                 app_min_version: 1.0.0,
-                                 app_max_version: 2.0.0)
+instance = Phrase::ReleaseUpdateParameters1.new(cron_schedule: '15 18 * * 1,3',
+                                 time_zone: 'Europe/Berlin',
+                                 locale_ids: ["abcd1234cdef1234abcd1234cdef1234","fff565db236400772368235db2c6117e"],
+                                 tags: ["android","feature1"],
+                                 branch: 'my-feature-branch',
+                                 app_min_version: '1.0.0',
+                                 app_max_version: '2.0.0')
 ```
 
 

@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::KeyLinksBatchDestroyParameters.new(child_key_ids: [&quot;feature.subtitle&quot;,&quot;nav.home&quot;],
-                                 unlink_parent: null,
-                                 strategy: null)
+instance = Phrase::KeyLinksBatchDestroyParameters.new(child_key_ids: ["feature.subtitle","nav.home"],
+                                 unlink_parent: nil,
+                                 strategy: nil)
 ```
 
 

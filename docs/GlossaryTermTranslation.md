@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::GlossaryTermTranslation.new(id: null,
-                                 locale_code: null,
-                                 content: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::GlossaryTermTranslation.new(id: nil,
+                                 locale_code: nil,
+                                 content: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

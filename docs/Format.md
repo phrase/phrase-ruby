@@ -18,16 +18,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Format.new(name: Ruby/Rails YAML,
-                                 api_name: yml,
-                                 description: YAML file format for use with Ruby/Rails applications,
-                                 extension: yml,
-                                 default_encoding: UTF-8,
+instance = Phrase::Format.new(name: 'Ruby/Rails YAML',
+                                 api_name: 'yml',
+                                 description: 'YAML file format for use with Ruby/Rails applications',
+                                 extension: 'yml',
+                                 default_encoding: 'UTF-8',
                                  importable: true,
                                  exportable: true,
-                                 default_file: ./config/locales/&lt;locale_name&gt;.yml,
+                                 default_file: './config/locales/<locale_name>.yml',
                                  renders_default_locale: false,
                                  includes_locale_information: false)
 ```

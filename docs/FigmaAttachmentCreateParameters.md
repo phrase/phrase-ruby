@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::FigmaAttachmentCreateParameters.new(branch: my-feature-branch,
-                                 url: https://figma.com/file/xxxxx/sample)
+instance = Phrase::FigmaAttachmentCreateParameters.new(branch: 'my-feature-branch',
+                                 url: 'https://figma.com/file/xxxxx/sample')
 ```
 
 

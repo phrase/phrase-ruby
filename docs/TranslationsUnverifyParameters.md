@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationsUnverifyParameters.new(branch: my-feature-branch,
-                                 q: PhraseApp*%20verified:true%20tags:feature,center,
-                                 sort: updated_at,
-                                 order: desc)
+instance = Phrase::TranslationsUnverifyParameters.new(branch: 'my-feature-branch',
+                                 q: 'PhraseApp*%20verified:true%20tags:feature,center',
+                                 sort: 'updated_at',
+                                 order: 'desc')
 ```
 
 

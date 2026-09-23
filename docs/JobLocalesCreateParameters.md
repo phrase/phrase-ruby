@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobLocalesCreateParameters.new(branch: my-feature-branch,
-                                 locale_id: abcd1234cdef1234abcd1234cdef1234,
-                                 user_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 reviewer_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 translator_team_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 reviewer_team_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;])
+instance = Phrase::JobLocalesCreateParameters.new(branch: 'my-feature-branch',
+                                 locale_id: 'abcd1234cdef1234abcd1234cdef1234',
+                                 user_ids: ["abcd1234cdef1234abcd1234cdef1234"],
+                                 reviewer_ids: ["abcd1234cdef1234abcd1234cdef1234"],
+                                 translator_team_ids: ["abcd1234cdef1234abcd1234cdef1234"],
+                                 reviewer_team_ids: ["abcd1234cdef1234abcd1234cdef1234"])
 ```
 
 

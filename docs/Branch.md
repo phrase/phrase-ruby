@@ -19,19 +19,19 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Branch.new(base_project_id: null,
-                                 branch_project_id: null,
-                                 name: null,
-                                 base: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 merged_at: null,
-                                 merged_by: null,
-                                 created_by: null,
-                                 state: null,
-                                 child_branches: null)
+instance = Phrase::Branch.new(base_project_id: nil,
+                                 branch_project_id: nil,
+                                 name: nil,
+                                 base: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 merged_at: nil,
+                                 merged_by: nil,
+                                 created_by: nil,
+                                 state: nil,
+                                 child_branches: nil)
 ```
 
 

@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::QualityPerformanceScoreList200ResponseAnyOf.new(data: null,
-                                 errors: null)
+instance = Phrase::QualityPerformanceScoreList200ResponseAnyOf.new(data: nil,
+                                 errors: nil)
 ```
 
 

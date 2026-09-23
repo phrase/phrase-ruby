@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::DocumentDelete422Response.new(message: null,
-                                 errors: null)
+instance = Phrase::DocumentDelete422Response.new(message: nil,
+                                 errors: nil)
 ```
 
 

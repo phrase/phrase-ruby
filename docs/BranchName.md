@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::BranchName.new(name: null)
+instance = Phrase::BranchName.new(name: nil)
 ```
 
 

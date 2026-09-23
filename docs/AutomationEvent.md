@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::AutomationEvent.new(id: null,
-                                 automation_id: null,
-                                 state: null,
-                                 triggered_by: null,
-                                 created_at: null,
-                                 jobs_created: null,
-                                 job_ids: null,
-                                 project: null,
-                                 details: null)
+instance = Phrase::AutomationEvent.new(id: nil,
+                                 automation_id: nil,
+                                 state: nil,
+                                 triggered_by: nil,
+                                 created_at: nil,
+                                 jobs_created: nil,
+                                 job_ids: nil,
+                                 project: nil,
+                                 details: nil)
 ```
 
 

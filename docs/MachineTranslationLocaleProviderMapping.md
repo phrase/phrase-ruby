@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::MachineTranslationLocaleProviderMapping.new(source_locale_code: en,
-                                 target_locale_code: de,
-                                 service: google_translate)
+instance = Phrase::MachineTranslationLocaleProviderMapping.new(source_locale_code: 'en',
+                                 target_locale_code: 'de',
+                                 service: 'google_translate')
 ```
 
 

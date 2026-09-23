@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::DocumentDelete422ResponseErrorsInner.new(resource: null,
-                                 field: null,
-                                 message: null)
+instance = Phrase::DocumentDelete422ResponseErrorsInner.new(resource: nil,
+                                 field: nil,
+                                 message: nil)
 ```
 
 

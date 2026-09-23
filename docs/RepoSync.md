@@ -19,19 +19,19 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::RepoSync.new(id: null,
-                                 name: null,
-                                 project: null,
-                                 provider: null,
-                                 enabled: null,
-                                 auto_import: null,
-                                 repo_name: null,
-                                 pr_branch: null,
-                                 created_at: null,
-                                 last_import_at: null,
-                                 last_export_at: null)
+instance = Phrase::RepoSync.new(id: nil,
+                                 name: nil,
+                                 project: nil,
+                                 provider: nil,
+                                 enabled: nil,
+                                 auto_import: nil,
+                                 repo_name: nil,
+                                 pr_branch: nil,
+                                 created_at: nil,
+                                 last_import_at: nil,
+                                 last_export_at: nil)
 ```
 
 

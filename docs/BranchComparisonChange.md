@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::BranchComparisonChange.new(from: null,
-                                 to: null)
+instance = Phrase::BranchComparisonChange.new(from: nil,
+                                 to: nil)
 ```
 
 

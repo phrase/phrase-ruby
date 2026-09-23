@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::LocaleDownloadParams.new(file_format: null,
-                                 locale_id: null,
-                                 tags: null,
-                                 branch: null,
-                                 include_empty_translations: null,
-                                 include_translated_keys: null,
-                                 include_unverified_translations: null)
+instance = Phrase::LocaleDownloadParams.new(file_format: nil,
+                                 locale_id: nil,
+                                 tags: nil,
+                                 branch: nil,
+                                 include_empty_translations: nil,
+                                 include_translated_keys: nil,
+                                 include_unverified_translations: nil)
 ```
 
 

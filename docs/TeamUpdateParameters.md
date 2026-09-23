@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TeamUpdateParameters.new(name: German Translators)
+instance = Phrase::TeamUpdateParameters.new(name: 'German Translators')
 ```
 
 

@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobTemplatePreview.new(id: null,
-                                 name: null)
+instance = Phrase::JobTemplatePreview.new(id: nil,
+                                 name: nil)
 ```
 
 

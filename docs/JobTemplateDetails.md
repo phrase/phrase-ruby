@@ -19,19 +19,19 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobTemplateDetails.new(id: null,
-                                 name: null,
-                                 briefing: null,
-                                 project: null,
-                                 branch: null,
-                                 autotranslate_enabled: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 owner: null,
-                                 creator: null,
-                                 locales: null)
+instance = Phrase::JobTemplateDetails.new(id: nil,
+                                 name: nil,
+                                 briefing: nil,
+                                 project: nil,
+                                 branch: nil,
+                                 autotranslate_enabled: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 owner: nil,
+                                 creator: nil,
+                                 locales: nil)
 ```
 
 

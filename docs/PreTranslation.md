@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::PreTranslation.new(id: abcd1234cdef1234abcd1234cdef1234,
-                                 status: null,
-                                 translatable_type: null,
-                                 translatable_id: abcd1234cdef1234abcd1234cdef1234,
-                                 error: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::PreTranslation.new(id: 'abcd1234cdef1234abcd1234cdef1234',
+                                 status: nil,
+                                 translatable_type: nil,
+                                 translatable_id: 'abcd1234cdef1234abcd1234cdef1234',
+                                 error: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::WebhookUpdateParameters.new(callback_url: http://example.com/hooks/phraseapp-notifications,
-                                 secret: secr3t,
-                                 description: My webhook for chat notifications,
-                                 events: locales:create,translations:update,
-                                 active: null,
-                                 include_branches: null)
+instance = Phrase::WebhookUpdateParameters.new(callback_url: 'http://example.com/hooks/phraseapp-notifications',
+                                 secret: 'secr3t',
+                                 description: 'My webhook for chat notifications',
+                                 events: 'locales:create,translations:update',
+                                 active: nil,
+                                 include_branches: nil)
 ```
 
 

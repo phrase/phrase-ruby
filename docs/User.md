@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::User.new(id: null,
-                                 username: null,
-                                 name: null,
-                                 position: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::User.new(id: nil,
+                                 username: nil,
+                                 name: nil,
+                                 position: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

@@ -25,25 +25,25 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::LocaleDetails.new(id: null,
-                                 name: null,
-                                 code: null,
-                                 default: null,
-                                 main: null,
-                                 rtl: null,
-                                 plural_forms: null,
-                                 ordinal_plural_forms: null,
-                                 source_locale: null,
-                                 fallback_locale: null,
-                                 language_ai_profile: null,
-                                 unverify_new_translations: null,
-                                 unverify_updated_translations: null,
-                                 unverify_on_source_changes: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 statistics: null)
+instance = Phrase::LocaleDetails.new(id: nil,
+                                 name: nil,
+                                 code: nil,
+                                 default: nil,
+                                 main: nil,
+                                 rtl: nil,
+                                 plural_forms: nil,
+                                 ordinal_plural_forms: nil,
+                                 source_locale: nil,
+                                 fallback_locale: nil,
+                                 language_ai_profile: nil,
+                                 unverify_new_translations: nil,
+                                 unverify_updated_translations: nil,
+                                 unverify_on_source_changes: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 statistics: nil)
 ```
 
 

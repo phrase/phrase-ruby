@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobLocale.new(id: null,
-                                 job: null,
-                                 locale: null,
-                                 users: null,
-                                 teams: null,
-                                 completed: null,
-                                 translation_completed_at: null,
-                                 review_completed_at: null,
-                                 annotations: null)
+instance = Phrase::JobLocale.new(id: nil,
+                                 job: nil,
+                                 locale: nil,
+                                 users: nil,
+                                 teams: nil,
+                                 completed: nil,
+                                 translation_completed_at: nil,
+                                 review_completed_at: nil,
+                                 annotations: nil)
 ```
 
 

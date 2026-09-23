@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::CommentMarkReadParameters.new(branch: my-feature-branch)
+instance = Phrase::CommentMarkReadParameters.new(branch: 'my-feature-branch')
 ```
 
 

@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Variable.new(name: null,
-                                 value: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::Variable.new(name: nil,
+                                 value: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

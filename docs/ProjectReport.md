@@ -16,16 +16,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ProjectReport.new(locales_count: null,
-                                 keys_count: null,
-                                 translations_count: null,
-                                 untranslated_keys_count: null,
-                                 unverified_translations_count: null,
-                                 reviewed_translations_count: null,
-                                 managed_words_count: null,
-                                 project: null)
+instance = Phrase::ProjectReport.new(locales_count: nil,
+                                 keys_count: nil,
+                                 translations_count: nil,
+                                 untranslated_keys_count: nil,
+                                 unverified_translations_count: nil,
+                                 reviewed_translations_count: nil,
+                                 managed_words_count: nil,
+                                 project: nil)
 ```
 
 

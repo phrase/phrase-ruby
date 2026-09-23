@@ -28,28 +28,28 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationKeyDetails.new(id: null,
-                                 name: null,
-                                 description: null,
-                                 name_hash: null,
-                                 plural: null,
-                                 use_ordinal_rules: null,
-                                 tags: null,
-                                 data_type: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 name_plural: null,
-                                 comments_count: null,
-                                 max_characters_allowed: null,
-                                 screenshot_url: null,
-                                 unformatted: null,
-                                 xml_space_preserve: null,
-                                 original_file: null,
-                                 format_value_type: null,
-                                 creator: null,
-                                 custom_metadata: null)
+instance = Phrase::TranslationKeyDetails.new(id: nil,
+                                 name: nil,
+                                 description: nil,
+                                 name_hash: nil,
+                                 plural: nil,
+                                 use_ordinal_rules: nil,
+                                 tags: nil,
+                                 data_type: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 name_plural: nil,
+                                 comments_count: nil,
+                                 max_characters_allowed: nil,
+                                 screenshot_url: nil,
+                                 unformatted: nil,
+                                 xml_space_preserve: nil,
+                                 original_file: nil,
+                                 format_value_type: nil,
+                                 creator: nil,
+                                 custom_metadata: nil)
 ```
 
 

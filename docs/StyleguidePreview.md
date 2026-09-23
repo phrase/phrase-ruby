@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::StyleguidePreview.new(id: null,
-                                 title: null)
+instance = Phrase::StyleguidePreview.new(id: nil,
+                                 title: nil)
 ```
 
 

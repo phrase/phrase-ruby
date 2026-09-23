@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::NotificationGroup.new(id: null,
-                                 event_name: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::NotificationGroup.new(id: nil,
+                                 event_name: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::MemberProjectDetailProjectRolesInner.new(project_id: null,
-                                 role: null)
+instance = Phrase::MemberProjectDetailProjectRolesInner.new(project_id: nil,
+                                 role: nil)
 ```
 
 

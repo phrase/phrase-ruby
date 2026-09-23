@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::FigmaAttachment.new(id: null,
-                                 url: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::FigmaAttachment.new(id: nil,
+                                 url: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

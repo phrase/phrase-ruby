@@ -27,27 +27,27 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::KeyUpdateParameters.new(branch: my-feature-branch,
-                                 name: home.index.headline,
-                                 description: Some description worth knowing...,
-                                 plural: null,
-                                 use_ordinal_rules: null,
-                                 name_plural: home.index.headlines,
-                                 data_type: number,
-                                 tags: awesome-feature,needs-proofreading,
+instance = Phrase::KeyUpdateParameters.new(branch: 'my-feature-branch',
+                                 name: 'home.index.headline',
+                                 description: 'Some description worth knowing...',
+                                 plural: nil,
+                                 use_ordinal_rules: nil,
+                                 name_plural: 'home.index.headlines',
+                                 data_type: 'number',
+                                 tags: 'awesome-feature,needs-proofreading',
                                  max_characters_allowed: 140,
                                  screenshot: File.new('/path/to/file'),
-                                 remove_screenshot: null,
-                                 unformatted: null,
-                                 xml_space_preserve: null,
-                                 original_file: null,
-                                 localized_format_string: null,
-                                 localized_format_key: null,
-                                 custom_metadata: {&quot;fruit&quot;:&quot;Apple&quot;,&quot;vegetable&quot;:&quot;Tomato&quot;},
-                                 excluded_in_locales: [&quot;de&quot;,&quot;fr&quot;],
-                                 format_value_type: string)
+                                 remove_screenshot: nil,
+                                 unformatted: nil,
+                                 xml_space_preserve: nil,
+                                 original_file: nil,
+                                 localized_format_string: nil,
+                                 localized_format_key: nil,
+                                 custom_metadata: {"fruit":"Apple","vegetable":"Tomato"},
+                                 excluded_in_locales: ["de","fr"],
+                                 format_value_type: 'string')
 ```
 
 

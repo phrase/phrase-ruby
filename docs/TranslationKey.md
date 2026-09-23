@@ -18,18 +18,18 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationKey.new(id: null,
-                                 name: null,
-                                 description: null,
-                                 name_hash: null,
-                                 plural: null,
-                                 use_ordinal_rules: null,
-                                 tags: null,
-                                 data_type: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::TranslationKey.new(id: nil,
+                                 name: nil,
+                                 description: nil,
+                                 name_hash: nil,
+                                 plural: nil,
+                                 use_ordinal_rules: nil,
+                                 tags: nil,
+                                 data_type: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

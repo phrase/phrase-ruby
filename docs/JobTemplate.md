@@ -16,16 +16,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobTemplate.new(id: null,
-                                 name: null,
-                                 briefing: null,
-                                 project: null,
-                                 branch: null,
-                                 autotranslate_enabled: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::JobTemplate.new(id: nil,
+                                 name: nil,
+                                 briefing: nil,
+                                 project: nil,
+                                 branch: nil,
+                                 autotranslate_enabled: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

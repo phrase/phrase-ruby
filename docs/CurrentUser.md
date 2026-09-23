@@ -16,16 +16,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::CurrentUser.new(id: null,
-                                 username: null,
-                                 name: null,
-                                 email: null,
-                                 position: null,
-                                 language: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::CurrentUser.new(id: nil,
+                                 username: nil,
+                                 name: nil,
+                                 email: nil,
+                                 position: nil,
+                                 language: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::KeyFormatAnnotationsList200ResponseInner.new(file_format: xliff_2,
-                                 original_representation: &lt;note category&#x3D;&quot;meaning&quot;&gt;header&lt;/note&gt;)
+instance = Phrase::KeyFormatAnnotationsList200ResponseInner.new(file_format: 'xliff_2',
+                                 original_representation: '<note category="meaning">header</note>')
 ```
 
 

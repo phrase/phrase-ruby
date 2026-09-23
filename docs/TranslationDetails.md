@@ -22,22 +22,22 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationDetails.new(id: null,
-                                 content: null,
-                                 unverified: null,
-                                 excluded: null,
-                                 plural_suffix: null,
-                                 key: null,
-                                 locale: null,
-                                 placeholders: null,
-                                 state: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 linked_translation: null,
-                                 user: null,
-                                 word_count: null)
+instance = Phrase::TranslationDetails.new(id: nil,
+                                 content: nil,
+                                 unverified: nil,
+                                 excluded: nil,
+                                 plural_suffix: nil,
+                                 key: nil,
+                                 locale: nil,
+                                 placeholders: nil,
+                                 state: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 linked_translation: nil,
+                                 user: nil,
+                                 word_count: nil)
 ```
 
 

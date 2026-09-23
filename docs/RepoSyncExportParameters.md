@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::RepoSyncExportParameters.new(pr_branch: my-feature-branch,
-                                 branch: my-strings-branch)
+instance = Phrase::RepoSyncExportParameters.new(pr_branch: 'my-feature-branch',
+                                 branch: 'my-strings-branch')
 ```
 
 

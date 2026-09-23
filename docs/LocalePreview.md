@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::LocalePreview.new(id: null,
-                                 name: null,
-                                 code: null)
+instance = Phrase::LocalePreview.new(id: nil,
+                                 name: nil,
+                                 code: nil)
 ```
 
 

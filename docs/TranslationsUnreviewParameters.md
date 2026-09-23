@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationsUnreviewParameters.new(branch: my-feature-branch,
-                                 q: PhraseApp*%reviewed:true%20tags:feature,center)
+instance = Phrase::TranslationsUnreviewParameters.new(branch: 'my-feature-branch',
+                                 q: 'PhraseApp*%reviewed:true%20tags:feature,center')
 ```
 
 

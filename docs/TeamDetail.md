@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TeamDetail.new(id: null,
-                                 name: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 projects: null,
-                                 spaces: null,
-                                 users: null)
+instance = Phrase::TeamDetail.new(id: nil,
+                                 name: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 projects: nil,
+                                 spaces: nil,
+                                 users: nil)
 ```
 
 

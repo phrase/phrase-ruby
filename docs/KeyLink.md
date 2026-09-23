@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::KeyLink.new(created_at: null,
-                                 updated_at: null,
-                                 created_by: null,
-                                 updated_by: null,
-                                 account: null,
-                                 parent: null,
-                                 children: null)
+instance = Phrase::KeyLink.new(created_at: nil,
+                                 updated_at: nil,
+                                 created_by: nil,
+                                 updated_by: nil,
+                                 account: nil,
+                                 parent: nil,
+                                 children: nil)
 ```
 
 

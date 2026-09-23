@@ -23,23 +23,23 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::OrderCreateParameters.new(branch: my-feature-branch,
-                                 name: Welcome message translations,
-                                 lsp: textmaster,
-                                 source_locale_id: abcd1234abcd1234abcd1234abcd1234,
-                                 target_locale_ids: [&quot;1234abcd1234abcd1234abcd1234abcd&quot;,&quot;abcd1234abcd1234abcd1234abcd1234&quot;],
-                                 translation_type: premium,
-                                 tag: my-awesome-feature,
-                                 message: Please make everything sound really nice :),
-                                 styleguide_id: 1234abcd1234abcd1234abcd1234abcd,
-                                 unverify_translations_upon_delivery: null,
-                                 include_untranslated_keys: null,
-                                 include_unverified_translations: null,
-                                 category: C021,
-                                 quality: null,
-                                 priority: null)
+instance = Phrase::OrderCreateParameters.new(branch: 'my-feature-branch',
+                                 name: 'Welcome message translations',
+                                 lsp: 'textmaster',
+                                 source_locale_id: 'abcd1234abcd1234abcd1234abcd1234',
+                                 target_locale_ids: ["1234abcd1234abcd1234abcd1234abcd","abcd1234abcd1234abcd1234abcd1234"],
+                                 translation_type: 'premium',
+                                 tag: 'my-awesome-feature',
+                                 message: 'Please make everything sound really nice :)',
+                                 styleguide_id: '1234abcd1234abcd1234abcd1234abcd',
+                                 unverify_translations_upon_delivery: nil,
+                                 include_untranslated_keys: nil,
+                                 include_unverified_translations: nil,
+                                 category: 'C021',
+                                 quality: nil,
+                                 priority: nil)
 ```
 
 

@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ScreenshotMarker.new(id: null,
-                                 presentation: null,
-                                 presentation_type: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 translation_key: null)
+instance = Phrase::ScreenshotMarker.new(id: nil,
+                                 presentation: nil,
+                                 presentation_type: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 translation_key: nil)
 ```
 
 

@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Error.new(error: null)
+instance = Phrase::Error.new(error: nil)
 ```
 
 

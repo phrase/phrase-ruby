@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::CommentCreateParameters.new(message: Some message...,
-                                 branch: my-feature-branch,
-                                 locale_ids: [&quot;someId&quot;,&quot;someOtherId&quot;])
+instance = Phrase::CommentCreateParameters.new(message: 'Some message...',
+                                 branch: 'my-feature-branch',
+                                 locale_ids: ["someId","someOtherId"])
 ```
 
 

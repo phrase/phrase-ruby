@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::BranchComparisonDiff.new(base_changes: null,
-                                 head_changes: null,
-                                 conflicts: null)
+instance = Phrase::BranchComparisonDiff.new(base_changes: nil,
+                                 head_changes: nil,
+                                 conflicts: nil)
 ```
 
 

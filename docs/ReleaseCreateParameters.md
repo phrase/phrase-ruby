@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ReleaseCreateParameters.new(description: My first Release,
-                                 platforms: [&quot;android&quot;,&quot;ios&quot;],
-                                 locale_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;,&quot;fff565db236400772368235db2c6117e&quot;],
-                                 tags: [&quot;android&quot;,&quot;feature1&quot;],
-                                 app_min_version: 2.5.0,
-                                 app_max_version: 3.0.0,
-                                 branch: my-feature-branch)
+instance = Phrase::ReleaseCreateParameters.new(description: 'My first Release',
+                                 platforms: ["android","ios"],
+                                 locale_ids: ["abcd1234cdef1234abcd1234cdef1234","fff565db236400772368235db2c6117e"],
+                                 tags: ["android","feature1"],
+                                 app_min_version: '2.5.0',
+                                 app_max_version: '3.0.0',
+                                 branch: 'my-feature-branch')
 ```
 
 

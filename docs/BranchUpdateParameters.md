@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::BranchUpdateParameters.new(name: my-branch)
+instance = Phrase::BranchUpdateParameters.new(name: 'my-branch')
 ```
 
 

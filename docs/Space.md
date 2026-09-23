@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Space.new(id: null,
-                                 name: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 projects_count: null,
-                                 projects: null)
+instance = Phrase::Space.new(id: nil,
+                                 name: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 projects_count: nil,
+                                 projects: nil)
 ```
 
 

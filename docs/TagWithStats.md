@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TagWithStats.new(name: null,
-                                 keys_count: null,
-                                 system_tag: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 statistics: null)
+instance = Phrase::TagWithStats.new(name: nil,
+                                 keys_count: nil,
+                                 system_tag: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 statistics: nil)
 ```
 
 

@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Document.new(id: null,
-                                 name: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::Document.new(id: nil,
+                                 name: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

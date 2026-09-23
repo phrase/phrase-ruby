@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobTemplateUpdateParameters.new(branch: my-feature-branch,
-                                 name: template,
-                                 briefing: text,
+instance = Phrase::JobTemplateUpdateParameters.new(branch: 'my-feature-branch',
+                                 name: 'template',
+                                 briefing: 'text',
                                  autotranslate: true,
-                                 source_locale_id: abcd1234cdef1234abcd1234cdef1234,
-                                 owner_id: null)
+                                 source_locale_id: 'abcd1234cdef1234abcd1234cdef1234',
+                                 owner_id: nil)
 ```
 
 

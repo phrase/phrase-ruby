@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Icu.new(locale_code: null)
+instance = Phrase::Icu.new(locale_code: nil)
 ```
 
 

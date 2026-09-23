@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::CustomMetadataPropertiesCreateParameters.new(name: Fruit,
-                                 data_type: null,
-                                 project_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;,&quot;abcd1234cdef1234abcd1234cdef4321&quot;],
-                                 description: A healthy snack for all ages,
-                                 value_options: [&quot;Apple&quot;,&quot;Banana&quot;,&quot;Coconut&quot;])
+instance = Phrase::CustomMetadataPropertiesCreateParameters.new(name: 'Fruit',
+                                 data_type: nil,
+                                 project_ids: ["abcd1234cdef1234abcd1234cdef1234","abcd1234cdef1234abcd1234cdef4321"],
+                                 description: 'A healthy snack for all ages',
+                                 value_options: ["Apple","Banana","Coconut"])
 ```
 
 

@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::InvitationUpdateSettingsParameters.new(project_role: Developer,
-                                 locale_ids: [&quot;abcd1234abcd1234abcd1234&quot;,&quot;abcd1234abcd1234abcd1235&quot;])
+instance = Phrase::InvitationUpdateSettingsParameters.new(project_role: 'Developer',
+                                 locale_ids: ["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"])
 ```
 
 

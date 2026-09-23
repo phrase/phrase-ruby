@@ -16,16 +16,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Comment.new(id: null,
-                                 message: null,
-                                 has_replies: null,
-                                 user: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 mentioned_users: null,
-                                 locales: null)
+instance = Phrase::Comment.new(id: nil,
+                                 message: nil,
+                                 has_replies: nil,
+                                 user: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 mentioned_users: nil,
+                                 locales: nil)
 ```
 
 

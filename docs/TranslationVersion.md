@@ -16,16 +16,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationVersion.new(id: null,
-                                 content: null,
-                                 plural_suffix: null,
-                                 key: null,
-                                 locale: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 changed_at: null)
+instance = Phrase::TranslationVersion.new(id: nil,
+                                 content: nil,
+                                 plural_suffix: nil,
+                                 key: nil,
+                                 locale: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 changed_at: nil)
 ```
 
 

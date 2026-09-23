@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::OrganizationJobTemplateUpdateParameters.new(name: template,
-                                 briefing: text,
+instance = Phrase::OrganizationJobTemplateUpdateParameters.new(name: 'template',
+                                 briefing: 'text',
                                  autotranslate: true,
-                                 owner_id: null)
+                                 owner_id: nil)
 ```
 
 

@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ProjectShort.new(id: null,
-                                 name: null,
-                                 main_format: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::ProjectShort.new(id: nil,
+                                 name: nil,
+                                 main_format: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

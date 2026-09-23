@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobLocaleCompleteReviewParameters.new(branch: my-feature-branch)
+instance = Phrase::JobLocaleCompleteReviewParameters.new(branch: 'my-feature-branch')
 ```
 
 

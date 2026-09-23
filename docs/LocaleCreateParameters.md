@@ -21,21 +21,21 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::LocaleCreateParameters.new(branch: my-feature-branch,
-                                 name: de,
-                                 code: de-DE,
-                                 default: null,
-                                 main: null,
-                                 rtl: null,
-                                 source_locale_id: abcd1234abcd1234abcd1234abcd1234,
-                                 fallback_locale_id: abcd1234abcd1234abcd1234abcd1234,
-                                 unverify_new_translations: null,
-                                 unverify_updated_translations: null,
-                                 unverify_on_source_changes: null,
-                                 autotranslate: null,
-                                 language_ai_profile: abcd1234abcd1234abcd1234abcd1234)
+instance = Phrase::LocaleCreateParameters.new(branch: 'my-feature-branch',
+                                 name: 'de',
+                                 code: 'de-DE',
+                                 default: nil,
+                                 main: nil,
+                                 rtl: nil,
+                                 source_locale_id: 'abcd1234abcd1234abcd1234abcd1234',
+                                 fallback_locale_id: 'abcd1234abcd1234abcd1234abcd1234',
+                                 unverify_new_translations: nil,
+                                 unverify_updated_translations: nil,
+                                 unverify_on_source_changes: nil,
+                                 autotranslate: nil,
+                                 language_ai_profile: 'abcd1234abcd1234abcd1234abcd1234')
 ```
 
 

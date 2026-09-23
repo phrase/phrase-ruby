@@ -21,21 +21,21 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Release.new(id: null,
-                                 version: null,
-                                 app_min_version: null,
-                                 app_max_version: null,
-                                 description: null,
-                                 platforms: null,
-                                 environments: null,
-                                 locales: null,
-                                 tags: null,
-                                 state: null,
-                                 project: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::Release.new(id: nil,
+                                 version: nil,
+                                 app_min_version: nil,
+                                 app_max_version: nil,
+                                 description: nil,
+                                 platforms: nil,
+                                 environments: nil,
+                                 locales: nil,
+                                 tags: nil,
+                                 state: nil,
+                                 project: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

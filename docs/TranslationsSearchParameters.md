@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationsSearchParameters.new(branch: my-feature-branch,
-                                 sort: updated_at,
-                                 order: desc,
-                                 q: PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center)
+instance = Phrase::TranslationsSearchParameters.new(branch: 'my-feature-branch',
+                                 sort: 'updated_at',
+                                 order: 'desc',
+                                 q: 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center')
 ```
 
 

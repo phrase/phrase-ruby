@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::WebhookDelivery.new(id: null,
-                                 webhook_id: null,
-                                 response_status_code: null,
-                                 delivered_at: null,
-                                 duration_ms: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::WebhookDelivery.new(id: nil,
+                                 webhook_id: nil,
+                                 response_status_code: nil,
+                                 delivered_at: nil,
+                                 duration_ms: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

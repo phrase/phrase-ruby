@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::LocaleDownloadResult.new(url: null)
+instance = Phrase::LocaleDownloadResult.new(url: nil)
 ```
 
 

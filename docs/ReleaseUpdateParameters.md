@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ReleaseUpdateParameters.new(description: My first Release,
-                                 platforms: [&quot;android&quot;,&quot;ios&quot;],
-                                 app_min_version: 2.5.0,
-                                 app_max_version: 3.0.0,
-                                 branch: my-feature-branch)
+instance = Phrase::ReleaseUpdateParameters.new(description: 'My first Release',
+                                 platforms: ["android","ios"],
+                                 app_min_version: '2.5.0',
+                                 app_max_version: '3.0.0',
+                                 branch: 'my-feature-branch')
 ```
 
 

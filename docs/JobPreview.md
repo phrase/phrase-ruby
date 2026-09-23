@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobPreview.new(id: null,
-                                 name: null,
-                                 state: null)
+instance = Phrase::JobPreview.new(id: nil,
+                                 name: nil,
+                                 state: nil)
 ```
 
 

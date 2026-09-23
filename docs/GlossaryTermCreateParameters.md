@@ -12,10 +12,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::GlossaryTermCreateParameters.new(term: MyCompany,
-                                 description: Use this when refering to our company,
+instance = Phrase::GlossaryTermCreateParameters.new(term: 'MyCompany',
+                                 description: 'Use this when refering to our company',
                                  translatable: true,
                                  case_sensitive: true)
 ```

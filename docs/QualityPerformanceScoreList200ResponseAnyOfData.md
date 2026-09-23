@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::QualityPerformanceScoreList200ResponseAnyOfData.new(translations: null)
+instance = Phrase::QualityPerformanceScoreList200ResponseAnyOfData.new(translations: nil)
 ```
 
 

@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::BranchCreateComparisonParameters.new(direction: merge)
+instance = Phrase::BranchCreateComparisonParameters.new(direction: 'merge')
 ```
 
 

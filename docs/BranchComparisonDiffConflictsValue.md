@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::BranchComparisonDiffConflictsValue.new(base: null,
-                                 head: null)
+instance = Phrase::BranchComparisonDiffConflictsValue.new(base: nil,
+                                 head: nil)
 ```
 
 

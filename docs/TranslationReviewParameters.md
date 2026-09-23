@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationReviewParameters.new(branch: my-feature-branch)
+instance = Phrase::TranslationReviewParameters.new(branch: 'my-feature-branch')
 ```
 
 

@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ScreenshotMarkerPresentation.new(x: null,
-                                 y: null,
-                                 w: null,
-                                 h: null)
+instance = Phrase::ScreenshotMarkerPresentation.new(x: nil,
+                                 y: nil,
+                                 w: nil,
+                                 h: nil)
 ```
 
 

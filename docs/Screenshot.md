@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Screenshot.new(id: null,
-                                 name: null,
-                                 description: null,
-                                 screenshot_url: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 markers_count: null)
+instance = Phrase::Screenshot.new(id: nil,
+                                 name: nil,
+                                 description: nil,
+                                 screenshot_url: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 markers_count: nil)
 ```
 
 

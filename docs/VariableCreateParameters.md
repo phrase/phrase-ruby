@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::VariableCreateParameters.new(name: MY_VARIABLE,
-                                 value: Hello World)
+instance = Phrase::VariableCreateParameters.new(name: 'MY_VARIABLE',
+                                 value: 'Hello World')
 ```
 
 

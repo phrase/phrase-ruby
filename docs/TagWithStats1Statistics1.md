@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TagWithStats1Statistics1.new(locale: null,
-                                 statistics: null)
+instance = Phrase::TagWithStats1Statistics1.new(locale: nil,
+                                 statistics: nil)
 ```
 
 

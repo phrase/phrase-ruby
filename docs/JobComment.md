@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobComment.new(id: null,
-                                 message: null,
-                                 job_id: null,
-                                 user: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 mentioned_users: null)
+instance = Phrase::JobComment.new(id: nil,
+                                 message: nil,
+                                 job_id: nil,
+                                 user: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 mentioned_users: nil)
 ```
 
 

@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobUpdateParameters.new(branch: my-feature-branch,
-                                 name: de,
-                                 briefing: de-DE,
-                                 due_date: null,
-                                 ticket_url: https://example.atlassian.net/browse/FOO,
-                                 target_locale_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
+instance = Phrase::JobUpdateParameters.new(branch: 'my-feature-branch',
+                                 name: 'de',
+                                 briefing: 'de-DE',
+                                 due_date: nil,
+                                 ticket_url: 'https://example.atlassian.net/browse/FOO',
+                                 target_locale_ids: ["abcd1234cdef1234abcd1234cdef1234"],
                                  autotranslate: true)
 ```
 

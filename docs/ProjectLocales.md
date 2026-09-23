@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ProjectLocales.new(id: null,
-                                 name: null,
-                                 project_role: null,
-                                 main_format: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 locales: null)
+instance = Phrase::ProjectLocales.new(id: nil,
+                                 name: nil,
+                                 project_role: nil,
+                                 main_format: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 locales: nil)
 ```
 
 

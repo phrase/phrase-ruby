@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::SearchInAccountParameters.new(query: keyword,
-                                 locale_code: de_DE,
+instance = Phrase::SearchInAccountParameters.new(query: 'keyword',
+                                 locale_code: 'de_DE',
                                  page: 1,
                                  per_page: 25,
-                                 project_ids: [&quot;abcd1234abcd1234abcd1234abcd1234&quot;])
+                                 project_ids: ["abcd1234abcd1234abcd1234abcd1234"])
 ```
 
 

@@ -29,29 +29,29 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobDetails.new(id: null,
-                                 name: null,
-                                 briefing: null,
-                                 due_date: null,
-                                 state: null,
-                                 ticket_url: null,
-                                 project: null,
-                                 branch: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 automation_id: null,
-                                 job_template_id: null,
-                                 review_due_date: 2015-03-25T11:43:52Z,
-                                 owner: null,
-                                 job_tag_name: null,
-                                 source_translations_updated_at: null,
-                                 source_locale: null,
-                                 locales: null,
-                                 keys: null,
-                                 annotations: null,
-                                 locked: null)
+instance = Phrase::JobDetails.new(id: nil,
+                                 name: nil,
+                                 briefing: nil,
+                                 due_date: nil,
+                                 state: nil,
+                                 ticket_url: nil,
+                                 project: nil,
+                                 branch: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 automation_id: nil,
+                                 job_template_id: nil,
+                                 review_due_date: Time.parse('2015-03-25T11:43:52Z'),
+                                 owner: nil,
+                                 job_tag_name: nil,
+                                 source_translations_updated_at: nil,
+                                 source_locale: nil,
+                                 locales: nil,
+                                 keys: nil,
+                                 annotations: nil,
+                                 locked: nil)
 ```
 
 

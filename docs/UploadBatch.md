@@ -16,16 +16,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::UploadBatch.new(status: null,
-                                 delete_unmentioned_keys: null,
-                                 uploads_count: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 project: null,
-                                 user: null,
-                                 uploads: null)
+instance = Phrase::UploadBatch.new(status: nil,
+                                 delete_unmentioned_keys: nil,
+                                 uploads_count: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 project: nil,
+                                 user: nil,
+                                 uploads: nil)
 ```
 
 

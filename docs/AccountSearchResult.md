@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::AccountSearchResult.new(query: null,
-                                 excerpt: null,
-                                 key: null,
-                                 locale: null,
-                                 project: null,
-                                 translation: null,
-                                 other_translations: null)
+instance = Phrase::AccountSearchResult.new(query: nil,
+                                 excerpt: nil,
+                                 key: nil,
+                                 locale: nil,
+                                 project: nil,
+                                 translation: nil,
+                                 other_translations: nil)
 ```
 
 

@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Tag.new(name: null,
-                                 keys_count: null,
-                                 system_tag: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::Tag.new(name: nil,
+                                 keys_count: nil,
+                                 system_tag: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

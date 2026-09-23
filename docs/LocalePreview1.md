@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::LocalePreview1.new(name: null,
-                                 code: null)
+instance = Phrase::LocalePreview1.new(name: nil,
+                                 code: nil)
 ```
 
 

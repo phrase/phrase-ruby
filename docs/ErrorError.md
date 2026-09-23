@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::ErrorError.new(message: null,
-                                 code: null)
+instance = Phrase::ErrorError.new(message: nil,
+                                 code: nil)
 ```
 
 

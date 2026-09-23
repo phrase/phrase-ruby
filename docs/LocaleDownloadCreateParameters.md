@@ -28,28 +28,28 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::LocaleDownloadCreateParameters.new(file_format: yml,
-                                 branch: my-feature-branch,
-                                 tags: feature1,feature2,
+instance = Phrase::LocaleDownloadCreateParameters.new(file_format: 'yml',
+                                 branch: 'my-feature-branch',
+                                 tags: 'feature1,feature2',
                                  include_empty_translations: true,
                                  exclude_empty_zero_forms: true,
                                  include_translated_keys: true,
                                  keep_notranslate_tags: true,
-                                 format_options: {&quot;format_options&quot;:{&quot;foo&quot;:&quot;bar&quot;}},
-                                 encoding: UTF-8,
+                                 format_options: {"format_options":{"foo":"bar"}},
+                                 encoding: 'UTF-8',
                                  include_unverified_translations: true,
-                                 use_last_reviewed_version: null,
-                                 locale_ids: [&quot;de&quot;,&quot;en&quot;],
-                                 fallback_locale_id: abcd1234abcd1234abcd1234abcd1234,
+                                 use_last_reviewed_version: nil,
+                                 locale_ids: ["de","en"],
+                                 fallback_locale_id: 'abcd1234abcd1234abcd1234abcd1234',
                                  use_locale_fallback: false,
                                  fallback_for_unverified_translations: false,
-                                 source_locale_id: abcd1234abcd1234abcd1234abcd1234,
-                                 custom_metadata_filters: null,
-                                 translation_key_prefix: prefix_,
-                                 filter_by_prefix: null,
-                                 updated_since: 2023-01-01T00:00:00Z)
+                                 source_locale_id: 'abcd1234abcd1234abcd1234abcd1234',
+                                 custom_metadata_filters: nil,
+                                 translation_key_prefix: 'prefix_',
+                                 filter_by_prefix: nil,
+                                 updated_since: '2023-01-01T00:00:00Z')
 ```
 
 

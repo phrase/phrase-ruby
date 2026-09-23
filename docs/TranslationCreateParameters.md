@@ -18,16 +18,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationCreateParameters.new(branch: my-feature-branch,
-                                 locale_id: abcd1234cdef1234abcd1234cdef1234,
-                                 key_id: abcd1234cdef1234abcd1234cdef1234,
-                                 content: My translation,
-                                 plural_suffix: null,
-                                 unverified: null,
-                                 excluded: null,
-                                 autotranslate: null,
+instance = Phrase::TranslationCreateParameters.new(branch: 'my-feature-branch',
+                                 locale_id: 'abcd1234cdef1234abcd1234cdef1234',
+                                 key_id: 'abcd1234cdef1234abcd1234cdef1234',
+                                 content: 'My translation',
+                                 plural_suffix: nil,
+                                 unverified: nil,
+                                 excluded: nil,
+                                 autotranslate: nil,
                                  minor_change: false,
                                  reviewed: false)
 ```

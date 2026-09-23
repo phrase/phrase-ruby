@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::LocaleUserPreview.new(id: null,
-                                 username: null,
-                                 name: null,
-                                 role: null)
+instance = Phrase::LocaleUserPreview.new(id: nil,
+                                 username: nil,
+                                 name: nil,
+                                 role: nil)
 ```
 
 

@@ -24,24 +24,24 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Automation.new(id: null,
-                                 name: null,
-                                 status: null,
-                                 trigger: null,
-                                 status_filters: null,
-                                 project_id: null,
-                                 project_ids: null,
-                                 job_template_id: null,
-                                 job_owner_id: null,
-                                 include_only_updated_locales: null,
-                                 tags: null,
-                                 cron_schedule: null,
-                                 time_zone: null,
-                                 account: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::Automation.new(id: nil,
+                                 name: nil,
+                                 status: nil,
+                                 trigger: nil,
+                                 status_filters: nil,
+                                 project_id: nil,
+                                 project_ids: nil,
+                                 job_template_id: nil,
+                                 job_owner_id: nil,
+                                 include_only_updated_locales: nil,
+                                 tags: nil,
+                                 cron_schedule: nil,
+                                 time_zone: nil,
+                                 account: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

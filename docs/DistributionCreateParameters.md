@@ -17,13 +17,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::DistributionCreateParameters.new(name: My Android Distribution,
-                                 project_id: abcd1234abcd1234abcd1234,
-                                 platforms: [&quot;android&quot;,&quot;ios&quot;],
-                                 locale_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;,&quot;fff565db236400772368235db2c6117e&quot;],
-                                 format_options: {xml:{enclose_in_cdata:&#39;1&#39;}},
+instance = Phrase::DistributionCreateParameters.new(name: 'My Android Distribution',
+                                 project_id: 'abcd1234abcd1234abcd1234',
+                                 platforms: ["android","ios"],
+                                 locale_ids: ["abcd1234cdef1234abcd1234cdef1234","fff565db236400772368235db2c6117e"],
+                                 format_options: {xml:{enclose_in_cdata:'1'}},
                                  fallback_locales_enabled: true,
                                  fallback_to_non_regional_locale: true,
                                  fallback_to_default_locale: true,

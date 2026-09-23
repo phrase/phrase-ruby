@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::CommentReaction.new(id: null,
-                                 emoji: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 comment: null,
-                                 user: null)
+instance = Phrase::CommentReaction.new(id: nil,
+                                 emoji: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 comment: nil,
+                                 user: nil)
 ```
 
 

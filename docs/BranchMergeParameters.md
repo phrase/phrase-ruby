@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::BranchMergeParameters.new(strategy: use_main)
+instance = Phrase::BranchMergeParameters.new(strategy: 'use_main')
 ```
 
 

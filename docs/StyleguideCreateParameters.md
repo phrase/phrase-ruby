@@ -21,21 +21,21 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::StyleguideCreateParameters.new(title: Web application style guide,
-                                 audience: customer-facing,
-                                 target_audience: teenager,
-                                 grammatical_person: first_person_singular,
-                                 vocabulary_type: technical,
-                                 business: We are a travel site that helps customers find the best hotels and flights.,
-                                 company_branding: ACME Inc. should never be translated.,
-                                 formatting: Never use capital letters,
-                                 glossary_terms: Apartment, cabin, loft,
-                                 grammar_consistency: ,
-                                 literal_translation: Neutral,
-                                 overall_tone: Tone should be fun and light,
-                                 samples: http://www.myexample.com/my/document/path/to/samples.pdf)
+instance = Phrase::StyleguideCreateParameters.new(title: 'Web application style guide',
+                                 audience: 'customer-facing',
+                                 target_audience: 'teenager',
+                                 grammatical_person: 'first_person_singular',
+                                 vocabulary_type: 'technical',
+                                 business: 'We are a travel site that helps customers find the best hotels and flights.',
+                                 company_branding: 'ACME Inc. should never be translated.',
+                                 formatting: 'Never use capital letters',
+                                 glossary_terms: 'Apartment, cabin, loft',
+                                 grammar_consistency: '',
+                                 literal_translation: 'Neutral',
+                                 overall_tone: 'Tone should be fun and light',
+                                 samples: 'http://www.myexample.com/my/document/path/to/samples.pdf')
 ```
 
 

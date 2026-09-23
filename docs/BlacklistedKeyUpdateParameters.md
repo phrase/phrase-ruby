@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::BlacklistedKeyUpdateParameters.new(name: date.formats.*)
+instance = Phrase::BlacklistedKeyUpdateParameters.new(name: 'date.formats.*')
 ```
 
 

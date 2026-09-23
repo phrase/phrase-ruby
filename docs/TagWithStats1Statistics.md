@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TagWithStats1Statistics.new(keys_total_count: null,
-                                 translations_completed_count: null,
-                                 translations_unverified_count: null,
-                                 keys_untranslated_count: null)
+instance = Phrase::TagWithStats1Statistics.new(keys_total_count: nil,
+                                 translations_completed_count: nil,
+                                 translations_unverified_count: nil,
+                                 keys_untranslated_count: nil)
 ```
 
 

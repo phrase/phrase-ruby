@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationUpdateParameters.new(branch: my-feature-branch,
-                                 content: My translation,
-                                 plural_suffix: null,
-                                 unverified: null,
-                                 excluded: null,
-                                 autotranslate: null,
+instance = Phrase::TranslationUpdateParameters.new(branch: 'my-feature-branch',
+                                 content: 'My translation',
+                                 plural_suffix: nil,
+                                 unverified: nil,
+                                 excluded: nil,
+                                 autotranslate: nil,
                                  reviewed: true,
                                  minor_change: false)
 ```

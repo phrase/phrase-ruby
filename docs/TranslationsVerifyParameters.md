@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationsVerifyParameters.new(branch: my-feature-branch,
-                                 locale_id: fc2f11dd6a658fa9652f6f0a9ebee688,
-                                 q: PhraseApp*%20unverified:true%20tags:feature,center)
+instance = Phrase::TranslationsVerifyParameters.new(branch: 'my-feature-branch',
+                                 locale_id: 'fc2f11dd6a658fa9652f6f0a9ebee688',
+                                 q: 'PhraseApp*%20unverified:true%20tags:feature,center')
 ```
 
 

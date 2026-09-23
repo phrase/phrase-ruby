@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::AffectedCount.new(records_affected: null)
+instance = Phrase::AffectedCount.new(records_affected: nil)
 ```
 
 

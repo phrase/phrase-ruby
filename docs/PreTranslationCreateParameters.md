@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::PreTranslationCreateParameters.new(translatable_type: null,
-                                 translatable_id: null)
+instance = Phrase::PreTranslationCreateParameters.new(translatable_type: nil,
+                                 translatable_id: nil)
 ```
 
 

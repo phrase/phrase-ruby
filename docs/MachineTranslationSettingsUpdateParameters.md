@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::MachineTranslationSettingsUpdateParameters.new(default_service: google_translate)
+instance = Phrase::MachineTranslationSettingsUpdateParameters.new(default_service: 'google_translate')
 ```
 
 

@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::BranchSyncParameters.new(strategy: use_main)
+instance = Phrase::BranchSyncParameters.new(strategy: 'use_main')
 ```
 
 

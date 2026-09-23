@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::AuthorizationWithToken.new(id: null,
-                                 note: null,
-                                 token_last_eight: null,
-                                 hashed_token: null,
-                                 scopes: null,
-                                 expires_at: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 token: null)
+instance = Phrase::AuthorizationWithToken.new(id: nil,
+                                 note: nil,
+                                 token_last_eight: nil,
+                                 hashed_token: nil,
+                                 scopes: nil,
+                                 expires_at: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 token: nil)
 ```
 
 

@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobTemplateLocales.new(id: null,
-                                 job_template: null,
-                                 locale: null,
-                                 users: null,
-                                 teams: null)
+instance = Phrase::JobTemplateLocales.new(id: nil,
+                                 job_template: nil,
+                                 locale: nil,
+                                 users: nil,
+                                 teams: nil)
 ```
 
 

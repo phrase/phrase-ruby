@@ -19,18 +19,18 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobCreateParameters.new(branch: my-feature-branch,
-                                 name: de,
-                                 source_locale_id: abcd1234cdef1234abcd1234cdef1234,
-                                 briefing: de-DE,
-                                 due_date: null,
-                                 ticket_url: https://example.atlassian.net/browse/FOO,
-                                 tags: [&quot;myUploadTag&quot;],
-                                 translation_key_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 target_locale_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 job_template_id: abcd1234cdef1234abcd1234cdef1234,
+instance = Phrase::JobCreateParameters.new(branch: 'my-feature-branch',
+                                 name: 'de',
+                                 source_locale_id: 'abcd1234cdef1234abcd1234cdef1234',
+                                 briefing: 'de-DE',
+                                 due_date: nil,
+                                 ticket_url: 'https://example.atlassian.net/browse/FOO',
+                                 tags: ["myUploadTag"],
+                                 translation_key_ids: ["abcd1234cdef1234abcd1234cdef1234"],
+                                 target_locale_ids: ["abcd1234cdef1234abcd1234cdef1234"],
+                                 job_template_id: 'abcd1234cdef1234abcd1234cdef1234',
                                  autotranslate: true)
 ```
 

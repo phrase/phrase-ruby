@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::QualityPerformanceScoreList200ResponseAnyOfErrorsInner.new(message: null,
-                                 code: null,
-                                 id: null)
+instance = Phrase::QualityPerformanceScoreList200ResponseAnyOfErrorsInner.new(message: nil,
+                                 code: nil,
+                                 id: nil)
 ```
 
 

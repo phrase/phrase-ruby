@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobCommentCreateParameters.new(message: Some message...,
-                                 branch: my-feature-branch)
+instance = Phrase::JobCommentCreateParameters.new(message: 'Some message...',
+                                 branch: 'my-feature-branch')
 ```
 
 

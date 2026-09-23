@@ -16,16 +16,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Distribution.new(id: null,
-                                 name: null,
-                                 project: null,
-                                 platforms: null,
-                                 release_count: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 deleted_at: null)
+instance = Phrase::Distribution.new(id: nil,
+                                 name: nil,
+                                 project: nil,
+                                 platforms: nil,
+                                 release_count: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 deleted_at: nil)
 ```
 
 

@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::LocaleStatistics.new(keys_total_count: null,
-                                 keys_untranslated_count: null,
-                                 words_total_count: null,
-                                 translations_completed_count: null,
-                                 translations_unverified_count: null,
-                                 unverified_words_count: null,
-                                 missing_words_count: null)
+instance = Phrase::LocaleStatistics.new(keys_total_count: nil,
+                                 keys_untranslated_count: nil,
+                                 words_total_count: nil,
+                                 translations_completed_count: nil,
+                                 translations_unverified_count: nil,
+                                 unverified_words_count: nil,
+                                 missing_words_count: nil)
 ```
 
 

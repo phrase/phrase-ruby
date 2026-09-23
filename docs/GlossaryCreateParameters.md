@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::GlossaryCreateParameters.new(name: My glossary,
-                                 project_ids: abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235,
-                                 space_ids: [&quot;abcd1234abcd1234abcd1234&quot;,&quot;abcd1234abcd1234abcd1235&quot;])
+instance = Phrase::GlossaryCreateParameters.new(name: 'My glossary',
+                                 project_ids: 'abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235',
+                                 space_ids: ["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"])
 ```
 
 

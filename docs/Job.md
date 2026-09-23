@@ -21,21 +21,21 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Job.new(id: null,
-                                 name: null,
-                                 briefing: null,
-                                 due_date: null,
-                                 state: null,
-                                 ticket_url: null,
-                                 project: null,
-                                 branch: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 automation_id: null,
-                                 job_template_id: null,
-                                 review_due_date: 2015-03-25T11:43:52Z)
+instance = Phrase::Job.new(id: nil,
+                                 name: nil,
+                                 briefing: nil,
+                                 due_date: nil,
+                                 state: nil,
+                                 ticket_url: nil,
+                                 project: nil,
+                                 branch: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 automation_id: nil,
+                                 job_template_id: nil,
+                                 review_due_date: Time.parse('2015-03-25T11:43:52Z'))
 ```
 
 

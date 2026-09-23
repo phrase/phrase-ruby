@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::BranchComparison.new(translation_keys: null,
-                                 translations: null,
-                                 locales: null,
-                                 tags: null)
+instance = Phrase::BranchComparison.new(translation_keys: nil,
+                                 translations: nil,
+                                 locales: nil,
+                                 tags: nil)
 ```
 
 

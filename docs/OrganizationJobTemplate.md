@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::OrganizationJobTemplate.new(id: null,
-                                 name: null,
-                                 briefing: null,
-                                 autotranslate_enabled: null,
-                                 source_locale_id: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::OrganizationJobTemplate.new(id: nil,
+                                 name: nil,
+                                 briefing: nil,
+                                 autotranslate_enabled: nil,
+                                 source_locale_id: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

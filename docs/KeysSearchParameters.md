@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::KeysSearchParameters.new(branch: my-feature-branch,
-                                 sort: updated_at,
-                                 order: desc,
-                                 q: mykey* translated:true,
-                                 locale_id: abcd1234abcd1234abcd1234abcd1234)
+instance = Phrase::KeysSearchParameters.new(branch: 'my-feature-branch',
+                                 sort: 'updated_at',
+                                 order: 'desc',
+                                 q: 'mykey* translated:true',
+                                 locale_id: 'abcd1234abcd1234abcd1234abcd1234')
 ```
 
 

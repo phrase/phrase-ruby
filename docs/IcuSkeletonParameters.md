@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::IcuSkeletonParameters.new(content: {count, plural, one {One item} other {# items}},
-                                 id: abcd1234abcd1234abcd1234abcd1234,
-                                 locale_codes: [&quot;en&quot;,&quot;de&quot;],
+instance = Phrase::IcuSkeletonParameters.new(content: '{count, plural, one {One item} other {# items}}',
+                                 id: 'abcd1234abcd1234abcd1234abcd1234',
+                                 locale_codes: ["en","de"],
                                  keep_content: false,
                                  zero_form_enabled: false,
-                                 cldr_version: cldr48)
+                                 cldr_version: 'cldr48')
 ```
 
 

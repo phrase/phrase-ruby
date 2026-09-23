@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::KeyLinksCreateParameters.new(child_key_ids: [&quot;ijkl9012mnop3456ijkl9012mnop3456&quot;,&quot;abcd1234efgh5678abcd1234efgh5678&quot;])
+instance = Phrase::KeyLinksCreateParameters.new(child_key_ids: ["ijkl9012mnop3456ijkl9012mnop3456","abcd1234efgh5678abcd1234efgh5678"])
 ```
 
 

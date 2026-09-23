@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Styleguide.new(id: null,
-                                 title: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::Styleguide.new(id: nil,
+                                 title: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

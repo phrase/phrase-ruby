@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TagCreateParameters.new(branch: my-feature-branch,
-                                 name: my-feature)
+instance = Phrase::TagCreateParameters.new(branch: 'my-feature-branch',
+                                 name: 'my-feature')
 ```
 
 

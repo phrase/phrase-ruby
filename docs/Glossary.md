@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Glossary.new(id: null,
-                                 name: null,
-                                 projects: null,
-                                 spaces: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::Glossary.new(id: nil,
+                                 name: nil,
+                                 projects: nil,
+                                 spaces: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

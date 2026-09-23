@@ -18,18 +18,18 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::UploadSummary.new(locales_created: null,
-                                 translation_keys_created: null,
-                                 translation_keys_updated: null,
-                                 translation_keys_unmentioned: null,
-                                 translations_created: null,
-                                 translations_updated: null,
-                                 tags_created: null,
-                                 translation_keys_ignored: null,
-                                 processed_translations: null,
-                                 upload_total_translations: null)
+instance = Phrase::UploadSummary.new(locales_created: nil,
+                                 translation_keys_created: nil,
+                                 translation_keys_updated: nil,
+                                 translation_keys_unmentioned: nil,
+                                 translations_created: nil,
+                                 translations_updated: nil,
+                                 tags_created: nil,
+                                 translation_keys_ignored: nil,
+                                 processed_translations: nil,
+                                 upload_total_translations: nil)
 ```
 
 

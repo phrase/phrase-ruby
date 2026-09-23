@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::MemberUpdateParameters.new(strategy: set,
-                                 role: Developer,
-                                 project_ids: abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235,
-                                 locale_ids: abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235,
-                                 default_locale_codes: [&quot;en&quot;,&quot;fi&quot;],
-                                 space_ids: [&quot;abcd1234abcd1234abcd1234&quot;,&quot;abcd1234abcd1234abcd1235&quot;],
-                                 permissions: {&quot;create_upload&quot;:true,&quot;review_translations&quot;:true})
+instance = Phrase::MemberUpdateParameters.new(strategy: 'set',
+                                 role: 'Developer',
+                                 project_ids: 'abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235',
+                                 locale_ids: 'abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235',
+                                 default_locale_codes: ["en","fi"],
+                                 space_ids: ["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"],
+                                 permissions: {"create_upload":true,"review_translations":true})
 ```
 
 

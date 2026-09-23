@@ -18,17 +18,17 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::AutomationsCreateParameters.new(name: Scheduled Job Automation - Hourly,
-                                 trigger: null,
-                                 project_ids: [&quot;abcd1234cdef1234abcd1234cdef1234&quot;],
-                                 job_template_id: abcd1234cdef1234abcd1234cdef1234,
-                                 status_filters: null,
-                                 tags: [&quot;myTag&quot;],
-                                 cron_schedule: 00 13 * * 1,2,
-                                 time_zone: GMT,
-                                 job_owner_id: abcd1234abcd1234abcd1234abcd1234,
+instance = Phrase::AutomationsCreateParameters.new(name: 'Scheduled Job Automation - Hourly',
+                                 trigger: nil,
+                                 project_ids: ["abcd1234cdef1234abcd1234cdef1234"],
+                                 job_template_id: 'abcd1234cdef1234abcd1234cdef1234',
+                                 status_filters: nil,
+                                 tags: ["myTag"],
+                                 cron_schedule: '00 13 * * 1,2',
+                                 time_zone: 'GMT',
+                                 job_owner_id: 'abcd1234abcd1234abcd1234abcd1234',
                                  include_only_updated_locales: false)
 ```
 

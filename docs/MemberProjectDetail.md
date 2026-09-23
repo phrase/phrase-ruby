@@ -18,18 +18,18 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::MemberProjectDetail.new(id: null,
-                                 email: null,
-                                 username: null,
-                                 role: null,
-                                 projects: null,
-                                 permissions: null,
-                                 locale_ids: null,
-                                 default_locale_codes: null,
-                                 spaces: null,
-                                 project_roles: null)
+instance = Phrase::MemberProjectDetail.new(id: nil,
+                                 email: nil,
+                                 username: nil,
+                                 role: nil,
+                                 projects: nil,
+                                 permissions: nil,
+                                 locale_ids: nil,
+                                 default_locale_codes: nil,
+                                 spaces: nil,
+                                 project_roles: nil)
 ```
 
 

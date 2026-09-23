@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::RepoSyncEvent.new(id: null,
-                                 type: null,
-                                 created_at: null,
-                                 status: null,
-                                 pull_request_url: null,
-                                 auto_import: null,
-                                 errors: null)
+instance = Phrase::RepoSyncEvent.new(id: nil,
+                                 type: nil,
+                                 created_at: nil,
+                                 status: nil,
+                                 pull_request_url: nil,
+                                 auto_import: nil,
+                                 errors: nil)
 ```
 
 

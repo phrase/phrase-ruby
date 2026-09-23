@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobAnnotationUpdateParameters.new(value: Some value...,
-                                 branch: my-feature-branch)
+instance = Phrase::JobAnnotationUpdateParameters.new(value: 'Some value...',
+                                 branch: 'my-feature-branch')
 ```
 
 

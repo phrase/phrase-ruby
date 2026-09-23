@@ -19,19 +19,19 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Member.new(id: null,
-                                 email: null,
-                                 username: null,
-                                 created_at: null,
-                                 last_activity_at: null,
-                                 role: null,
-                                 projects: null,
-                                 permissions: null,
-                                 default_locale_codes: null,
-                                 teams: null,
-                                 spaces: null)
+instance = Phrase::Member.new(id: nil,
+                                 email: nil,
+                                 username: nil,
+                                 created_at: nil,
+                                 last_activity_at: nil,
+                                 role: nil,
+                                 projects: nil,
+                                 permissions: nil,
+                                 default_locale_codes: nil,
+                                 teams: nil,
+                                 spaces: nil)
 ```
 
 

@@ -19,19 +19,19 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Project.new(id: null,
-                                 name: null,
-                                 slug: null,
-                                 main_format: null,
-                                 project_image_url: null,
-                                 media: null,
-                                 account: null,
-                                 space: null,
-                                 point_of_contact: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::Project.new(id: nil,
+                                 name: nil,
+                                 slug: nil,
+                                 main_format: nil,
+                                 project_image_url: nil,
+                                 media: nil,
+                                 account: nil,
+                                 space: nil,
+                                 point_of_contact: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

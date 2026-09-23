@@ -21,21 +21,21 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::Notification.new(id: null,
-                                 event_name: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 delivered_at: null,
-                                 seen_at: null,
-                                 data: null,
-                                 resource: null,
-                                 locale: null,
-                                 user: null,
-                                 project: null,
-                                 account: null,
-                                 group: null)
+instance = Phrase::Notification.new(id: nil,
+                                 event_name: nil,
+                                 created_at: nil,
+                                 updated_at: nil,
+                                 delivered_at: nil,
+                                 seen_at: nil,
+                                 data: nil,
+                                 resource: nil,
+                                 locale: nil,
+                                 user: nil,
+                                 project: nil,
+                                 account: nil,
+                                 group: nil)
 ```
 
 

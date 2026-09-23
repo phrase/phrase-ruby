@@ -26,26 +26,26 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::TranslationOrder.new(id: null,
-                                 name: null,
-                                 lsp: null,
-                                 amount_in_cents: null,
-                                 currency: null,
-                                 message: null,
-                                 state: null,
-                                 translation_type: null,
-                                 progress_percent: null,
-                                 source_locale: null,
-                                 target_locales: null,
-                                 tag_name: null,
-                                 styleguide: null,
-                                 unverify_translations_upon_delivery: null,
-                                 quality: null,
-                                 priority: null,
-                                 created_at: null,
-                                 updated_at: null)
+instance = Phrase::TranslationOrder.new(id: nil,
+                                 name: nil,
+                                 lsp: nil,
+                                 amount_in_cents: nil,
+                                 currency: nil,
+                                 message: nil,
+                                 state: nil,
+                                 translation_type: nil,
+                                 progress_percent: nil,
+                                 source_locale: nil,
+                                 target_locales: nil,
+                                 tag_name: nil,
+                                 styleguide: nil,
+                                 unverify_translations_upon_delivery: nil,
+                                 quality: nil,
+                                 priority: nil,
+                                 created_at: nil,
+                                 updated_at: nil)
 ```
 
 

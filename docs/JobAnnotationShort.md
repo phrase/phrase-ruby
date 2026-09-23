@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobAnnotationShort.new(name: null,
-                                 value: null)
+instance = Phrase::JobAnnotationShort.new(name: nil,
+                                 value: nil)
 ```
 
 

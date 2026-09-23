@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Phrase'
+require 'phrase'
 
-instance = Phrase::JobReopenParameters.new(branch: my-feature-branch)
+instance = Phrase::JobReopenParameters.new(branch: 'my-feature-branch')
 ```
 
 
