@@ -349,7 +349,7 @@ Class | Method | HTTP request | Description
 *Phrase::RepoSyncsApi* | [**repo_sync_import**](docs/RepoSyncsApi.md#repo_sync_import) | **POST** /accounts/{account_id}/repo_syncs/{id}/import | Import from code repository
 *Phrase::RepoSyncsApi* | [**repo_sync_list**](docs/RepoSyncsApi.md#repo_sync_list) | **GET** /accounts/{account_id}/repo_syncs | Get Repo Syncs
 *Phrase::RepoSyncsApi* | [**repo_sync_show**](docs/RepoSyncsApi.md#repo_sync_show) | **GET** /accounts/{account_id}/repo_syncs/{id} | Get a single Repo Sync
-*Phrase::ReportsApi* | [**report_locales_list**](docs/ReportsApi.md#report_locales_list) | **GET** /projects/{project_id}/report/locales | List Locale Reports
+*Phrase::ReportsApi* | [**report_locales_list**](docs/ReportsApi.md#report_locales_list) | **GET** /projects/{project_id}/report/locales | List Locale Reports (word count, character count, translation statistics)
 *Phrase::ReportsApi* | [**report_show**](docs/ReportsApi.md#report_show) | **GET** /projects/{project_id}/report | Get Project Report
 *Phrase::ScreenshotMarkersApi* | [**screenshot_marker_create**](docs/ScreenshotMarkersApi.md#screenshot_marker_create) | **POST** /projects/{project_id}/screenshots/{screenshot_id}/markers | Create a screenshot marker
 *Phrase::ScreenshotMarkersApi* | [**screenshot_marker_delete**](docs/ScreenshotMarkersApi.md#screenshot_marker_delete) | **DELETE** /projects/{project_id}/screenshots/{screenshot_id}/markers | Delete a screenshot marker

@@ -7,8 +7,8 @@ module Phrase
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # List Locale Reports
-    # List all locale reports for the given project
+    # List Locale Reports (word count, character count, translation statistics)
+    # List all locale reports for the given project. Each report includes translation statistics per locale, including word count and character count fields (`source_word_count`, `word_count`, `word_count_unverified`, `word_count_missing`) as well as translation completion statistics (`keys_count`, `completed_translations_count`, `untranslated_keys_count`, `unverified_translations_count`, `reviewed_translations_count`, and their percentages). Use the `tag` parameter to scope the report to a specific job (e.g. its job tag) to get job-scoped word count statistics.
     # @param project_id [String] Project ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
@@ -23,8 +23,8 @@ module Phrase
       data
     end
 
-    # List Locale Reports
-    # List all locale reports for the given project
+    # List Locale Reports (word count, character count, translation statistics)
+    # List all locale reports for the given project. Each report includes translation statistics per locale, including word count and character count fields (&#x60;source_word_count&#x60;, &#x60;word_count&#x60;, &#x60;word_count_unverified&#x60;, &#x60;word_count_missing&#x60;) as well as translation completion statistics (&#x60;keys_count&#x60;, &#x60;completed_translations_count&#x60;, &#x60;untranslated_keys_count&#x60;, &#x60;unverified_translations_count&#x60;, &#x60;reviewed_translations_count&#x60;, and their percentages). Use the &#x60;tag&#x60; parameter to scope the report to a specific job (e.g. its job tag) to get job-scoped word count statistics.
     # @param project_id [String] Project ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
