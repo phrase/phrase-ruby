@@ -5,10 +5,10 @@ module Phrase
     # specify the branch to use
     attr_accessor :branch
 
-    # Locale name
+    # Locale name. Must be unique per project.
     attr_accessor :name
 
-    # Locale ISO code
+    # Locale ISO code. Unlike `name`, `code` is not required to be unique per project - creating a locale whose `code` duplicates an existing locale's `code` in the same project will succeed rather than error, resulting in two locales that share the same code.
     attr_accessor :code
 
     # Indicates whether locale is the default locale. If set to true, the previous default locale the project is no longer the default locale.
