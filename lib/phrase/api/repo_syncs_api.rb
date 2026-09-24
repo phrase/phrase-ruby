@@ -382,6 +382,8 @@ module Phrase
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [Integer] :page Page number
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @return [Array<RepoSync>]
     def repo_sync_list(account_id, opts = {})
       data, _status_code, _headers = repo_sync_list_with_http_info(account_id, opts)
@@ -393,6 +395,8 @@ module Phrase
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [Integer] :page Page number
+    # @option opts [Integer] :per_page Limit on the number of objects to be returned, between 1 and 100. 25 by default
     # @return [Array<(Response<(Array<RepoSync>)>, Integer, Hash)>] Response<(Array<RepoSync>)> data, response status code and response headers
     def repo_sync_list_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
@@ -407,6 +411,8 @@ module Phrase
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'per_page'] = opts[:'per_page'] if !opts[:'per_page'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
