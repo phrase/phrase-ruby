@@ -792,6 +792,7 @@ module Phrase
     # @param job_update_parameters [JobUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch Branch to use
     # @return [JobDetails]
     def job_update(project_id, id, job_update_parameters, opts = {})
       data, _status_code, _headers = job_update_with_http_info(project_id, id, job_update_parameters, opts)
@@ -805,6 +806,7 @@ module Phrase
     # @param job_update_parameters [JobUpdateParameters] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+    # @option opts [String] :branch Branch to use
     # @return [Array<(Response<(JobDetails)>, Integer, Hash)>] Response<(JobDetails)> data, response status code and response headers
     def job_update_with_http_info(project_id, id, job_update_parameters, opts = {})
       if @api_client.config.debugging
@@ -827,6 +829,7 @@ module Phrase
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'branch'] = opts[:'branch'] if !opts[:'branch'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

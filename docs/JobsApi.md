@@ -699,7 +699,8 @@ project_id = 'project_id_example' # String | Project ID
 id = 'id_example' # String | ID
 job_update_parameters = Phrase::JobUpdateParameters.new # JobUpdateParameters | 
 opts = {
-  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+  x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
+  branch: 'my-feature-branch' # String | Branch to use
 }
 
 begin
@@ -720,6 +721,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID | 
  **job_update_parameters** | [**JobUpdateParameters**](JobUpdateParameters.md)|  | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+ **branch** | **String**| Branch to use | [optional] 
 
 ### Return type
 

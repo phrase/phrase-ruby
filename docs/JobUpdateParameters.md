@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**branch** | **String** | specify the branch to use | [optional] 
 **name** | **String** | Job name | [optional] 
 **briefing** | **String** | Briefing for the translators | [optional] 
 **due_date** | **Time** | Date the job should be finished | [optional] 
@@ -17,8 +16,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'phrase'
 
-instance = Phrase::JobUpdateParameters.new(branch: 'my-feature-branch',
-                                 name: 'de',
+instance = Phrase::JobUpdateParameters.new(name: 'de',
                                  briefing: 'de-DE',
                                  due_date: nil,
                                  ticket_url: 'https://example.atlassian.net/browse/FOO',

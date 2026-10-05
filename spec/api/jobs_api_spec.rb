@@ -179,6 +179,7 @@ describe 'JobsApi' do
   # @param job_update_parameters 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @option opts [String] :branch Branch to use
   # @return [JobDetails]
   describe 'job_update test' do
     it 'should work' do

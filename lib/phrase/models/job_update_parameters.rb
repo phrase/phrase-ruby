@@ -2,9 +2,6 @@ require 'date'
 
 module Phrase
   class JobUpdateParameters
-    # specify the branch to use
-    attr_accessor :branch
-
     # Job name
     attr_accessor :name
 
@@ -26,7 +23,6 @@ module Phrase
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'branch' => :'branch',
         :'name' => :'name',
         :'briefing' => :'briefing',
         :'due_date' => :'due_date',
@@ -39,7 +35,6 @@ module Phrase
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'branch' => :'String',
         :'name' => :'String',
         :'briefing' => :'String',
         :'due_date' => :'DateTime',
@@ -70,10 +65,6 @@ module Phrase
         end
         h[k.to_sym] = v
       }
-
-      if attributes.key?(:'branch')
-        self.branch = attributes[:'branch']
-      end
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
@@ -120,7 +111,6 @@ module Phrase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          branch == o.branch &&
           name == o.name &&
           briefing == o.briefing &&
           due_date == o.due_date &&
@@ -138,7 +128,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, briefing, due_date, ticket_url, target_locale_ids, autotranslate].hash
+      [name, briefing, due_date, ticket_url, target_locale_ids, autotranslate].hash
     end
 
     # Builds the object from hash
