@@ -28,6 +28,7 @@ describe 'WebhookDeliveriesApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
   # @option opts [String] :response_status_codes List of Response Status Codes
+  # @option opts [String] :status Filter deliveries by outcome. &#x60;success&#x60; returns deliveries with a 2xx response code or a soft error. &#x60;failed&#x60; returns all other deliveries, including exceptions and timeouts without a response code. 
   # @return [Array<WebhookDelivery>]
   describe 'webhook_deliveries_list test' do
     it 'should work' do

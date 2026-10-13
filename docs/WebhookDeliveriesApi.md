@@ -39,7 +39,8 @@ project_id = 'project_id_example' # String | Project ID
 webhook_id = 'webhook_id_example' # String | Webhook ID
 opts = {
   x_phrase_app_otp: 'x_phrase_app_otp_example', # String | Two-Factor-Authentication token (optional)
-  response_status_codes: 'response_status_codes_example' # String | List of Response Status Codes
+  response_status_codes: 'response_status_codes_example', # String | List of Response Status Codes
+  status: 'success' # String | Filter deliveries by outcome. `success` returns deliveries with a 2xx response code or a soft error. `failed` returns all other deliveries, including exceptions and timeouts without a response code. 
 }
 
 begin
@@ -60,6 +61,7 @@ Name | Type | Description  | Notes
  **webhook_id** | **String**| Webhook ID | 
  **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
  **response_status_codes** | **String**| List of Response Status Codes | [optional] 
+ **status** | **String**| Filter deliveries by outcome. &#x60;success&#x60; returns deliveries with a 2xx response code or a soft error. &#x60;failed&#x60; returns all other deliveries, including exceptions and timeouts without a response code.  | [optional] 
 
 ### Return type
 

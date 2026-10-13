@@ -14,6 +14,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :response_status_codes List of Response Status Codes
+    # @option opts [String] :status Filter deliveries by outcome. &#x60;success&#x60; returns deliveries with a 2xx response code or a soft error. &#x60;failed&#x60; returns all other deliveries, including exceptions and timeouts without a response code. 
     # @return [Array<WebhookDelivery>]
     def webhook_deliveries_list(project_id, webhook_id, opts = {})
       data, _status_code, _headers = webhook_deliveries_list_with_http_info(project_id, webhook_id, opts)
@@ -27,6 +28,7 @@ module Phrase
     # @param [Hash] opts the optional parameters
     # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
     # @option opts [String] :response_status_codes List of Response Status Codes
+    # @option opts [String] :status Filter deliveries by outcome. &#x60;success&#x60; returns deliveries with a 2xx response code or a soft error. &#x60;failed&#x60; returns all other deliveries, including exceptions and timeouts without a response code. 
     # @return [Array<(Response<(Array<WebhookDelivery>)>, Integer, Hash)>] Response<(Array<WebhookDelivery>)> data, response status code and response headers
     def webhook_deliveries_list_with_http_info(project_id, webhook_id, opts = {})
       if @api_client.config.debugging
@@ -40,12 +42,17 @@ module Phrase
       if @api_client.config.client_side_validation && webhook_id.nil?
         fail ArgumentError, "Missing the required parameter 'webhook_id' when calling WebhookDeliveriesApi.webhook_deliveries_list"
       end
+      allowable_values = ["success", "failed"]
+      if @api_client.config.client_side_validation && opts[:'status'] && !allowable_values.include?(opts[:'status'])
+        fail ArgumentError, "invalid value for \"status\", must be one of #{allowable_values}"
+      end
       # resource path
       local_var_path = '/projects/{project_id}/webhooks/{webhook_id}/deliveries'.sub('{' + 'project_id' + '}', CGI.escape(project_id.to_s)).sub('{' + 'webhook_id' + '}', CGI.escape(webhook_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'response_status_codes'] = opts[:'response_status_codes'] if !opts[:'response_status_codes'].nil?
+      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
