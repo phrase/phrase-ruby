@@ -26,6 +26,9 @@ module Phrase
     # When `true`, the automation only acts on locales that changed since its last run.
     attr_accessor :include_only_updated_locales
 
+    # When true, the automation targets branches of the configured projects in addition to the main project. Requires the designated job owner to have permission to create jobs in branches for every configured project. 
+    attr_accessor :include_branches
+
     attr_accessor :tags
 
     attr_accessor :cron_schedule
@@ -73,6 +76,7 @@ module Phrase
         :'job_template_id' => :'job_template_id',
         :'job_owner_id' => :'job_owner_id',
         :'include_only_updated_locales' => :'include_only_updated_locales',
+        :'include_branches' => :'include_branches',
         :'tags' => :'tags',
         :'cron_schedule' => :'cron_schedule',
         :'time_zone' => :'time_zone',
@@ -95,6 +99,7 @@ module Phrase
         :'job_template_id' => :'String',
         :'job_owner_id' => :'String',
         :'include_only_updated_locales' => :'Boolean',
+        :'include_branches' => :'Boolean',
         :'tags' => :'Array<String>',
         :'cron_schedule' => :'String',
         :'time_zone' => :'String',
@@ -168,6 +173,10 @@ module Phrase
 
       if attributes.key?(:'include_only_updated_locales')
         self.include_only_updated_locales = attributes[:'include_only_updated_locales']
+      end
+
+      if attributes.key?(:'include_branches')
+        self.include_branches = attributes[:'include_branches']
       end
 
       if attributes.key?(:'tags')
@@ -249,6 +258,7 @@ module Phrase
           job_template_id == o.job_template_id &&
           job_owner_id == o.job_owner_id &&
           include_only_updated_locales == o.include_only_updated_locales &&
+          include_branches == o.include_branches &&
           tags == o.tags &&
           cron_schedule == o.cron_schedule &&
           time_zone == o.time_zone &&
@@ -266,7 +276,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, status, trigger, status_filters, project_id, project_ids, job_template_id, job_owner_id, include_only_updated_locales, tags, cron_schedule, time_zone, account, created_at, updated_at].hash
+      [id, name, status, trigger, status_filters, project_id, project_ids, job_template_id, job_owner_id, include_only_updated_locales, include_branches, tags, cron_schedule, time_zone, account, created_at, updated_at].hash
     end
 
     # Builds the object from hash

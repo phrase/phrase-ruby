@@ -31,6 +31,9 @@ module Phrase
     # When `true`, the automation only acts on locales that changed since its last run. 
     attr_accessor :include_only_updated_locales
 
+    # When true, the automation also runs against branches of the configured projects. The designated job owner must have permission to create jobs in branches for every configured project; otherwise the request is rejected with 403. 
+    attr_accessor :include_branches
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -65,7 +68,8 @@ module Phrase
         :'cron_schedule' => :'cron_schedule',
         :'time_zone' => :'time_zone',
         :'job_owner_id' => :'job_owner_id',
-        :'include_only_updated_locales' => :'include_only_updated_locales'
+        :'include_only_updated_locales' => :'include_only_updated_locales',
+        :'include_branches' => :'include_branches'
       }
     end
 
@@ -81,7 +85,8 @@ module Phrase
         :'cron_schedule' => :'String',
         :'time_zone' => :'String',
         :'job_owner_id' => :'String',
-        :'include_only_updated_locales' => :'Boolean'
+        :'include_only_updated_locales' => :'Boolean',
+        :'include_branches' => :'Boolean'
       }
     end
 
@@ -151,6 +156,10 @@ module Phrase
       if attributes.key?(:'include_only_updated_locales')
         self.include_only_updated_locales = attributes[:'include_only_updated_locales']
       end
+
+      if attributes.key?(:'include_branches')
+        self.include_branches = attributes[:'include_branches']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -212,7 +221,8 @@ module Phrase
           cron_schedule == o.cron_schedule &&
           time_zone == o.time_zone &&
           job_owner_id == o.job_owner_id &&
-          include_only_updated_locales == o.include_only_updated_locales
+          include_only_updated_locales == o.include_only_updated_locales &&
+          include_branches == o.include_branches
     end
 
     # @see the `==` method
@@ -224,7 +234,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, trigger, project_ids, job_template_id, status_filters, tags, cron_schedule, time_zone, job_owner_id, include_only_updated_locales].hash
+      [name, trigger, project_ids, job_template_id, status_filters, tags, cron_schedule, time_zone, job_owner_id, include_only_updated_locales, include_branches].hash
     end
 
     # Builds the object from hash

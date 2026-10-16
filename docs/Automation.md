@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **job_template_id** | **String** |  | [optional] 
 **job_owner_id** | **String** | User ID of the job owner that newly created jobs are assigned to. | [optional] 
 **include_only_updated_locales** | **Boolean** | When &#x60;true&#x60;, the automation only acts on locales that changed since its last run. | [optional] 
+**include_branches** | **Boolean** | When true, the automation targets branches of the configured projects in addition to the main project. Requires the designated job owner to have permission to create jobs in branches for every configured project.  | [optional] 
 **tags** | **Array&lt;String&gt;** |  | [optional] 
 **cron_schedule** | **String** |  | [optional] 
 **time_zone** | **String** |  | [optional] 
@@ -36,6 +37,7 @@ instance = Phrase::Automation.new(id: nil,
                                  job_template_id: nil,
                                  job_owner_id: nil,
                                  include_only_updated_locales: nil,
+                                 include_branches: nil,
                                  tags: nil,
                                  cron_schedule: nil,
                                  time_zone: nil,
