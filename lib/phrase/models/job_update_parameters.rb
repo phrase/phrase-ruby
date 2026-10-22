@@ -11,6 +11,9 @@ module Phrase
     # Date the job should be finished
     attr_accessor :due_date
 
+    # Date the review of the job should be finished. Must not be before `due_date`.
+    attr_accessor :review_due_date
+
     # URL to a ticket for this job (e.g. Jira, Trello)
     attr_accessor :ticket_url
 
@@ -26,6 +29,7 @@ module Phrase
         :'name' => :'name',
         :'briefing' => :'briefing',
         :'due_date' => :'due_date',
+        :'review_due_date' => :'review_due_date',
         :'ticket_url' => :'ticket_url',
         :'target_locale_ids' => :'target_locale_ids',
         :'autotranslate' => :'autotranslate'
@@ -38,6 +42,7 @@ module Phrase
         :'name' => :'String',
         :'briefing' => :'String',
         :'due_date' => :'DateTime',
+        :'review_due_date' => :'DateTime',
         :'ticket_url' => :'String',
         :'target_locale_ids' => :'Array<String>',
         :'autotranslate' => :'Boolean'
@@ -78,6 +83,10 @@ module Phrase
         self.due_date = attributes[:'due_date']
       end
 
+      if attributes.key?(:'review_due_date')
+        self.review_due_date = attributes[:'review_due_date']
+      end
+
       if attributes.key?(:'ticket_url')
         self.ticket_url = attributes[:'ticket_url']
       end
@@ -114,6 +123,7 @@ module Phrase
           name == o.name &&
           briefing == o.briefing &&
           due_date == o.due_date &&
+          review_due_date == o.review_due_date &&
           ticket_url == o.ticket_url &&
           target_locale_ids == o.target_locale_ids &&
           autotranslate == o.autotranslate
@@ -128,7 +138,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, briefing, due_date, ticket_url, target_locale_ids, autotranslate].hash
+      [name, briefing, due_date, review_due_date, ticket_url, target_locale_ids, autotranslate].hash
     end
 
     # Builds the object from hash

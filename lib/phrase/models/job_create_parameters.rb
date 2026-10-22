@@ -17,6 +17,9 @@ module Phrase
     # Date the job should be finished
     attr_accessor :due_date
 
+    # Date the review of the job should be finished. Must not be before `due_date`.
+    attr_accessor :review_due_date
+
     # URL to a ticket for this job (e.g. Jira, Trello)
     attr_accessor :ticket_url
 
@@ -43,6 +46,7 @@ module Phrase
         :'source_locale_id' => :'source_locale_id',
         :'briefing' => :'briefing',
         :'due_date' => :'due_date',
+        :'review_due_date' => :'review_due_date',
         :'ticket_url' => :'ticket_url',
         :'tags' => :'tags',
         :'translation_key_ids' => :'translation_key_ids',
@@ -60,6 +64,7 @@ module Phrase
         :'source_locale_id' => :'String',
         :'briefing' => :'String',
         :'due_date' => :'DateTime',
+        :'review_due_date' => :'DateTime',
         :'ticket_url' => :'String',
         :'tags' => :'Array<String>',
         :'translation_key_ids' => :'Array<String>',
@@ -109,6 +114,10 @@ module Phrase
 
       if attributes.key?(:'due_date')
         self.due_date = attributes[:'due_date']
+      end
+
+      if attributes.key?(:'review_due_date')
+        self.review_due_date = attributes[:'review_due_date']
       end
 
       if attributes.key?(:'ticket_url')
@@ -170,6 +179,7 @@ module Phrase
           source_locale_id == o.source_locale_id &&
           briefing == o.briefing &&
           due_date == o.due_date &&
+          review_due_date == o.review_due_date &&
           ticket_url == o.ticket_url &&
           tags == o.tags &&
           translation_key_ids == o.translation_key_ids &&
@@ -187,7 +197,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, source_locale_id, briefing, due_date, ticket_url, tags, translation_key_ids, target_locale_ids, job_template_id, autotranslate].hash
+      [branch, name, source_locale_id, briefing, due_date, review_due_date, ticket_url, tags, translation_key_ids, target_locale_ids, job_template_id, autotranslate].hash
     end
 
     # Builds the object from hash

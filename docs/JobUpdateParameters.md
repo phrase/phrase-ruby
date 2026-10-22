@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **String** | Job name | [optional] 
 **briefing** | **String** | Briefing for the translators | [optional] 
 **due_date** | **Time** | Date the job should be finished | [optional] 
+**review_due_date** | **Time** | Date the review of the job should be finished. Must not be before &#x60;due_date&#x60;. | [optional] 
 **ticket_url** | **String** | URL to a ticket for this job (e.g. Jira, Trello) | [optional] 
 **target_locale_ids** | **Array&lt;String&gt;** | List of target locales for the job. | [optional] 
 **autotranslate** | **Boolean** | Automatically translate the job using machine translation | [optional] 
@@ -19,6 +20,7 @@ require 'phrase'
 instance = Phrase::JobUpdateParameters.new(name: 'de',
                                  briefing: 'de-DE',
                                  due_date: nil,
+                                 review_due_date: nil,
                                  ticket_url: 'https://example.atlassian.net/browse/FOO',
                                  target_locale_ids: ["abcd1234cdef1234abcd1234cdef1234"],
                                  autotranslate: true)
