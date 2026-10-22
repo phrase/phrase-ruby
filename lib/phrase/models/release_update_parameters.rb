@@ -2,16 +2,16 @@ require 'date'
 
 module Phrase
   class ReleaseUpdateParameters
-    # Description of the release
+    # Description of the release. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :description
 
     # List of platforms the release should support.
     attr_accessor :platforms
 
-    # Minimum version of the app that the release supports in semver format
+    # Minimum version of the app that the release supports in semver format. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :app_min_version
 
-    # Maximum version of the app that the release supports in semver format
+    # Maximum version of the app that the release supports in semver format. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :app_max_version
 
     # Branch used for release
@@ -42,6 +42,9 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'description',
+        :'app_min_version',
+        :'app_max_version',
       ])
     end
 

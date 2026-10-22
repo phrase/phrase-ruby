@@ -8,7 +8,7 @@ module Phrase
     # (Optional) Name of the project
     attr_accessor :name
 
-    # (Optional) User ID of the point of contact for the project. Pass `null` to unset.
+    # (Optional) User ID of the point of contact for the project. Pass `null` or an empty string to unset. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :point_of_contact
 
     # (Optional) Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see [Format Guide](https://support.phrase.com/hc/en-us/sections/6111343326364) or our [Formats API Endpoint](#formats).
@@ -214,6 +214,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'point_of_contact',
       ])
     end
 

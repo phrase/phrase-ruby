@@ -23,7 +23,7 @@ module Phrase
     # Source locale. Can be the name or id of the locale. Preferred is id.
     attr_accessor :source_locale_id
 
-    # Fallback locale for empty translations. Can be a locale name or id.
+    # Fallback locale for empty translations. Can be a locale name or id. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :fallback_locale_id
 
     # Indicates that new translations for this locale should be marked as unverified. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature.
@@ -38,7 +38,7 @@ module Phrase
     # If set, translations for this locale will be fetched automatically, right after creation.
     attr_accessor :autotranslate
 
-    # Identifier of the Language AI profile to use for this locale.
+    # Identifier of the Language AI profile to use for this locale. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :language_ai_profile
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -82,6 +82,8 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'fallback_locale_id',
+        :'language_ai_profile'
       ])
     end
 

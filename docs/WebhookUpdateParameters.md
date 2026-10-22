@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **callback_url** | **String** | Callback URL to send requests to | [optional] 
 **secret** | **String** | Webhook secret used to calculate signature. If empty, the default project secret will be used. | [optional] 
-**description** | **String** | Webhook description | [optional] 
+**description** | **String** | Webhook description. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. | [optional] 
 **events** | **String** | List of event names to trigger the webhook (separated by comma) | [optional] 
 **active** | **Boolean** | Whether webhook is active or inactive | [optional] 
 **include_branches** | **Boolean** | If enabled, webhook will also be triggered for events from branches of the project specified. | [optional] 

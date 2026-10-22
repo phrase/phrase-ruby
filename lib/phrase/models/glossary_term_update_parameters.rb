@@ -5,7 +5,7 @@ module Phrase
     # Glossary term
     attr_accessor :term
 
-    # Description of term
+    # Description of term. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :description
 
     # Indicates whether the term should be used for all languages or can be translated
@@ -37,6 +37,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'description',
       ])
     end
 

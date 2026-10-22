@@ -8,7 +8,7 @@ module Phrase
     # Webhook secret used to calculate signature. If empty, the default project secret will be used.
     attr_accessor :secret
 
-    # Webhook description
+    # Webhook description. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :description
 
     # List of event names to trigger the webhook (separated by comma)
@@ -47,6 +47,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'description',
       ])
     end
 

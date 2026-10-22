@@ -8,7 +8,7 @@ module Phrase
     # Job template name
     attr_accessor :name
 
-    # Briefing for the translators
+    # Briefing for the translators. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :briefing
 
     # Automatically translate the job using machine translation.
@@ -47,6 +47,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'briefing',
       ])
     end
 

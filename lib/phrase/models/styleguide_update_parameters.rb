@@ -5,7 +5,7 @@ module Phrase
     # Style guide title
     attr_accessor :title
 
-    # Audience description
+    # Audience description. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :audience
 
     # Target audience for the translations.
@@ -17,28 +17,28 @@ module Phrase
     # Vocabulary register the translations should use.
     attr_accessor :vocabulary_type
 
-    # Description of the business
+    # Description of the business. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :business
 
-    # Company branding to remain consistent.
+    # Company branding to remain consistent. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :company_branding
 
-    # Formatting requirements and character limitations.
+    # Formatting requirements and character limitations. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :formatting
 
-    # List of terms and/or phrases that need to be translated consistently.
+    # List of terms and/or phrases that need to be translated consistently. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :glossary_terms
 
-    # Formal or informal pronouns, consistent conjugation, grammatical gender
+    # Formal or informal pronouns, consistent conjugation, grammatical gender. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :grammar_consistency
 
-    # Can be one of: Cultural/Conversational, Literal, Neutral.
+    # Can be one of: Cultural/Conversational, Literal, Neutral. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :literal_translation
 
-    # Tone requirement descriptions
+    # Tone requirement descriptions. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :overall_tone
 
-    # Provide links to sample product pages, FAQ pages, etc. to give the translator a point of reference. You can also provide past translations. Even snippets or short paragraphs are helpful for maintaining consistency.
+    # Provide links to sample product pages, FAQ pages, etc. to give the translator a point of reference. You can also provide past translations. Even snippets or short paragraphs are helpful for maintaining consistency. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :samples
 
     class EnumAttributeValidator
@@ -104,6 +104,15 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'audience',
+        :'business',
+        :'company_branding',
+        :'formatting',
+        :'glossary_terms',
+        :'grammar_consistency',
+        :'literal_translation',
+        :'overall_tone',
+        :'samples'
       ])
     end
 

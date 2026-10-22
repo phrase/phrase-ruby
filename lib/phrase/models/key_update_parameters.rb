@@ -8,7 +8,7 @@ module Phrase
     # Key name
     attr_accessor :name
 
-    # Key description (usually includes contextual information for translators)
+    # Key description (usually includes contextual information for translators). Send an empty string or `null` to clear the description; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :description
 
     # Indicates whether key supports pluralization
@@ -17,7 +17,7 @@ module Phrase
     # Indicates whether key uses ordinal rules for pluralization
     attr_accessor :use_ordinal_rules
 
-    # Plural name for the key (used in some file formats, e.g. Gettext)
+    # Plural name for the key (used in some file formats, e.g. Gettext) Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :name_plural
 
     # Type of the key. Can be one of the following: string, number, boolean, array, markdown.
@@ -41,13 +41,13 @@ module Phrase
     # Indicates whether the key should be exported with \"xml:space=preserve\". Supported by several XML-based formats.
     attr_accessor :xml_space_preserve
 
-    # Original file attribute. Used in some formats, e.g. XLIFF.
+    # Original file attribute. Used in some formats, e.g. XLIFF. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :original_file
 
-    # NSStringLocalizedFormatKey attribute. Used in .stringsdict format.
+    # NSStringLocalizedFormatKey attribute. Used in .stringsdict format. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :localized_format_string
 
-    # NSStringLocalizedFormatKey attribute. Used in .stringsdict format.
+    # NSStringLocalizedFormatKey attribute. Used in .stringsdict format. Send an empty string or `null` to clear the value; omit the field to leave it unchanged. The Phrase CLI drops `null` values before sending, so use an empty string there.
     attr_accessor :localized_format_key
 
     # Updates/Creates custom metadata property name and value pairs to be associated with key. If you want to delete a custom metadata property, you can set its value to null. If you want to update a custom metadata property, you can set its value to the new value.
@@ -112,6 +112,11 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'description',
+        :'name_plural',
+        :'original_file',
+        :'localized_format_string',
+        :'localized_format_key',
       ])
     end
 

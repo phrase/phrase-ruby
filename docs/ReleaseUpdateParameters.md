@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **String** | Description of the release | [optional] 
+**description** | **String** | Description of the release. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. | [optional] 
 **platforms** | **Array&lt;String&gt;** | List of platforms the release should support. | [optional] 
-**app_min_version** | **String** | Minimum version of the app that the release supports in semver format | [optional] 
-**app_max_version** | **String** | Maximum version of the app that the release supports in semver format | [optional] 
+**app_min_version** | **String** | Minimum version of the app that the release supports in semver format. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. | [optional] 
+**app_max_version** | **String** | Maximum version of the app that the release supports in semver format. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. | [optional] 
 **branch** | **String** | Branch used for release | [optional] 
 
 ## Code Sample
