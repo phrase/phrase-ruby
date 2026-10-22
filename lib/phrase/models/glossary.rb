@@ -6,6 +6,9 @@ module Phrase
 
     attr_accessor :name
 
+    # Number of terms in the glossary.
+    attr_accessor :terms_count
+
     attr_accessor :projects
 
     attr_accessor :spaces
@@ -19,6 +22,7 @@ module Phrase
       {
         :'id' => :'id',
         :'name' => :'name',
+        :'terms_count' => :'terms_count',
         :'projects' => :'projects',
         :'spaces' => :'spaces',
         :'created_at' => :'created_at',
@@ -31,6 +35,7 @@ module Phrase
       {
         :'id' => :'String',
         :'name' => :'String',
+        :'terms_count' => :'Integer',
         :'projects' => :'Array<ProjectShort>',
         :'spaces' => :'Array<Space>',
         :'created_at' => :'DateTime',
@@ -65,6 +70,10 @@ module Phrase
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.key?(:'terms_count')
+        self.terms_count = attributes[:'terms_count']
       end
 
       if attributes.key?(:'projects')
@@ -108,6 +117,7 @@ module Phrase
       self.class == o.class &&
           id == o.id &&
           name == o.name &&
+          terms_count == o.terms_count &&
           projects == o.projects &&
           spaces == o.spaces &&
           created_at == o.created_at &&
@@ -123,7 +133,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, projects, spaces, created_at, updated_at].hash
+      [id, name, terms_count, projects, spaces, created_at, updated_at].hash
     end
 
     # Builds the object from hash
