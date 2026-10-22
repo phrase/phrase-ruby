@@ -1,3 +1,3 @@
 module Phrase
-  VERSION = '4.30.1'
+  VERSION = '4.31.0'
 end
