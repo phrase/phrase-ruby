@@ -19,6 +19,9 @@ module Phrase
     # List of error messages, in case of failure
     attr_accessor :errors
 
+    # The uploads associated with this import event, or `null` if no upload batch has been created yet. Each entry identifies a single file upload by its public code (`id`) and its current public state (`state`). Present on show responses only; absent from list responses. Possible `state` values: `initialized`, `waiting_for_preview`, `processing`, `success`, `error`. 
+    attr_accessor :uploads
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -50,7 +53,8 @@ module Phrase
         :'status' => :'status',
         :'pull_request_url' => :'pull_request_url',
         :'auto_import' => :'auto_import',
-        :'errors' => :'errors'
+        :'errors' => :'errors',
+        :'uploads' => :'uploads'
       }
     end
 
@@ -63,13 +67,15 @@ module Phrase
         :'status' => :'String',
         :'pull_request_url' => :'String',
         :'auto_import' => :'Boolean',
-        :'errors' => :'Array<String>'
+        :'errors' => :'Array<String>',
+        :'uploads' => :'Array<RepoSyncEventUploadsInner>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'uploads'
       ])
     end
 
@@ -115,6 +121,12 @@ module Phrase
       if attributes.key?(:'errors')
         if (value = attributes[:'errors']).is_a?(Array)
           self.errors = value
+        end
+      end
+
+      if attributes.key?(:'uploads')
+        if (value = attributes[:'uploads']).is_a?(Array)
+          self.uploads = value
         end
       end
     end
@@ -167,7 +179,8 @@ module Phrase
           status == o.status &&
           pull_request_url == o.pull_request_url &&
           auto_import == o.auto_import &&
-          errors == o.errors
+          errors == o.errors &&
+          uploads == o.uploads
     end
 
     # @see the `==` method
@@ -179,7 +192,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, type, created_at, status, pull_request_url, auto_import, errors].hash
+      [id, type, created_at, status, pull_request_url, auto_import, errors, uploads].hash
     end
 
     # Builds the object from hash

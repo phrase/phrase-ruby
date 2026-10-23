@@ -608,6 +608,7 @@ Class | Method | HTTP request | Description
  - [Phrase::RepoSync](docs/RepoSync.md)
  - [Phrase::RepoSyncCreateParameters](docs/RepoSyncCreateParameters.md)
  - [Phrase::RepoSyncEvent](docs/RepoSyncEvent.md)
+ - [Phrase::RepoSyncEventUploadsInner](docs/RepoSyncEventUploadsInner.md)
  - [Phrase::RepoSyncExportParameters](docs/RepoSyncExportParameters.md)
  - [Phrase::RepoSyncImportParameters](docs/RepoSyncImportParameters.md)
  - [Phrase::Screenshot](docs/Screenshot.md)
