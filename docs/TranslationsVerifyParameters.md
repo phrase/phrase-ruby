@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branch** | **String** | specify the branch to use | [optional] 
 **locale_id** | **String** | specify the locale of the translations to be verified | [optional] 
-**q** | **String** | Specify a query to find translations by content (including wildcards).  *Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).*  The following qualifiers are supported in the query: * &#x60;id:translation_id,...&#x60; for queries on a comma-separated list of ids * &#x60;tags:XYZ&#x60; for tags on the translation * &#x60;unverified:{true|false}&#x60; for verification status * &#x60;excluded:{true|false}&#x60; for exclusion status * &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries  Find more examples [here](/en/api/strings/usage-examples).  | [optional] 
+**q** | **String** | Specify a query to find translations by content (including wildcards).  *Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).*  The following qualifiers are supported in the query: * &#x60;id:translation_id,...&#x60; for queries on a comma-separated list of translation ids * &#x60;key.id:key_id,...&#x60; for queries on a comma-separated list of translation key ids * &#x60;key.name:key_name,...&#x60; for queries on a comma-separated list of translation key names * &#x60;locale.id:locale_id,...&#x60; for queries on a comma-separated list of locale ids * &#x60;locale.name:locale_name,...&#x60; for queries on a comma-separated list of locale names * &#x60;tags:XYZ&#x60; for tags on the translation * &#x60;unverified:{true|false}&#x60; for verification status * &#x60;excluded:{true|false}&#x60; for exclusion status * &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries * &#x60;reviewed_after:2013-02-21T00:00:00Z&#x60; for fetching translations that were reviewed after the given timestamp  Find more examples [here](/en/api/strings/usage-examples).  | [optional] 
 
 ## Code Sample
 
@@ -15,7 +15,7 @@ require 'phrase'
 
 instance = Phrase::TranslationsVerifyParameters.new(branch: 'my-feature-branch',
                                  locale_id: 'fc2f11dd6a658fa9652f6f0a9ebee688',
-                                 q: 'PhraseApp*%20unverified:true%20tags:feature,center')
+                                 q: 'key.name:home.title,home.subtitle locale.name:de-DE tags:feature')
 ```
 
 

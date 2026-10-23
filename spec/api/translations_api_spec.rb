@@ -166,7 +166,7 @@ describe 'TranslationsApi' do
   # @option opts [String] :branch specify the branch to use
   # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
   # @option opts [String] :order Order direction. Can be one of: asc, desc.
-  # @option opts [String] :q Specify a query to find translations by content (including wildcards).  The following qualifiers are supported in the query:  * &#x60;id:translation_id,...&#x60; for queries on a comma-separated list of ids * &#x60;unverified:{true|false}&#x60; for verification status * &#x60;tags:XYZ&#x60; for tags on the translation * &#x60;excluded:{true|false}&#x60; for exclusion status * &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries  Find more examples [here](/en/api/strings/usage-examples). 
+  # @option opts [String] :q Specify a query to find translations by content (including wildcards).  *Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).*  The following qualifiers are supported in the query: * &#x60;id:translation_id,...&#x60; for queries on a comma-separated list of translation ids * &#x60;locale.id:locale_id,...&#x60; for queries on a comma-separated list of locale ids * &#x60;locale.name:locale_name,...&#x60; for queries on a comma-separated list of locale names * &#x60;tags:XYZ&#x60; for tags on the translation * &#x60;unverified:{true|false}&#x60; for verification status * &#x60;excluded:{true|false}&#x60; for exclusion status * &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries * &#x60;reviewed_after:2013-02-21T00:00:00Z&#x60; for fetching translations that were reviewed after the given timestamp  Find more examples [here](/en/api/strings/usage-examples). 
   # @return [Array<Translation>]
   describe 'translations_by_key test' do
     it 'should work' do
@@ -186,7 +186,7 @@ describe 'TranslationsApi' do
   # @option opts [String] :branch specify the branch to use
   # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
   # @option opts [String] :order Order direction. Can be one of: asc, desc.
-  # @option opts [String] :q Specify a query to find translations by content (including wildcards).  *Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).*  The following qualifiers are supported in the query: - &#x60;id:translation_id,...&#x60; for queries on a comma-separated list of ids - &#x60;unverified:{true|false}&#x60; for verification status - &#x60;tags:XYZ&#x60; for tags on the translation - &#x60;excluded:{true|false}&#x60; for exclusion status - &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries  Find more examples [here](/en/api/strings/usage-examples). 
+  # @option opts [String] :q Specify a query to find translations by content (including wildcards).  *Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).*  The following qualifiers are supported in the query: * &#x60;id:translation_id,...&#x60; for queries on a comma-separated list of translation ids * &#x60;key.id:key_id,...&#x60; for queries on a comma-separated list of translation key ids * &#x60;key.name:key_name,...&#x60; for queries on a comma-separated list of translation key names * &#x60;tags:XYZ&#x60; for tags on the translation * &#x60;unverified:{true|false}&#x60; for verification status * &#x60;excluded:{true|false}&#x60; for exclusion status * &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries * &#x60;reviewed_after:2013-02-21T00:00:00Z&#x60; for fetching translations that were reviewed after the given timestamp  Find more examples [here](/en/api/strings/usage-examples). 
   # @return [Array<Translation>]
   describe 'translations_by_locale test' do
     it 'should work' do
@@ -237,7 +237,7 @@ describe 'TranslationsApi' do
   # @option opts [String] :locale_id Filter translations to those for the given locale (locale code or id). Equivalent to calling &#x60;GET /projects/{project_id}/locales/{locale_id}/translations&#x60;.
   # @option opts [String] :sort Sort criteria. Can be one of: key_name, created_at, updated_at.
   # @option opts [String] :order Order direction. Can be one of: asc, desc.
-  # @option opts [String] :q Specify a query to find translations by content (including wildcards).  *Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).*  The following qualifiers are supported in the query:  * &#x60;id:translation_id,...&#x60; for queries on a comma-separated list of ids * &#x60;tags:XYZ&#x60; for tags on the translation * &#x60;unverified:{true|false}&#x60; for verification status * &#x60;excluded:{true|false}&#x60; for exclusion status * &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries * &#x60;reviewed_after:2013-02-21T00:00:00Z&#x60; for fetching translations that were reviewed after the given timestamp  Find more examples [here](/en/api/strings/usage-examples). 
+  # @option opts [String] :q Specify a query to find translations by content (including wildcards).  *Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).*  The following qualifiers are supported in the query: * &#x60;id:translation_id,...&#x60; for queries on a comma-separated list of translation ids * &#x60;key.id:key_id,...&#x60; for queries on a comma-separated list of translation key ids * &#x60;key.name:key_name,...&#x60; for queries on a comma-separated list of translation key names * &#x60;locale.id:locale_id,...&#x60; for queries on a comma-separated list of locale ids * &#x60;locale.name:locale_name,...&#x60; for queries on a comma-separated list of locale names * &#x60;tags:XYZ&#x60; for tags on the translation * &#x60;unverified:{true|false}&#x60; for verification status * &#x60;excluded:{true|false}&#x60; for exclusion status * &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries * &#x60;reviewed_after:2013-02-21T00:00:00Z&#x60; for fetching translations that were reviewed after the given timestamp  Find more examples [here](/en/api/strings/usage-examples). 
   # @return [Array<Translation>]
   describe 'translations_list test' do
     it 'should work' do
@@ -291,7 +291,7 @@ describe 'TranslationsApi' do
 
   # unit tests for translations_unverify_collection
   # Unverify translations by query
-  # Mark translations matching query as unverified.
+  # Mark translations matching query as unverified.  To unverify the translations of specific keys, filter by key id (and optionally locale) directly, for example &#x60;key.id:KEY_ID_1,KEY_ID_2 locale.id:LOCALE_ID&#x60;. There is no need to look up translation ids first. 
   # @param project_id Project ID
   # @param translations_unverify_parameters 
   # @param [Hash] opts the optional parameters
