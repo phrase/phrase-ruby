@@ -24,6 +24,9 @@ module Phrase
 
     attr_accessor :locales
 
+    # `true` if jobs created from this template exclude linked child keys. 
+    attr_accessor :exclude_linked_child_keys
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -36,7 +39,8 @@ module Phrase
         :'updated_at' => :'updated_at',
         :'owner' => :'owner',
         :'creator' => :'creator',
-        :'locales' => :'locales'
+        :'locales' => :'locales',
+        :'exclude_linked_child_keys' => :'exclude_linked_child_keys'
       }
     end
 
@@ -52,7 +56,8 @@ module Phrase
         :'updated_at' => :'DateTime',
         :'owner' => :'UserPreview',
         :'creator' => :'UserPreview',
-        :'locales' => :'Array<LocalePreview>'
+        :'locales' => :'Array<LocalePreview>',
+        :'exclude_linked_child_keys' => :'Boolean'
       }
     end
 
@@ -126,6 +131,10 @@ module Phrase
           self.locales = value
         end
       end
+
+      if attributes.key?(:'exclude_linked_child_keys')
+        self.exclude_linked_child_keys = attributes[:'exclude_linked_child_keys']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -155,7 +164,8 @@ module Phrase
           updated_at == o.updated_at &&
           owner == o.owner &&
           creator == o.creator &&
-          locales == o.locales
+          locales == o.locales &&
+          exclude_linked_child_keys == o.exclude_linked_child_keys
     end
 
     # @see the `==` method
@@ -167,7 +177,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, autotranslate_enabled, source_locale_id, created_at, updated_at, owner, creator, locales].hash
+      [id, name, briefing, autotranslate_enabled, source_locale_id, created_at, updated_at, owner, creator, locales, exclude_linked_child_keys].hash
     end
 
     # Builds the object from hash

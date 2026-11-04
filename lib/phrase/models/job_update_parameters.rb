@@ -23,6 +23,9 @@ module Phrase
     # Automatically translate the job using machine translation
     attr_accessor :autotranslate
 
+    # Exclude linked child keys from the job. When set to `true`, linked child keys already in the job are removed and none can be added while the option is enabled.
+    attr_accessor :exclude_linked_child_keys
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -32,7 +35,8 @@ module Phrase
         :'review_due_date' => :'review_due_date',
         :'ticket_url' => :'ticket_url',
         :'target_locale_ids' => :'target_locale_ids',
-        :'autotranslate' => :'autotranslate'
+        :'autotranslate' => :'autotranslate',
+        :'exclude_linked_child_keys' => :'exclude_linked_child_keys'
       }
     end
 
@@ -45,7 +49,8 @@ module Phrase
         :'review_due_date' => :'DateTime',
         :'ticket_url' => :'String',
         :'target_locale_ids' => :'Array<String>',
-        :'autotranslate' => :'Boolean'
+        :'autotranslate' => :'Boolean',
+        :'exclude_linked_child_keys' => :'Boolean'
       }
     end
 
@@ -102,6 +107,10 @@ module Phrase
       if attributes.key?(:'autotranslate')
         self.autotranslate = attributes[:'autotranslate']
       end
+
+      if attributes.key?(:'exclude_linked_child_keys')
+        self.exclude_linked_child_keys = attributes[:'exclude_linked_child_keys']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -128,7 +137,8 @@ module Phrase
           review_due_date == o.review_due_date &&
           ticket_url == o.ticket_url &&
           target_locale_ids == o.target_locale_ids &&
-          autotranslate == o.autotranslate
+          autotranslate == o.autotranslate &&
+          exclude_linked_child_keys == o.exclude_linked_child_keys
     end
 
     # @see the `==` method
@@ -140,7 +150,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, briefing, due_date, review_due_date, ticket_url, target_locale_ids, autotranslate].hash
+      [name, briefing, due_date, review_due_date, ticket_url, target_locale_ids, autotranslate, exclude_linked_child_keys].hash
     end
 
     # Builds the object from hash

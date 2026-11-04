@@ -49,6 +49,9 @@ module Phrase
     # `true` if the job has been locked by the project's job-locking workflow (translations attached to the job are read-only until the job advances). 
     attr_accessor :locked
 
+    # `true` if linked child keys are excluded from this job. While enabled, linked child keys cannot be added to the job. 
+    attr_accessor :exclude_linked_child_keys
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -72,7 +75,8 @@ module Phrase
         :'locales' => :'locales',
         :'keys' => :'keys',
         :'annotations' => :'annotations',
-        :'locked' => :'locked'
+        :'locked' => :'locked',
+        :'exclude_linked_child_keys' => :'exclude_linked_child_keys'
       }
     end
 
@@ -99,7 +103,8 @@ module Phrase
         :'locales' => :'Array<LocalePreview>',
         :'keys' => :'Array<KeyPreview>',
         :'annotations' => :'Array<JobAnnotationShort>',
-        :'locked' => :'Boolean'
+        :'locked' => :'Boolean',
+        :'exclude_linked_child_keys' => :'Boolean'
       }
     end
 
@@ -224,6 +229,10 @@ module Phrase
       if attributes.key?(:'locked')
         self.locked = attributes[:'locked']
       end
+
+      if attributes.key?(:'exclude_linked_child_keys')
+        self.exclude_linked_child_keys = attributes[:'exclude_linked_child_keys']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -264,7 +273,8 @@ module Phrase
           locales == o.locales &&
           keys == o.keys &&
           annotations == o.annotations &&
-          locked == o.locked
+          locked == o.locked &&
+          exclude_linked_child_keys == o.exclude_linked_child_keys
     end
 
     # @see the `==` method
@@ -276,7 +286,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, automation_id, job_template_id, review_due_date, owner, job_tag_name, source_translations_updated_at, source_locale, locales, keys, annotations, locked].hash
+      [id, name, briefing, due_date, state, ticket_url, project, branch, created_at, updated_at, automation_id, job_template_id, review_due_date, owner, job_tag_name, source_translations_updated_at, source_locale, locales, keys, annotations, locked, exclude_linked_child_keys].hash
     end
 
     # Builds the object from hash

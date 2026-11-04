@@ -38,6 +38,9 @@ module Phrase
     # Automatically translate the job using machine translation.
     attr_accessor :autotranslate
 
+    # Exclude linked child keys from the job. While enabled, linked child keys cannot be added to the job. Defaults to `false`.
+    attr_accessor :exclude_linked_child_keys
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -52,7 +55,8 @@ module Phrase
         :'translation_key_ids' => :'translation_key_ids',
         :'target_locale_ids' => :'target_locale_ids',
         :'job_template_id' => :'job_template_id',
-        :'autotranslate' => :'autotranslate'
+        :'autotranslate' => :'autotranslate',
+        :'exclude_linked_child_keys' => :'exclude_linked_child_keys'
       }
     end
 
@@ -70,7 +74,8 @@ module Phrase
         :'translation_key_ids' => :'Array<String>',
         :'target_locale_ids' => :'Array<String>',
         :'job_template_id' => :'String',
-        :'autotranslate' => :'Boolean'
+        :'autotranslate' => :'Boolean',
+        :'exclude_linked_child_keys' => :'Boolean'
       }
     end
 
@@ -149,6 +154,10 @@ module Phrase
       if attributes.key?(:'autotranslate')
         self.autotranslate = attributes[:'autotranslate']
       end
+
+      if attributes.key?(:'exclude_linked_child_keys')
+        self.exclude_linked_child_keys = attributes[:'exclude_linked_child_keys']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -185,7 +194,8 @@ module Phrase
           translation_key_ids == o.translation_key_ids &&
           target_locale_ids == o.target_locale_ids &&
           job_template_id == o.job_template_id &&
-          autotranslate == o.autotranslate
+          autotranslate == o.autotranslate &&
+          exclude_linked_child_keys == o.exclude_linked_child_keys
     end
 
     # @see the `==` method
@@ -197,7 +207,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [branch, name, source_locale_id, briefing, due_date, review_due_date, ticket_url, tags, translation_key_ids, target_locale_ids, job_template_id, autotranslate].hash
+      [branch, name, source_locale_id, briefing, due_date, review_due_date, ticket_url, tags, translation_key_ids, target_locale_ids, job_template_id, autotranslate, exclude_linked_child_keys].hash
     end
 
     # Builds the object from hash

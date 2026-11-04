@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **owner** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **creator** | [**UserPreview**](UserPreview.md) |  | [optional] 
 **locales** | [**Array&lt;LocalePreview&gt;**](LocalePreview.md) |  | [optional] 
+**exclude_linked_child_keys** | **Boolean** | &#x60;true&#x60; if jobs created from this template exclude linked child keys.  | [optional] 
 
 ## Code Sample
 
@@ -31,7 +32,8 @@ instance = Phrase::JobTemplateDetails.new(id: nil,
                                  updated_at: nil,
                                  owner: nil,
                                  creator: nil,
-                                 locales: nil)
+                                 locales: nil,
+                                 exclude_linked_child_keys: false)
 ```
 
 

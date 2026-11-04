@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **keys** | [**Array&lt;KeyPreview&gt;**](KeyPreview.md) |  | [optional] 
 **annotations** | [**Array&lt;JobAnnotationShort&gt;**](JobAnnotationShort.md) | Returned only when &#x60;include_annotations&#x3D;true&#x60; is supplied on the request. | [optional] 
 **locked** | **Boolean** | &#x60;true&#x60; if the job has been locked by the project&#39;s job-locking workflow (translations attached to the job are read-only until the job advances).  | [optional] 
+**exclude_linked_child_keys** | **Boolean** | &#x60;true&#x60; if linked child keys are excluded from this job. While enabled, linked child keys cannot be added to the job.  | [optional] 
 
 ## Code Sample
 
@@ -51,7 +52,8 @@ instance = Phrase::JobDetails.new(id: nil,
                                  locales: nil,
                                  keys: nil,
                                  annotations: nil,
-                                 locked: nil)
+                                 locked: nil,
+                                 exclude_linked_child_keys: false)
 ```
 
 

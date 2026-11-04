@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ticket_url** | **String** | URL to a ticket for this job (e.g. Jira, Trello) Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. | [optional] 
 **target_locale_ids** | **Array&lt;String&gt;** | List of target locales for the job. | [optional] 
 **autotranslate** | **Boolean** | Automatically translate the job using machine translation | [optional] 
+**exclude_linked_child_keys** | **Boolean** | Exclude linked child keys from the job. When set to &#x60;true&#x60;, linked child keys already in the job are removed and none can be added while the option is enabled. | [optional] 
 
 ## Code Sample
 
@@ -23,7 +24,8 @@ instance = Phrase::JobUpdateParameters.new(name: 'de',
                                  review_due_date: nil,
                                  ticket_url: 'https://example.atlassian.net/browse/FOO',
                                  target_locale_ids: ["abcd1234cdef1234abcd1234cdef1234"],
-                                 autotranslate: true)
+                                 autotranslate: true,
+                                 exclude_linked_child_keys: false)
 ```
 
 

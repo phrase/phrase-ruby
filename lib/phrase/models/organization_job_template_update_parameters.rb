@@ -11,6 +11,9 @@ module Phrase
     # Automatically translate the job using machine translation.
     attr_accessor :autotranslate
 
+    # Exclude linked child keys from jobs created from this template.
+    attr_accessor :exclude_linked_child_keys
+
     # Code of the account member to set as the job template owner. Pass an empty string to clear a previously set owner; when blank, the owner is set to null and jobs created from this template will default to assigning the job creator as owner. 
     attr_accessor :owner_id
 
@@ -20,6 +23,7 @@ module Phrase
         :'name' => :'name',
         :'briefing' => :'briefing',
         :'autotranslate' => :'autotranslate',
+        :'exclude_linked_child_keys' => :'exclude_linked_child_keys',
         :'owner_id' => :'owner_id'
       }
     end
@@ -30,6 +34,7 @@ module Phrase
         :'name' => :'String',
         :'briefing' => :'String',
         :'autotranslate' => :'Boolean',
+        :'exclude_linked_child_keys' => :'Boolean',
         :'owner_id' => :'String'
       }
     end
@@ -68,6 +73,10 @@ module Phrase
         self.autotranslate = attributes[:'autotranslate']
       end
 
+      if attributes.key?(:'exclude_linked_child_keys')
+        self.exclude_linked_child_keys = attributes[:'exclude_linked_child_keys']
+      end
+
       if attributes.key?(:'owner_id')
         self.owner_id = attributes[:'owner_id']
       end
@@ -99,6 +108,7 @@ module Phrase
           name == o.name &&
           briefing == o.briefing &&
           autotranslate == o.autotranslate &&
+          exclude_linked_child_keys == o.exclude_linked_child_keys &&
           owner_id == o.owner_id
     end
 
@@ -111,7 +121,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, briefing, autotranslate, owner_id].hash
+      [name, briefing, autotranslate, exclude_linked_child_keys, owner_id].hash
     end
 
     # Builds the object from hash
