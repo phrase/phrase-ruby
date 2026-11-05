@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **data_type** | **String** |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
+**linked_key** | [**TranslationKeyLinkedKey**](TranslationKeyLinkedKey.md) |  | [optional] 
 **name_plural** | **String** |  | [optional] 
 **comments_count** | **Integer** |  | [optional] 
 **max_characters_allowed** | **Integer** |  | [optional] 
@@ -40,6 +41,7 @@ instance = Phrase::TranslationKeyDetails.new(id: nil,
                                  data_type: nil,
                                  created_at: nil,
                                  updated_at: nil,
+                                 linked_key: nil,
                                  name_plural: nil,
                                  comments_count: nil,
                                  max_characters_allowed: nil,

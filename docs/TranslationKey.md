@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **data_type** | **String** |  | [optional] 
 **created_at** | **Time** |  | [optional] 
 **updated_at** | **Time** |  | [optional] 
+**linked_key** | [**TranslationKeyLinkedKey**](TranslationKeyLinkedKey.md) |  | [optional] 
 
 ## Code Sample
 
@@ -29,7 +30,8 @@ instance = Phrase::TranslationKey.new(id: nil,
                                  tags: nil,
                                  data_type: nil,
                                  created_at: nil,
-                                 updated_at: nil)
+                                 updated_at: nil,
+                                 linked_key: nil)
 ```
 
 

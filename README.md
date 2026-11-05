@@ -649,6 +649,8 @@ Class | Method | HTTP request | Description
  - [Phrase::TranslationIncludeParameters](docs/TranslationIncludeParameters.md)
  - [Phrase::TranslationKey](docs/TranslationKey.md)
  - [Phrase::TranslationKeyDetails](docs/TranslationKeyDetails.md)
+ - [Phrase::TranslationKeyLinkedKey](docs/TranslationKeyLinkedKey.md)
+ - [Phrase::TranslationKeyLinkedKeyParent](docs/TranslationKeyLinkedKeyParent.md)
  - [Phrase::TranslationOrder](docs/TranslationOrder.md)
  - [Phrase::TranslationParent](docs/TranslationParent.md)
  - [Phrase::TranslationReviewParameters](docs/TranslationReviewParameters.md)

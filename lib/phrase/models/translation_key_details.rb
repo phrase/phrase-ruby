@@ -22,6 +22,8 @@ module Phrase
 
     attr_accessor :updated_at
 
+    attr_accessor :linked_key
+
     attr_accessor :name_plural
 
     attr_accessor :comments_count
@@ -55,6 +57,7 @@ module Phrase
         :'data_type' => :'data_type',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
+        :'linked_key' => :'linked_key',
         :'name_plural' => :'name_plural',
         :'comments_count' => :'comments_count',
         :'max_characters_allowed' => :'max_characters_allowed',
@@ -81,6 +84,7 @@ module Phrase
         :'data_type' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
+        :'linked_key' => :'TranslationKeyLinkedKey',
         :'name_plural' => :'String',
         :'comments_count' => :'Integer',
         :'max_characters_allowed' => :'Integer',
@@ -97,6 +101,7 @@ module Phrase
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'linked_key',
       ])
     end
 
@@ -162,6 +167,10 @@ module Phrase
 
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
+      end
+
+      if attributes.key?(:'linked_key')
+        self.linked_key = attributes[:'linked_key']
       end
 
       if attributes.key?(:'name_plural')
@@ -235,6 +244,7 @@ module Phrase
           data_type == o.data_type &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
+          linked_key == o.linked_key &&
           name_plural == o.name_plural &&
           comments_count == o.comments_count &&
           max_characters_allowed == o.max_characters_allowed &&
@@ -256,7 +266,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, description, name_hash, plural, use_ordinal_rules, tags, data_type, created_at, updated_at, name_plural, comments_count, max_characters_allowed, screenshot_url, unformatted, xml_space_preserve, original_file, format_value_type, creator, custom_metadata].hash
+      [id, name, description, name_hash, plural, use_ordinal_rules, tags, data_type, created_at, updated_at, linked_key, name_plural, comments_count, max_characters_allowed, screenshot_url, unformatted, xml_space_preserve, original_file, format_value_type, creator, custom_metadata].hash
     end
 
     # Builds the object from hash
