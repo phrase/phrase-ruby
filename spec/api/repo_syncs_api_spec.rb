@@ -121,4 +121,19 @@ describe 'RepoSyncsApi' do
     end
   end
 
+  # unit tests for repo_sync_update
+  # Update a repo sync
+  # Update settings for an existing Repo Sync. Sending &#x60;owner_id&#x60;, &#x60;export_triggers&#x60;, or &#x60;export_schedule&#x60; requires the caller to have &#x60;manage_github_sync?&#x60; permission on the project (returns &#x60;403&#x60; otherwise). Sending &#x60;export_triggers&#x60; or &#x60;export_schedule&#x60; when the automatic export feature is not enabled for the account returns &#x60;422&#x60;. 
+  # @param account_id Account ID
+  # @param id ID
+  # @param repo_sync_update_parameters 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :x_phrase_app_otp Two-Factor-Authentication token (optional)
+  # @return [RepoSync]
+  describe 'repo_sync_update test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

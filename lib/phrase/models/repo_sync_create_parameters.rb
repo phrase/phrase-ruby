@@ -32,6 +32,14 @@ module Phrase
     # Custom API endpoint URL for self-hosted Git instances. Required when `connection_type` is `self_hosted`.
     attr_accessor :custom_api_endpoint
 
+    # Code of the user who will own this repo sync. Automated actions run as this user. Defaults to the account owner when not set. 
+    attr_accessor :owner_id
+
+    # Events that should trigger an automatic export. Requires the automatic export feature to be enabled for the account; returns `422` otherwise. Accepted values: `schedule`, `branch_merged`, `job_completed`. 
+    attr_accessor :export_triggers
+
+    attr_accessor :export_schedule
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -66,7 +74,10 @@ module Phrase
         :'pr_branch' => :'pr_branch',
         :'auto_import' => :'auto_import',
         :'access_token' => :'access_token',
-        :'custom_api_endpoint' => :'custom_api_endpoint'
+        :'custom_api_endpoint' => :'custom_api_endpoint',
+        :'owner_id' => :'owner_id',
+        :'export_triggers' => :'export_triggers',
+        :'export_schedule' => :'export_schedule'
       }
     end
 
@@ -82,7 +93,10 @@ module Phrase
         :'pr_branch' => :'String',
         :'auto_import' => :'Boolean',
         :'access_token' => :'String',
-        :'custom_api_endpoint' => :'String'
+        :'custom_api_endpoint' => :'String',
+        :'owner_id' => :'String',
+        :'export_triggers' => :'Array<String>',
+        :'export_schedule' => :'RepoSyncCreateParametersExportSchedule'
       }
     end
 
@@ -148,6 +162,20 @@ module Phrase
 
       if attributes.key?(:'custom_api_endpoint')
         self.custom_api_endpoint = attributes[:'custom_api_endpoint']
+      end
+
+      if attributes.key?(:'owner_id')
+        self.owner_id = attributes[:'owner_id']
+      end
+
+      if attributes.key?(:'export_triggers')
+        if (value = attributes[:'export_triggers']).is_a?(Array)
+          self.export_triggers = value
+        end
+      end
+
+      if attributes.key?(:'export_schedule')
+        self.export_schedule = attributes[:'export_schedule']
       end
     end
 
@@ -232,7 +260,10 @@ module Phrase
           pr_branch == o.pr_branch &&
           auto_import == o.auto_import &&
           access_token == o.access_token &&
-          custom_api_endpoint == o.custom_api_endpoint
+          custom_api_endpoint == o.custom_api_endpoint &&
+          owner_id == o.owner_id &&
+          export_triggers == o.export_triggers &&
+          export_schedule == o.export_schedule
     end
 
     # @see the `==` method
@@ -244,7 +275,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [project_id, name, git_provider, connection_type, repo_name, base_branch, pr_branch, auto_import, access_token, custom_api_endpoint].hash
+      [project_id, name, git_provider, connection_type, repo_name, base_branch, pr_branch, auto_import, access_token, custom_api_endpoint, owner_id, export_triggers, export_schedule].hash
     end
 
     # Builds the object from hash

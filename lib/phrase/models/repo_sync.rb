@@ -26,6 +26,35 @@ module Phrase
 
     attr_accessor :last_export_at
 
+    attr_accessor :owner
+
+    # Events that trigger an automatic export. Only present when the automatic export feature is enabled for the account. Possible values: `schedule` (runs on the configured schedule), `branch_merged` (runs when a branch is merged in the connected repository), `job_completed` (runs when a translation job completes in the project). 
+    attr_accessor :export_triggers
+
+    attr_accessor :export_schedule
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -39,7 +68,10 @@ module Phrase
         :'pr_branch' => :'pr_branch',
         :'created_at' => :'created_at',
         :'last_import_at' => :'last_import_at',
-        :'last_export_at' => :'last_export_at'
+        :'last_export_at' => :'last_export_at',
+        :'owner' => :'owner',
+        :'export_triggers' => :'export_triggers',
+        :'export_schedule' => :'export_schedule'
       }
     end
 
@@ -56,7 +88,10 @@ module Phrase
         :'pr_branch' => :'String',
         :'created_at' => :'DateTime',
         :'last_import_at' => :'DateTime',
-        :'last_export_at' => :'DateTime'
+        :'last_export_at' => :'DateTime',
+        :'owner' => :'UserShort',
+        :'export_triggers' => :'Array<String>',
+        :'export_schedule' => :'RepoSyncExportSchedule'
       }
     end
 
@@ -66,7 +101,8 @@ module Phrase
         :'name',
         :'pr_branch',
         :'last_import_at',
-        :'last_export_at'
+        :'last_export_at',
+        :'export_schedule'
       ])
     end
 
@@ -128,6 +164,20 @@ module Phrase
       if attributes.key?(:'last_export_at')
         self.last_export_at = attributes[:'last_export_at']
       end
+
+      if attributes.key?(:'owner')
+        self.owner = attributes[:'owner']
+      end
+
+      if attributes.key?(:'export_triggers')
+        if (value = attributes[:'export_triggers']).is_a?(Array)
+          self.export_triggers = value
+        end
+      end
+
+      if attributes.key?(:'export_schedule')
+        self.export_schedule = attributes[:'export_schedule']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -173,7 +223,10 @@ module Phrase
           pr_branch == o.pr_branch &&
           created_at == o.created_at &&
           last_import_at == o.last_import_at &&
-          last_export_at == o.last_export_at
+          last_export_at == o.last_export_at &&
+          owner == o.owner &&
+          export_triggers == o.export_triggers &&
+          export_schedule == o.export_schedule
     end
 
     # @see the `==` method
@@ -185,7 +238,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, project, provider, enabled, auto_import, repo_name, pr_branch, created_at, last_import_at, last_export_at].hash
+      [id, name, project, provider, enabled, auto_import, repo_name, pr_branch, created_at, last_import_at, last_export_at, owner, export_triggers, export_schedule].hash
     end
 
     # Builds the object from hash

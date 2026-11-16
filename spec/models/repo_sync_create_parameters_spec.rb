@@ -88,4 +88,26 @@ describe 'RepoSyncCreateParameters' do
     end
   end
 
+  describe 'test attribute "owner_id"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "export_triggers"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["schedule", "branch_merged", "job_completed"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.export_triggers = value }.not_to raise_error
+      # end
+    end
+  end
+
+  describe 'test attribute "export_schedule"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

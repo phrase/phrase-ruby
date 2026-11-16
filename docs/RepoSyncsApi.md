@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**repo_sync_import**](RepoSyncsApi.md#repo_sync_import) | **POST** /accounts/{account_id}/repo_syncs/{id}/import | Import from code repository
 [**repo_sync_list**](RepoSyncsApi.md#repo_sync_list) | **GET** /accounts/{account_id}/repo_syncs | Get Repo Syncs
 [**repo_sync_show**](RepoSyncsApi.md#repo_sync_show) | **GET** /accounts/{account_id}/repo_syncs/{id} | Get a single Repo Sync
+[**repo_sync_update**](RepoSyncsApi.md#repo_sync_update) | **PATCH** /accounts/{account_id}/repo_syncs/{id} | Update a repo sync
 
 
 
@@ -458,5 +459,70 @@ Response<([**RepoSync**](RepoSync.md))>
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## repo_sync_update
+
+> RepoSync repo_sync_update(account_id, id, repo_sync_update_parameters, opts)
+
+Update a repo sync
+
+Update settings for an existing Repo Sync. Sending `owner_id`, `export_triggers`, or `export_schedule` requires the caller to have `manage_github_sync?` permission on the project (returns `403` otherwise). Sending `export_triggers` or `export_schedule` when the automatic export feature is not enabled for the account returns `422`. 
+
+### Example
+
+```ruby
+# load the gem
+require 'phrase'
+# setup authorization
+Phrase.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Token
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key_prefix['Authorization'] = 'token'
+end
+
+api_instance = Phrase::RepoSyncsApi.new
+account_id = 'account_id_example' # String | Account ID
+id = 'id_example' # String | ID
+repo_sync_update_parameters = Phrase::RepoSyncUpdateParameters.new # RepoSyncUpdateParameters | 
+opts = {
+  x_phrase_app_otp: 'x_phrase_app_otp_example' # String | Two-Factor-Authentication token (optional)
+}
+
+begin
+  #Update a repo sync
+  result = api_instance.repo_sync_update(account_id, id, repo_sync_update_parameters, opts)
+  pp result
+rescue Phrase::ApiError => e
+  puts "Exception when calling RepoSyncsApi->repo_sync_update: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **String**| Account ID | 
+ **id** | **String**| ID | 
+ **repo_sync_update_parameters** | [**RepoSyncUpdateParameters**](RepoSyncUpdateParameters.md)|  | 
+ **x_phrase_app_otp** | **String**| Two-Factor-Authentication token (optional) | [optional] 
+
+### Return type
+
+Response<([**RepoSync**](RepoSync.md))>
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

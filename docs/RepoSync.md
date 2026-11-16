@@ -15,6 +15,9 @@ Name | Type | Description | Notes
 **created_at** | **Time** |  | [optional] 
 **last_import_at** | **Time** |  | [optional] 
 **last_export_at** | **Time** |  | [optional] 
+**owner** | [**UserShort**](UserShort.md) |  | [optional] 
+**export_triggers** | **Array&lt;String&gt;** | Events that trigger an automatic export. Only present when the automatic export feature is enabled for the account. Possible values: &#x60;schedule&#x60; (runs on the configured schedule), &#x60;branch_merged&#x60; (runs when a branch is merged in the connected repository), &#x60;job_completed&#x60; (runs when a translation job completes in the project).  | [optional] 
+**export_schedule** | [**RepoSyncExportSchedule**](RepoSyncExportSchedule.md) |  | [optional] 
 
 ## Code Sample
 
@@ -31,7 +34,10 @@ instance = Phrase::RepoSync.new(id: nil,
                                  pr_branch: nil,
                                  created_at: nil,
                                  last_import_at: nil,
-                                 last_export_at: nil)
+                                 last_export_at: nil,
+                                 owner: nil,
+                                 export_triggers: nil,
+                                 export_schedule: nil)
 ```
 
 
