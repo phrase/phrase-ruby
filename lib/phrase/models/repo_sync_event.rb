@@ -10,10 +10,13 @@ module Phrase
 
     attr_accessor :status
 
+    # When `true`, the sync was triggered automatically (for example by a Zero Touch Localization rule or an automation). When `false`, it was triggered manually. 
+    attr_accessor :automatic
+
     # URL of the pull request created on export
     attr_accessor :pull_request_url
 
-    # Whether the import was triggered by the repo push event
+    # **Deprecated.** Use `automatic` instead. Only present on import events. Indicates whether the import was triggered automatically. 
     attr_accessor :auto_import
 
     # List of error messages, in case of failure
@@ -51,6 +54,7 @@ module Phrase
         :'type' => :'type',
         :'created_at' => :'created_at',
         :'status' => :'status',
+        :'automatic' => :'automatic',
         :'pull_request_url' => :'pull_request_url',
         :'auto_import' => :'auto_import',
         :'errors' => :'errors',
@@ -65,6 +69,7 @@ module Phrase
         :'type' => :'String',
         :'created_at' => :'DateTime',
         :'status' => :'String',
+        :'automatic' => :'Boolean',
         :'pull_request_url' => :'String',
         :'auto_import' => :'Boolean',
         :'errors' => :'Array<String>',
@@ -108,6 +113,10 @@ module Phrase
 
       if attributes.key?(:'status')
         self.status = attributes[:'status']
+      end
+
+      if attributes.key?(:'automatic')
+        self.automatic = attributes[:'automatic']
       end
 
       if attributes.key?(:'pull_request_url')
@@ -177,6 +186,7 @@ module Phrase
           type == o.type &&
           created_at == o.created_at &&
           status == o.status &&
+          automatic == o.automatic &&
           pull_request_url == o.pull_request_url &&
           auto_import == o.auto_import &&
           errors == o.errors &&
@@ -192,7 +202,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, type, created_at, status, pull_request_url, auto_import, errors, uploads].hash
+      [id, type, created_at, status, automatic, pull_request_url, auto_import, errors, uploads].hash
     end
 
     # Builds the object from hash
