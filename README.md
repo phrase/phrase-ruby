@@ -323,6 +323,9 @@ Class | Method | HTTP request | Description
 *Phrase::PreTranslationsApi* | [**pre_translation_create**](docs/PreTranslationsApi.md#pre_translation_create) | **POST** /projects/{project_id}/pre_translations | Create a pre-translation job
 *Phrase::PreTranslationsApi* | [**pre_translation_show**](docs/PreTranslationsApi.md#pre_translation_show) | **GET** /projects/{project_id}/pre_translations/{id} | Get a single pre-translation job
 *Phrase::PreTranslationsApi* | [**pre_translations_list**](docs/PreTranslationsApi.md#pre_translations_list) | **GET** /projects/{project_id}/pre_translations | List pre-translation jobs
+*Phrase::ProjectNotesApi* | [**project_note_destroy**](docs/ProjectNotesApi.md#project_note_destroy) | **DELETE** /projects/{project_id}/note | Delete a project note
+*Phrase::ProjectNotesApi* | [**project_note_show**](docs/ProjectNotesApi.md#project_note_show) | **GET** /projects/{project_id}/note | Get a project note
+*Phrase::ProjectNotesApi* | [**project_note_update**](docs/ProjectNotesApi.md#project_note_update) | **PATCH** /projects/{project_id}/note | Create or update a project note
 *Phrase::ProjectsApi* | [**project_create**](docs/ProjectsApi.md#project_create) | **POST** /projects | Create a project
 *Phrase::ProjectsApi* | [**project_delete**](docs/ProjectsApi.md#project_delete) | **DELETE** /projects/{id} | Delete a project
 *Phrase::ProjectsApi* | [**project_show**](docs/ProjectsApi.md#project_show) | **GET** /projects/{id} | Get a single project
@@ -572,6 +575,7 @@ Class | Method | HTTP request | Description
  - [Phrase::MemberSpacesInner](docs/MemberSpacesInner.md)
  - [Phrase::MemberUpdateParameters](docs/MemberUpdateParameters.md)
  - [Phrase::MemberUpdateSettingsParameters](docs/MemberUpdateSettingsParameters.md)
+ - [Phrase::Note](docs/Note.md)
  - [Phrase::Notification](docs/Notification.md)
  - [Phrase::NotificationGroup](docs/NotificationGroup.md)
  - [Phrase::NotificationGroupDetail](docs/NotificationGroupDetail.md)
@@ -590,6 +594,7 @@ Class | Method | HTTP request | Description
  - [Phrase::ProjectDetails](docs/ProjectDetails.md)
  - [Phrase::ProjectLocales](docs/ProjectLocales.md)
  - [Phrase::ProjectMember](docs/ProjectMember.md)
+ - [Phrase::ProjectNoteUpdateParameters](docs/ProjectNoteUpdateParameters.md)
  - [Phrase::ProjectReport](docs/ProjectReport.md)
  - [Phrase::ProjectShort](docs/ProjectShort.md)
  - [Phrase::ProjectUpdateParameters](docs/ProjectUpdateParameters.md)

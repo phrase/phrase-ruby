@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **job_locking_enabled** | **Boolean** |  | [optional] 
 **placeholder_styles** | **Array&lt;String&gt;** |  | [optional] 
 **branch** | [**Branch**](Branch.md) |  | [optional] 
+**note** | [**Note**](Note.md) |  | [optional] 
 
 ## Code Sample
 
@@ -77,7 +78,8 @@ instance = Phrase::ProjectDetails.new(id: nil,
                                  translation_keys_sort_collation: 'unicode_ci',
                                  job_locking_enabled: false,
                                  placeholder_styles: ["rails_i18n","java_properties"],
-                                 branch: nil)
+                                 branch: nil,
+                                 note: nil)
 ```
 
 

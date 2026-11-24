@@ -70,6 +70,8 @@ module Phrase
 
     attr_accessor :branch
 
+    attr_accessor :note
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -128,7 +130,8 @@ module Phrase
         :'translation_keys_sort_collation' => :'translation_keys_sort_collation',
         :'job_locking_enabled' => :'job_locking_enabled',
         :'placeholder_styles' => :'placeholder_styles',
-        :'branch' => :'branch'
+        :'branch' => :'branch',
+        :'note' => :'note'
       }
     end
 
@@ -168,7 +171,8 @@ module Phrase
         :'translation_keys_sort_collation' => :'String',
         :'job_locking_enabled' => :'Boolean',
         :'placeholder_styles' => :'Array<String>',
-        :'branch' => :'Branch'
+        :'branch' => :'Branch',
+        :'note' => :'Note'
       }
     end
 
@@ -337,6 +341,10 @@ module Phrase
       if attributes.key?(:'branch')
         self.branch = attributes[:'branch']
       end
+
+      if attributes.key?(:'note')
+        self.note = attributes[:'note']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -402,7 +410,8 @@ module Phrase
           translation_keys_sort_collation == o.translation_keys_sort_collation &&
           job_locking_enabled == o.job_locking_enabled &&
           placeholder_styles == o.placeholder_styles &&
-          branch == o.branch
+          branch == o.branch &&
+          note == o.note
     end
 
     # @see the `==` method
@@ -414,7 +423,7 @@ module Phrase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory, machine_translation_enabled, zero_plural_form_enabled, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, enable_branching, protect_master_branch, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, fallback_for_unverified_translations, autocomplete_job_enabled, default_encoding, cldr_version, translation_keys_sort_collation, job_locking_enabled, placeholder_styles, branch].hash
+      [id, name, slug, main_format, project_image_url, media, account, space, point_of_contact, created_at, updated_at, shares_translation_memory, machine_translation_enabled, zero_plural_form_enabled, enable_all_data_type_translation_keys_for_translators, enable_icu_message_format, enable_branching, protect_master_branch, autotranslate_enabled, autotranslate_check_new_translation_keys, autotranslate_check_new_uploads, autotranslate_check_new_locales, autotranslate_mark_as_unverified, autotranslate_use_machine_translation, autotranslate_use_translation_memory, autotranslate_overwrite_unverified_translations, fallback_for_unverified_translations, autocomplete_job_enabled, default_encoding, cldr_version, translation_keys_sort_collation, job_locking_enabled, placeholder_styles, branch, note].hash
     end
 
     # Builds the object from hash
